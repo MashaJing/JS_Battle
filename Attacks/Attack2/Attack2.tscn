@@ -1,0 +1,85 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://player/heart.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Attacks/Attack2/Heart_square/HeartSquare.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Attacks/Attack2/Spam_windows/SpamWindows.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Attacks/Attack2/attack_2_script.gd" type="Script" id=4]
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 720, 150, 0, 0, 0, 0, 720, 150, 0, 0, 0, 0, 720, 400 )
+}
+
+[node name="Attack2" type="Node2D"]
+script = ExtResource( 4 )
+bullet_scene = ExtResource( 2 )
+bullet_scene_2 = ExtResource( 3 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 495, 337 )
+
+[node name="HeartPath" type="Path2D" parent="."]
+curve = SubResource( 1 )
+
+[node name="HeartSpawnLocation" type="PathFollow2D" parent="HeartPath"]
+position = Vector2( 720, 150 )
+rotation = 1.5708
+
+[node name="BulletSpawnTimer" type="Timer" parent="."]
+autostart = true
+
+[node name="BorderField" type="ColorRect" parent="."]
+margin_left = 280.0
+margin_top = 146.0
+margin_right = 720.0
+margin_bottom = 434.0
+
+[node name="Field" type="ColorRect" parent="BorderField"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 432.0
+margin_bottom = 281.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="SpawnWindowsPos" type="Node2D" parent="BorderField"]
+position = Vector2( 7, 0 )
+
+[node name="Spawn1" type="Node2D" parent="BorderField/SpawnWindowsPos"]
+position = Vector2( 410, 24 )
+
+[node name="Spawn2" type="Node2D" parent="BorderField/SpawnWindowsPos"]
+position = Vector2( 303, 234 )
+
+[node name="Spawn3" type="Node2D" parent="BorderField/SpawnWindowsPos"]
+position = Vector2( 283, 94 )
+
+[node name="Spawn4" type="Node2D" parent="BorderField/SpawnWindowsPos"]
+position = Vector2( 410, 254 )
+
+[node name="Spawn5" type="Node2D" parent="BorderField/SpawnWindowsPos"]
+position = Vector2( 73, 214 )
+
+[node name="Spawn6" type="Node2D" parent="BorderField/SpawnWindowsPos"]
+position = Vector2( 203, 281 )
+
+[node name="Spawn7" type="Node2D" parent="BorderField/SpawnWindowsPos"]
+position = Vector2( 233, 34 )
+
+[node name="Spawn8" type="Node2D" parent="BorderField/SpawnWindowsPos"]
+position = Vector2( 73, 44 )
+
+[node name="Spawn9" type="Node2D" parent="BorderField/SpawnWindowsPos"]
+position = Vector2( 33, 94 )
+
+[node name="Spawn10" type="Node2D" parent="BorderField/SpawnWindowsPos"]
+position = Vector2( 163, 84 )
+
+[node name="Spawn11" type="Node2D" parent="BorderField/SpawnWindowsPos"]
+position = Vector2( 393, 144 )
+
+[node name="Area2D" type="Area2D" parent="BorderField"]
+
+[node name="Heart" parent="." instance=ExtResource( 1 )]
+position = Vector2( 338, 272 )
+
+[connection signal="timeout" from="BulletSpawnTimer" to="." method="_on_BulletSpawnTimer_timeout"]

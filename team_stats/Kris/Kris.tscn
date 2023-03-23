@@ -1,0 +1,112 @@
+[gd_scene load_steps=60 format=2]
+
+[ext_resource path="res://team_stats/Kris/assets/Default/image6x1.png" type="Texture" id=1]
+[ext_resource path="res://team_stats/Kris/assets/Default/image3x1.png" type="Texture" id=2]
+[ext_resource path="res://team_stats/Kris/assets/Default/image4x1.png" type="Texture" id=3]
+[ext_resource path="res://team_stats/Kris/assets/Default/image5x1.png" type="Texture" id=4]
+[ext_resource path="res://team_stats/Kris/assets/Default/image1x1.png" type="Texture" id=5]
+[ext_resource path="res://team_stats/Kris/assets/Default/image2x1.png" type="Texture" id=6]
+[ext_resource path="res://team_stats/Kris/assets/Down/kris-down.png" type="Texture" id=7]
+[ext_resource path="res://team_stats/Kris/assets/Damage/kris-damage.png" type="Texture" id=8]
+[ext_resource path="res://team_stats/Kris/assets/Intro/image7x1.png" type="Texture" id=9]
+[ext_resource path="res://team_stats/Kris/assets/Intro/image8x1.png" type="Texture" id=10]
+[ext_resource path="res://team_stats/Kris/assets/Intro/image9x1.png" type="Texture" id=11]
+[ext_resource path="res://team_stats/Kris/assets/Intro/image10x1.png" type="Texture" id=12]
+[ext_resource path="res://team_stats/Kris/assets/Intro/image11x1.png" type="Texture" id=13]
+[ext_resource path="res://team_stats/Kris/assets/Intro/image1x1.png" type="Texture" id=14]
+[ext_resource path="res://team_stats/Kris/assets/Intro/image2x1.png" type="Texture" id=15]
+[ext_resource path="res://team_stats/Kris/assets/Intro/image3x1.png" type="Texture" id=16]
+[ext_resource path="res://team_stats/Kris/assets/Intro/image5x1.png" type="Texture" id=17]
+[ext_resource path="res://team_stats/Kris/assets/Intro/image6x1.png" type="Texture" id=18]
+[ext_resource path="res://team_stats/Kris/assets/Intro/image4x1.png" type="Texture" id=19]
+[ext_resource path="res://team_stats/Kris/assets/Spare/image1x1.png" type="Texture" id=20]
+[ext_resource path="res://team_stats/Kris/assets/Spare/image2x1.png" type="Texture" id=21]
+[ext_resource path="res://team_stats/Kris/assets/Attack/image6x1.png" type="Texture" id=22]
+[ext_resource path="res://team_stats/Kris/assets/Spare/image4x1.png" type="Texture" id=23]
+[ext_resource path="res://team_stats/Kris/assets/Spare/image10x1.png" type="Texture" id=24]
+[ext_resource path="res://team_stats/Kris/assets/Attack/image5x1.png" type="Texture" id=25]
+[ext_resource path="res://team_stats/Kris/assets/Spare/image12x1.png" type="Texture" id=26]
+[ext_resource path="res://team_stats/Kris/assets/Spare/image11x1.png" type="Texture" id=27]
+[ext_resource path="res://team_stats/Kris/assets/Item/image6x1.png" type="Texture" id=28]
+[ext_resource path="res://team_stats/Kris/assets/Attack/image4x1.png" type="Texture" id=29]
+[ext_resource path="res://team_stats/Kris/assets/Spare/image6x1.png" type="Texture" id=30]
+[ext_resource path="res://team_stats/Kris/assets/Item/image7x1.png" type="Texture" id=31]
+[ext_resource path="res://team_stats/Kris/assets/Attack/image2x1.png" type="Texture" id=32]
+[ext_resource path="res://team_stats/Kris/assets/Spare/image8x1.png" type="Texture" id=33]
+[ext_resource path="res://team_stats/Kris/assets/Spare/image9x1.png" type="Texture" id=34]
+[ext_resource path="res://team_stats/Kris/assets/Attack/image1x1.png" type="Texture" id=35]
+[ext_resource path="res://team_stats/Kris/assets/Attack/image3x1.png" type="Texture" id=36]
+[ext_resource path="res://team_stats/Kris/assets/Spare/image3x1.png" type="Texture" id=37]
+[ext_resource path="res://team_stats/Kris/assets/Spare/image7x1.png" type="Texture" id=38]
+[ext_resource path="res://team_stats/Kris/assets/Attack/image7x1.png" type="Texture" id=39]
+[ext_resource path="res://team_stats/Kris/assets/Spare/image5x1.png" type="Texture" id=40]
+[ext_resource path="res://team_stats/Kris/assets/Act/image1x1.png" type="Texture" id=41]
+[ext_resource path="res://team_stats/Kris/assets/Act/image11x1.png" type="Texture" id=42]
+[ext_resource path="res://team_stats/Kris/assets/Act/image4x1.png" type="Texture" id=43]
+[ext_resource path="res://team_stats/Kris/assets/Item/image3x1.png" type="Texture" id=44]
+[ext_resource path="res://team_stats/Kris/assets/Act/image5x1.png" type="Texture" id=45]
+[ext_resource path="res://team_stats/Kris/assets/Act/image6x1.png" type="Texture" id=46]
+[ext_resource path="res://team_stats/Kris/assets/Act/image3x1.png" type="Texture" id=47]
+[ext_resource path="res://team_stats/Kris/assets/Act/image2x1.png" type="Texture" id=48]
+[ext_resource path="res://team_stats/Kris/assets/Act/image9x1.png" type="Texture" id=49]
+[ext_resource path="res://team_stats/Kris/assets/Act/image8x1.png" type="Texture" id=50]
+[ext_resource path="res://team_stats/Kris/assets/Act/image10x1.png" type="Texture" id=51]
+[ext_resource path="res://team_stats/Kris/assets/Act/image12x1.png" type="Texture" id=52]
+[ext_resource path="res://team_stats/Kris/assets/Item/image1x1.png" type="Texture" id=53]
+[ext_resource path="res://team_stats/Kris/assets/Act/image7x1.png" type="Texture" id=54]
+[ext_resource path="res://team_stats/Kris/assets/Item/image2x1.png" type="Texture" id=55]
+[ext_resource path="res://team_stats/Kris/assets/Item/image4x1.png" type="Texture" id=56]
+[ext_resource path="res://team_stats/Kris/assets/Item/image5x1.png" type="Texture" id=57]
+[ext_resource path="res://team_stats/Kris/Kris.gd" type="Script" id=58]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 41 ), ExtResource( 48 ), ExtResource( 47 ), ExtResource( 43 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 54 ), ExtResource( 50 ), ExtResource( 49 ), ExtResource( 51 ), ExtResource( 42 ), ExtResource( 52 ) ],
+"loop": false,
+"name": "act",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 35 ), ExtResource( 32 ), ExtResource( 36 ), ExtResource( 29 ), ExtResource( 25 ), ExtResource( 22 ), ExtResource( 39 ) ],
+"loop": false,
+"name": "attack",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ) ],
+"loop": false,
+"name": "damage",
+"speed": 2.0
+}, {
+"frames": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 1 ) ],
+"loop": true,
+"name": "default",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "down",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 19 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ) ],
+"loop": false,
+"name": "intro",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 53 ), ExtResource( 55 ), ExtResource( 44 ), ExtResource( 56 ), ExtResource( 57 ), ExtResource( 28 ), ExtResource( 31 ) ],
+"loop": false,
+"name": "item",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 20 ), ExtResource( 21 ), ExtResource( 37 ), ExtResource( 23 ), ExtResource( 40 ), ExtResource( 30 ), ExtResource( 38 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 24 ), ExtResource( 27 ), ExtResource( 26 ) ],
+"loop": false,
+"name": "spare",
+"speed": 5.0
+} ]
+
+[node name="Kris" type="Node2D"]
+script = ExtResource( 58 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+animation = "attack"
+
+[connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]

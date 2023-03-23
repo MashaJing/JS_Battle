@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/snd_hitcar.ogg-091de73106f64d5e49863bcc93b12401.oggstr"
+
+[deps]
+
+source_file="res://player/snd_hitcar.ogg"
+dest_files=[ "res://.import/snd_hitcar.ogg-091de73106f64d5e49863bcc93b12401.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

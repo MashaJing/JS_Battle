@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Attacks/Attack3/Carousel/Carousel.tscn" type="PackedScene" id=1]
+[ext_resource path="res://player/heart.tscn" type="PackedScene" id=2]
+
+[node name="Attack3" type="Node2D"]
+
+[node name="Carousel" parent="." instance=ExtResource( 1 )]
+position = Vector2( 490, 510 )
+scale = Vector2( 1.28, 1.28 )
+z_index = 1
+
+[node name="BorderField" type="ColorRect" parent="."]
+margin_left = 340.0
+margin_top = 170.0
+margin_right = 660.0
+margin_bottom = 454.0
+
+[node name="Field" type="ColorRect" parent="BorderField"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 313.0
+margin_bottom = 277.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="Area2D" type="Area2D" parent="BorderField"]
+
+[node name="Heart" parent="." instance=ExtResource( 2 )]
+position = Vector2( 580, 272 )

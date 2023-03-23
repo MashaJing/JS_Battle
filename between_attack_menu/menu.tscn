@@ -1,0 +1,37 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://between_attack_menu/menu.gd" type="Script" id=6]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 6 )
+
+[node name="Control" type="Control" parent="."]
+margin_top = 450.0
+margin_right = 1020.0
+margin_bottom = 600.0
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="MarginContainer" type="MarginContainer" parent="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="GridContainer" type="GridContainer" parent="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+columns = 3
+
+[node name="AttackButton" type="MenuButton" parent="Control"]
+anchor_left = 0.078
+anchor_top = 0.2
+anchor_right = 0.245
+anchor_bottom = 0.867
+margin_left = 0.439995
+margin_right = 0.0999908
+margin_bottom = -0.0500031
+text = "Attack"
+
+[connection signal="pressed" from="Control/AttackButton" to="." method="_on_AttackButton_pressed"]

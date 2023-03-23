@@ -1,0 +1,114 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Attacks/DullAttacks/DullSpamton/dull_spamton.gd" type="Script" id=1]
+[ext_resource path="res://Attacks/Attack1/bullet_dollar/Dollar.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Attacks/Attack1/bullet_dimond/Dimond.tscn" type="PackedScene" id=3]
+[ext_resource path="res://team_stats/Spamton/Spamton.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Attacks/DullAttacks/DullSpamton/bullet_sucker.gd" type="Script" id=5]
+[ext_resource path="res://player/heart.tscn" type="PackedScene" id=6]
+
+[sub_resource type="Curve2D" id=3]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 290, 160, 0, 0, 0, 0, 290, 420 )
+}
+
+[sub_resource type="Curve2D" id=2]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 290, 420, 0, 0, 0, 0, 500, 430, 0, 0, 0, 0, 710, 430 )
+}
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 2.14202, 9.01967 )
+
+[sub_resource type="Animation" id=5]
+resource_name = "up_and_down"
+length = 3.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.5, 3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 860, 380 ), Vector2( 860, 170 ), Vector2( 860, 380 ) ]
+}
+
+[node name="DullSpamton" type="Node2D"]
+script = ExtResource( 1 )
+dimond_scene = ExtResource( 3 )
+dollar_scene = ExtResource( 2 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 510, 300 )
+
+[node name="DollarPath" type="Path2D" parent="."]
+curve = SubResource( 3 )
+
+[node name="DollarSpawn" type="PathFollow2D" parent="DollarPath"]
+position = Vector2( 290, 160 )
+rotation = 1.5708
+
+[node name="DimondPath" type="Path2D" parent="."]
+curve = SubResource( 2 )
+
+[node name="DimondSpawn" type="PathFollow2D" parent="DimondPath"]
+position = Vector2( 290, 420 )
+rotation = 0.0475831
+
+[node name="BorderField" type="ColorRect" parent="."]
+margin_left = 280.0
+margin_top = 146.0
+margin_right = 720.0
+margin_bottom = 434.0
+
+[node name="Field" type="ColorRect" parent="BorderField"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 432.0
+margin_bottom = 281.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="BulletSpawnTimer" type="Timer" parent="."]
+wait_time = 0.2
+autostart = true
+
+[node name="AttackTimer" type="Timer" parent="."]
+wait_time = 8.0
+autostart = true
+
+[node name="Spamton" parent="." instance=ExtResource( 4 )]
+position = Vector2( 860, 380 )
+scale = Vector2( 1.4, 1.4 )
+
+[node name="BulletSucker" type="Node2D" parent="Spamton"]
+position = Vector2( 0, -7.14287 )
+scale = Vector2( -6.49521, 44.541 )
+script = ExtResource( 5 )
+
+[node name="mouth" type="Area2D" parent="Spamton"]
+position = Vector2( 0, -7.14285 )
+scale = Vector2( 9.97651, -3.16768 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spamton/mouth"]
+position = Vector2( -0.715969, 0 )
+scale = Vector2( 1, 1 )
+shape = SubResource( 4 )
+
+[node name="AttackMovePlayer" type="AnimationPlayer" parent="Spamton"]
+anims/up_and_down = SubResource( 5 )
+
+[node name="Heart" parent="." instance=ExtResource( 6 )]
+position = Vector2( 510, 290 )
+
+[node name="SpawnAllTimer" type="Timer" parent="."]
+wait_time = 6.0
+autostart = true
+
+[connection signal="timeout" from="BulletSpawnTimer" to="." method="_on_BulletSpawnTimer_timeout"]
+[connection signal="timeout" from="AttackTimer" to="." method="_on_AttackTimer_timeout"]
+[connection signal="area_entered" from="Spamton/mouth" to="." method="_on_mouth_area_entered"]
+[connection signal="timeout" from="SpawnAllTimer" to="." method="_on_SpawnAllTimer_timeout"]
