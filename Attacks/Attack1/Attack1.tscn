@@ -30,7 +30,7 @@ curve = SubResource( 1 )
 position = Vector2( 280, 150 )
 
 [node name="BulletSpawnTimer" type="Timer" parent="."]
-wait_time = 0.167
+wait_time = 1.6
 autostart = true
 
 [node name="DollarPath" type="Path2D" parent="."]

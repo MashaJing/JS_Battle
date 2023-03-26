@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/voice_spamton.mp3-fad42a58d42fb2ba7cb5be41af67793c.mp3str"
+
+[deps]
+
+source_file="res://Assets/sounds/voice_spamton.mp3"
+dest_files=[ "res://.import/voice_spamton.mp3-fad42a58d42fb2ba7cb5be41af67793c.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

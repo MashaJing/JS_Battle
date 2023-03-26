@@ -1,0 +1,161 @@
+[
+    {
+        "text": "Kris! You came to this [gym] to exercise with your old pal Spamton?",
+        "image": "res://Assets/Images/Dialogue/Spamton_Happy.png",
+        "speaker": "Spamton",
+        "speed": 1,
+        "main": false
+    },
+    {
+        "text": " And you brought your friends! So [BIG SHOT] of you, Kris",
+        "image": "res://Assets/Images/Dialogue/Spamton_Happy.png",
+        "speaker": "Spamton",
+        "speed": 1,
+        "main": false
+    },
+    {
+        "text": "Err, buddy, you’re kinda… ex-NEO now",
+        "image": "res://Assets/Images/Dialogue/susie_normal.png",
+        "speaker": "Susie",
+        "speed": 1,
+        "main": false
+    },
+    {
+        "text": "Go and find someone of your level, 'k? We don’t wanna kill you",
+        "image": "res://Assets/Images/Dialogue/susie_grin.png",
+        "speaker": "Susie",
+        "speed": 1,
+        "main": false
+    },
+    {
+        "text": "Actually, I’ve evened the odds",
+        "image": "res://Assets/Images/Dialogue/ralsei_thinking.png",
+        "speaker": "Ralsei",
+        "speed": 1,
+        "main": false
+    },
+    {
+        "text": "!",
+        "image": "res://Assets/Images/Dialogue/Jevil_Happy.png",
+        "speaker": "Jevil",
+        "speed": 1,
+        "main": false
+    },
+    {
+        "text": "Here comes Jevil’s encore, boysngirls!",
+        "image": "res://Assets/Images/Dialogue/Jevil_Happy.png",
+        "speaker": "Jevil",
+        "speed": 1,
+        "main": false
+    },
+    {
+        "text": "YOU, [$@^#]!# I told you to stay away [from my area]!",
+        "image": "res://Assets/Images/Dialogue/Spamton_Mad.png",
+        "speaker": "Spamton",
+        "speed": 1,
+        "main": false
+    },
+    {
+        "text": "Kr Kris! What does this mean?",
+        "image": "res://Assets/Images/Dialogue/Spamton_Pathetic.png",
+        "speaker": "Spamton",
+        "speed": 1,
+        "main": true
+    },
+    {
+        "text": "It means that today we perform in tandem, Pinocchio",
+        "image": "res://Assets/Images/Dialogue/Jevil_Happy.png",
+        "speaker": "Jevil",
+        "speed": 1,
+        "main": false,
+        "reply": {
+            "text": "DON'T [HOT CALL] ME PINNOCHIO!",
+            "image": "res://Assets/Images/Dialogue/Spamton_Mad.png",
+            "sound": "beep"
+        }
+    },
+    {
+        "text": "Well, actually, you two are the strongest rivals we've faced, so…",
+        "image": "res://Assets/Images/Dialogue/ralsei_thinking.png",
+        "speaker": "Ralsei",
+        "speed": 1,
+        "main": false
+    },
+    {
+        "text": "So we want to kick your ass again!",
+        "image": "res://Assets/Images/Dialogue/susie_grin.png",
+        "speaker": "Susie",
+        "speed": 1,
+        "main": false
+    },
+    {
+        "text": "Fighting you two at once would be a valuable lesson",
+        "image": "res://Assets/Images/Dialogue/ralsei_eyes_closed_neutral.png",
+        "speaker": "Ralsei",
+        "speed": 1,
+        "main": true
+    },
+    {
+        "text": "As a prize, you’ll get whatever you want",
+        "image": "res://Assets/Images/Dialogue/ralsei_eyes_closed.png",
+        "speaker": "Ralsei",
+        "speed": 1,
+        "main": false
+    },
+    {
+        "text": "mmm [kromers]",
+        "image": "res://Assets/Images/Dialogue/Spamton_Tax.png",
+        "speaker": "Spamton",
+        "speed": 1,
+        "main": false
+    },
+    {
+        "text": "A unicorn-shaped cotton-candy-flavored cake?!",
+        "image": "res://Assets/Images/Dialogue/Jevil_Cake.png",
+        "speaker": "Jevil",
+        "speed": 1,
+        "main": false
+    },
+    {
+        "text": "An [idiot baby] wish",
+        "image": "res://Assets/Images/Dialogue/Spamton_Pathetic.png",
+        "speaker": "Spamton",
+        "speed": 1,
+        "main": false
+    },
+    {
+        "text": "Yours is boring, boring. Where's your fantasy, puppet boy?",
+        "image": "res://Assets/Images/Dialogue/Jevil_Pathetic.png",
+        "speaker": "Jevil",
+        "speed": 1,
+        "main": false
+    },
+    {
+        "text": "...",
+        "image": "res://Assets/Images/Dialogue/Spamton_Mysterious.png",
+        "speaker": "Spamton",
+        "speed": 1,
+        "main": false
+    },
+    {
+        "text": "Ok, we're in",
+        "image": "res://Assets/Images/Dialogue/Spamton_Mysterious.png",
+        "speaker": "Spamton",
+        "speed": 1,
+        "main": false
+    },
+    {
+        "text": "Nice!",
+        "image": "res://Assets/Images/Dialogue/ralsei_eyes_closed.png",
+        "speaker": "Ralsei",
+        "speed": 1,
+        "main": false
+    },
+    {
+        "text": "Lancer Fan Club against Clowns 2.0! Let's get this party started",
+        "image": "res://Assets/Images/Dialogue/Lancer.png",
+        "speaker": "Lancer",
+        "speed": 1,
+        "main": true
+    }
+]

@@ -1,0 +1,23 @@
+[
+    {
+        "text": "So… Kris, how about some practice in our Dojo?",
+        "image": "res://Assets/Images/Dialogue/ralsei_thinking.png",
+        "speaker": "Ralsei",
+        "speed": 1,
+        "main": false
+    },
+    {
+        "text": "HELL YEAH! Fights!",
+        "image": "res://Assets/Images/Dialogue/susie_grin.png",
+        "speaker": "Susie",
+        "speed": 1,
+        "main": false
+    },
+    {
+        "text": " Khm, I mean, we need to stay in shape and all…",
+        "image": "res://Assets/Images/Dialogue/susie_normal.png",
+        "speaker": "Susie",
+        "speed": 1,
+        "main": true
+    }
+ ]

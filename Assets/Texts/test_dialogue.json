@@ -1,0 +1,64 @@
+[
+    {
+        "text": "Hey, Jev, we're in [testing] room!",
+        "image": "res://Assets/Images/Dialogue/Spamton_Tax.png",
+        "speaker": "Spamton",
+        "speed": 1,
+        "main": false,
+        "animation": ""
+    },
+    {
+        "text": "PARAM PARAM PARAM PARAM PARAM PARAM!",
+        "image": "res://Assets/Images/Dialogue/Spamton_Tax.png",
+        "speaker": "Spamton",
+        "speed": 1,
+        "main": false,
+        "reply": {
+            "text": "hahahaahaha",
+            "image": "res://Assets/Images/Dialogue/Jevil_Happy.png"
+        }
+    },
+    {
+        "text": "SSSSSSSSSSSSS",
+        "image": "res://Assets/Images/Dialogue/Spamton_Tax.png",
+        "speaker": "Spamton",
+        "speed": 10,
+        "main": false
+    },
+    {
+        "text": "It's a looooooooooooooooooooooooooooooooong sentence to skip skip",
+        "image": "res://Assets/Images/Dialogue/Jevil_Happy.png",
+        "speaker": "Jevil",
+        "speed": 20,
+        "main": false
+    },
+    
+    {
+        "text": "skip skip skip skip skip skip skip skip skip skip",
+        "image": "res://Assets/Images/Dialogue/Jevil_Cake.png",
+        "speaker": "Jevil",
+        "speed": 0.1,
+        "main": false
+    },
+    {
+        "text": "and that's the important part!",
+        "image": "res://Assets/Images/Dialogue/Jevil_Happy.png",
+        "speaker": "Jevil",
+        "speed": 1,
+        "main": true
+    },
+    {
+        "text": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "image": "res://Assets/Images/Dialogue/Jevil_Happy.png",
+        "speaker": "Jevil",
+        "speed": 0.5,
+        "main": false
+    },
+    {
+        "text": "bababababaab",
+        "image": "res://Assets/Images/Dialogue/Spamton_Happy.png",
+        "speaker": "Spamton",
+        "speed": 0.5,
+        "main": true
+    }
+]

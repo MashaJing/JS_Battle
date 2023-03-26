@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Bullets/Miniton/miniton_path_follow.gd" type="Script" id=1]
+[ext_resource path="res://Bullets/Miniton/Miniton.tscn" type="PackedScene" id=2]
+
+[node name="PathFollow2D" type="PathFollow2D"]
+script = ExtResource( 1 )
+
+[node name="Miniton" parent="." instance=ExtResource( 2 )]

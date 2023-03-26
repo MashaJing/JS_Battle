@@ -9,6 +9,12 @@ func _ready():
 	print('Jevil ready')	
 	#$AnimatedSprite.play("intro")
 
+
+func facepalm():
+	$AnimatedSprite.play("Facepalm")
+	$Slap.play()
+	$ShortLaughter.play()
+
 func take_damage(damage):
 	var new_HP = HP - damage
 	print('Jevil hp ', new_HP)

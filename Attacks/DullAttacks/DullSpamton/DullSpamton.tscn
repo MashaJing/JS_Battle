@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Attacks/DullAttacks/DullSpamton/dull_spamton.gd" type="Script" id=1]
 [ext_resource path="res://Attacks/Attack1/bullet_dollar/Dollar.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://team_stats/Spamton/Spamton.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Attacks/DullAttacks/DullSpamton/bullet_sucker.gd" type="Script" id=5]
 [ext_resource path="res://player/heart.tscn" type="PackedScene" id=6]
+[ext_resource path="res://team_stats/Jevil/Jevil.tscn" type="PackedScene" id=7]
 
 [sub_resource type="Curve2D" id=3]
 _data = {
@@ -94,8 +95,7 @@ position = Vector2( 0, -7.14285 )
 scale = Vector2( 9.97651, -3.16768 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spamton/mouth"]
-position = Vector2( -0.715969, 0 )
-scale = Vector2( 1, 1 )
+position = Vector2( -2.1479, 0 )
 shape = SubResource( 4 )
 
 [node name="AttackMovePlayer" type="AnimationPlayer" parent="Spamton"]
@@ -107,6 +107,10 @@ position = Vector2( 510, 290 )
 [node name="SpawnAllTimer" type="Timer" parent="."]
 wait_time = 6.0
 autostart = true
+
+[node name="Jevil" parent="." instance=ExtResource( 7 )]
+position = Vector2( 920, 180 )
+scale = Vector2( 1.42764, 1.42764 )
 
 [connection signal="timeout" from="BulletSpawnTimer" to="." method="_on_BulletSpawnTimer_timeout"]
 [connection signal="timeout" from="AttackTimer" to="." method="_on_AttackTimer_timeout"]

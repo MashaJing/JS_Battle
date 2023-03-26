@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/snd_beep.mp3-b069c330c3bf7e8e21a4203a1172bcb8.mp3str"
+
+[deps]
+
+source_file="res://Assets/sounds/snd_beep.mp3"
+dest_files=[ "res://.import/snd_beep.mp3-b069c330c3bf7e8e21a4203a1172bcb8.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

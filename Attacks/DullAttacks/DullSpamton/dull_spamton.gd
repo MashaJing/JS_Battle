@@ -4,6 +4,7 @@ onready var bullet_spawn_timer = $BulletSpawnTimer
 onready var Spamton = $Spamton
 onready var SpamtonAnim = $Spamton/AnimatedSprite
 onready var SpamtonAnimPlayer = $Spamton/AnimationPlayer
+onready var Jevil = $Jevil
 onready var BulletSucker = $Spamton/BulletSucker
 onready var mouth = $Spamton/mouth
 onready var AttackMovePlayer = $Spamton/AttackMovePlayer
@@ -24,8 +25,8 @@ func spawn_bullet(spawn_location, bullet_scene, direction, speed):
 	bullet.ttl = 4
 	bullet.speed = speed
 	add_child(bullet)
+	bullet.add_to_group('bullets')
 	bullet.position = spawn_location.position
-	all_bullets.append(bullet)
 
 func _on_BulletSpawnTimer_timeout():
 	spawn_bullet($DimondPath/DimondSpawn, dimond_scene, Vector2.UP, 100)
@@ -38,8 +39,13 @@ func _on_AttackTimer_timeout():
 	BulletSucker.deactivate()
 	AttackMovePlayer.stop()	
 	SpamtonAnimPlayer.play("fall")
+	Jevil.facepalm()
+	for bullet in get_tree().get_nodes_in_group("bullets"):
+		bullet.queue_free()
+	SpamtonAnim.play("increase_head", true)
 
 func _ready():
+	yield(get_tree().create_timer(1), "timeout")	
 	SpamtonAnim.play("increase_head")
 	# нормально дождаться окончания анимации
 	yield(get_tree().create_timer(1), "timeout")
@@ -53,11 +59,11 @@ func shorten_distance(bullet_sucker, bullet, delta, offset):
 
 func _process(delta):
 	offset = Vector2(0, 0)
+	all_bullets = get_tree().get_nodes_in_group("bullets")
 	for bullet in all_bullets:
 		offset.y = 5 * (randi() % 10)
 		offset.x = 5 * (randi() % 4)
-		bullet.position += shorten_distance(BulletSucker,  bullet, delta, offset)
+		bullet.position += shorten_distance(BulletSucker, bullet, delta, offset)
 
 func _on_mouth_area_entered(area):
-	print(area.name, ' area entered!')
 	area.stop()

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/voice_ralsei.mp3-0e5b7729d4778e7cef57e7cbd177d86a.mp3str"
+
+[deps]
+
+source_file="res://Assets/sounds/voice_ralsei.mp3"
+dest_files=[ "res://.import/voice_ralsei.mp3-0e5b7729d4778e7cef57e7cbd177d86a.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0
