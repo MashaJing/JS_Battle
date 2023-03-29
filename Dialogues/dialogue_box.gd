@@ -6,6 +6,8 @@ var dialogue
 
 var phraseNum = 0
 var finished = false
+signal action_required
+
 
 var sound_files = {
 	"Jevil": "res://Assets/sounds/voice_jevil.mp3",
@@ -42,6 +44,7 @@ func _process(delta):
 		$Text.visible_characters = len($Text.text)
 
 	if Input.is_action_just_pressed("c"):
+		$Text.visible_characters = len($Text.text)
 		while phraseNum < len(dialogue) and dialogue[phraseNum]["main"] == false:
 			phraseNum += 1
 		nextPhrase()
@@ -74,7 +77,7 @@ func nextPhrase():
 		return
 	finished = false
 	
-	$Text.bbcode_text = "[code]" + dialogue[phraseNum]["text"] + "[/code]"
+	$Text.bbcode_text = "[code]* " + dialogue[phraseNum]["text"] + "[/code]"
 	$Timer.wait_time = (1/dialogue[phraseNum]["speed"]) / 100
 	$Voice.stream = voices[dialogue[phraseNum]["speaker"]]
 	setImage(dialogue[phraseNum]["image"])
@@ -86,19 +89,26 @@ func nextPhrase():
 	$ReplyText.bbcode_text = ''
 	$ReplyPortrait.texture = null
 
+	if "animation" in dialogue[phraseNum].keys():
+		for animation in dialogue[phraseNum]["animation"]:
+			var reversed = false
+			if "reversed" in animation.keys():
+				reversed = animation['reversed']
+			emit_signal("action_required", animation["actor"], animation["action"], reversed)
+
 	# выводим фразу побуквенно
+	$Voice.play()	
 	while $Text.visible_characters < len($Text.text):
-		$Voice.play()
 		$Text.visible_characters += 1
 		$Timer.start()
 		yield($Timer, "timeout")
+	$Voice.stop()
 
 	# если на фразу был ответ в углу, выводим его
 	if "reply" in dialogue[phraseNum].keys():
 		setImage(dialogue[phraseNum]["reply"]["image"], $ReplyPortrait)
 		$ReplyText.bbcode_text = "[code]" + dialogue[phraseNum]["reply"]["text"] + "[/code]"
 		if "sound" in dialogue[phraseNum]["reply"].keys():
-			print(dialogue[phraseNum]["reply"]["sound"])
 			$ExtraSound.stream = voices[dialogue[phraseNum]["reply"]["sound"]]
 			$ExtraSound.play()
 

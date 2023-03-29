@@ -7,11 +7,16 @@
         "main": false
     },
     {
-        "text": " And you brought your friends! So [BIG SHOT] of you, Kris",
+        "text": "And you brought your friends! So [BIG SHOT] of you, Kris",
         "image": "res://Assets/Images/Dialogue/Spamton_Happy.png",
         "speaker": "Spamton",
         "speed": 1,
-        "main": false
+        "main": false,
+        "animation": [{
+            "offset": 0,
+            "action": "hands_up",
+            "actor": "Spamton"
+        }]
     },
     {
         "text": "Err, buddy, you’re kinda… ex-NEO now",
@@ -25,7 +30,12 @@
         "image": "res://Assets/Images/Dialogue/susie_grin.png",
         "speaker": "Susie",
         "speed": 1,
-        "main": false
+        "main": false,
+        "animation": [{
+            "offset": 0,
+            "action": "default",
+            "actor": "Spamton"
+        }]
     },
     {
         "text": "Actually, I’ve evened the odds",
@@ -35,32 +45,51 @@
         "main": false
     },
     {
-        "text": "!",
-        "image": "res://Assets/Images/Dialogue/Jevil_Happy.png",
-        "speaker": "Jevil",
-        "speed": 1,
-        "main": false
-    },
-    {
         "text": "Here comes Jevil’s encore, boysngirls!",
         "image": "res://Assets/Images/Dialogue/Jevil_Happy.png",
         "speaker": "Jevil",
         "speed": 1,
-        "main": false
+        "main": false,
+        "animation": [{
+            "offset": 0,
+            "action": "teleport",
+            "actor": "Jevil"
+        },
+        {
+            "offset": 0,
+            "action": "hit",
+            "actor": "Spamton"
+        },
+        {
+            "offset": 0,
+            "action": "shocked",
+            "actor": "Susie"
+        }]
     },
     {
         "text": "YOU, [$@^#]!# I told you to stay away [from my area]!",
         "image": "res://Assets/Images/Dialogue/Spamton_Mad.png",
         "speaker": "Spamton",
         "speed": 1,
-        "main": false
+        "main": false,
+        "animation": [
+            {
+                "offset": 0,
+                "action": "default",
+                "actor": "Susie"
+            },
+            {
+            "offset": 0,
+            "action": "angry_shaking",
+            "actor": "Spamton"
+        }]
     },
     {
-        "text": "Kr Kris! What does this mean?",
+        "text": "Kr-Kris! What does this mean?",
         "image": "res://Assets/Images/Dialogue/Spamton_Pathetic.png",
         "speaker": "Spamton",
         "speed": 1,
-        "main": true
+        "main": false
     },
     {
         "text": "It means that today we perform in tandem, Pinocchio",
@@ -79,21 +108,36 @@
         "image": "res://Assets/Images/Dialogue/ralsei_thinking.png",
         "speaker": "Ralsei",
         "speed": 1,
-        "main": false
+        "main": false,
+        "animation": [{
+            "offset": 0,
+            "action": "default",
+            "actor": "Spamton"
+        }]
     },
     {
         "text": "So we want to kick your ass again!",
         "image": "res://Assets/Images/Dialogue/susie_grin.png",
         "speaker": "Susie",
         "speed": 1,
-        "main": false
+        "main": false,
+        "animation": [{
+            "offset": 0,
+            "action": "laugh",
+            "actor": "Susie"
+        }]
     },
     {
         "text": "Fighting you two at once would be a valuable lesson",
         "image": "res://Assets/Images/Dialogue/ralsei_eyes_closed_neutral.png",
         "speaker": "Ralsei",
         "speed": 1,
-        "main": true
+        "main": true,
+        "animation": [{
+            "offset": 0,
+            "action": "default",
+            "actor": "Susie"
+        }]
     },
     {
         "text": "As a prize, you’ll get whatever you want",
@@ -107,25 +151,39 @@
         "image": "res://Assets/Images/Dialogue/Spamton_Tax.png",
         "speaker": "Spamton",
         "speed": 1,
-        "main": false
+        "main": true
     },
     {
-        "text": "A unicorn-shaped cotton-candy-flavored cake?!",
+        "text": "A strawberry-shaped unicorn-flavored cake?!",
         "image": "res://Assets/Images/Dialogue/Jevil_Cake.png",
         "speaker": "Jevil",
         "speed": 1,
-        "main": false
+        "main": false,
+        "animation": [{
+            "offset": 0,
+            "action": "dance",
+            "actor": "Jevil"
+        }],
+        "reply": {
+            "text": "Maybe on the contrary?",
+            "image": "res://Assets/Images/Dialogue/ralsei_shocked.png"
+        }
     },
     {
         "text": "An [idiot baby] wish",
         "image": "res://Assets/Images/Dialogue/Spamton_Pathetic.png",
         "speaker": "Spamton",
         "speed": 1,
-        "main": false
+        "main": false,
+        "animation": [{
+            "offset": 0,
+            "action": "default",
+            "actor": "Jevil"
+        }]
     },
     {
         "text": "Yours is boring, boring. Where's your fantasy, puppet boy?",
-        "image": "res://Assets/Images/Dialogue/Jevil_Pathetic.png",
+        "image": "res://Assets/Images/Dialogue/Jevil_Happy.png",
         "speaker": "Jevil",
         "speed": 1,
         "main": false
@@ -138,7 +196,7 @@
         "main": false
     },
     {
-        "text": "Ok, we're in",
+        "text": "Ok, [event accepted]",
         "image": "res://Assets/Images/Dialogue/Spamton_Mysterious.png",
         "speaker": "Spamton",
         "speed": 1,
@@ -152,7 +210,14 @@
         "main": false
     },
     {
-        "text": "Lancer Fan Club against Clowns 2.0! Let's get this party started",
+        "text": "Lancer Fan Club on the left",
+        "image": "res://Assets/Images/Dialogue/Lancer.png",
+        "speaker": "Lancer",
+        "speed": 1,
+        "main": true
+    },
+    {
+        "text": "Clowns 2.0 on the right! Let's get this party started",
         "image": "res://Assets/Images/Dialogue/Lancer.png",
         "speaker": "Lancer",
         "speed": 1,

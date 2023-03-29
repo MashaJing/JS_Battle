@@ -10,7 +10,6 @@ onready var MinitonSprite = $Miniton/AnimatedSprite
 
 func _ready():
 	MinitonSprite.flip_v = !flipped
-	MinitonSprite.play("default")
 	MinitonPlayer.play("default")
 
 func _process(delta):

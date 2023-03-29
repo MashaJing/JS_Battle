@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="cooler_bullet_dodge_example"
-run/main_scene="res://Dialogues/Dialogue.tscn"
+run/main_scene="res://Cutscenes/ConfessionAttack/ConfessionAttack.tscn"
 config/icon="res://icon.png"
 
 [gui]

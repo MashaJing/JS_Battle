@@ -9,7 +9,8 @@ onready var WordScene = preload("res://Attacks/DramaAttacks/DramaAttack2/Word/Wo
 
 
 var words = [
-	"$POKER$",  "SHES$" , "$Monopoly$", "$TRUTH_or_DARE", "$#@MINECRAP", "$CRACKASSON"
+	"$POKER$", "SHES$", "$Monopoly$", "$TRUTH_or_DARE", "$#@MINECRAP", "$CRACKASSON",
+	"ALIAS", "CHECKERS$", "H1DE-&-SEEK", "_______"
 ]
 
 func _ready():
@@ -18,16 +19,16 @@ func _ready():
 # нормально дождаться окончания анимации
 	yield(get_tree().create_timer(1), "timeout")
 	Spamton.play("head_attack")
-	AnimPlayer.play("spawn_wave")	
+	AnimPlayer.play("spawn_wave")
 	var word = ''
 	for i in range(10):
 		var wordBullet = WordScene.instance()
-		wordBullet.word = words[randi() % len(words)]
+		wordBullet.word = words[i]
 		add_child(wordBullet)
 		wordBullet.position = WordSpawn.global_position		
 		yield(WordSpawnTimer, "timeout")
 	AnimPlayer.stop()
-	Spamton.play("dance")
+	Spamton.play("default")
 
 
 func _on_Spamton_animation_finished():

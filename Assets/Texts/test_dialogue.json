@@ -1,4 +1,12 @@
 [
+
+    {
+        "text": "It's a looooooooooooooooooooooooooooooooong sentence to skip skip",
+        "image": "res://Assets/Images/Dialogue/Jevil_Happy.png",
+        "speaker": "Jevil",
+        "speed": 20,
+        "main": false
+    },
     {
         "text": "Hey, Jev, we're in [testing] room!",
         "image": "res://Assets/Images/Dialogue/Spamton_Tax.png",
@@ -9,13 +17,13 @@
     },
     {
         "text": "PARAM PARAM PARAM PARAM PARAM PARAM!",
-        "image": "res://Assets/Images/Dialogue/Spamton_Tax.png",
-        "speaker": "Spamton",
+        "image": "res://Assets/Images/Dialogue/Lancer.png",
+        "speaker": "Lancer",
         "speed": 1,
         "main": false,
         "reply": {
             "text": "hahahaahaha",
-            "image": "res://Assets/Images/Dialogue/Jevil_Happy.png"
+            "image": "res://Assets/Images/Dialogue/Lancer.png"
         }
     },
     {
@@ -23,13 +31,6 @@
         "image": "res://Assets/Images/Dialogue/Spamton_Tax.png",
         "speaker": "Spamton",
         "speed": 10,
-        "main": false
-    },
-    {
-        "text": "It's a looooooooooooooooooooooooooooooooong sentence to skip skip",
-        "image": "res://Assets/Images/Dialogue/Jevil_Happy.png",
-        "speaker": "Jevil",
-        "speed": 20,
         "main": false
     },
     

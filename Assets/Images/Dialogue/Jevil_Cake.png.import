@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Jevil_Cake.png-099edb20985ceb0e44b7d93c891587ff.stex"
+path="res://.import/Jevil_cake.png-196743a8760a9d951d38a45b12c870f7.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Images/Dialogue/Jevil_Cake.png"
-dest_files=[ "res://.import/Jevil_Cake.png-099edb20985ceb0e44b7d93c891587ff.stex" ]
+source_file="res://Assets/Images/Dialogue/Jevil_cake.png"
+dest_files=[ "res://.import/Jevil_cake.png-196743a8760a9d951d38a45b12c870f7.stex" ]
 
 [params]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=2]
+[gd_scene load_steps=61 format=2]
 
 [ext_resource path="res://team_stats/Susie/assets/act/image9x1.png" type="Texture" id=1]
 [ext_resource path="res://team_stats/Susie/assets/attack/image1x1.png" type="Texture" id=2]
@@ -53,6 +53,9 @@
 [ext_resource path="res://team_stats/Susie/assets/item/image5x1.png" type="Texture" id=51]
 [ext_resource path="res://team_stats/Susie/assets/spare/image3x1.png" type="Texture" id=52]
 [ext_resource path="res://team_stats/Susie/Susie.gd" type="Script" id=53]
+[ext_resource path="res://Assets/Images/Susie/laugh/image1x1.png" type="Texture" id=54]
+[ext_resource path="res://Assets/Images/Susie/laugh/image2x1.png" type="Texture" id=55]
+[ext_resource path="res://Assets/Images/Susie/output-onlinepngtools.png" type="Texture" id=56]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -96,17 +99,115 @@ animations = [ {
 "name": "item",
 "speed": 10.0
 }, {
+"frames": [ ExtResource( 54 ), ExtResource( 55 ) ],
+"loop": true,
+"name": "laugh",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 56 ) ],
+"loop": false,
+"name": "shocked",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 39 ), ExtResource( 22 ), ExtResource( 52 ), ExtResource( 18 ), ExtResource( 23 ), ExtResource( 43 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 9 ) ],
 "loop": false,
 "name": "spare",
 "speed": 10.0
 } ]
 
+[sub_resource type="Animation" id=4]
+resource_name = "default"
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "default" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AnimatedSprite:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "laugh"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "laugh" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AnimatedSprite:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "shocked"
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "shocked" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AnimatedSprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( -30, 0 ) ]
+}
+
 [node name="Susie" type="Node2D"]
 script = ExtResource( 53 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
-animation = "spare"
+animation = "shocked"
+playing = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/default = SubResource( 4 )
+anims/laugh = SubResource( 2 )
+anims/shocked = SubResource( 3 )
 
 [connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]

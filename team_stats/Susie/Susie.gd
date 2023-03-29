@@ -20,7 +20,8 @@ func take_damage(damage):
 	HP = new_HP
 
 func _on_AnimatedSprite_animation_finished():
-	$AnimatedSprite.play("default")
+	pass
+	#$AnimatedSprite.play("default")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):

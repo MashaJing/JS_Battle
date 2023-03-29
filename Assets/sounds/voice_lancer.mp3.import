@@ -11,5 +11,5 @@ dest_files=[ "res://.import/voice_lancer.mp3-8ec1a5e233289e4a0170b385803318d8.mp
 
 [params]
 
-loop=false
-loop_offset=0
+loop=true
+loop_offset=0.01
