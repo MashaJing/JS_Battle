@@ -6,10 +6,8 @@ signal KrisDown
 signal KrisUp
 
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	print('Susie ready')
-	$AnimatedSprite.play("intro")
+	print('Kris ready')
 
 func take_damage(damage):
 	var new_HP = HP - damage

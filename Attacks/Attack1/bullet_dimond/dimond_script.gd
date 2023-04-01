@@ -1,8 +1,8 @@
 extends Area2D
 
 export var direction = Vector2.DOWN
-export var speed = 300.0
-export var ttl = 1.0
+export var speed = 1
+export var ttl = 100.0
 
 
 func _process(delta):

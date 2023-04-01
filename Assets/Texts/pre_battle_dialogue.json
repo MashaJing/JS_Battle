@@ -7,7 +7,7 @@
         "main": false
     },
     {
-        "text": "And you brought your friends! So [BIG SHOT] of you, Kris",
+        "text": "And you brought your [friend]s! So [BIG SHOT] of you, Kris",
         "image": "res://Assets/Images/Dialogue/Spamton_Happy.png",
         "speaker": "Spamton",
         "speed": 1,
@@ -67,7 +67,7 @@
         }]
     },
     {
-        "text": "YOU, [$@^#]!# I told you to stay away [from my area]!",
+        "text": "YOU  [$@^#]!# I told you to stay away [from my area]!",
         "image": "res://Assets/Images/Dialogue/Spamton_Mad.png",
         "speaker": "Spamton",
         "speed": 1,
@@ -98,7 +98,7 @@
         "speed": 1,
         "main": false,
         "reply": {
-            "text": "DON'T [HOT CALL] ME PINNOCHIO!",
+            "text": "DON'T [HOT CALL] ME  PINNOCHIO!",
             "image": "res://Assets/Images/Dialogue/Spamton_Mad.png",
             "sound": "beep"
         }
@@ -165,7 +165,7 @@
             "actor": "Jevil"
         }],
         "reply": {
-            "text": "Maybe on the contrary?",
+            "text": "You meant the opposite... did you?",
             "image": "res://Assets/Images/Dialogue/ralsei_shocked.png"
         }
     },
@@ -196,7 +196,7 @@
         "main": false
     },
     {
-        "text": "Ok, [event accepted]",
+        "text": "Light>ners, [event accepted]",
         "image": "res://Assets/Images/Dialogue/Spamton_Mysterious.png",
         "speaker": "Spamton",
         "speed": 1,

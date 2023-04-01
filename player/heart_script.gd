@@ -1,6 +1,8 @@
 extends Area2D
 
-signal health_changed(damage)
+signal health_changed()
+signal tp_increased()
+signal tp_decreased()
 export var speed : float = 200.0
 
 
@@ -22,7 +24,6 @@ func _process(delta):
 		direction = direction.normalized()
 	position += direction * speed * delta
 
-
 func take_damage():
 	$CollisionShape2D.set_deferred("disabled", true)
 	print('took_damage')
@@ -32,12 +33,22 @@ func take_damage():
 	$SoundDamage.play()
 
 	# сигнал о получении дамага (принимает Attacktarget в сцене main)	
-	# todo: переименовать в take_damage или типа того
+	# todo: переименовать в health_change?
 	emit_signal("health_changed")
+	emit_signal("tp_decreased")
 
-	# Даём 2 секунды неуязвимости
-	yield(get_tree().create_timer(2.0), "timeout")
+	# Даём секунду неуязвимости
+	yield(get_tree().create_timer(1), "timeout")
 	$CollisionShape2D.set_deferred("disabled", false)
+
+func _on_TP_area_exited(_area):
+	print('TP EXITED!')
+	$AnimationPlayer.play("exit")
+
+func _on_TP_area_entered(_area):
+	print('TP ENTERED!')
+	emit_signal("tp_increased")
+	$AnimationPlayer.play("enter")
 
 func _on_Heart_area_entered(area):
 	print('ENTERED!')

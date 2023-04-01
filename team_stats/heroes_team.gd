@@ -10,16 +10,15 @@ onready var Ralsei = null
 var Spamton_ATK = 100
 var MAX_TP = 100
 var TP = 0
+var tp_delta = 10
 
 onready var heroes = [$Kris, $Susie]
 onready var AttackTargets = heroes
 
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	pass
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
 
@@ -34,13 +33,31 @@ func _on_take_damage():
 		print(target)
 		target.take_damage(Spamton_ATK)
 
+func _on_tp_increased():
+	print('ENTERED!')
+	TP += tp_delta
+	if TP > MAX_TP:
+		TP = MAX_TP
+	print("TP: ", TP)
+
+func _on_tp_decreased():
+	print('ENTERED!')
+	TP -= tp_delta
+	if TP < 0:
+		TP = 0
+	print("TP: ", TP)
+
 func _on_Kris_down():
 	#AttackTargets.pop_at() исключить Криса
 	pass
 
-func choose_target():
-	AttackTargets = [heroes[randi() % heroes.size()]]
-	print(AttackTargets)
+func choose_target(target=null):
+	if target == null:
+		AttackTargets = [heroes[randi() % len(heroes)]]
+	else:
+		AttackTargets = target
+	print('target: ', AttackTargets)
 
 func _on_Menu_attck_begins():
-	choose_target()
+	pass
+	#choose_target()

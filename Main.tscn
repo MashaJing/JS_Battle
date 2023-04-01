@@ -23,11 +23,9 @@ autostart = true
 [node name="TeamStats" parent="." instance=ExtResource( 5 )]
 
 [node name="Kris" parent="TeamStats" instance=ExtResource( 2 )]
-visible = false
 position = Vector2( 180, 170 )
 
 [node name="Susie" parent="TeamStats" instance=ExtResource( 4 )]
-visible = false
 position = Vector2( 160, 270 )
 
 [node name="Jevil" parent="TeamStats" instance=ExtResource( 7 )]

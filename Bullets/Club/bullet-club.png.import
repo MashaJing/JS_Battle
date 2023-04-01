@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Swatch.jpg-13e3774d0c94059e95dc36e5396004e2.stex"
+path="res://.import/bullet-club.png-93522a577e21845836729b59a4be242a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Attacks/DramaAttacks/DramaAttack4/Legs/Swatch.jpg"
-dest_files=[ "res://.import/Swatch.jpg-13e3774d0c94059e95dc36e5396004e2.stex" ]
+source_file="res://Bullets/Club/bullet-club.png"
+dest_files=[ "res://.import/bullet-club.png-93522a577e21845836729b59a4be242a.stex" ]
 
 [params]
 

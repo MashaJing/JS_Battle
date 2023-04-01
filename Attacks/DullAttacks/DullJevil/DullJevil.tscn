@@ -44,7 +44,6 @@ position = Vector2( 510, 290 )
 
 [node name="Spamton" parent="." instance=ExtResource( 4 )]
 position = Vector2( 860, 370 )
-scale = Vector2( 1.59834, 1.59834 )
 
 [node name="BulletSpawnTimer" type="Timer" parent="."]
 wait_time = 0.5

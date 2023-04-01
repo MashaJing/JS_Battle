@@ -36,6 +36,7 @@ func _ready():
 func spawn_knife():
 	var knife = DevilsKnifePath.instance()
 	knife_path.add_child(knife)
+	# todo: удаляет сердце, а не дамажит
 	print(knife.get_children())
 	#var DevilsKnife = knife.get_node("DevilsKnife")
 	#for bullet in get_tree().get_nodes_in_group("bullets"):

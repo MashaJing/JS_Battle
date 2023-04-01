@@ -1,12 +1,12 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Attacks/DramaAttacks/DramaAttack4/Legs/Swatch.jpg" type="Texture" id=1]
-[ext_resource path="res://Attacks/DramaAttacks/DramaAttack4/Legs/Swatch2.jpg" type="Texture" id=2]
+[ext_resource path="res://Attacks/DramaAttacks/DramaAttack4/Legs/1.png" type="Texture" id=1]
+[ext_resource path="res://Attacks/DramaAttacks/DramaAttack4/Legs/2.png" type="Texture" id=2]
 [ext_resource path="res://Attacks/DramaAttacks/DramaAttack4/swatch_legs/swatch_legs.gd" type="Script" id=3]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 1 ), ExtResource( 2 ) ],
+"frames": [ ExtResource( 2 ), ExtResource( 1 ) ],
 "loop": true,
 "name": "walk",
 "speed": 5.0

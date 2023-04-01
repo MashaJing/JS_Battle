@@ -95,7 +95,7 @@ func nextPhrase():
 			if "reversed" in animation.keys():
 				reversed = animation['reversed']
 			emit_signal("action_required", animation["actor"], animation["action"], reversed)
-
+	
 	# выводим фразу побуквенно
 	$Voice.play()	
 	while $Text.visible_characters < len($Text.text):

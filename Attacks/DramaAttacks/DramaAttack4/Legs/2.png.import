@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Swatch2.jpg-694206c98e0cc2cedbc18d8dc70946b3.stex"
+path="res://.import/2.png-3326104c15b4e7e10baa378ea623d008.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Attacks/DramaAttacks/DramaAttack4/Legs/Swatch2.jpg"
-dest_files=[ "res://.import/Swatch2.jpg-694206c98e0cc2cedbc18d8dc70946b3.stex" ]
+source_file="res://Attacks/DramaAttacks/DramaAttack4/Legs/2.png"
+dest_files=[ "res://.import/2.png-3326104c15b4e7e10baa378ea623d008.stex" ]
 
 [params]
 

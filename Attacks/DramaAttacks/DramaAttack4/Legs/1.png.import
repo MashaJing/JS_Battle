@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ezgif.com-webp-to-png.png-5716402346a734006e847de62fbd9547.stex"
+path="res://.import/1.png-e6f44a2337b7afc41907304ebe32cd41.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://team_stats/Spamton/assets/hit/ezgif.com-webp-to-png.png"
-dest_files=[ "res://.import/ezgif.com-webp-to-png.png-5716402346a734006e847de62fbd9547.stex" ]
+source_file="res://Attacks/DramaAttacks/DramaAttack4/Legs/1.png"
+dest_files=[ "res://.import/1.png-e6f44a2337b7afc41907304ebe32cd41.stex" ]
 
 [params]
 
