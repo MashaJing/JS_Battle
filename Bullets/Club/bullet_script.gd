@@ -2,15 +2,18 @@ extends Area2D
 
 var angle_increase_speed = PI
 var radius = Vector2(10.0, 15.0)
+var direction = Vector2.ZERO
 
 var angle = 0.0
-
+var time = 0
+var speed = 300
 onready var start_position = position
 onready var previous_position = start_position
 
 
 func _process(delta):
-	
+	time += delta
+	position = direction * speed * time
 	#angle = wrapf(angle + angle_increase_speed * delta, 0.0, 2 * PI)
 	pass
 	#var direction = Vector2(cos(angle), sin(2*angle))

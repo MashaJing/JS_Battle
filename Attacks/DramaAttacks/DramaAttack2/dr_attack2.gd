@@ -1,5 +1,7 @@
 extends Node
 
+signal attack_ended
+
 onready var WordSpawn = $WordSpawn
 onready var WordSpawnTimer = $WordSpawnTimer
 onready var AnimPlayer = $WordSpawn/AnimationPlayer
@@ -29,6 +31,8 @@ func _ready():
 		yield(WordSpawnTimer, "timeout")
 	AnimPlayer.stop()
 	Spamton.play("default")
+	emit_signal("attack_ended")
+	
 
 
 func _on_Spamton_animation_finished():

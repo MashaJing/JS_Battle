@@ -40,3 +40,5 @@ color = Color( 0, 0, 0, 1 )
 
 [node name="Heart" parent="." instance=ExtResource( 2 )]
 position = Vector2( 510, 290 )
+
+[connection signal="health_changed" from="Heart" to="." method="_on_Heart_health_changed"]

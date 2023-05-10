@@ -34,8 +34,8 @@ position = Vector2( 720, 140 )
 
 [node name="Swatch_leg" parent="." instance=ExtResource( 4 )]
 position = Vector2( 70, 290 )
-scale = Vector2( 7.45051, 7.45051 )
+scale = Vector2( -1.62, 1.62 )
 
 [node name="Swatch_leg2" parent="." instance=ExtResource( 4 )]
 position = Vector2( -220, 292 )
-scale = Vector2( 7.45051, 7.45051 )
+scale = Vector2( -1.659, 1.659 )

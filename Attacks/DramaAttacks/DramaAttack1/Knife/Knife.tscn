@@ -10,7 +10,7 @@ extents = Vector2( 10, 70 )
 resource_name = "appear"
 length = 0.6
 
-[node name="Knife" type="Area2D"]
+[node name="Knife" type="Area2D" groups=["bullets"]]
 rotation = -1.14668
 script = ExtResource( 2 )
 

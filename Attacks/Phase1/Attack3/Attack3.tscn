@@ -1,0 +1,55 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Attacks/Phase1/Attack3/Carousel/Carousel.tscn" type="PackedScene" id=1]
+[ext_resource path="res://player/heart.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Attacks/Phase1/Attack3/attack3.gd" type="Script" id=3]
+[ext_resource path="res://team_stats/Spamton/Spamton.tscn" type="PackedScene" id=4]
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 550, 20, 92.9607, -69.0018, -92.9607, 69.0018, 290, 70, 0, 0, 0, 0, 170, 240 )
+}
+
+[node name="Attack3" type="Node2D"]
+position = Vector2( -1, -1 )
+script = ExtResource( 3 )
+
+[node name="Carousel" parent="." instance=ExtResource( 1 )]
+position = Vector2( 500, 310 )
+scale = Vector2( 1.28, 1.28 )
+z_index = 1
+
+[node name="BorderField" type="ColorRect" parent="."]
+margin_left = 340.0
+margin_top = 170.0
+margin_right = 660.0
+margin_bottom = 454.0
+
+[node name="Field" type="ColorRect" parent="BorderField"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 313.0
+margin_bottom = 277.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="Area2D" type="Area2D" parent="BorderField"]
+
+[node name="Heart" parent="." instance=ExtResource( 2 )]
+position = Vector2( 580, 272 )
+
+[node name="Spamton" parent="." instance=ExtResource( 4 )]
+position = Vector2( 684, 421 )
+
+[node name="Path2D" type="Path2D" parent="."]
+position = Vector2( 60, 70 )
+curve = SubResource( 1 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2( 550, 20 )
+rotation = -3.04393
+
+[node name="DollarSpawnTimer" type="Timer" parent="."]
+wait_time = 1.5
+autostart = true
+
+[connection signal="timeout" from="DollarSpawnTimer" to="." method="_on_DollarSpawnTimer_timeout"]

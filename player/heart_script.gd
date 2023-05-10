@@ -7,7 +7,7 @@ export var speed : float = 200.0
 
 
 func _ready():
-	pass
+	add_to_group("heart")
 
 func _process(delta):
 	var direction = Vector2.ZERO
@@ -41,15 +41,19 @@ func take_damage():
 	yield(get_tree().create_timer(1), "timeout")
 	$CollisionShape2D.set_deferred("disabled", false)
 
-func _on_TP_area_exited(_area):
-	print('TP EXITED!')
-	$AnimationPlayer.play("exit")
+func _on_TP_area_exited(area):
+	#print('TP EXITED!')
+	if area.is_in_group("bullets"):
+		$AnimationPlayer.play("exit")
 
-func _on_TP_area_entered(_area):
-	print('TP ENTERED!')
-	emit_signal("tp_increased")
-	$AnimationPlayer.play("enter")
+func _on_TP_area_entered(area):
+	#print('TP ENTERED!')
+	# обрастаю ифами, надо подумать, как реагировать без них
+	if area.is_in_group("bullets"):
+		emit_signal("tp_increased")
+		$AnimationPlayer.play("enter")
 
 func _on_Heart_area_entered(area):
-	print('ENTERED!')
-	take_damage()
+	#print('ENTERED!')
+	if area.is_in_group("bullets"):
+		take_damage()

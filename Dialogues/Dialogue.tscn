@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Dialogues/dialogue_box.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Images/Dialogue/dialogue_win.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Images/Dialogue/Spamton_Happy.png" type="Texture" id=3]
 [ext_resource path="res://Assets/fonts/menu/VT323-Regular.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://Assets/Images/Dialogue/Jevil_Happy.png" type="Texture" id=5]
+[ext_resource path="res://Dialogues/soundtrack.gd" type="Script" id=6]
 
 [sub_resource type="DynamicFont" id=1]
 size = 50
@@ -54,6 +55,7 @@ custom_fonts/mono_font = SubResource( 1 )
 bbcode_enabled = true
 
 [node name="Voice" type="AudioStreamPlayer" parent="Texture/DialogueBox"]
+bus = "Voices"
 
 [node name="ReplyPortrait" type="Sprite" parent="Texture/DialogueBox"]
 position = Vector2( 646.269, 148.133 )
@@ -69,3 +71,9 @@ custom_fonts/mono_font = SubResource( 2 )
 bbcode_enabled = true
 
 [node name="ExtraSound" type="AudioStreamPlayer" parent="Texture/DialogueBox"]
+
+[node name="Soundtrack" type="AudioStreamPlayer" parent="."]
+bus = "Soundtrack"
+script = ExtResource( 6 )
+
+[connection signal="soundtrack_required" from="Texture/DialogueBox" to="Soundtrack" method="_on_soundtrack_required"]

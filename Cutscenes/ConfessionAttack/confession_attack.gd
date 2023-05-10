@@ -10,6 +10,7 @@ func _ready():
 	Jevil.play("sad")
 	yield(get_tree().create_timer(1.0), "timeout")
 	Spamton.play("hug")
+	yield(Spamton, "animation_finished")
 	Jevil.play("Hug")
 
 

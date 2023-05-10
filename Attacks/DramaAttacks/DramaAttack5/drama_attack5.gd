@@ -8,16 +8,18 @@ onready var Graphic = preload("res://Attacks/DramaAttacks/DramaAttack5/Graphics/
 var heart_position = Vector2.ZERO
 
 var rng = RandomNumberGenerator.new()
+signal attack_ended
 
 
 func _ready():
-	pass
+	get_tree().create_timer(4.0)
+	emit_signal("attack_ended")
+
 
 func _on_GraphicAttackTimer_timeout():
 	var graphic = Graphic.instance()
 	graphic.heart_position = $Heart.position
 
-	# заменить 0.5 на сердечко
 	upperPointSpawn.unit_offset = rng.randf_range(0.0, 0.5)
 	lowerPointSpawn.unit_offset = rng.randf_range(0.5, 1.0)
 

@@ -1,0 +1,81 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://player/heart.tscn" type="PackedScene" id=1]
+[ext_resource path="res://team_stats/Spamton/Spamton.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Attacks/Phase2/CashAttack/cash_attack.gd" type="Script" id=3]
+
+[sub_resource type="Animation" id=1]
+resource_name = "attack"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Spamton:global_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1.5, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 482, 161 ), Vector2( 384, 161 ), Vector2( 595, 161 ), Vector2( 482, 161 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "jump_on_area"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/path = NodePath("Spamton:global_position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 782, 428 ), Vector2( 627, 92 ), Vector2( 482, 161 ) ]
+}
+
+[node name="CashAttack" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="BorderField" type="ColorRect" parent="."]
+margin_left = 378.0
+margin_top = 227.0
+margin_right = 777.0
+margin_bottom = 585.0
+rect_scale = Vector2( 0.640467, 0.642173 )
+
+[node name="Field" type="ColorRect" parent="BorderField"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 388.0
+margin_bottom = 348.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="Area2D" type="Area2D" parent="BorderField"]
+
+[node name="Heart" parent="." instance=ExtResource( 1 )]
+position = Vector2( 507, 403 )
+
+[node name="Spamton" parent="." instance=ExtResource( 2 )]
+position = Vector2( 782, 428 )
+scale = Vector2( 0.473084, 0.473084 )
+
+[node name="DollarSpawn" type="Node2D" parent="Spamton"]
+position = Vector2( 44.3896, 50.7309 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/attack = SubResource( 1 )
+anims/jump_on_area = SubResource( 2 )
+
+[node name="DollarTimer" type="Timer" parent="."]
+wait_time = 0.8
+
+[node name="AttackTimer" type="Timer" parent="."]
+wait_time = 8.0
+one_shot = true
+
+[connection signal="timeout" from="DollarTimer" to="." method="_on_DollarTimer_timeout"]
+[connection signal="timeout" from="AttackTimer" to="." method="_on_AttackTimer_timeout"]

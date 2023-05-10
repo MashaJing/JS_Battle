@@ -4,7 +4,9 @@
         "image": "res://Assets/Images/Dialogue/Spamton_Happy.png",
         "speaker": "Spamton",
         "speed": 1,
-        "main": false
+        "main": false,
+        "music": "dialtone.ogg"
+
     },
     {
         "text": "And you brought your [friend]s! So [BIG SHOT] of you, Kris",
@@ -40,6 +42,7 @@
     {
         "text": "Actually, I’ve evened the odds",
         "image": "res://Assets/Images/Dialogue/ralsei_thinking.png",
+        "music": null,
         "speaker": "Ralsei",
         "speed": 1,
         "main": false
@@ -50,6 +53,7 @@
         "speaker": "Jevil",
         "speed": 1,
         "main": false,
+        "music": "mad_circus.mp3",
         "animation": [{
             "offset": 0,
             "action": "teleport",
@@ -79,17 +83,22 @@
                 "actor": "Susie"
             },
             {
-            "offset": 0,
-            "action": "angry_shaking",
-            "actor": "Spamton"
-        }]
+                "offset": 0,
+                "action": "default",
+                "actor": "Spamton"
+            }]
     },
     {
         "text": "Kr-Kris! What does this mean?",
         "image": "res://Assets/Images/Dialogue/Spamton_Pathetic.png",
         "speaker": "Spamton",
         "speed": 1,
-        "main": false
+        "main": false,
+        "animation": [{
+            "offset": 0,
+            "action": "angry_shaking",
+            "actor": "Spamton"
+        }]
     },
     {
         "text": "It means that today we perform in tandem, Pinocchio",

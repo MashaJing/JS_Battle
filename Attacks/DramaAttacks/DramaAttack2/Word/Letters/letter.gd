@@ -28,8 +28,3 @@ func get_letter():
 
 func set_letter(letter):
 	$RichTextLabel.append_bbcode("[code]"+ letter + "[/code]")
-	# текстура = буква	
-	#var letter_png = letter
-
-	# letter -> letter_png
-	#sprite.texture = letter_png

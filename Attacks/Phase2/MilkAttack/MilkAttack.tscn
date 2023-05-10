@@ -1,0 +1,119 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://player/heart.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Attacks/Phase2/MilkAttack/assets/Krishka.png" type="Texture" id=2]
+[ext_resource path="res://Attacks/Phase2/MilkAttack/assets/MilkBag.png" type="Texture" id=3]
+[ext_resource path="res://Attacks/Phase2/MilkAttack/milk_attack.gd" type="Script" id=4]
+[ext_resource path="res://Attacks/Phase2/MilkAttack/MilkLevel/MilkLevel.tscn" type="PackedScene" id=5]
+[ext_resource path="res://team_stats/Jevil/assets/sounds/slap.mp3" type="AudioStream" id=6]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 70.4165, 155.721 )
+
+[sub_resource type="Animation" id=1]
+resource_name = "milk_falls"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Bottle:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 110.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Bottle/Cover:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.4, 0.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, -40 ), Vector2( 50, -40 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Bottle/Cover:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.4, 0.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 180.0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Bottle/Cover:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.6, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[node name="MilkAttack" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="BorderField" type="ColorRect" parent="."]
+margin_left = 378.0
+margin_top = 227.0
+margin_right = 777.0
+margin_bottom = 585.0
+rect_scale = Vector2( 0.640467, 0.642173 )
+
+[node name="Field" type="ColorRect" parent="BorderField"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 388.0
+margin_bottom = 348.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="Area2D" type="Area2D" parent="BorderField"]
+scale = Vector2( 1, 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BorderField/Area2D"]
+position = Vector2( 213.906, 175.965 )
+scale = Vector2( 2.99339, 1.05436 )
+shape = SubResource( 2 )
+
+[node name="Heart" parent="." instance=ExtResource( 1 )]
+position = Vector2( 507, 403 )
+
+[node name="SlapSound" type="AudioStreamPlayer2D" parent="Heart"]
+position = Vector2( -507, -403 )
+stream = ExtResource( 6 )
+volume_db = 24.0
+
+[node name="Bottle" type="Sprite" parent="."]
+position = Vector2( 350, 150 )
+z_index = -1
+texture = ExtResource( 3 )
+
+[node name="Cover" type="Sprite" parent="Bottle"]
+position = Vector2( 0, -40 )
+scale = Vector2( 0.65625, 0.8125 )
+texture = ExtResource( 2 )
+
+[node name="DripSpawn" type="Node2D" parent="Bottle"]
+position = Vector2( 0, -30 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/milk_falls = SubResource( 1 )
+
+[node name="MilkLevel" parent="." groups=["bullets"] instance=ExtResource( 5 )]
+position = Vector2( 507, 457 )
+scale = Vector2( 1.56, 1 )
+
+[connection signal="area_exited" from="BorderField/Area2D" to="." method="_on_Area2D_area_exited"]
+[connection signal="health_changed" from="Heart" to="." method="_on_Heart_health_changed"]
+[connection signal="area_entered" from="MilkLevel" to="." method="_on_MilkLevel_area_entered"]

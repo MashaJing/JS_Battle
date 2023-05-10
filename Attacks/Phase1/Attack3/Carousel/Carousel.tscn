@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Attacks/Phase1/Attack3/Carousel/carousel.gd" type="Script" id=1]
+[ext_resource path="res://Attacks/Phase1/Attack3/Carousel/Horse_bullet/HorseBullet.tscn" type="PackedScene" id=2]
+
+[node name="Carousel" type="Node2D"]
+script = ExtResource( 1 )
+bullet_scene = ExtResource( 2 )
+
+[node name="HorsePos" type="Node2D" parent="."]
+position = Vector2( 0, 10 )
+
+[node name="HorsePos1" type="Node2D" parent="HorsePos"]
+position = Vector2( 0, 110 )
+
+[node name="HorsePos2" type="Node2D" parent="HorsePos"]
+position = Vector2( 0, -10 )
+
+[node name="HorsePos3" type="Node2D" parent="HorsePos"]
+position = Vector2( 0, -120 )

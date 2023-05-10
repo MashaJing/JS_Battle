@@ -1,6 +1,6 @@
 extends Node
 
-onready var Anim = $AnimatedSprite
+onready var Anim = $AnimationPlayer
 var hor_speed = 200
 # Declare member variables here. Examples:
 # var a = 2

@@ -4,6 +4,8 @@ onready var bullet_scene = preload("res://Attacks/DramaAttacks/DramaAttack1/Knif
 onready var heart = $Heart
 onready var knife_spawn_location = $KnifePath/KnifeSpawnLocation
 
+signal attack_ended
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -20,3 +22,7 @@ func _ready():
 func _process(delta):
 	pass
 
+
+func _on_Heart_health_changed():
+	emit_signal("attack_ended")
+	print('A 1 sent signal')

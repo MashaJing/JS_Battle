@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Bullets/bullet_dimond/bullet-diamond-inverse.png" type="Texture" id=1]
+[ext_resource path="res://Bullets/WhiteDimond/White_dimond.gd" type="Script" id=2]
+
+[node name="WhiteDimond" type="Area2D" groups=["bullets"]]
+script = ExtResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( -10, 0, 0, -20, 10, 0, 0, 20 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )

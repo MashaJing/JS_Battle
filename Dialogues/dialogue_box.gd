@@ -7,6 +7,7 @@ var dialogue
 var phraseNum = 0
 var finished = false
 signal action_required
+signal soundtrack_required
 
 
 var sound_files = {
@@ -112,6 +113,9 @@ func nextPhrase():
 			$ExtraSound.stream = voices[dialogue[phraseNum]["reply"]["sound"]]
 			$ExtraSound.play()
 
+	if "music" in dialogue[phraseNum].keys():
+		emit_signal("soundtrack_required", dialogue[phraseNum]['music'])
+	
 	finished = true
 	phraseNum += 1
 	return

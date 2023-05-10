@@ -1,0 +1,90 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://player/heart.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Attacks/Phase2/NoseAttack/assets/blackEyes1.png" type="Texture" id=2]
+[ext_resource path="res://Attacks/Phase2/NoseAttack/nose_attack.gd" type="Script" id=4]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "Attack",
+"speed": 5.0
+} ]
+
+[node name="NodeAttack" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="BorderField" type="ColorRect" parent="."]
+margin_left = 340.0
+margin_top = 247.0
+margin_right = 739.0
+margin_bottom = 605.0
+rect_scale = Vector2( 0.920467, 0.922919 )
+
+[node name="Field" type="ColorRect" parent="BorderField"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 388.0
+margin_bottom = 348.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="Area2D" type="Area2D" parent="BorderField"]
+
+[node name="Heart" parent="." instance=ExtResource( 1 )]
+position = Vector2( 579, 515 )
+z_index = 0
+
+[node name="EyeAttackTimer" type="Timer" parent="."]
+wait_time = 2.5
+autostart = true
+
+[node name="eyeR" type="Node2D" parent="."]
+position = Vector2( 627, 198 )
+
+[node name="eyeL" type="Node2D" parent="."]
+position = Vector2( 399, 198 )
+
+[node name="Nose" type="Area2D" parent="." groups=["bullets"]]
+
+[node name="Nose" type="AnimatedSprite" parent="Nose"]
+position = Vector2( 512, 229 )
+scale = Vector2( 0.6049, 0.6049 )
+frames = SubResource( 1 )
+animation = "Attack"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Nose"]
+position = Vector2( 461.655, 254.172 )
+scale = Vector2( 0.83908, 0.83908 )
+polygon = PoolVector2Array( 66, 225, 0, 0, 132, 0 )
+
+[node name="JevilSpawns" type="Node2D" parent="."]
+
+[node name="Spawn1" type="Node2D" parent="JevilSpawns"]
+position = Vector2( 248, 577 )
+
+[node name="Spawn2" type="Node2D" parent="JevilSpawns"]
+position = Vector2( 194, 442 )
+
+[node name="Spawn3" type="Node2D" parent="JevilSpawns"]
+position = Vector2( 248, 315 )
+scale = Vector2( -1, 1 )
+
+[node name="Spawn4" type="Node2D" parent="JevilSpawns"]
+position = Vector2( 805, 577 )
+scale = Vector2( -1, 1 )
+
+[node name="Spawn5" type="Node2D" parent="JevilSpawns"]
+position = Vector2( 864, 442 )
+scale = Vector2( -1, 1 )
+
+[node name="Spawn6" type="Node2D" parent="JevilSpawns"]
+position = Vector2( 812, 300 )
+scale = Vector2( -1, 1 )
+
+[node name="AppearTimer" type="Timer" parent="."]
+wait_time = 0.6
+autostart = true
+
+[connection signal="timeout" from="EyeAttackTimer" to="." method="_on_EyeAttackTimer_timeout"]
+[connection signal="timeout" from="AppearTimer" to="." method="_on_AppearTimer_timeout"]

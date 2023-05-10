@@ -1,0 +1,78 @@
+[
+    [{
+        "text": "pretended to be [[friendship is magic!]], pulled me into your stupid [GAME]s",
+        "speaker": "Spamton",
+        "speed": 1
+    }],
+    [{
+        "text": "but when I got [bankrupt], YOU just  [number unavailable]. Because [NUMBER ONE] clown didn’t [NEED] me anymore, [correct]?",
+        "speaker": "Spamton",
+        "speed": 1
+    },
+    {
+        "text": "What?! That is un-so, un-so!",
+        "speaker": "Jevil",
+        "speed": 1
+    },
+    {
+        "text": "SO WHY   [did you leave]?!",
+        "speaker": "Spamton",
+        "speed": 1
+    },
+    {
+        "text": "I just",
+        "speaker": "Jevil",
+        "speed": 1
+    },
+    {
+        "text": "",
+        "speaker": "Jevil",
+        "speed": 1
+    }],
+    [{
+        "text": "SO WHY   [did you leave]?!",
+        "speaker": "Spamton",
+        "speed": 1
+    },
+    {
+        "text": "",
+        "speaker": "Jevil",
+        "speed": 1
+    }],
+    [{
+        "text": "BECAUSE i wasn’t [BIG SHOT] enough for you?",
+        "speaker": "Spamton",
+        "speed": 1
+    }],
+    [{
+        "text": "Because [he] chose you",
+        "speaker": "Spamton",
+        "speed": 1
+    }],
+    [{
+        "text": "You and your [god] played your [INDIE-HORROR game] on me",
+        "speaker": "Spamton",
+        "speed": 1
+    },
+    {
+        "text": "made me [WE GOT CRAZY]",
+        "speaker": "Spamton",
+        "speed": 1
+    },
+    {
+        "text": "then threw me in a [recycle bin]",
+        "speaker": "Spamton",
+        "speed": 1
+    },
+    {
+        "text": "like a [motivational quote paper]!",
+        "speaker": "Spamton",
+        "speed": 1
+    },
+    {
+        "text": "No! The God left me too, too!",
+        "speaker": "Jevil",
+        "speed": 1,
+        "mus_stop": true
+    }]
+]

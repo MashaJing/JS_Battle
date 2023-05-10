@@ -29,7 +29,9 @@ func _on_TTL_timeout():
 func _process(delta):
 	if attack:
 		graphic_path_follow.set_offset(graphic_path_follow.get_offset() + delta * speed)
+		# + Vector2(...) - придаёт хаотичную искривлённость линии
 		pts = graphic_line.add_point(graphic_path_follow.position + Vector2(randi() % 10 - 5, randi() % 5 - 5))
+		# дошли до конца пути - стираем
 		if 0.9 <= graphic_path_follow.unit_offset:
 			clear_points()
 			queue_free()
