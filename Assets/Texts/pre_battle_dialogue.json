@@ -1,6 +1,6 @@
 [
     {
-        "text": "Kris! You came to this [gym] to exercise with your old pal Spamton?",
+        "text": "H3Y KRIS [and his friends]!IT’S a-ME! YOU  [START ATTENDING GYM at]TO EXCERC1SE WITH",
         "image": "res://Assets/Images/Dialogue/Spamton_Happy.png",
         "speaker": "Spamton",
         "speed": 1,
@@ -9,7 +9,7 @@
 
     },
     {
-        "text": "And you brought your [friend]s! So [BIG SHOT] of you, Kris",
+        "text": "YOUR OLD PAL SPAMTON? SO [BIG SHOT] OF Y0U, KRIS",
         "image": "res://Assets/Images/Dialogue/Spamton_Happy.png",
         "speaker": "Spamton",
         "speed": 1,
@@ -52,7 +52,7 @@
         "image": "res://Assets/Images/Dialogue/Jevil_Happy.png",
         "speaker": "Jevil",
         "speed": 1,
-        "main": false,
+        "main": true,
         "music": "mad_circus.mp3",
         "animation": [{
             "offset": 0,
@@ -71,7 +71,7 @@
         }]
     },
     {
-        "text": "YOU  [$@^#]!# I told you to stay away [from my area]!",
+        "text": "Y0U,     [piece of snail pie]!",
         "image": "res://Assets/Images/Dialogue/Spamton_Mad.png",
         "speaker": "Spamton",
         "speed": 1,
@@ -84,12 +84,44 @@
             },
             {
                 "offset": 0,
-                "action": "default",
+                "action": "black_glasses",
                 "actor": "Spamton"
             }]
     },
     {
-        "text": "Kr-Kris! What does this mean?",
+        "text": "WHAT ARE YOU DOING [in my area]?",
+        "image": "res://Assets/Images/Dialogue/Spamton_Mad.png",
+        "speaker": "Spamton",
+        "speed": 1,
+        "main": false,
+        "animation": [
+            {
+                "offset": 0,
+                "action": "default",
+                "actor": "Susie"
+            },
+            {
+                "offset": 0,
+                "action": "black_glasses",
+                "actor": "Spamton"
+            }]
+    },
+    {
+        "text": "No, what are YOU doing in this world?",
+        "image": "res://Assets/Images/Dialogue/Jevil_Happy.png",
+        "speaker": "Jevil",
+        "speed": 1,
+        "main": false
+    },
+    {
+        "text": "You are not allowed to come closer to schools then 30 meters, meters",
+        "image": "res://Assets/Images/Dialogue/Jevil_Happy.png",
+        "speaker": "Jevil",
+        "speed": 1,
+        "main": false
+    },
+    {
+        "text": "KR KRIS! WHAT DOES THIS [TWIST] MEAN?",
         "image": "res://Assets/Images/Dialogue/Spamton_Pathetic.png",
         "speaker": "Spamton",
         "speed": 1,
@@ -120,7 +152,7 @@
         "main": false,
         "animation": [{
             "offset": 0,
-            "action": "default",
+            "action": "black_glasses",
             "actor": "Spamton"
         }]
     },
@@ -146,6 +178,16 @@
             "offset": 0,
             "action": "default",
             "actor": "Susie"
+        },
+        {
+            "offset": 0,
+            "action": "default",
+            "actor": "Jevil"
+        },
+        {
+            "offset": 0,
+            "action": "black_glasses",
+            "actor": "Spamton"
         }]
     },
     {
@@ -160,7 +202,12 @@
         "image": "res://Assets/Images/Dialogue/Spamton_Tax.png",
         "speaker": "Spamton",
         "speed": 1,
-        "main": true
+        "main": false,
+        "animation": [{
+            "offset": 0,
+            "action": "default",
+            "actor": "Spamton"
+        }]
     },
     {
         "text": "A strawberry-shaped unicorn-flavored cake?!",
@@ -179,7 +226,7 @@
         }
     },
     {
-        "text": "An [idiot baby] wish",
+        "text": "D0N’’T CONFUSE [CHAOS, CHAOS ] and [MARASMUS, MARASMUS]",
         "image": "res://Assets/Images/Dialogue/Spamton_Pathetic.png",
         "speaker": "Spamton",
         "speed": 1,
@@ -191,7 +238,7 @@
         }]
     },
     {
-        "text": "Yours is boring, boring. Where's your fantasy, puppet boy?",
+        "text": "Your wish is predictable, predictable! Wanna lose all of your gold as always?",
         "image": "res://Assets/Images/Dialogue/Jevil_Happy.png",
         "speaker": "Jevil",
         "speed": 1,
@@ -223,7 +270,22 @@
         "image": "res://Assets/Images/Dialogue/Lancer.png",
         "speaker": "Lancer",
         "speed": 1,
-        "main": true
+        "main": true,
+        "animation": [{
+            "offset": 0,
+            "action": "default",
+            "actor": "Jevil"
+        },
+        {
+            "offset": 0,
+            "action": "default",
+            "actor": "Spamton"
+        },
+        {
+            "offset": 0,
+            "action": "default",
+            "actor": "Susie"
+        }]
     },
     {
         "text": "Clowns 2.0 on the right! Let's get this party started",

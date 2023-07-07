@@ -1,0 +1,187 @@
+[
+    [{
+        "text": "  ?!?!",
+        "speaker": "Spamton",
+        "animation": "turn_back",
+        "speed": 1
+    },
+    {
+        "text": "The God went silent after",
+        "speaker": "Jevil",
+        "animation": "Surprised",
+        "speed": 1
+    },
+    {
+        "text": "making me truly free ",
+        "speaker": "Jevil",
+        "animation": "default",
+        "speed": 1
+    },
+    {
+        "text": "[100% FREE]",
+        "speaker": "Spamton",
+        "animation": "default",
+        "speed": 1
+    },
+    {
+        "text": "of me?",
+        "speaker": "Spamton",
+        "animation": "black_glasses",
+        "speed": 1
+    },
+    {
+        "text": "No, no! You see",
+        "speaker": "Jevil",
+        "animation": "Shocked",
+        "speed": 1
+    },
+    {
+        "text": "The kings locked their kingdom around my space of freedom, so",
+        "speaker": "Jevil",
+        "animation": "Surprised",
+        "speed": 1
+    },
+    {
+        "text": "Argh! Just deal with it already!",
+        "speaker": "Susie",
+        "animation": "annoyed",
+        "speed": 1
+    },
+    {
+        "text": "...",
+        "speaker": "Jevil",
+        "animation": "Sad",
+        "speed": 1
+    },
+    {
+        "text": "I was",
+        "speaker": "Jevil",
+        "animation": "Sad",
+        "speed": 1
+    },
+    {
+        "text": "thrown to jail",
+        "speaker": "Jevil",
+        "animation": "Sad",
+        "speed": 0.5
+    },
+    {
+        "text": "by my own friend",
+        "speaker": "Jevil",
+        "animation": "Sad",
+        "speed": 1
+    },
+    {
+        "text": "He didn't understand my games for some reason",
+        "speaker": "Jevil",
+        "animation": "Sad",
+        "speed": 1
+    },
+    {
+        "text": "I've lost an eye, actually",
+        "speaker": "Seam",
+        "speed": 1
+    },
+    {
+        "text": "All this time I was",
+        "speaker": "Jevil",
+        "animation": "Sad",
+        "speed": 1
+    },
+    {
+        "text": "locked in a cage",
+        "speaker": "Jevil",
+        "animation": "Sad",
+        "speed": 1
+    },
+    {
+        "text": "and couldn't help you",
+        "speaker": "Jevil",
+        "animation": "Sad",
+        "speed": 0.5
+    },
+    {
+        "text": "!!!",
+        "speaker": "Spamton",
+        "animation": "hit",
+        "speed": 1
+    },
+    {
+        "text": "IS THAT [value=True]?",
+        "speaker": "Spamton",
+        "speed": 1
+    },
+    {
+        "text": "oh, boy",
+        "speaker": "Spamton",
+        "animation": "turn_back",
+        "speed": 1
+    }],
+
+    [{
+        "text": "[Hocci mama], Jev! Could you just tell me?!",
+        "speaker": "Spamton",
+        "animation": "step_away",
+        "speed": 1
+    },
+    {
+        "text": "  I’m sorry, sorry! I couldn’t, couldn’t do anything!",
+        "speaker": "Jevil",
+        "animation": "Sad",
+        "speed": 1
+    },
+    {
+        "text": "...",
+        "speaker": "Spamton",
+        "animation": "default",
+        "speed": 1
+    },
+    {
+        "text": "it's ok",
+        "speaker": "Spamton",
+        "animation": "default",
+        "speed": 1
+    },
+    {
+        "text": "Do I deserve a second chance, chance?",
+        "speaker": "Jevil",
+        "animation": "Sad",
+        "speed": 1
+    },
+    {
+        "text": "I won’t hate you just because one man went mad",
+        "speaker": "Spamton",
+        "animation": "heal",
+        "speed": 1
+    },
+    {
+        "text": "Hey, Jev?",
+        "speaker": "Spamton",
+        "animation": "default",
+        "speed": 1
+    },
+    {
+        "text": "Shall we play?",
+        "speaker": "Spamton",
+        "animation": "take_hand",
+        "speed": 1
+    },
+    {
+        "text": "With pleasure, pleasure!",
+        "speaker": "Jevil",
+        "animation": "default",
+        "speed": 1
+    },
+    {
+        "text": "Destroy the green one first, he heals",
+        "speaker": "Spamton",
+        "animation": "get_closer",
+        "speed": 1
+    },
+    {
+        "text": "Excuse me, wha",
+        "speaker": "Ralsei",
+        "speed": 1
+    }
+    ]
+]

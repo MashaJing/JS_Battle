@@ -92,9 +92,9 @@ tracks/6/keys = {
 "values": [ -1, -1, -1, -1, -1, -1, -1 ]
 }
 
-[node name="HorseBullet" type="Area2D"]
-position = Vector2( 0, -50 )
-scale = Vector2( 1.534, 1.534 )
+[node name="HorseBullet" type="Area2D" groups=["bullets"]]
+position = Vector2( 220, -100 )
+scale = Vector2( -0.041, 1.534 )
 script = ExtResource( 2 )
 
 [node name="Horse" type="Sprite" parent="."]

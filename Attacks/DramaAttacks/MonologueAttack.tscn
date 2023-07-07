@@ -8,7 +8,13 @@
 script = ExtResource( 3 )
 
 [node name="Jevil" parent="." instance=ExtResource( 2 )]
+visible = false
 position = Vector2( 920, 140 )
 
 [node name="Spamton" parent="." instance=ExtResource( 1 )]
-position = Vector2( 740, 330 )
+visible = false
+position = Vector2( 930, 330 )
+
+[node name="CurrentAttack" type="Node2D" parent="."]
+
+[node name="Tween" type="Tween" parent="."]

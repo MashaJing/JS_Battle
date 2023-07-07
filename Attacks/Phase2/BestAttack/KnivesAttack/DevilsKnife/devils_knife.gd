@@ -3,7 +3,8 @@ extends Area2D
 var time = 0
 var speed = 0
 var flipped = false
-var rotation_speed = -.3
+#var rotation_speed = -.1 где-то может ожидаться вращение
+var rotation_speed = 0
 export var direction = Vector2.LEFT
 onready var sprite = $Sprite
 onready var texture = $Sprite.texture
@@ -20,8 +21,7 @@ func _ready():
 
 
 func _process(delta):
-	time += delta
-	rotate(rotation_speed*time)
+	rotate(rotation_speed)
 
 
 # todo: вынести в отдельный скрипт для спрайта

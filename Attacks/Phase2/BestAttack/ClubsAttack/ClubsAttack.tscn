@@ -32,26 +32,8 @@ position = Vector2( 0, 150 )
 script = ExtResource( 2 )
 
 [node name="ChangeRowTimer" type="Timer" parent="."]
+wait_time = 0.8
 autostart = true
-
-[node name="Line2D" type="Line2D" parent="."]
-visible = false
-position = Vector2( 340, 170 )
-points = PoolVector2Array( 0, 180, 0, 0, 190, 0, 190, 180 )
-default_color = Color( 1, 1, 1, 1 )
-
-[node name="Field" type="ColorRect" parent="Line2D"]
-margin_right = 190.0
-margin_bottom = 180.0
-color = Color( 0, 0, 0, 1 )
-
-[node name="Area2D" type="Area2D" parent="Line2D/Field"]
-position = Vector2( -10, -10 )
-
-[node name="Line2D" type="Line2D" parent="Line2D"]
-z_index = -1
-points = PoolVector2Array( -5, 180, 195, 180 )
-default_color = Color( 1, 1, 1, 1 )
 
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_SpawnTimer_timeout"]
 [connection signal="timeout" from="AttackTimer" to="." method="_on_AttackTimer_timeout"]

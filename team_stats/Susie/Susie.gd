@@ -1,28 +1,26 @@
-extends Node
+extends Node2D
 
-var SUSIE_MAX_HP = 140
+var MAX_HP = 140
 var HP = 140
-signal SusieDown
+
+var dialogue_window = preload("res://Dialogues/ArrowDialogues/ArrowDialogues.tscn")
+signal stopped_talk
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	print('Susie ready')	
-	$AnimatedSprite.play("intro")
+func speak(replica, speed=0.01, pause=0):
+	var dialogue = dialogue_window.instance()
+	dialogue.flipped = true
+	add_child(dialogue)
+	#call_deferred("add_child", dialogue)
+	$SpeakSound.play()
+	# надо как-то дождаться тут анимации законченного текста
+	# (мб стоит пробрасывать туда speaksound, если это возможно,
+	# и его воспроизводить в самом диалоге)
+	$Dialogue.display(replica, speed, pause)
+	yield($Dialogue, "replica_printed")
+	$SpeakSound.stop()
+	# стоит вытащить на уровень выше?
+	yield(dialogue, "next_line")
+	remove_child(dialogue)
+	emit_signal("stopped_talk")
 
-func take_damage(damage):
-	var new_HP = HP - damage
-	print('Susie hp ', new_HP)
-	$AnimatedSprite.play("damage")
-	if HP > 0 and new_HP < 0:
-		$AnimatedSprite.play("down")
-		emit_signal("KrisDown")
-	HP = new_HP
-
-func _on_AnimatedSprite_animation_finished():
-	pass
-	#$AnimatedSprite.play("default")
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass

@@ -37,7 +37,7 @@ func _on_SpawnAllTimer_timeout():
 
 func _on_AttackTimer_timeout():
 	BulletSucker.deactivate()
-	AttackMovePlayer.stop()	
+	AttackMovePlayer.stop()
 	SpamtonAnimPlayer.play("fall")
 	Jevil.facepalm()
 	for bullet in get_tree().get_nodes_in_group("bullets"):

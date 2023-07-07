@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array( -76.156, 11.1211, 76.156, -11.1211, 0, -240, 1.42943, -181.538, -1.42943, 181.538, 240, 0, 75.8892, 1.42943, -75.8892, -1.42943, 0, 240, 3.82328, 194.437, -3.82328, -194.437, -240, 0, -65.4525, -4.09019, 65.4525, 4.09019, 0, -240 )
+}
+
+[node name="FerrisWheel" type="Path2D"]
+position = Vector2( 500, 300 )
+scale = Vector2( 0.854167, 0.854167 )
+curve = SubResource( 1 )

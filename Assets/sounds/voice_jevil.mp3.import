@@ -12,4 +12,4 @@ dest_files=[ "res://.import/voice_jevil.mp3-794570dc5e2300c6281504c278f4ba13.mp3
 [params]
 
 loop=true
-loop_offset=0.03
+loop_offset=0.025

@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=2]
+[gd_scene load_steps=64 format=2]
 
 [ext_resource path="res://team_stats/Susie/assets/defence/image2x1.png" type="Texture" id=1]
 [ext_resource path="res://team_stats/Susie/assets/attack/image1x1.png" type="Texture" id=2]
@@ -56,6 +56,8 @@
 [ext_resource path="res://Assets/Images/Susie/laugh/image1x1.png" type="Texture" id=54]
 [ext_resource path="res://Assets/Images/Susie/laugh/image2x1.png" type="Texture" id=55]
 [ext_resource path="res://Assets/Images/Susie/output-onlinepngtools.png" type="Texture" id=56]
+[ext_resource path="res://team_stats/Susie/assets/annoyed/1.png" type="Texture" id=57]
+[ext_resource path="res://Assets/sounds/voice_susie.mp3" type="AudioStream" id=58]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -63,6 +65,11 @@ animations = [ {
 "loop": false,
 "name": "act",
 "speed": 10.0
+}, {
+"frames": [ ExtResource( 57 ) ],
+"loop": true,
+"name": "annoyed",
+"speed": 5.0
 }, {
 "frames": [ ExtResource( 2 ), ExtResource( 46 ), ExtResource( 47 ), ExtResource( 10 ), ExtResource( 24 ), ExtResource( 5 ) ],
 "loop": false,
@@ -114,6 +121,34 @@ animations = [ {
 "name": "spare",
 "speed": 10.0
 } ]
+
+[sub_resource type="Animation" id=5]
+resource_name = "annoyed"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ "annoyed", "default" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AnimatedSprite:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
 
 [sub_resource type="Animation" id=4]
 resource_name = "default"
@@ -201,13 +236,18 @@ tracks/1/keys = {
 script = ExtResource( 8 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( -30, 30 )
 frames = SubResource( 1 )
-animation = "shocked"
+animation = "annoyed"
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/annoyed = SubResource( 5 )
 anims/default = SubResource( 4 )
 anims/laugh = SubResource( 2 )
 anims/shocked = SubResource( 3 )
+
+[node name="SpeakSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 58 )
 
 [connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]

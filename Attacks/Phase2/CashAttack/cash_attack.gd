@@ -2,9 +2,16 @@ extends Node2D
 onready var Spamton = $Spamton/AnimatedSprite
 onready var CashTimer = $DollarTimer
 onready var CashBullet = preload("res://Bullets/Cash/Cash.tscn")
+onready var Border = preload("res://Border/Border.tscn")
 
+
+func init_border():
+	var border = Border.instance()
+	border.global_position = $KinematicHeart.global_position
+	add_child(border)
 
 func _ready():
+	init_border()
 	yield(get_tree().create_timer(1.0), "timeout")
 	spamton_jumps()
 	yield($AnimationPlayer, "animation_finished")

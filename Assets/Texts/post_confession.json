@@ -1,0 +1,67 @@
+[
+    [{
+        "text": "[Hocci mama], Jev! Could you just tell me?!",
+        "speaker": "Spamton",
+        "animation": "default",
+        "speed": 1
+    },
+    {
+        "text": "  I’m sorry, sorry! I couldn’t, couldn’t do anything!",
+        "speaker": "Jevil",
+        "animation": "Sad",
+        "speed": 1
+    },
+    {
+        "text": "...",
+        "speaker": "Spamton",
+        "animation": "default",
+        "speed": 1
+    },
+    {
+        "text": "it's ok",
+        "speaker": "Spamton",
+        "animation": "default",
+        "speed": 1
+    },
+    {
+        "text": "Do I deserve a second chance, chance?",
+        "speaker": "Jevil",
+        "animation": "Sad",
+        "speed": 1
+    },
+    {
+        "text": "I won’t hate you just because one man went mad",
+        "speaker": "Spamton",
+        "animation": "heal",
+        "speed": 1
+    },
+    {
+        "text": "Hey, Jev?",
+        "speaker": "Spamton",
+        "animation": "default",
+        "speed": 1
+    },
+    {
+        "text": "Shall we play?",
+        "speaker": "Spamton",
+        "animation": "take_hand",
+        "speed": 1
+    },
+    {
+        "text": "With pleasure, pleasure!",
+        "speaker": "Jevil",
+        "animation": "default",
+        "speed": 1
+    },
+    {
+        "text": "Destroy the green one first, he heals",
+        "speaker": "Spamton",
+        "animation": "get_closer",
+        "speed": 1
+    },
+    {
+        "text": "Excuse me, wha",
+        "speaker": "Ralsei",
+        "speed": 1
+    }
+    ]]

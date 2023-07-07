@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/frying_pipis.mp3-a8471d84e0a3d7fb164e26e3f7f22fc4.mp3str"
+
+[deps]
+
+source_file="res://Attacks/Phase2/FriedPipisAttack/Assets/frying_pipis.mp3"
+dest_files=[ "res://.import/frying_pipis.mp3-a8471d84e0a3d7fb164e26e3f7f22fc4.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

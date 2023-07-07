@@ -5,7 +5,7 @@
 [ext_resource path="res://Bullets/bullet_dimond/Dimond.tscn" type="PackedScene" id=3]
 [ext_resource path="res://team_stats/Spamton/Spamton.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Attacks/DullAttacks/DullSpamton/bullet_sucker.gd" type="Script" id=5]
-[ext_resource path="res://player/heart.tscn" type="PackedScene" id=6]
+[ext_resource path="res://player/HeartArea/heart.tscn" type="PackedScene" id=6]
 [ext_resource path="res://team_stats/Jevil/Jevil.tscn" type="PackedScene" id=7]
 
 [sub_resource type="Curve2D" id=3]

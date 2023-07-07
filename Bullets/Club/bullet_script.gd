@@ -11,11 +11,15 @@ onready var start_position = position
 onready var previous_position = start_position
 
 
+
 func _process(delta):
-	time += delta
-	position = direction * speed * time
-	#angle = wrapf(angle + angle_increase_speed * delta, 0.0, 2 * PI)
+	rotate(.05)
+	#time+=delta
 	pass
+	#$AnimationPlayer.play("appear")
+	#time += delta
+	#position = direction * speed * time
+	#angle = wrapf(angle + angle_increase_speed * delta, 0.0, 2 * PI)
 	#var direction = Vector2(cos(angle), sin(2*angle))
 	
 	#previous_position = position

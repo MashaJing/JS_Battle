@@ -1,42 +1,39 @@
-extends Node
+extends Node2D
 
 var MAX_HP = 120
 var HP = 120
-signal KrisDown
-signal KrisUp
 
+
+# вынести всё в общий узел AnimationController?
 
 func _ready():
-	print('Kris ready')
+	$AnimatedSprite.play("default")
+	$PlayerStats.connect("Down", self, "_on_Down")
+	$PlayerStats.connect("Up", self, "_on_Up")
+	$PlayerStats.connect("Healed", self, "_on_Healed")
+	$PlayerStats.connect("TookDamage", self, "_on_Took_Damage")
 
-func take_damage(damage):
-	var new_HP = HP - damage
-	print('Kris hp ', new_HP)
+func _on_Took_Damage():
 	$AnimatedSprite.play("damage")
-	if HP > 0 and new_HP < 0:
-		$AnimatedSprite.play("down")
-		emit_signal("KrisDown")
-	HP = new_HP
+	yield($AnimatedSprite, "animation_finished")
 
-func _on_AnimatedSprite_animation_finished():
+# но если полечили, но не подняли, должно быть Down -_-
+# есть ли способ задать дефолтную анимацию?
+# (при смерти она down, иначе - т.н. idle)
+
+# решение: для анимаций м.б. реализована машина состояний. Состояния 2: Down, Up
+
 	$AnimatedSprite.play("default")
 
-# Обработка сигнала "take_damage":
-#
-# new_hp = HP - damage
-# Если HP > 0 && new_hp < 0:
-# - пускаем сигнал KrisDown
-# - Спрайт KrisDown
-# - больше не принимаем сигнал take_damage - Крис исключён из списка целей атак
-# HP = new_hp
+func _on_Healed():
+	$AnimatedSprite.play("heal")
+	yield($AnimatedSprite, "animation_finished")
+	$AnimatedSprite.play("default")
 
-# Обработка сигнала "healed":
-#
-# Если HP < 0 && new_hp > 0:
-# - пускаем сигнал KrisUp
-# - Спрайт KrisDefault
-# HP = new_hp
+func _on_Down():
+	print("playing down!")
+	$AnimatedSprite.play("down")
 
+func _on_Up():
+	$AnimatedSprite.play("default")
 
-#func _process(delta):
-#	pass

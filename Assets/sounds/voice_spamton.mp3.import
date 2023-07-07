@@ -12,4 +12,4 @@ dest_files=[ "res://.import/voice_spamton.mp3-fad42a58d42fb2ba7cb5be41af67793c.m
 [params]
 
 loop=true
-loop_offset=0
+loop_offset=0.025

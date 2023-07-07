@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/crackle.mp3-e58a1eceb488c666860eab16c01aeee1.mp3str"
+
+[deps]
+
+source_file="res://player/HeartArea/crackle.mp3"
+dest_files=[ "res://.import/crackle.mp3-e58a1eceb488c666860eab16c01aeee1.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

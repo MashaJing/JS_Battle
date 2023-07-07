@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://player/heart.tscn" type="PackedScene" id=1]
+[ext_resource path="res://player/KinematicHeart.tscn" type="PackedScene" id=1]
 [ext_resource path="res://team_stats/Spamton/Spamton.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Attacks/Phase2/CashAttack/cash_attack.gd" type="Script" id=3]
 
@@ -40,25 +40,6 @@ tracks/0/keys = {
 [node name="CashAttack" type="Node2D"]
 script = ExtResource( 3 )
 
-[node name="BorderField" type="ColorRect" parent="."]
-margin_left = 378.0
-margin_top = 227.0
-margin_right = 777.0
-margin_bottom = 585.0
-rect_scale = Vector2( 0.640467, 0.642173 )
-
-[node name="Field" type="ColorRect" parent="BorderField"]
-margin_left = 10.0
-margin_top = 10.0
-margin_right = 388.0
-margin_bottom = 348.0
-color = Color( 0, 0, 0, 1 )
-
-[node name="Area2D" type="Area2D" parent="BorderField"]
-
-[node name="Heart" parent="." instance=ExtResource( 1 )]
-position = Vector2( 507, 403 )
-
 [node name="Spamton" parent="." instance=ExtResource( 2 )]
 position = Vector2( 782, 428 )
 scale = Vector2( 0.473084, 0.473084 )
@@ -76,6 +57,9 @@ wait_time = 0.8
 [node name="AttackTimer" type="Timer" parent="."]
 wait_time = 8.0
 one_shot = true
+
+[node name="KinematicHeart" parent="." instance=ExtResource( 1 )]
+position = Vector2( 499, 342 )
 
 [connection signal="timeout" from="DollarTimer" to="." method="_on_DollarTimer_timeout"]
 [connection signal="timeout" from="AttackTimer" to="." method="_on_AttackTimer_timeout"]

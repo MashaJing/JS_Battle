@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://player/KinematicHeart.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Attacks/UltimateAttack/BadAnimation/BadAnimation.tscn" type="PackedScene" id=2]
+[ext_resource path="res://player/HeartArea/1.png" type="Texture" id=3]
+
+[sub_resource type="Curve" id=1]
+_data = [ Vector2( 0.0506329, 0.918182 ), 0.0, 0.0, 0, 0, Vector2( 0.977848, 0.618182 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="Gradient" id=2]
+interpolation_mode = 2
+colors = PoolColorArray( 1, 1, 1, 0.6, 1, 1, 1, 0 )
+
+[node name="UltimateAttack" type="Node2D"]
+
+[node name="BadAnimation" parent="." instance=ExtResource( 2 )]
+visible = false
+
+[node name="Screen" type="StaticBody2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="Screen"]
+margin_right = 1030.0
+margin_bottom = 600.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Screen"]
+build_mode = 1
+polygon = PoolVector2Array( 1020, 10, 1020, 590, 10, 590, 10, 10 )
+
+[node name="KinematicHeart" parent="." instance=ExtResource( 1 )]
+position = Vector2( 680, 240 )
+speed = 500.0
+
+[node name="Trail" type="CPUParticles2D" parent="KinematicHeart"]
+show_behind_parent = true
+speed_scale = 4.0
+local_coords = false
+texture = ExtResource( 3 )
+gravity = Vector2( 0, 0 )
+scale_amount_curve = SubResource( 1 )
+color_ramp = SubResource( 2 )

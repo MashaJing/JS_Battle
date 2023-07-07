@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Attacks/DullAttacks/DullJevil/dull_jevil.gd" type="Script" id=1]
-[ext_resource path="res://player/heart.tscn" type="PackedScene" id=2]
+[ext_resource path="res://player/HeartArea/heart.tscn" type="PackedScene" id=2]
 [ext_resource path="res://team_stats/Spamton/Spamton.tscn" type="PackedScene" id=4]
 
 [sub_resource type="Curve2D" id=1]

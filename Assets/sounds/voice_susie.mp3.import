@@ -11,5 +11,5 @@ dest_files=[ "res://.import/voice_susie.mp3-12fac8af6abc1cef606f2445ce727855.mp3
 
 [params]
 
-loop=false
-loop_offset=0
+loop=true
+loop_offset=0.065

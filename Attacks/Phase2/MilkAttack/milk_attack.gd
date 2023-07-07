@@ -12,16 +12,22 @@ func _ready():
 	yield($AnimationPlayer, "animation_finished")
 	while $MilkLevel.scale.y < MILK_HEGHT:
 		var bullet = Drip.instance()
+		var bullet2 = Drip.instance()
 		bullet.global_position = $Bottle/DripSpawn.global_position
+		bullet2.global_position = $Bottle2/DripSpawn.global_position
 		add_child(bullet)
+		add_child(bullet2)
+		bullet2.direction = Vector2.LEFT
+		bullet2.get_node("Sprite").flip_h = true
 		bullet.add_to_group("bullets")
-		yield(get_tree().create_timer(0.15), "timeout")
+		bullet2.add_to_group("bullets")
+		yield(get_tree().create_timer(0.2), "timeout")
 
 
 func _on_MilkLevel_area_entered(area):
 	if area.is_in_group("bullets"):
 		area.queue_free()
-		$MilkLevel.scale.y += MILK_HEGHT/DRIP_AMOUNT
+		$MilkLevel.scale.y += 0.2
 
 
 # вынести область с сердечком в отдельную сцену
@@ -30,8 +36,8 @@ func _on_Area2D_area_exited(area):
 		area.queue_free()
 
 
-func _on_Heart_health_changed():
-	# звучит слишком жестко, нужен более подходящий звук
-	$Heart/SlapSound.play()
-	emit_signal("attack_ended")
-	print("attack_ended")
+#func _on_Heart_health_changed():
+#	# звучит слишком жестко, нужен более подходящий звук
+#	$Heart/SlapSound.play()
+#	emit_signal("attack_ended")
+#	print("attack_ended")

@@ -4,17 +4,36 @@ onready var cards = [
 	"jevil_queen",
 	"spam_tuz",
 ]
-onready var attack = "res://Attacks/Attack2/Attack2.tscn"
+
+# нужно подумать над смыслом исхода игры - проиграл - и почему такая атака?
+onready var spam_attack = "res://Attacks/Phase1/Attack2/Attack2.tscn"
+onready var jevil_attack1 = "res://Attacks/Phase2/FerrisWheelAttack/FerrisWheelAttack.tscn"
+onready var jevil_attack2 = "res://Attacks/Phase2/CashAttack/CashAttack.tscn"
+onready var jevil_attack3 = "res://Attacks/Phase1/Attack3/Attack3.tscn"
 onready var BulletCard = preload("res://Attacks/Phase2/CardPlay/Party/cards/card.tscn")
 onready var CardSpawn = $CardSpawn/CardSpawnLocation
+onready var Border = preload('res://Border/Border.tscn')
+onready var PartyWinner = {
+	"Spamton": [spam_attack],
+	"Jevil": [jevil_attack1, jevil_attack2, jevil_attack3],
+}
 
 
-# Called when the node enters the scene tree for the first time.
+func init_border():
+	var border = Border.instance()
+	border.global_position = $KinematicHeart.global_position
+	add_child(border)
+
 func _ready():
+	var winner = "Spamton"
+	init_border()
 	for card in cards:
 		make_turn(card)
 		yield($TurnTimer, "timeout")
-	get_tree().change_scene(attack)
+		
+	print(randi() % len(PartyWinner[winner]))
+	print(randi() % len(PartyWinner[winner]))
+	get_tree().change_scene(PartyWinner[winner][randi() % len(PartyWinner[winner])])
 
 func make_turn(card_name):
 	# выбрать рандомную точку, откуда полетит карта

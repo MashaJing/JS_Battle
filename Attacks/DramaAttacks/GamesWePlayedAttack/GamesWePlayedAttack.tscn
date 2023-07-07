@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://player/KinematicHeart.tscn" type="PackedScene" id=1]
+[ext_resource path="res://team_stats/Spamton/Spamton.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Attacks/DramaAttacks/GamesWePlayedAttack/dr_attack2.gd" type="Script" id=3]
+
+[sub_resource type="Animation" id=1]
+resource_name = "spawn_wave"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 840, 400 ), Vector2( 840, 170 ), Vector2( 840, 400 ) ]
+}
+
+[node name="DramaAttack2" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 520, 300 )
+
+[node name="WordSpawn" type="Node2D" parent="."]
+position = Vector2( 840, 400 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="WordSpawn"]
+anims/spawn_wave = SubResource( 1 )
+
+[node name="Spamton" parent="WordSpawn" instance=ExtResource( 2 )]
+
+[node name="WordSpawnTimer" type="Timer" parent="."]
+wait_time = 0.7
+autostart = true
+
+[node name="KinematicHeart" parent="." instance=ExtResource( 1 )]
+position = Vector2( 545, 320 )

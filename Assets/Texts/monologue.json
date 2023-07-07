@@ -1,77 +1,111 @@
 [
-    [{
-        "text": "pretended to be [[friendship is magic!]], pulled me into your stupid [GAME]s",
+    [
+    {
+            "text": "SHOT THE  [[*&^%!]] UP [[you're a traitor]]",
+            "speaker": "Spamton",
+            "animation": "black_glasses",
+            "speed": 1
+    },
+    {
+        "text": "PRETENDED TO BE MY [[friendship is magic!]]",
         "speaker": "Spamton",
+        "animation": "black_glasses",
+        "speed": 1
+    },
+    {
+        "text": "PULLED ME INTO YOUR STUPID [online gaming]",
+        "speaker": "Spamton",
+        "animation": "black_glasses",
         "speed": 1
     }],
     [{
-        "text": "but when I got [bankrupt], YOU just  [number unavailable]. Because [NUMBER ONE] clown didn’t [NEED] me anymore, [correct]?",
+        "text": "BUT WHEN I [bankrupt], YOU JUST GOT   [number unavailable]",
         "speaker": "Spamton",
+        "animation": "black_glasses",
+        "speed": 1
+    },
+    {
+        "text": "BECAUSE [NUMBER ONE] CLOWN DID\"NT [NEED] ME [, correct]?",
+        "speaker": "Spamton",
+        "animation": "black_glasses",
         "speed": 1
     },
     {
         "text": "What?! That is un-so, un-so!",
         "speaker": "Jevil",
+        "animation": "Shocked",
         "speed": 1
     },
     {
-        "text": "SO WHY   [did you leave]?!",
+        "text": "THEN  [ why did you leave]?!",
         "speaker": "Spamton",
+        "animation": "black_glasses",
         "speed": 1
     },
     {
         "text": "I just",
         "speaker": "Jevil",
+        "animation": "Surprised",
         "speed": 1
     },
     {
-        "text": "",
+        "text": "...",
         "speaker": "Jevil",
+        "animation": "Sad",
         "speed": 1
     }],
     [{
-        "text": "SO WHY   [did you leave]?!",
+        "text": "[ why did you leave]?!",
         "speaker": "Spamton",
+        "animation": "angry_shaking",
         "speed": 1
     },
     {
-        "text": "",
+        "text": "...",
         "speaker": "Jevil",
+        "animation": "Sad",
         "speed": 1
     }],
     [{
-        "text": "BECAUSE i wasn’t [BIG SHOT] enough for you?",
-        "speaker": "Spamton",
-        "speed": 1
-    }],
-    [{
-        "text": "Because [he] chose you",
+        "text": "BECAUSE 1 WASNT [BIG SHOT] EN0UF FOR YOU?",
+        "animation": "default",
         "speaker": "Spamton",
         "speed": 1
     }],
     [{
-        "text": "You and your [god] played your [INDIE-HORROR game] on me",
+        "text": "because [he] chose you",
+        "animation": "black_glasses",
+        "speaker": "Spamton",
+        "speed": 1
+    }],
+    [{
+        "text": "U AND YOUR [God] PLAYED Y0UR [INDIE-HORROR GAME] ON ME",
+        "animation": "angry_big_head",
         "speaker": "Spamton",
         "speed": 1
     },
     {
-        "text": "made me [WE GOT CRAZY]",
+        "text": "MADE ME [WE GOT CRAZY]",
+        "animation": "increase_separated_head",
         "speaker": "Spamton",
         "speed": 1
     },
     {
-        "text": "then threw me in a [recycle bin]",
+        "text": "AND THR3W ME [recycle bin]",
+        "animation": "increase_separated_head",
         "speaker": "Spamton",
         "speed": 1
     },
     {
-        "text": "like a [motivational quote paper]!",
+        "text": "LIKE A [motivational quote paper]!",
+        "animation": "black_glasses",
         "speaker": "Spamton",
         "speed": 1
     },
     {
         "text": "No! The God left me too, too!",
         "speaker": "Jevil",
+        "animation": "Surprised",
         "speed": 1,
         "mus_stop": true
     }]

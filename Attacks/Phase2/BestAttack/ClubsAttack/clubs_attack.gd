@@ -11,7 +11,7 @@ func _ready():
 	for disabled_row in range(n - 1):
 		# заполняем пространство в прошлом ряду
 		Spawns[disabled_row].enabled = false
-		yield($ChangeRowTimer, "timeout")	
+		yield($ChangeRowTimer, "timeout")
 		Spawns[disabled_row + 1].enabled = false
 		# полсекунды на переход игрока в другой ряд
 		yield(get_tree().create_timer(0.5), "timeout")

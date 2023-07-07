@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=2]
+[gd_scene load_steps=61 format=2]
 
 [ext_resource path="res://team_stats/Kris/assets/Default/image6x1.png" type="Texture" id=1]
 [ext_resource path="res://team_stats/Kris/assets/Default/image3x1.png" type="Texture" id=2]
@@ -58,6 +58,7 @@
 [ext_resource path="res://team_stats/Kris/assets/Item/image4x1.png" type="Texture" id=56]
 [ext_resource path="res://team_stats/Kris/assets/Item/image5x1.png" type="Texture" id=57]
 [ext_resource path="res://team_stats/Kris/Kris.gd" type="Script" id=58]
+[ext_resource path="res://team_stats/PlayerStats/PlayerStats.tscn" type="PackedScene" id=59]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -109,4 +110,6 @@ script = ExtResource( 58 )
 frames = SubResource( 1 )
 frame = 1
 
-[connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
+[node name="PlayerStats" parent="." instance=ExtResource( 59 )]
+MAX_HP = 120
+HP = 120

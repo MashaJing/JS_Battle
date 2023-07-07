@@ -11,5 +11,5 @@ dest_files=[ "res://.import/voice_ralsei.mp3-0e5b7729d4778e7cef57e7cbd177d86a.mp
 
 [params]
 
-loop=false
-loop_offset=0
+loop=true
+loop_offset=0.055

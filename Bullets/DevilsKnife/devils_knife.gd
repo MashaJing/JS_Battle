@@ -3,7 +3,7 @@ extends Area2D
 var time = 0
 var speed = 0
 var flipped = false
-var rotation_speed = -.3
+var rotation_speed = .01
 export var direction = Vector2.LEFT
 onready var sprite = $Sprite
 onready var texture = $Sprite.texture

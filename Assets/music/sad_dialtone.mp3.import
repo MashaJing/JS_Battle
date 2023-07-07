@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/sad_dialtone.mp3-4ff6822bd7b33d018f430726f3fa9c8e.mp3str"
+
+[deps]
+
+source_file="res://Assets/music/sad_dialtone.mp3"
+dest_files=[ "res://.import/sad_dialtone.mp3-4ff6822bd7b33d018f430726f3fa9c8e.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,37 +1,433 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=19 format=2]
 
+[ext_resource path="res://between_attack_menu/assets/menu.png" type="Texture" id=1]
+[ext_resource path="res://between_attack_menu/member_menu.gd" type="Script" id=2]
 [ext_resource path="res://between_attack_menu/menu.gd" type="Script" id=6]
 
-[node name="Node2D" type="Node2D"]
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 1 )
+region = Rect2( 737.275, 61.9864, 103.029, 35.5873 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 1 )
+region = Rect2( 841.632, 62.8448, 106.792, 35.2006 )
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 1 )
+region = Rect2( 704.991, 317.579, 31.0132, 26.6902 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 1 )
+region = Rect2( 740.076, 317.689, 31.1133, 26.2328 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 1 )
+region = Rect2( 775.104, 317.753, 31.2414, 26.2825 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 1 )
+region = Rect2( 809.801, 317.403, 31.1719, 26.5878 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 1 )
+region = Rect2( 845.221, 317.953, 30.6221, 26.0362 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 1 )
+region = Rect2( 738.582, 100.203, 102.036, 33.3387 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 1 )
+region = Rect2( 844.017, 99.2015, 104.898, 34.7571 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 1 )
+region = Rect2( 737.08, 136.374, 107.374, 35.6156 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 1 )
+region = Rect2( 843.203, 135.751, 105.199, 36.0364 )
+
+[sub_resource type="Animation" id=15]
+resource_name = "hide_all"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Control/VBoxContainer/HBoxContainer/Kris:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 70 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Control/VBoxContainer/HBoxContainer/Susie:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 340, 70 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Control/VBoxContainer/HBoxContainer/Ralsei:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 680, 70 ) ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "kris_turn"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Control/VBoxContainer/HBoxContainer/Kris:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 70 ), Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=14]
+resource_name = "ralsei_turn"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Control/VBoxContainer/HBoxContainer/Ralsei:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 680, 70 ), Vector2( 680, 0 ) ]
+}
+
+[sub_resource type="Animation" id=13]
+resource_name = "susie_turn"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Control/VBoxContainer/HBoxContainer/Susie:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 340, 70 ), Vector2( 340, 0 ) ]
+}
+
+[node name="Menu" type="Node2D"]
 script = ExtResource( 6 )
 
 [node name="Control" type="Control" parent="."]
-margin_top = 450.0
+margin_top = 330.0
 margin_right = 1020.0
-margin_bottom = 600.0
-
-[node name="ColorRect" type="ColorRect" parent="Control"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-color = Color( 0, 0, 0, 1 )
+margin_bottom = 480.0
 
 [node name="MarginContainer" type="MarginContainer" parent="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_right = 10.0
 
-[node name="GridContainer" type="GridContainer" parent="Control"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-columns = 3
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+margin_right = 1020.0
+margin_bottom = 260.0
 
-[node name="AttackButton" type="MenuButton" parent="Control"]
-anchor_left = 0.078
-anchor_top = 0.2
-anchor_right = 0.245
-anchor_bottom = 0.867
-margin_left = 0.439995
-margin_right = 0.0999908
-margin_bottom = -0.0500031
-text = "Attack"
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/VBoxContainer"]
+margin_right = 1020.0
+margin_bottom = 128.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 0
+alignment = 1
 
-[connection signal="pressed" from="Control/AttackButton" to="." method="_on_AttackButton_pressed"]
+[node name="Kris" type="GridContainer" parent="Control/VBoxContainer/HBoxContainer"]
+margin_right = 340.0
+margin_bottom = 128.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 2 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/VBoxContainer/HBoxContainer/Kris"]
+margin_right = 340.0
+margin_bottom = 128.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 4
+
+[node name="IconAndStats" type="HBoxContainer" parent="Control/VBoxContainer/HBoxContainer/Kris/VBoxContainer"]
+margin_right = 340.0
+margin_bottom = 62.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Icon" type="TextureRect" parent="Control/VBoxContainer/HBoxContainer/Kris/VBoxContainer/IconAndStats"]
+margin_right = 168.0
+margin_bottom = 62.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = SubResource( 6 )
+expand = true
+
+[node name="HP" type="TextureRect" parent="Control/VBoxContainer/HBoxContainer/Kris/VBoxContainer/IconAndStats"]
+margin_left = 172.0
+margin_right = 340.0
+margin_bottom = 62.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = SubResource( 7 )
+expand = true
+
+[node name="Buttons" type="HBoxContainer" parent="Control/VBoxContainer/HBoxContainer/Kris/VBoxContainer"]
+margin_top = 66.0
+margin_right = 340.0
+margin_bottom = 128.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Attack" type="MenuButton" parent="Control/VBoxContainer/HBoxContainer/Kris/VBoxContainer/Buttons"]
+margin_right = 64.0
+margin_bottom = 62.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+icon = SubResource( 1 )
+expand_icon = true
+
+[node name="Act" type="MenuButton" parent="Control/VBoxContainer/HBoxContainer/Kris/VBoxContainer/Buttons"]
+margin_left = 68.0
+margin_right = 133.0
+margin_bottom = 62.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+icon = SubResource( 2 )
+expand_icon = true
+
+[node name="Item" type="MenuButton" parent="Control/VBoxContainer/HBoxContainer/Kris/VBoxContainer/Buttons"]
+margin_left = 137.0
+margin_right = 202.0
+margin_bottom = 62.0
+focus_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+icon = SubResource( 3 )
+expand_icon = true
+
+[node name="Spare" type="MenuButton" parent="Control/VBoxContainer/HBoxContainer/Kris/VBoxContainer/Buttons"]
+margin_left = 206.0
+margin_right = 271.0
+margin_bottom = 62.0
+focus_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+icon = SubResource( 4 )
+expand_icon = true
+
+[node name="Defense" type="MenuButton" parent="Control/VBoxContainer/HBoxContainer/Kris/VBoxContainer/Buttons"]
+margin_left = 275.0
+margin_right = 340.0
+margin_bottom = 62.0
+focus_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+icon = SubResource( 5 )
+expand_icon = true
+
+[node name="Susie" type="GridContainer" parent="Control/VBoxContainer/HBoxContainer"]
+margin_left = 340.0
+margin_right = 680.0
+margin_bottom = 128.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/VBoxContainer/HBoxContainer/Susie"]
+margin_right = 340.0
+margin_bottom = 128.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="IconAndStats" type="HBoxContainer" parent="Control/VBoxContainer/HBoxContainer/Susie/VBoxContainer"]
+margin_right = 340.0
+margin_bottom = 62.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Icon" type="TextureRect" parent="Control/VBoxContainer/HBoxContainer/Susie/VBoxContainer/IconAndStats"]
+margin_right = 168.0
+margin_bottom = 62.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = SubResource( 9 )
+expand = true
+
+[node name="HP" type="TextureRect" parent="Control/VBoxContainer/HBoxContainer/Susie/VBoxContainer/IconAndStats"]
+margin_left = 172.0
+margin_right = 340.0
+margin_bottom = 62.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = SubResource( 10 )
+expand = true
+
+[node name="Buttons" type="HBoxContainer" parent="Control/VBoxContainer/HBoxContainer/Susie/VBoxContainer"]
+margin_top = 66.0
+margin_right = 340.0
+margin_bottom = 128.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Attack" type="MenuButton" parent="Control/VBoxContainer/HBoxContainer/Susie/VBoxContainer/Buttons"]
+margin_right = 64.0
+margin_bottom = 62.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Act" type="MenuButton" parent="Control/VBoxContainer/HBoxContainer/Susie/VBoxContainer/Buttons"]
+margin_left = 68.0
+margin_right = 133.0
+margin_bottom = 62.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Item" type="MenuButton" parent="Control/VBoxContainer/HBoxContainer/Susie/VBoxContainer/Buttons"]
+margin_left = 137.0
+margin_right = 202.0
+margin_bottom = 62.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Spare" type="MenuButton" parent="Control/VBoxContainer/HBoxContainer/Susie/VBoxContainer/Buttons"]
+margin_left = 206.0
+margin_right = 271.0
+margin_bottom = 62.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Defense" type="MenuButton" parent="Control/VBoxContainer/HBoxContainer/Susie/VBoxContainer/Buttons"]
+margin_left = 275.0
+margin_right = 340.0
+margin_bottom = 62.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Ralsei" type="GridContainer" parent="Control/VBoxContainer/HBoxContainer"]
+margin_left = 680.0
+margin_right = 1020.0
+margin_bottom = 128.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/VBoxContainer/HBoxContainer/Ralsei"]
+margin_right = 340.0
+margin_bottom = 128.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="IconAndStats" type="HBoxContainer" parent="Control/VBoxContainer/HBoxContainer/Ralsei/VBoxContainer"]
+margin_right = 340.0
+margin_bottom = 62.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Icon" type="TextureRect" parent="Control/VBoxContainer/HBoxContainer/Ralsei/VBoxContainer/IconAndStats"]
+margin_right = 168.0
+margin_bottom = 62.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = SubResource( 11 )
+expand = true
+
+[node name="HP" type="TextureRect" parent="Control/VBoxContainer/HBoxContainer/Ralsei/VBoxContainer/IconAndStats"]
+margin_left = 172.0
+margin_right = 340.0
+margin_bottom = 62.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = SubResource( 12 )
+expand = true
+
+[node name="Buttons" type="HBoxContainer" parent="Control/VBoxContainer/HBoxContainer/Ralsei/VBoxContainer"]
+margin_top = 66.0
+margin_right = 340.0
+margin_bottom = 128.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Attack" type="MenuButton" parent="Control/VBoxContainer/HBoxContainer/Ralsei/VBoxContainer/Buttons"]
+margin_right = 64.0
+margin_bottom = 62.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Act" type="MenuButton" parent="Control/VBoxContainer/HBoxContainer/Ralsei/VBoxContainer/Buttons"]
+margin_left = 68.0
+margin_right = 133.0
+margin_bottom = 62.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Item" type="MenuButton" parent="Control/VBoxContainer/HBoxContainer/Ralsei/VBoxContainer/Buttons"]
+margin_left = 137.0
+margin_right = 202.0
+margin_bottom = 62.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Spare" type="MenuButton" parent="Control/VBoxContainer/HBoxContainer/Ralsei/VBoxContainer/Buttons"]
+margin_left = 206.0
+margin_right = 271.0
+margin_bottom = 62.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Defense" type="MenuButton" parent="Control/VBoxContainer/HBoxContainer/Ralsei/VBoxContainer/Buttons"]
+margin_left = 275.0
+margin_right = 340.0
+margin_bottom = 62.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="CommentField" type="ColorRect" parent="Control/VBoxContainer"]
+margin_top = 132.0
+margin_right = 1020.0
+margin_bottom = 260.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color( 0, 0, 0, 1 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/VBoxContainer/CommentField"]
+margin_left = 80.0
+margin_top = 18.0
+margin_right = 1000.0
+margin_bottom = 106.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/hide_all = SubResource( 15 )
+anims/kris_turn = SubResource( 8 )
+anims/ralsei_turn = SubResource( 14 )
+anims/susie_turn = SubResource( 13 )
+
+[connection signal="button_down" from="Control/VBoxContainer/HBoxContainer/Kris/VBoxContainer/Buttons/Attack" to="." method="_on_Attack_button_down"]
+[connection signal="button_down" from="Control/VBoxContainer/HBoxContainer/Kris/VBoxContainer/Buttons/Act" to="." method="_on_Act_button_down"]
+[connection signal="button_down" from="Control/VBoxContainer/HBoxContainer/Kris/VBoxContainer/Buttons/Item" to="." method="_on_Item_button_down"]
+[connection signal="button_down" from="Control/VBoxContainer/HBoxContainer/Kris/VBoxContainer/Buttons/Spare" to="." method="_on_Spare_button_down"]
+[connection signal="button_down" from="Control/VBoxContainer/HBoxContainer/Kris/VBoxContainer/Buttons/Defense" to="." method="_on_Defense_button_down"]

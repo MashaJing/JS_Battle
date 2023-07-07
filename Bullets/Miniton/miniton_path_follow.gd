@@ -1,6 +1,5 @@
 extends PathFollow2D
 
-
 export var flipped = false
 export var speed = 200
 onready var Miniton = $Miniton

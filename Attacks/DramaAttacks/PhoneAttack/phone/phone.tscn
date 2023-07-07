@@ -1,0 +1,46 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Attacks/DramaAttacks/PhoneAttack/phone/assets/phone3.png" type="Texture" id=1]
+[ext_resource path="res://Attacks/DramaAttacks/PhoneAttack/phone/assets/phone2.png" type="Texture" id=2]
+[ext_resource path="res://Bullets/Dots/Dots.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Attacks/DramaAttacks/PhoneAttack/phone/assets/phone4.png" type="Texture" id=5]
+[ext_resource path="res://Attacks/DramaAttacks/PhoneAttack/phone/phone.gd" type="Script" id=6]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 2 ), ExtResource( 1 ), ExtResource( 5 ), ExtResource( 5 ), ExtResource( 1 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 33.4607
+height = 69.6953
+
+[node name="Phone" type="Area2D"]
+script = ExtResource( 6 )
+Bullet = ExtResource( 3 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 0, 40 )
+frames = SubResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 50 )
+rotation = 0.261799
+shape = SubResource( 2 )
+
+[node name="Spawns" type="Node2D" parent="."]
+
+[node name="Spawn1" type="Node2D" parent="Spawns"]
+position = Vector2( -20, 10 )
+
+[node name="Spawn2" type="Node2D" parent="Spawns"]
+position = Vector2( -30, 80 )
+
+[node name="DotSpawnTimer" type="Timer" parent="Spawns"]
+wait_time = 2.0
+autostart = true
+
+[connection signal="timeout" from="Spawns/DotSpawnTimer" to="." method="_on_DotSpawnTimer_timeout"]

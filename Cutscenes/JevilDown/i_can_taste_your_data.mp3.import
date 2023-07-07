@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/i_can_taste_your_data.mp3-fe96721267a247faa961421530da905f.mp3str"
+
+[deps]
+
+source_file="res://Cutscenes/JevilDown/i_can_taste_your_data.mp3"
+dest_files=[ "res://.import/i_can_taste_your_data.mp3-fe96721267a247faa961421530da905f.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

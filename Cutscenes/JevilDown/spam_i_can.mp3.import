@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/spam_i_can.mp3-6bd2515aa28fd4e20e4e928373cbd220.mp3str"
+
+[deps]
+
+source_file="res://Cutscenes/JevilDown/spam_i_can.mp3"
+dest_files=[ "res://.import/spam_i_can.mp3-6bd2515aa28fd4e20e4e928373cbd220.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

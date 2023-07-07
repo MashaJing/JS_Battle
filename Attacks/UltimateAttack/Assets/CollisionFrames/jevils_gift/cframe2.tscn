@@ -1,0 +1,162 @@
+[gd_scene format=2]
+
+[node name="BadArea" type="Area2D"]
+
+[node name="@@33" type="CollisionPolygon2D" parent="."]
+scale = Vector2( 0.536458, 0.555556 )
+polygon = PoolVector2Array( 0, 1080, 96, 1080, 96, 0, 0, 0 )
+
+[node name="@@34" type="CollisionPolygon2D" parent="."]
+position = Vector2( 51.5, 0 )
+scale = Vector2( 0.536458, 0.555556 )
+polygon = PoolVector2Array( 0, 1080, 96, 1080, 96, 0, 0, 0 )
+
+[node name="@@35" type="CollisionPolygon2D" parent="."]
+position = Vector2( 103, 0 )
+scale = Vector2( 0.536458, 0.555556 )
+polygon = PoolVector2Array( 0, 1080, 96, 1080, 96, 0, 0, 0 )
+
+[node name="@@36" type="CollisionPolygon2D" parent="."]
+position = Vector2( 154.5, 0 )
+scale = Vector2( 0.536458, 0.555556 )
+polygon = PoolVector2Array( 0, 1080, 96, 1080, 96, 0, 0, 0 )
+
+[node name="@@37" type="CollisionPolygon2D" parent="."]
+position = Vector2( 206, 0 )
+scale = Vector2( 0.536458, 0.555556 )
+polygon = PoolVector2Array( 0, 1080, 96, 1080, 96, 0, 0, 0 )
+
+[node name="@@38" type="CollisionPolygon2D" parent="."]
+position = Vector2( 257.5, 0 )
+scale = Vector2( 0.536458, 0.555556 )
+polygon = PoolVector2Array( 0, 1080, 96, 1080, 96, 0, 0, 0 )
+
+[node name="@@39" type="CollisionPolygon2D" parent="."]
+position = Vector2( 309, 0 )
+scale = Vector2( 0.536458, 0.555556 )
+polygon = PoolVector2Array( 0, 1080, 96, 1080, 96, 0, 0, 0 )
+
+[node name="@@40" type="CollisionPolygon2D" parent="."]
+position = Vector2( 360.5, 0 )
+scale = Vector2( 0.536458, 0.555556 )
+polygon = PoolVector2Array( 0, 1080, 96, 1080, 96, 0, 0, 0 )
+
+[node name="@@41" type="CollisionPolygon2D" parent="."]
+position = Vector2( 412, 0 )
+scale = Vector2( 0.536458, 0.555556 )
+polygon = PoolVector2Array( 0, 1080, 96, 1080, 96, 0, 0, 0 )
+
+[node name="@@42" type="CollisionPolygon2D" parent="."]
+position = Vector2( 463.5, 0 )
+scale = Vector2( 0.536458, 0.555556 )
+polygon = PoolVector2Array( 0, 1080, 96, 1080, 96, 0, 0, 0 )
+
+[node name="@@43" type="CollisionPolygon2D" parent="."]
+position = Vector2( 515, 0 )
+scale = Vector2( 0.536458, 0.555556 )
+polygon = PoolVector2Array( 0, 1080, 96, 1080, 96, 0, 0, 0 )
+
+[node name="@@44" type="CollisionPolygon2D" parent="."]
+position = Vector2( 566.5, 0 )
+scale = Vector2( 0.536458, 0.555556 )
+polygon = PoolVector2Array( 0, 1080, 96, 1080, 96, 566, 84, 569, 74, 569, 63, 565, 61, 565, 48, 551, 47, 551, 41, 534, 40, 534, 40, 519, 48, 523, 49, 523, 51, 513, 51, 511, 73, 520, 81, 520, 87, 510, 88, 510, 92, 492, 93, 492, 95, 472, 96, 472, 96, 341, 96, 307, 87, 294, 87, 290, 96, 294, 96, 259, 86, 237, 86, 230, 96, 234, 96, 0, 0, 0 )
+
+[node name="@@45" type="CollisionPolygon2D" parent="."]
+position = Vector2( 618, 0 )
+scale = Vector2( 0.536458, 0.555556 )
+polygon = PoolVector2Array( 0, 235, 25, 251, 25, 252, 27, 252, 27, 249, 24, 237, 25, 237, 48, 259, 48, 260, 58, 263, 59, 263, 40, 230, 39, 230, 30, 208, 29, 208, 25, 186, 24, 186, 26, 168, 26, 165, 45, 189, 45, 191, 62, 208, 62, 209, 94, 230, 96, 230, 96, 0, 0, 0 )
+
+[node name="@@46" type="CollisionPolygon2D" parent="."]
+position = Vector2( 618, 0 )
+scale = Vector2( 0.536458, 0.555556 )
+polygon = PoolVector2Array( 0, 294, 29, 308, 29, 309, 32, 309, 30, 303, 30, 300, 37, 304, 37, 305, 39, 303, 40, 303, 10, 274, 9, 274, 0, 261 )
+
+[node name="@@47" type="CollisionPolygon2D" parent="."]
+position = Vector2( 618, 0 )
+scale = Vector2( 0.536458, 0.555556 )
+polygon = PoolVector2Array( 0, 341, 20, 347, 20, 348, 24, 348, 25, 343, 26, 343, 25, 340, 25, 338, 0, 309 )
+
+[node name="@@48" type="CollisionPolygon2D" parent="."]
+position = Vector2( 618, 0 )
+scale = Vector2( 0.536458, 0.555556 )
+polygon = PoolVector2Array( 0, 465, 16, 379, 17, 379, 13, 367, 13, 364, 0, 345 )
+
+[node name="@@49" type="CollisionPolygon2D" parent="."]
+position = Vector2( 618, 0 )
+scale = Vector2( 0.536458, 0.555556 )
+polygon = PoolVector2Array( 67, 532, 40, 550, 40, 551, 3, 566, 0, 566, 0, 1080, 96, 1080, 96, 1005, 89, 1004, 83, 1004, 78, 1000, 78, 998, 60, 996, 57, 996, 53, 990, 52, 990, 47, 934, 46, 934, 44, 866, 43, 866, 46, 819, 46, 815, 39, 807, 38, 807, 49, 793, 50, 793, 53, 784, 53, 767, 33, 690, 33, 668, 41, 639, 41, 637, 59, 620, 62, 620, 50, 561, 50, 558, 55, 559, 57, 559, 67, 568, 69, 568, 80, 582, 80, 585, 95, 592, 96, 592, 91, 572, 91, 569, 72, 537, 72, 535, 67, 531 )
+
+[node name="@@50" type="CollisionPolygon2D" parent="."]
+position = Vector2( 669.5, 0 )
+scale = Vector2( 0.536458, 0.555556 )
+polygon = PoolVector2Array( 0, 231, 39, 248, 39, 249, 95, 265, 96, 265, 96, 0, 0, 0 )
+
+[node name="@@51" type="CollisionPolygon2D" parent="."]
+position = Vector2( 669.5, 0 )
+scale = Vector2( 0.536458, 0.555556 )
+polygon = PoolVector2Array( 0, 591, 1, 591, 1, 589, 0, 589 )
+
+[node name="@@52" type="CollisionPolygon2D" parent="."]
+position = Vector2( 669.5, 0 )
+scale = Vector2( 0.536458, 0.555556 )
+polygon = PoolVector2Array( 68, 596, 61, 604, 61, 606, 70, 610, 70, 611, 61, 607, 59, 607, 45, 615, 45, 616, 24, 612, 24, 611, 21, 614, 20, 614, 28, 666, 29, 666, 27, 759, 27, 777, 29, 781, 29, 793, 39, 810, 39, 814, 35, 820, 35, 821, 28, 824, 27, 824, 28, 846, 28, 851, 20, 909, 19, 909, 19, 930, 18, 930, 20, 983, 20, 997, 24, 1002, 24, 1004, 17, 1005, 0, 1005, 0, 1080, 96, 1080, 96, 741, 92, 736, 91, 736, 95, 731, 96, 731, 96, 651, 91, 651, 91, 650, 96, 650, 96, 620, 84, 613, 82, 613, 68, 595 )
+
+[node name="@@53" type="CollisionPolygon2D" parent="."]
+position = Vector2( 721, 0 )
+scale = Vector2( 0.536458, 0.555556 )
+polygon = PoolVector2Array( 0, 265, 71, 275, 77, 275, 94, 281, 96, 281, 96, 0, 0, 0 )
+
+[node name="@@54" type="CollisionPolygon2D" parent="."]
+position = Vector2( 721, 0 )
+scale = Vector2( 0.536458, 0.555556 )
+polygon = PoolVector2Array( 94, 367, 80, 370, 79, 370, 56, 438, 55, 438, 57, 443, 57, 444, 94, 469, 96, 469, 94, 366 )
+
+[node name="@@55" type="CollisionPolygon2D" parent="."]
+position = Vector2( 721, 0 )
+scale = Vector2( 0.536458, 0.555556 )
+polygon = PoolVector2Array( 36, 486, 7, 537, 7, 540, 12, 538, 23, 538, 36, 550, 37, 550, 46, 569, 47, 569, 48, 589, 48, 594, 38, 608, 38, 610, 29, 616, 29, 617, 16, 621, 16, 622, 3, 621, 0, 621, 2, 651, 5, 651, 0, 651, 0, 731, 43, 727, 52, 727, 53, 680, 53, 678, 95, 653, 96, 653, 96, 498, 36, 484 )
+
+[node name="@@56" type="CollisionPolygon2D" parent="."]
+position = Vector2( 721, 0 )
+scale = Vector2( 0.536458, 0.555556 )
+polygon = PoolVector2Array( 0, 1080, 96, 1080, 96, 964, 77, 958, 76, 958, 77, 955, 77, 954, 96, 949, 96, 761, 46, 756, 39, 756, 15, 748, 12, 748, 0, 741 )
+
+[node name="@@57" type="CollisionPolygon2D" parent="."]
+position = Vector2( 772.5, 0 )
+scale = Vector2( 0.536458, 0.555556 )
+polygon = PoolVector2Array( 0, 281, 22, 294, 24, 294, 34, 306, 35, 306, 40, 321, 41, 321, 40, 331, 40, 335, 34, 345, 34, 347, 16, 360, 16, 361, 0, 366, 0, 470, 62, 512, 63, 512, 0, 498, 0, 653, 4, 652, 52, 652, 60, 656, 62, 656, 92, 678, 93, 678, 95, 703, 96, 703, 96, 0, 0, 0 )
+
+[node name="@@58" type="CollisionPolygon2D" parent="."]
+position = Vector2( 772.5, 0 )
+scale = Vector2( 0.536458, 0.555556 )
+polygon = PoolVector2Array( 0, 949, 11, 944, 13, 944, 20, 937, 21, 937, 26, 921, 27, 921, 27, 777, 25, 774, 25, 770, 19, 765, 19, 764, 0, 761 )
+
+[node name="@@59" type="CollisionPolygon2D" parent="."]
+position = Vector2( 772.5, 0 )
+scale = Vector2( 0.536458, 0.555556 )
+polygon = PoolVector2Array( 73, 763, 64, 767, 62, 767, 57, 776, 57, 915, 60, 928, 60, 932, 64, 937, 64, 939, 74, 946, 74, 947, 94, 954, 96, 954, 96, 762, 73, 762 )
+
+[node name="@@60" type="CollisionPolygon2D" parent="."]
+position = Vector2( 772.5, 0 )
+scale = Vector2( 0.536458, 0.555556 )
+polygon = PoolVector2Array( 0, 1080, 96, 1080, 96, 965, 70, 968, 30, 968, 0, 964 )
+
+[node name="@@61" type="CollisionPolygon2D" parent="."]
+position = Vector2( 824, 0 )
+scale = Vector2( 0.536458, 0.555556 )
+polygon = PoolVector2Array( 0, 704, 11, 724, 11, 727, 55, 731, 61, 731, 94, 742, 95, 742, 76, 750, 76, 751, 51, 757, 51, 758, 6, 762, 0, 762, 0, 955, 7, 958, 9, 958, 9, 961, 10, 961, 3, 965, 0, 965, 0, 1080, 96, 1080, 96, 0, 0, 0 )
+
+[node name="@@62" type="CollisionPolygon2D" parent="."]
+position = Vector2( 875.5, 0 )
+scale = Vector2( 0.536458, 0.555556 )
+polygon = PoolVector2Array( 0, 1080, 96, 1080, 96, 0, 0, 0 )
+
+[node name="@@63" type="CollisionPolygon2D" parent="."]
+position = Vector2( 926.999, 0 )
+scale = Vector2( 0.536458, 0.555556 )
+polygon = PoolVector2Array( 0, 1080, 96, 1080, 96, 0, 0, 0 )
+
+[node name="@@64" type="CollisionPolygon2D" parent="."]
+position = Vector2( 978.499, 0 )
+scale = Vector2( 0.536458, 0.555556 )
+polygon = PoolVector2Array( 0, 1080, 96, 1080, 96, 0, 0, 0 )
