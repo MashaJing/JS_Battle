@@ -67,7 +67,7 @@ func _ready():
 	yield($Spamton, "stopped_talk")
 	
 	if check_ip(user_ip):
-		$Spamton.speak("{user_ip}".format({"user_ip": user_ip}), 0.4)
+		$Spamton.speak("{user_ip}".format({"user_ip": user_ip}), 0.2)
 		# без ентера надо бы
 		yield($Spamton, "stopped_talk")
 		$AnimationPlayer.play("he_is_serious")

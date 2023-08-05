@@ -4,7 +4,7 @@
 [ext_resource path="res://Attacks/Phase2/NoseAttack/assets/blackEyes1.png" type="Texture" id=2]
 [ext_resource path="res://Border/Border.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Attacks/Phase2/NoseAttack/nose_attack.gd" type="Script" id=4]
-[ext_resource path="res://Bullets/DimondsBatch/DimondsBatch.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Bullets/WhiteDimond/WhiteDimond.tscn" type="PackedScene" id=5]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -32,25 +32,25 @@ position = Vector2( 399, 198 )
 [node name="JevilSpawns" type="Node2D" parent="."]
 
 [node name="Spawn1" type="Node2D" parent="JevilSpawns"]
-position = Vector2( 248, 527 )
+position = Vector2( 316, 462 )
 
 [node name="Spawn2" type="Node2D" parent="JevilSpawns"]
-position = Vector2( 192, 403 )
+position = Vector2( 260, 338 )
 
 [node name="Spawn3" type="Node2D" parent="JevilSpawns"]
-position = Vector2( 248, 315 )
+position = Vector2( 316, 250 )
 scale = Vector2( -1, 1 )
 
 [node name="Spawn4" type="Node2D" parent="JevilSpawns"]
-position = Vector2( 816, 527 )
+position = Vector2( 724, 467 )
 scale = Vector2( -1, 1 )
 
 [node name="Spawn5" type="Node2D" parent="JevilSpawns"]
-position = Vector2( 885, 403 )
+position = Vector2( 793, 343 )
 scale = Vector2( -1, 1 )
 
 [node name="Spawn6" type="Node2D" parent="JevilSpawns"]
-position = Vector2( 812, 300 )
+position = Vector2( 720, 240 )
 scale = Vector2( -1, 1 )
 
 [node name="AppearTimer" type="Timer" parent="."]
@@ -58,23 +58,23 @@ wait_time = 0.6
 autostart = true
 
 [node name="KinematicHeart" parent="." instance=ExtResource( 1 )]
-position = Vector2( 522, 502 )
+position = Vector2( 497, 400 )
 
 [node name="BorderField" parent="." instance=ExtResource( 3 )]
-position = Vector2( 522, 456 )
-scale = Vector2( 1.44, 1.44 )
+position = Vector2( 509, 340 )
+scale = Vector2( 0.97523, 0.97523 )
 
 [node name="Nose" type="Area2D" parent="." groups=["bullets"]]
 
 [node name="Nose" type="AnimatedSprite" parent="Nose"]
-position = Vector2( 512, 229 )
-scale = Vector2( 0.6049, 0.6049 )
+position = Vector2( 498.85, 185.769 )
+scale = Vector2( 0.463725, 0.463725 )
 frames = SubResource( 1 )
 animation = "Attack"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Nose"]
-position = Vector2( 461.655, 254.172 )
-scale = Vector2( 0.83908, 0.83908 )
+position = Vector2( 455, 198 )
+scale = Vector2( 0.689264, 0.689264 )
 polygon = PoolVector2Array( 66, 225, 0, 0, 132, 0 )
 
 [connection signal="timeout" from="EyeAttackTimer" to="." method="_on_EyeAttackTimer_timeout"]

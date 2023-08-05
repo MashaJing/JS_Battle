@@ -89,13 +89,13 @@
         "speed": 1
     },
     {
-        "text": "locked in a cage",
+        "text": "[shake level=10]locked in a cage",
         "speaker": "Jevil",
         "animation": "Sad",
         "speed": 1
     },
     {
-        "text": "and couldn't help you",
+        "text": "[shake level=10]and couldn't help you",
         "speaker": "Jevil",
         "animation": "Sad",
         "speed": 0.5

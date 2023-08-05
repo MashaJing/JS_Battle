@@ -15,8 +15,14 @@ func _ready():
 
 
 func _process(delta):
-	unit_offset += delta * speed
-	$KnifeOrigin.rotate(middle_rotation_speed)
+#	unit_offset += delta * speed
+#	$KnifeOrigin.rotate(middle_rotation_speed)
+	set_offset(get_offset() + delta * speed)
+	if 1.0 - unit_offset < 0.1:
+		emit_signal("child_exiting_tree")
+		queue_free()
+
 
 func reverse():
 	speed *= -1
+

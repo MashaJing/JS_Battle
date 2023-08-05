@@ -7,7 +7,7 @@
 radius = 8.0
 height = 18.0
 
-[node name="Area2D" type="Area2D" groups=["bullets"]]
+[node name="Dimond" type="Area2D" groups=["bullets"]]
 script = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

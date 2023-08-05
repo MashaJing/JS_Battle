@@ -15,6 +15,7 @@ script = ExtResource( 4 )
 position = Vector2( 520, 300 )
 
 [node name="Wire" type="Line2D" parent="."]
+visible = false
 position = Vector2( 520, 310 )
 points = PoolVector2Array( -520, -310 )
 width = 4.0
@@ -22,12 +23,12 @@ width_curve = SubResource( 1 )
 default_color = Color( 0.258824, 0.258824, 0.258824, 1 )
 script = ExtResource( 3 )
 
-[node name="Phone" parent="." instance=ExtResource( 2 )]
-position = Vector2( 400, 250 )
-scale = Vector2( 1.52, 1.52 )
-
 [node name="WireBase" type="Node2D" parent="."]
-position = Vector2( 510, 157 )
+position = Vector2( 510, 240 )
+
+[node name="Phone" parent="WireBase" groups=["bullets"] instance=ExtResource( 2 )]
+position = Vector2( -110, 93 )
+scale = Vector2( 1.52, 1.52 )
 
 [node name="KinematicHeart" parent="." instance=ExtResource( 1 )]
 position = Vector2( 510, 340 )

@@ -5,7 +5,7 @@ var ATK = 10
 export var flipped = false
 var dialogue_window = preload("res://Dialogues/ArrowDialogues/ArrowDialogues.tscn")
 signal stopped_talk
-signal down
+#signal down
 
 
 # Called when the node enters the scene tree for the first time.
@@ -16,8 +16,11 @@ func _ready():
 func facepalm():
 	$AnimationPlayer.play("facepalm")
 
-func spit_bullet():
-	$AnimationPlayer.play("spit_bullet")
+func open_moth():
+	$AnimationPlayer.play("open_moth")
+
+func close_moth():
+	$AnimationPlayer.play("close_moth")
 	yield($AnimationPlayer, "animation_finished")
 	queue_free()
 

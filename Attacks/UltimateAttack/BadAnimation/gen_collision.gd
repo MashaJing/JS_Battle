@@ -7,7 +7,8 @@ var EPS = 2
 
 
 func _ready():
-	$Screen.play("default")
+	$AnimationPlayer.play("play_movie")
+
 
 func _process(delta):
 	pass

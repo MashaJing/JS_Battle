@@ -1,0 +1,26 @@
+[
+    {
+        "text": "HEY, [[clown around town]]!",
+        "speaker": "Spamton",
+        "animation": "default",
+        "speed": 1
+    },
+    {
+        "text": "WHY [It is not recommended] TO    [DEADLOCK] CLOWNS  [Inside a Birdcage]?",
+        "speaker": "Spamton",
+        "animation": "default",
+        "speed": 1
+    },
+    {
+        "text": "Because they may cry, cry...",
+        "speaker": "Jevil",
+        "animation": "sad",
+        "speed": 1
+    },
+    {
+        "text": "TH3Y MIGHT H@VE    [CLOWN]STROPHOBIA!",
+        "speaker": "Spamton",
+        "animation": "laugh",
+        "speed": 1
+    }
+]

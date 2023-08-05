@@ -1,0 +1,20 @@
+[
+    {
+        "text": "Hey Spam, Spam! How do you call a mailman with failed business?",
+        "speaker": "Jevil",
+        "animation": "default",
+        "speed": 1
+    },
+    {
+        "text": "Don’t begin…",
+        "speaker": "Spamton",
+        "animation": "black_glasses",
+        "speed": 1
+    },
+    {
+        "text": "BADISON, BADISON!",
+        "speaker": "Spamton",
+        "animation": "facepalm",
+        "speed": 1
+    }
+]

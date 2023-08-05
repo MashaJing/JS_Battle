@@ -29,16 +29,20 @@ func _on_AppearTimer_timeout():
 	var ind = randi() % len(JevilSpawns)
 	var spawn = JevilSpawns[ind]
 	var jevil = Jevil.instance()
-	var dimond_bullet = JEVIL_BULLET.instance()
 
 	# если спавн в какой-то из левых точек, поворачивается по горизонтали
 	if ind < 3:
 		jevil.flipped = true
 	jevil.global_position = spawn.global_position
-	dimond_bullet.global_position = spawn.global_position
-	dimond_bullet.heart_position = $KinematicHeart.global_position
 	add_child(jevil)
-	# надо как-то дождаться именно того момента, когда он откроет рот:
-	# послать спец сигнал или распилить анимацию?
+	jevil.open_moth()
+	yield(jevil.get_node("AnimationPlayer"), "animation_finished")
+	spawn_bullet(spawn.global_position)
+	jevil.close_moth()
+	
+func spawn_bullet(location):
+	var dimond_bullet = JEVIL_BULLET.instance()
+	dimond_bullet.global_position = location
+	dimond_bullet.heart_position = $KinematicHeart.global_position
 	add_child(dimond_bullet)
-	jevil.spit_bullet()
+	

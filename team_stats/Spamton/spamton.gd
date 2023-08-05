@@ -37,5 +37,4 @@ func speak(replica, speed=0.01, pause=0):
 
 
 func _on_jevil_down():
-	var ip_addr = OS.execute(" ipconfig", ["/all"])
-	print(ip_addr)
+	pass

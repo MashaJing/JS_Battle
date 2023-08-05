@@ -14,18 +14,17 @@ colors = PoolColorArray( 1, 1, 1, 0.6, 1, 1, 1, 0 )
 [node name="UltimateAttack" type="Node2D"]
 
 [node name="BadAnimation" parent="." instance=ExtResource( 2 )]
-visible = false
 
 [node name="Screen" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Screen"]
+build_mode = 1
+polygon = PoolVector2Array( 1020, 10, 1020, 590, 10, 590, 10, 10 )
 
 [node name="ColorRect" type="ColorRect" parent="Screen"]
 margin_right = 1030.0
 margin_bottom = 600.0
 color = Color( 0, 0, 0, 1 )
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Screen"]
-build_mode = 1
-polygon = PoolVector2Array( 1020, 10, 1020, 590, 10, 590, 10, 10 )
 
 [node name="KinematicHeart" parent="." instance=ExtResource( 1 )]
 position = Vector2( 680, 240 )

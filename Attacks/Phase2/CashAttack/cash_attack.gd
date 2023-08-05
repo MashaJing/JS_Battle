@@ -53,3 +53,5 @@ func _on_AttackTimer_timeout():
 	$AnimationPlayer.stop()
 	print($Spamton.position)	
 	spamton_jumps(true)	
+	yield($AnimationPlayer, "animation_finished")
+	get_tree().change_scene(GlobalPartySettings.PARTY_ROOT_SCENE_PATH)

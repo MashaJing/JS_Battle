@@ -1,6 +1,6 @@
 extends Area2D
 var texture_path = "res://Assets/Images/Bullets/cards/%s.png" 
-var texture = "spam_tuz" 
+var texture = "spam_tuz"
 var finish_point = Vector2.ZERO
 
 var time = 0
@@ -9,7 +9,7 @@ var	turn_on = 0
 var velocity = Vector2.ZERO
 var d = 0
 
-# Called when the node enters the scene tree for the first time.
+
 func _ready():
 	$Sprite.modulate = Color(1, 1, 1, 0)
 	$Sprite.texture = load(texture_path % texture)
@@ -17,7 +17,6 @@ func _ready():
 	yield($AnimationPlayer, "animation_finished")
 	turn_on = 1
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	velocity = (finish_point - global_position) * turn_on
 	global_position += delta * velocity * 2

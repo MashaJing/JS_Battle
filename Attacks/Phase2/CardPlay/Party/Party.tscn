@@ -1,7 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://player/KinematicHeart.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Attacks/Phase2/CardPlay/Party/party.gd" type="Script" id=2]
+[ext_resource path="res://Border/Border.tscn" type="PackedScene" id=3]
+[ext_resource path="res://team_stats/Spamton/Spamton.tscn" type="PackedScene" id=4]
+[ext_resource path="res://team_stats/Jevil/Jevil.tscn" type="PackedScene" id=5]
 
 [sub_resource type="Animation" id=1]
 resource_name = "put_card"
@@ -35,3 +38,12 @@ position = Vector2( 540, 265 )
 
 [node name="KinematicHeart" parent="." instance=ExtResource( 1 )]
 position = Vector2( 520, 289 )
+
+[node name="BorderField" parent="." instance=ExtResource( 3 )]
+position = Vector2( 540, 280 )
+
+[node name="Spamton" parent="." instance=ExtResource( 4 )]
+position = Vector2( 850, 430 )
+
+[node name="Jevil" parent="." instance=ExtResource( 5 )]
+position = Vector2( 890, 230 )

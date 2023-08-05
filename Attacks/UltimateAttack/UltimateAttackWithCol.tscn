@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=2]
+[gd_scene load_steps=54 format=2]
 
 [ext_resource path="res://Attacks/UltimateAttack/ultimate_attack.gd" type="Script" id=1]
 [ext_resource path="res://Attacks/UltimateAttack/Assets/SpriteFrames/0013.png" type="Texture" id=2]
@@ -51,6 +51,7 @@
 [ext_resource path="res://Attacks/UltimateAttack/Assets/SpriteFrames/0046.png" type="Texture" id=49]
 [ext_resource path="res://Attacks/UltimateAttack/Assets/SpriteFrames/0047.png" type="Texture" id=50]
 [ext_resource path="res://Attacks/UltimateAttack/Assets/SpriteFrames/0048.png" type="Texture" id=51]
+[ext_resource path="res://Bullets/HealSpawn/HealSpawn.tscn" type="PackedScene" id=52]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -67,5 +68,8 @@ script = ExtResource( 1 )
 position = Vector2( 540, 300 )
 scale = Vector2( 0.564815, 0.564815 )
 frames = SubResource( 1 )
+
+[node name="HealSpawn" parent="." instance=ExtResource( 52 )]
+position = Vector2( 700, 370 )
 
 [connection signal="frame_changed" from="AnimatedSprite" to="." method="_on_AnimatedSprite_frame_changed"]

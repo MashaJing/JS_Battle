@@ -3,6 +3,8 @@ extends Node
 onready var Jevil = $Jevil
 onready var Spamton = $Spamton
 
+onready var inventorium = $Inventorium
+
 onready var Kris = $Kris
 onready var Susie = $Susie
 onready var Ralsei = null
@@ -54,7 +56,17 @@ func _on_tp_decreased():
 	print("TP: ", TP)
 
 
-# сделать универсальным для каждого?
+# мб сразу в ридере и вызывать?
+func _on_defend(defender):
+	defender.defend()
+
+
+# мб сразу в ридере и вызывать?
+func _on_heal(healed_player, hp_delta):
+	healed_player.healed(hp_delta)
+
+
+# сделать универсальным для каждого
 func _on_Kris_down():
 	#AttackTargets.pop_at() исключить Криса
 	pass

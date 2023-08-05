@@ -1,21 +1,22 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Attacks/DullAttacks/DullSpamton/dull_spamton.gd" type="Script" id=1]
 [ext_resource path="res://Bullets/bullet_dollar/Dollar.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Bullets/bullet_dimond/Dimond.tscn" type="PackedScene" id=3]
 [ext_resource path="res://team_stats/Spamton/Spamton.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Attacks/DullAttacks/DullSpamton/bullet_sucker.gd" type="Script" id=5]
-[ext_resource path="res://player/HeartArea/heart.tscn" type="PackedScene" id=6]
+[ext_resource path="res://player/KinematicHeart.tscn" type="PackedScene" id=6]
 [ext_resource path="res://team_stats/Jevil/Jevil.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Border/Border.tscn" type="PackedScene" id=8]
 
 [sub_resource type="Curve2D" id=3]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 290, 160, 0, 0, 0, 0, 290, 420 )
+"points": PoolVector2Array( 0, 0, 0, 0, 288.775, 190, 0, 0, 0, 0, 288.775, 396.374, 0, 0, 0, 0, 290, 420 )
 }
 
 [sub_resource type="Curve2D" id=2]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 290, 420, 0, 0, 0, 0, 500, 430, 0, 0, 0, 0, 710, 430 )
+"points": PoolVector2Array( 0, 0, 0, 0, 390, 420, 0, 0, 0, 0, 500, 430, 0, 0, 0, 0, 620, 430 )
 }
 
 [sub_resource type="RectangleShape2D" id=4]
@@ -47,31 +48,20 @@ dollar_scene = ExtResource( 2 )
 position = Vector2( 510, 300 )
 
 [node name="DollarPath" type="Path2D" parent="."]
+position = Vector2( 81.2247, -20 )
 curve = SubResource( 3 )
 
 [node name="DollarSpawn" type="PathFollow2D" parent="DollarPath"]
-position = Vector2( 290, 160 )
+position = Vector2( 288.775, 190 )
 rotation = 1.5708
 
 [node name="DimondPath" type="Path2D" parent="."]
+position = Vector2( 0, -30 )
 curve = SubResource( 2 )
 
 [node name="DimondSpawn" type="PathFollow2D" parent="DimondPath"]
-position = Vector2( 290, 420 )
-rotation = 0.0475831
-
-[node name="BorderField" type="ColorRect" parent="."]
-margin_left = 280.0
-margin_top = 146.0
-margin_right = 720.0
-margin_bottom = 434.0
-
-[node name="Field" type="ColorRect" parent="BorderField"]
-margin_left = 7.0
-margin_top = 7.0
-margin_right = 432.0
-margin_bottom = 281.0
-color = Color( 0, 0, 0, 1 )
+position = Vector2( 390, 420 )
+rotation = 0.0906669
 
 [node name="BulletSpawnTimer" type="Timer" parent="."]
 wait_time = 0.2
@@ -86,12 +76,12 @@ position = Vector2( 860, 380 )
 scale = Vector2( 1.4, 1.4 )
 
 [node name="BulletSucker" type="Node2D" parent="Spamton"]
-position = Vector2( 0, -7.14287 )
+position = Vector2( -71.4286, -21.4286 )
 scale = Vector2( -6.49521, 44.541 )
 script = ExtResource( 5 )
 
 [node name="mouth" type="Area2D" parent="Spamton"]
-position = Vector2( 0, -7.14285 )
+position = Vector2( -50, -28.5714 )
 scale = Vector2( 9.97651, -3.16768 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spamton/mouth"]
@@ -101,9 +91,6 @@ shape = SubResource( 4 )
 [node name="AttackMovePlayer" type="AnimationPlayer" parent="Spamton"]
 anims/up_and_down = SubResource( 5 )
 
-[node name="Heart" parent="." instance=ExtResource( 6 )]
-position = Vector2( 510, 290 )
-
 [node name="SpawnAllTimer" type="Timer" parent="."]
 wait_time = 6.0
 autostart = true
@@ -111,6 +98,14 @@ autostart = true
 [node name="Jevil" parent="." instance=ExtResource( 7 )]
 position = Vector2( 920, 180 )
 scale = Vector2( 1.42764, 1.42764 )
+
+[node name="BorderField" parent="." instance=ExtResource( 8 )]
+visible = false
+position = Vector2( 510, 280 )
+scale = Vector2( 0.840002, 0.840002 )
+
+[node name="Heart" parent="." instance=ExtResource( 6 )]
+position = Vector2( 500, 250 )
 
 [connection signal="timeout" from="BulletSpawnTimer" to="." method="_on_BulletSpawnTimer_timeout"]
 [connection signal="timeout" from="AttackTimer" to="." method="_on_AttackTimer_timeout"]

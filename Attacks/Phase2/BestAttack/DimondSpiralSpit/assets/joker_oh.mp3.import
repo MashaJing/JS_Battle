@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/joker_oh.mp3-b3b0bdfa1bd8cbce6f7cbfe5c241b9ea.mp3str"
+
+[deps]
+
+source_file="res://Attacks/Phase2/BestAttack/DimondSpiralSpit/assets/joker_oh.mp3"
+dest_files=[ "res://.import/joker_oh.mp3-b3b0bdfa1bd8cbce6f7cbfe5c241b9ea.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0.0

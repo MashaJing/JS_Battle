@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Border/Border.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Attacks/Phase2/Attack3/Carousel/Carousel.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Attacks/Phase2/Attack3/Carousel/HorseWithKid/HorseBullet2.tscn" type="PackedScene" id=3]
+[ext_resource path="res://player/KinematicHeart.tscn" type="PackedScene" id=4]
+
+[node name="CarouselKids" type="Node2D"]
+
+[node name="BorderField" parent="." instance=ExtResource( 1 )]
+position = Vector2( 520, 280 )
+scale = Vector2( 0.600001, 0.600001 )
+
+[node name="Carousel" parent="." instance=ExtResource( 2 )]
+position = Vector2( 520, 280 )
+horse_scene = ExtResource( 3 )
+
+[node name="KinematicHeart" parent="." instance=ExtResource( 4 )]
+position = Vector2( 530, 280 )

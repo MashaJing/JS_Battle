@@ -9,24 +9,23 @@ func _ready():
 	add_to_group("heart")
 
 func take_damage():
-	$CollisionShape2D.set_deferred("disabled", true)
+	$CollisionPolygon2D.set_deferred("disabled", true)
 	print('took_damage')
 
 	# анимация + звук дамага
 	$AnimationPlayer.play("damage")
 	$SoundDamage.play()
 
-	# сигнал о получении дамага (принимает Attacktarget в сцене main)	
+	# сигнал о получении дамага (принимает Attacktarget в сцене main)
 	# todo: переименовать в health_change?
 	emit_signal("health_changed")
 	emit_signal("tp_decreased")
 
 	# Даём секунду неуязвимости
 	yield(get_tree().create_timer(1), "timeout")
-	$CollisionShape2D.set_deferred("disabled", false)
+	$CollisionPolygon2D.set_deferred("disabled", false)
 
 func _on_TP_area_exited(area):
-	#print('TP EXITED!')
 	if area.is_in_group("bullets"):
 		$AnimationPlayer.play("exit")
 

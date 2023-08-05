@@ -11,11 +11,21 @@ config_version=4
 [application]
 
 config/name="JS_battle"
-run/main_scene="res://Attacks/Phase2/CringeAttack/CringeAttack.tscn"
+run/main_scene="res://Attacks/UltimateAttack/BadAnimation/BadAnimation.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+DecisionStack="*res://Stats/DecisionStack/decision_stack.gd"
+TeamStats="*res://team_stats/TeamStats.tscn"
+Inventorium="*res://Stats/Inventorium/inventorium.gd"
+Password="*res://Attacks/Phase2/TestAttack/password.gd"
+GlobalPartySettings="*res://Attacks/Phase2/CardPlay/Party/GlobalPartySettings.gd"
+GlobalCringeSettings="*res://Attacks/Phase2/CringeAttack/GlobalCringeSettings.gd"
 
 [display]
 
+window/size/fullscreen=true
 window/stretch/mode="viewport"
 
 [gui]

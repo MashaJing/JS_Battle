@@ -2,33 +2,43 @@ extends Node2D
 
 onready var MailBullet = preload("res://Attacks/Phase2/BestAttack/MailAttack/MailBullet/MailBullet.tscn")
 onready var MailWindow = preload("res://Attacks/Phase2/BestAttack/MailAttack/MailWindow/MailWindow.tscn")
-onready var BulletSpawn = [$BulletSpawn, $BulletSpawn2]
+var windows = []
 
 signal attack_ended
 
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	var Window = MailWindow.instance()
-	Window.global_position = $WindowSpawn.global_position
-	add_child(Window)
-	$MailTimer.start()
+	$SpamtonAnimationPlayer.play("appear")
+	yield($SpamtonAnimationPlayer, "animation_finished")
+	$SpamtonAnimationPlayer.play("window_attack_begin")
 
 func _on_MailTimer_timeout():
-	var Bullet = MailBullet.instance()
-	Bullet.global_position = BulletSpawn[randi() % 2].global_position
-	add_child(Bullet)
+	$WindowSpawn/RandomSpawnPath.spawn()
+	$WindowSpawn2/RandomSpawnPath2.spawn()
 
 func _on_SpawnTimer_timeout():
 	# останавливаем спавн писем
 	$MailTimer.stop()
-	# окно закрывается
-	get_node("MailWindow").close()
-	yield(get_node("MailWindow/AnimationPlayer"), "animation_finished")
-	get_node("MailWindow").queue_free()
-	# посылаем сигнал в сцену всей атаки	
+	# Спам уходит
+	$SpamtonAnimationPlayer.play_backwards("appear")
+	# окна закрываются
+	for window in windows:
+		window.close()
+		window.queue_free()
+	# посылаем сигнал в сцену всей атаки
 	emit_signal("attack_ended")
-	$AnimationPlayer.play("clear_box")
-	yield(get_node("AnimationPlayer"), "animation_finished")
-	# ответственность за высвобождение ресурсов лежит на сцене атаки
-	queue_free()
+
+
+func start_attack():
+	$MailTimer.start()
+	$SpawnTimer.start()
+
+func open_windows():
+	spawn_window($WindowSpawn.global_position)
+	spawn_window($WindowSpawn2.global_position)
+
+func spawn_window(spawn_position):
+	var Window = MailWindow.instance()
+	Window.global_position = spawn_position
+	add_child(Window)
+	windows.append(Window)	

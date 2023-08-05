@@ -12,6 +12,6 @@ func init_border():
 
 
 func _ready():
-	init_border()
+#	init_border()
 	yield(get_tree().create_timer(2.0), "timeout")
 	emit_signal("attack_ended")

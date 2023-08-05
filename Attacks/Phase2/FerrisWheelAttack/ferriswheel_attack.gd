@@ -49,4 +49,5 @@ func _on_HoldingTimer_timeout():
 	yield(get_tree().create_timer(0.5), "timeout")
 	falling = true
 	yield(get_tree().create_timer(1.0), "timeout")
-	emit_signal("attack_ended")	
+#	emit_signal("attack_ended") ВЕДЬ АТАКА НЕ КОНЧИЛАСЬ
+	get_tree().change_scene(GlobalPartySettings.PARTY_ROOT_SCENE_PATH)

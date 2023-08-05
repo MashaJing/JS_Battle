@@ -1,17 +1,17 @@
-extends RigidBody2D
+extends Area2D
 
 
 var speed = randi() % 50
-var gravity = 100
 var time = 0
+var GRABVITY = 4
+var ttl = 4
 
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	gravity_scale = 10
 	z_index = randi() % 2
-	pass # Replace with function body.
 
-func _physics_process(delta):
+func _process(delta):
+	time += delta
 	position.x += speed * delta
+	position.y += GRABVITY * time * time
 

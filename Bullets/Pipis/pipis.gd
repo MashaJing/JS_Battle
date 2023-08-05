@@ -15,6 +15,7 @@ func _ready():
 	
 func _on_ExplosionTimer_timeout():
 	$AnimatedSprite.queue_free()
+	$CollisionShape2D.queue_free()
 	var Bullet
 	var angle = 0
 	for i in range(10):

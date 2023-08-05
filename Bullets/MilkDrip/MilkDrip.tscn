@@ -7,6 +7,8 @@
 radius = 6.08276
 
 [node name="MilkDrip" type="Area2D"]
+position = Vector2( 256, 73 )
+rotation = 0.689405
 scale = Vector2( 1.97761, 1.97761 )
 script = ExtResource( 2 )
 
@@ -15,4 +17,5 @@ texture = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 1, 2 )
+rotation = 0.689405
 shape = SubResource( 1 )

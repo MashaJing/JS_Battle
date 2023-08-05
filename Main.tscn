@@ -4,7 +4,7 @@
 [ext_resource path="res://team_stats/Kris/Kris.tscn" type="PackedScene" id=2]
 [ext_resource path="res://main_script.gd" type="Script" id=3]
 [ext_resource path="res://team_stats/Susie/Susie.tscn" type="PackedScene" id=4]
-[ext_resource path="res://team_stats/heroes_team.tscn" type="PackedScene" id=5]
+[ext_resource path="res://team_stats/TeamStats.tscn" type="PackedScene" id=5]
 [ext_resource path="res://team_stats/Spamton/Spamton.tscn" type="PackedScene" id=6]
 [ext_resource path="res://team_stats/Jevil/Jevil.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Assets/music/battle.ogg" type="AudioStream" id=8]
@@ -12,6 +12,13 @@
 
 [node name="Main" type="Node2D"]
 script = ExtResource( 3 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -10.0
+margin_top = -50.0
+margin_right = 1060.0
+margin_bottom = 632.0
+color = Color( 0, 0, 0, 1 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 510, 290 )
@@ -25,16 +32,16 @@ visible = false
 [node name="TeamStats" parent="." instance=ExtResource( 5 )]
 
 [node name="Kris" parent="TeamStats" instance=ExtResource( 2 )]
-position = Vector2( 180, 170 )
+position = Vector2( 180, 110 )
 
 [node name="Susie" parent="TeamStats" instance=ExtResource( 4 )]
-position = Vector2( 160, 270 )
+position = Vector2( 206, 195 )
 
 [node name="Jevil" parent="TeamStats" instance=ExtResource( 7 )]
-position = Vector2( 880, 190 )
+position = Vector2( 870, 148 )
 
 [node name="Spamton" parent="TeamStats" instance=ExtResource( 6 )]
-position = Vector2( 817, 247 )
+position = Vector2( 930, 300 )
 
 [node name="Seam" type="Node2D" parent="TeamStats"]
 position = Vector2( 1014, 490 )

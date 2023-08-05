@@ -459,6 +459,18 @@ tracks/1/keys = {
 "update": 0,
 "values": [ 0.0, 90.0 ]
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath("AnimatedSprite:animation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ "default", "black_glasses" ]
+}
 
 [sub_resource type="Animation" id=8]
 resource_name = "flip"
@@ -816,12 +828,10 @@ position = Vector2( -10, 10 )
 script = ExtResource( 10 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( -10, 0 )
+position = Vector2( -59, -24 )
 z_index = 1
 frames = SubResource( 1 )
-animation = "laugh"
-playing = true
-offset = Vector2( 60, 20 )
+offset = Vector2( 10, 0 )
 
 [node name="Head" type="Sprite" parent="AnimatedSprite"]
 visible = false

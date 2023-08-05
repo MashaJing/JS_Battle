@@ -1,0 +1,345 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://between_attack_menu/member_menu.gd" type="Script" id=1]
+[ext_resource path="res://between_attack_menu/assets/menu.png" type="Texture" id=2]
+[ext_resource path="res://Themes/MenuTheme.tres" type="Theme" id=3]
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 2 )
+region = Rect2( 737.275, 61.9864, 103.029, 35.5873 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 2 )
+region = Rect2( 841.632, 62.8448, 106.792, 35.2006 )
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 2 )
+region = Rect2( 704.991, 317.579, 31.0132, 26.6902 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 2 )
+region = Rect2( 740.076, 317.689, 31.1133, 26.2328 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 2 )
+region = Rect2( 775.104, 317.753, 31.2414, 26.2825 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 2 )
+region = Rect2( 809.801, 317.403, 31.1719, 26.5878 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 2 )
+region = Rect2( 845.221, 317.953, 30.6221, 26.0362 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 2 )
+region = Rect2( 738.582, 100.203, 102.036, 33.3387 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 2 )
+region = Rect2( 844.017, 99.2015, 104.898, 34.7571 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 2 )
+region = Rect2( 737.08, 136.374, 107.374, 35.6156 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 2 )
+region = Rect2( 843.203, 135.751, 105.199, 36.0364 )
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 3 )
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 10.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -280.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+margin_right = 1024.0
+margin_bottom = 138.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 0
+alignment = 1
+
+[node name="Kris" type="GridContainer" parent="VBoxContainer/HBoxContainer"]
+margin_right = 341.0
+margin_bottom = 138.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 1 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer/Kris"]
+margin_right = 341.0
+margin_bottom = 138.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 4
+
+[node name="IconAndStats" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/Kris/VBoxContainer"]
+margin_right = 341.0
+margin_bottom = 67.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Icon" type="TextureRect" parent="VBoxContainer/HBoxContainer/Kris/VBoxContainer/IconAndStats"]
+margin_right = 168.0
+margin_bottom = 67.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = SubResource( 6 )
+expand = true
+
+[node name="HP" type="TextureRect" parent="VBoxContainer/HBoxContainer/Kris/VBoxContainer/IconAndStats"]
+margin_left = 172.0
+margin_right = 341.0
+margin_bottom = 67.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = SubResource( 7 )
+expand = true
+
+[node name="Buttons" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/Kris/VBoxContainer"]
+margin_top = 71.0
+margin_right = 341.0
+margin_bottom = 138.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Attack" type="MenuButton" parent="VBoxContainer/HBoxContainer/Kris/VBoxContainer/Buttons"]
+margin_right = 65.0
+margin_bottom = 67.0
+focus_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+icon = SubResource( 1 )
+expand_icon = true
+
+[node name="Act" type="MenuButton" parent="VBoxContainer/HBoxContainer/Kris/VBoxContainer/Buttons"]
+margin_left = 69.0
+margin_right = 134.0
+margin_bottom = 67.0
+focus_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+icon = SubResource( 2 )
+expand_icon = true
+
+[node name="Item" type="MenuButton" parent="VBoxContainer/HBoxContainer/Kris/VBoxContainer/Buttons"]
+margin_left = 138.0
+margin_right = 203.0
+margin_bottom = 67.0
+focus_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+icon = SubResource( 3 )
+expand_icon = true
+
+[node name="Spare" type="MenuButton" parent="VBoxContainer/HBoxContainer/Kris/VBoxContainer/Buttons"]
+margin_left = 207.0
+margin_right = 272.0
+margin_bottom = 67.0
+focus_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+icon = SubResource( 4 )
+expand_icon = true
+
+[node name="Defense" type="MenuButton" parent="VBoxContainer/HBoxContainer/Kris/VBoxContainer/Buttons"]
+margin_left = 276.0
+margin_right = 341.0
+margin_bottom = 67.0
+focus_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+icon = SubResource( 5 )
+expand_icon = true
+
+[node name="Susie" type="GridContainer" parent="VBoxContainer/HBoxContainer"]
+margin_left = 341.0
+margin_right = 682.0
+margin_bottom = 138.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer/Susie"]
+margin_right = 341.0
+margin_bottom = 138.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="IconAndStats" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/Susie/VBoxContainer"]
+margin_right = 341.0
+margin_bottom = 67.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Icon" type="TextureRect" parent="VBoxContainer/HBoxContainer/Susie/VBoxContainer/IconAndStats"]
+margin_right = 168.0
+margin_bottom = 67.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = SubResource( 9 )
+expand = true
+
+[node name="HP" type="TextureRect" parent="VBoxContainer/HBoxContainer/Susie/VBoxContainer/IconAndStats"]
+margin_left = 172.0
+margin_right = 341.0
+margin_bottom = 67.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = SubResource( 10 )
+expand = true
+
+[node name="Buttons" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/Susie/VBoxContainer"]
+margin_top = 71.0
+margin_right = 341.0
+margin_bottom = 138.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Attack" type="MenuButton" parent="VBoxContainer/HBoxContainer/Susie/VBoxContainer/Buttons"]
+margin_right = 65.0
+margin_bottom = 67.0
+focus_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Act" type="MenuButton" parent="VBoxContainer/HBoxContainer/Susie/VBoxContainer/Buttons"]
+margin_left = 69.0
+margin_right = 134.0
+margin_bottom = 67.0
+focus_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Item" type="MenuButton" parent="VBoxContainer/HBoxContainer/Susie/VBoxContainer/Buttons"]
+margin_left = 138.0
+margin_right = 203.0
+margin_bottom = 67.0
+focus_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Spare" type="MenuButton" parent="VBoxContainer/HBoxContainer/Susie/VBoxContainer/Buttons"]
+margin_left = 207.0
+margin_right = 272.0
+margin_bottom = 67.0
+focus_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Defense" type="MenuButton" parent="VBoxContainer/HBoxContainer/Susie/VBoxContainer/Buttons"]
+margin_left = 276.0
+margin_right = 341.0
+margin_bottom = 67.0
+focus_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Ralsei" type="GridContainer" parent="VBoxContainer/HBoxContainer"]
+margin_left = 682.0
+margin_right = 1024.0
+margin_bottom = 138.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer/Ralsei"]
+margin_right = 342.0
+margin_bottom = 138.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="IconAndStats" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/Ralsei/VBoxContainer"]
+margin_right = 342.0
+margin_bottom = 67.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Icon" type="TextureRect" parent="VBoxContainer/HBoxContainer/Ralsei/VBoxContainer/IconAndStats"]
+margin_right = 169.0
+margin_bottom = 67.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = SubResource( 11 )
+expand = true
+
+[node name="HP" type="TextureRect" parent="VBoxContainer/HBoxContainer/Ralsei/VBoxContainer/IconAndStats"]
+margin_left = 173.0
+margin_right = 342.0
+margin_bottom = 67.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = SubResource( 12 )
+expand = true
+
+[node name="Buttons" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/Ralsei/VBoxContainer"]
+margin_top = 71.0
+margin_right = 342.0
+margin_bottom = 138.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Attack" type="MenuButton" parent="VBoxContainer/HBoxContainer/Ralsei/VBoxContainer/Buttons"]
+margin_right = 65.0
+margin_bottom = 67.0
+focus_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Act" type="MenuButton" parent="VBoxContainer/HBoxContainer/Ralsei/VBoxContainer/Buttons"]
+margin_left = 69.0
+margin_right = 134.0
+margin_bottom = 67.0
+focus_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Item" type="MenuButton" parent="VBoxContainer/HBoxContainer/Ralsei/VBoxContainer/Buttons"]
+margin_left = 138.0
+margin_right = 203.0
+margin_bottom = 67.0
+focus_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Spare" type="MenuButton" parent="VBoxContainer/HBoxContainer/Ralsei/VBoxContainer/Buttons"]
+margin_left = 207.0
+margin_right = 272.0
+margin_bottom = 67.0
+focus_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Defense" type="MenuButton" parent="VBoxContainer/HBoxContainer/Ralsei/VBoxContainer/Buttons"]
+margin_left = 276.0
+margin_right = 342.0
+margin_bottom = 67.0
+focus_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="CommentField" type="ColorRect" parent="VBoxContainer"]
+margin_top = 142.0
+margin_right = 1024.0
+margin_bottom = 280.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 3 )
+color = Color( 0, 0, 0, 1 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/CommentField"]
+margin_left = 80.0
+margin_top = 18.0
+margin_right = 1000.0
+margin_bottom = 106.0

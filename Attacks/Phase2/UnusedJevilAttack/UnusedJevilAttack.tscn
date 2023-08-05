@@ -1,13 +1,14 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://player/KinematicHeart.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Border/Border.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Attacks/Phase2/BestAttack/KnivesAttack/DevilsKnife/DevilsKnife.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Attacks/Phase2/UnusedJevilAttack/unused_Jevil_attack.gd" type="Script" id=4]
 [ext_resource path="res://team_stats/Spamton/Spamton.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Attacks/Phase2/UnusedJevilAttack/Assets/glass_broken.mp3" type="AudioStream" id=6]
 [ext_resource path="res://Attacks/Phase2/UnusedJevilAttack/Assets/metal_boom.wav" type="AudioStream" id=7]
 [ext_resource path="res://Attacks/Phase2/UnusedJevilAttack/Assets/cans_crash.wav" type="AudioStream" id=8]
+[ext_resource path="res://Assets/DevilsBlade.png" type="Texture" id=9]
+[ext_resource path="res://Bullets/DevilsKnife/Assets/ezgif.com-webp-to-png.png" type="Texture" id=10]
 
 [sub_resource type="Animation" id=1]
 resource_name = "attack"
@@ -38,16 +39,16 @@ tracks/1/keys = {
 "values": [ Vector2( 820, 278 ), Vector2( 240, 278 ), Vector2( 240, 278 ), Vector2( 820, 278 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("KnifeOrigin:visible")
+tracks/2/path = NodePath("KnifeOrigin/Knife:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
+"times": PoolRealArray( 0.2, 0.4, 0.9, 1.1, 1.5, 1.7, 2.2, 2.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
 [sub_resource type="Animation" id=2]
@@ -104,17 +105,33 @@ tracks/2/keys = {
 script = ExtResource( 4 )
 
 [node name="BorderField" parent="." instance=ExtResource( 2 )]
-position = Vector2( 520, 280 )
+position = Vector2( 525, 295 )
+scale = Vector2( 0.800001, 0.800001 )
 
 [node name="KinematicHeart" parent="." instance=ExtResource( 1 )]
 position = Vector2( 500, 270 )
 
 [node name="KnifeOrigin" type="Node2D" parent="."]
+visible = false
 position = Vector2( 820, 278 )
+rotation = -12.5664
 
-[node name="DevilsKnife" parent="KnifeOrigin" instance=ExtResource( 3 )]
-position = Vector2( -59.9999, 92 )
-scale = Vector2( 1.92, 2 )
+[node name="Blade" type="Area2D" parent="KnifeOrigin" groups=["bullets"]]
+
+[node name="Blade" type="Sprite" parent="KnifeOrigin/Blade"]
+position = Vector2( -29.4575, -13.8716 )
+rotation = -0.249582
+scale = Vector2( 8.15184, 5.04944 )
+texture = ExtResource( 9 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="KnifeOrigin/Blade"]
+polygon = PoolVector2Array( -118, -59, -113, -45, -45.9999, -57, 4.00006, -55, 39.0001, -49, 80.0001, -28, 89.0001, -18, 95.0001, -19, 89.0001, -44, 39.0001, -72, -10.9999, -75, -61.9999, -72 )
+
+[node name="Knife" type="Sprite" parent="KnifeOrigin"]
+position = Vector2( -39.75, 9.50001 )
+scale = Vector2( 3.11979, 2.05556 )
+texture = ExtResource( 10 )
+flip_h = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/attack = SubResource( 1 )
@@ -122,7 +139,6 @@ anims/spam_leave = SubResource( 2 )
 
 [node name="Spamton" parent="." instance=ExtResource( 5 )]
 position = Vector2( 790, 400 )
-scale = Vector2( -1, 1 )
 
 [node name="GarbageNoise" type="AudioStreamPlayer2D" parent="."]
 position = Vector2( 1230, 360 )

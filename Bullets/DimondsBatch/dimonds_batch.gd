@@ -8,10 +8,12 @@ var bul = preload('res://Bullets/bullet_dimond/Dimond.tscn')
 
 
 func _ready():
+	if BULLET != null:
+		bul = BULLET
 	var direction = (heart_position - global_position).normalized()
 	var angle = 0
 	for i in range(N_BULLETS):
-		angle = deg2rad(SHOOT_ANGLE * i / (N_BULLETS - 1)) + direction.angle()
+		angle = deg2rad(SHOOT_ANGLE * i / (N_BULLETS - 1) - SHOOT_ANGLE/2) + direction.angle()
 		var bullet = bul.instance()
 		bullet.direction =  Vector2(cos(angle), sin(angle)).normalized()
 		bullet.set_rotation(angle + PI/2)

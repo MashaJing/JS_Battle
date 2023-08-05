@@ -1,7 +1,7 @@
 extends Line2D
 
 var pts=PoolVector2Array()
-onready var phone =	get_parent().get_node("Phone")
+onready var phone =	get_parent().get_node("WireBase/Phone")
 onready var wireBase =	get_parent().get_node("WireBase")
 
 

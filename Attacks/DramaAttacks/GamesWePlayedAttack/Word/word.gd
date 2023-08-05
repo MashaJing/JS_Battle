@@ -12,7 +12,6 @@ func _ready():
 	for l in word:
 		letterBullet = Letter.instance()
 		letterBullet.letter = l
-		letterBullet.target_position = target_position
 		add_child(letterBullet)
 		yield(get_tree().create_timer(0.08), "timeout")
 	emit_signal('spawned_replica')

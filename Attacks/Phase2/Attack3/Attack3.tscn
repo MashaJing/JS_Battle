@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Attacks/Phase2/Attack3/Carousel/Carousel.tscn" type="PackedScene" id=1]
+[ext_resource path="res://player/KinematicHeart.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Attacks/Phase2/Attack3/attack3.gd" type="Script" id=3]
+[ext_resource path="res://team_stats/Spamton/Spamton.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Border/Border.tscn" type="PackedScene" id=5]
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 550, 20, 92.9607, -69.0018, -92.9607, 69.0018, 290, 70, 0, 0, 0, 0, 170, 240 )
+}
+
+[node name="Attack3" type="Node2D"]
+position = Vector2( -1, -1 )
+script = ExtResource( 3 )
+
+[node name="Carousel" parent="." instance=ExtResource( 1 )]
+position = Vector2( 500, 246.766 )
+z_index = 1
+
+[node name="Spamton" parent="." instance=ExtResource( 4 )]
+position = Vector2( 684, 421 )
+
+[node name="Path2D" type="Path2D" parent="."]
+position = Vector2( 60, 70 )
+curve = SubResource( 1 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2( 550, 20 )
+rotation = -3.04393
+
+[node name="DollarSpawnTimer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[node name="BorderField" parent="." instance=ExtResource( 5 )]
+position = Vector2( 511, 221 )
+scale = Vector2( 0.68, 0.68 )
+
+[node name="KinematicHeart" parent="." instance=ExtResource( 2 )]
+position = Vector2( 481, 311 )
+
+[connection signal="timeout" from="DollarSpawnTimer" to="." method="_on_DollarSpawnTimer_timeout"]

@@ -1,0 +1,57 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Attacks/DullAttacks/Dimonds_Minitons/attack_1_script.gd" type="Script" id=1]
+[ext_resource path="res://Bullets/Miniton/PathFollow.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Bullets/bullet_dimond/Dimond.tscn" type="PackedScene" id=3]
+[ext_resource path="res://player/KinematicHeart.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Border/Border.tscn" type="PackedScene" id=5]
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 395, 130, 0, 0, 0, 0, 495, 130, 0, 0, 0, 0, 590, 130 )
+}
+
+[sub_resource type="Curve2D" id=2]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 650, 295, 0, 0, 0, 0, 595, 275, 0, 0, 0, 0, 400, 275, 0, 0, 0, 0, 340, 290 )
+}
+
+[node name="Attack1" type="Node2D"]
+script = ExtResource( 1 )
+bullet_scene = ExtResource( 3 )
+bullet_scene_2 = ExtResource( 2 )
+
+[node name="DimondPath" type="Path2D" parent="."]
+position = Vector2( 5, -40 )
+curve = SubResource( 1 )
+
+[node name="DimondSpawnLocation" type="PathFollow2D" parent="DimondPath"]
+position = Vector2( 395, 130 )
+
+[node name="BulletSpawnTimer" type="Timer" parent="."]
+wait_time = 0.4
+autostart = true
+
+[node name="KinematicHeart" parent="." instance=ExtResource( 4 )]
+position = Vector2( 495, 260 )
+
+[node name="ColorRect" parent="." instance=ExtResource( 5 )]
+position = Vector2( 505, 225 )
+scale = Vector2( 0.68, 0.68 )
+
+[node name="AttackTimer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+autostart = true
+
+[node name="MinitonTimer" type="Timer" parent="."]
+autostart = true
+
+[node name="MinitonPath" type="Path2D" parent="."]
+position = Vector2( 36.4516, -28.75 )
+scale = Vector2( 0.951613, 1.25 )
+curve = SubResource( 2 )
+
+[connection signal="timeout" from="BulletSpawnTimer" to="." method="_on_BulletSpawnTimer_timeout"]
+[connection signal="timeout" from="AttackTimer" to="." method="_on_AttackTimer_timeout"]
+[connection signal="timeout" from="MinitonTimer" to="." method="_on_MinitonTimer_timeout"]

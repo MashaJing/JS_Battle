@@ -1,6 +1,8 @@
 extends Node2D
 signal attack_began
 
+# сделать большой коэф атаки, как задумывалось в ориге !!!
+
 func _process(_delta):
 	pass
 
@@ -24,5 +26,6 @@ func _ready():
 	# knife.speed = 0.1
 
 
-func _on_UnusedJevilAttack_attack_began():	
+func _on_UnusedJevilAttack_attack_began():
+	$KnifeOrigin.visible = true
 	$AnimationPlayer.play("attack")

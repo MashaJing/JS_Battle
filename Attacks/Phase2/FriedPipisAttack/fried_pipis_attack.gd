@@ -24,3 +24,6 @@ func _on_PipisTimer_timeout():
 	micropipis.position.x += randi() % 100 - 100
 	micropipis.get_node("ExplosionTimer").wait_time = 0.01
 	add_child(micropipis)
+
+func _on_AttackTimer_timeout():
+	get_tree().change_scene(GlobalPartySettings.PARTY_ROOT_SCENE_PATH)
