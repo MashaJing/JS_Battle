@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="JS_battle"
-run/main_scene="res://Attacks/UltimateAttack/BadAnimation/BadAnimation.tscn"
+run/main_scene="res://Attacks/Phase2/BestAttack/best_attack.tscn"
 config/icon="res://icon.png"
 
 [autoload]

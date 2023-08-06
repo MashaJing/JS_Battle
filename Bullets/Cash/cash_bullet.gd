@@ -27,7 +27,6 @@ func _process(delta):
 
 	# движение маятника
 	self.position.x += amplitude_x * cos(omega * time - PI/2)
-	#self.position.y =  -amplitude_y * abs(sin(time * omega - PI/2))
 	self.global_position.y += delta * abs(cos(omega * time - PI/2)) * 100
 
 

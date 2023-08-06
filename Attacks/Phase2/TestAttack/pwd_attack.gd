@@ -63,7 +63,7 @@ func check_pwd_scenario():
 
 func _input(event):
 	if event is InputEventKey and event.is_pressed():
-		var key_text = OS.get_scancode_string(event.scancode)
+		var key_text = OS.get_scancode_string(event.unicode)
 		print(key_text)
 		if key_text == "BackSpace":
 			var new_text = PasswordField.text
@@ -126,11 +126,12 @@ func check_pwd_scnario_end():
 		$Spamton.speak("[WAaT]?! U F0RG0T IT?!")
 		yield($Spamton, "stopped_talk")
 		if len(Password.VALUE) > 8:
-			$Spamton.speak("BUT...")
+			$Spamton.speak("1 SEe...")
 			yield($Spamton, "stopped_talk")
-			$Spamton.speak("1T WAS SO [reliable]...")
+			$Spamton.speak("1T W@S T00 [reliable]...")
+			$Spamton/AnimatedSprite.play("laugh")
 		else:
-			$Spamton.speak("THAT  [micro] PASSWORD U CREATED [2 min] AGO ?1?!")
+			$Spamton.speak("THAT  [micro-] PASSWORD U CREATED [2 min] AGO ?1?!")
 		yield($Spamton, "stopped_talk")
 
 

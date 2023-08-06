@@ -6,7 +6,7 @@
 [sub_resource type="CircleShape2D" id=1]
 radius = 130.311
 
-[node name="Heal" type="Area2D"]
+[node name="Heal" type="Area2D" groups=["heal_bullets"]]
 script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]

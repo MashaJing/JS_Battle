@@ -50,8 +50,9 @@ script = ExtResource( 2 )
 position = Vector2( 464, 728 )
 scale = Vector2( 0.759948, 0.759948 )
 
-[node name="KinematicHeart" parent="." instance=ExtResource( 3 )]
-position = Vector2( 464, 344 )
+[node name="KinematicHeart" parent="BorderField" instance=ExtResource( 3 )]
+position = Vector2( 0, 21.0541 )
+scale = Vector2( 1.31588, 1.31588 )
 
 [node name="AttackPlayer" type="AnimationPlayer" parent="."]
 anims/best_attack = SubResource( 1 )

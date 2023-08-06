@@ -31,9 +31,4 @@ func healed(delta):
 	if HP < 0 and new_HP > 0:
 		emit_signal("Up")
 	
-	# на случай, если будут хилки с подвохом (?)
-	#if HP > 0 and new_HP < 0:
-	#	$AnimatedSprite.play("down")
-	#	emit_signal("Down")
-	
 	HP = new_HP

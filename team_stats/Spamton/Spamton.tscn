@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=2]
+[gd_scene load_steps=62 format=2]
 
 [ext_resource path="res://team_stats/Spamton/assets/hit/hit.png" type="Texture" id=1]
 [ext_resource path="res://team_stats/Spamton/assets/increase_head/image3x1.png" type="Texture" id=2]
@@ -12,7 +12,6 @@
 [ext_resource path="res://team_stats/Spamton/spamton.gd" type="Script" id=10]
 [ext_resource path="res://Assets/sounds/voice_spamton.mp3" type="AudioStream" id=11]
 [ext_resource path="res://team_stats/Spamton/assets/black_glasses/wasted.png" type="Texture" id=12]
-[ext_resource path="res://team_stats/Spamton/assets/angry_big_head/AngryHead.png" type="Texture" id=13]
 [ext_resource path="res://team_stats/Spamton/assets/angry_big_head/default-copy-0.png" type="Texture" id=14]
 [ext_resource path="res://team_stats/Spamton/assets/turn_back/1.png" type="Texture" id=15]
 [ext_resource path="res://team_stats/Spamton/assets/genorisity/1.png" type="Texture" id=16]
@@ -183,7 +182,7 @@ animations = [ {
 
 [sub_resource type="Animation" id=40]
 resource_name = "angry_big_head"
-loop = true
+length = 0.1
 step = 0.05
 tracks/0/type = "value"
 tracks/0/path = NodePath("AnimatedSprite:animation")
@@ -195,7 +194,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ "headless" ]
+"values": [ "hit" ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("AnimatedSprite:playing")
@@ -208,42 +207,6 @@ tracks/1/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ true ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("AnimatedSprite/Head:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("AnimatedSprite/Head:rotation_degrees")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0.05, 0.1, 0.15, 0.45, 0.5, 0.55, 0.8, 0.9, 1 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 0,
-"values": [ 0.0, 40.0, 0.0, 0.0, -20.0, 0.0, 0.0, 45.0, 0.0 ]
-}
-tracks/4/type = "value"
-tracks/4/path = NodePath("AnimatedSprite/Head:position")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = false
-tracks/4/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ Vector2( 60, -2 ), Vector2( 60, -4 ), Vector2( 55, -2 ), Vector2( 60, 2 ), Vector2( 60, -2 ), Vector2( 60, -4 ) ]
 }
 
 [sub_resource type="Animation" id=3]
@@ -343,18 +306,6 @@ tracks/1/keys = {
 "update": 1,
 "values": [ true ]
 }
-tracks/2/type = "value"
-tracks/2/path = NodePath("AnimatedSprite/Head:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0.1 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
 
 [sub_resource type="Animation" id=4]
 resource_name = "default"
@@ -414,18 +365,6 @@ tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 0.1 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-tracks/5/type = "value"
-tracks/5/path = NodePath("AnimatedSprite/Head:visible")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/keys = {
 "times": PoolRealArray( 0.1 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
@@ -653,30 +592,6 @@ tracks/0/keys = {
 [sub_resource type="Animation" id=41]
 resource_name = "increase_separated_head"
 length = 0.2
-tracks/0/type = "value"
-tracks/0/path = NodePath("AnimatedSprite/Head:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.2 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ Vector2( 1.53125, 1.5 ), Vector2( 2.297, 2.25 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("AnimatedSprite/Head:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 0.2 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ Vector2( 60, -4 ), Vector2( 60, -25 ) ]
-}
 
 [sub_resource type="Animation" id=44]
 resource_name = "laugh"
@@ -717,18 +632,6 @@ tracks/2/keys = {
 "stream": ExtResource( 17 )
 } ],
 "times": PoolRealArray( 0 )
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("AnimatedSprite/Head:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
 }
 
 [sub_resource type="Animation" id=43]
@@ -810,34 +713,18 @@ tracks/1/keys = {
 "update": 1,
 "values": [ true ]
 }
-tracks/2/type = "value"
-tracks/2/path = NodePath("AnimatedSprite/Head:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
 
 [node name="Spamton" type="Node2D"]
 position = Vector2( -10, 10 )
 script = ExtResource( 10 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( -59, -24 )
+position = Vector2( -10, 0 )
 z_index = 1
 frames = SubResource( 1 )
+animation = "hit"
+playing = true
 offset = Vector2( 10, 0 )
-
-[node name="Head" type="Sprite" parent="AnimatedSprite"]
-visible = false
-position = Vector2( 60, -4 )
-scale = Vector2( 1.53125, 1.5 )
-texture = ExtResource( 13 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/angry_big_head = SubResource( 40 )

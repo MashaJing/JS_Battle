@@ -1,3 +1,3 @@
 extends Node2D
 
-var VALUE = '123'
+var VALUE = '11111'
