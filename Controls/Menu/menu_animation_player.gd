@@ -1,3 +1,7 @@
+#  ======================!!!=========================
+#  пока не используется, но может пригодиться при анимировании
+#  ======================!!!=========================
+
 extends AnimationPlayer
 
 enum State {
@@ -6,6 +10,7 @@ enum State {
 	SUSIE_TURN,
 	RALSEI_TURN,
 }
+
 
 func handle_state(state):
 	match state:

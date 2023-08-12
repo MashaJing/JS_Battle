@@ -1,6 +1,6 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=13 format=2]
 
-[ext_resource path="res://between_attack_menu/menu.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/Images/Interior/ringring.png" type="Texture" id=1]
 [ext_resource path="res://team_stats/Kris/Kris.tscn" type="PackedScene" id=2]
 [ext_resource path="res://main_script.gd" type="Script" id=3]
 [ext_resource path="res://team_stats/Susie/Susie.tscn" type="PackedScene" id=4]
@@ -9,39 +9,53 @@
 [ext_resource path="res://team_stats/Jevil/Jevil.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Assets/music/battle.ogg" type="AudioStream" id=8]
 [ext_resource path="res://Cutscenes/ConfessionAttack/seam_speak.gd" type="Script" id=9]
+[ext_resource path="res://Interface/Interface.tscn" type="PackedScene" id=10]
+[ext_resource path="res://musical_theme_script.gd" type="Script" id=11]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
 
 [node name="Main" type="Node2D"]
 script = ExtResource( 3 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
 margin_left = -10.0
-margin_top = -50.0
-margin_right = 1060.0
-margin_bottom = 632.0
+margin_top = -10.0
+margin_right = 1030.0
+margin_bottom = 600.0
 color = Color( 0, 0, 0, 1 )
 
+[node name="Ring" type="AnimatedSprite" parent="ColorRect"]
+position = Vector2( 530, 270 )
+scale = Vector2( 0.181121, 0.181121 )
+frames = SubResource( 1 )
+
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 510, 290 )
+position = Vector2( 510, 300 )
 
 [node name="AttackTimer" type="Timer" parent="."]
 wait_time = 6.0
 
-[node name="Menu" parent="." instance=ExtResource( 1 )]
-visible = false
-
 [node name="TeamStats" parent="." instance=ExtResource( 5 )]
 
 [node name="Kris" parent="TeamStats" instance=ExtResource( 2 )]
-position = Vector2( 180, 110 )
+position = Vector2( 310, 149 )
 
 [node name="Susie" parent="TeamStats" instance=ExtResource( 4 )]
-position = Vector2( 206, 195 )
+position = Vector2( 298, 200 )
 
 [node name="Jevil" parent="TeamStats" instance=ExtResource( 7 )]
-position = Vector2( 870, 148 )
+visible = false
+position = Vector2( 740, 190 )
 
 [node name="Spamton" parent="TeamStats" instance=ExtResource( 6 )]
-position = Vector2( 930, 300 )
+visible = false
+position = Vector2( 750, 290 )
 
 [node name="Seam" type="Node2D" parent="TeamStats"]
 position = Vector2( 1014, 490 )
@@ -51,6 +65,9 @@ script = ExtResource( 9 )
 position = Vector2( 495, 630 )
 stream = ExtResource( 8 )
 volume_db = -8.0
+script = ExtResource( 11 )
+
+[node name="Interface" parent="." instance=ExtResource( 10 )]
+visible = false
 
 [connection signal="timeout" from="AttackTimer" to="." method="_on_AttackTimer_timeout"]
-[connection signal="attck_begins" from="Menu" to="." method="_on_Menu_attck_begins"]

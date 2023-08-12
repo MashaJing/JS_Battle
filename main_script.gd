@@ -1,6 +1,5 @@
 extends Node
 onready var attack_timer = $AttackTimer
-var music_folder = "res://Assets/music/%s"
 
 const State = {
 	MENU = 'menu',
@@ -10,13 +9,10 @@ const State = {
 }
 var state = State.ATTACK
 onready var attacks = [
-#	preload("res://Attacks/Phase1/Attack3/Attack3.tscn").instance(),	
-#	preload("res://Attacks/Phase1/Attack1/Attack1.tscn").instance(),
-#	preload("res://Attacks/Phase1/Attack1/Attack1.tscn").instance(),
-	#preload("res://Attacks/Phase1/Attack2/Attack2.tscn").instance(),
-	#preload("res://Attacks/DullAttacks/DullSpamton/DullSpamton.tscn").instance(),
+#	preload("res://Attacks/Phase1/Attack1/Attack2.tscn").instance(),
+	preload("res://Attacks/DullAttacks/DullSpamton/DullSpamton.tscn").instance(),
 #	preload("res://Attacks/DramaAttacks/MonologueAttack.tscn").instance(),
-	preload("res://Cutscenes/ConfessionAttack/ConfessionAttack.tscn").instance(),
+#	preload("res://Cutscenes/ConfessionAttack/ConfessionAttack.tscn").instance(),
 	#preload("res://Attacks/Phase2/FerrisWheelAttack/FerrisWheelAttack.tscn").instance(),
 ]
 var cur_attack = 0
@@ -24,9 +20,7 @@ signal finished_talking
 
 
 func _ready():
-	# вынести в отдельный метод типа init? 
 	open_menu_after_attack()
-	$Theme.play()
 #	print('main loaded!')
 	add_child(attacks[cur_attack])
 	attacks[cur_attack].connect("attack_ended", self, "_on_attack_ended")
@@ -40,8 +34,6 @@ func _ready():
 # menu -> attack
 func begin_attack_after_menu():
 	print('__________attack begins__________')
-	# предусмотреть кринж-атаки
-	$Menu.hide()
 	add_child(attacks[cur_attack])
 	connect_heart(cur_attack)
 	attacks[cur_attack].connect("attack_ended", self, "_on_attack_ended")
@@ -51,7 +43,7 @@ func begin_attack_after_menu():
 func open_menu_after_attack():
 	# _on_attack_ended
 	# открыть меню
-	$Menu.unhide()
+	pass
 
 # attack -> game_over
 func play_game_over():
@@ -86,20 +78,3 @@ func play_dialogue(dialogue, dialogue_n=0):
 		yield(speaker, "stopped_talk")
 	emit_signal("finished_talking")
 
-
-func _on_soundtrack_required(theme):
-	var new_audio = open_audio(theme)
-	if new_audio != null:
-		if $Theme.playing:
-			$Theme.stop()
-		$Theme.stream = new_audio
-		$Theme.play()
-
-
-func open_audio(theme):
-	var audio_file = music_folder % theme
-	if File.new().file_exists(audio_file):
-		print('found file!')
-		var sfx = load(audio_file)
-		sfx.set_loop(false)
-		return sfx

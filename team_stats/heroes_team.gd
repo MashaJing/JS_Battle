@@ -1,12 +1,9 @@
 extends Node
 
-onready var Jevil = $Jevil
-onready var Spamton = $Spamton
-
 onready var inventorium = $Inventorium
 
-onready var Kris = $Kris
-onready var Susie = $Susie
+onready var Kris = null
+onready var Susie = null
 onready var Ralsei = null
 
 var Spamton_ATK = 100
@@ -14,7 +11,7 @@ var MAX_TP = 100
 var TP = 0
 var tp_delta = 10
 
-onready var heroes = [$Kris]
+onready var heroes = [Kris]
 onready var AttackTargets = heroes
 
 

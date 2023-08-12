@@ -72,20 +72,19 @@ wait_time = 8.0
 autostart = true
 
 [node name="Spamton" parent="." instance=ExtResource( 4 )]
-position = Vector2( 860, 380 )
-scale = Vector2( 1.4, 1.4 )
+position = Vector2( 830, 321 )
 
 [node name="BulletSucker" type="Node2D" parent="Spamton"]
-position = Vector2( -71.4286, -21.4286 )
+position = Vector2( -42.0001, -11 )
 scale = Vector2( -6.49521, 44.541 )
 script = ExtResource( 5 )
 
 [node name="mouth" type="Area2D" parent="Spamton"]
-position = Vector2( -50, -28.5714 )
+position = Vector2( -40.0001, -21 )
 scale = Vector2( 9.97651, -3.16768 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spamton/mouth"]
-position = Vector2( -2.1479, 0 )
+position = Vector2( 2.0047, -5.54709 )
 shape = SubResource( 4 )
 
 [node name="AttackMovePlayer" type="AnimationPlayer" parent="Spamton"]
@@ -96,11 +95,9 @@ wait_time = 6.0
 autostart = true
 
 [node name="Jevil" parent="." instance=ExtResource( 7 )]
-position = Vector2( 920, 180 )
-scale = Vector2( 1.42764, 1.42764 )
+position = Vector2( 790, 210 )
 
 [node name="BorderField" parent="." instance=ExtResource( 8 )]
-visible = false
 position = Vector2( 510, 280 )
 scale = Vector2( 0.840002, 0.840002 )
 
