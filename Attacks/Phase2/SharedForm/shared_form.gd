@@ -1,5 +1,6 @@
 extends Node2D
 onready var DevilsKnife = preload("res://Bullets/DevilsKnife/DevilsKnife.tscn")
+signal attack_ended
 
 
 func _ready():
@@ -17,6 +18,8 @@ func open_form():
 	$AnimationPlayer.play("open_knives")
 	yield($AnimationPlayer, "animation_finished")
 	$AnimationPlayer.play("form_attack")
+	yield($AnimationPlayer, "animation_finished")
+	finish_attack()
 
 func take_knife_1():
 	var DevilsKnife1 = DevilsKnife.instance()
@@ -36,3 +39,11 @@ func start_spin():
 	$Spamton/AnimatedSprite.play("laugh")
 	$Spamton/l_hand.get_children()[0].rotation_speed = 0.5
 	$Spamton/r_hand.get_children()[0].rotation_speed = 0.5
+
+func finish_attack():
+	emit_signal("attack_ended")
+#	var next_scene = GlobalAttackSettings.get_next()
+#	if next_scene != null:
+#		get_tree().change_scene(next_scene)
+#	else:
+#		print("научись обрабатывать исключения уже!")

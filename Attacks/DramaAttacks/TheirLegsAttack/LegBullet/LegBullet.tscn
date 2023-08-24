@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Attacks/DramaAttacks/TheirLegsAttack/Legs/2.png" type="Texture" id=2]
+[ext_resource path="res://Attacks/DramaAttacks/TheirLegsAttack/LegBullet/leg_bullet.gd" type="Script" id=3]
+
+[sub_resource type="AtlasTexture" id=2]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 396, 300, 396, 500 )
+
+[sub_resource type="AtlasTexture" id=3]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 0, 300, 396, 500 )
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ SubResource( 2 ) ],
+"loop": true,
+"name": "queen",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 3 ) ],
+"loop": true,
+"name": "swatch",
+"speed": 5.0
+} ]
+
+[node name="Leg" type="Area2D" groups=["bullets"]]
+script = ExtResource( 3 )
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+position = Vector2( 12.5963, -63.75 )
+scale = Vector2( 0.38685, 0.425 )
+frames = SubResource( 1 )
+animation = "queen"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( 40, -40, 40, 30, -40, 30, -40, 20, -40, -90, 40, -90 )

@@ -73,31 +73,25 @@ func _ready():
 		$AnimationPlayer.play("he_is_serious")
 		yield($AnimationPlayer, "animation_finished")
 		$Spamton/AnimationPlayer.play("laugh")
-		
+
+		yield($AnimationPlayer, "animation_finished")
+		$Spamton/AnimationPlayer.play("default")
+		$Spamton.speak("and also this")
+		yield($Spamton, "stopped_talk")
 	else:
-		$Spamton.speak(" ", 1.0)
+		$Spamton.speak("THIZ")
 		yield($Spamton, "stopped_talk")
 		
-		$Spamton.speak("WAAT THE!!?")
-		yield($Spamton, "stopped_talk")
-	
-		$Spamton/AnimatedSprite.play("black_glasses")
-		
-		$Spamton.speak("WHERE'S [all the] WEB? I WANT YOUR   [4 digits with dots]!!")
-		yield($Spamton, "stopped_talk")
-
-		$Spamton.speak("WHERE R YOU, [#$@]ER???")
-		yield($Spamton, "stopped_talk")
-
-		$Spamton.speak("HOW AM 1 SUPOSED TO [play nice]  WHEN [TOXiC]s LIKE YOU")
-		yield($Spamton, "stopped_talk")
-
-		$Spamton.speak("SIT IN THEIR [vault]s")
-		yield($Spamton, "stopped_talk")
-
-		$Spamton.speak("AND [git commit] [MASSIVE] GENOCIDE")
-		yield($Spamton, "stopped_talk")
-
-		$Spamton.speak("YOU [--force] ME TO CHEAT")
-		yield($Spamton, "stopped_talk")
+#
+#	$Spamton.speak("HOW AM 1 SUPOSED TO [play nice]  WHEN [TOXiC]s LIKE YOU")
+#	yield($Spamton, "stopped_talk")
+#
+#	$Spamton.speak("SIT IN THEIR [vault]s")
+#	yield($Spamton, "stopped_talk")
+#
+#	$Spamton.speak("AND [git commit] [MASSIVE] GENOCIDE")
+#	yield($Spamton, "stopped_talk")
+#
+#	$Spamton.speak("YOU [--force] ME TO CHEAT")
+#	yield($Spamton, "stopped_talk")
 

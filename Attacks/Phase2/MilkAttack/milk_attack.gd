@@ -1,5 +1,7 @@
 extends Node2D
 
+signal attack_ended
+
 onready var Drip = preload("res://Bullets/MilkDrip/MilkDrip.tscn")
 onready var Level = preload("res://Attacks/Phase2/MilkAttack/MilkLevel/MilkLevel.tscn")
 
@@ -25,6 +27,7 @@ func _ready():
 		bullet.add_to_group("bullets")
 		bullet2.add_to_group("bullets")
 		yield(get_tree().create_timer(0.2), "timeout")
+	emit_signal("attack_ended")
 
 
 func _on_MilkLevel_area_entered(area):

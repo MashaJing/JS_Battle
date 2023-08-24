@@ -296,11 +296,6 @@ animations = [ {
 [node name="SharedForm" type="Node2D"]
 script = ExtResource( 4 )
 
-[node name="ColorRect" type="ColorRect" parent="."]
-margin_right = 1040.0
-margin_bottom = 600.0
-color = Color( 0, 0, 0, 1 )
-
 [node name="BorderField" parent="." instance=ExtResource( 2 )]
 position = Vector2( 450, 250 )
 scale = Vector2( 0.800001, 0.800001 )

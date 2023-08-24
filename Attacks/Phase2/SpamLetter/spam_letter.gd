@@ -1,7 +1,7 @@
 extends Node2D
 
 var bullet_batch = preload('res://Bullets/DimondsBatch/DimondsBatch.tscn')
-var bullet = preload('res://Bullets/worm/Worm.tscn')
+var bullet = preload('res://Bullets/Worm/Worm.tscn')
 
 
 func _ready():

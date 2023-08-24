@@ -4,23 +4,19 @@ onready var TestTimer = $Timer
 onready var PasswordField = $PasswordField
 onready var TImeBar = $ProgressBar
 
-enum TestPhase {
-	CREATE = 0,
-	CHECK,
-}
-export(TestPhase) var currentPhase = TestPhase.CREATE
+signal attack_ended
 
 
 func _ready():
-	match currentPhase:
-		TestPhase.CREATE:
-			create_pwd_scenario()
-		TestPhase.CHECK:
-			check_pwd_scenario()
 	
 #	сделать нормальный чек блеать
 	sign_regex.compile("[A-Za-z0-9]{1}$")
-
+	match Password.CUR_TEST_PHASE:
+		Password.TestPhase.CREATE:
+			create_pwd_scenario()
+		Password.TestPhase.CHECK:
+			check_pwd_scenario()
+	
 
 func create_pwd_scenario():
 	$Spamton/AnimatedSprite.play("default")
@@ -88,10 +84,10 @@ func _on_Timer_timeout():
 	PasswordField.visible = false
 	TImeBar.visible = false
 
-	match currentPhase:
-		TestPhase.CREATE:
+	match Password.CUR_TEST_PHASE:
+		Password.TestPhase.CREATE:
 			create_pwd_scnario_end()
-		TestPhase.CHECK:
+		Password.TestPhase.CHECK:
 			check_pwd_scnario_end()
 
 
@@ -106,6 +102,7 @@ func create_pwd_scnario_end():
 		yield($Spamton, "stopped_talk")
 		$Spamton/AnimatedSprite.play("default")
 		$Spamton.speak("[for future use]")
+		yield($Spamton, "stopped_talk")		
 	else:
 		$Spamton/AnimatedSprite.play("black_glasses")
 		$Spamton.speak("[bad] J0B !!!")
@@ -113,6 +110,8 @@ func create_pwd_scnario_end():
 		$Spamton.speak("AR U [serious]?! IT DOSNT EVEN [contain at least 8 characters]")
 		yield($Spamton, "stopped_talk")
 
+	Password.CUR_TEST_PHASE = Password.TestPhase.CHECK
+	emit_signal("attack_ended")
 
 func check_pwd_scnario_end():
 	if validate_password(PasswordField.text):
@@ -133,6 +132,7 @@ func check_pwd_scnario_end():
 		else:
 			$Spamton.speak("THAT  [micro-] PASSWORD U CREATED [2 min] AGO ?1?!")
 		yield($Spamton, "stopped_talk")
+	emit_signal("attack_ended")	
 
 
 func _process(delta):

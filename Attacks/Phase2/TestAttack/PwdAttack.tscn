@@ -25,7 +25,6 @@ margin_top = 8.11772
 
 [node name="PwdAttack" type="Node2D"]
 script = ExtResource( 5 )
-currentPhase = 1
 
 [node name="BorderField" parent="." instance=ExtResource( 2 )]
 position = Vector2( 500, 280 )
@@ -53,9 +52,6 @@ __meta__ = {
 "_editor_description_": ""
 }
 
-[node name="Spamton" parent="." instance=ExtResource( 3 )]
-position = Vector2( 820, 320 )
-
 [node name="ProgressBar" type="ProgressBar" parent="."]
 visible = false
 margin_left = 380.0
@@ -74,5 +70,8 @@ margin_bottom = 40.0
 bbcode_enabled = true
 bbcode_text = "[shake]START TYP1NG TO HAVE [fun]!"
 text = "START TYP1NG TO HAVE [fun]!"
+
+[node name="Spamton" parent="." instance=ExtResource( 3 )]
+position = Vector2( 800, 304 )
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

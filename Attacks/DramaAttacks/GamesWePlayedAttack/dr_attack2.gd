@@ -27,7 +27,8 @@ func init_border():
 func _ready():
 	init_border()
 	# todo: да это жоско
-	var Spamton_from_parent = get_parent().get_parent().get_node("TeamStats/Spamton")
+	# заиспользовать своего локального Спамтона в этой сцене
+	var Spamton_from_parent = get_parent().get_parent().get_node("Spamton")
 	Spamton_from_parent.visible = false
 	Spamton.connect("animation_finished", self, "_on_Spamton_animation_finished")
 	Spamton.play("increase_head")

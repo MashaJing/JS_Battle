@@ -1,5 +1,7 @@
 extends Node2D
 
+signal attack_ended
+
 export var APPEAR_TIME = 2.6
 export var EYES_TIME = 2.5
 export (PackedScene) var JEVIL_BULLET
@@ -7,10 +9,13 @@ export (PackedScene) var JEVIL_BULLET
 # о дамаге от носа, щас выглядит безобидно
 onready var Ray = preload("res://Bullets/ray/Ray.tscn")
 onready var eyes = [$eyeL, $eyeR]
-onready var JevilSpawns = $JevilSpawns.get_children()
+onready var RightJevilSpawns = [$JevilSpawns/Spawn2, $JevilSpawns/Spawn4, $JevilSpawns/Spawn6]
+onready var LeftJevilSpawns = [$JevilSpawns/Spawn1, $JevilSpawns/Spawn3, $JevilSpawns/Spawn5]
+onready var JevilSpawns = [RightJevilSpawns, LeftJevilSpawns]
 onready var appearTimer = $AppearTimer
 onready var colors = [Color.yellow, Color.magenta]
 onready var Jevil = preload("res://team_stats/Jevil/Jevil.tscn")
+var side_ratio = 0
 
 
 func _ready():
@@ -26,12 +31,17 @@ func _on_EyeAttackTimer_timeout():
 	ray.shoot(colors[ind])
 
 func _on_AppearTimer_timeout():
-	var ind = randi() % len(JevilSpawns)
-	var spawn = JevilSpawns[ind]
-	var jevil = Jevil.instance()
+	# с каждым запуском таймера сторона меняется
+	var ind = side_ratio % 2
+	spawn_jevil(ind)
+	side_ratio +=1
 
-	# если спавн в какой-то из левых точек, поворачивается по горизонтали
-	if ind < 3:
+func spawn_jevil(spawn_ind):
+	var ind = randi() % 3
+	var spawn = JevilSpawns[spawn_ind][ind]
+	var jevil = Jevil.instance()
+	# если спавн в какой-то из левых точек, Джев поворачивается по горизонтали
+	if spawn_ind % 2 == 0:
 		jevil.flipped = true
 	jevil.global_position = spawn.global_position
 	add_child(jevil)
@@ -45,4 +55,7 @@ func spawn_bullet(location):
 	dimond_bullet.global_position = location
 	dimond_bullet.heart_position = $KinematicHeart.global_position
 	add_child(dimond_bullet)
-	
+
+
+func _on_AttackTimer_timeout():
+	emit_signal("attack_ended")

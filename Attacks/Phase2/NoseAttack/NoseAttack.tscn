@@ -4,7 +4,7 @@
 [ext_resource path="res://Attacks/Phase2/NoseAttack/assets/blackEyes1.png" type="Texture" id=2]
 [ext_resource path="res://Border/Border.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Attacks/Phase2/NoseAttack/nose_attack.gd" type="Script" id=4]
-[ext_resource path="res://Bullets/WhiteDimond/WhiteDimond.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Bullets/DimondsBatch/DimondsBatch.tscn" type="PackedScene" id=5]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -16,53 +16,52 @@ animations = [ {
 
 [node name="NodeAttack" type="Node2D"]
 script = ExtResource( 4 )
-APPEAR_TIME = 0.6
+APPEAR_TIME = 1.0
 JEVIL_BULLET = ExtResource( 5 )
+
+[node name="AttackTimer" type="Timer" parent="."]
+wait_time = 7.0
+one_shot = true
+autostart = true
 
 [node name="EyeAttackTimer" type="Timer" parent="."]
 wait_time = 2.5
 autostart = true
 
-[node name="eyeR" type="Node2D" parent="."]
-position = Vector2( 627, 198 )
-
-[node name="eyeL" type="Node2D" parent="."]
-position = Vector2( 399, 198 )
-
 [node name="JevilSpawns" type="Node2D" parent="."]
 
 [node name="Spawn1" type="Node2D" parent="JevilSpawns"]
-position = Vector2( 316, 462 )
+position = Vector2( 720, 460 )
 
 [node name="Spawn2" type="Node2D" parent="JevilSpawns"]
-position = Vector2( 260, 338 )
+position = Vector2( 320, 460 )
 
 [node name="Spawn3" type="Node2D" parent="JevilSpawns"]
-position = Vector2( 316, 250 )
+position = Vector2( 780, 340 )
 scale = Vector2( -1, 1 )
 
 [node name="Spawn4" type="Node2D" parent="JevilSpawns"]
-position = Vector2( 724, 467 )
+position = Vector2( 270, 330 )
 scale = Vector2( -1, 1 )
 
 [node name="Spawn5" type="Node2D" parent="JevilSpawns"]
-position = Vector2( 793, 343 )
+position = Vector2( 720, 240 )
 scale = Vector2( -1, 1 )
 
 [node name="Spawn6" type="Node2D" parent="JevilSpawns"]
-position = Vector2( 720, 240 )
+position = Vector2( 320, 240 )
 scale = Vector2( -1, 1 )
 
 [node name="AppearTimer" type="Timer" parent="."]
 wait_time = 0.6
 autostart = true
 
-[node name="KinematicHeart" parent="." instance=ExtResource( 1 )]
-position = Vector2( 497, 400 )
-
 [node name="BorderField" parent="." instance=ExtResource( 3 )]
 position = Vector2( 509, 340 )
 scale = Vector2( 0.97523, 0.97523 )
+
+[node name="KinematicHeart" parent="." instance=ExtResource( 1 )]
+position = Vector2( 497, 400 )
 
 [node name="Nose" type="Area2D" parent="." groups=["bullets"]]
 
@@ -77,5 +76,12 @@ position = Vector2( 455, 198 )
 scale = Vector2( 0.689264, 0.689264 )
 polygon = PoolVector2Array( 66, 225, 0, 0, 132, 0 )
 
+[node name="eyeL" type="Node2D" parent="."]
+position = Vector2( 420, 160 )
+
+[node name="eyeR" type="Node2D" parent="."]
+position = Vector2( 590, 160 )
+
+[connection signal="timeout" from="AttackTimer" to="." method="_on_AttackTimer_timeout"]
 [connection signal="timeout" from="EyeAttackTimer" to="." method="_on_EyeAttackTimer_timeout"]
 [connection signal="timeout" from="AppearTimer" to="." method="_on_AppearTimer_timeout"]

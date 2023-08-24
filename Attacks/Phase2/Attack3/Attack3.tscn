@@ -41,4 +41,10 @@ scale = Vector2( 0.68, 0.68 )
 [node name="KinematicHeart" parent="." instance=ExtResource( 2 )]
 position = Vector2( 481, 311 )
 
+[node name="AttackTimer" type="Timer" parent="."]
+wait_time = 7.0
+one_shot = true
+autostart = true
+
 [connection signal="timeout" from="DollarSpawnTimer" to="." method="_on_DollarSpawnTimer_timeout"]
+[connection signal="timeout" from="AttackTimer" to="." method="_on_AttackTimer_timeout"]

@@ -1,3 +1,9 @@
 extends Node2D
 
-var VALUE = '11111'
+enum TestPhase {
+	CREATE = 0,
+	CHECK,
+}
+var CUR_TEST_PHASE = TestPhase.CREATE
+
+var VALUE = ''

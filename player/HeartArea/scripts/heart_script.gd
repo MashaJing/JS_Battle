@@ -9,6 +9,10 @@ signal take_damage
 
 func _ready():
 	add_to_group("heart")
+	connect("health_changed", TeamStats, "_on_take_damage")
+	connect("tp_increased", TeamStats, "_on_tp_increased")
+	connect("tp_decreased", TeamStats, "_on_tp_decreased")
+
 
 func take_damage():
 	# сигнал для детей

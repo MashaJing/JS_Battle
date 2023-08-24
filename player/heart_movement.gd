@@ -16,7 +16,15 @@ func _physics_process(_delta):
 		direction.y -= 1
 	if Input.is_action_pressed("move_down"):
 		direction.y += 1
+
+	if Input.is_action_just_pressed("x"):
+		speed = 100.0
+	if Input.is_action_just_released("x"):
+		speed = 200.0
+		
 		
 	if direction.length() > 1:
 		direction = direction.normalized()
 	move_and_slide(direction * speed)
+
+

@@ -8,10 +8,20 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "EditorPlugin",
+"class": "SheetToSpritePlugin",
+"language": "GDScript",
+"path": "res://addons/sheet_to_sprite/plugin.gd"
+} ]
+_global_script_class_icons={
+"SheetToSpritePlugin": ""
+}
+
 [application]
 
 config/name="JS_battle"
-run/main_scene="res://Attacks/Phase2/BestAttack/best_attack.tscn"
+run/main_scene="res://Main.tscn"
 config/icon="res://icon.png"
 
 [autoload]
@@ -22,6 +32,7 @@ Inventorium="*res://Stats/Inventorium/inventorium.gd"
 Password="*res://Attacks/Phase2/TestAttack/password.gd"
 GlobalPartySettings="*res://Attacks/Phase2/CardPlay/Party/GlobalPartySettings.gd"
 GlobalCringeSettings="*res://Attacks/Phase2/CringeAttack/GlobalCringeSettings.gd"
+GlobalAttackSettings="*res://GlobalAttackSettings.gd"
 
 [display]
 

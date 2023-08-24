@@ -13,7 +13,8 @@ func _ready():
 		for card in cur_party['cards']:
 			make_turn(card)
 			yield($TurnTimer, "timeout")
-
+		
+		# todo: тут тоже add_child
 		get_tree().change_scene(cur_party["attack_path"])
 	else:
 		emit_signal("attack_ended")
@@ -21,7 +22,7 @@ func _ready():
 		yield($Spamton, "stopped_talk")
 		$Spamton.speak("I GUESS U [win]")
 		yield($Spamton, "stopped_talk")
-
+		emit_signal("attack_ended")
 
 func make_turn(card_name):
 	# выбрать рандомную точку, откуда полетит карта

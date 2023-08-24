@@ -7,12 +7,12 @@
 
 [sub_resource type="Curve2D" id=1]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 830, 360, 0, 0, 0, 0, 700, 380, 0, 0, 0, 0, 450, 380 )
+"points": PoolVector2Array( 0, 0, 0, 0, 830, 360, 0, 0, 0, 0, 670, 380, 0, 0, 0, 0, 460, 380 )
 }
 
 [sub_resource type="Curve2D" id=2]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 830, 340, 0, 0, 0, 0, 690, 200, 0, 0, 0, 0, 440, 200 )
+"points": PoolVector2Array( 0, 0, 0, 0, 830, 340, 0, 0, 0, 0, 670, 190, 0, 0, 0, 0, 450, 190 )
 }
 
 [sub_resource type="Curve2D" id=3]
@@ -28,6 +28,7 @@ position = Vector2( 510, 300 )
 
 [node name="BorderField" parent="." instance=ExtResource( 3 )]
 position = Vector2( 560, 290 )
+scale = Vector2( 0.749432, 0.749432 )
 
 [node name="Spamton" parent="." instance=ExtResource( 4 )]
 position = Vector2( 860, 370 )
@@ -41,7 +42,7 @@ curve = SubResource( 1 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Down"]
 position = Vector2( 830, 360 )
-rotation = 2.98893
+rotation = 3.01725
 loop = false
 
 [node name="Up" type="Path2D" parent="."]
@@ -49,7 +50,7 @@ curve = SubResource( 2 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Up"]
 position = Vector2( 830, 340 )
-rotation = -2.35617
+rotation = -2.38844
 loop = false
 
 [node name="KnifePath" type="Path2D" parent="."]

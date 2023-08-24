@@ -1,17 +1,34 @@
 extends Node
 
+onready var StompArea1 = $Warning
+onready var StompArea2 = $Warning2
+onready var StompArea3 = $Warning3
+onready var Leg1 = $Leg
+onready var Leg2 = $Leg2
+onready var MikeLegs = $MikeLegs
+
 var target = ["Jevil"]
 signal attack_ended
-onready var Border = preload('res://Border/Border.tscn')
 
-
-func init_border():
-	var border = Border.instance()
-	border.global_position = $KinematicHeart.global_position
-	add_child(border)
 
 func _ready():
-	init_border()
-	yield(get_tree().create_timer(2.0), "timeout")
+	$AnimationPlayer.play("attack")
+	yield($AnimationPlayer, "animation_finished")
 	emit_signal("attack_ended")
 
+
+func stomp(stomp_area, leg):
+	stomp_area.visible = true
+	yield(get_tree().create_timer(0.7), "timeout")
+	stomp_area.visible = false
+	leg.stomp()
+
+
+func stomp_1():
+	stomp(StompArea1, Leg1)
+
+func stomp_2():
+	stomp(StompArea2, Leg2)
+
+func stomp_Mike():
+	stomp(StompArea3, MikeLegs)

@@ -5,10 +5,14 @@ onready var devil_knife_attack = preload("res://Attacks/Phase2/BestAttack/Devils
 onready var pipis_attack = preload("res://Attacks/Phase2/BestAttack/PipisAttack/PipisAttack.tscn").instance()
 onready var dimond_spiral_attack = preload("res://Attacks/Phase2/BestAttack/DimondSpiralSpit/DimondSpiralSplit.tscn").instance()
 var current_attack = 0
+signal attack_ended
 
 
 func _ready():
 	$AttackPlayer.play("best_attack")
+	yield($AttackPlayer, "animation_finished")
+	emit_signal("attack_ended")
+	
 
 #func _on_attack_ended():
 #	current_attack += 1
@@ -19,8 +23,6 @@ func _ready():
 
 func start_attack(attack):
 	add_child(attack)
-#	пока тут сигнал нигде не юзается
-#	attack.connect("attack_ended", self, "_on_attack_ended")
 
 
 func start_mail_attack():

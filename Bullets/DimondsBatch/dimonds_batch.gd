@@ -9,7 +9,12 @@ var bullet_default_class = preload('res://Bullets/bullet_dimond/Dimond.tscn')
 
 
 func _ready():
-	var bullet_class = BULLET or bullet_default_class
+	var bullet_class
+	if BULLET == null:
+		bullet_class = bullet_default_class
+	else:
+		bullet_class = BULLET
+	print(bullet_class)
 	var direction = (heart_position - global_position).normalized()
 	var single_bullet_angle = 0
 	for i in range(N_BULLETS):

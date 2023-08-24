@@ -1,5 +1,7 @@
 extends Node
 
+signal attack_ended
+
 onready var DollarSpawnLocation = $Path2D/PathFollow2D
 onready var Dollar = preload("res://Bullets/bullet_dollar/Dollar.tscn")
 var suck_direction = Vector2.ZERO
@@ -25,3 +27,6 @@ func _on_DollarSpawnTimer_timeout():
 #	kromer.move_to($Spamton)
 #	kromer.ttl = 10
 #	add_child(kromer)
+
+func _on_AttackTimer_timeout():
+	emit_signal("attack_ended")

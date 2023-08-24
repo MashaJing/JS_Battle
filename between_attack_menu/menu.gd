@@ -1,6 +1,6 @@
 extends Node
 
-signal attck_begins
+signal attack_began
 signal decided
 signal canceled
 
@@ -90,7 +90,7 @@ func _ready():
 #	for member in team:
 #		print(member)
 #		yield(self, "decided")
-#	call_deferred("emit_signal", "attck_begins")
+#	call_deferred("emit_signal", "attack_began")
 
 func _on_decided():
 	# choice может собираться из глобальных переменных скрипта,
@@ -126,7 +126,7 @@ func _on_Item_button_down():
 func _on_Spare_button_down():
 	print('Spare button pressed!')
 	emit_signal("decided")
-	call_deferred("emit_signal", "attck_begins")
+	call_deferred("emit_signal", "attack_began")
 
 func _on_Defense_button_down():
 	print('Defense button pressed!')
@@ -136,7 +136,13 @@ func _on_Defense_button_down():
 func hide():
 	print("menu hidden")
 	$AnimationPlayer.play("hide_all")
+	$NextAttackButton.visible = false
 
 func unhide():
 	print("menu unhidden")
 	$AnimationPlayer.play("hide_all", -1, 1.0, true)
+	$NextAttackButton.visible = true
+
+# DEBUG
+func _on_NextAttackButton_button_down():
+	emit_signal("attack_began")

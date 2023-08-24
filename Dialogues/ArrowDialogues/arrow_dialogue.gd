@@ -28,13 +28,13 @@ func display(replica, timeout=0.01, pause=0, speak_sound=null):
 	print(replica)
 	$Timer.start()
 	while $Text/RichTextLabel.visible_characters < len(replica):
-		$Text/RichTextLabel.visible_characters += 1		
+		$Text/RichTextLabel.visible_characters += 1
 		if speak_sound != null:
 			speak_sound.play()
 			# фигня
 			yield($Timer, "timeout")
 			speak_sound.stop()
-		yield($Timer, "timeout")			
+		yield($Timer, "timeout")
 	emit_signal("replica_printed")
 	# resize(width_ratio, height_ratio)
 

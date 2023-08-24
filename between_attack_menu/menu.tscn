@@ -96,6 +96,7 @@ tracks/0/keys = {
 script = ExtResource( 6 )
 
 [node name="Control" parent="." instance=ExtResource( 1 )]
+visible = false
 anchor_top = 1.0
 anchor_right = 0.0
 
@@ -105,3 +106,12 @@ anims/kris_turn = SubResource( 8 )
 anims/ralsei_turn = SubResource( 14 )
 anims/susie_turn = SubResource( 13 )
 script = ExtResource( 3 )
+
+[node name="NextAttackButton" type="Button" parent="."]
+margin_left = 400.0
+margin_top = 440.0
+margin_right = 650.0
+margin_bottom = 520.0
+text = "NEXT ATTACK"
+
+[connection signal="button_down" from="NextAttackButton" to="." method="_on_NextAttackButton_button_down"]

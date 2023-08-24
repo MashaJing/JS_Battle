@@ -1,5 +1,7 @@
 extends Node2D
 
+signal attack_ended
+
 onready var bullet_spawn_timer = $BulletSpawnTimer
 onready var Spamton = $Spamton
 onready var SpamtonAnim = $Spamton/AnimatedSprite
@@ -43,6 +45,8 @@ func _on_AttackTimer_timeout():
 	for bullet in get_tree().get_nodes_in_group("bullets"):
 		bullet.queue_free()
 	SpamtonAnim.play("increase_head", true)
+	yield(SpamtonAnim, "animation_finished")
+	emit_signal("attack_ended")
 
 func _ready():
 	yield(get_tree().create_timer(1), "timeout")	

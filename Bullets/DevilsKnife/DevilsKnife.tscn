@@ -3,7 +3,7 @@
 [ext_resource path="res://Bullets/DevilsKnife/devils_knife.gd" type="Script" id=1]
 [ext_resource path="res://Bullets/DevilsKnife/Assets/ezgif.com-webp-to-png.png" type="Texture" id=2]
 
-[node name="DevilsKnife" type="Area2D" groups=["bullets"]]
+[node name="DevilsKnife" type="Area2D" groups=["bullets", "knife"]]
 scale = Vector2( 1.28, 1.28 )
 script = ExtResource( 1 )
 
@@ -18,5 +18,3 @@ scale = Vector2( 1.44544, 1.34347 )
 texture = ExtResource( 2 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-
-[connection signal="area_entered" from="." to="." method="_on_area_knife_entered"]

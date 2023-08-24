@@ -1,17 +1,9 @@
 extends Node2D
 
 var dialoguePath = 'res://Assets/Texts/monologue.json'
-var sound_files = {
-	"Jevil": "res://Assets/sounds/voice_jevil.mp3",
-	"Spamton": "res://Assets/sounds/voice_spamton.mp3",
-}
-onready var Jevil = get_parent().get_node("TeamStats/Jevil")
-onready var Spamton = get_parent().get_node("TeamStats/Spamton")
+onready var Jevil = $Jevil
+onready var Spamton = $Spamton
 
-onready var TeamStats = get_parent().get_node("TeamStats")
-
-#onready var JevilAnim = get_parent().get_node("TeamStats/Jevil")
-#onready var SpamtonAnim = get_parent().get_node("TeamStats/Spamton")
 onready var MusTheme = get_parent().get_node("Theme")
 
 onready var attacks = [
@@ -44,7 +36,6 @@ func getDialogue():
 
 
 func _ready():
-	print(get_parent().get_children())
 	var dialogue = getDialogue()
 	Spamton.get_node("AnimationPlayer").play("default")
 	Jevil.get_node("AnimationPlayer").play("Surprised")

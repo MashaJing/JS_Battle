@@ -1,5 +1,7 @@
 extends Node
 
+signal attack_ended
+
 export (PackedScene) var bullet_scene
 export (PackedScene) var bullet_scene_2
 
@@ -19,3 +21,6 @@ func _on_BulletSpawnTimer_timeout():
 	add_child(bullet)
 
 	bullet.position = heart_spawn_location.position
+
+func _on_AttackTimer_timeout():
+	emit_signal("attack_ended")

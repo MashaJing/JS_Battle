@@ -119,7 +119,7 @@ Bullet = ExtResource( 7 )
 wait_time = 0.25
 
 [node name="SpawnTimer" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 3.0
 one_shot = true
 
 [node name="WindowSpamton" type="AnimatedSprite" parent="."]

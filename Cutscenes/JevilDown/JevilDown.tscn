@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Cutscenes/JevilDown/JevilDown.gd" type="Script" id=1]
 [ext_resource path="res://team_stats/Spamton/Spamton.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Cutscenes/JevilDown/spam_i_can.mp3" type="AudioStream" id=3]
+[ext_resource path="res://Border/Border.tscn" type="PackedScene" id=4]
 
 [sub_resource type="Animation" id=1]
 resource_name = "he_is_serious"
@@ -47,3 +48,6 @@ anims/he_is_serious = SubResource( 1 )
 position = Vector2( 1047.85, 190 )
 stream = ExtResource( 3 )
 volume_db = 6.5
+
+[node name="BorderField" parent="." instance=ExtResource( 4 )]
+position = Vector2( 510, 780 )

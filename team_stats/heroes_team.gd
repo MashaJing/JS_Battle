@@ -1,25 +1,26 @@
 extends Node
 
-onready var Jevil = $Jevil
-onready var Spamton = $Spamton
-
 onready var inventorium = $Inventorium
-
-onready var Kris = $Kris
-onready var Susie = $Susie
-onready var Ralsei = null
 
 var Spamton_ATK = 100
 var MAX_TP = 100
 var TP = 0
 var tp_delta = 10
 
-onready var heroes = [$Kris]
+# как-то прокинуть хп каждого? Или прям тут? Мб сделать 2 глобальных узла для каждой из сторон?
+# можно, чтоб каждая посылала свой сигнал о проигрыше + считать у нас уровень насилия?
+onready var heroes = []
 onready var AttackTargets = heroes
+signal game_over
 
 
 func _ready():
 	pass
+#	как-то приконнектить их вовремя
+#	for target in heroes:
+#		target.get_node("PlayerStats").connect("Down", self, "_on_ally_down")
+#		target.get_node("PlayerStats").connect("Up", self, "_on_ally_up")
+
 
 func _process(delta):
 	pass
@@ -31,11 +32,11 @@ func _process(delta):
 
 
 func _on_take_damage():
-	for target in AttackTargets:
+	for target in heroes:
 		print('teamstats caught signal: target')
 		# атаку прокинуть в зависимости от пули
 		target.get_node("PlayerStats").take_damage(Spamton_ATK)
-		
+
 		# мб переименовать ф-ию, чтобы было не только про обработку сигнала?
 		_on_tp_decreased()
 
@@ -66,14 +67,21 @@ func _on_heal(healed_player, hp_delta):
 	healed_player.healed(hp_delta)
 
 
-# сделать универсальным для каждого
-func _on_Kris_down():
-	#AttackTargets.pop_at() исключить Криса
-	pass
+func _on_ally_down(ally):
+	heroes.erase(ally)
+	if len(heroes) == 0:
+		emit_signal("game_over")
+	print(heroes)
+
+
+func _on_ally_up(ally):
+	heroes.append(ally)
+	print(heroes)
 
 
 func choose_target(targets: Node2D = null) -> void:
 	print()
+	pass
 	if targets == null:
 		AttackTargets = [heroes[randi() % len(heroes)]]
 	else:
@@ -81,8 +89,3 @@ func choose_target(targets: Node2D = null) -> void:
 	print("_______________________________________")
 	print('target: ', AttackTargets)
 	print("_______________________________________")
-
-
-func _on_Menu_attck_begins():
-	pass
-	#choose_target()

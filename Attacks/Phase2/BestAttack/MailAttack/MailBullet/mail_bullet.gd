@@ -3,7 +3,7 @@ extends Area2D
 
 var speed = randi() % 50
 var time = 0
-var GRABVITY = 4
+var GRABVITY = 5
 var ttl = 4
 
 

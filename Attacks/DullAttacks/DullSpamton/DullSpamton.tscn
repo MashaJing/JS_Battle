@@ -73,7 +73,6 @@ autostart = true
 
 [node name="Spamton" parent="." instance=ExtResource( 4 )]
 position = Vector2( 860, 380 )
-scale = Vector2( 1.4, 1.4 )
 
 [node name="BulletSucker" type="Node2D" parent="Spamton"]
 position = Vector2( -71.4286, -21.4286 )
@@ -97,10 +96,8 @@ autostart = true
 
 [node name="Jevil" parent="." instance=ExtResource( 7 )]
 position = Vector2( 920, 180 )
-scale = Vector2( 1.42764, 1.42764 )
 
 [node name="BorderField" parent="." instance=ExtResource( 8 )]
-visible = false
 position = Vector2( 510, 280 )
 scale = Vector2( 0.840002, 0.840002 )
 

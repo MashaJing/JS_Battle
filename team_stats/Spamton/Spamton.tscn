@@ -1,23 +1,20 @@
 [gd_scene load_steps=62 format=2]
 
-[ext_resource path="res://team_stats/Spamton/assets/hit/hit.png" type="Texture" id=1]
 [ext_resource path="res://team_stats/Spamton/assets/increase_head/image3x1.png" type="Texture" id=2]
 [ext_resource path="res://team_stats/Spamton/assets/increase_head/image2x1.png" type="Texture" id=3]
 [ext_resource path="res://team_stats/Spamton/assets/increase_head_inclined/increase_head_inclined.png" type="Texture" id=4]
 [ext_resource path="res://team_stats/Spamton/assets/increase_head/image1x1.png" type="Texture" id=5]
-[ext_resource path="res://team_stats/Spamton/assets/jump/2.png" type="Texture" id=6]
-[ext_resource path="res://team_stats/Spamton/assets/jump/1.png" type="Texture" id=7]
 [ext_resource path="res://team_stats/Spamton/assets/throw_cash/2.png" type="Texture" id=8]
 [ext_resource path="res://team_stats/Spamton/assets/throw_cash/1.png" type="Texture" id=9]
 [ext_resource path="res://team_stats/Spamton/spamton.gd" type="Script" id=10]
 [ext_resource path="res://Assets/sounds/voice_spamton.mp3" type="AudioStream" id=11]
-[ext_resource path="res://team_stats/Spamton/assets/black_glasses/wasted.png" type="Texture" id=12]
-[ext_resource path="res://team_stats/Spamton/assets/angry_big_head/default-copy-0.png" type="Texture" id=14]
-[ext_resource path="res://team_stats/Spamton/assets/turn_back/1.png" type="Texture" id=15]
-[ext_resource path="res://team_stats/Spamton/assets/genorisity/1.png" type="Texture" id=16]
+[ext_resource path="res://Assets/Images/Sprites/Characters/Spamton.png" type="Texture" id=13]
 [ext_resource path="res://team_stats/Spamton/assets/spamton_laugh_noise.ogg" type="AudioStream" id=17]
-[ext_resource path="res://team_stats/Spamton/assets/Hands_up.png" type="Texture" id=27]
 [ext_resource path="res://Assets/Images/Cutscenes/SpamHug.png" type="Texture" id=29]
+
+[sub_resource type="AtlasTexture" id=47]
+atlas = ExtResource( 13 )
+region = Rect2( 172, 8, 26, 37 )
 
 [sub_resource type="StreamTexture" id=10]
 load_path = "res://.import/41.png-b1289efc9d707ffebca84bd2033cd338.stex"
@@ -82,8 +79,13 @@ load_path = "res://.import/image2x1.png-1a6df481ab2761bcb1f0356f2891f633.stex"
 [sub_resource type="StreamTexture" id=30]
 load_path = "res://.import/image1x1.png-0c37c84af47ad009d61880dcc84cd183.stex"
 
-[sub_resource type="StreamTexture" id=31]
-load_path = "res://.import/default.png-990bd75f119b187fada27ea001fa284a.stex"
+[sub_resource type="AtlasTexture" id=45]
+atlas = ExtResource( 13 )
+region = Rect2( 0, 8, 27, 37 )
+
+[sub_resource type="AtlasTexture" id=46]
+atlas = ExtResource( 13 )
+region = Rect2( 115, 8, 27, 37 )
 
 [sub_resource type="StreamTexture" id=32]
 load_path = "res://.import/image1x1.png-06a49d5cbc139e78d434d409fbee25e2.stex"
@@ -91,15 +93,37 @@ load_path = "res://.import/image1x1.png-06a49d5cbc139e78d434d409fbee25e2.stex"
 [sub_resource type="StreamTexture" id=33]
 load_path = "res://.import/image1x2.png-74cbefe8d8233f17cd6688fc9b8827c4.stex"
 
-[sub_resource type="StreamTexture" id=35]
-load_path = "res://.import/image1x1.png-dcbb58c4d6bc00f43ed6ce92b6d79d3c.stex"
+[sub_resource type="AtlasTexture" id=48]
+atlas = ExtResource( 13 )
+region = Rect2( 54, 8, 36, 37 )
 
-[sub_resource type="StreamTexture" id=36]
-load_path = "res://.import/image1x2.png-4ed9321b0dfaa0a35633673441299aee.stex"
+[sub_resource type="AtlasTexture" id=55]
+atlas = ExtResource( 13 )
+region = Rect2( 380, 8, 33, 44 )
+
+[sub_resource type="AtlasTexture" id=56]
+atlas = ExtResource( 13 )
+region = Rect2( 413, 8, 33, 44 )
+
+[sub_resource type="AtlasTexture" id=52]
+atlas = ExtResource( 13 )
+region = Rect2( 579, 8, 32, 37 )
+
+[sub_resource type="AtlasTexture" id=53]
+atlas = ExtResource( 13 )
+region = Rect2( 611, 8, 32, 37 )
+
+[sub_resource type="AtlasTexture" id=51]
+atlas = ExtResource( 13 )
+region = Rect2( 198, 8, 24, 37 )
+
+[sub_resource type="AtlasTexture" id=54]
+atlas = ExtResource( 13 )
+region = Rect2( 326, 8, 28, 37 )
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 12 ) ],
+"frames": [ SubResource( 47 ) ],
 "loop": true,
 "name": "black_glasses",
 "speed": 5.0
@@ -114,12 +138,12 @@ animations = [ {
 "name": "decrease_head",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 31 ) ],
+"frames": [ SubResource( 45 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 31 ), ExtResource( 27 ) ],
+"frames": [ SubResource( 46 ) ],
 "loop": false,
 "name": "hands_up",
 "speed": 5.0
@@ -129,12 +153,7 @@ animations = [ {
 "name": "head_attack",
 "speed": 10.0
 }, {
-"frames": [ ExtResource( 14 ) ],
-"loop": true,
-"name": "headless",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 1 ) ],
+"frames": [ SubResource( 48 ) ],
 "loop": false,
 "name": "hit",
 "speed": 5.0
@@ -154,17 +173,17 @@ animations = [ {
 "name": "increase_head_inclined",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 7 ), ExtResource( 6 ) ],
-"loop": false,
+"frames": [ SubResource( 55 ), SubResource( 56 ) ],
+"loop": true,
 "name": "jump",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 35 ), SubResource( 36 ) ],
+"frames": [ SubResource( 52 ), SubResource( 53 ) ],
 "loop": true,
 "name": "laugh",
 "speed": 10.0
 }, {
-"frames": [ ExtResource( 16 ) ],
+"frames": [ SubResource( 51 ) ],
 "loop": true,
 "name": "step_away",
 "speed": 5.0
@@ -174,7 +193,7 @@ animations = [ {
 "name": "throw_cash",
 "speed": 2.0
 }, {
-"frames": [ ExtResource( 15 ) ],
+"frames": [ SubResource( 54 ) ],
 "loop": true,
 "name": "turn_back",
 "speed": 5.0
@@ -719,10 +738,11 @@ position = Vector2( -10, 10 )
 script = ExtResource( 10 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( -10, 0 )
+position = Vector2( 7.40584, 0 )
+scale = Vector2( 2.3714, 2.3714 )
 z_index = 1
 frames = SubResource( 1 )
-animation = "hit"
+animation = "hands_up"
 playing = true
 offset = Vector2( 10, 0 )
 

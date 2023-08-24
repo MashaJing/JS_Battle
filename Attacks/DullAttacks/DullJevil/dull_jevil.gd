@@ -1,5 +1,7 @@
 extends Node2D
 
+signal attack_ended
+
 onready var bullet_spawn_timer = $BulletSpawnTimer
 onready var Spamton = $Spamton
 onready var SpamtonAnimPlayer = $Spamton/AnimationPlayer
@@ -19,6 +21,8 @@ func _ready():
 	bullet_spawn_timer.stop()
 	yield(SpamtonAnimPlayer, "animation_finished")
 	SpamtonAnimPlayer.play("hit")
+	yield(SpamtonAnimPlayer, "animation_finished")
+	emit_signal("attack_ended")
 
 func spawn_bullet(path, flipped):
 	var bullet = miniton_path_scene.instance()
@@ -38,5 +42,3 @@ func spawn_knife():
 	# todo: удаляет сердце, а не дамажит
 	print(knife.get_children())
 	var DevilsKnife = knife.get_node("DevilsKnife")
-	for bullet in get_tree().get_nodes_in_group("bullets"):
-		bullet.connect("area_entered", DevilsKnife, "_on_area_knife_entered")

@@ -1,5 +1,6 @@
 extends Node2D
 signal attack_began
+signal attack_ended
 
 # сделать большой коэф атаки, как задумывалось в ориге !!!
 
@@ -19,6 +20,9 @@ func _ready():
 	yield($Spamton, "stopped_talk")
 	
 	emit_signal("attack_began")
+	$AttackTimer.start()
+	yield($AttackTimer, "timeout")
+	emit_signal("attack_ended")
 	
 	# идея для патттерна атаки: harvester
 	# knife.end_rotation_speed = 0

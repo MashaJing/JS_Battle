@@ -6,7 +6,6 @@ enum Mode {
 	SPIRAL,
 	PUNCH,
 }
-
 var JOKE_IND = -1
 
 # Идут по порядку, чтоб звучало органичнее
@@ -26,12 +25,13 @@ var JOKES = [
 #	}
 	{
 		"dialogue": false,
-		"text": ['Though I don’t use sign language...', 'I know a lot of JESTERs!'],
-		"main_word": "JESTERS",
+		"text": ['Though I don’t use sign language...', 'I know a lot of JESTURES, JESTURES!'],
+		"main_word": "JESTURES",
 		"mode": Mode.CHASE,
 	}
 ]
 
+# склеить с JOKES, чтобы не мучаться с разной обработкой
 var DIALOGUES = [
 	{
 		"dialogue": true,
