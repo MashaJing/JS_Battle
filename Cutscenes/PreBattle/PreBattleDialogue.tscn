@@ -1,0 +1,34 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Cutscenes/PreBattle/PreBattleDialogue.gd" type="Script" id=1]
+[ext_resource path="res://team_stats/Susie/Susie.tscn" type="PackedScene" id=2]
+[ext_resource path="res://addons/dialogic/Dialog.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Characters/Ralsei/Ralsei.tscn" type="PackedScene" id=4]
+[ext_resource path="res://team_stats/Jevil/Jevil.tscn" type="PackedScene" id=5]
+[ext_resource path="res://team_stats/Spamton/Spamton.tscn" type="PackedScene" id=6]
+
+[node name="PreBattle" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Susie" parent="." instance=ExtResource( 2 )]
+position = Vector2( 180, 190 )
+
+[node name="Ralsei" parent="." instance=ExtResource( 4 )]
+position = Vector2( 158, 300 )
+scale = Vector2( 2, 2 )
+
+[node name="Jevil" parent="." instance=ExtResource( 5 )]
+position = Vector2( 828, 170 )
+
+[node name="Spamton" parent="." instance=ExtResource( 6 )]
+position = Vector2( 800, 304 )
+
+[node name="Dialog" parent="." instance=ExtResource( 3 )]
+visible = false
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 230.0
+margin_top = 180.0
+margin_right = 230.0
+margin_bottom = 180.0
+timeline = "timeline-1693015043.json"

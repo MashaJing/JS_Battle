@@ -1,0 +1,224 @@
+{
+	"events": [
+		{
+			"animation": "instant_in.gd",
+			"animation_length": 0,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1692898558.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "Default",
+			"portrait_definition": "",
+			"position": {
+				"0": false,
+				"1": true,
+				"2": false,
+				"3": false,
+				"4": false
+			},
+			"type": 0,
+			"z_index": 0
+		},
+		{
+			"animation": "[Default]",
+			"animation_length": 0,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1692901208.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "Default",
+			"portrait_definition": "",
+			"position": {
+				"0": true,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			},
+			"type": 0,
+			"z_index": 0
+		},
+		{
+			"character": "character-1692898558.json",
+			"event_id": "dialogic_001",
+			"portrait": "Default",
+			"text": "H3Y KRIS          [and his friends]!      IT’S a-ME!\nYOU  [START ATTENDING GYM at]  TO   EXERC1SE WITH YOUR  [old pal]\n     [old pal] SPAMTON !!"
+		},
+		{
+			"character": "character-1692901208.json",
+			"event_id": "dialogic_001",
+			"portrait": "susie_annoyed",
+			"text": "Er, buddy, you’re kinda… ex-NEO now"
+		},
+		{
+			"animation": "[Default]",
+			"animation_length": 0,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1692900944.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "Default",
+			"portrait_definition": "",
+			"position": {
+				"0": false,
+				"1": false,
+				"2": true,
+				"3": false,
+				"4": false
+			},
+			"type": 0,
+			"z_index": 0
+		},
+		{
+			"character": "character-1692900944.json",
+			"event_id": "dialogic_001",
+			"portrait": "Default",
+			"text": "Actually, I’ve evened the odds"
+		},
+		{
+			"animation": "[Default]",
+			"animation_length": 0,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1692900298.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "Default",
+			"portrait_definition": "",
+			"position": {
+				"0": false,
+				"1": false,
+				"2": false,
+				"3": true,
+				"4": false
+			},
+			"type": 0,
+			"z_index": 0
+		},
+		{
+			"character": "character-1692900298.json",
+			"event_id": "dialogic_001",
+			"portrait": "Default",
+			"text": "Here comes Jevil’s encore, boysngirls!"
+		},
+		{
+			"character": "character-1692898558.json",
+			"event_id": "dialogic_001",
+			"portrait": "Mad",
+			"text": "Y0U,     [piece of snail pie] !\nWHAT ARE U DOING [in my area]?!"
+		},
+		{
+			"character": "character-1692900298.json",
+			"event_id": "dialogic_001",
+			"portrait": "(Don't change)",
+			"text": "No, what are YOU doing in this world?\nYou are not allowed to come to schools closer than 30 meters, meters"
+		},
+		{
+			"character": "character-1692898558.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "KR KRIS! WHAT DOES   TH1S    [what a twist] MEAN?"
+		},
+		{
+			"character": "character-1692900298.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "It means that today we perform in tandem, puppet boy"
+		},
+		{
+			"character": "character-1692898558.json",
+			"event_id": "dialogic_001",
+			"portrait": "(Don't change)",
+			"text": "DO NOT CALL ME [wake up, puppet boy] !"
+		},
+		{
+			"character": "character-1692900944.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Actually, you two are the strongest rivals we've faced, so…"
+		},
+		{
+			"character": "character-1692901208.json",
+			"event_id": "dialogic_001",
+			"portrait": "Default",
+			"text": "So we want to kick your ass again!"
+		},
+		{
+			"character": "character-1692900944.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "fighting you two at once would be a valuable practice"
+		},
+		{
+			"character": "character-1692900944.json",
+			"event_id": "dialogic_001",
+			"portrait": "eyes_closed",
+			"text": "As a prize, you’ll get whatever you want"
+		},
+		{
+			"character": "character-1692898558.json",
+			"event_id": "dialogic_001",
+			"portrait": "Tax",
+			"text": "[hee hee]"
+		},
+		{
+			"character": "character-1692900298.json",
+			"event_id": "dialogic_001",
+			"portrait": "Cake",
+			"text": "A unicorn-shaped cotton-candy-flavored cake, cake!"
+		},
+		{
+			"character": "character-1692898558.json",
+			"event_id": "dialogic_001",
+			"portrait": "Mad",
+			"text": "A [cake]!? D0N'T CONFUSE [Chaos,Chaos] AND [marasmus, marasmus]"
+		},
+		{
+			"character": "character-1692900298.json",
+			"event_id": "dialogic_001",
+			"portrait": "Default",
+			"text": "And your wish is predictable, predictable! Wanna lose all your gold as always?"
+		},
+		{
+			"character": "character-1692898558.json",
+			"event_id": "dialogic_001",
+			"portrait": "Mysterious",
+			"text": "...\n[ forget] THOSE GAMES\nLight>ners, [event accepted]"
+		},
+		{
+			"animation": "[Default]",
+			"animation_length": 0,
+			"change_mirror_portrait": false,
+			"change_position": false,
+			"change_z_index": false,
+			"character": "character-1692903513.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "Default",
+			"portrait_definition": "",
+			"position": {
+				"0": false,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": true
+			},
+			"type": 0,
+			"z_index": 0
+		},
+		{
+			"character": "character-1692903513.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Lancer Fan Club on the left\nBasement Department on the right\nLet's get this party started!"
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.4.5",
+		"file": "timeline-1692901384.json",
+		"name": "pre-battle"
+	}
+}

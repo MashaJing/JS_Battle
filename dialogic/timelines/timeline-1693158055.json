@@ -1,0 +1,89 @@
+{
+	"events": [
+		{
+			"call_node": {
+				"arguments": [
+					"default"
+				],
+				"method_name": "play",
+				"target_node_path": "Main/Spamton/AnimationPlayer"
+			},
+			"event_id": "dialogic_042"
+		},
+		{
+			"call_node": {
+				"arguments": [
+					"default"
+				],
+				"method_name": "play",
+				"target_node_path": "Main/Jevil/AnimationPlayer"
+			},
+			"event_id": "dialogic_042"
+		},
+		{
+			"character": "character-1693017633.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Attention, Attention!\nA joke!\nWhy I was in favour of the kings?"
+		},
+		{
+			"character": "character-1693016638.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "BECAUSE THERE WAS NO [alternative]?"
+		},
+		{
+			"character": "character-1693017633.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "because I was very...\nCHAOSMATIC, CHAOSMATIC!"
+		},
+		{
+			"call_node": {
+				"arguments": [
+					"black_glasses"
+				],
+				"method_name": "play",
+				"target_node_path": "Main/Spamton/AnimationPlayer"
+			},
+			"event_id": "dialogic_042"
+		},
+		{
+			"character": "character-1693014286.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "And THAT was a joke?"
+		},
+		{
+			"character": "character-1693016229.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Mister Jevil, you mustn't attack us during our turn"
+		},
+		{
+			"call_node": {
+				"arguments": [
+					"default"
+				],
+				"method_name": "play",
+				"target_node_path": "Main/Spamton/AnimationPlayer"
+			},
+			"event_id": "dialogic_042"
+		},
+		{
+			"character": "character-1693017633.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Maybe, but a little cringe might be fun"
+		},
+		{
+			"emit_signal": "",
+			"event_id": "dialogic_040"
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.4.5",
+		"file": "timeline-1693158055.json",
+		"name": "joke_chaosmatic"
+	}
+}

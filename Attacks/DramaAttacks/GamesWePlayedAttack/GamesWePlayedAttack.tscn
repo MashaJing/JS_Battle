@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://player/KinematicHeart.tscn" type="PackedScene" id=1]
 [ext_resource path="res://team_stats/Spamton/Spamton.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Attacks/DramaAttacks/GamesWePlayedAttack/dr_attack2.gd" type="Script" id=3]
+[ext_resource path="res://Border/Border.tscn" type="PackedScene" id=4]
 
 [sub_resource type="Animation" id=1]
 resource_name = "spawn_wave"
@@ -24,9 +25,6 @@ tracks/0/keys = {
 [node name="DramaAttack2" type="Node2D"]
 script = ExtResource( 3 )
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 520, 300 )
-
 [node name="WordSpawn" type="Node2D" parent="."]
 position = Vector2( 840, 400 )
 
@@ -41,3 +39,6 @@ autostart = true
 
 [node name="KinematicHeart" parent="." instance=ExtResource( 1 )]
 position = Vector2( 545, 320 )
+
+[node name="BorderField" parent="." instance=ExtResource( 4 )]
+position = Vector2( 515, 295 )

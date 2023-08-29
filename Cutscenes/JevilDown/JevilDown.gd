@@ -95,3 +95,6 @@ func _ready():
 #	$Spamton.speak("YOU [--force] ME TO CHEAT")
 #	yield($Spamton, "stopped_talk")
 
+
+func start_attack():
+	print("и тут я начинаю шмалять")

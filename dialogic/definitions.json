@@ -1,0 +1,25 @@
+{
+	"glossary": [
+
+	],
+	"variables": [
+		{
+			"id": "1693156448-928",
+			"name": "user_password",
+			"type": 0,
+			"value": ""
+		},
+		{
+			"id": "1693156428-507",
+			"name": "user_ip",
+			"type": 0,
+			"value": ""
+		},
+		{
+			"id": "1693156543-827",
+			"name": "user_name",
+			"type": 0,
+			"value": ""
+		}
+	]
+}

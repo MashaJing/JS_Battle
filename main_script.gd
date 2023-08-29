@@ -14,23 +14,26 @@ var cur_attack
 
 
 func _ready():
+	$Spamton/AnimationPlayer.play("dance")
+	$Jevil/AnimationPlayer.play("dance")
 	TeamStats.heroes = [$Kris] #, $Susie, $Ralsei
 	TeamStats.choose_target()
 	$Menu.connect("attack_began", self, "_on_attack_began")
 	TeamStats.connect("game_over", self, "_on_game_over")
 	add_attack()
 
+# ___________ menu management ___________
+
 func close_menu():
-	$Menu.hide()	
+	$Menu.hide()
+	$CringeTimer.stop()
 
 func open_menu():
 	$Menu.unhide()
+	if GlobalAttackSettings.CRINGE_ATTACKS_ON:
+		$CringeTimer.start()
 
-func _on_game_over():
-	# остановить всё
-	# послать сигнал game_over?
-	print('GOT game over signal!')
-	get_tree().change_scene(GAME_OVER_PATH)
+# ___________ attack management ___________
 
 # сигнал поступает от атаки
 func _on_attack_ended():
@@ -43,34 +46,37 @@ func _on_attack_began():
 	TeamStats.choose_target()
 	add_attack()
 
-
-func remove_attack():
-	if cur_attack != null:
-		remove_child(cur_attack)
-
-
-func add_cringe_attack():
-	GAME_OVER_PATH = GlobalAttackSettings.CRINGE_GAME_OVER_SCENE_PATH
-	var cur_attack_path = GlobalAttackSettings.CRINGE_ATTACK_PATH
-	cur_attack = load(cur_attack_path).instance()
-	add_child(cur_attack)
-
-
 func add_attack():
-	# не стоит передавать это каждый раз
-	GAME_OVER_PATH = GlobalAttackSettings.GAME_OVER_SCENE_PATH
 	var cur_attack_path = GlobalAttackSettings.get_next()
 	cur_attack = load(cur_attack_path).instance()
 	cur_attack.connect("attack_ended", self, "_on_attack_ended")
 	add_child(cur_attack)
+	
+func remove_attack():
+	if cur_attack != null:
+		remove_child(cur_attack)
 
+# ___________ cringe management ___________
 
-# не должно быть тут
-func play_dialogue(dialogue, dialogue_n=0):
-	for replica in dialogue[dialogue_n]:
-		var speaker = get_node(replica['speaker'])
-		speaker.speak(replica['text'])
-		if 'animation' in replica.keys():
-			speaker.get_node("AnimationPlayer").play(replica['animation'])
-		yield(speaker, "stopped_talk")
-	emit_signal("finished_talking")
+func add_cringe_attack():
+	GAME_OVER_PATH = GlobalAttackSettings.CRINGE_GAME_OVER_SCENE_PATH
+	cur_attack = load(GlobalAttackSettings.CRINGE_ATTACK_PATH).instance()
+	add_child(cur_attack)
+	return cur_attack
+
+func remove_cringe_attack():
+	remove_attack()
+	GAME_OVER_PATH = GlobalAttackSettings.GAME_OVER_SCENE_PATH
+
+func _on_CringeTimer_timeout():
+	$CringeTimer.stop()
+	cur_attack = add_cringe_attack()
+	yield(cur_attack, "cringe_attack_ended")
+	remove_cringe_attack()
+
+# _________________________________________
+
+func _on_game_over():
+	# остановить всё
+	# послать сигнал game_over?
+	get_tree().change_scene(GAME_OVER_PATH)

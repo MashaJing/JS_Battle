@@ -6,19 +6,18 @@ extends Node2D
 var ROOT_SCENE_PATH = "res://Main.tscn"
 var GAME_OVER_SCENE_PATH = "res://Cutscenes/GameOver/GameOver.tscn"
 var CRINGE_GAME_OVER_SCENE_PATH = "res://Cutscenes/CringeGameOver/CringeGameOver.tscn"
-var CRINGE_ATTACK_PATH = "res://Attacks/Phase2/CringeAttack/CringeAttack.tscn"
+var CRINGE_ATTACK_PATH = "res://Attacks/CringeAttack/CringeAttack.tscn"
+var CRINGE_ATTACKS_ON = true
 
 # STATE-MACHINE ? ПО ФАЗАМ
 var CUR_ATTACK_IND = -1
 var ATTACKS = [
 #	__________ DULL ATTACKS ____________
-	"res://Attacks/DullAttacks/Dimonds_Minitons/Attack1.tscn",
+#	"res://Attacks/DullAttacks/Dimonds_Minitons/Attack1.tscn",
 	"res://Attacks/DullAttacks/DullJevil/DullJevil.tscn",
-	"res://Attacks/DullAttacks/DullSpamton/DullSpamton.tscn",
+#	"res://Attacks/DullAttacks/DullSpamton/DullSpamton.tscn",
 ##	__________ DRAMA ATTACK ____________
 #	"res://Attacks/DramaAttacks/MonologueAttack.tscn",
-#	"res://Cutscenes/ConfessionAttack/ConfessionAttack.tscn",
-	"res://Attacks/Phase2/BestAttack/best_attack.tscn",
 #	__________ PHASE 2 ____________ (отделить папками и тут как-то)	
 	"res://Attacks/Phase1/Attack2/Attack2.tscn",
 	"res://Attacks/Phase2/TestAttack/PwdAttack.tscn",

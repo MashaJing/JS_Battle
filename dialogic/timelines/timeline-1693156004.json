@@ -1,0 +1,58 @@
+{
+	"events": [
+		{
+			"character": "character-1693016638.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "!"
+		},
+		{
+			"character": "character-1693016638.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Do you think that's funny?"
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "WE ALREADY HAVE A \\[Clown Around Town] IN HERE, \nDO U KN0W\nWAT IS WAY \\[funny]ER?"
+		},
+		{
+			"condition": "!=",
+			"definition": "1693156428-507",
+			"event_id": "dialogic_012",
+			"value": "0"
+		},
+		{
+			"character": "character-1693016638.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "*IP*\nAND ALSO"
+		},
+		{
+			"event_id": "dialogic_013"
+		},
+		{
+			"character": "character-1693016638.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "THIZ"
+		},
+		{
+			"call_node": {
+				"arguments": [
+
+				],
+				"method_name": "start_attack",
+				"target_node_path": "Main/JevilDown"
+			},
+			"event_id": "dialogic_042"
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.4.5",
+		"file": "timeline-1693156004.json",
+		"name": "jevil_down"
+	}
+}

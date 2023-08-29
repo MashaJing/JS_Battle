@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Bullets/Pipis/Pipis.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Attacks/DramaAttacks/BestAttack/PipisAttack/pipis_attack.gd" type="Script" id=2]
+
+[node name="PipisAttack" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="PipisColony" type="Node2D" parent="."]
+
+[node name="Pipis2" parent="PipisColony" instance=ExtResource( 1 )]
+position = Vector2( 528, 443 )
+
+[node name="Pipis3" parent="PipisColony" instance=ExtResource( 1 )]
+position = Vector2( 516, 320 )
+
+[node name="Pipis4" parent="PipisColony" instance=ExtResource( 1 )]
+visible = false
+position = Vector2( 354, 320 )

@@ -33,17 +33,16 @@ wait_time = 6.0
 [node name="Theme" type="AudioStreamPlayer2D" parent="."]
 position = Vector2( 510, 630 )
 stream = ExtResource( 8 )
-volume_db = -8.0
 script = ExtResource( 5 )
 
 [node name="Kris" parent="." instance=ExtResource( 2 )]
-position = Vector2( 168, 130 )
+position = Vector2( 172, 126 )
 
 [node name="Susie" parent="." instance=ExtResource( 4 )]
 position = Vector2( 180, 190 )
 
 [node name="Spamton" parent="." instance=ExtResource( 6 )]
-position = Vector2( 800, 304 )
+position = Vector2( 816, 290 )
 
 [node name="Seam" type="Node2D" parent="."]
 position = Vector2( 1014, 490 )
@@ -53,7 +52,12 @@ script = ExtResource( 9 )
 position = Vector2( 828, 170 )
 
 [node name="Ralsei" parent="." instance=ExtResource( 10 )]
-position = Vector2( 158, 300 )
+position = Vector2( 200, 300 )
 scale = Vector2( 2, 2 )
 
+[node name="CringeTimer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
 [connection signal="timeout" from="AttackTimer" to="." method="_on_AttackTimer_timeout"]
+[connection signal="timeout" from="CringeTimer" to="." method="_on_CringeTimer_timeout"]

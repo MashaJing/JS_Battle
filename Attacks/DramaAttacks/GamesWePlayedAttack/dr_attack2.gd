@@ -8,28 +8,20 @@ var target = ["Kris", "Susie", "Ralsei"]
 onready var WordSpawn = $WordSpawn
 onready var WordSpawnTimer = $WordSpawnTimer
 onready var AnimPlayer = $WordSpawn/AnimationPlayer
+onready var GlobalSpamton = get_parent().get_parent().get_node("Spamton")
 onready var Spamton = $WordSpawn/Spamton/AnimatedSprite
 
 onready var WordScene = preload("res://Attacks/DramaAttacks/GamesWePlayedAttack/Word/Word.tscn")
-onready var Border = preload('res://Border/Border.tscn')
 
 var words = [
-	"$POKER$", "SHES$", "$Monopoly$", "$TRUTH_or_DARE", "$#@MINECRAP", "$CRACKASSON",
-	"ALIAS", "CHECKERS$", "H1DE-&-SEEK", "_______"
+	"$POKER$", "SHES$", "$Monopoly$", "$TRUTH_or_DARE", "@MINECRAP@", "$CRACKASSON",
+	"ALIAS", "CHECKERS$", "H1DE-&-SEEK", "D&D"
 ]
 
 
-func init_border():
-	var border = Border.instance()
-	border.global_position = $KinematicHeart.global_position
-	add_child(border)
-
 func _ready():
-	init_border()
-	# todo: да это жоско
+	GlobalSpamton.visible = false
 	# заиспользовать своего локального Спамтона в этой сцене
-	var Spamton_from_parent = get_parent().get_parent().get_node("Spamton")
-	Spamton_from_parent.visible = false
 	Spamton.connect("animation_finished", self, "_on_Spamton_animation_finished")
 	Spamton.play("increase_head")
 	# нормально дождаться окончания анимации
@@ -45,7 +37,7 @@ func _ready():
 		yield(WordSpawnTimer, "timeout")
 	AnimPlayer.stop()
 	Spamton.visible = false
-	Spamton_from_parent.visible = true
+	GlobalSpamton.visible = true
 	emit_signal("attack_ended")
 
 

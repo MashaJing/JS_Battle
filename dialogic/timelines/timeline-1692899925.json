@@ -1,0 +1,31 @@
+{
+	"events": [
+		{
+			"character": "character-1692898558.json",
+			"event_id": "dialogic_001",
+			"portrait": "Mad",
+			"text": "who's there"
+		},
+		{
+			"character": "character-1692900298.json",
+			"event_id": "dialogic_001",
+			"portrait": "Default",
+			"text": "maya who"
+		},
+		{
+			"call_node": {
+				"arguments": [
+
+				],
+				"method_name": "begin_attack",
+				"target_node_path": "PreBattle"
+			},
+			"event_id": "dialogic_042"
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.4.5",
+		"file": "timeline-1692899925.json",
+		"name": "test1"
+	}
+}
