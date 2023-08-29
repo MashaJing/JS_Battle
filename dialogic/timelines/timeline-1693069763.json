@@ -11,36 +11,10 @@
 			"event_id": "dialogic_042"
 		},
 		{
-			"call_node": {
-				"arguments": [
-					"default"
-				],
-				"method_name": "play",
-				"target_node_path": "Main/Jevil/AnimationPlayer"
-			},
-			"event_id": "dialogic_042"
-		},
-		{
-			"character": "character-1693016638.json",
-			"event_id": "dialogic_001",
-			"portrait": "",
-			"text": "[ SHOT] UP U [dirt]y TRA!TOR"
-		},
-		{
-			"call_node": {
-				"arguments": [
-					"Shocked"
-				],
-				"method_name": "play",
-				"target_node_path": "Main/Jevil/AnimationPlayer"
-			},
-			"event_id": "dialogic_042"
-		},
-		{
 			"character": "character-1693017633.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Why traitor, traitor?"
+			"text": "Why do you call me traitor, traitor?"
 		},
 		{
 			"call_node": {
@@ -56,7 +30,7 @@
 			"character": "character-1693016638.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "PRETENDED TO BE MY [[friendship is magic!]]"
+			"text": "YOU !?\nPRETENDED TO BE MY [[friendship is magic!]]"
 		},
 		{
 			"call_node": {
@@ -196,12 +170,28 @@
 			"character": "character-1693016638.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "BECAUSE I WASNT [BIG SHOT] EN0UGH 4 YOU?\nbecause [they] chose you"
+			"text": "BECAUSE I WASNT [BIG SHOT] EN0UGH 4 YOU?"
 		},
 		{
 			"call_node": {
 				"arguments": [
 					"TheirLegsAttack"
+				],
+				"method_name": "begin_attack",
+				"target_node_path": "Main/MonologueAttack"
+			},
+			"event_id": "dialogic_042"
+		},
+		{
+			"character": "character-1693016638.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "because [they] chose you"
+		},
+		{
+			"call_node": {
+				"arguments": [
+					"PhoneAttack"
 				],
 				"method_name": "begin_attack",
 				"target_node_path": "Main/MonologueAttack"
@@ -247,16 +237,6 @@
 			"text": "AND THEN THR3W ME TO [recycle bin]\nLIKE A [motivational quote paper]!"
 		},
 		{
-			"call_node": {
-				"arguments": [
-					"PhoneAttack"
-				],
-				"method_name": "begin_attack",
-				"target_node_path": "Main/MonologueAttack"
-			},
-			"event_id": "dialogic_042"
-		},
-		{
 			"character": "character-1693017633.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
@@ -268,6 +248,16 @@
 
 				],
 				"method_name": "stop_music",
+				"target_node_path": "Main/MonologueAttack"
+			},
+			"event_id": "dialogic_042"
+		},
+		{
+			"call_node": {
+				"arguments": [
+
+				],
+				"method_name": "begin_confession",
 				"target_node_path": "Main/MonologueAttack"
 			},
 			"event_id": "dialogic_042"

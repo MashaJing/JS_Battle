@@ -19,9 +19,10 @@ func _ready():
 	spawn_knife()
 	yield(get_tree().create_timer(2), "timeout")
 	bullet_spawn_timer.stop()
-	yield(SpamtonAnimPlayer, "animation_finished")
-	SpamtonAnimPlayer.play("hit")
-	yield(SpamtonAnimPlayer, "animation_finished")
+	yield(get_tree().create_timer(2), "timeout")
+	var dialogue = Dialogic.start("dull_jevil")
+	add_child(dialogue)
+	yield(dialogue, "dialogic_signal")
 	emit_signal("attack_ended")
 
 func spawn_bullet(path, flipped):

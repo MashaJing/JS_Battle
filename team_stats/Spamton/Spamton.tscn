@@ -830,7 +830,7 @@ position = Vector2( -10, 10 )
 script = ExtResource( 10 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( -12.7728, -6.26253 )
+position = Vector2( -10, 0 )
 scale = Vector2( 2.2, 2.2 )
 z_index = 1
 frames = SubResource( 1 )

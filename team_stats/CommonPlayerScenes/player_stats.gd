@@ -14,7 +14,7 @@ func _ready():
 	print('Kris ready')
 
 func take_damage(damage):
-	emit_signal("TookDamage")	
+	emit_signal("TookDamage")
 	var new_HP = HP - damage
 	print('Base hp ', new_HP)
 	if HP >= 0 and new_HP <= 0:

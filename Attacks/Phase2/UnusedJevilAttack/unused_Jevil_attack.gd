@@ -1,27 +1,14 @@
 extends Node2D
-signal attack_began
 signal attack_ended
 
 # сделать большой коэф атаки, как задумывалось в ориге !!!
 
-func _process(_delta):
-	pass
 
 func _ready():
-	$Spamton/AnimationPlayer.play("default")
-	$Spamton.speak("STOP [[ANYTHING]]")
-	yield($Spamton, "stopped_talk")
-	$Spamton.speak("JEV, STAY [online]")
-	yield($Spamton, "stopped_talk")
-	print('started anim')
-	$AnimationPlayer.play("spam_leave")
-	yield($AnimationPlayer, "animation_finished")
-	$Spamton.speak("LOOK AT THIS   [TOTALLY IMBALANCED] UN-USED ATTACK I'VE [FOUND] !")
-	yield($Spamton, "stopped_talk")
+	var dialog = Dialogic.start("unused_attack")
+	add_child(dialog)
 	
-	emit_signal("attack_began")
-	$AttackTimer.start()
-	yield($AttackTimer, "timeout")
+	yield(dialog, "dialogic_signal")
 	emit_signal("attack_ended")
 	
 	# идея для патттерна атаки: harvester
@@ -30,6 +17,10 @@ func _ready():
 	# knife.speed = 0.1
 
 
-func _on_UnusedJevilAttack_attack_began():
+func begin_attack():
 	$KnifeOrigin.visible = true
 	$AnimationPlayer.play("attack")
+
+
+func _on_AttackTimer_timeout():
+	$KnifeOrigin/Blade/CollisionPolygon2D.disabled = false

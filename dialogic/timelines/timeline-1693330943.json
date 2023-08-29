@@ -1,15 +1,9 @@
 {
 	"events": [
 		{
-			"character": "character-1693016638.json",
-			"event_id": "dialogic_001",
-			"portrait": "",
-			"text": "H3Y JEV! [WATCH NOW] AND LEARN!\nKR KRIS! LET'S [play] A SIMPLE [guessing game]\nIF YOU SAY U HAD A [bank account] . . .\n& TH3RE WAS A [password] . . .\n[WAT] WOULD I7 BE?"
-		},
-		{
 			"call_node": {
 				"arguments": [
-					"black_glasses"
+					"hit"
 				],
 				"method_name": "play",
 				"target_node_path": "Main/Spamton/AnimationPlayer"
@@ -20,7 +14,23 @@
 			"character": "character-1693016638.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "[please respond]"
+			"text": "THE BOYS!"
+		},
+		{
+			"call_node": {
+				"arguments": [
+					"angry_shaking"
+				],
+				"method_name": "play",
+				"target_node_path": "Main/Spamton/AnimationPlayer"
+			},
+			"event_id": "dialogic_042"
+		},
+		{
+			"character": "character-1693016638.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "WATCH YOUR STEP,          [CHILD ABUSER]!"
 		},
 		{
 			"call_node": {
@@ -28,81 +38,46 @@
 					"default"
 				],
 				"method_name": "play",
-				"target_node_path": "Main/Spamton/AnimationPlayer"
+				"target_node_path": "Main/Jevil/AnimationPlayer"
 			},
 			"event_id": "dialogic_042"
 		},
 		{
+			"character": "character-1693017633.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "You can always make new ones, can't you?"
+		},
+		{
 			"call_node": {
 				"arguments": [
-
+					"turn_back"
 				],
-				"method_name": "start_enter",
-				"target_node_path": "Main/PwdAttack"
+				"method_name": "play",
+				"target_node_path": "Main/Spamton/AnimationPlayer"
 			},
 			"event_id": "dialogic_042"
 		},
 		{
 			"event_id": "dialogic_023",
 			"hide_dialogbox": true,
-			"wait_seconds": 8.2
+			"wait_seconds": 0.7
 		},
 		{
 			"call_node": {
 				"arguments": [
-
-				],
-				"method_name": "create_pwd_end",
-				"target_node_path": "Main/PwdAttack"
-			},
-			"event_id": "dialogic_042"
-		},
-		{
-			"condition": ">=",
-			"definition": "1693156448-928",
-			"event_id": "dialogic_012",
-			"value": "8"
-		},
-		{
-			"character": "character-1693016638.json",
-			"event_id": "dialogic_001",
-			"portrait": "",
-			"text": "[GOOD] J0B !!!\n1 W1LL [Save] YOUR SECRET\n[for future use]"
-		},
-		{
-			"event_id": "dialogic_013"
-		},
-		{
-			"condition": "<",
-			"definition": "1693156448-928",
-			"event_id": "dialogic_012",
-			"value": "8"
-		},
-		{
-			"call_node": {
-				"arguments": [
-					"black_glasses"
+					"Shocked"
 				],
 				"method_name": "play",
-				"target_node_path": "Main/Spamton/AnimationPlayer"
+				"target_node_path": "Main/Jevil/AnimationPlayer"
 			},
 			"event_id": "dialogic_042"
 		},
 		{
-			"call_node": {
-				"arguments": [
-
-				],
-				"method_name": "shock_heart",
-				"target_node_path": "Main/PwdAttack"
-			},
-			"event_id": "dialogic_042"
-		},
-		{
-			"character": "character-1693016638.json",
+			"character": "character-1693017633.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "[bad] J0B !!!\nAR U [serious]?! IT DOSNT EVEN [contain at least 8 characters]"
+			"text": "I mean, you'll spawn them again in a minute anyway, anyway"
 		},
 		{
 			"call_node": {
@@ -115,7 +90,36 @@
 			"event_id": "dialogic_042"
 		},
 		{
-			"event_id": "dialogic_013"
+			"character": "character-1693016638.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "JUST"
+		},
+		{
+			"call_node": {
+				"arguments": [
+					"black_glasses"
+				],
+				"method_name": "play",
+				"target_node_path": "Main/Spamton/AnimationPlayer"
+			},
+			"event_id": "dialogic_042"
+		},
+		{
+			"character": "character-1693016638.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "[ SHOT] UP\nU TRA!TOR"
+		},
+		{
+			"call_node": {
+				"arguments": [
+					"Surprised"
+				],
+				"method_name": "play",
+				"target_node_path": "Main/Jevil/AnimationPlayer"
+			},
+			"event_id": "dialogic_042"
 		},
 		{
 			"emit_signal": "",
@@ -124,7 +128,7 @@
 	],
 	"metadata": {
 		"dialogic-version": "1.4.5",
-		"file": "timeline-1693156373.json",
-		"name": "spamton_password_create"
+		"file": "timeline-1693330943.json",
+		"name": "dull_jevil"
 	}
 }

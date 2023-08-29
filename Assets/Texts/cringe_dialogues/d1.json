@@ -18,3 +18,12 @@
         "speed": 1
     }
 ]
+
+
+
+
+
+
+$Spamton/AnimatedSprite.play("black_glasses")
+$Spamton.speak("[bad] J0B !!!")
+$Spamton.speak("AR U [serious]?! IT DOSNT EVEN [contain at least 8 characters]")

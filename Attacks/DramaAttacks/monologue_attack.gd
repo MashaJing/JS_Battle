@@ -5,16 +5,17 @@ onready var Spamton = get_parent().get_node("Spamton")
 onready var MusTheme = get_parent().get_node("Theme")
 
 onready var ATTACK_TEMPLATE = "res://Attacks/DramaAttacks/{attack_name}/{attack_name}.tscn"
-
 signal attack_ended
 
 
 func _ready():
-#	var dialog = Dialogic.start("spamton_monologue")
-#	add_child(dialog)
-#	yield(dialog, "dialogic_signal")
+	var dialog = Dialogic.start("confession")
+	add_child(dialog)
+	yield(dialog, "dialogic_signal")
 	MusTheme.stop()
-#
+
+
+func begin_confession():
 	var dialog = Dialogic.start("confession")
 	add_child(dialog)
 	yield(dialog, "dialogic_signal")

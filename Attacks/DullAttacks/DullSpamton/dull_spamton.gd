@@ -46,6 +46,8 @@ func _on_AttackTimer_timeout():
 		bullet.queue_free()
 	SpamtonAnim.play("increase_head", true)
 	yield(SpamtonAnim, "animation_finished")
+	yield($Jevil/AnimationPlayer, "animation_finished")
+	
 	emit_signal("attack_ended")
 
 func _ready():

@@ -14,10 +14,10 @@ var CUR_ATTACK_IND = -1
 var ATTACKS = [
 #	__________ DULL ATTACKS ____________
 #	"res://Attacks/DullAttacks/Dimonds_Minitons/Attack1.tscn",
-	"res://Attacks/DullAttacks/DullJevil/DullJevil.tscn",
 #	"res://Attacks/DullAttacks/DullSpamton/DullSpamton.tscn",
+#	"res://Attacks/DullAttacks/DullJevil/DullJevil.tscn",
 ##	__________ DRAMA ATTACK ____________
-#	"res://Attacks/DramaAttacks/MonologueAttack.tscn",
+	"res://Attacks/DramaAttacks/MonologueAttack.tscn",
 #	__________ PHASE 2 ____________ (отделить папками и тут как-то)	
 	"res://Attacks/Phase1/Attack2/Attack2.tscn",
 	"res://Attacks/Phase2/TestAttack/PwdAttack.tscn",

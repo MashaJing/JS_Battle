@@ -4,14 +4,14 @@
 	],
 	"variables": [
 		{
-			"id": "1693156448-928",
-			"name": "user_password",
+			"id": "1693156428-507",
+			"name": "user_ip",
 			"type": 0,
 			"value": ""
 		},
 		{
-			"id": "1693156428-507",
-			"name": "user_ip",
+			"id": "1693156448-928",
+			"name": "user_password_len",
 			"type": 0,
 			"value": ""
 		},
@@ -20,6 +20,12 @@
 			"name": "user_name",
 			"type": 0,
 			"value": ""
+		},
+		{
+			"id": "1693323930-648",
+			"name": "user_password_valid",
+			"type": 0,
+			"value": "true"
 		}
 	]
 }
