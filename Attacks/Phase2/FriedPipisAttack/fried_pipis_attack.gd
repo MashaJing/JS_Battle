@@ -1,5 +1,6 @@
 extends Node2D
 onready var Pipis = preload("res://Bullets/Pipis/Pipis.tscn")
+signal card_attack_ended
 
 
 func _ready():
@@ -26,4 +27,4 @@ func _on_PipisTimer_timeout():
 	add_child(micropipis)
 
 func _on_AttackTimer_timeout():
-	get_tree().change_scene(GlobalPartySettings.PARTY_ROOT_SCENE_PATH)
+	emit_signal("card_attack_ended")

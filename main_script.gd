@@ -14,7 +14,7 @@ var cur_attack
 
 
 func _ready():
-	$Spamton/AnimationPlayer.play("dance")
+#	$Spamton/AnimationPlayer.play("dance")
 	$Jevil/AnimationPlayer.play("dance")
 	TeamStats.heroes = [$Kris] #, $Susie, $Ralsei
 	TeamStats.choose_target()

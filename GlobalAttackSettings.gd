@@ -17,17 +17,17 @@ var ATTACKS = [
 #	"res://Attacks/DullAttacks/DullSpamton/DullSpamton.tscn",
 #	"res://Attacks/DullAttacks/DullJevil/DullJevil.tscn",
 ##	__________ DRAMA ATTACK ____________
-	"res://Attacks/DramaAttacks/MonologueAttack.tscn",
+#	"res://Attacks/DramaAttacks/MonologueAttack.tscn",
 #	__________ PHASE 2 ____________ (отделить папками и тут как-то)	
-	"res://Attacks/Phase1/Attack2/Attack2.tscn",
-	"res://Attacks/Phase2/TestAttack/PwdAttack.tscn",
-	"res://Attacks/Phase2/Attack3/Attack3.tscn",
-	"res://Attacks/Phase2/NoseAttack/NoseAttack.tscn",
-	"res://Attacks/Phase2/MilkAttack/MilkAttack.tscn",
-#	"res://Attacks/Phase2/CardPlay/Party/Party.tscn",  # todo: сердце не общее - статы не шлются
+#	"res://Attacks/Phase1/Attack2/Attack2.tscn",
+#	"res://Attacks/Phase2/TestAttack/PwdAttack.tscn",
+#	"res://Attacks/Phase2/Attack3/Attack3.tscn",
+#	"res://Attacks/Phase2/NoseAttack/NoseAttack.tscn",
+#	"res://Attacks/Phase2/MilkAttack/MilkAttack.tscn",
+	"res://Attacks/Phase2/CardPlay/Party/Party.tscn",
 #	__________ PHASE 3 ____________ (отделить папками и тут как-то)
-	"res://Attacks/Phase2/CarouselKids/CarouselKids.tscn",
-	"res://Attacks/Phase2/NoseAttack/NoseAttack.tscn", # переводить в этой фазе в другой режим
+#	"res://Attacks/Phase2/CarouselKids/CarouselKids.tscn",
+#	"res://Attacks/Phase2/NoseAttack/NoseAttack.tscn", # переводить в этой фазе в другой режим
 	"res://Attacks/Phase2/UnusedJevilAttack/UnusedJevilAttack.tscn",
 	"res://Attacks/Phase2/SharedForm/SharedForm.tscn",
 	"res://Attacks/Phase2/TestAttack/PwdAttack.tscn",

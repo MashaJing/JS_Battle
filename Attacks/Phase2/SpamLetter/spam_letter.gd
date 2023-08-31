@@ -2,13 +2,13 @@ extends Node2D
 
 var bullet_batch = preload('res://Bullets/DimondsBatch/DimondsBatch.tscn')
 var bullet = preload('res://Bullets/Worm/Worm.tscn')
+signal card_attack_ended
 
 
 func _ready():
 	$AnimationPlayer.play("letter_resend")
 	yield($AnimationPlayer, "animation_finished")
-	get_tree().change_scene(GlobalPartySettings.PARTY_ROOT_SCENE_PATH)
-
+	emit_signal("card_attack_ended")
 
 func spawn_bullets():
 	var batch = bullet_batch.instance()

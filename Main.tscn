@@ -8,8 +8,15 @@
 [ext_resource path="res://team_stats/Spamton/Spamton.tscn" type="PackedScene" id=6]
 [ext_resource path="res://team_stats/Jevil/Jevil.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Assets/music/battle.ogg" type="AudioStream" id=8]
-[ext_resource path="res://Cutscenes/ConfessionAttack/seam_speak.gd" type="Script" id=9]
 [ext_resource path="res://Characters/Ralsei/Ralsei.tscn" type="PackedScene" id=10]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Node
+
+
+func _ready():
+	pass
+"
 
 [node name="Main" type="Node2D"]
 script = ExtResource( 3 )
@@ -46,7 +53,7 @@ position = Vector2( 816, 290 )
 
 [node name="Seam" type="Node2D" parent="."]
 position = Vector2( 1014, 490 )
-script = ExtResource( 9 )
+script = SubResource( 1 )
 
 [node name="Jevil" parent="." instance=ExtResource( 7 )]
 position = Vector2( 828, 170 )

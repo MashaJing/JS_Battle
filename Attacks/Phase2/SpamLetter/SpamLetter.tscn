@@ -214,6 +214,7 @@ tracks/9/keys = {
 }
 
 [node name="SpamLetter" type="Node2D"]
+position = Vector2( -20, 20 )
 script = ExtResource( 1 )
 
 [node name="BorderField" parent="." instance=ExtResource( 2 )]

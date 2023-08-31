@@ -5,6 +5,7 @@ signal attack_ended
 onready var Drip = preload("res://Bullets/MilkDrip/MilkDrip.tscn")
 onready var Level = preload("res://Attacks/Phase2/MilkAttack/MilkLevel/MilkLevel.tscn")
 
+
 var DRIP_AMOUNT = 30
 var MILK_HEGHT = 17.0
 

@@ -9,20 +9,23 @@ signal attack_ended
 
 func _ready():
 	var cur_party = GlobalPartySettings.pick_random()
-	if cur_party != null:
+
+	while cur_party != null:
 		for card in cur_party['cards']:
 			make_turn(card)
 			yield($TurnTimer, "timeout")
-		
-		# todo: тут тоже add_child
-		get_tree().change_scene(cur_party["attack_path"])
-	else:
-		emit_signal("attack_ended")
-		$Spamton.speak("OK OK OK")
-		yield($Spamton, "stopped_talk")
-		$Spamton.speak("I GUESS U [win]")
-		yield($Spamton, "stopped_talk")
-		emit_signal("attack_ended")
+		var cur_attack = load(cur_party["attack_path"]).instance()
+		$KinematicHeart.disable()
+		add_child(cur_attack)
+		yield(cur_attack, "card_attack_ended")
+		remove_child(cur_attack)
+		$KinematicHeart.ensable()
+		cur_party = GlobalPartySettings.pick_random()
+
+	var Dialog = Dialogic.start("card_play")
+	add_child(Dialog)
+	yield(Dialog, "dialogic_signal")
+	emit_signal("attack_ended")
 
 func make_turn(card_name):
 	# выбрать рандомную точку, откуда полетит карта

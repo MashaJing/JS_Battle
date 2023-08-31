@@ -9,9 +9,10 @@ signal attack_ended
 
 
 func _ready():
-	
+#	get_parent().get_node("Jevil").visible = false
 	$AttackPlayer.play("best_attack")
 	yield($AttackPlayer, "animation_finished")
+#	get_parent().get_node("Jevil").visible = true
 	emit_signal("attack_ended")
 	
 

@@ -1,22 +1,63 @@
 {
 	"events": [
 		{
+			"call_node": {
+				"arguments": [
+					"turn_back"
+				],
+				"method_name": "play",
+				"target_node_path": "Main/JevilDown/AnimationPlayer"
+			},
+			"event_id": "dialogic_042"
+		},
+		{
 			"character": "character-1693016638.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
 			"text": "!"
 		},
 		{
+			"event_id": "dialogic_023",
+			"hide_dialogbox": true,
+			"wait_seconds": 1
+		},
+		{
 			"character": "character-1693016638.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Do you think that's funny?"
+			"text": "H3Y"
 		},
 		{
-			"character": "",
+			"call_node": {
+				"arguments": [
+					"black_glasses"
+				],
+				"method_name": "play",
+				"target_node_path": "Main/JevilDown/AnimationPlayer"
+			},
+			"event_id": "dialogic_042"
+		},
+		{
+			"character": "character-1693016638.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "WE ALREADY HAVE A \\[Clown Around Town] IN HERE, \nDO U KN0W\nWAT IS WAY \\[funny]ER?"
+			"text": "U TH1NK THATS [funny]?\nWE ALREADY HAVE A [clown around town] HERE"
+		},
+		{
+			"call_node": {
+				"arguments": [
+					"default"
+				],
+				"method_name": "play",
+				"target_node_path": "Main/JevilDown/AnimationPlayer"
+			},
+			"event_id": "dialogic_042"
+		},
+		{
+			"character": "character-1693016638.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "DO U KN0W\nWAT IS WAY [funny]ER?"
 		},
 		{
 			"condition": "!=",
@@ -28,7 +69,39 @@
 			"character": "character-1693016638.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "*IP*\nAND ALSO"
+			"text": "[user_ip] [pause=0.8]"
+		},
+		{
+			"character": "character-1693016638.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "[user_country], [pause=0.8][user_region]"
+		},
+		{
+			"call_node": {
+				"arguments": [
+					"he_is_serious"
+				],
+				"method_name": "play",
+				"target_node_path": "Main/JevilDown/AnimationPlayer"
+			},
+			"event_id": "dialogic_042"
+		},
+		{
+			"call_node": {
+				"arguments": [
+					"he_is_serious"
+				],
+				"method_name": "play",
+				"target_node_path": "JevilDown/AnimationPlayer"
+			},
+			"event_id": "dialogic_042"
+		},
+		{
+			"character": "character-1693016638.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "THAT S WAT FU№NY\nAND ALS0"
 		},
 		{
 			"event_id": "dialogic_013"
@@ -37,7 +110,7 @@
 			"character": "character-1693016638.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "THIZ"
+			"text": "TH1S[nw=0.2]"
 		},
 		{
 			"call_node": {

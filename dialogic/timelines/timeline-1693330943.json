@@ -6,7 +6,7 @@
 					"hit"
 				],
 				"method_name": "play",
-				"target_node_path": "Main/Spamton/AnimationPlayer"
+				"target_node_path": "Main/DullJevil/Spamton/AnimationPlayer"
 			},
 			"event_id": "dialogic_042"
 		},
@@ -22,7 +22,7 @@
 					"angry_shaking"
 				],
 				"method_name": "play",
-				"target_node_path": "Main/Spamton/AnimationPlayer"
+				"target_node_path": "Main/DullJevil/Spamton/AnimationPlayer"
 			},
 			"event_id": "dialogic_042"
 		},
@@ -54,7 +54,7 @@
 					"turn_back"
 				],
 				"method_name": "play",
-				"target_node_path": "Main/Spamton/AnimationPlayer"
+				"target_node_path": "Main/DullJevil/Spamton/AnimationPlayer"
 			},
 			"event_id": "dialogic_042"
 		},
@@ -85,7 +85,7 @@
 					"default"
 				],
 				"method_name": "play",
-				"target_node_path": "Main/Spamton/AnimationPlayer"
+				"target_node_path": "Main/DullJevil/Spamton/AnimationPlayer"
 			},
 			"event_id": "dialogic_042"
 		},
@@ -101,7 +101,7 @@
 					"black_glasses"
 				],
 				"method_name": "play",
-				"target_node_path": "Main/Spamton/AnimationPlayer"
+				"target_node_path": "Main/DullJevil/Spamton/AnimationPlayer"
 			},
 			"event_id": "dialogic_042"
 		},

@@ -47,6 +47,7 @@ tracks/1/keys = {
 script = ExtResource( 3 )
 
 [node name="BorderField" parent="." instance=ExtResource( 1 )]
+visible = false
 position = Vector2( 464, 384 )
 scale = Vector2( 0.759948, 0.759948 )
 
@@ -55,4 +56,5 @@ position = Vector2( 0, 21.0541 )
 scale = Vector2( 1.31588, 1.31588 )
 
 [node name="AttackPlayer" type="AnimationPlayer" parent="."]
+reset_on_save = false
 anims/best_attack = SubResource( 1 )

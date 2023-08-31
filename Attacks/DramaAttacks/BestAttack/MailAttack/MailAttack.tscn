@@ -48,7 +48,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0.1, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 456, 304 ), Vector2( 456, 232 ) ]
+"values": [ Vector2( 440, 250 ), Vector2( 440, 200 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("WindowSpamton:visible")
@@ -123,8 +123,7 @@ wait_time = 3.0
 one_shot = true
 
 [node name="WindowSpamton" type="AnimatedSprite" parent="."]
-position = Vector2( 456, 304 )
-scale = Vector2( 0.5, 0.5 )
+position = Vector2( 440, 200 )
 z_index = -1
 frames = SubResource( 2 )
 animation = "hands_down"
