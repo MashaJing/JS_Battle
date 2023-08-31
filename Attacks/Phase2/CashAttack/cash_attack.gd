@@ -3,6 +3,7 @@ onready var Spamton = $Spamton/AnimatedSprite
 onready var CashTimer = $DollarTimer
 onready var CashBullet = preload("res://Bullets/Cash/Cash.tscn")
 onready var Border = preload("res://Border/Border.tscn")
+signal card_attack_ended
 
 
 func init_border():
@@ -54,4 +55,4 @@ func _on_AttackTimer_timeout():
 	print($Spamton.position)	
 	spamton_jumps(true)	
 	yield($AnimationPlayer, "animation_finished")
-	get_tree().change_scene(GlobalPartySettings.PARTY_ROOT_SCENE_PATH)
+	emit_signal("card_attack_ended")

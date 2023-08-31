@@ -1,8 +1,7 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Assets/fonts/menu/VT323-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Border/Border.tscn" type="PackedScene" id=2]
-[ext_resource path="res://team_stats/Spamton/Spamton.tscn" type="PackedScene" id=3]
 [ext_resource path="res://player/KinematicHeart.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Attacks/Phase2/TestAttack/pwd_attack.gd" type="Script" id=5]
 
@@ -70,8 +69,5 @@ margin_bottom = 40.0
 bbcode_enabled = true
 bbcode_text = "[shake]START TYP1NG TO HAVE [fun]!"
 text = "START TYP1NG TO HAVE [fun]!"
-
-[node name="Spamton" parent="." instance=ExtResource( 3 )]
-position = Vector2( 800, 304 )
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

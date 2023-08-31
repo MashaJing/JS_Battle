@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Attacks/DramaAttacks/TheirLegsAttack/dr_attack4.gd" type="Script" id=1]
 [ext_resource path="res://Attacks/DramaAttacks/TheirLegsAttack/LegBullet/LegBullet.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Attacks/DramaAttacks/TheirLegsAttack/MikeLegs/MikeLegs.tscn" type="PackedScene" id=3]
 [ext_resource path="res://player/KinematicHeart.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Border/Border.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Bullets/bullet_tools/Warning/Warning.tscn" type="PackedScene" id=6]
 
 [sub_resource type="Animation" id=1]
@@ -44,6 +45,9 @@ position = Vector2( 520, 300 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/attack = SubResource( 1 )
+
+[node name="BorderField" parent="." instance=ExtResource( 5 )]
+position = Vector2( 510, 270 )
 
 [node name="Warning" parent="." instance=ExtResource( 6 )]
 visible = false

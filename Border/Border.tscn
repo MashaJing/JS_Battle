@@ -48,4 +48,4 @@ polygon = PoolVector2Array( -101.333, -99.4706, -101.333, 219.059, 205.901, 219.
 position = Vector2( 0, 140 )
 frames = SubResource( 1 )
 animation = "Appear"
-frame = 4
+frame = 24

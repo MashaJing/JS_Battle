@@ -1,0 +1,37 @@
+{
+	"color": "#ffffffff",
+	"description": "",
+	"display_name": " ",
+	"display_name_bool": true,
+	"id": "character-1692898558.json",
+	"mirror_portraits": false,
+	"name": "Spamton",
+	"nickname": "",
+	"nickname_bool": false,
+	"offset_x": 0,
+	"offset_y": 0,
+	"portraits": [
+		{
+			"name": "Default",
+			"path": "res://Assets/Images/Dialogue/Spamton/Spamton_Happy.png"
+		},
+		{
+			"name": "Mad",
+			"path": "res://Assets/Images/Dialogue/Spamton/Spamton_Mad.png"
+		},
+		{
+			"name": "Mysterious",
+			"path": "res://Assets/Images/Dialogue/Spamton/Spamton_Mysterious.png"
+		},
+		{
+			"name": "Pathetic",
+			"path": "res://Assets/Images/Dialogue/Spamton/Spamton_Pathetic.png"
+		},
+		{
+			"name": "Tax",
+			"path": "res://Assets/Images/Dialogue/Spamton/Spamton_Tax.png"
+		}
+	],
+	"scale": 100,
+	"theme": "theme-1692900229.cfg"
+}

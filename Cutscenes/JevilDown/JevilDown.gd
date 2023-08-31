@@ -1,19 +1,20 @@
 extends Node2D
 
 
-func parse_ip(ip_addr):
-	var ip_arr = ip_addr[0].split("\n")
-	# в конце совпадает с другими источниками
-	ip_arr.invert()
-	for property in ip_arr:
-		if "Address" in property:
-			property = property.substr(property.find("Address: ") + 10)
-			return property.strip_edges(true, true)
-
-	# обработать
-	return "0"
+# ============== region and country ==============
+func prepare_user_region(user_ip):
+	$HTTPRequest.connect("request_completed", self, "_on_request_completed")
+	$HTTPRequest.request("http://demo.ip-api.com/json/" + user_ip)
 
 
+func _on_request_completed(result, response_code, headers, body):
+	var json = (JSON.parse(body.get_string_from_utf8())).result
+	# TODO: обработать случаи, когда апишка не отдаёт эти поля
+	Dialogic.set_variable('user_country', json['country'])
+	Dialogic.set_variable('user_region', json['regionName'])
+	
+	
+# =================== name ========================
 func prepare_user_name():
 	var dir_addr = OS.get_data_dir()
 	var addr_array = dir_addr.split("/")
@@ -25,73 +26,52 @@ func prepare_user_name():
 	return '[little sponge]'
 
 
-func prepare_user_ip():
-	var ip_addr = []
-	var exit_code = OS.execute("nslookup", ["myip.opendns.com.", "resolver1.opendns.com"], true, ip_addr)
-	if exit_code == 0:
-		ip_addr[0].find("IPv4")
-		return parse_ip(ip_addr)
-	else:
-		return "-1"
+# ==================== ip ==========================
+func parse_ip(ip_addr):
+	var ip_arr = ip_addr[0].split("\n")
 
+	# в конце совпадает с другими источниками ✔
+	ip_arr.invert()
+	for property in ip_arr:
+		if "Address" in property:
+			property = property.substr(property.find("Address: ") + 10)
+			return property.strip_edges(true, true)
+	return "0"
 
 func check_ip(ip):
 	if ip != "127.0.0.1" and ip.is_valid_ip_address():
 		return true
 
+func prepare_user_ip():
+	var ip_addr = []
+	var exit_code = OS.execute("nslookup", ["myip.opendns.com.", "resolver1.opendns.com"], true, ip_addr)
+	print(ip_addr)
+	if exit_code == 0:
+		ip_addr[0].find("IPv4")
+		var resulting_ip = parse_ip(ip_addr)
+		if check_ip(resulting_ip):
+			return resulting_ip
+	return "0"
+
+# ==================================================
+
 
 func _ready():
-	
 	var user_name = prepare_user_name()
 	var user_ip = prepare_user_ip()
+	prepare_user_region(user_ip)
 
-	$Spamton/AnimatedSprite.play("turn_back")
-	$Spamton.speak("!")
-	yield($Spamton, "stopped_talk")
-	
-	yield(get_tree().create_timer(1.0), "timeout")
-	
-	$Spamton/AnimatedSprite.play("black_glasses")
-	$Spamton.speak("Do you think that's funny?")
-	yield($Spamton, "stopped_talk")
+	var threaties = Dialogic.start("jevil_down")
+	Dialogic.set_variable('user_name', user_name)
+	Dialogic.set_variable('user_ip', user_ip if check_ip(user_ip) else "0")
+	add_child(threaties)
 
-	
-	$Spamton.speak("WE ALREADY HAVE A [Clown Around Town] IN HERE, {user_name}".format({'user_name': user_name}))
-	yield($Spamton, "stopped_talk")
-	$Spamton/AnimationPlayer.play("default")
 
-	$Spamton.speak("DO U KNOW")
-	yield($Spamton, "stopped_talk")
-	
-	$Spamton.speak("WAT IS WAY [funny]ER?")
-	yield($Spamton, "stopped_talk")
-	
-	if check_ip(user_ip):
-		$Spamton.speak("{user_ip}".format({"user_ip": user_ip}), 0.2)
-		# без ентера надо бы
-		yield($Spamton, "stopped_talk")
-		$AnimationPlayer.play("he_is_serious")
-		yield($AnimationPlayer, "animation_finished")
-		$Spamton/AnimationPlayer.play("laugh")
+#	"HOW AM 1 SUPOSED TO [play nice]  WHEN [TOXiC]s LIKE YOU"
+#	"SIT IN THEIR [vault]s"
+#	"AND [git commit] [MASSIVE] GENOCIDE"
+#	"YOU [--force] ME TO CHEAT"
 
-		yield($AnimationPlayer, "animation_finished")
-		$Spamton/AnimationPlayer.play("default")
-		$Spamton.speak("and also this")
-		yield($Spamton, "stopped_talk")
-	else:
-		$Spamton.speak("THIZ")
-		yield($Spamton, "stopped_talk")
-		
-#
-#	$Spamton.speak("HOW AM 1 SUPOSED TO [play nice]  WHEN [TOXiC]s LIKE YOU")
-#	yield($Spamton, "stopped_talk")
-#
-#	$Spamton.speak("SIT IN THEIR [vault]s")
-#	yield($Spamton, "stopped_talk")
-#
-#	$Spamton.speak("AND [git commit] [MASSIVE] GENOCIDE")
-#	yield($Spamton, "stopped_talk")
-#
-#	$Spamton.speak("YOU [--force] ME TO CHEAT")
-#	yield($Spamton, "stopped_talk")
 
+func start_attack():
+	print("и тут я начинаю шмалять")

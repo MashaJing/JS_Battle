@@ -12,6 +12,7 @@ onready var DevilsKnife = preload("res://Attacks/DullAttacks/DullJevil/KnifePath
 
 
 func _ready():
+	get_parent().get_node("Spamton").visible = false
 	bullet_spawn_timer.start()
 	bullet_spawn_timer.autostart = true
 	SpamtonAnimPlayer.play("head_attack")
@@ -19,9 +20,12 @@ func _ready():
 	spawn_knife()
 	yield(get_tree().create_timer(2), "timeout")
 	bullet_spawn_timer.stop()
-	yield(SpamtonAnimPlayer, "animation_finished")
-	SpamtonAnimPlayer.play("hit")
-	yield(SpamtonAnimPlayer, "animation_finished")
+	yield(get_tree().create_timer(2), "timeout")
+	var dialogue = Dialogic.start("dull_jevil")
+	add_child(dialogue)
+	yield(dialogue, "dialogic_signal")
+	Spamton.visible = false
+	get_parent().get_node("Spamton").visible = true
 	emit_signal("attack_ended")
 
 func spawn_bullet(path, flipped):

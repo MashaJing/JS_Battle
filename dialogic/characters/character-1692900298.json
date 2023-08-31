@@ -1,0 +1,29 @@
+{
+	"color": "#ffffffff",
+	"description": "",
+	"display_name": " ",
+	"display_name_bool": true,
+	"id": "character-1692900298.json",
+	"mirror_portraits": false,
+	"name": "Jevil",
+	"nickname": "",
+	"nickname_bool": false,
+	"offset_x": 0,
+	"offset_y": 0,
+	"portraits": [
+		{
+			"name": "Default",
+			"path": "res://Assets/Images/Dialogue/Jevil/Jevil_Happy.png"
+		},
+		{
+			"name": "Cake",
+			"path": "res://Assets/Images/Dialogue/Jevil/Jevil_cake.png"
+		},
+		{
+			"name": "Cake_Uncanny",
+			"path": "res://Assets/Images/Dialogue/Jevil/Jevil_Cake_Uncanny.png"
+		}
+	],
+	"scale": 100,
+	"theme": "theme-1692899989.cfg"
+}

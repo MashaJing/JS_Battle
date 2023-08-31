@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=2]
+[gd_scene load_steps=64 format=2]
 
 [ext_resource path="res://team_stats/Spamton/assets/increase_head/image3x1.png" type="Texture" id=2]
 [ext_resource path="res://team_stats/Spamton/assets/increase_head/image2x1.png" type="Texture" id=3]
@@ -326,6 +326,45 @@ tracks/1/keys = {
 "values": [ true ]
 }
 
+[sub_resource type="Animation" id=58]
+resource_name = "dance"
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "dance" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AnimatedSprite:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("AnimatedSprite:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+
 [sub_resource type="Animation" id=4]
 resource_name = "default"
 length = 0.1
@@ -388,6 +427,18 @@ tracks/4/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ false ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("AnimatedSprite:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0.1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 2.2, 2.2 ) ]
 }
 
 [sub_resource type="Animation" id=2]
@@ -593,6 +644,47 @@ tracks/2/keys = {
 "values": [ true ]
 }
 
+[sub_resource type="Animation" id=57]
+resource_name = "idle"
+length = 0.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "default" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AnimatedSprite:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("AnimatedSprite:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.2, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -35, 0 ), Vector2( -10, 0 ) ]
+}
+
 [sub_resource type="Animation" id=38]
 resource_name = "increase_head_inclined"
 tracks/0/type = "value"
@@ -738,12 +830,10 @@ position = Vector2( -10, 10 )
 script = ExtResource( 10 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 7.40584, 0 )
-scale = Vector2( 2.3714, 2.3714 )
+position = Vector2( -10, 0 )
+scale = Vector2( 2.2, 2.2 )
 z_index = 1
 frames = SubResource( 1 )
-animation = "hands_up"
-playing = true
 offset = Vector2( 10, 0 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -751,6 +841,7 @@ anims/angry_big_head = SubResource( 40 )
 anims/angry_shaking = SubResource( 3 )
 anims/big_head_attack_inclined = SubResource( 37 )
 anims/black_glasses = SubResource( 39 )
+anims/dance = SubResource( 58 )
 anims/default = SubResource( 4 )
 anims/fall = SubResource( 2 )
 anims/flip = SubResource( 8 )
@@ -758,6 +849,7 @@ anims/hands_up = SubResource( 6 )
 anims/head_attack = SubResource( 7 )
 anims/hit = SubResource( 5 )
 anims/hug = SubResource( 9 )
+anims/idle = SubResource( 57 )
 anims/increase_head_inclined = SubResource( 38 )
 anims/increase_separated_head = SubResource( 41 )
 anims/laugh = SubResource( 44 )

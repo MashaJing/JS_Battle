@@ -28,3 +28,14 @@ func _physics_process(_delta):
 	move_and_slide(direction * speed)
 
 
+func disable():
+	visible = false
+	speed = 0
+	$Heart/TP/TPCollisionShape.disabled = true
+	$Heart/CollisionPolygon2D.disabled = true
+
+func ensable():
+	visible = true	
+	speed = 200.0
+	$Heart/TP/TPCollisionShape.disabled = false
+	$Heart/CollisionPolygon2D.disabled = false

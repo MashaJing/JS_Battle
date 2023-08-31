@@ -6,7 +6,7 @@ onready var WheelCenter = $FerrisWheel/WheelCenter
 
 # сделать рандомный знак
 onready var Bullet = preload("res://Bullets/Club/Bullet.tscn")
-signal attack_ended
+signal card_attack_ended
 
 var N_CLUBS = 10
 var WHEEL_ACC = 0.07
@@ -49,5 +49,4 @@ func _on_HoldingTimer_timeout():
 	yield(get_tree().create_timer(0.5), "timeout")
 	falling = true
 	yield(get_tree().create_timer(1.0), "timeout")
-#	emit_signal("attack_ended") ВЕДЬ АТАКА НЕ КОНЧИЛАСЬ
-	get_tree().change_scene(GlobalPartySettings.PARTY_ROOT_SCENE_PATH)
+	emit_signal("card_attack_ended")

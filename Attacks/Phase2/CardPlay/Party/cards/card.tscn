@@ -22,7 +22,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[node name="Card" type="Area2D" groups=["bullets"]]
+[node name="Card" type="Area2D"]
 scale = Vector2( 0.9311, 0.9311 )
 script = ExtResource( 1 )
 

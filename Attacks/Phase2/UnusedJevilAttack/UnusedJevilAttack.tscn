@@ -105,7 +105,7 @@ tracks/2/keys = {
 script = ExtResource( 4 )
 
 [node name="KinematicHeart" parent="." instance=ExtResource( 1 )]
-position = Vector2( 500, 270 )
+position = Vector2( 525, 323 )
 
 [node name="BorderField" parent="." instance=ExtResource( 2 )]
 position = Vector2( 525, 323 )
@@ -114,7 +114,6 @@ scale = Vector2( 0.759948, 0.759948 )
 [node name="KnifeOrigin" type="Node2D" parent="."]
 visible = false
 position = Vector2( 820, 278 )
-rotation = -12.5664
 
 [node name="Blade" type="Area2D" parent="KnifeOrigin" groups=["bullets"]]
 
@@ -126,6 +125,7 @@ texture = ExtResource( 9 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="KnifeOrigin/Blade"]
 polygon = PoolVector2Array( -118, -59, -113, -45, -45.9999, -57, 4.00006, -55, 39.0001, -49, 80.0001, -28, 89.0001, -18, 95.0001, -19, 89.0001, -44, 39.0001, -72, -10.9999, -75, -61.9999, -72 )
+disabled = true
 
 [node name="Knife" type="Sprite" parent="KnifeOrigin"]
 position = Vector2( -39.75, 9.50001 )
@@ -144,8 +144,7 @@ position = Vector2( 790, 400 )
 position = Vector2( 1230, 360 )
 stream = ExtResource( 6 )
 
-[node name="AttackTimer" type="Timer" parent="."]
-wait_time = 5.0
+[node name="KnifeDisabledTimer" type="Timer" parent="."]
 one_shot = true
 
-[connection signal="attack_began" from="." to="." method="_on_UnusedJevilAttack_attack_began"]
+[connection signal="timeout" from="KnifeDisabledTimer" to="." method="_on_AttackTimer_timeout"]
