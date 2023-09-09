@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/the_deals_revolving.mp3-3f56298fc0ab6155a240792d13999676.mp3str"
+
+[deps]
+
+source_file="res://Assets/music/the_deals_revolving.mp3"
+dest_files=[ "res://.import/the_deals_revolving.mp3-3f56298fc0ab6155a240792d13999676.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

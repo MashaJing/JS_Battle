@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Reptile Crawling from the Forest.mp3-d1b57bf4c1175b71e5dcc6e6e6041c30.mp3str"
+
+[deps]
+
+source_file="res://Assets/music/Reptile Crawling from the Forest.mp3"
+dest_files=[ "res://.import/Reptile Crawling from the Forest.mp3-d1b57bf4c1175b71e5dcc6e6e6041c30.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

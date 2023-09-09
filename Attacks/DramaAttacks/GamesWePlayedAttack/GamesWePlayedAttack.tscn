@@ -32,6 +32,7 @@ position = Vector2( 840, 400 )
 anims/spawn_wave = SubResource( 1 )
 
 [node name="Spamton" parent="WordSpawn" instance=ExtResource( 2 )]
+position = Vector2( -13, 115 )
 
 [node name="WordSpawnTimer" type="Timer" parent="."]
 wait_time = 0.7
@@ -41,4 +42,5 @@ autostart = true
 position = Vector2( 545, 320 )
 
 [node name="BorderField" parent="." instance=ExtResource( 4 )]
-position = Vector2( 515, 295 )
+position = Vector2( 515, 335 )
+scale = Vector2( 0.64, 0.64 )

@@ -11,9 +11,9 @@ lower_horse_scene = ExtResource( 2 )
 [node name="HorsePos" type="Node2D" parent="."]
 
 [node name="HorsePos1" type="Node2D" parent="HorsePos"]
-position = Vector2( 0, 130 )
+position = Vector2( 0, 110 )
 
 [node name="HorsePos2" type="Node2D" parent="HorsePos"]
 
 [node name="HorsePos3" type="Node2D" parent="HorsePos"]
-position = Vector2( 0, -130 )
+position = Vector2( 0, -80 )

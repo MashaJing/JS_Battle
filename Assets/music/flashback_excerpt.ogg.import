@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/flashback_excerpt.ogg-f93dfdeea6010dada60a83a4a078468b.oggstr"
+
+[deps]
+
+source_file="res://Assets/music/flashback_excerpt.ogg"
+dest_files=[ "res://.import/flashback_excerpt.ogg-f93dfdeea6010dada60a83a4a078468b.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

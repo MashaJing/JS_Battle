@@ -87,7 +87,7 @@ _global_script_class_icons={
 [application]
 
 config/name="JS_battle"
-run/main_scene="res://Cutscenes/PreBattle/PreBattleDialogue.tscn"
+run/main_scene="res://Main.tscn"
 config/icon="res://icon.png"
 
 [autoload]
@@ -102,6 +102,7 @@ GlobalAttackSettings="*res://GlobalAttackSettings.gd"
 
 [display]
 
+window/size/fullscreen=true
 window/stretch/mode="viewport"
 
 [editor_plugins]

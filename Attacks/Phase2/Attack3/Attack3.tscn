@@ -16,7 +16,7 @@ position = Vector2( -1, -1 )
 script = ExtResource( 3 )
 
 [node name="Carousel" parent="." instance=ExtResource( 1 )]
-position = Vector2( 500, 246.766 )
+position = Vector2( 531, 231 )
 z_index = 1
 
 [node name="Spamton" parent="." instance=ExtResource( 4 )]
@@ -39,7 +39,7 @@ position = Vector2( 511, 221 )
 scale = Vector2( 0.68, 0.68 )
 
 [node name="KinematicHeart" parent="." instance=ExtResource( 2 )]
-position = Vector2( 481, 311 )
+position = Vector2( 531, 311 )
 
 [node name="AttackTimer" type="Timer" parent="."]
 wait_time = 7.0

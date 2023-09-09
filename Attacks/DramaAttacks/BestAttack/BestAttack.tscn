@@ -6,7 +6,7 @@
 
 [sub_resource type="Animation" id=1]
 resource_name = "best_attack"
-length = 14.0
+length = 13.0
 tracks/0/type = "method"
 tracks/0/path = NodePath(".")
 tracks/0/interp = 1
@@ -47,8 +47,7 @@ tracks/1/keys = {
 script = ExtResource( 3 )
 
 [node name="BorderField" parent="." instance=ExtResource( 1 )]
-visible = false
-position = Vector2( 464, 384 )
+position = Vector2( 528, 304 )
 scale = Vector2( 0.759948, 0.759948 )
 
 [node name="KinematicHeart" parent="BorderField" instance=ExtResource( 2 )]

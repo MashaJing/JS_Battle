@@ -10,22 +10,22 @@ var PARTIES = [
 #			"spam_tuz",
 #		]
 #	},
-#	{
-#		"winner": "Jevil",
-#		"attack_path": "res://Attacks/Phase2/CashAttack/CashAttack.tscn",
-#		"cards": [
-#			"spam_queen",
-#			"jevil_joker"
-#		]
-#	},
 	{
 		"winner": "Jevil",
-		"attack_path": "res://Attacks/Phase2/SpamLetter/SpamLetter.tscn",
+		"attack_path": "res://Attacks/Phase2/CashAttack/CashAttack.tscn",
 		"cards": [
 			"spam_queen",
 			"jevil_joker"
 		]
 	},
+#	{
+#		"winner": "Jevil",
+#		"attack_path": "res://Attacks/Phase2/SpamLetter/SpamLetter.tscn",
+#		"cards": [
+#			"spam_queen",
+#			"jevil_joker"
+#		]
+#	},
 #		{
 #		"winner": "Jevil",
 #		"attack_path": "res://Attacks/Phase2/FriedPipisAttack/FriedPipisAttack.tscn",

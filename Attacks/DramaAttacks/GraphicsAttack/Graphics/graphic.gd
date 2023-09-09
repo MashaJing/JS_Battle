@@ -8,7 +8,7 @@ onready var graphic_line = $GraphicLine
 onready var graphic_arrow = $GraphicBullet/PathFollow2D/GraphicArrow
 onready var graphic_path_follow = $GraphicBullet/PathFollow2D
 
-var speed = 500
+var speed = 440
 var attack = false
 var pts = PoolVector2Array()
 var path_curve = Curve2D.new()

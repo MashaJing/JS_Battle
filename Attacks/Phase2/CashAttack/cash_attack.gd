@@ -1,4 +1,5 @@
 extends Node2D
+onready var parent_Spamton = get_parent().get_parent().get_node("Spamton")
 onready var Spamton = $Spamton/AnimatedSprite
 onready var CashTimer = $DollarTimer
 onready var CashBullet = preload("res://Bullets/Cash/Cash.tscn")
@@ -52,7 +53,7 @@ func _on_DollarTimer_timeout():
 func _on_AttackTimer_timeout():
 	$DollarTimer.stop()
 	$AnimationPlayer.stop()
-	print($Spamton.position)	
-	spamton_jumps(true)	
+	print($Spamton.position)
+	spamton_jumps(true)
 	yield($AnimationPlayer, "animation_finished")
 	emit_signal("card_attack_ended")

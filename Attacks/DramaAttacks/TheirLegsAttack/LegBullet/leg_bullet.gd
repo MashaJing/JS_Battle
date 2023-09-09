@@ -12,11 +12,11 @@ func _ready():
 
 func stomp():
 	visible = true
-	speed = 600
+	speed = 800
 	direction = Vector2.DOWN
-	yield(get_tree().create_timer(0.5), "timeout")
+	yield(get_tree().create_timer(0.36), "timeout")
 	direction = Vector2.UP
-	yield(get_tree().create_timer(0.5), "timeout")
+	yield(get_tree().create_timer(0.36), "timeout")
 	speed = 0
 	direction = Vector2.DOWN
 	visible = false

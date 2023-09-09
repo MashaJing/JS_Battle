@@ -6,7 +6,7 @@
 					"turn_back"
 				],
 				"method_name": "play",
-				"target_node_path": "Main/JevilDown/AnimationPlayer"
+				"target_node_path": "Main/Spamton/AnimationPlayer"
 			},
 			"event_id": "dialogic_042"
 		},
@@ -33,7 +33,7 @@
 					"black_glasses"
 				],
 				"method_name": "play",
-				"target_node_path": "Main/JevilDown/AnimationPlayer"
+				"target_node_path": "Main/Spamton/AnimationPlayer"
 			},
 			"event_id": "dialogic_042"
 		},
@@ -49,7 +49,7 @@
 					"default"
 				],
 				"method_name": "play",
-				"target_node_path": "Main/JevilDown/AnimationPlayer"
+				"target_node_path": "Main/Spamton/AnimationPlayer"
 			},
 			"event_id": "dialogic_042"
 		},
@@ -83,17 +83,7 @@
 					"he_is_serious"
 				],
 				"method_name": "play",
-				"target_node_path": "Main/JevilDown/AnimationPlayer"
-			},
-			"event_id": "dialogic_042"
-		},
-		{
-			"call_node": {
-				"arguments": [
-					"he_is_serious"
-				],
-				"method_name": "play",
-				"target_node_path": "JevilDown/AnimationPlayer"
+				"target_node_path": "Main/JevilDown"
 			},
 			"event_id": "dialogic_042"
 		},
@@ -107,10 +97,19 @@
 			"event_id": "dialogic_013"
 		},
 		{
+			"audio_bus": "Master",
+			"background-music": "play",
+			"event_id": "dialogic_031",
+			"event_name": "BackgroundMusic",
+			"fade_length": 1,
+			"file": "res://Assets/music/Reptile Crawling from the Forest.mp3",
+			"volume": 0
+		},
+		{
 			"character": "character-1693016638.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "TH1S[nw=0.2]"
+			"text": "TH1S[nw=0.5]"
 		},
 		{
 			"call_node": {
@@ -121,6 +120,40 @@
 				"target_node_path": "Main/JevilDown"
 			},
 			"event_id": "dialogic_042"
+		},
+		{
+			"call_node": {
+				"arguments": [
+					"put_on_ring"
+				],
+				"method_name": "play",
+				"target_node_path": "Main/Spamton/AnimationPlayer"
+			},
+			"event_id": "dialogic_042"
+		},
+		{
+			"event_id": "dialogic_023",
+			"hide_dialogbox": true,
+			"wait_seconds": 2
+		},
+		{
+			"call_node": {
+				"arguments": [
+					"default"
+				],
+				"method_name": "play",
+				"target_node_path": "Main/Spamton/AnimationPlayer"
+			},
+			"event_id": "dialogic_042"
+		},
+		{
+			"event_id": "dialogic_023",
+			"hide_dialogbox": true,
+			"wait_seconds": 10
+		},
+		{
+			"emit_signal": "",
+			"event_id": "dialogic_040"
 		}
 	],
 	"metadata": {

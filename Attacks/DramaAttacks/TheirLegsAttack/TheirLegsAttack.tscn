@@ -53,21 +53,18 @@ position = Vector2( 510, 270 )
 visible = false
 position = Vector2( 480, 250 )
 scale = Vector2( 1.34694, 1.55689 )
-frame = 1
 offset = Vector2( -27.2222, 10.02 )
 
 [node name="Warning2" parent="." instance=ExtResource( 6 )]
 visible = false
 position = Vector2( 610, 250 )
 scale = Vector2( 1.34694, 1.55689 )
-frame = 1
 offset = Vector2( -27.2222, 10.02 )
 
 [node name="Warning3" parent="." instance=ExtResource( 6 )]
 visible = false
 position = Vector2( 585.399, 253.696 )
 scale = Vector2( 2.78269, 1.60719 )
-frame = 1
 offset = Vector2( -27.2222, 10.02 )
 
 [node name="Leg" parent="." instance=ExtResource( 2 )]

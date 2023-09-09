@@ -3,7 +3,7 @@
 		{
 			"call_node": {
 				"arguments": [
-					"black_glasses"
+					"annoyed1"
 				],
 				"method_name": "play",
 				"target_node_path": "Main/Spamton/AnimationPlayer"
@@ -27,10 +27,20 @@
 			"event_id": "dialogic_042"
 		},
 		{
+			"call_node": {
+				"arguments": [
+					"annoyed2"
+				],
+				"method_name": "play",
+				"target_node_path": "Main/Spamton/AnimationPlayer"
+			},
+			"event_id": "dialogic_042"
+		},
+		{
 			"character": "character-1693016638.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "YOU !?\nPRETENDED TO BE MY [[friendship is magic!]]"
+			"text": "WHO  [else] ARE YOU !?\nPRETENDED TO BE MY [[friendship is magic!]]"
 		},
 		{
 			"call_node": {
@@ -183,6 +193,16 @@
 			"event_id": "dialogic_042"
 		},
 		{
+			"call_node": {
+				"arguments": [
+					"annoyed3"
+				],
+				"method_name": "play",
+				"target_node_path": "Main/Spamton/AnimationPlayer"
+			},
+			"event_id": "dialogic_042"
+		},
+		{
 			"character": "character-1693016638.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
@@ -241,6 +261,16 @@
 			"event_id": "dialogic_001",
 			"portrait": "",
 			"text": "No! The God left me too, too!"
+		},
+		{
+			"call_node": {
+				"arguments": [
+					"black_glasses"
+				],
+				"method_name": "play",
+				"target_node_path": "Main/Spamton/AnimationPlayer"
+			},
+			"event_id": "dialogic_042"
 		},
 		{
 			"call_node": {

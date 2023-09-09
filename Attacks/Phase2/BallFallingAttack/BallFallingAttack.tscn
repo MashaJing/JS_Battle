@@ -122,7 +122,7 @@ position = Vector2( 530, 360 )
 scale = Vector2( 0.759948, 0.759948 )
 
 [node name="KinematicBall" parent="." instance=ExtResource( 4 )]
-position = Vector2( -100, 300 )
+position = Vector2( 1200, 250 )
 
 [node name="HitSound" type="AudioStreamPlayer2D" parent="KinematicBall"]
 position = Vector2( 40, 40 )
@@ -144,14 +144,14 @@ position = Vector2( 530, 530 )
 
 [node name="Sprite" type="Sprite" parent="."]
 visible = false
-position = Vector2( 560, 510 )
+position = Vector2( 640, 470 )
 rotation = -0.886627
 scale = Vector2( 0.278756, 0.20854 )
 texture = ExtResource( 7 )
 
 [node name="Sprite2" type="Sprite" parent="."]
 visible = false
-position = Vector2( 500, 520 )
+position = Vector2( 420, 470 )
 rotation = 0.574213
 scale = Vector2( 0.18297, 0.210919 )
 texture = ExtResource( 7 )
@@ -167,4 +167,4 @@ rotation = -0.0117649
 visible = false
 position = Vector2( 530, 385 )
 scale = Vector2( 2.04082, 0.898204 )
-frame = 0
+frame = 1

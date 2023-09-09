@@ -4,16 +4,10 @@
 	],
 	"variables": [
 		{
-			"id": "1693156428-507",
-			"name": "user_ip",
+			"id": "1693156543-827",
+			"name": "user_name",
 			"type": 0,
-			"value": ""
-		},
-		{
-			"id": "1693156448-928",
-			"name": "user_password_len",
-			"type": 0,
-			"value": ""
+			"value": "dzekh"
 		},
 		{
 			"id": "1693323930-648",
@@ -22,22 +16,34 @@
 			"value": "true"
 		},
 		{
-			"id": "1693156543-827",
-			"name": "user_name",
+			"id": "1693156428-507",
+			"name": "user_ip",
 			"type": 0,
-			"value": ""
-		},
-		{
-			"id": "1693484500-648",
-			"name": "user_country",
-			"type": 0,
-			"value": ""
+			"value": "121.200.123.123"
 		},
 		{
 			"id": "1693484504-787",
 			"name": "user_region",
 			"type": 0,
+			"value": "Novosibirsk Oblast"
+		},
+		{
+			"id": "1693484500-648",
+			"name": "user_country",
+			"type": 0,
+			"value": "Russia"
+		},
+		{
+			"id": "1693156448-928",
+			"name": "user_password_len",
+			"type": 0,
 			"value": ""
+		},
+		{
+			"id": "1694094006-648",
+			"name": "spamvil_made_up",
+			"type": 0,
+			"value": "false"
 		}
 	]
 }

@@ -4,13 +4,13 @@
 			"character": "character-1692900944.json",
 			"event_id": "dialogic_001",
 			"portrait": "Default",
-			"text": "So… Kris, how about some practice in our Dojo?"
+			"text": "* So… Kris, how about some practice in our Dojo?"
 		},
 		{
 			"character": "character-1692901208.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "HELL YEAH! Fights!\nI mean, we need to stay in shape and all…"
+			"text": "* HELL YEAH! Fights!\nI mean, we need to stay in shape and all…"
 		}
 	],
 	"metadata": {

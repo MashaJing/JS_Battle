@@ -1,7 +1,17 @@
 {
 	"events": [
 		{
-			"animation": "instant_in.gd",
+			"call_node": {
+				"arguments": [
+					"default"
+				],
+				"method_name": "play",
+				"target_node_path": "Main/Spamton/AnimationPlayer"
+			},
+			"event_id": "dialogic_042"
+		},
+		{
+			"animation": "slide_in_left.gd",
 			"animation_length": 0,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
@@ -11,8 +21,8 @@
 			"portrait": "Default",
 			"portrait_definition": "",
 			"position": {
-				"0": false,
-				"1": true,
+				"0": true,
+				"1": false,
 				"2": false,
 				"3": false,
 				"4": false
@@ -21,7 +31,42 @@
 			"z_index": 0
 		},
 		{
-			"animation": "[Default]",
+			"audio_bus": "Soundtrack",
+			"background-music": "play",
+			"event_id": "dialogic_031",
+			"event_name": "BackgroundMusic",
+			"fade_length": 0,
+			"file": "res://Assets/music/dialtone.ogg",
+			"volume": -5
+		},
+		{
+			"character": "character-1692898558.json",
+			"event_id": "dialogic_001",
+			"portrait": "Default",
+			"text": "* H3Y KRIS  [and his friends]!      IT’S a-ME!\n* YOU  [START ATTENDING GYM at]  TO  EXERC1SE WITH YOUR  [old pal] SPAMTON !!"
+		},
+		{
+			"animation": "slide_out_left.gd",
+			"animation_length": 0,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1692898558.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "Default",
+			"portrait_definition": "",
+			"position": {
+				"0": true,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			},
+			"type": 1,
+			"z_index": 0
+		},
+		{
+			"animation": "slide_in_left.gd",
 			"animation_length": 0,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
@@ -41,19 +86,53 @@
 			"z_index": 0
 		},
 		{
-			"character": "character-1692898558.json",
-			"event_id": "dialogic_001",
-			"portrait": "Default",
-			"text": "H3Y KRIS          [and his friends]!      IT’S a-ME!\nYOU  [START ATTENDING GYM at]  TO   EXERC1SE WITH YOUR  [old pal]\n     [old pal] SPAMTON !!"
+			"call_node": {
+				"arguments": [
+					"hands_up"
+				],
+				"method_name": "play",
+				"target_node_path": "Main/Spamton/AnimationPlayer"
+			},
+			"event_id": "dialogic_042"
 		},
 		{
 			"character": "character-1692901208.json",
 			"event_id": "dialogic_001",
 			"portrait": "susie_annoyed",
-			"text": "Er, buddy, you’re kinda… ex-NEO now"
+			"text": "* Er, buddy, you’re kinda… ex-NEO now"
 		},
 		{
-			"animation": "[Default]",
+			"call_node": {
+				"arguments": [
+					"default"
+				],
+				"method_name": "play",
+				"target_node_path": "Main/Spamton/AnimationPlayer"
+			},
+			"event_id": "dialogic_042"
+		},
+		{
+			"animation": "slide_out_left.gd",
+			"animation_length": 0,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1692901208.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "Default",
+			"portrait_definition": "",
+			"position": {
+				"0": true,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			},
+			"type": 1,
+			"z_index": 0
+		},
+		{
+			"animation": "slide_in_left.gd",
 			"animation_length": 0,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
@@ -63,9 +142,9 @@
 			"portrait": "Default",
 			"portrait_definition": "",
 			"position": {
-				"0": false,
+				"0": true,
 				"1": false,
-				"2": true,
+				"2": false,
 				"3": false,
 				"4": false
 			},
@@ -76,10 +155,54 @@
 			"character": "character-1692900944.json",
 			"event_id": "dialogic_001",
 			"portrait": "Default",
-			"text": "Actually, I’ve evened the odds"
+			"text": "* Actually, I’ve evened the odds"
 		},
 		{
-			"animation": "[Default]",
+			"animation": "slide_out_left.gd",
+			"animation_length": 0,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1692900944.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "Default",
+			"portrait_definition": "",
+			"position": {
+				"0": true,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			},
+			"type": 1,
+			"z_index": 0
+		},
+		{
+			"call_node": {
+				"arguments": [
+					"teleport"
+				],
+				"method_name": "play",
+				"target_node_path": "Main/Jevil/AnimationPlayer"
+			},
+			"event_id": "dialogic_042"
+		},
+		{
+			"audio_bus": "Soundtrack",
+			"background-music": "play",
+			"event_id": "dialogic_031",
+			"event_name": "BackgroundMusic",
+			"fade_length": 1,
+			"file": "",
+			"volume": 0
+		},
+		{
+			"event_id": "dialogic_023",
+			"hide_dialogbox": true,
+			"wait_seconds": 2.5
+		},
+		{
+			"animation": "slide_in_left.gd",
 			"animation_length": 0,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
@@ -89,10 +212,597 @@
 			"portrait": "Default",
 			"portrait_definition": "",
 			"position": {
-				"0": false,
+				"0": true,
 				"1": false,
 				"2": false,
-				"3": true,
+				"3": false,
+				"4": false
+			},
+			"type": 0,
+			"z_index": 0
+		},
+		{
+			"call_node": {
+				"arguments": [
+					"dance"
+				],
+				"method_name": "play",
+				"target_node_path": "Main/Jevil/AnimationPlayer"
+			},
+			"event_id": "dialogic_042"
+		},
+		{
+			"audio_bus": "Soundtrack",
+			"background-music": "play",
+			"event_id": "dialogic_031",
+			"event_name": "BackgroundMusic",
+			"fade_length": 0.01,
+			"file": "res://Assets/music/Dialtone Circus (Extended).mp3",
+			"volume": -4.5
+		},
+		{
+			"character": "character-1692900298.json",
+			"event_id": "dialogic_001",
+			"portrait": "Default",
+			"text": "* Here comes Jevil’s encore, boysngirls!"
+		},
+		{
+			"call_node": {
+				"arguments": [
+					"default"
+				],
+				"method_name": "play",
+				"target_node_path": "Main/Jevil/AnimationPlayer"
+			},
+			"event_id": "dialogic_042"
+		},
+		{
+			"animation": "slide_out_left.gd",
+			"animation_length": 0,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1692900298.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "Default",
+			"portrait_definition": "",
+			"position": {
+				"0": true,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			},
+			"type": 1,
+			"z_index": 0
+		},
+		{
+			"animation": "slide_in_left.gd",
+			"animation_length": 0,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1692898558.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "Mad",
+			"portrait_definition": "",
+			"position": {
+				"0": true,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			},
+			"type": 0,
+			"z_index": 0
+		},
+		{
+			"call_node": {
+				"arguments": [
+					"annoyed"
+				],
+				"method_name": "play",
+				"target_node_path": "Main/Spamton/AnimationPlayer"
+			},
+			"event_id": "dialogic_042"
+		},
+		{
+			"character": "character-1692898558.json",
+			"event_id": "dialogic_001",
+			"portrait": "Mad",
+			"text": "* Y0U,     [piece of snail pie] !\n* WHAT ARE U DOING [in my area]?!"
+		},
+		{
+			"animation": "slide_out_left.gd",
+			"animation_length": 0,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1692898558.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "Default",
+			"portrait_definition": "",
+			"position": {
+				"0": true,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			},
+			"type": 1,
+			"z_index": 0
+		},
+		{
+			"animation": "slide_in_left.gd",
+			"animation_length": 0,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1692900298.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "Default",
+			"portrait_definition": "",
+			"position": {
+				"0": true,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			},
+			"type": 0,
+			"z_index": 0
+		},
+		{
+			"character": "character-1692900298.json",
+			"event_id": "dialogic_001",
+			"portrait": "(Don't change)",
+			"text": "* No, what are YOU doing in this world?\n* You are not allowed to come to schools closer than 30 meters, meters"
+		},
+		{
+			"animation": "slide_out_left.gd",
+			"animation_length": 0,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1692900298.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "Default",
+			"portrait_definition": "",
+			"position": {
+				"0": true,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			},
+			"type": 1,
+			"z_index": 0
+		},
+		{
+			"animation": "slide_in_left.gd",
+			"animation_length": 0,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1692898558.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "Mad",
+			"portrait_definition": "",
+			"position": {
+				"0": true,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			},
+			"type": 0,
+			"z_index": 0
+		},
+		{
+			"character": "character-1692898558.json",
+			"event_id": "dialogic_001",
+			"portrait": "Mad",
+			"text": "* KR KRIS! WHAT DOES   TH1S    [what a twist] MEAN?"
+		},
+		{
+			"animation": "slide_out_left.gd",
+			"animation_length": 0,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1692898558.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "Mad",
+			"portrait_definition": "",
+			"position": {
+				"0": true,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			},
+			"type": 1,
+			"z_index": 0
+		},
+		{
+			"animation": "slide_in_left.gd",
+			"animation_length": 0,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1692900298.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "Default",
+			"portrait_definition": "",
+			"position": {
+				"0": true,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			},
+			"type": 0,
+			"z_index": 0
+		},
+		{
+			"character": "character-1692900298.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "* It means that today we perform in tandem, Pinocchio"
+		},
+		{
+			"animation": "slide_out_left.gd",
+			"animation_length": 0,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1692900298.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "Default",
+			"portrait_definition": "",
+			"position": {
+				"0": true,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			},
+			"type": 1,
+			"z_index": 0
+		},
+		{
+			"animation": "slide_in_left.gd",
+			"animation_length": 0,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1692898558.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "Default",
+			"portrait_definition": "",
+			"position": {
+				"0": true,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			},
+			"type": 0,
+			"z_index": 0
+		},
+		{
+			"character": "character-1692898558.json",
+			"event_id": "dialogic_001",
+			"portrait": "Mad",
+			"text": "* DO NOT CALL ME [handmade wooden doll] !"
+		},
+		{
+			"animation": "slide_out_left.gd",
+			"animation_length": 0,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1692898558.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "Default",
+			"portrait_definition": "",
+			"position": {
+				"0": true,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			},
+			"type": 1,
+			"z_index": 0
+		},
+		{
+			"animation": "slide_in_left.gd",
+			"animation_length": 0,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1692900944.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "Default",
+			"portrait_definition": "",
+			"position": {
+				"0": true,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			},
+			"type": 0,
+			"z_index": 0
+		},
+		{
+			"character": "character-1692900944.json",
+			"event_id": "dialogic_001",
+			"portrait": "Default",
+			"text": "* Actually, you two are the strongest rivals we've faced, so…"
+		},
+		{
+			"animation": "slide_out_left.gd",
+			"animation_length": 0,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1692900944.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "Default",
+			"portrait_definition": "",
+			"position": {
+				"0": true,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			},
+			"type": 1,
+			"z_index": 0
+		},
+		{
+			"animation": "slide_in_left.gd",
+			"animation_length": 0,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1692901208.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "Default",
+			"portrait_definition": "",
+			"position": {
+				"0": true,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			},
+			"type": 0,
+			"z_index": 0
+		},
+		{
+			"call_node": {
+				"arguments": [
+					"laugh"
+				],
+				"method_name": "play",
+				"target_node_path": "Main/Susie/AnimationPlayer"
+			},
+			"event_id": "dialogic_042"
+		},
+		{
+			"character": "character-1692901208.json",
+			"event_id": "dialogic_001",
+			"portrait": "Default",
+			"text": "* So we want to kick your ass again!"
+		},
+		{
+			"call_node": {
+				"arguments": [
+					"default"
+				],
+				"method_name": "play",
+				"target_node_path": "Main/Susie/AnimationPlayer"
+			},
+			"event_id": "dialogic_042"
+		},
+		{
+			"animation": "slide_out_left.gd",
+			"animation_length": 0,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1692901208.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "Default",
+			"portrait_definition": "",
+			"position": {
+				"0": true,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			},
+			"type": 1,
+			"z_index": 0
+		},
+		{
+			"animation": "slide_in_left.gd",
+			"animation_length": 0,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1692900944.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "Default",
+			"portrait_definition": "",
+			"position": {
+				"0": true,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			},
+			"type": 0,
+			"z_index": 0
+		},
+		{
+			"character": "character-1692900944.json",
+			"event_id": "dialogic_001",
+			"portrait": "Default",
+			"text": "* Fighting you two at once would be a valuable practice"
+		},
+		{
+			"character": "character-1692900944.json",
+			"event_id": "dialogic_001",
+			"portrait": "eyes_closed_neutral",
+			"text": "* As a prize, you’ll get whatever you want"
+		},
+		{
+			"call_node": {
+				"arguments": [
+					"default"
+				],
+				"method_name": "play",
+				"target_node_path": "Main/Spamton/AnimationPlayer"
+			},
+			"event_id": "dialogic_042"
+		},
+		{
+			"animation": "slide_out_left.gd",
+			"animation_length": 0,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1692900944.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "Default",
+			"portrait_definition": "",
+			"position": {
+				"0": true,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			},
+			"type": 1,
+			"z_index": 0
+		},
+		{
+			"animation": "slide_in_left.gd",
+			"animation_length": 0,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1692898558.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "Default",
+			"portrait_definition": "",
+			"position": {
+				"0": true,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			},
+			"type": 0,
+			"z_index": 0
+		},
+		{
+			"character": "character-1692898558.json",
+			"event_id": "dialogic_001",
+			"portrait": "Tax",
+			"text": "[hee hee]"
+		},
+		{
+			"animation": "slide_in_left.gd",
+			"animation_length": 0,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1692900298.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "Cake",
+			"portrait_definition": "",
+			"position": {
+				"0": false,
+				"1": true,
+				"2": false,
+				"3": false,
+				"4": false
+			},
+			"type": 0,
+			"z_index": 0
+		},
+		{
+			"character": "character-1692900298.json",
+			"event_id": "dialogic_001",
+			"portrait": "Cake",
+			"text": "* A unicorn-flavored cotton-candy-shaped cake, cake!"
+		},
+		{
+			"animation": "slide_out_left.gd",
+			"animation_length": 0,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1692900298.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "Default",
+			"portrait_definition": "",
+			"position": {
+				"0": true,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			},
+			"type": 1,
+			"z_index": 0
+		},
+		{
+			"character": "character-1692898558.json",
+			"event_id": "dialogic_001",
+			"portrait": "Pathetic",
+			"text": "* A [cake]!? D0N'T CONFUSE [Chaos\\,Chaos] AND [marasmus\\, marasmus]"
+		},
+		{
+			"animation": "slide_out_left.gd",
+			"animation_length": 0,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1692898558.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "Default",
+			"portrait_definition": "",
+			"position": {
+				"0": true,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			},
+			"type": 1,
+			"z_index": 0
+		},
+		{
+			"animation": "slide_in_left.gd",
+			"animation_length": 0,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1692900298.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "Default",
+			"portrait_definition": "",
+			"position": {
+				"0": true,
+				"1": false,
+				"2": false,
+				"3": false,
 				"4": false
 			},
 			"type": 0,
@@ -102,94 +812,86 @@
 			"character": "character-1692900298.json",
 			"event_id": "dialogic_001",
 			"portrait": "Default",
-			"text": "Here comes Jevil’s encore, boysngirls!"
+			"text": "* Your wish is predictable, predictable! Wanna lose all your gold as always?"
 		},
 		{
-			"character": "character-1692898558.json",
-			"event_id": "dialogic_001",
-			"portrait": "Mad",
-			"text": "Y0U,     [piece of snail pie] !\nWHAT ARE U DOING [in my area]?!"
+			"call_node": {
+				"arguments": [
+					"annoyed"
+				],
+				"method_name": "play",
+				"target_node_path": "Main/Spamton/AnimationPlayer"
+			},
+			"event_id": "dialogic_042"
 		},
 		{
+			"animation": "slide_out_left.gd",
+			"animation_length": 0,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
 			"character": "character-1692900298.json",
-			"event_id": "dialogic_001",
-			"portrait": "(Don't change)",
-			"text": "No, what are YOU doing in this world?\nYou are not allowed to come to schools closer than 30 meters, meters"
-		},
-		{
-			"character": "character-1692898558.json",
-			"event_id": "dialogic_001",
-			"portrait": "",
-			"text": "KR KRIS! WHAT DOES   TH1S    [what a twist] MEAN?"
-		},
-		{
-			"character": "character-1692900298.json",
-			"event_id": "dialogic_001",
-			"portrait": "",
-			"text": "It means that today we perform in tandem, puppet boy"
-		},
-		{
-			"character": "character-1692898558.json",
-			"event_id": "dialogic_001",
-			"portrait": "(Don't change)",
-			"text": "DO NOT CALL ME [wake up, puppet boy] !"
-		},
-		{
-			"character": "character-1692900944.json",
-			"event_id": "dialogic_001",
-			"portrait": "",
-			"text": "Actually, you two are the strongest rivals we've faced, so…"
-		},
-		{
-			"character": "character-1692901208.json",
-			"event_id": "dialogic_001",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
 			"portrait": "Default",
-			"text": "So we want to kick your ass again!"
+			"portrait_definition": "",
+			"position": {
+				"0": true,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			},
+			"type": 1,
+			"z_index": 0
 		},
 		{
-			"character": "character-1692900944.json",
-			"event_id": "dialogic_001",
-			"portrait": "",
-			"text": "fighting you two at once would be a valuable practice"
-		},
-		{
-			"character": "character-1692900944.json",
-			"event_id": "dialogic_001",
-			"portrait": "eyes_closed",
-			"text": "As a prize, you’ll get whatever you want"
-		},
-		{
+			"animation": "slide_in_left.gd",
+			"animation_length": 0,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
 			"character": "character-1692898558.json",
-			"event_id": "dialogic_001",
-			"portrait": "Tax",
-			"text": "[hee hee]"
-		},
-		{
-			"character": "character-1692900298.json",
-			"event_id": "dialogic_001",
-			"portrait": "Cake",
-			"text": "A unicorn-shaped cotton-candy-flavored cake, cake!"
-		},
-		{
-			"character": "character-1692898558.json",
-			"event_id": "dialogic_001",
-			"portrait": "Mad",
-			"text": "A [cake]!? D0N'T CONFUSE [Chaos,Chaos] AND [marasmus, marasmus]"
-		},
-		{
-			"character": "character-1692900298.json",
-			"event_id": "dialogic_001",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
 			"portrait": "Default",
-			"text": "And your wish is predictable, predictable! Wanna lose all your gold as always?"
+			"portrait_definition": "",
+			"position": {
+				"0": true,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			},
+			"type": 0,
+			"z_index": 0
 		},
 		{
 			"character": "character-1692898558.json",
 			"event_id": "dialogic_001",
 			"portrait": "Mysterious",
-			"text": "...\n[ forget] THOSE GAMES\nLight>ners, [event accepted]"
+			"text": "* ...\n* [ forget] THOSE GAMES\n* Light>ners, [event accepted]"
 		},
 		{
-			"animation": "[Default]",
+			"animation": "slide_out_left.gd",
+			"animation_length": 0,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1692898558.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "Default",
+			"portrait_definition": "",
+			"position": {
+				"0": true,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			},
+			"type": 1,
+			"z_index": 0
+		},
+		{
+			"animation": "slide_in_left.gd",
 			"animation_length": 0,
 			"change_mirror_portrait": false,
 			"change_position": false,
@@ -200,11 +902,11 @@
 			"portrait": "Default",
 			"portrait_definition": "",
 			"position": {
-				"0": false,
+				"0": true,
 				"1": false,
 				"2": false,
 				"3": false,
-				"4": true
+				"4": false
 			},
 			"type": 0,
 			"z_index": 0
@@ -213,7 +915,32 @@
 			"character": "character-1692903513.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Lancer Fan Club on the left\nBasement Department on the right\nLet's get this party started!"
+			"text": "* Lancer Fan Club on the left\n* Basement Department on the right\n* Let's get this party started!"
+		},
+		{
+			"animation": "slide_out_left.gd",
+			"animation_length": 0,
+			"change_mirror_portrait": false,
+			"change_position": false,
+			"change_z_index": false,
+			"character": "character-1692903513.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "Default",
+			"portrait_definition": "",
+			"position": {
+				"0": true,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			},
+			"type": 1,
+			"z_index": 0
+		},
+		{
+			"emit_signal": "",
+			"event_id": "dialogic_040"
 		}
 	],
 	"metadata": {

@@ -35,7 +35,7 @@ func disable():
 	$Heart/CollisionPolygon2D.disabled = true
 
 func ensable():
-	visible = true	
+	visible = true
 	speed = 200.0
 	$Heart/TP/TPCollisionShape.disabled = false
 	$Heart/CollisionPolygon2D.disabled = false

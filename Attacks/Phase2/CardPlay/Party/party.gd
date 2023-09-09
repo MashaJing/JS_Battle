@@ -7,6 +7,19 @@ onready var CardSpawn = $CardSpawn/CardSpawnLocation
 signal attack_ended
 
 
+func toggle_main(on=true):
+	if on:
+		get_parent().get_node("Spamton").visible = true
+		$BorderField/FieldCollision.disabled = false
+		$BorderField.z_index = 0
+		$KinematicHeart.ensable()
+	else:
+		get_parent().get_node("Spamton").visible = false
+		$BorderField/FieldCollision.disabled = true
+		$BorderField.z_index = -5
+		$KinematicHeart.disable()
+
+
 func _ready():
 	var cur_party = GlobalPartySettings.pick_random()
 
@@ -15,17 +28,20 @@ func _ready():
 			make_turn(card)
 			yield($TurnTimer, "timeout")
 		var cur_attack = load(cur_party["attack_path"]).instance()
-		$KinematicHeart.disable()
+		toggle_main(false)
+		
 		add_child(cur_attack)
 		yield(cur_attack, "card_attack_ended")
 		remove_child(cur_attack)
-		$KinematicHeart.ensable()
+		toggle_main(true)
+		
 		cur_party = GlobalPartySettings.pick_random()
 
 	var Dialog = Dialogic.start("card_play")
 	add_child(Dialog)
 	yield(Dialog, "dialogic_signal")
 	emit_signal("attack_ended")
+
 
 func make_turn(card_name):
 	# выбрать рандомную точку, откуда полетит карта

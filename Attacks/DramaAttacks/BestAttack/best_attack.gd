@@ -5,7 +5,7 @@ onready var devil_knife_attack = preload("res://Attacks/DramaAttacks/BestAttack/
 onready var pipis_attack = preload("res://Attacks/DramaAttacks/BestAttack/PipisAttack/PipisAttack.tscn").instance()
 onready var dimond_spiral_attack = preload("res://Attacks/DramaAttacks/BestAttack/DimondSpiralSpit/DimondSpiralSplit.tscn").instance()
 var current_attack = 0
-signal attack_ended
+signal sub_attack_ended
 
 
 func _ready():
@@ -13,7 +13,7 @@ func _ready():
 	$AttackPlayer.play("best_attack")
 	yield($AttackPlayer, "animation_finished")
 #	get_parent().get_node("Jevil").visible = true
-	emit_signal("attack_ended")
+	emit_signal("sub_attack_ended")
 	
 
 #func _on_attack_ended():

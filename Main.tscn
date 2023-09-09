@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://between_attack_menu/menu.tscn" type="PackedScene" id=1]
 [ext_resource path="res://team_stats/Kris/Kris.tscn" type="PackedScene" id=2]
@@ -7,7 +7,8 @@
 [ext_resource path="res://theme.gd" type="Script" id=5]
 [ext_resource path="res://team_stats/Spamton/Spamton.tscn" type="PackedScene" id=6]
 [ext_resource path="res://team_stats/Jevil/Jevil.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Assets/music/battle.ogg" type="AudioStream" id=8]
+[ext_resource path="res://Assets/music/the_deals_revolving.mp3" type="AudioStream" id=8]
+[ext_resource path="res://Assets/Images/Sprites/Interior/ringring.png" type="Texture" id=9]
 [ext_resource path="res://Characters/Ralsei/Ralsei.tscn" type="PackedScene" id=10]
 
 [sub_resource type="GDScript" id=1]
@@ -22,17 +23,21 @@ func _ready():
 script = ExtResource( 3 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
-margin_left = -10.0
 margin_top = -50.0
-margin_right = 1060.0
+margin_right = 1070.0
 margin_bottom = 632.0
 color = Color( 0, 0, 0, 1 )
+
+[node name="Ring" type="Sprite" parent="ColorRect"]
+position = Vector2( 513, 300 )
+scale = Vector2( 0.239258, 0.216731 )
+texture = ExtResource( 9 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 510, 300 )
 
 [node name="Menu" parent="." instance=ExtResource( 1 )]
-position = Vector2( 0, -1 )
+position = Vector2( 0, 30 )
 
 [node name="AttackTimer" type="Timer" parent="."]
 wait_time = 6.0
@@ -40,23 +45,24 @@ wait_time = 6.0
 [node name="Theme" type="AudioStreamPlayer2D" parent="."]
 position = Vector2( 510, 630 )
 stream = ExtResource( 8 )
+bus = "Soundtrack"
 script = ExtResource( 5 )
 
 [node name="Kris" parent="." instance=ExtResource( 2 )]
-position = Vector2( 172, 126 )
+position = Vector2( 180, 130 )
 
 [node name="Susie" parent="." instance=ExtResource( 4 )]
-position = Vector2( 180, 190 )
+position = Vector2( 158, 260 )
 
 [node name="Spamton" parent="." instance=ExtResource( 6 )]
-position = Vector2( 816, 290 )
+position = Vector2( 810, 270 )
 
 [node name="Seam" type="Node2D" parent="."]
 position = Vector2( 1014, 490 )
 script = SubResource( 1 )
 
 [node name="Jevil" parent="." instance=ExtResource( 7 )]
-position = Vector2( 828, 170 )
+position = Vector2( 830, 200 )
 
 [node name="Ralsei" parent="." instance=ExtResource( 10 )]
 position = Vector2( 200, 300 )

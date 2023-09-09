@@ -1,14 +1,16 @@
 extends Node2D
 
 var time = 0
-
 var collision_segments = 20
 var EPS = 2
+signal attack_ended
 
 
 func _ready():
 	$AnimationPlayer.play("play_movie")
-
+	yield($AnimationPlayer, "animation_finished")
+	emit_signal("attack_ended")
+	print('emmited')
 
 func _process(delta):
 	pass

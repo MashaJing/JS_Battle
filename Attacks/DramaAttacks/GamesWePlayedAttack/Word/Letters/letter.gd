@@ -5,7 +5,7 @@ onready var anim = $AnimationPlayer
 var font_path = "res://fonts/menu/VT323-Regular.ttf"
 
 var letter = '' setget set_letter, get_letter
-var hor_speed = - 110
+var hor_speed = - 160
 var time = 0
 var freq = 10
 var amplitude = 120

@@ -2,11 +2,11 @@ extends Area2D
 
 var speed_x
 var time = 0
-var target_object = Vector2.ZERO
+var target_object = Vector2.DOWN
 
 
 func _ready():
-	speed_x = randi() % 130 + 10
+	speed_x = 0 # randi() % 130 + 10
 	look_at(target_object)
 
 

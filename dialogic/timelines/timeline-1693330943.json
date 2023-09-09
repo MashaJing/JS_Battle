@@ -19,7 +19,7 @@
 		{
 			"call_node": {
 				"arguments": [
-					"angry_shaking"
+					"annoyed2"
 				],
 				"method_name": "play",
 				"target_node_path": "Main/DullJevil/Spamton/AnimationPlayer"
@@ -82,7 +82,7 @@
 		{
 			"call_node": {
 				"arguments": [
-					"default"
+					"annoyed"
 				],
 				"method_name": "play",
 				"target_node_path": "Main/DullJevil/Spamton/AnimationPlayer"
@@ -98,7 +98,7 @@
 		{
 			"call_node": {
 				"arguments": [
-					"black_glasses"
+					"annoyed1"
 				],
 				"method_name": "play",
 				"target_node_path": "Main/DullJevil/Spamton/AnimationPlayer"

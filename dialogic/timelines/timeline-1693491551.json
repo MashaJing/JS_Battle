@@ -5,6 +5,10 @@
 			"event_id": "dialogic_001",
 			"portrait": "",
 			"text": "[OK OK OK]\nI GUESS U [you're a winner!]\n[AGAIN]"
+		},
+		{
+			"emit_signal": "",
+			"event_id": "dialogic_040"
 		}
 	],
 	"metadata": {

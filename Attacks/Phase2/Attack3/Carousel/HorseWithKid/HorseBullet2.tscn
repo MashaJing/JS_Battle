@@ -94,7 +94,8 @@ tracks/6/keys = {
 }
 
 [node name="HorseBullet" type="Area2D" groups=["bullets"]]
-position = Vector2( -15, -8 )
+position = Vector2( 150, -100 )
+scale = Vector2( -0.041, 1 )
 script = ExtResource( 2 )
 
 [node name="Kid" parent="." instance=ExtResource( 3 )]

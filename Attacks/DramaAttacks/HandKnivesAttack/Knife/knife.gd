@@ -19,10 +19,10 @@ func create_anim():
 	var track_rot = rotate_to_target.add_track(Animation.TYPE_VALUE)
 	var path = String(self.get_path())
 	rotate_to_target.track_set_path(track_rot, path + ":rotation_degrees")
-	rotate_to_target.length = 1.7
+	rotate_to_target.length = 2.2
 	
 	rotate_to_target.track_insert_key(track_rot, 0.0, 0)
-	rotate_to_target.track_insert_key(track_rot, 1.0, rad2deg(ROTATION_DIRECTION.angle() - 1))
+	rotate_to_target.track_insert_key(track_rot, 2.2, rad2deg(ROTATION_DIRECTION.angle() - 1))
 	AnimPlayer.add_animation("rotate_to_target", rotate_to_target)
 	
 	AnimPlayer.play("rotate_to_target")
@@ -46,4 +46,4 @@ func _ready():
 
 func _on_AnimationPlayer_animation_finished(anim_name):
 	# скорость появляется только по окончании анимации
-	speed_up = 5
+	speed_up = 2.5

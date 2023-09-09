@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/dialtone.ogg-fca6df58ef6d39e37af59725bfeac200.oggstr"
+
+[deps]
+
+source_file="res://Assets/music/dialtone.ogg"
+dest_files=[ "res://.import/dialtone.ogg-fca6df58ef6d39e37af59725bfeac200.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

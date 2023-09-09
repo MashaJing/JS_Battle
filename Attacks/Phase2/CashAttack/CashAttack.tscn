@@ -41,7 +41,7 @@ tracks/0/keys = {
 script = ExtResource( 3 )
 
 [node name="Spamton" parent="." instance=ExtResource( 2 )]
-position = Vector2( 782, 428 )
+position = Vector2( 482, 161 )
 scale = Vector2( 0.473084, 0.473084 )
 
 [node name="DollarSpawn" type="Node2D" parent="Spamton"]

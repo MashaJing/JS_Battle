@@ -7,6 +7,7 @@ func prepare_user_region(user_ip):
 	$HTTPRequest.request("http://demo.ip-api.com/json/" + user_ip)
 
 
+
 func _on_request_completed(result, response_code, headers, body):
 	var json = (JSON.parse(body.get_string_from_utf8())).result
 	# TODO: обработать случаи, когда апишка не отдаёт эти поля
@@ -65,6 +66,11 @@ func _ready():
 	Dialogic.set_variable('user_name', user_name)
 	Dialogic.set_variable('user_ip', user_ip if check_ip(user_ip) else "0")
 	add_child(threaties)
+	
+	# Для дебага
+	yield(threaties, 'dialogic_signal')
+	var dialog = Dialogic.start("jevil_down_end")
+	add_child(dialog)
 
 
 #	"HOW AM 1 SUPOSED TO [play nice]  WHEN [TOXiC]s LIKE YOU"

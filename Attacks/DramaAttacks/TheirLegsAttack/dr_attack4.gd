@@ -1,5 +1,7 @@
 extends Node
 
+signal sub_attack_ended
+
 onready var StompArea1 = $Warning
 onready var StompArea2 = $Warning2
 onready var StompArea3 = $Warning3
@@ -8,13 +10,12 @@ onready var Leg2 = $Leg2
 onready var MikeLegs = $MikeLegs
 
 var target = ["Jevil"]
-signal attack_ended
 
 
 func _ready():
 	$AnimationPlayer.play("attack")
 	yield($AnimationPlayer, "animation_finished")
-	emit_signal("attack_ended")
+	emit_signal("sub_attack_ended")
 
 
 func stomp(stomp_area, leg):

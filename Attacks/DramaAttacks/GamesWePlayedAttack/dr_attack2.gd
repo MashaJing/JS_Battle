@@ -1,6 +1,6 @@
 extends Node
 
-signal attack_ended
+signal sub_attack_ended
 
 # какого хрена оно тут делает
 var target = ["Kris", "Susie", "Ralsei"]
@@ -38,7 +38,7 @@ func _ready():
 	AnimPlayer.stop()
 	Spamton.visible = false
 	GlobalSpamton.visible = true
-	emit_signal("attack_ended")
+	emit_signal("sub_attack_ended")
 
 
 func _on_Spamton_animation_finished():
