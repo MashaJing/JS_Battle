@@ -37,7 +37,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0.3, 0.5 ),
+"times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 464, 728 ), Vector2( 464, 384 ) ]
@@ -47,7 +47,7 @@ tracks/1/keys = {
 script = ExtResource( 3 )
 
 [node name="BorderField" parent="." instance=ExtResource( 1 )]
-position = Vector2( 528, 304 )
+position = Vector2( 464, 728 )
 scale = Vector2( 0.759948, 0.759948 )
 
 [node name="KinematicHeart" parent="BorderField" instance=ExtResource( 2 )]

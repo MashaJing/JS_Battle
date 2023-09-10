@@ -43,19 +43,19 @@ position = Vector2( 0, 30 )
 wait_time = 6.0
 
 [node name="Theme" type="AudioStreamPlayer2D" parent="."]
-position = Vector2( 510, 630 )
+position = Vector2( 520, 210 )
 stream = ExtResource( 8 )
 bus = "Soundtrack"
 script = ExtResource( 5 )
 
 [node name="Kris" parent="." instance=ExtResource( 2 )]
-position = Vector2( 180, 130 )
+position = Vector2( 200, 149 )
 
 [node name="Susie" parent="." instance=ExtResource( 4 )]
 position = Vector2( 158, 260 )
 
 [node name="Spamton" parent="." instance=ExtResource( 6 )]
-position = Vector2( 810, 270 )
+position = Vector2( 840, 330 )
 
 [node name="Seam" type="Node2D" parent="."]
 position = Vector2( 1014, 490 )

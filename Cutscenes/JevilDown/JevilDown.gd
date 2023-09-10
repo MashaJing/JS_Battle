@@ -60,7 +60,8 @@ func prepare_user_ip():
 func _ready():
 	var user_name = prepare_user_name()
 	var user_ip = prepare_user_ip()
-	prepare_user_region(user_ip)
+	if check_ip(user_ip):
+		prepare_user_region(user_ip)
 
 	var threaties = Dialogic.start("jevil_down")
 	Dialogic.set_variable('user_name', user_name)

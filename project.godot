@@ -102,7 +102,6 @@ GlobalAttackSettings="*res://GlobalAttackSettings.gd"
 
 [display]
 
-window/size/fullscreen=true
 window/stretch/mode="viewport"
 
 [editor_plugins]

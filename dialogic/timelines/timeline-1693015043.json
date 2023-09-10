@@ -1,10 +1,303 @@
 {
 	"events": [
 		{
-			"character": "",
+			"call_node": {
+				"arguments": [
+					"Sad"
+				],
+				"method_name": "play",
+				"target_node_path": "Main/Jevil/AnimationPlayer"
+			},
+			"event_id": "dialogic_042"
+		},
+		{
+			"call_node": {
+				"arguments": [
+					"turn_back"
+				],
+				"method_name": "play",
+				"target_node_path": "Main/Spamton/AnimationPlayer"
+			},
+			"event_id": "dialogic_042"
+		},
+		{
+			"character": "character-1693016638.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": ""
+			"text": "  ?!?!"
+		},
+		{
+			"character": "character-1693017633.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "The God went silent after"
+		},
+		{
+			"call_node": {
+				"arguments": [
+					"default"
+				],
+				"method_name": "play",
+				"target_node_path": "Main/Jevil/AnimationPlayer"
+			},
+			"event_id": "dialogic_042"
+		},
+		{
+			"character": "character-1693017633.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "making me truly free"
+		},
+		{
+			"character": "character-1693016638.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "[100% FREE]"
+		},
+		{
+			"call_node": {
+				"arguments": [
+					"black_glasses"
+				],
+				"method_name": "play",
+				"target_node_path": "Main/Spamton/AnimationPlayer"
+			},
+			"event_id": "dialogic_042"
+		},
+		{
+			"character": "character-1693016638.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "of me?"
+		},
+		{
+			"call_node": {
+				"arguments": [
+					"Shocked"
+				],
+				"method_name": "play",
+				"target_node_path": "Main/Jevil/AnimationPlayer"
+			},
+			"event_id": "dialogic_042"
+		},
+		{
+			"character": "character-1693017633.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "No, no! You see\nThe kings locked their kingdom around my space of freedom, so[nw=0.01]"
+		},
+		{
+			"call_node": {
+				"arguments": [
+					"annoyed"
+				],
+				"method_name": "play",
+				"target_node_path": "Main/Susie/AnimationPlayer"
+			},
+			"event_id": "dialogic_042"
+		},
+		{
+			"character": "character-1693014286.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Argh! Just deal with it already!"
+		},
+		{
+			"call_node": {
+				"arguments": [
+					"Sad"
+				],
+				"method_name": "play",
+				"target_node_path": "Main/Jevil/AnimationPlayer"
+			},
+			"event_id": "dialogic_042"
+		},
+		{
+			"character": "character-1693017633.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "...\nI was\nthrown to jail\nby my own friend\nHe didn't understand my games for some reason"
+		},
+		{
+			"character": "character-1693018075.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "I've lost an eye, actually"
+		},
+		{
+			"character": "character-1693017633.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "All this time I was"
+		},
+		{
+			"character": "character-1693019058.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "[shake level=10]locked in a cage"
+		},
+		{
+			"call_node": {
+				"arguments": [
+					"hit"
+				],
+				"method_name": "play",
+				"target_node_path": "Main/Spamton/AnimationPlayer"
+			},
+			"event_id": "dialogic_042"
+		},
+		{
+			"character": "character-1693017633.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "and [pause=0.3][shake level=10]couldn't[/shake] [pause=0.3] help you"
+		},
+		{
+			"character": "character-1693016638.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "!!!\nIS THAT [value=True]?\noh, boy"
+		},
+		{
+			"event_id": "dialogic_023",
+			"hide_dialogbox": true,
+			"wait_seconds": 0.5
+		},
+		{
+			"call_node": {
+				"arguments": [
+					"step_away"
+				],
+				"method_name": "play",
+				"target_node_path": "Main/Spamton/AnimationPlayer"
+			},
+			"event_id": "dialogic_042"
+		},
+		{
+			"character": "character-1693016638.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "[Hocci mama], Jev! Could you just tell me?!"
+		},
+		{
+			"call_node": {
+				"arguments": [
+					"Surprised"
+				],
+				"method_name": "play",
+				"target_node_path": "Main/Jevil/AnimationPlayer"
+			},
+			"event_id": "dialogic_042"
+		},
+		{
+			"character": "character-1693017633.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "I’m so sorry, sorry! I couldn’t, couldn’t do anything!"
+		},
+		{
+			"call_node": {
+				"arguments": [
+					"hug"
+				],
+				"method_name": "play",
+				"target_node_path": "Main/Spamton/AnimationPlayer"
+			},
+			"event_id": "dialogic_042"
+		},
+		{
+			"event_id": "dialogic_023",
+			"hide_dialogbox": true,
+			"wait_seconds": 0.7
+		},
+		{
+			"call_node": {
+				"arguments": [
+					"Hide"
+				],
+				"method_name": "play",
+				"target_node_path": "Main/Jevil/AnimationPlayer"
+			},
+			"event_id": "dialogic_042"
+		},
+		{
+			"event_id": "dialogic_023",
+			"hide_dialogbox": true,
+			"wait_seconds": 5
+		},
+		{
+			"call_node": {
+				"arguments": [
+					"default"
+				],
+				"method_name": "play",
+				"target_node_path": "Main/Spamton/AnimationPlayer"
+			},
+			"event_id": "dialogic_042"
+		},
+		{
+			"call_node": {
+				"arguments": [
+					"default"
+				],
+				"method_name": "play",
+				"target_node_path": "Main/Jevil/AnimationPlayer"
+			},
+			"event_id": "dialogic_042"
+		},
+		{
+			"character": "character-1693016638.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "But we can\nHey Jev\nShall we play?"
+		},
+		{
+			"call_node": {
+				"arguments": [
+					"dance"
+				],
+				"method_name": "play",
+				"target_node_path": "Main/Jevil/AnimationPlayer"
+			},
+			"event_id": "dialogic_042"
+		},
+		{
+			"character": "character-1693017633.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "With pleasure, pleasure!"
+		},
+		{
+			"call_node": {
+				"arguments": [
+					"default"
+				],
+				"method_name": "play",
+				"target_node_path": "Main/Jevil/AnimationPlayer"
+			},
+			"event_id": "dialogic_042"
+		},
+		{
+			"character": "character-1693016638.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Destroy the green one first, he casts heal prayer[nw=0.001] "
+		},
+		{
+			"character": "character-1693016229.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "[nw=0.001] excuse me, what"
+		},
+		{
+			"call_node": {
+				"arguments": [
+					"BestAttack"
+				],
+				"method_name": "begin_attack",
+				"target_node_path": "Main/MonologueAttack"
+			},
+			"event_id": "dialogic_042"
 		}
 	],
 	"metadata": {

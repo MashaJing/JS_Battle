@@ -11,7 +11,7 @@ func _ready():
 
 
 func start_movement():
-	jevil_speed = 10
+	jevil_speed = 5
 	spawn_on = true
 	
 func start_bullet_movement():

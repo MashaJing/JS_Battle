@@ -23,7 +23,7 @@
 			"character": "character-1693016638.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "MY HP 1S [decreasing][nw=2]\nI DON T [WANT, WANT] TO [ATK] Y0U ANYMORE[nw=3]\nU LL [punch in a face!] A WEAK,WOUNDED,HANDSOME,ORPHAN [boy]?[nw=5]\nI see[nw=2]\nThey say: the further you get, the easier it becomes[nw=4]\nIt's up to you now[pause=0.4], [user_name]"
+			"text": "MY HP 1S [decreasing][nw=2]\nI DON T [[color=white][[color=black]WANT, WANT] TO [ATK] Y0U ANYMORE[nw=3]\nU LL [punch in a face!][nw=2]\nA WEAK[nw=0.8]\nWOUNDED[nw=0.8]\nHANDSOME[nw=0.8]\nORPHAN [boy]?[nw=1.5]\nOf course you will[nw=1.5]\nI see[nw=1]\nThey say: the further you get, the easier it becomes[nw=4]\nIt's up to you now[pause=0.4], [user_name]"
 		},
 		{
 			"character": "character-1693016638.json",

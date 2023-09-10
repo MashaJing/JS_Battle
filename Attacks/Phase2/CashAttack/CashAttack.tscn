@@ -41,11 +41,10 @@ tracks/0/keys = {
 script = ExtResource( 3 )
 
 [node name="Spamton" parent="." instance=ExtResource( 2 )]
-position = Vector2( 482, 161 )
-scale = Vector2( 0.473084, 0.473084 )
+position = Vector2( 782, 428 )
 
 [node name="DollarSpawn" type="Node2D" parent="Spamton"]
-position = Vector2( 44.3896, 50.7309 )
+position = Vector2( -45, -24 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/attack = SubResource( 1 )
@@ -59,7 +58,7 @@ wait_time = 8.0
 one_shot = true
 
 [node name="KinematicHeart" parent="." instance=ExtResource( 1 )]
-position = Vector2( 499, 342 )
+position = Vector2( 526, 256 )
 
 [connection signal="timeout" from="DollarTimer" to="." method="_on_DollarTimer_timeout"]
 [connection signal="timeout" from="AttackTimer" to="." method="_on_AttackTimer_timeout"]

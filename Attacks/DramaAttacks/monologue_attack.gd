@@ -6,7 +6,7 @@ signal attack_ended
 
 
 func _ready():
-	var dialog = Dialogic.start("test3")
+	var dialog = Dialogic.start("confession")
 	add_child(dialog)
 	yield(dialog, "dialogic_signal")
 	MusTheme.stop()

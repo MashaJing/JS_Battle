@@ -37,6 +37,11 @@
 			"event_id": "dialogic_042"
 		},
 		{
+			"event_id": "dialogic_023",
+			"hide_dialogbox": true,
+			"wait_seconds": 1
+		},
+		{
 			"condition": "",
 			"definition": "1694094006-648",
 			"event_id": "dialogic_012",
@@ -95,7 +100,22 @@
 		{
 			"event_id": "dialogic_023",
 			"hide_dialogbox": true,
-			"wait_seconds": 0.5
+			"wait_seconds": 0.7
+		},
+		{
+			"call_node": {
+				"arguments": [
+					"reach_spam"
+				],
+				"method_name": "play_backwards",
+				"target_node_path": "Main/Jevil/AnimationPlayer"
+			},
+			"event_id": "dialogic_042"
+		},
+		{
+			"event_id": "dialogic_023",
+			"hide_dialogbox": true,
+			"wait_seconds": 0.8
 		},
 		{
 			"call_node": {

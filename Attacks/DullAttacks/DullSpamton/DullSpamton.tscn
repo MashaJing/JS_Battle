@@ -95,7 +95,7 @@ wait_time = 6.0
 autostart = true
 
 [node name="Jevil" parent="." instance=ExtResource( 7 )]
-position = Vector2( 920, 180 )
+position = Vector2( 820, 230 )
 
 [node name="BorderField" parent="." instance=ExtResource( 8 )]
 position = Vector2( 510, 280 )
