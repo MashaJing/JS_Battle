@@ -98,7 +98,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0.1, 1.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ Vector2( 0.778111, 0.778111 ), Vector2( 1, 1 ) ]
+"values": [ Vector2( 0.71, 0.71 ), Vector2( 1, 1 ) ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("AnimatedSpriteController/AnimatedSprite:position")
@@ -152,9 +152,22 @@ tracks/2/keys = {
 "update": 0,
 "values": [ Vector2( 1, 1 ) ]
 }
+tracks/3/type = "value"
+tracks/3/path = NodePath("AnimatedSpriteController/AnimatedSprite:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, -40 ) ]
+}
 
 [sub_resource type="Animation" id=2]
 resource_name = "laugh"
+length = 0.1
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("AnimatedSpriteController/AnimatedSprite:animation")
@@ -301,7 +314,7 @@ position = Vector2( -10, -10 )
 [node name="AnimatedSpriteController" parent="." instance=ExtResource( 60 )]
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="AnimatedSpriteController"]
-position = Vector2( 20, -30 )
+position = Vector2( 0, -40 )
 frames = SubResource( 1 )
 frame = 1
 playing = true

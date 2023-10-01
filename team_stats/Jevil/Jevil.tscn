@@ -710,8 +710,7 @@ script = ExtResource( 1 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( -5, 0 )
 frames = SubResource( 1 )
-animation = "Sweep"
-frame = 1
+animation = "Sad"
 playing = true
 
 [node name="DamageSound1" type="AudioStreamPlayer2D" parent="."]
