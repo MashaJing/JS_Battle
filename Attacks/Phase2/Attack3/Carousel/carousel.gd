@@ -2,7 +2,7 @@ extends Node
 
 export (PackedScene) var horse_scene
 export (PackedScene) var lower_horse_scene
-var HORIZONTAL_AMOUNT = 7
+var HORIZONTAL_AMOUNT = 5
 
 
 func _ready():

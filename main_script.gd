@@ -8,7 +8,7 @@ const State = {
 	GAME_OVER = 'game_over',
 }
 var state = State.ATTACK
-var GAME_OVER_PATH = GlobalAttackSettings.GAME_OVER_SCENE_PATH
+var GAME_OVER_PATH = GlobalAttackSettings.GAME_OVER_PATH
 signal finished_talking
 var cur_attack
 
@@ -28,7 +28,7 @@ func close_menu():
 
 func open_menu():
 	$Menu.unhide()
-	if GlobalAttackSettings.CRINGE_ATTACKS_ON:
+	if GlobalAttackSettings.MADE_UP and GlobalAttackSettings.BOTH_ALIVE:
 		$CringeTimer.start()
 
 # ___________ attack management ___________
@@ -46,6 +46,7 @@ func _on_attack_began():
 
 func add_attack():
 	var cur_attack_path = GlobalAttackSettings.get_next()
+	print(cur_attack_path)
 	cur_attack = load(cur_attack_path).instance()
 	cur_attack.connect("attack_ended", self, "_on_attack_ended")
 	add_child(cur_attack)
@@ -57,14 +58,14 @@ func remove_attack():
 # ___________ cringe management ___________
 
 func add_cringe_attack():
-	GAME_OVER_PATH = GlobalAttackSettings.CRINGE_GAME_OVER_SCENE_PATH
+	GAME_OVER_PATH = GlobalAttackSettings.CRINGE_GAME_OVER_PATH
 	cur_attack = load(GlobalAttackSettings.CRINGE_ATTACK_PATH).instance()
 	add_child(cur_attack)
 	return cur_attack
 
 func remove_cringe_attack():
 	remove_attack()
-	GAME_OVER_PATH = GlobalAttackSettings.GAME_OVER_SCENE_PATH
+	GAME_OVER_PATH = GlobalAttackSettings.GAME_OVER_PATH
 
 func _on_CringeTimer_timeout():
 	$CringeTimer.stop()

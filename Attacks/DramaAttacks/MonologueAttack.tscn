@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://team_stats/Spamton/Spamton.tscn" type="PackedScene" id=1]
-[ext_resource path="res://team_stats/Jevil/Jevil.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Characters/Spamton/Spamton.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Characters/Jevil/Jevil.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Attacks/DramaAttacks/monologue_attack.gd" type="Script" id=3]
 
 [node name="MonologueAttack" type="Node2D"]

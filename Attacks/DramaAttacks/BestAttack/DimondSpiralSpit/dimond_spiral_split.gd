@@ -33,7 +33,7 @@ func _process(delta):
 	$Path2D/PathFollow2D.unit_offset += jevil_speed * delta
 	if spawn_on:
 		spawn_bullet()
-	if $Path2D/PathFollow2D.unit_offset > 0.95:
+	if $Path2D/PathFollow2D.unit_offset > 0.9:
 		emit_signal('ended_path')
 
 

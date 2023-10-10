@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://team_stats/Jevil/Jevil.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Characters/Jevil/Jevil.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Border/Border.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Attacks/DramaAttacks/BestAttack/DimondSpiralSpit/joker_multiple_oh.gd" type="Script" id=3]
 [ext_resource path="res://Attacks/DramaAttacks/BestAttack/DimondSpiralSpit/dimond_spiral_split.gd" type="Script" id=4]

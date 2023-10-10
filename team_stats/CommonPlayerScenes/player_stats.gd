@@ -1,6 +1,5 @@
 extends Node2D
 
-
 export var MAX_HP = 100
 export var HP = 100
 

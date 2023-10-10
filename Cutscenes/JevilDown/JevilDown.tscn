@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Cutscenes/JevilDown/JevilDown.gd" type="Script" id=1]
-[ext_resource path="res://team_stats/Spamton/Spamton.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Characters/Spamton/Spamton.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Border/Border.tscn" type="PackedScene" id=4]
 
 [sub_resource type="Animation" id=1]

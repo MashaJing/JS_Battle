@@ -6,14 +6,16 @@ signal attack_ended
 
 
 func _ready():
-	var dialog = Dialogic.start("confession")
-	add_child(dialog)
-	yield(dialog, "dialogic_signal")
-	MusTheme.stop()
+#	var dialog = Dialogic.start("spamton_monologue")
+#	add_child(dialog)
+#	yield(dialog, "dialogic_signal")
+#	MusTheme.stop()
+	GlobalAttackSettings.MADE_UP = true
+	begin_confession()
 
 
 func begin_confession():
-	var dialog = Dialogic.start("confession")
+	var dialog = Dialogic.start("test1")
 	add_child(dialog)
 	yield(dialog, "dialogic_signal")
 	MusTheme.set_soundtrack('the_deals_revolving.mp3')

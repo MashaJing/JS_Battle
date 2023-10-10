@@ -5,7 +5,7 @@
 [ext_resource path="res://Attacks/Phase2/MilkAttack/assets/MilkBag.png" type="Texture" id=3]
 [ext_resource path="res://Attacks/Phase2/MilkAttack/milk_attack.gd" type="Script" id=4]
 [ext_resource path="res://Attacks/Phase2/MilkAttack/MilkLevel/MilkLevel.tscn" type="PackedScene" id=5]
-[ext_resource path="res://team_stats/Jevil/assets/sounds/slap.mp3" type="AudioStream" id=6]
+[ext_resource path="res://Characters/Jevil/assets/sounds/slap.mp3" type="AudioStream" id=6]
 [ext_resource path="res://Border/Border.tscn" type="PackedScene" id=7]
 
 [sub_resource type="Animation" id=3]

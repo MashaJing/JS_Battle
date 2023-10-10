@@ -1,58 +1,82 @@
 # глобально храним только путь до нужной сцены.
 # Отсюда все сцены будут получать инфу о том, куда им дальше переключаться
-
 extends Node2D
 
-var ROOT_SCENE_PATH = "res://Main.tscn"
-var GAME_OVER_SCENE_PATH = "res://Cutscenes/GameOver/GameOver.tscn"
-var CRINGE_GAME_OVER_SCENE_PATH = "res://Cutscenes/CringeGameOver/CringeGameOver.tscn"
+const Phase = {
+# ну и херь, как-то надо избежать повторения
+ Dull= "res://Attacks/DullAttacks",
+ Drama=  "res://Attacks/DramaAttacks",
+ Phase2= "res://Attacks/Phase2",
+ Phase3= "res://Attacks/Phase3",
+ Ultimate= "res://Attacks/UltimateAttack"
+}
+
+var GAME_OVER_PATH = "res://Cutscenes/GameOver/GameOver.tscn"
+var CRINGE_GAME_OVER_PATH = "res://Cutscenes/CringeGameOver/CringeGameOver.tscn"
 var CRINGE_ATTACK_PATH = "res://Attacks/CringeAttack/CringeAttack.tscn"
-# не надо завязывать cringe только на MADE_UP, т.к.
-# влияет не только он, но и наличие обоих в сцене
-var CRINGE_ATTACKS_ON = true
+
+# =================== vital paths  ===================
+var ROOT_SCENE_PATH = "res://Main.tscn"
+var ATTACKS_ROOT_PATH = "res://Attacks"
+var CUTSCENES_ROOT_PATH = "res://Cutscenes"
+
+# =================== PLOT EVENTS ===================
 var MADE_UP = false
+var BOTH_ALIVE = true
+#var CRINGE_ATTACKS_ON = MADE_UP and BOTH_ALIVE
+
+# ===================================================
 
 # STATE-MACHINE ? ПО ФАЗАМ
 var CUR_ATTACK_IND = -1
 var ATTACKS = [
 #	__________ TESTING ____________
-#	"res://Cutscenes/TestingScene.tscn",
-#	"res://Cutscenes/JevilDown/JevilDown.tscn",
-#	"res://Cutscenes/SpamDown/SpamDown.tscn",
+#	CUTSCENES_ROOT_PATH + "/TestingScene.tscn",
+#	CUTSCENES_ROOT_PATH + "/JevilDown/JevilDown.tscn",
+#	CUTSCENES_ROOT_PATH + "/SpamDown/SpamDown.tscn",
 #	_______________________________
-	"res://Cutscenes/PreBattle/PreBattleDialogue.tscn",
+#	CUTSCENES_ROOT_PATH +"/PreBattle/PreBattleDialogue.tscn",
 #	__________ DULL ATTACKS ____________
-	"res://Attacks/DullAttacks/Dimonds_Minitons/Attack1.tscn",
-	"res://Attacks/DullAttacks/DullSpamton/DullSpamton.tscn",
-	"res://Attacks/DullAttacks/DullJevil/DullJevil.tscn",
+#	Phase.Dull + "/Dimonds_Minitons/Attack1.tscn",
+#	Phase.Dull + "/DullSpamton/DullSpamton.tscn",
+#	Phase.Dull + "/DullJevil/DullJevil.tscn",
 ##	__________ DRAMA ATTACK ____________
-	"res://Attacks/DramaAttacks/MonologueAttack.tscn",
+#	Phase.Drama + "/MonologueAttack.tscn",
 #	__________ PHASE 2 ____________ (отделить папками и тут как-то)	
-#	"res://Attacks/Phase1/Attack2/Attack2.tscn",
-#	"res://Attacks/Phase2/TestAttack/PwdAttack.tscn",
-#	"res://Attacks/Phase2/Attack3/Attack3.tscn",
-#	"res://Attacks/Phase2/NoseAttack/NoseAttack.tscn",
-#	"res://Attacks/Phase2/MilkAttack/MilkAttack.tscn",
-#	"res://Attacks/Phase2/CardPlay/Party/Party.tscn",
+#	Phase.Phase2 + "/Attack2/Attack2.tscn",
+#	Phase.Phase3 + "/TestAttack/PwdAttack.tscn",
+#	Phase.Phase2 + "/Attack3/Attack3.tscn",
+#	Phase.Phase2 + "/NoseAttack/NoseAttack.tscn",
+#	Phase.Phase2 + "/MilkAttack/MilkAttack.tscn",
+#	Phase.Phase2 + "/CardPlay/Party/Party.tscn",
 #	__________ PHASE 3 ____________ (отделить папками и тут как-то)
-#	"res://Attacks/Phase2/CarouselKids/CarouselKids.tscn",
-#	"res://Attacks/Phase2/NoseAttack/NoseAttack.tscn", # переводить в этой фазе в другой режим
-#	"res://Attacks/Phase2/UnusedJevilAttack/UnusedJevilAttack.tscn",
-	"res://Attacks/Phase2/SharedForm/SharedForm.tscn",
-	"res://Attacks/Phase2/TestAttack/PwdAttack.tscn",
+	Phase.Phase2 + "/CarouselKids/CarouselKids.tscn",
+	Phase.Phase2 + "/CarouselKids/CarouselKids.tscn",
+	Phase.Phase2 + "/CarouselKids/CarouselKids.tscn",
+	Phase.Phase2 + "/NoseAttack/NoseAttack.tscn", # переводить в этой фазе в другой режим
+	Phase.Phase3 + "/UnusedJevilAttack/UnusedJevilAttack.tscn",
+	Phase.Phase3 + "/SharedForm/SharedForm.tscn",
+	Phase.Phase3 + "/TestAttack/PwdAttack.tscn",
 #	__________ULTIMATE PHASE ____________
-	"res://Attacks/UltimateAttack/BadAnimation/BadAnimation.tscn",
-	"res://Attacks/Phase2/BallFallingAttack/BallFallingAttack.tscn",
+	Phase.Ultimate + "/UltimateAttack/BadAnimation/BadAnimation.tscn",
+	Phase.Phase2 + "/BallFallingAttack/BallFallingAttack.tscn",
 ]
 
 func get_next():
 	CUR_ATTACK_IND += 1
+	# выкидывать первые две фазы, если они помирились
+		
 	if CUR_ATTACK_IND < len(ATTACKS):
+		print(Phase.Dull)
 		var attack = ATTACKS[CUR_ATTACK_IND]
 		return attack
 	else:
 		print('а всё, а больше нет атак')
 
+
+# непонятно, как атаку связывать с фазой. Зачем мне это?
+# - чтобы определять режим конкретной атаки (в NoseAttack и т.д.) - 
+# - чтобы красиво обращаться по пути "фаза"/"атака"
 
 #func pick_random():
 #	if len(PARTIES) > 0:

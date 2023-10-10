@@ -3,10 +3,10 @@
 [ext_resource path="res://Attacks/DullAttacks/DullSpamton/dull_spamton.gd" type="Script" id=1]
 [ext_resource path="res://Bullets/bullet_dollar/Dollar.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Bullets/bullet_dimond/Dimond.tscn" type="PackedScene" id=3]
-[ext_resource path="res://team_stats/Spamton/Spamton.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Characters/Spamton/Spamton.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Attacks/DullAttacks/DullSpamton/bullet_sucker.gd" type="Script" id=5]
 [ext_resource path="res://player/KinematicHeart.tscn" type="PackedScene" id=6]
-[ext_resource path="res://team_stats/Jevil/Jevil.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Characters/Jevil/Jevil.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Border/Border.tscn" type="PackedScene" id=8]
 
 [sub_resource type="Curve2D" id=3]

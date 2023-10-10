@@ -7,10 +7,30 @@
 			"text": "WHAT IS BOTH MUSIC AND FOOD?"
 		},
 		{
+			"call_node": {
+				"arguments": [
+					"hands_up"
+				],
+				"method_name": "play",
+				"target_node_path": "Main/Spamton/AnimationPlayer"
+			},
+			"event_id": "dialogic_042"
+		},
+		{
 			"character": "character-1693016638.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
 			"text": " [heavy metal]S !!!"
+		},
+		{
+			"call_node": {
+				"arguments": [
+					"default"
+				],
+				"method_name": "play",
+				"target_node_path": "Main/Spamton/AnimationPlayer"
+			},
+			"event_id": "dialogic_042"
 		},
 		{
 			"character": "character-1693017633.json",
@@ -23,6 +43,10 @@
 			"event_id": "dialogic_001",
 			"portrait": "",
 			"text": "Kris, sounds like cool lunch ideas"
+		},
+		{
+			"emit_signal": "",
+			"event_id": "dialogic_040"
 		}
 	],
 	"metadata": {

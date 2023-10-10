@@ -23,6 +23,63 @@
 			"z_index": 1
 		},
 		{
+			"call_node": {
+				"arguments": [
+					"go_out"
+				],
+				"method_name": "play",
+				"target_node_path": "Main/Lancer/AnimationPlayer"
+			},
+			"event_id": "dialogic_042"
+		},
+		{
+			"event_id": "dialogic_023",
+			"hide_dialogbox": true,
+			"wait_seconds": 0.7
+		},
+		{
+			"character": "character-1692903513.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "* Awesome Hero Dudes Club on the left"
+		},
+		{
+			"call_node": {
+				"arguments": [
+					"turn"
+				],
+				"method_name": "play",
+				"target_node_path": "Main/Lancer/AnimationPlayer"
+			},
+			"event_id": "dialogic_042"
+		},
+		{
+			"event_id": "dialogic_023",
+			"hide_dialogbox": true,
+			"wait_seconds": 0.5
+		},
+		{
+			"character": "character-1692903513.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "* Basement Department on the right\n* Let's get this party started!"
+		},
+		{
+			"call_node": {
+				"arguments": [
+					"go_out"
+				],
+				"method_name": "play_backwards",
+				"target_node_path": "Main/Lancer/AnimationPlayer"
+			},
+			"event_id": "dialogic_042"
+		},
+		{
+			"event_id": "dialogic_023",
+			"hide_dialogbox": true,
+			"wait_seconds": 0.5
+		},
+		{
 			"character": "character-1692898558.json",
 			"event_id": "dialogic_001",
 			"portrait": "Mad",

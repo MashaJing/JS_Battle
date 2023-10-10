@@ -1,15 +1,16 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
-[ext_resource path="res://between_attack_menu/menu.tscn" type="PackedScene" id=1]
-[ext_resource path="res://team_stats/Kris/Kris.tscn" type="PackedScene" id=2]
+[ext_resource path="res://UI/between_attack_menu/menu.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Characters/Kris/Kris.tscn" type="PackedScene" id=2]
 [ext_resource path="res://main_script.gd" type="Script" id=3]
-[ext_resource path="res://team_stats/Susie/Susie.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Characters/Susie/Susie.tscn" type="PackedScene" id=4]
 [ext_resource path="res://theme.gd" type="Script" id=5]
-[ext_resource path="res://team_stats/Spamton/Spamton.tscn" type="PackedScene" id=6]
-[ext_resource path="res://team_stats/Jevil/Jevil.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Characters/Spamton/Spamton.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Characters/Jevil/Jevil.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Assets/music/the_deals_revolving.mp3" type="AudioStream" id=8]
 [ext_resource path="res://Assets/Images/Sprites/Interior/ringring.png" type="Texture" id=9]
 [ext_resource path="res://Characters/Ralsei/Ralsei.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Characters/Lancer/Lancer.tscn" type="PackedScene" id=11]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Node
@@ -66,6 +67,10 @@ position = Vector2( 830, 200 )
 
 [node name="Ralsei" parent="." instance=ExtResource( 10 )]
 position = Vector2( 200, 300 )
+scale = Vector2( 2, 2 )
+
+[node name="Lancer" parent="." instance=ExtResource( 11 )]
+position = Vector2( 520, 632 )
 scale = Vector2( 2, 2 )
 
 [node name="CringeTimer" type="Timer" parent="."]

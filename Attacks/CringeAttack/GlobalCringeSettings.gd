@@ -35,22 +35,29 @@ var JOKES = [
 		"main_word": "CLOWNSTROPHOBIA_CLOWNSTROPHOBIA",
 		"mode": Mode.PUNCH,
 	},
-# ______________________экспериментальные шутки_______________________
 	{
-		"text": "What is both music and food? heavy metals! (Jevil: cyber-cuisine is too authentic even for me, me Susie: Kris, sounds like a new challenge)",
-		"main_word": "HEAVYMETALS",
-		"mode": Mode.SPIRAL,
+		"text": "joke_heart",
+		"main_word": "PUPPETTEAR",
+		"mode": Mode.EXPLODE,
 	},
 	{
-		"text": "Your eyes shine, just like NEOn lights, lights!",
-		"main_word": "NEONLIGHTS",
-		"mode": Mode.CHASE,
+		"text": "joke_metals",
+		"main_word": "CHEAPTUNA",
+		"mode": Mode.SPIRAL,
 	},
 	{
 		"text": "joke_lightning",
-		"main_word": "",
-		"mode": Mode.SPIRAL,
+		"main_word": "FLASHROYALE",
+		"mode": Mode.EXPLODE,
 	},
+
+# ______________________экспериментальные шутки_______________________
+
+#	{
+#		"text": "Your eyes shine, just like NEOn lights, lights!", ?
+#		"main_word": "NEONLIGHTS",
+#		"mode": Mode.CHASE,
+#	},
 	# падает, когда список заканчивается: нужно больше кринжовых шуток, для всех ходов
 
 ]

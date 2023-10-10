@@ -14,7 +14,7 @@ onready var LeftJevilSpawns = [$JevilSpawns/Spawn1, $JevilSpawns/Spawn3, $JevilS
 onready var JevilSpawns = [RightJevilSpawns, LeftJevilSpawns]
 onready var appearTimer = $AppearTimer
 onready var colors = [Color.yellow, Color.magenta]
-onready var Jevil = preload("res://team_stats/Jevil/Jevil.tscn")
+onready var Jevil = preload("res://Characters/Jevil/Jevil.tscn")
 var side_ratio = 0
 
 

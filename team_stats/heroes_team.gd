@@ -81,7 +81,6 @@ func _on_ally_up(ally):
 
 func choose_target(targets: Node2D = null) -> void:
 	print()
-	pass
 	if targets == null:
 		AttackTargets = [heroes[randi() % len(heroes)]]
 	else:

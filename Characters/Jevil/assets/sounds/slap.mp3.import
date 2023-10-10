@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/slap.mp3-588a53e18a0109a1bc1a1e040c54d3e5.mp3str"
+
+[deps]
+
+source_file="res://Characters/Jevil/assets/sounds/slap.mp3"
+dest_files=[ "res://.import/slap.mp3-588a53e18a0109a1bc1a1e040c54d3e5.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

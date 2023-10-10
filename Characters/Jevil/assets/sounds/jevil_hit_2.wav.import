@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/jevil_hit_2.wav-14a952be2b2b37b2f4b41518f6a93dcb.sample"
+
+[deps]
+
+source_file="res://Characters/Jevil/assets/sounds/jevil_hit_2.wav"
+dest_files=[ "res://.import/jevil_hit_2.wav-14a952be2b2b37b2f4b41518f6a93dcb.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

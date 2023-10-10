@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Attacks/CringeAttack/cringe_attack.gd" type="Script" id=1]
-[ext_resource path="res://team_stats/Spamton/Spamton.tscn" type="PackedScene" id=2]
-[ext_resource path="res://team_stats/Jevil/Jevil.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Characters/Spamton/Spamton.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Characters/Jevil/Jevil.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Attacks/CringeAttack/explosion_area.gd" type="Script" id=6]
 [ext_resource path="res://Attacks/CringeAttack/Punch.tscn" type="PackedScene" id=7]
 

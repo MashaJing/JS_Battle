@@ -21,7 +21,7 @@ func _ready():
 
 func spawn_knife_on_path(path):
 	var devils_knife = DevilsKnife.instance()
-	devils_knife.speed = 450
+	devils_knife.speed = 550
 	devils_knife.end_rotation_speed = 0
 	path.add_child(devils_knife)
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Attacks/Phase2/BallFallingAttack/Ball/Assets/shard.png" type="Texture" id=1]
+[ext_resource path="res://Attacks/UltimateAttack/BallFallingAttack/Ball/Assets/shard.png" type="Texture" id=1]
 [ext_resource path="res://Bullets/Rock/rock.gd" type="Script" id=2]
 
 [node name="Rock" type="Area2D" groups=["bullets"]]

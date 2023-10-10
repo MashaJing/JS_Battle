@@ -16,4 +16,5 @@ position = Vector2( 0, 110 )
 [node name="HorsePos2" type="Node2D" parent="HorsePos"]
 
 [node name="HorsePos3" type="Node2D" parent="HorsePos"]
+visible = false
 position = Vector2( 0, -80 )

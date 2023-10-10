@@ -3,7 +3,7 @@
 [ext_resource path="res://Attacks/Phase2/Attack3/Carousel/Carousel.tscn" type="PackedScene" id=1]
 [ext_resource path="res://player/KinematicHeart.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Attacks/Phase2/Attack3/attack3.gd" type="Script" id=3]
-[ext_resource path="res://team_stats/Spamton/Spamton.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Characters/Spamton/Spamton.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Border/Border.tscn" type="PackedScene" id=5]
 
 [sub_resource type="Curve2D" id=1]

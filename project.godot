@@ -92,10 +92,10 @@ config/icon="res://icon.png"
 
 [autoload]
 
-DecisionStack="*res://Stats/DecisionStack/decision_stack.gd"
+DecisionStack="*res://team_stats/StatsEntities/DecisionStack/decision_stack.gd"
 TeamStats="*res://team_stats/TeamStats.tscn"
-Inventorium="*res://Stats/Inventorium/inventorium.gd"
-Password="*res://Attacks/Phase2/TestAttack/password.gd"
+Inventorium="*res://team_stats/StatsEntities/Inventorium/inventorium.gd"
+Password="*res://Attacks/Phase3/TestAttack/password.gd"
 GlobalPartySettings="*res://Attacks/Phase2/CardPlay/Party/GlobalPartySettings.gd"
 GlobalCringeSettings="*res://Attacks/CringeAttack/GlobalCringeSettings.gd"
 GlobalAttackSettings="*res://GlobalAttackSettings.gd"

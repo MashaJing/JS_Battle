@@ -356,7 +356,7 @@
 			"character": "character-1692900298.json",
 			"event_id": "dialogic_001",
 			"portrait": "(Don't change)",
-			"text": "* No, what are YOU doing in this world?\n* You are not allowed to come to schools closer than 30 meters, meters"
+			"text": "* No, what are YOU doing in this world?\n* You are prohibited from coming within 300 meters of schools, schools"
 		},
 		{
 			"animation": "slide_out_left.gd",
@@ -714,7 +714,7 @@
 			"character": "character-1692898558.json",
 			"event_id": "dialogic_001",
 			"portrait": "Tax",
-			"text": "[hee hee]"
+			"text": "* [hee hee]\n* 0Ne KR0mr AND [1_000_000] HEL1COPTER5, PLE@SE"
 		},
 		{
 			"animation": "slide_in_left.gd",
@@ -740,7 +740,7 @@
 			"character": "character-1692900298.json",
 			"event_id": "dialogic_001",
 			"portrait": "Cake",
-			"text": "* A unicorn-flavored cotton-candy-shaped cake, cake!"
+			"text": "* A HAND-MADE CAKE IS MUCH BETTER, BETTER!"
 		},
 		{
 			"animation": "slide_out_left.gd",
@@ -766,7 +766,7 @@
 			"character": "character-1692898558.json",
 			"event_id": "dialogic_001",
 			"portrait": "Pathetic",
-			"text": "* A [cake]!? D0N'T CONFUSE [Chaos\\,Chaos] AND [marasmus\\, marasmus]"
+			"text": "* THaT \t[cake] W1TH [body parts] AGAIN!?\n* D0N'T CONFUSE THe [Chaos\\,Chaos] W1TH [marasmus\\, marasmus]"
 		},
 		{
 			"animation": "slide_out_left.gd",
@@ -912,10 +912,61 @@
 			"z_index": 0
 		},
 		{
+			"call_node": {
+				"arguments": [
+					"go_out"
+				],
+				"method_name": "play",
+				"target_node_path": "Main/Lancer/AnimationPlayer"
+			},
+			"event_id": "dialogic_042"
+		},
+		{
+			"event_id": "dialogic_023",
+			"hide_dialogbox": true,
+			"wait_seconds": 0.7
+		},
+		{
 			"character": "character-1692903513.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "* Lancer Fan Club on the left\n* Basement Department on the right\n* Let's get this party started!"
+			"text": "* Awesome Hero Dudes Club on the left"
+		},
+		{
+			"call_node": {
+				"arguments": [
+					"turn"
+				],
+				"method_name": "play",
+				"target_node_path": "Main/Lancer/AnimationPlayer"
+			},
+			"event_id": "dialogic_042"
+		},
+		{
+			"event_id": "dialogic_023",
+			"hide_dialogbox": true,
+			"wait_seconds": 0.5
+		},
+		{
+			"character": "character-1692903513.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "* Basement Department on the right\n* Let's get this party started!"
+		},
+		{
+			"call_node": {
+				"arguments": [
+					"go_out"
+				],
+				"method_name": "play_backwards",
+				"target_node_path": "Main/Lancer/AnimationPlayer"
+			},
+			"event_id": "dialogic_042"
+		},
+		{
+			"event_id": "dialogic_023",
+			"hide_dialogbox": true,
+			"wait_seconds": 0.5
 		},
 		{
 			"animation": "slide_out_left.gd",
