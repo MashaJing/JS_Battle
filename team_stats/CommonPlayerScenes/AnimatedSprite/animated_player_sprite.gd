@@ -15,6 +15,7 @@ func _on_Took_Damage():
 	$AnimatedSprite.play(state)
 
 func _on_Healed():
+	print('caught healed!')
 	$AnimatedSprite.play("heal")
 	yield($AnimatedSprite, "animation_finished")
 	$AnimatedSprite.play(state)

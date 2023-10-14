@@ -115,5 +115,5 @@ HP = 120
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="AnimatedSpriteController"]
 frames = SubResource( 1 )
-frame = 1
+frame = 4
 playing = true

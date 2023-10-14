@@ -4,6 +4,10 @@ signal attack_began
 signal decided
 signal canceled
 
+# --------debug --------
+signal heal
+signal attack
+
 # тоже типа стейт-машина?
 enum State {
 	CLOSED,
@@ -80,10 +84,11 @@ func _on_canceled_turn():
 			emit_signal("canceled")
 
 func _ready():
-	while len(DecisionStack.DECISIONS) < 3:
-		yield(self, "decided")
+	pass
+#	while len(DecisionStack.DECISIONS) < 3:
+#		pass
+#	print('that s all folks')
 	# вызывать ридера
-	
 #	var team = ['kris', 'susie', 'ralsei']
 #	$AnimationPlayer.play("hide_all", -1, 1.0, true)
 #	# а как откатывать? -_- стейт-машина!!!
@@ -143,8 +148,34 @@ func unhide():
 	$AnimationPlayer.play("hide_all", -1, 1.0, true)
 	$NextAttackButton.visible = true
 
+
+
 # DEBUG
 func _on_NextAttackButton_button_down():
 	emit_signal("attack_began")
 
+func _on_KillJevilButton_button_down():
+	var a = Decision.instance()
+	a.TYPE = 'ATTACK'
+	a.VICTIM = 'JEVIL'
+	DecisionStack.add_decision(a)
+	if (len(DecisionStack.DECISIONS)) > DecisionStack.MAX_SIZE - 1:
+		DecisionReader.start()
 
+func _on_KillSpamtonButton_button_down():
+	var a = Decision.instance()
+	a.TYPE = 'ATTACK'
+	a.VICTIM = 'SPAMTON'
+	DecisionStack.add_decision(a)
+	if (len(DecisionStack.DECISIONS)) > DecisionStack.MAX_SIZE - 1:
+		DecisionReader.start()
+
+func _on_HealKrisButton_button_down():
+	var a = Decision.instance()
+	a.TYPE = 'ITEM'
+	a.VICTIM = 'KRIS'
+	a.ITEM_CODE = 'TOP_CAKE'
+	DecisionStack.add_decision(a)
+
+	if (len(DecisionStack.DECISIONS)) > DecisionStack.MAX_SIZE - 1:
+		DecisionReader.start()

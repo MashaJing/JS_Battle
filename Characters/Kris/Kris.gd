@@ -9,7 +9,8 @@ func _ready():
 	$PlayerStats.connect("Up", $AnimatedSpriteController, "_on_Up")
 	$PlayerStats.connect("Healed", $AnimatedSpriteController, "_on_Healed")
 	$PlayerStats.connect("TookDamage", $AnimatedSpriteController, "_on_Took_Damage")
-
+	
+	DecisionReader.connect("heal_kris", $PlayerStats, "heal")
 
 func defend():
 	pass

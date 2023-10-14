@@ -43,7 +43,7 @@ var ATTACKS = [
 ##	__________ DRAMA ATTACK ____________
 #	Phase.Drama + "/MonologueAttack.tscn",
 #	__________ PHASE 2 ____________ (отделить папками и тут как-то)	
-#	Phase.Phase2 + "/Attack2/Attack2.tscn",
+	Phase.Phase2 + "/Attack2/Attack2.tscn",
 #	Phase.Phase3 + "/TestAttack/PwdAttack.tscn",
 #	Phase.Phase2 + "/Attack3/Attack3.tscn",
 #	Phase.Phase2 + "/NoseAttack/NoseAttack.tscn",

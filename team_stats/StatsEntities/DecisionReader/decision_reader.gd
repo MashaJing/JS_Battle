@@ -8,7 +8,10 @@ var TMP_DEC_LIST = [
 	'SPARE'
 ]
 signal defend
-signal attack
+signal attack_jevil
+signal attack_spamton
+
+signal heal_kris
 
 
 # читает стек и шлёт сигналы в разные узлы
@@ -27,7 +30,8 @@ func start():
 			'ITEM':
 				item(current_decision)
 			'ATTACK':
-				attack(current_decision)
+				# позже прокинем АТК десайдера, пока кнопка только убивает
+				attack(current_decision, 10000)
 			'SPARE':
 				spare(current_decision)
 		yield() # Enter (пролистать реплику дальше)
@@ -60,14 +64,18 @@ func action(decision):
 			print("but nothing happened")
 
 
-func attack(decision):
-	emit_signal("attack", decision.VICTIM)
+func attack(decision, damage):
+	 # из действующего лица можно прокинуть значение АТК 3-им аргументом
+	print('attacked victim in reader!')
+	emit_signal("attack_%s" % decision.VICTIM.to_lower(), damage)
 
 
 func item(decision):
-	Inventorium.pop_item(decision.ITEM_CODE)
-	emit_signal("heal", decision.VICTIM)
+	var item = Inventorium.pop_item(decision.ITEM_CODE)
+	print(item.name)
+	emit_signal("heal_%s" % decision.VICTIM.to_lower(), item.hp_delta)
 
 
 func process_piruett():
+	# я блять вообще без понятия
 	pass

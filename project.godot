@@ -99,6 +99,8 @@ Password="*res://Attacks/Phase3/TestAttack/password.gd"
 GlobalPartySettings="*res://Attacks/Phase2/CardPlay/Party/GlobalPartySettings.gd"
 GlobalCringeSettings="*res://Attacks/CringeAttack/GlobalCringeSettings.gd"
 GlobalAttackSettings="*res://GlobalAttackSettings.gd"
+DecisionReader="*res://team_stats/StatsEntities/DecisionReader/DecisionReader.tscn"
+ConStats="*res://team_stats/StatsEntities/EnemyStats/ConStats.tscn"
 
 [display]
 

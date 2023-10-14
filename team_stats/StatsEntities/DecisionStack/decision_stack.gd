@@ -1,7 +1,7 @@
 extends Node2D
 
 var DECISIONS = []
-var MAX_SIZE = 3
+var MAX_SIZE = 2
 
 
 func add_decision(new_decision):
@@ -9,6 +9,7 @@ func add_decision(new_decision):
 		DECISIONS.append(new_decision)
 	for i in DECISIONS:
 		print(i.TYPE)
+	print('======================================')
 
 
 func pop_decision():
