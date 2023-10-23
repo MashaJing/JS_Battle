@@ -262,7 +262,7 @@ animations = [ {
 }, {
 "frames": [ ExtResource( 30 ), ExtResource( 1 ), ExtResource( 32 ), ExtResource( 21 ), ExtResource( 39 ), ExtResource( 40 ) ],
 "loop": false,
-"name": "defence",
+"name": "defend",
 "speed": 10.0
 }, {
 "frames": [ ExtResource( 35 ) ],
@@ -310,11 +310,14 @@ stream = ExtResource( 58 )
 
 [node name="PlayerStats" parent="." instance=ExtResource( 59 )]
 position = Vector2( -10, -10 )
+MAX_HP = 190
+HP = 190
+ATK = 19
 
 [node name="AnimatedSpriteController" parent="." instance=ExtResource( 60 )]
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="AnimatedSpriteController"]
 position = Vector2( 0, -40 )
 frames = SubResource( 1 )
-frame = 1
+frame = 2
 playing = true

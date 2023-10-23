@@ -14,7 +14,7 @@ var cur_attack
 
 
 func _ready():
-	TeamStats.heroes = [$Kris] #, $Susie, $Ralsei
+	TeamStats.heroes = [$Susie, $Kris, $Ralsei]
 	TeamStats.choose_target()
 	$Menu.connect("attack_began", self, "_on_attack_began")
 	TeamStats.connect("game_over", self, "_on_game_over")
@@ -74,6 +74,10 @@ func _on_CringeTimer_timeout():
 	remove_cringe_attack()
 
 # _________________________________________
+
+func _on_both_down():
+#	 ???
+	pass
 
 func _on_game_over():
 	# остановить всё

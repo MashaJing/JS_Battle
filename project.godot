@@ -101,6 +101,7 @@ GlobalCringeSettings="*res://Attacks/CringeAttack/GlobalCringeSettings.gd"
 GlobalAttackSettings="*res://GlobalAttackSettings.gd"
 DecisionReader="*res://team_stats/StatsEntities/DecisionReader/DecisionReader.tscn"
 ConStats="*res://team_stats/StatsEntities/EnemyStats/ConStats.tscn"
+GlobalDialogueSettings="*res://GlobalDialogueSettings.gd"
 
 [display]
 

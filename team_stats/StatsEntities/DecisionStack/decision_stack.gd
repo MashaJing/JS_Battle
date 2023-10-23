@@ -1,15 +1,14 @@
 extends Node2D
 
 var DECISIONS = []
-var MAX_SIZE = 2
+var MAX_SIZE = 3
 
 
 func add_decision(new_decision):
 	if len(DECISIONS) < MAX_SIZE:
 		DECISIONS.append(new_decision)
-	for i in DECISIONS:
-		print(i.TYPE)
-	print('======================================')
+	if len(DECISIONS) == MAX_SIZE:
+		DecisionReader.start()
 
 
 func pop_decision():

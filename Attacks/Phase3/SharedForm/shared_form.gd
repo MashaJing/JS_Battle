@@ -36,7 +36,7 @@ func take_knife_2():
 	print($Spamton/l_hand.get_children())
 
 func start_spin():
-	$Spamton/AnimatedSprite.play("laugh")
+	$Spamton/AnimatedSpriteController/AnimatedSprite.play("laugh")
 	$Spamton/l_hand.get_children()[0].rotation_speed = 0.5
 	$Spamton/r_hand.get_children()[0].rotation_speed = 0.5
 

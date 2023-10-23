@@ -4,7 +4,7 @@ signal attack_ended
 
 onready var bullet_spawn_timer = $BulletSpawnTimer
 onready var Spamton = $Spamton
-onready var SpamtonAnim = $Spamton/AnimatedSprite
+onready var SpamtonAnim = $Spamton/AnimatedSpriteController/AnimatedSprite
 onready var SpamtonAnimPlayer = $Spamton/AnimationPlayer
 onready var Jevil = $Jevil
 onready var BulletSucker = $Spamton/BulletSucker

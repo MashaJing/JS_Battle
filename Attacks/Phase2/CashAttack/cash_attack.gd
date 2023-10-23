@@ -1,5 +1,5 @@
 extends Node2D
-onready var Spamton = $Spamton/AnimatedSprite
+onready var Spamton = $Spamton/AnimatedSpriteController/AnimatedSprite
 onready var CashTimer = $DollarTimer
 onready var CashBullet = preload("res://Bullets/Cash/Cash.tscn")
 onready var Border = preload("res://Border/Border.tscn")

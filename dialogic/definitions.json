@@ -10,22 +10,10 @@
 			"value": "dzekh"
 		},
 		{
-			"id": "1693323930-648",
-			"name": "user_password_valid",
-			"type": 0,
-			"value": "true"
-		},
-		{
 			"id": "1693156428-507",
 			"name": "user_ip",
 			"type": 0,
 			"value": "121.200.123.123"
-		},
-		{
-			"id": "1693484504-787",
-			"name": "user_region",
-			"type": 0,
-			"value": "Novosibirsk Oblast"
 		},
 		{
 			"id": "1693484500-648",
@@ -34,16 +22,34 @@
 			"value": "Russia"
 		},
 		{
+			"id": "1694094006-648",
+			"name": "spamvil_made_up",
+			"type": 0,
+			"value": "false"
+		},
+		{
 			"id": "1693156448-928",
 			"name": "user_password_len",
 			"type": 0,
 			"value": ""
 		},
 		{
-			"id": "1694094006-648",
-			"name": "spamvil_made_up",
+			"id": "1693323930-648",
+			"name": "user_password_valid",
 			"type": 0,
-			"value": "false"
+			"value": "true"
+		},
+		{
+			"id": "1693484504-787",
+			"name": "user_region",
+			"type": 0,
+			"value": "Novosibirsk Oblast"
+		},
+		{
+			"id": "1697568665-648",
+			"name": "info_line",
+			"type": 0,
+			"value": "Smells like debugging"
 		}
 	]
 }

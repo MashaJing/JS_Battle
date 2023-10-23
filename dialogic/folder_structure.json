@@ -16,7 +16,8 @@
 				"character-1693017633.json",
 				"character-1693018075.json",
 				"character-1693019058.json",
-				"character-1694095923.json"
+				"character-1694095923.json",
+				"character-1697568555.json"
 			],
 			"folders": {
 
@@ -34,14 +35,15 @@
 				"1693323930-648",
 				"1693484500-648",
 				"1693484504-787",
-				"1694094006-648"
+				"1694094006-648",
+				"1697568665-648"
 			],
 			"folders": {
 
 			},
 			"metadata": {
 				"color": null,
-				"folded": true
+				"folded": false
 			}
 		},
 		"Themes": {
@@ -58,7 +60,8 @@
 				"theme-1693017657.cfg",
 				"theme-1693018105.cfg",
 				"theme-1693019002.cfg",
-				"theme-1694094510.cfg"
+				"theme-1694094510.cfg",
+				"theme-1697569264.cfg"
 			],
 			"folders": {
 
@@ -81,7 +84,8 @@
 				"timeline-1693330943.json",
 				"timeline-1693491551.json",
 				"timeline-1692899925.json~RF414ed405.TMP",
-				"timeline-1694278028.json"
+				"timeline-1694278028.json",
+				"timeline-1697568469.json"
 			],
 			"folders": {
 				"endings": {
@@ -95,7 +99,7 @@
 					},
 					"metadata": {
 						"color": null,
-						"folded": false
+						"folded": true
 					}
 				},
 				"jokes": {
@@ -114,7 +118,7 @@
 					},
 					"metadata": {
 						"color": null,
-						"folded": false
+						"folded": true
 					}
 				}
 			},

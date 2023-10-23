@@ -18,8 +18,14 @@ enum State {
 
 var state = State.CLOSED
 var Decision = preload("res://team_stats/StatsEntities/DecisionMessage/DecisionMessage.tscn")
+var ChoicePanel = preload("res://UI/Controls/ChoicePanel.tscn")
+
+var CUR_DECISION
+# пора определиться с единым местом для их хранения
+var characters = ['kris', 'susie', 'ralsei']
 
 
+# unused
 func open_menu():
 	$AnimationPlayer.play("kris_turn")
 	state = State.KRIS_TURN
@@ -77,14 +83,15 @@ func _on_canceled_turn():
 			pass
 		State.SUSIE_TURN:
 			switch_to_kris()
-			emit_signal("canceled")	
+			emit_signal("canceled")
 		State.RALSEI_TURN:
 			switch_to_susie_from_ralsei()
 			# важно помнить, что это отмена хода не Ральзея, а Сьюзи
 			emit_signal("canceled")
 
 func _ready():
-	pass
+	DecisionReader.connect("start_decisions_reading", self, "_on_started_decisions_reading")
+	DecisionReader.connect("end_decisions_reading", self, "_on_ended_decisions_reading")
 #	while len(DecisionStack.DECISIONS) < 3:
 #		pass
 #	print('that s all folks')
@@ -131,7 +138,6 @@ func _on_Item_button_down():
 func _on_Spare_button_down():
 	print('Spare button pressed!')
 	emit_signal("decided")
-	call_deferred("emit_signal", "attack_began")
 
 func _on_Defense_button_down():
 	print('Defense button pressed!')
@@ -141,41 +147,78 @@ func _on_Defense_button_down():
 func hide():
 	print("menu hidden")
 	$AnimationPlayer.play("hide_all")
-	$NextAttackButton.visible = false
+	$DebugButtons.visible = false
 
+# должно вызываться 1 раз при открытии всего меню, а не отдельной панельки
 func unhide():
 	print("menu unhidden")
+	GlobalDialogueSettings.get_next()
+	display_battle_info()
 	$AnimationPlayer.play("hide_all", -1, 1.0, true)
-	$NextAttackButton.visible = true
+	$DebugButtons.visible = true
 
 
+func display_battle_info():
+	var dialogue = Dialogic.start("battle_info")
+	add_child(dialogue)
 
-# DEBUG
-func _on_NextAttackButton_button_down():
-	emit_signal("attack_began")
+
+# ___________DEBUG_____________
 
 func _on_KillJevilButton_button_down():
-	var a = Decision.instance()
-	a.TYPE = 'ATTACK'
-	a.VICTIM = 'JEVIL'
-	DecisionStack.add_decision(a)
-	if (len(DecisionStack.DECISIONS)) > DecisionStack.MAX_SIZE - 1:
-		DecisionReader.start()
+	kill_ally('JEVIL')
 
 func _on_KillSpamtonButton_button_down():
-	var a = Decision.instance()
-	a.TYPE = 'ATTACK'
-	a.VICTIM = 'SPAMTON'
-	DecisionStack.add_decision(a)
-	if (len(DecisionStack.DECISIONS)) > DecisionStack.MAX_SIZE - 1:
-		DecisionReader.start()
+	kill_ally('SPAMTON')
 
-func _on_HealKrisButton_button_down():
-	var a = Decision.instance()
-	a.TYPE = 'ITEM'
-	a.VICTIM = 'KRIS'
-	a.ITEM_CODE = 'TOP_CAKE'
-	DecisionStack.add_decision(a)
+func kill_ally(ally_name):
+	CUR_DECISION = Decision.instance()
+	CUR_DECISION.TYPE = 'ATTACK'
+	CUR_DECISION.VICTIM = ally_name
+	DecisionStack.add_decision(CUR_DECISION)
 
-	if (len(DecisionStack.DECISIONS)) > DecisionStack.MAX_SIZE - 1:
-		DecisionReader.start()
+
+func _on_ItemButton_button_down():
+	$ChoicePanel.get_node("ItemList").connect("item_activated", self, "use_item")	
+	$ChoicePanel.visible = true
+	$ChoicePanel.init(Inventorium.get_visible_items())
+
+
+func use_item(index):
+	CUR_DECISION = Decision.instance()
+	CUR_DECISION.TYPE = 'ITEM'
+	CUR_DECISION.ITEM = Inventorium.reserve_item(index) # но в случае возврата возвращать
+	$ChoicePanel.exit()
+
+	$ChoicePanel.get_node("ItemList").disconnect("item_activated", self, "use_item")
+
+	$ChoicePanel.init(characters)
+	$ChoicePanel.get_node("ItemList").connect("item_activated", self, "use_item_on_character")
+
+
+func use_item_on_character(index):
+	CUR_DECISION.VICTIM = characters[index]
+	DecisionStack.add_decision(CUR_DECISION)
+	$ChoicePanel.exit()
+	$ChoicePanel.visible = false
+	$ChoicePanel.get_node("ItemList").disconnect("item_activated", self, "use_item_on_character")
+
+
+func _on_ended_decisions_reading():
+	print('_________here comes dialogic!!!_________')
+	var info = Dialogic.start('battle_info')
+	add_child(info)
+	yield(info, 'dialogic_signal')
+	emit_signal("attack_began")
+
+func _on_started_decisions_reading():
+	$DebugButtons.visible = false
+
+func _on_DefendButton_button_down():
+	CUR_DECISION = Decision.instance()
+	
+	# тут заменить на cur_carracter, т.к. не всегда все будут доступны
+	CUR_DECISION.DECIDER = characters[len(DecisionStack.DECISIONS)]
+	CUR_DECISION.TYPE = 'DEFENSE'
+	DecisionReader.emit_signal("defend_" + CUR_DECISION.DECIDER)
+	DecisionStack.add_decision(CUR_DECISION)

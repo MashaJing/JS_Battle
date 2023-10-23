@@ -9,7 +9,7 @@ onready var WordSpawn = $WordSpawn
 onready var WordSpawnTimer = $WordSpawnTimer
 onready var AnimPlayer = $WordSpawn/AnimationPlayer
 onready var GlobalSpamton = get_parent().get_parent().get_node("Spamton")
-onready var Spamton = $WordSpawn/Spamton/AnimatedSprite
+onready var Spamton = $WordSpawn/Controller/AnimatedSprite
 
 onready var WordScene = preload("res://Attacks/DramaAttacks/GamesWePlayedAttack/Word/Word.tscn")
 

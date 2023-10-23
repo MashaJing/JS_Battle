@@ -10,8 +10,8 @@ var suck_direction = Vector2.ZERO
 func _ready():
 	$Spamton/AnimationPlayer.play("default")
 	yield(get_tree().create_timer(2.0), "timeout")
-	$Spamton/AnimatedSprite.play("increase_head_inclined")
-	yield($Spamton/AnimatedSprite, "animation_finished")
+	$Spamton/AnimationPlayer.play("increase_head_inclined")
+	yield($Spamton/AnimationPlayer, "animation_finished")
 	$Spamton/AnimationPlayer.play("big_head_attack_inclined")
 	suck_direction = Vector2(0.5, 0.5)
 
