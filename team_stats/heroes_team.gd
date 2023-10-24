@@ -10,17 +10,12 @@ var tp_delta = 10
 # как-то прокинуть хп каждого? Или прям тут? Мб сделать 2 глобальных узла для каждой из сторон?
 # можно, чтоб каждая посылала свой сигнал о проигрыше + считать у нас уровень насилия?
 onready var heroes = []
-onready var AttackTargets = heroes
+onready var AttackTargets = []
 signal game_over
 
 
 func _ready():
 	pass
-#	как-то приконнектить их вовремя
-#	for target in heroes:
-#		target.get_node("PlayerStats").connect("Down", self, "_on_ally_down")
-#		target.get_node("PlayerStats").connect("Up", self, "_on_ally_up")
-
 
 func _process(delta):
 	pass
@@ -32,13 +27,12 @@ func _process(delta):
 
 
 func _on_take_damage():
-	for target in heroes:
+	for target in AttackTargets:
 		print('teamstats caught signal: target')
 		# атаку прокинуть в зависимости от пули
-		target.get_node("PlayerStats").take_damage(Spamton_ATK)
+		print(get_parent().get_children())
+		get_parent().get_node("Main").get_node(target).get_node("PlayerStats").take_damage(Spamton_ATK)
 
-		# мб переименовать ф-ию, чтобы было не только про обработку сигнала?
-		_on_tp_decreased()
 
 # TP для всех общий, поэтому он тут
 func _on_tp_increased():
@@ -71,6 +65,8 @@ func _on_ally_down(ally):
 	heroes.erase(ally)
 	if len(heroes) == 0:
 		emit_signal("game_over")
+	print(' ^^^^^^^^^^^')
+	print(ally + ' is down, so these are left: ')
 	print(heroes)
 
 

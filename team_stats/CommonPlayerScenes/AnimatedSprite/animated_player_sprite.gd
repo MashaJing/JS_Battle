@@ -1,8 +1,8 @@
 extends Node2D
 const State = {
 	UP = 'default',
-	DEFEND = 'defend',
-	DOWN = 'down'
+	DOWN = 'down',
+	DEFENSE = 'defend'
 }
 var state = State.UP
 
@@ -16,26 +16,25 @@ func _on_Took_Damage():
 	$AnimatedSprite.play(state)
 
 func _on_Healed():
-	print('caught healed!')
 	$AnimatedSprite.play("heal")
 	yield($AnimatedSprite, "animation_finished")
+	# не должны переставать защищаться
 	$AnimatedSprite.play(state)
 
-# up -> defend
 func _on_Defend():
-	state = State.DEFEND
+	state = State.DEFENSE
 	$AnimatedSprite.play(state)
 
-# defend -> up
-func _on_Stop_Defend():
-	state = State.UP
+func _on_Back_to_idle():
+	if state == State.DEFENSE:
+		state = State.UP
 	$AnimatedSprite.play(state)
 
 # up -> down
-func _on_Down():
+func _on_Down(_ally):
 	state = State.DOWN
 
 # down -> up
-func _on_Up():
+func _on_Up(_ally):
 	state = State.UP
 

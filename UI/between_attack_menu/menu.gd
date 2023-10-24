@@ -187,6 +187,7 @@ func _on_ItemButton_button_down():
 func use_item(index):
 	CUR_DECISION = Decision.instance()
 	CUR_DECISION.TYPE = 'ITEM'
+	CUR_DECISION.DECIDER = characters[len(DecisionStack.DECISIONS)]
 	CUR_DECISION.ITEM = Inventorium.reserve_item(index) # но в случае возврата возвращать
 	$ChoicePanel.exit()
 

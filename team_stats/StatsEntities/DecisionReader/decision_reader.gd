@@ -7,17 +7,17 @@ var TMP_DEC_LIST = [
 	'ATTACK',
 	'SPARE'
 ]
-#signal defend
-signal attack_jevil
-signal attack_spamton
+
 signal start_decisions_reading
 signal end_decisions_reading
+
+signal attack_jevil
+signal attack_spamton
 
 signal heal_kris
 signal heal_susie
 signal heal_ralsei
 
-# эта группа сигналов шлётся в другом скрипте, но логичнее держать в одном месте
 signal defend_kris
 signal defend_susie
 signal defend_ralsei
@@ -29,25 +29,27 @@ func start():
 	
 	# точно должно быть здесь?
 	Inventorium.clear_reserved()
+
 	var decision_text = ''
 	for i in range(DecisionStack.MAX_SIZE):
 		var current_decision = DecisionStack.pop_decision()
-		
+		decision_text = decision_text + '* '+ current_decision.DECIDER
 		match current_decision.TYPE:
 			'DEFENSE':
-				decision_text = decision_text + '* '+ current_decision.DECIDER + ' defended!\n'
+				decision_text = decision_text + ' defended!\n'
 				defense(current_decision)
+				# + additional_text ("Атака Д. уменьшилась!") - идет доп полем в решении
 			'ACTION':
-				decision_text = decision_text + '* '+ current_decision.DECIDER + ' used ' + current_decision.ACTION.name + '!\n'
+				decision_text = decision_text + ' used ' + current_decision.ACTION.name + '!\n'
 				action(current_decision)
 			'ITEM':
-				decision_text = decision_text + '* '+ current_decision.VICTIM + ' used ' + current_decision.ITEM.name + '!\n'
+				decision_text = decision_text + ' used ' + current_decision.ITEM.name + '!\n'
 				item(current_decision)
 			'ATTACK':
 				# позже прокинем АТК десайдера, пока кнопка только убивает
 				attack(current_decision, 10000)
 			'SPARE':
-				decision_text = decision_text + '* '+ current_decision.DECIDER + ' spared ' + current_decision.VICTIM + '...\n'
+				decision_text = decision_text + ' spared ' + current_decision.VICTIM + '...\n'
 				spare(current_decision)
 	
 	Dialogic.set_variable("info_line", decision_text)
@@ -60,7 +62,7 @@ func spare(decision):
 
 
 func defense(decision):
-	pass
+	emit_signal("defend_" + decision.DECIDER)
 
 
 func action(decision):

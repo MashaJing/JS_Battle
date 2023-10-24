@@ -21,7 +21,7 @@ const ATTACKS_ROOT_PATH = "res://Attacks"
 const CUTSCENES_ROOT_PATH = "res://Cutscenes"
 
 # =================== PLOT EVENTS ===================
-var MADE_UP = false
+var MADE_UP = true
 var BOTH_ALIVE = true
 #var CRINGE_ATTACKS_ON = MADE_UP and BOTH_ALIVE
 

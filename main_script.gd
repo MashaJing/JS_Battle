@@ -1,6 +1,9 @@
 extends Node
 onready var attack_timer = $AttackTimer
 
+signal finished_talking
+signal back_to_idle
+
 const State = {
 	MENU = 'menu',
 	ATTACK = 'attack',
@@ -9,16 +12,20 @@ const State = {
 }
 var state = State.ATTACK
 var GAME_OVER_PATH = GlobalAttackSettings.GAME_OVER_PATH
-signal finished_talking
 var cur_attack
 
 
 func _ready():
-	TeamStats.heroes = [$Susie, $Kris, $Ralsei]
+	TeamStats.heroes = ["Kris", "Susie", "Ralsei"]
 	TeamStats.choose_target()
 	$Menu.connect("attack_began", self, "_on_attack_began")
 	TeamStats.connect("game_over", self, "_on_game_over")
 	add_attack()
+
+# ___________ ???1! ___________
+	connect("back_to_idle", $Kris.get_node("AnimatedSpriteController"), "_on_Back_to_idle")
+	connect("back_to_idle", $Susie.get_node("AnimatedSpriteController"), "_on_Back_to_idle")
+	connect("back_to_idle", $Ralsei.get_node("AnimatedSpriteController"), "_on_Back_to_idle")
 
 # ___________ menu management ___________
 
@@ -35,6 +42,7 @@ func open_menu():
 
 # сигнал поступает от атаки
 func _on_attack_ended():
+	emit_signal("back_to_idle")
 	remove_attack()
 	open_menu()
 
@@ -52,6 +60,7 @@ func add_attack():
 	add_child(cur_attack)
 	
 func remove_attack():
+	
 	if cur_attack != null:
 		remove_child(cur_attack)
 

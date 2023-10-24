@@ -1,8 +1,8 @@
 extends Area2D
 
-signal health_changed()
-signal tp_increased()
-signal tp_decreased()
+signal health_changed
+signal tp_increased
+signal tp_decreased
 
 signal take_damage
 
@@ -21,9 +21,8 @@ func take_damage():
 	print('took_damage')
 
 	# сигнал о получении дамага (принимает Attacktarget в сцене main)
-	# todo: переименовать в health_change?
+	# тут высчитывается hp_delta на осовании АТК + DEF
 	emit_signal("health_changed")
-	emit_signal("tp_decreased")
 
 	# Даём секунду неуязвимости
 	yield(get_tree().create_timer(1), "timeout")

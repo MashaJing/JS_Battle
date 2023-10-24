@@ -11,6 +11,9 @@ signal TookDamage
 
 
 func _ready():
+	connect("Down", TeamStats, "_on_ally_down")
+	connect("Up", TeamStats, "_on_ally_up")
+
 	print('Character stats ready')
 
 func take_damage(damage):
@@ -20,7 +23,7 @@ func take_damage(damage):
 	print('NEW hp ', new_HP)
 	if HP >= 0 and new_HP <= 0:
 		print('emited down!!!')
-		emit_signal("Down")
+		emit_signal("Down", get_parent().name)
 # - больше не принимаем сигнал take_damage - Крис исключён из списка целей атак??
 	HP = new_HP
 
@@ -35,6 +38,6 @@ func heal(delta):
 
 	if HP < 0 and new_HP > 0:
 		print('emited up!!!')
-		emit_signal("Up")
+		emit_signal("Up", get_parent().name)
 	emit_signal("Healed")	
 	HP = new_HP
