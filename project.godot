@@ -102,6 +102,8 @@ GlobalAttackSettings="*res://GlobalAttackSettings.gd"
 DecisionReader="*res://team_stats/StatsEntities/DecisionReader/DecisionReader.tscn"
 ConStats="*res://team_stats/StatsEntities/EnemyStats/ConStats.tscn"
 GlobalDialogueSettings="*res://GlobalDialogueSettings.gd"
+ActionsController="*res://team_stats/StatsEntities/ActionsController/ActionsController.tscn"
+ActionsInventorium="*res://team_stats/StatsEntities/ActionsInventorium/ActionsInventorium.tscn"
 
 [display]
 

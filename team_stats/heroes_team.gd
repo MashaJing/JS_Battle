@@ -9,13 +9,19 @@ var tp_delta = 10
 
 # как-то прокинуть хп каждого? Или прям тут? Мб сделать 2 глобальных узла для каждой из сторон?
 # можно, чтоб каждая посылала свой сигнал о проигрыше + считать у нас уровень насилия?
-onready var heroes = []
-onready var AttackTargets = []
+
+const all_heroes = ["Kris", "Susie", "Ralsei"]  # все участники битвы с нашей стороны
+var heroes = ["Kris", "Susie", "Ralsei"]  # живые
+var AttackTargets = []
 signal game_over
 
 
-func _ready():
-	pass
+class HeroSorter:
+	static func sort(a, b):
+		if all_heroes.find(a) < all_heroes.find(b):
+			return true
+		return false
+
 
 func _process(delta):
 	pass
@@ -43,8 +49,8 @@ func _on_tp_increased():
 	print("TP: ", TP)
 
 
-func _on_tp_decreased():
-	print('ENTERED!')
+func _on_tp_decreased(tp_delta):
+	print('_________TP DECREASED!_________')
 	TP -= tp_delta
 	if TP < 0:
 		TP = 0
@@ -63,6 +69,7 @@ func _on_heal(healed_player, hp_delta):
 
 func _on_ally_down(ally):
 	heroes.erase(ally)
+	DecisionStack.MAX_SIZE = len(TeamStats.heroes)
 	if len(heroes) == 0:
 		emit_signal("game_over")
 	print(' ^^^^^^^^^^^')
@@ -71,8 +78,12 @@ func _on_ally_down(ally):
 
 
 func _on_ally_up(ally):
+# 	либо делать через енам или кастомный класс, из которого вытаскивается индекс
+#	либо выделываться с этим: var hero_ind = all_heroes.find(ally)
 	heroes.append(ally)
-	print(heroes)
+	heroes.sort_custom(HeroSorter, "sort")
+	DecisionStack.MAX_SIZE = len(TeamStats.heroes)
+
 
 
 func choose_target(targets: Node2D = null) -> void:

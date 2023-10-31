@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=2]
+[gd_scene load_steps=75 format=2]
 
 [ext_resource path="res://Characters/Kris/assets/Default/image6x1.png" type="Texture" id=1]
 [ext_resource path="res://Characters/Kris/assets/Default/image3x1.png" type="Texture" id=2]
@@ -66,12 +66,42 @@
 [ext_resource path="res://Characters/Kris/assets/Defence/image5x1.png" type="Texture" id=64]
 [ext_resource path="res://Characters/Kris/assets/Defence/image3x1.png" type="Texture" id=65]
 [ext_resource path="res://Characters/Kris/assets/Defence/image6x1.png" type="Texture" id=66]
+[ext_resource path="res://Assets/Images/Sprites/Characters/Kris.png" type="Texture" id=67]
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 67 )
+region = Rect2( 0, 676, 42, 50 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 67 )
+region = Rect2( 42, 676, 42, 50 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 67 )
+region = Rect2( 84, 676, 42, 50 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 67 )
+region = Rect2( 126, 676, 42, 50 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 67 )
+region = Rect2( 168, 676, 42, 50 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 67 )
+region = Rect2( 210, 676, 42, 50 )
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 41 ), ExtResource( 48 ), ExtResource( 47 ), ExtResource( 43 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 54 ), ExtResource( 50 ), ExtResource( 49 ), ExtResource( 51 ), ExtResource( 42 ), ExtResource( 52 ) ],
 "loop": false,
-"name": "act",
+"name": "action",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 53 ) ],
+"loop": true,
+"name": "action_start",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 35 ), ExtResource( 32 ), ExtResource( 36 ), ExtResource( 29 ), ExtResource( 25 ), ExtResource( 22 ), ExtResource( 39 ) ],
@@ -109,6 +139,11 @@ animations = [ {
 "name": "item",
 "speed": 5.0
 }, {
+"frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ) ],
+"loop": true,
+"name": "piruett",
+"speed": 10.0
+}, {
 "frames": [ ExtResource( 20 ), ExtResource( 21 ), ExtResource( 37 ), ExtResource( 23 ), ExtResource( 40 ), ExtResource( 30 ), ExtResource( 38 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 24 ), ExtResource( 27 ), ExtResource( 26 ) ],
 "loop": false,
 "name": "spare",
@@ -126,5 +161,4 @@ HP = 120
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="AnimatedSpriteController"]
 frames = SubResource( 1 )
-animation = "defend"
-frame = 5
+animation = "piruett"

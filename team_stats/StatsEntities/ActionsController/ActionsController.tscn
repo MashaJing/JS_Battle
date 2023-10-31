@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://team_stats/StatsEntities/ActionsController/actions_controller.gd" type="Script" id=1]
+
+[node name="ActionsController" type="Node2D"]
+script = ExtResource( 1 )

@@ -4,6 +4,11 @@ var DECISIONS = []
 var MAX_SIZE = 3
 
 
+func _ready():
+	print('HERE IS HOW STACK SEES IT')
+	print(TeamStats.heroes)
+
+
 func add_decision(new_decision):
 	if len(DECISIONS) < MAX_SIZE:
 		DECISIONS.append(new_decision)

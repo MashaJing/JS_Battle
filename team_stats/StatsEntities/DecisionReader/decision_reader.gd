@@ -22,6 +22,10 @@ signal defend_kris
 signal defend_susie
 signal defend_ralsei
 
+signal spare_kris
+signal spare_susie
+signal spare_ralsei
+
 
 # читает стек и шлёт сигналы в разные узлы
 func start():
@@ -38,10 +42,10 @@ func start():
 			'DEFENSE':
 				decision_text = decision_text + ' defended!\n'
 				defense(current_decision)
-				# + additional_text ("Атака Д. уменьшилась!") - идет доп полем в решении
-			'ACTION':
-				decision_text = decision_text + ' used ' + current_decision.ACTION.name + '!\n'
+			'ACT':
+				decision_text = decision_text + ' ' + current_decision.ACTION.text_on_used + '!\n'
 				action(current_decision)
+				# + additional_text ("Атака Д. уменьшилась!") - идет доп полем в решении
 			'ITEM':
 				decision_text = decision_text + ' used ' + current_decision.ITEM.name + '!\n'
 				item(current_decision)
@@ -58,7 +62,8 @@ func start():
 	emit_signal("end_decisions_reading")
 
 func spare(decision):
-	emit_signal("spare", decision.DECIDER)
+	# в con_stats реализовать обработчик сигнала пощады - там будет проверяться возможность пощады (и готовность в %)
+	emit_signal("spare_" + decision.DECIDER, decision.VICTIM)
 
 
 func defense(decision):
@@ -66,21 +71,8 @@ func defense(decision):
 
 
 func action(decision):
-	match decision.ACTION.name:
-		'PIRUETT':
-			process_piruett()
-		'HYPNOTIZE':
-			emit_signal('hypnotize', decision.DECIDER, decision.VICTIM)
-		'HEAL_SPELL':
-			emit_signal('heal_spell', decision.VICTIM)
-		'OFFER_DEAL':
-			emit_signal('offer_deal', decision.DECIDER, decision.VICTIM)
-
-		# ................
-		_:
-			print("we used")
-			print(decision.TYPE)
-			print("but nothing happened")
+#	обращение в глобальный обработчик действий, который занимается всем менеджментом действий
+	ActionsController.confirm_action(decision)
 
 
 func attack(decision, damage):
@@ -91,8 +83,3 @@ func attack(decision, damage):
 
 func item(decision):
 	emit_signal("heal_%s" % decision.VICTIM.to_lower(), decision.ITEM.hp_delta)
-
-
-func process_piruett():
-	# я блять вообще без понятия
-	pass

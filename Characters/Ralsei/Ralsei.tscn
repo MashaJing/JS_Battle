@@ -1,9 +1,69 @@
-[gd_scene load_steps=73 format=2]
+[gd_scene load_steps=86 format=2]
 
 [ext_resource path="res://Assets/Images/Sprites/Characters/Ralsei.png" type="Texture" id=1]
 [ext_resource path="res://Characters/Ralsei/Ralsei.gd" type="Script" id=2]
 [ext_resource path="res://team_stats/CommonPlayerScenes/PlayerStats.tscn" type="PackedScene" id=3]
 [ext_resource path="res://team_stats/CommonPlayerScenes/AnimatedSprite/AnimatedPlayerSprite.tscn" type="PackedScene" id=4]
+
+[sub_resource type="AtlasTexture" id=63]
+atlas = ExtResource( 1 )
+region = Rect2( 6, 1781, 80, 52 )
+
+[sub_resource type="AtlasTexture" id=64]
+atlas = ExtResource( 1 )
+region = Rect2( 87, 1781, 80, 52 )
+
+[sub_resource type="AtlasTexture" id=65]
+atlas = ExtResource( 1 )
+region = Rect2( 168, 1781, 80, 52 )
+
+[sub_resource type="AtlasTexture" id=66]
+atlas = ExtResource( 1 )
+region = Rect2( 249, 1781, 80, 52 )
+
+[sub_resource type="AtlasTexture" id=67]
+atlas = ExtResource( 1 )
+region = Rect2( 330, 1781, 80, 52 )
+
+[sub_resource type="AtlasTexture" id=68]
+atlas = ExtResource( 1 )
+region = Rect2( 411, 1781, 80, 52 )
+
+[sub_resource type="AtlasTexture" id=69]
+atlas = ExtResource( 1 )
+region = Rect2( 492, 1781, 80, 52 )
+
+[sub_resource type="AtlasTexture" id=70]
+atlas = ExtResource( 1 )
+region = Rect2( 573, 1781, 80, 52 )
+
+[sub_resource type="AtlasTexture" id=71]
+atlas = ExtResource( 1 )
+region = Rect2( 654, 1781, 80, 52 )
+
+[sub_resource type="AtlasTexture" id=72]
+atlas = ExtResource( 1 )
+region = Rect2( 735, 1781, 80, 52 )
+
+[sub_resource type="AtlasTexture" id=73]
+atlas = ExtResource( 1 )
+region = Rect2( 816, 1781, 80, 52 )
+
+[sub_resource type="AtlasTexture" id=31]
+atlas = ExtResource( 1 )
+region = Rect2( 10, 1728, 82, 54 )
+
+[sub_resource type="AtlasTexture" id=32]
+atlas = ExtResource( 1 )
+region = Rect2( 93, 1728, 82, 54 )
+
+[sub_resource type="AtlasTexture" id=33]
+atlas = ExtResource( 1 )
+region = Rect2( 176, 1728, 82, 54 )
+
+[sub_resource type="AtlasTexture" id=34]
+atlas = ExtResource( 1 )
+region = Rect2( 259, 1728, 82, 54 )
 
 [sub_resource type="AtlasTexture" id=74]
 atlas = ExtResource( 1 )
@@ -213,68 +273,70 @@ region = Rect2( 405, 1500, 78, 60 )
 atlas = ExtResource( 1 )
 region = Rect2( 484, 1500, 78, 60 )
 
-[sub_resource type="AtlasTexture" id=63]
+[sub_resource type="AtlasTexture" id=93]
 atlas = ExtResource( 1 )
-region = Rect2( 6, 1781, 80, 52 )
+region = Rect2( 0, 1232, 74, 56 )
 
-[sub_resource type="AtlasTexture" id=64]
+[sub_resource type="AtlasTexture" id=94]
 atlas = ExtResource( 1 )
-region = Rect2( 87, 1781, 80, 52 )
+region = Rect2( 74, 1232, 74, 56 )
 
-[sub_resource type="AtlasTexture" id=65]
+[sub_resource type="AtlasTexture" id=95]
 atlas = ExtResource( 1 )
-region = Rect2( 168, 1781, 80, 52 )
+region = Rect2( 148, 1232, 74, 56 )
 
-[sub_resource type="AtlasTexture" id=66]
+[sub_resource type="AtlasTexture" id=96]
 atlas = ExtResource( 1 )
-region = Rect2( 249, 1781, 80, 52 )
+region = Rect2( 222, 1232, 74, 56 )
 
-[sub_resource type="AtlasTexture" id=67]
+[sub_resource type="AtlasTexture" id=97]
 atlas = ExtResource( 1 )
-region = Rect2( 330, 1781, 80, 52 )
+region = Rect2( 296, 1232, 74, 56 )
 
-[sub_resource type="AtlasTexture" id=68]
+[sub_resource type="AtlasTexture" id=98]
 atlas = ExtResource( 1 )
-region = Rect2( 411, 1781, 80, 52 )
+region = Rect2( 370, 1232, 74, 56 )
 
-[sub_resource type="AtlasTexture" id=69]
+[sub_resource type="AtlasTexture" id=99]
 atlas = ExtResource( 1 )
-region = Rect2( 492, 1781, 80, 52 )
+region = Rect2( 444, 1232, 74, 56 )
 
-[sub_resource type="AtlasTexture" id=70]
+[sub_resource type="AtlasTexture" id=100]
 atlas = ExtResource( 1 )
-region = Rect2( 573, 1781, 80, 52 )
+region = Rect2( 518, 1232, 74, 56 )
 
-[sub_resource type="AtlasTexture" id=71]
+[sub_resource type="AtlasTexture" id=101]
 atlas = ExtResource( 1 )
-region = Rect2( 654, 1781, 80, 52 )
+region = Rect2( 592, 1232, 74, 56 )
 
-[sub_resource type="AtlasTexture" id=72]
+[sub_resource type="AtlasTexture" id=102]
 atlas = ExtResource( 1 )
-region = Rect2( 735, 1781, 80, 52 )
+region = Rect2( 666, 1232, 74, 56 )
 
-[sub_resource type="AtlasTexture" id=73]
+[sub_resource type="AtlasTexture" id=103]
 atlas = ExtResource( 1 )
-region = Rect2( 816, 1781, 80, 52 )
+region = Rect2( 740, 1232, 74, 56 )
 
-[sub_resource type="AtlasTexture" id=31]
+[sub_resource type="AtlasTexture" id=104]
 atlas = ExtResource( 1 )
-region = Rect2( 10, 1728, 82, 54 )
+region = Rect2( 814, 1232, 74, 56 )
 
-[sub_resource type="AtlasTexture" id=32]
+[sub_resource type="AtlasTexture" id=105]
 atlas = ExtResource( 1 )
-region = Rect2( 93, 1728, 82, 54 )
-
-[sub_resource type="AtlasTexture" id=33]
-atlas = ExtResource( 1 )
-region = Rect2( 176, 1728, 82, 54 )
-
-[sub_resource type="AtlasTexture" id=34]
-atlas = ExtResource( 1 )
-region = Rect2( 259, 1728, 82, 54 )
+region = Rect2( 888, 1232, 74, 56 )
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
+"frames": [ SubResource( 63 ), SubResource( 64 ), SubResource( 65 ), SubResource( 66 ), SubResource( 67 ), SubResource( 68 ), SubResource( 69 ), SubResource( 70 ), SubResource( 71 ), SubResource( 72 ), SubResource( 73 ) ],
+"loop": false,
+"name": "action",
+"speed": 10.0
+}, {
+"frames": [ SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ) ],
+"loop": true,
+"name": "action_start",
+"speed": 10.0
+}, {
 "frames": [ SubResource( 74 ), SubResource( 75 ), SubResource( 76 ), SubResource( 77 ), SubResource( 78 ), SubResource( 79 ), SubResource( 80 ), SubResource( 81 ) ],
 "loop": false,
 "name": "attack",
@@ -310,15 +372,10 @@ animations = [ {
 "name": "item",
 "speed": 10.0
 }, {
-"frames": [ SubResource( 63 ), SubResource( 64 ), SubResource( 65 ), SubResource( 66 ), SubResource( 67 ), SubResource( 68 ), SubResource( 69 ), SubResource( 70 ), SubResource( 71 ), SubResource( 72 ), SubResource( 73 ) ],
+"frames": [ SubResource( 93 ), SubResource( 94 ), SubResource( 95 ), SubResource( 96 ), SubResource( 97 ), SubResource( 98 ), SubResource( 99 ), SubResource( 100 ), SubResource( 101 ), SubResource( 102 ), SubResource( 103 ), SubResource( 104 ), SubResource( 105 ) ],
 "loop": false,
-"name": "spell",
-"speed": 10.0
-}, {
-"frames": [ SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ) ],
-"loop": true,
-"name": "spell_prepare",
-"speed": 10.0
+"name": "spare",
+"speed": 5.0
 } ]
 
 [node name="Ralsei" type="Node2D"]
@@ -333,6 +390,6 @@ ATK = 12
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="AnimatedSpriteController"]
 frames = SubResource( 1 )
-animation = "defend"
-frame = 8
+animation = "spare"
+frame = 12
 playing = true

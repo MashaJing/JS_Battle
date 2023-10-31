@@ -133,18 +133,32 @@ margin_bottom = 520.0
 text = "KILL SPAMTON"
 
 [node name="ItemButton" type="Button" parent="DebugButtons"]
-margin_left = 230.0
-margin_top = 410.0
-margin_right = 410.0
-margin_bottom = 460.0
-text = "ITEM"
-
-[node name="DefendButton" type="Button" parent="DebugButtons"]
 margin_left = 430.0
 margin_top = 410.0
 margin_right = 610.0
 margin_bottom = 460.0
+text = "ITEM"
+
+[node name="DefendButton" type="Button" parent="DebugButtons"]
+margin_left = 830.0
+margin_top = 410.0
+margin_right = 1010.0
+margin_bottom = 460.0
 text = "DEFEND"
+
+[node name="ActButton" type="Button" parent="DebugButtons"]
+margin_left = 230.0
+margin_top = 410.0
+margin_right = 410.0
+margin_bottom = 460.0
+text = "ACT/MAGIC"
+
+[node name="SpareButton" type="Button" parent="DebugButtons"]
+margin_left = 630.0
+margin_top = 410.0
+margin_right = 810.0
+margin_bottom = 460.0
+text = "SPARE"
 
 [node name="ChoicePanel" parent="." instance=ExtResource( 4 )]
 visible = false
@@ -157,3 +171,5 @@ margin_bottom = 1.0
 [connection signal="button_down" from="DebugButtons/KillSpamtonButton" to="." method="_on_KillSpamtonButton_button_down"]
 [connection signal="button_down" from="DebugButtons/ItemButton" to="." method="_on_ItemButton_button_down"]
 [connection signal="button_down" from="DebugButtons/DefendButton" to="." method="_on_DefendButton_button_down"]
+[connection signal="button_down" from="DebugButtons/ActButton" to="." method="_on_ActButton_button_down"]
+[connection signal="button_down" from="DebugButtons/SpareButton" to="." method="_on_SpareButton_button_down"]

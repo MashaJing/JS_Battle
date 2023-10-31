@@ -9,3 +9,7 @@ func _ready():
 
 	DecisionReader.connect("heal_susie", $PlayerStats, "heal")
 	DecisionReader.connect("defend_susie", $AnimatedSpriteController, "_on_Defend")
+	DecisionReader.connect("spare_susie", $AnimatedSpriteController, "_on_Spare")
+
+	ActionsController.connect("susie_action_start", $AnimatedSpriteController, "_on_Action_start")
+	ActionsController.connect("susie_action_end", $AnimatedSpriteController, "_on_Action_end")

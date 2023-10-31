@@ -237,8 +237,13 @@ tracks/2/keys = {
 animations = [ {
 "frames": [ ExtResource( 51 ), ExtResource( 33 ), ExtResource( 14 ), ExtResource( 12 ), ExtResource( 41 ), ExtResource( 44 ), ExtResource( 34 ), ExtResource( 42 ), ExtResource( 7 ), ExtResource( 13 ), ExtResource( 36 ) ],
 "loop": false,
-"name": "act",
+"name": "action",
 "speed": 10.0
+}, {
+"frames": [ ExtResource( 51 ) ],
+"loop": true,
+"name": "action_start",
+"speed": 5.0
 }, {
 "frames": [ ExtResource( 57 ) ],
 "loop": true,
@@ -319,5 +324,6 @@ ATK = 19
 [node name="AnimatedSprite" type="AnimatedSprite" parent="AnimatedSpriteController"]
 position = Vector2( 0, -40 )
 frames = SubResource( 1 )
-frame = 2
+animation = "action"
+frame = 10
 playing = true

@@ -16,7 +16,6 @@ var cur_attack
 
 
 func _ready():
-	TeamStats.heroes = ["Kris", "Susie", "Ralsei"]
 	TeamStats.choose_target()
 	$Menu.connect("attack_began", self, "_on_attack_began")
 	TeamStats.connect("game_over", self, "_on_game_over")

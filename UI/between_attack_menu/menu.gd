@@ -21,8 +21,6 @@ var Decision = preload("res://team_stats/StatsEntities/DecisionMessage/DecisionM
 var ChoicePanel = preload("res://UI/Controls/ChoicePanel.tscn")
 
 var CUR_DECISION
-# пора определиться с единым местом для их хранения
-var characters = ['kris', 'susie', 'ralsei']
 
 
 # unused
@@ -177,32 +175,83 @@ func kill_ally(ally_name):
 	CUR_DECISION.VICTIM = ally_name
 	DecisionStack.add_decision(CUR_DECISION)
 
+# ========================= ITEM ========================= 
 
 func _on_ItemButton_button_down():
 	$ChoicePanel.get_node("ItemList").connect("item_activated", self, "use_item")	
 	$ChoicePanel.visible = true
 	$ChoicePanel.init(Inventorium.get_visible_items())
 
-
 func use_item(index):
 	CUR_DECISION = Decision.instance()
 	CUR_DECISION.TYPE = 'ITEM'
-	CUR_DECISION.DECIDER = characters[len(DecisionStack.DECISIONS)]
+	CUR_DECISION.DECIDER = TeamStats.heroes[len(DecisionStack.DECISIONS)].to_lower()
 	CUR_DECISION.ITEM = Inventorium.reserve_item(index) # но в случае возврата возвращать
 	$ChoicePanel.exit()
 
 	$ChoicePanel.get_node("ItemList").disconnect("item_activated", self, "use_item")
-
-	$ChoicePanel.init(characters)
+	$ChoicePanel.init(TeamStats.all_heroes)
 	$ChoicePanel.get_node("ItemList").connect("item_activated", self, "use_item_on_character")
 
-
 func use_item_on_character(index):
-	CUR_DECISION.VICTIM = characters[index]
+	CUR_DECISION.VICTIM = TeamStats.all_heroes[index]
 	DecisionStack.add_decision(CUR_DECISION)
 	$ChoicePanel.exit()
 	$ChoicePanel.visible = false
 	$ChoicePanel.get_node("ItemList").disconnect("item_activated", self, "use_item_on_character")
+
+# ========================= DEFEND ========================= 
+
+func _on_DefendButton_button_down():
+	CUR_DECISION = Decision.instance()
+	
+	# тут заменить на cur_carracter, т.к. не всегда все будут доступны
+	CUR_DECISION.DECIDER = TeamStats.heroes[len(DecisionStack.DECISIONS)].to_lower()
+	CUR_DECISION.TYPE = 'DEFENSE'
+	DecisionReader.emit_signal("defend_" + CUR_DECISION.DECIDER)
+	DecisionStack.add_decision(CUR_DECISION)
+
+# ========================= ACTION ========================= 
+
+func _on_ActButton_button_down():
+	CUR_DECISION = Decision.instance()
+	CUR_DECISION.TYPE = 'ACT'
+	CUR_DECISION.DECIDER = TeamStats.heroes[len(DecisionStack.DECISIONS)].to_lower()
+
+	$ChoicePanel.get_node("ItemList").connect("item_activated", self, "use_action")
+	$ChoicePanel.visible = true
+	$ChoicePanel.init_actions(ActionsInventorium.AVAILABLE_ACTIONS[CUR_DECISION.DECIDER])
+
+func use_action(index):
+	CUR_DECISION.ACTION = ActionsInventorium.AVAILABLE_ACTIONS[CUR_DECISION.DECIDER][index]
+	ActionsController.start_action(CUR_DECISION.DECIDER, CUR_DECISION.ACTION)
+	print(CUR_DECISION.ACTION.text_on_used)
+	DecisionStack.add_decision(CUR_DECISION)
+	$ChoicePanel.exit()
+
+	$ChoicePanel.get_node("ItemList").disconnect("item_activated", self, "use_action")
+	$ChoicePanel.visible = false
+
+# ========================= SPARE ========================= 
+
+func _on_SpareButton_button_down():
+	CUR_DECISION = Decision.instance()
+	CUR_DECISION.TYPE = 'SPARE'
+	CUR_DECISION.DECIDER = TeamStats.heroes[len(DecisionStack.DECISIONS)].to_lower()
+
+	$ChoicePanel.get_node("ItemList").connect("item_activated", self, "use_spare_on_character")
+	$ChoicePanel.visible = true
+	$ChoicePanel.init(ConStats.allies)
+
+func use_spare_on_character(index):
+	CUR_DECISION.VICTIM = ConStats.allies[index]
+	DecisionStack.add_decision(CUR_DECISION)
+	$ChoicePanel.exit()
+	$ChoicePanel.visible = false
+	$ChoicePanel.get_node("ItemList").disconnect("item_activated", self, "use_spare_on_character")
+
+
+# ========================================================== 
 
 
 func _on_ended_decisions_reading():
@@ -215,11 +264,3 @@ func _on_ended_decisions_reading():
 func _on_started_decisions_reading():
 	$DebugButtons.visible = false
 
-func _on_DefendButton_button_down():
-	CUR_DECISION = Decision.instance()
-	
-	# тут заменить на cur_carracter, т.к. не всегда все будут доступны
-	CUR_DECISION.DECIDER = characters[len(DecisionStack.DECISIONS)]
-	CUR_DECISION.TYPE = 'DEFENSE'
-	DecisionReader.emit_signal("defend_" + CUR_DECISION.DECIDER)
-	DecisionStack.add_decision(CUR_DECISION)

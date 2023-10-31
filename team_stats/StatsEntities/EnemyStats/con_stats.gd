@@ -7,7 +7,7 @@ var DEF = 1
 # запускаем пересчёт каждый раз, когда кто-то хилится/отхватывает
 var SUM_HP = 2
 
-
+var allies = ["Jevil", "Spamton"]
 var enemies_team = {
 #	'JEVIL': get_node("/root/TeamStats")
 }
