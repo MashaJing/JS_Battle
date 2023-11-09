@@ -1,12 +1,9 @@
 extends Node
 
 signal attack_began
+
 signal decided
 signal canceled
-
-# --------debug --------
-signal heal
-signal attack
 
 # тоже типа стейт-машина?
 enum State {
@@ -108,60 +105,28 @@ func _on_decided():
 	var choice
 	# choice обогатить, пихнуть в стек
 	DecisionStack.add_decision(choice)
-			
 
-func _on_canceled(decision):
-	# рассчитываю, что последнее затрется
+func _on_canceled():
 	DecisionStack.pop_decision()
 
-# вынести в отдельный обработчик, переиспользовать для каждой секции
-func _on_Attack_button_down():
-	print('Attack button pressed!')
-	emit_signal("decided")
-	var a = Decision.instance()
-	a.TYPE = 'ATTACK'
-	DecisionStack.add_decision(a)
-
-func _on_Act_button_down():
-	print('Act button pressed!')
-	emit_signal("decided")
-	var a = Decision.instance()
-	a.TYPE = 'ACT'
-	DecisionStack.add_decision(a)
-
-func _on_Item_button_down():
-	print('Item button pressed!')
-	emit_signal("decided")
-
-func _on_Spare_button_down():
-	print('Spare button pressed!')
-	emit_signal("decided")
-
-func _on_Defense_button_down():
-	print('Defense button pressed!')
-	emit_signal("decided")
-
-
 func hide():
-	print("menu hidden")
 	$AnimationPlayer.play("hide_all")
 	$DebugButtons.visible = false
 
 # должно вызываться 1 раз при открытии всего меню, а не отдельной панельки
 func unhide():
-	print("menu unhidden")
 	GlobalDialogueSettings.get_next()
 	display_battle_info()
+	
 	$AnimationPlayer.play("hide_all", -1, 1.0, true)
 	$DebugButtons.visible = true
 
-
 func display_battle_info():
-	var dialogue = Dialogic.start("battle_info")
-	add_child(dialogue)
+#	var dialogue = Dialogic.start("battle_info")
+#	add_child(dialogue)
+	$DebugButtons/KillJevilButton.grab_focus()
 
-
-# ___________DEBUG_____________
+# _________________________DEBUG____________________________
 
 func _on_KillJevilButton_button_down():
 	kill_ally('JEVIL')
@@ -178,27 +143,23 @@ func kill_ally(ally_name):
 # ========================= ITEM ========================= 
 
 func _on_ItemButton_button_down():
-	$ChoicePanel.get_node("ItemList").connect("item_activated", self, "use_item")	
-	$ChoicePanel.visible = true
 	$ChoicePanel.init(Inventorium.get_visible_items())
+	$ChoicePanel.get_node("ItemList").connect("item_activated", self, "use_item")
 
 func use_item(index):
 	CUR_DECISION = Decision.instance()
 	CUR_DECISION.TYPE = 'ITEM'
 	CUR_DECISION.DECIDER = TeamStats.heroes[len(DecisionStack.DECISIONS)].to_lower()
-	CUR_DECISION.ITEM = Inventorium.reserve_item(index) # но в случае возврата возвращать
-	$ChoicePanel.exit()
+	CUR_DECISION.ITEM = Inventorium.reserve_item(index)
+	return_to_common_menu("use_item")
 
-	$ChoicePanel.get_node("ItemList").disconnect("item_activated", self, "use_item")
 	$ChoicePanel.init(TeamStats.all_heroes)
 	$ChoicePanel.get_node("ItemList").connect("item_activated", self, "use_item_on_character")
 
 func use_item_on_character(index):
 	CUR_DECISION.VICTIM = TeamStats.all_heroes[index]
 	DecisionStack.add_decision(CUR_DECISION)
-	$ChoicePanel.exit()
-	$ChoicePanel.visible = false
-	$ChoicePanel.get_node("ItemList").disconnect("item_activated", self, "use_item_on_character")
+	return_to_common_menu("use_item_on_character")
 
 # ========================= DEFEND ========================= 
 
@@ -219,18 +180,24 @@ func _on_ActButton_button_down():
 	CUR_DECISION.DECIDER = TeamStats.heroes[len(DecisionStack.DECISIONS)].to_lower()
 
 	$ChoicePanel.get_node("ItemList").connect("item_activated", self, "use_action")
-	$ChoicePanel.visible = true
 	$ChoicePanel.init_actions(ActionsInventorium.AVAILABLE_ACTIONS[CUR_DECISION.DECIDER])
+	
 
 func use_action(index):
 	CUR_DECISION.ACTION = ActionsInventorium.AVAILABLE_ACTIONS[CUR_DECISION.DECIDER][index]
 	ActionsController.start_action(CUR_DECISION.DECIDER, CUR_DECISION.ACTION)
-	print(CUR_DECISION.ACTION.text_on_used)
-	DecisionStack.add_decision(CUR_DECISION)
-	$ChoicePanel.exit()
+	return_to_common_menu("use_action")
 
-	$ChoicePanel.get_node("ItemList").disconnect("item_activated", self, "use_action")
-	$ChoicePanel.visible = false
+	if CUR_DECISION.ACTION.used_on != null:
+		$ChoicePanel.get_node("ItemList").connect("item_activated", self, "use_action_on_character")
+		$ChoicePanel.init(CUR_DECISION.ACTION.used_on)
+	else:
+		DecisionStack.add_decision(CUR_DECISION)	
+
+func use_action_on_character(index):
+	CUR_DECISION.VICTIM = CUR_DECISION.ACTION.used_on[index]
+	return_to_common_menu("use_action_on_character")
+	DecisionStack.add_decision(CUR_DECISION)	
 
 # ========================= SPARE ========================= 
 
@@ -239,28 +206,28 @@ func _on_SpareButton_button_down():
 	CUR_DECISION.TYPE = 'SPARE'
 	CUR_DECISION.DECIDER = TeamStats.heroes[len(DecisionStack.DECISIONS)].to_lower()
 
-	$ChoicePanel.get_node("ItemList").connect("item_activated", self, "use_spare_on_character")
-	$ChoicePanel.visible = true
 	$ChoicePanel.init(ConStats.allies)
+	$ChoicePanel.get_node("ItemList").connect("item_activated", self, "use_spare_on_character")
 
 func use_spare_on_character(index):
 	CUR_DECISION.VICTIM = ConStats.allies[index]
 	DecisionStack.add_decision(CUR_DECISION)
-	$ChoicePanel.exit()
-	$ChoicePanel.visible = false
-	$ChoicePanel.get_node("ItemList").disconnect("item_activated", self, "use_spare_on_character")
+	return_to_common_menu("use_spare_on_character")
 
+func return_to_common_menu(processing_method):
+	$ChoicePanel.exit()
+	if $ChoicePanel.get_node("ItemList").is_connected("item_activated", self, processing_method):
+		$ChoicePanel.get_node("ItemList").disconnect("item_activated", self, processing_method)
+	$DebugButtons/KillJevilButton.grab_focus()
 
 # ========================================================== 
 
-
 func _on_ended_decisions_reading():
-	print('_________here comes dialogic!!!_________')
 	var info = Dialogic.start('battle_info')
 	add_child(info)
 	yield(info, 'dialogic_signal')
 	emit_signal("attack_began")
 
-func _on_started_decisions_reading():
-	$DebugButtons.visible = false
 
+func _on_started_decisions_reading():
+	hide()

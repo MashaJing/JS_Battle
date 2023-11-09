@@ -7,13 +7,15 @@ class Action:
 	var icon
 	var description
 	var text_on_used
+	var used_on
 
-	func _init(name, tp_required, text_on_used):
+	func _init(name, tp_required, text_on_used, used_on=null):
 		self.name = name
 		self.tp_required = tp_required
+		self.text_on_used = text_on_used
+		self.used_on = used_on
 		self.icon = null
 		self.description = null
-		self.text_on_used = text_on_used
 
 var AVAILABLE_ACTIONS
 
@@ -33,8 +35,8 @@ func _ready():
 ],
 	"ralsei": [
 		Action.new("R_ACTION", 100, 'chanted something'),
-		Action.new("HEAL_PRAYER", 10, 'casted HEAL PRAYER'),
-		Action.new("PACIFY", 10, 'casted PACIFY')
+		Action.new("HEAL_PRAYER", 10, 'casted HEAL PRAYER', TeamStats.all_heroes),
+		Action.new("PACIFY", 10, 'casted PACIFY', ConStats.allies)
 ]}
 
 
