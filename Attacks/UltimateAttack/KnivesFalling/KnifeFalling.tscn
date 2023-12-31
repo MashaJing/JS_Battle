@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Bullets/DevilsKnife/DevilsKnife.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Attacks/UltimateAttack/KnivesFalling/KnifeFalling.gd" type="Script" id=2]
+[ext_resource path="res://Attacks/UltimateAttack/KnivesFalling/WhiteRay.tscn" type="PackedScene" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 155, 90 )
+
+[node name="KnifeSpawn" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="KnifeOrigin" type="Node2D" parent="."]
+
+[node name="DevilsKnife" parent="KnifeOrigin" instance=ExtResource( 1 )]
+position = Vector2( 0, 90 )
+
+[node name="DestroyArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DestroyArea"]
+position = Vector2( 0, 620 )
+shape = SubResource( 1 )
+
+[node name="WhaiteRaySpawn" parent="DestroyArea" instance=ExtResource( 3 )]
+position = Vector2( 0, 630 )
+
+[connection signal="area_entered" from="DestroyArea" to="." method="_on_DestroyArea_area_entered" flags=6]

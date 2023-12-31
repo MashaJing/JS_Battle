@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Bullets/RandomSpawnPath/RandomSpawnPath.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Attacks/MadSpamAttack/HeadshotsAttack/HeadShotsAttack.gd" type="Script" id=2]
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 230, 170, 0, 0, 0, 0, 510, 170, 0, 0, 0, 0, 560, 170 )
+}
+
+[node name="HeadShotsAttack" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="SpawnHeadsPath" type="Path2D" parent="."]
+position = Vector2( 120, -10 )
+curve = SubResource( 1 )
+
+[node name="RandomSpawnPath" parent="SpawnHeadsPath" instance=ExtResource( 1 )]
+position = Vector2( 230, 170 )
+
+[node name="SpawnHeadTimer" type="Timer" parent="."]
+autostart = true

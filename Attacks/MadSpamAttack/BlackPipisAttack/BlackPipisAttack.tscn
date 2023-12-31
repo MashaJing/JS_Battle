@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Bullets/RandomSpawnPath/RandomSpawnPath.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Attacks/MadSpamAttack/BlackPipisAttack/BlackPipisAttack.gd" type="Script" id=3]
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 510, 120, 0, 0, 0, 0, 800, 320, 0, 0, 0, 0, 520, 580, 0, 0, 0, 0, 240, 320, 0, 0, 0, 0, 510, 120 )
+}
+
+[node name="BlackPipisAttack" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="PipisSpawnPath" type="Path2D" parent="."]
+curve = SubResource( 1 )
+
+[node name="RandomSpawnPath" parent="PipisSpawnPath" instance=ExtResource( 1 )]
+position = Vector2( 510, 120 )
+rotation = 0.603745
+
+[node name="SpawnPipisTimer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="SpawnPipisTimer" to="." method="_on_SpawnPipisTimer_timeout"]

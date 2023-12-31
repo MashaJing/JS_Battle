@@ -41,17 +41,30 @@ func open_menu():
 
 # сигнал поступает от атаки
 func _on_attack_ended():
-	emit_signal("back_to_idle")
-	remove_attack()
-	open_menu()
+	if state in [State.ATTACK, State.CRINGE_ATTACK]:
+		state = State.MENU
+		emit_signal("back_to_idle")
+		remove_attack()
+		open_menu()
+	else:
+		print('ATTENTION: INVALID STATE!')
+		print(state)
+		print('=========================')
 
 # сигнал поступает от интерфейса
 func _on_attack_began():
-	close_menu()
-	TeamStats.choose_target()
-	add_attack()
+	if state == State.MENU:
+		close_menu()
+		TeamStats.choose_target()
+		add_attack()
+		state = State.ATTACK
+	else:
+		print('ATTENTION: INVALID STATE!')
+		print(state)
+		print('=========================')
 
 func add_attack():
+	# иначе как-то организовать ретраи
 	var cur_attack_path = GlobalAttackSettings.get_next()
 	print(cur_attack_path)
 	cur_attack = load(cur_attack_path).instance()
@@ -59,7 +72,6 @@ func add_attack():
 	add_child(cur_attack)
 	
 func remove_attack():
-	
 	if cur_attack != null:
 		remove_child(cur_attack)
 
@@ -76,10 +88,12 @@ func remove_cringe_attack():
 	GAME_OVER_PATH = GlobalAttackSettings.GAME_OVER_PATH
 
 func _on_CringeTimer_timeout():
-	$CringeTimer.stop()
-	cur_attack = add_cringe_attack()
-	yield(cur_attack, "cringe_attack_ended")
-	remove_cringe_attack()
+	if state == State.MENU:
+		state = State.CRINGE_ATTACK
+		$CringeTimer.stop()
+		cur_attack = add_cringe_attack()
+		yield(cur_attack, "cringe_attack_ended")
+		remove_cringe_attack()
 
 # _________________________________________
 

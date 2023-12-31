@@ -1,4 +1,4 @@
-[gd_scene load_steps=108 format=2]
+[gd_scene load_steps=113 format=2]
 
 [ext_resource path="res://Assets/Images/Sprites/Characters/Spamton_2.png" type="Texture" id=1]
 [ext_resource path="res://Characters/Spamton/assets/increase_head/image3x1.png" type="Texture" id=2]
@@ -22,6 +22,7 @@
 [ext_resource path="res://Characters/Jevil/assets/huggies.png" type="Texture" id=20]
 [ext_resource path="res://Characters/Spamton/spam_with_ring.png" type="Texture" id=21]
 [ext_resource path="res://team_stats/CommonPlayerScenes/AnimatedSprite/AnimatedPlayerSprite.tscn" type="PackedScene" id=22]
+[ext_resource path="res://Assets/Images/Sprites/Characters/spam_ultimate_attack.png" type="Texture" id=23]
 
 [sub_resource type="Animation" id=73]
 resource_name = "annoyed"
@@ -445,6 +446,9 @@ tracks/7/keys = {
 "update": 1,
 "values": [ false ]
 }
+
+[sub_resource type="Animation" id=95]
+resource_name = "default_mad_attack"
 
 [sub_resource type="Animation" id=75]
 resource_name = "down"
@@ -1322,6 +1326,18 @@ load_path = "res://.import/image1x1.png-0c37c84af47ad009d61880dcc84cd183.stex"
 atlas = ExtResource( 13 )
 region = Rect2( 0, 8, 27, 37 )
 
+[sub_resource type="AtlasTexture" id=96]
+atlas = ExtResource( 23 )
+region = Rect2( 0, 0, 32, 51 )
+
+[sub_resource type="AtlasTexture" id=97]
+atlas = ExtResource( 23 )
+region = Rect2( 32, 0, 32, 51 )
+
+[sub_resource type="AtlasTexture" id=98]
+atlas = ExtResource( 23 )
+region = Rect2( 67, 0, 31, 51 )
+
 [sub_resource type="AtlasTexture" id=46]
 atlas = ExtResource( 13 )
 region = Rect2( 115, 8, 27, 37 )
@@ -1455,6 +1471,11 @@ animations = [ {
 "name": "default",
 "speed": 5.0
 }, {
+"frames": [ SubResource( 96 ), SubResource( 97 ), SubResource( 98 ), SubResource( 97 ), SubResource( 96 ), SubResource( 97 ), SubResource( 96 ), SubResource( 96 ) ],
+"loop": true,
+"name": "default_mad_attack",
+"speed": 10.0
+}, {
 "frames": [ ExtResource( 6 ) ],
 "loop": true,
 "name": "down",
@@ -1535,6 +1556,7 @@ anims/black_glasses = SubResource( 39 )
 anims/black_glasses_shaking = SubResource( 74 )
 anims/dance = SubResource( 58 )
 anims/default = SubResource( 4 )
+anims/default_mad_attack = SubResource( 95 )
 anims/down = SubResource( 75 )
 anims/fall = SubResource( 2 )
 anims/flip = SubResource( 8 )
@@ -1572,11 +1594,8 @@ ATK = 8
 [node name="AnimatedSpriteController" parent="." instance=ExtResource( 22 )]
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="AnimatedSpriteController"]
-position = Vector2( -60, -52 )
+position = Vector2( -62, -46 )
 scale = Vector2( 2.2, 2.2 )
 z_index = 1
 frames = SubResource( 1 )
-animation = "annoyed"
-speed_scale = 0.8
-playing = true
 offset = Vector2( -5, 0 )

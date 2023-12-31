@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Border/Border.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Attacks/MadSpamAttack/MadSpamAttack.gd" type="Script" id=2]
+[ext_resource path="res://player/KinematicHeart.tscn" type="PackedScene" id=4]
+
+[node name="MadSpamAttack" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="BorderField" parent="." instance=ExtResource( 1 )]
+position = Vector2( 515, 335 )
+scale = Vector2( 0.64, 0.64 )
+
+[node name="KinematicHeart" parent="." instance=ExtResource( 4 )]
+position = Vector2( 520, 330 )

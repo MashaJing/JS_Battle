@@ -54,22 +54,22 @@ var ATTACKS = [
 ##	__________ DRAMA ATTACK ____________
 #	Phase.Drama + "/MonologueAttack.tscn",
 #	__________ PHASE 2 ____________ (отделить папками и тут как-то)	
-	Phase.Phase2 + "/Attack2/Attack2.tscn",
+	"res://Attacks/MadSpamAttack/MadSpamAttack.tscn",
 #	Phase.Phase3 + "/TestAttack/PwdAttack.tscn",
 #	Phase.Phase2 + "/Attack3/Attack3.tscn",
-	Phase.Phase2 + "/NoseAttack/NoseAttack.tscn",
-	Phase.Phase2 + "/MilkAttack/MilkAttack.tscn",
-	Phase.Phase2 + "/Attack2/Attack2.tscn",
+#	Phase.Phase2 + "/NoseAttack/NoseAttack.tscn",
+#	Phase.Phase2 + "/MilkAttack/MilkAttack.tscn",
+#	Phase.Phase2 + "/Attack2/Attack2.tscn",
 #	Phase.Phase2 + "/CardPlay/Party/Party.tscn",
 #	__________ PHASE 3 ____________ (отделить папками и тут как-то)
 #	Phase.Phase2 + "/CarouselKids/CarouselKids.tscn",
-	Phase.Phase2 + "/NoseAttack/NoseAttack.tscn", # переводить в этой фазе в другой режим
-	Phase.Phase3 + "/UnusedJevilAttack/UnusedJevilAttack.tscn",
-	Phase.Phase3 + "/SharedForm/SharedForm.tscn",
-	Phase.Phase3 + "/TestAttack/PwdAttack.tscn",
+#	Phase.Phase2 + "/NoseAttack/NoseAttack.tscn", # переводить в этой фазе в другой режим
+#	Phase.Phase3 + "/UnusedJevilAttack/UnusedJevilAttack.tscn",
+#	Phase.Phase3 + "/SharedForm/SharedForm.tscn",
+#	Phase.Phase3 + "/TestAttack/PwdAttack.tscn",
 #	__________ULTIMATE PHASE ____________
-	Phase.Ultimate + "/UltimateAttack/BadAnimation/BadAnimation.tscn",
-	Phase.Phase2 + "/BallFallingAttack/BallFallingAttack.tscn",
+#	Phase.Ultimate + "/BadAnimation/BadAnimation.tscn",
+#	Phase.Phase2 + "/BallFallingAttack/BallFallingAttack.tscn",
 ]
 
 func get_next():

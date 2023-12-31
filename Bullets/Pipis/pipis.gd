@@ -7,6 +7,8 @@ var time = 0
 var speed = 1
 var ttl = 7
 var G = 0
+export var N = 10
+var damaged = false
 
 
 func _ready():
@@ -18,8 +20,9 @@ func _on_ExplosionTimer_timeout():
 	$CollisionShape2D.queue_free()
 	var Bullet
 	var angle = 0
-	for i in range(10):
+	for i in range(N):
 		Bullet = HeadBullet.instance()
+		Bullet.damaged = self.damaged
 		angle = PI/5 * i
 		Bullet.direction = speed * Vector2(cos(angle), sin(angle))
 		add_child(Bullet)
