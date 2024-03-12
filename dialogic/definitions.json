@@ -4,28 +4,22 @@
 	],
 	"variables": [
 		{
-			"id": "1693156543-827",
-			"name": "user_name",
+			"id": "1694094006-648",
+			"name": "spamvil_made_up",
 			"type": 0,
-			"value": "dzekh"
+			"value": "false"
+		},
+		{
+			"id": "1697568665-648",
+			"name": "info_line",
+			"type": 0,
+			"value": "Smells like debugging"
 		},
 		{
 			"id": "1693156428-507",
 			"name": "user_ip",
 			"type": 0,
-			"value": "121.200.123.123"
-		},
-		{
-			"id": "1693484500-648",
-			"name": "user_country",
-			"type": 0,
-			"value": "Russia"
-		},
-		{
-			"id": "1694094006-648",
-			"name": "spamvil_made_up",
-			"type": 0,
-			"value": "false"
+			"value": ""
 		},
 		{
 			"id": "1693156448-928",
@@ -34,22 +28,64 @@
 			"value": ""
 		},
 		{
+			"id": "1693156543-827",
+			"name": "user_name",
+			"type": 0,
+			"value": "dzekh"
+		},
+		{
 			"id": "1693323930-648",
 			"name": "user_password_valid",
 			"type": 0,
 			"value": "true"
 		},
 		{
+			"id": "1693484500-648",
+			"name": "user_country",
+			"type": 0,
+			"value": ""
+		},
+		{
 			"id": "1693484504-787",
 			"name": "user_region",
 			"type": 0,
-			"value": "Novosibirsk Oblast"
+			"value": ""
 		},
 		{
-			"id": "1697568665-648",
-			"name": "info_line",
+			"id": "1708767849-648",
+			"name": "offered_deal",
 			"type": 0,
-			"value": "Smells like debugging"
+			"value": "false"
+		},
+		{
+			"id": "1708768265-366",
+			"name": "pacify_spamton",
+			"type": 0,
+			"value": "false"
+		},
+		{
+			"id": "1708779048-918",
+			"name": "cookie_banner",
+			"type": 0,
+			"value": "false"
+		},
+		{
+			"id": "1708768581-146",
+			"name": "piruett",
+			"type": 0,
+			"value": "cookie_banner"
+		},
+		{
+			"id": "1708833115-648",
+			"name": "atk_banner_clicked",
+			"type": 0,
+			"value": "false"
+		},
+		{
+			"id": "1709369794-648",
+			"name": "description",
+			"type": 0,
+			"value": ""
 		}
 	]
 }

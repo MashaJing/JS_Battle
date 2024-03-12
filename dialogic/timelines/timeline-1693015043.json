@@ -30,7 +30,7 @@
 			"character": "character-1693017633.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "The God went silent after"
+			"text": "THE GOD WENT SILENT AFTER"
 		},
 		{
 			"call_node": {
@@ -46,7 +46,7 @@
 			"character": "character-1693017633.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "making me truly free"
+			"text": "MAKING ME TRULY FREE\nHEE HEE"
 		},
 		{
 			"character": "character-1693016638.json",
@@ -84,7 +84,7 @@
 			"character": "character-1693017633.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "No, no! You see\nThe kings locked their kingdom around my space of freedom, so[nw=0.01]"
+			"text": "NO, NO! YOU SEE\nTHE KINGS LOCKED THEIR ENTIRE KINGDOM AROUND MY SPACE OF FREEDOM, SO[nw=0.01]"
 		},
 		{
 			"call_node": {
@@ -116,7 +116,7 @@
 			"character": "character-1693017633.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "...\nI was\nthrown to jail\nby my own friend\nHe didn't understand my games for some reason"
+			"text": "...\nI WAS\nTHROWN TO JAIL\nBY MY FRIEND\nHE DIDN'T UNDERSTAND MY GAME FOR SOME REASON"
 		},
 		{
 			"character": "character-1693018075.json",
@@ -128,13 +128,13 @@
 			"character": "character-1693017633.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "All this time I was"
+			"text": "ALL THESE YEARS I WAS"
 		},
 		{
 			"character": "character-1693019058.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "[shake level=10]locked in a cage"
+			"text": "[shake level=10]LOCKED IN A CAGE"
 		},
 		{
 			"call_node": {
@@ -150,7 +150,7 @@
 			"character": "character-1693017633.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "and [pause=0.3][shake level=10]couldn't[/shake] [pause=0.3] help you"
+			"text": "AND [pause=0.3][shake level=10]couldn't[/shake] [pause=0.3] HELP YOU"
 		},
 		{
 			"character": "character-1693016638.json",
@@ -193,7 +193,7 @@
 			"character": "character-1693017633.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "I’m so sorry, sorry! I couldn’t, couldn’t do anything!"
+			"text": "I AM SORRY, SORRY! I COULDN'T\nCOULDN'T DO ANYTHING"
 		},
 		{
 			"call_node": {
@@ -265,7 +265,7 @@
 			"character": "character-1693017633.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "With pleasure, pleasure!"
+			"text": "WITH PLEASURE, PLEASURE!"
 		},
 		{
 			"call_node": {

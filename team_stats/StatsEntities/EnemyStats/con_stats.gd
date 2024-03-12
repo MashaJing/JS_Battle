@@ -16,7 +16,3 @@ var enemies_team = {
 
 func _on_take_damage(victim, damage):
 	enemies_team[victim].take_damage(damage)
-
-
-func _on_heal_Jevil(hp_delta):
-	pass

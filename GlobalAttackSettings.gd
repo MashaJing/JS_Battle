@@ -33,76 +33,79 @@ const CUTSCENES = {
 	# unused
 	cringe_game_over = CUTSCENES_ROOT_PATH + "/JevilDown/JevilDown.tscn",
 	game_over = CUTSCENES_ROOT_PATH + "/GameOver/GameOver.tscn"
+#	CUTSCENES_ROOT_PATH + "/TestingScene.tscn",
 }
-
 
 # STATE-MACHINE ? ПО ФАЗАМ
 var CUR_ATTACK_IND = -1
-# атака:
-# - участники (при смерти одного - опред. катсцена)
-var ATTACKS = [
-#	__________ TESTING ____________
-#	CUTSCENES_ROOT_PATH + "/TestingScene.tscn",
-#	CUTSCENES_ROOT_PATH + "/JevilDown/JevilDown.tscn",
-#	CUTSCENES_ROOT_PATH + "/SpamDown/SpamDown.tscn",
-#	_______________________________
-#	CUTSCENES_ROOT_PATH +"/PreBattle/PreBattleDialogue.tscn",
-#	__________ DULL ATTACKS ____________
-#	Phase.Dull + "/Dimonds_Minitons/Attack1.tscn",
-#	Phase.Dull + "/DullSpamton/DullSpamton.tscn",
-#	Phase.Dull + "/DullJevil/DullJevil.tscn",
-##	__________ DRAMA ATTACK ____________
-#	Phase.Drama + "/MonologueAttack.tscn",
-#	__________ PHASE 2 ____________ (отделить папками и тут как-то)	
-	"res://Attacks/MadSpamAttack/MadSpamAttack.tscn",
+
+# есть два вида фаз:
+# меняется только извне
+var CUR_PHASE_IND = 0
+
+var PHASE_0 = [
+	Phase.Dull + "/Dimonds_Minitons/Attack1.tscn",
+	Phase.Dull + "/DullSpamton/DullSpamton.tscn",
+	Phase.Dull + "/DullJevil/DullJevil.tscn",
+]
+
+var PHASE_1 = [
+	Phase.Drama + "/MonologueAttack.tscn",
+]
+
+var PHASE_2 = [
 #	Phase.Phase3 + "/TestAttack/PwdAttack.tscn",
-#	Phase.Phase2 + "/Attack3/Attack3.tscn",
+	Phase.Phase2 + "/Attack3/Attack3.tscn",
 #	Phase.Phase2 + "/NoseAttack/NoseAttack.tscn",
-#	Phase.Phase2 + "/MilkAttack/MilkAttack.tscn",
-#	Phase.Phase2 + "/Attack2/Attack2.tscn",
+]
+var PHASE_3 = [
+#	__________ PHASE 2 ____________ (отделить папками и тут как-то)	
+	Phase.Phase2 + "/Attack2/Attack2.tscn",
 #	Phase.Phase2 + "/CardPlay/Party/Party.tscn",
 #	__________ PHASE 3 ____________ (отделить папками и тут как-то)
 #	Phase.Phase2 + "/CarouselKids/CarouselKids.tscn",
 #	Phase.Phase2 + "/NoseAttack/NoseAttack.tscn", # переводить в этой фазе в другой режим
-#	Phase.Phase3 + "/UnusedJevilAttack/UnusedJevilAttack.tscn",
-#	Phase.Phase3 + "/SharedForm/SharedForm.tscn",
 #	Phase.Phase3 + "/TestAttack/PwdAttack.tscn",
-#	__________ULTIMATE PHASE ____________
-#	Phase.Ultimate + "/BadAnimation/BadAnimation.tscn",
-#	Phase.Phase2 + "/BallFallingAttack/BallFallingAttack.tscn",
+#	"res://Attacks/MadSpamAttack/MadSpamAttack.tscn",
+
 ]
 
+var PHASE_4 = [
+#	Phase.Phase2 + "/MilkAttack/MilkAttack.tscn",
+#	Phase.Phase3 + "/SharedForm/SharedForm.tscn",
+	Phase.Phase3 + "/UnusedJevilAttack/UnusedJevilAttack.tscn",
+#	Phase.Phase2 + "/BallFallingAttack/BallFallingAttack.tscn",	
+]
+
+var PHASE_ULTIMATE = [
+	Phase.Ultimate + "/BadAnimation/BadAnimation.tscn",
+]
+
+var MAD_SPAM = []
+
+var ATTACKS = [PHASE_0, PHASE_1, PHASE_2, PHASE_3, PHASE_4]
+
+
+func start_next_phase():
+	CUR_PHASE_IND += 1
+	CUR_ATTACK_IND = -1
+
+
+# достаёт атаку из массива атак текущей фазы
 func get_next():
 	CUR_ATTACK_IND += 1
-	# выкидывать первые две фазы, если они помирились
-	if CUR_ATTACK_IND < len(ATTACKS):
-		var attack = ATTACKS[CUR_ATTACK_IND]
-		return attack
-	else:
-		print('а всё, а больше нет атак')
-
-
-func get_attack():
-	if CUR_ATTACK_IND < len(ATTACKS):
-		var attack = ATTACKS[CUR_ATTACK_IND]
-		return attack
+	# выкидывать первые две фазы, если они помирились - глобально задать первой фазой 2
+	print(ATTACKS[CUR_PHASE_IND])
+	if CUR_ATTACK_IND >= len(ATTACKS[CUR_PHASE_IND]):
+		CUR_ATTACK_IND = 0
+	return ATTACKS[CUR_PHASE_IND][CUR_ATTACK_IND]
 
 
 func _on_jevil_down():
-	ATTACKS.insert(CUR_ATTACK_IND+1, CUTSCENES.jevil_down)
+	ATTACKS.insert(CUR_PHASE_IND+1, [CUTSCENES.jevil_down])
 	ATTACKS.resize(CUR_ATTACK_IND+2)
 
 
 func _on_spam_down():
-	ATTACKS.insert(CUR_ATTACK_IND+1, CUTSCENES.spam_down)
+	ATTACKS.insert(CUR_ATTACK_IND+1, [CUTSCENES.spam_down])
 	ATTACKS.resize(CUR_ATTACK_IND+2)
-
-# непонятно, как атаку связывать с фазой. Зачем мне это?
-# - чтобы определять режим конкретной атаки (в NoseAttack и т.д.) - 
-# - чтобы красиво обращаться по пути "фаза"/"атака"
-
-
-#func pick_random():
-#	if len(PARTIES) > 0:
-#		var pos = randi() % len(PARTIES)
-#		return PARTIES.pop_at(pos)

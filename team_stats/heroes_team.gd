@@ -49,9 +49,9 @@ func _on_tp_increased():
 	print("TP: ", TP)
 
 
-func _on_tp_decreased(tp_delta):
+func _on_tp_decreased(tp_spent):
 	print('_________TP DECREASED!_________')
-	TP -= tp_delta
+	TP -= tp_spent
 	if TP < 0:
 		TP = 0
 	print("TP: ", TP)
@@ -60,12 +60,6 @@ func _on_tp_decreased(tp_delta):
 # мб сразу в ридере и вызывать?
 func _on_defend(defender):
 	defender.defend()
-
-
-# мб сразу в ридере и вызывать?
-func _on_heal(healed_player, hp_delta):
-	healed_player.healed(hp_delta)
-
 
 func _on_ally_down(ally):
 	heroes.erase(ally)
@@ -83,7 +77,6 @@ func _on_ally_up(ally):
 	heroes.append(ally)
 	heroes.sort_custom(HeroSorter, "sort")
 	DecisionStack.MAX_SIZE = len(TeamStats.heroes)
-
 
 
 func choose_target(targets: Node2D = null) -> void:

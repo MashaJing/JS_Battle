@@ -18,7 +18,6 @@ func take_damage():
 	# сигнал для детей
 	emit_signal("take_damage")
 	$CollisionPolygon2D.set_deferred("disabled", true)
-	print('took_damage')
 
 	# сигнал о получении дамага (принимает Attacktarget в сцене main)
 	# тут высчитывается hp_delta на осовании АТК + DEF

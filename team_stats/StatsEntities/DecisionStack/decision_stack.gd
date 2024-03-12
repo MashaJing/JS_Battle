@@ -3,6 +3,7 @@ extends Node2D
 var DECISIONS = []
 var MAX_SIZE = 3
 
+signal decision_canceled
 
 func _ready():
 	print('HERE IS HOW STACK SEES IT')
@@ -19,6 +20,7 @@ func add_decision(new_decision):
 func pop_decision():
 	if len(DECISIONS) > 0:
 		return DECISIONS.pop_front()
+		emit_signal("decision_canceled")
 	else:
 		print("trying to get decision from empty stack")
 

@@ -5,9 +5,9 @@ class HealItem:
 	var hp_delta
 	var reserved = false
 	
-	func _init(name, hp_delta):
+	func _init(name, _hp_delta):
 		self.name = name
-		self.hp_delta = hp_delta
+		self.hp_delta = _hp_delta
 
 # СКОЛЬКО?
 var MAX_CONTENTS_LEN = 15
@@ -43,7 +43,7 @@ func reserve_item(index):
 
 func release_item(index):
 	# возможно, тут тоже потребуется get_item_index_with_reserved
-	print('item ' + name + ' released')
+	print('item ' + CONTENTS[index].name + ' released')
 	CONTENTS[index].reserved = false
 	return CONTENTS[index]
 

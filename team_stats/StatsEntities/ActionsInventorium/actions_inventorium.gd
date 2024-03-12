@@ -22,22 +22,20 @@ var AVAILABLE_ACTIONS
 
 func _ready():
 	AVAILABLE_ACTIONS = {
-	"kris":[ 
-		Action.new("K_ACTION", 100, 'gazed strangely'),
-		Action.new("PIRUETT", 10, 'spun around'),
-		Action.new("X_SLASH", 10, 'used X-Slash'),
-		Action.new("FRIED_PIPIS", 10, 'asked for fried pipis... but Jevil already ate it all!')
+	"Kris":[ 
+		Action.new("K_ACTION", 10, 'gazed strangely'),
+		Action.new("PIRUETT", 20, 'spun around'),
+		Action.new("X_SLASH", 50, 'used X-Slash'),
+		Action.new("FRIED_PIPIS", 10, 'asked for fried pipis... but Jevil already ate it all!'),
+		Action.new("OFFER_DEAL", 0, 'asked Spamton if he sells bath bombs') # тут замутить атаку с пиписами
 ],
-	"susie": [
+	"Susie": [
 		Action.new("S_ACTION", 10, 'spun something around'),
 		Action.new("RUDE_BUSTER", 50, 'used RUDE BUSTER'),
 		Action.new("ULTIMATE_HEAL", 99, 'casted ULTIMATE HEAL')  # Дни практики творят чудеса
 ],
-	"ralsei": [
-		Action.new("R_ACTION", 100, 'chanted something'),
+	"Ralsei": [
+		Action.new("R_ACTION", 10, 'chanted something'),
 		Action.new("HEAL_PRAYER", 10, 'casted HEAL PRAYER', TeamStats.all_heroes),
 		Action.new("PACIFY", 10, 'casted PACIFY', ConStats.allies)
 ]}
-
-
-#func get_action_tp(name):

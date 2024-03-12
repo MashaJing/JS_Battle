@@ -46,7 +46,7 @@
 			"character": "character-1693017633.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "You can always make new ones, can't you?"
+			"text": "YOU CAN ALWAYS MAKE NEW ONES, CAN'T YOU?"
 		},
 		{
 			"call_node": {
@@ -77,7 +77,7 @@
 			"character": "character-1693017633.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "I mean, you'll spawn them again in a minute anyway, anyway"
+			"text": "I MEAN, SOON YOU'LL SPAWN THEM AGAIN ANYWAY, ANYWAY"
 		},
 		{
 			"call_node": {

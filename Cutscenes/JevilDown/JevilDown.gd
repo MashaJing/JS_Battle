@@ -5,6 +5,7 @@ extends Node2D
 func prepare_user_region(user_ip):
 	$HTTPRequest.connect("request_completed", self, "_on_request_completed")
 	$HTTPRequest.request("http://demo.ip-api.com/json/" + user_ip)
+	print('------------------------prepared!------------------------')
 
 
 

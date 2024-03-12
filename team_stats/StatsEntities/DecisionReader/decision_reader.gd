@@ -11,20 +11,17 @@ var TMP_DEC_LIST = [
 signal start_decisions_reading
 signal end_decisions_reading
 
-signal attack_jevil
-signal attack_spamton
+#signal attack_jevil
+#signal attack_spamton
+signal attack
 
-signal heal_kris
-signal heal_susie
-signal heal_ralsei
-
-signal defend_kris
-signal defend_susie
-signal defend_ralsei
-
-signal spare_kris
-signal spare_susie
-signal spare_ralsei
+# описать реакции на действия source/receiver: start_attack / receive_attack
+# все реакции на действия реализованы внутри получателей
+# heal(kris) - глобальный эммитер по 1 аргументу поймёт, кому переслать
+# логгер слушает глобальный эммитер, логгер не сильно умный
+signal heal(_name, hp_delta)
+signal defend(_name)
+signal spare(_name)
 
 
 # читает стек и шлёт сигналы в разные узлы
@@ -35,51 +32,52 @@ func start():
 	Inventorium.clear_reserved()
 
 	var decision_text = ''
-	for i in range(DecisionStack.MAX_SIZE):
+	for decision in DecisionStack.DECISIONS:
+		print(decision.TYPE)
+		
+	for i in range(len(DecisionStack.DECISIONS)):
 		var current_decision = DecisionStack.pop_decision()
-		decision_text = decision_text + '* '+ current_decision.DECIDER
 		match current_decision.TYPE:
 			'DEFENSE':
-				decision_text = decision_text + ' defended!\n'
 				defense(current_decision)
 			'ACT':
-				decision_text = decision_text + ' ' + current_decision.ACTION.text_on_used + '!\n'
 				action(current_decision)
 				# + additional_text ("Атака Д. уменьшилась!") - идет доп полем в решении
 			'ITEM':
 				decision_text = decision_text + ' used ' + current_decision.ITEM.name + '!\n'
 				item(current_decision)
 			'ATTACK':
-				# позже прокинем АТК десайдера, пока кнопка только убивает
-				attack(current_decision, 10000)
+				attack(current_decision)
 			'SPARE':
 				decision_text = decision_text + ' spared ' + current_decision.VICTIM + '...\n'
 				spare(current_decision)
-	
-	Dialogic.set_variable("info_line", decision_text)
 
 	# ПЕРЕХОД В МЕНЮ ОБРАТНО
 	emit_signal("end_decisions_reading")
 
+
 func spare(decision):
 	# в con_stats реализовать обработчик сигнала пощады - там будет проверяться возможность пощады (и готовность в %)
-	emit_signal("spare_" + decision.DECIDER, decision.VICTIM)
+	emit_signal("spare", decision.DECIDER, decision.VICTIM)
+	BattleInfoLogger.append_line(decision.DECIDER + ' spare ' + decision.VICTIM)
 
 
 func defense(decision):
-	emit_signal("defend_" + decision.DECIDER)
+	emit_signal("defend", decision.DECIDER)
 
 
 func action(decision):
-#	обращение в глобальный обработчик действий, который занимается всем менеджментом действий
+#	обращение в глобальный обработчик действий
 	ActionsController.confirm_action(decision)
 
 
-func attack(decision, damage):
+func attack(decision):
 	 # из действующего лица можно прокинуть значение АТК 3-им аргументом
 	print('attacked victim in reader!')
-	emit_signal("attack_%s" % decision.VICTIM.to_lower(), damage)
+	# позже прокинем АТК десайдера, пока кнопка только убивает
+	emit_signal("attack", decision.VICTIM, 100000)
 
 
 func item(decision):
-	emit_signal("heal_%s" % decision.VICTIM.to_lower(), decision.ITEM.hp_delta)
+	BattleInfoLogger.append_line(decision.VICTIM + ' used ' + decision.ITEM.name)
+	emit_signal("heal", decision.VICTIM, decision.ITEM.hp_delta)

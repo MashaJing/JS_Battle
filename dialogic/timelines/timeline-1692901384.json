@@ -244,7 +244,7 @@
 			"character": "character-1692900298.json",
 			"event_id": "dialogic_001",
 			"portrait": "Default",
-			"text": "* Here comes Jevil’s encore, boysngirls!"
+			"text": "* HERE COMES JEVIL'S ENCORE, BOYSNGIRLS!"
 		},
 		{
 			"call_node": {
@@ -356,7 +356,7 @@
 			"character": "character-1692900298.json",
 			"event_id": "dialogic_001",
 			"portrait": "(Don't change)",
-			"text": "* No, what are YOU doing in this world?\n* You are prohibited from coming within 300 meters of schools, schools"
+			"text": "* NO, WHAT ARE YOU DOING IN THIS WORLD?\n* YOU ARE PROHIBITED FROM COMING WITHIN 300 METERS OF SCHOOLS, SCHOOLS"
 		},
 		{
 			"animation": "slide_out_left.gd",
@@ -448,7 +448,7 @@
 			"character": "character-1692900298.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "* It means that today we perform in tandem, Pinocchio"
+			"text": "* IT MEANS THAT TODAY WE PERFORM IN TANDEM, PINOCCHIO"
 		},
 		{
 			"animation": "slide_out_left.gd",
@@ -766,7 +766,7 @@
 			"character": "character-1692898558.json",
 			"event_id": "dialogic_001",
 			"portrait": "Pathetic",
-			"text": "* THaT \t[cake] W1TH [body parts] AGAIN!?\n* D0N'T CONFUSE THe [Chaos\\,Chaos] W1TH [marasmus\\, marasmus]"
+			"text": "* THaT \t[cake] W1TH [body parts] AGAIN!?\n* D0N'T CONFUSE THe Chaos, Chaos W1TH [marasmus marasmus]"
 		},
 		{
 			"animation": "slide_out_left.gd",
@@ -812,7 +812,7 @@
 			"character": "character-1692900298.json",
 			"event_id": "dialogic_001",
 			"portrait": "Default",
-			"text": "* Your wish is predictable, predictable! Wanna lose all your gold as always?"
+			"text": "* YOUR WISH IS PREDICTABLE, PREDICTABLE! WANNA LOSE ALL YOUR GOLD AS ALWAYS?"
 		},
 		{
 			"call_node": {

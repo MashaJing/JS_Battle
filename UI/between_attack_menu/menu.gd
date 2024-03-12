@@ -1,6 +1,6 @@
 extends Node
 
-signal attack_began
+signal menu_ended
 
 signal decided
 signal canceled
@@ -26,78 +26,13 @@ func open_menu():
 	state = State.KRIS_TURN
 	$AnimationPlayer.handle_state(State.KRIS_TURN)
 
-func switch_to_susie_from_kris():
-	# лучше вынести, чтобы animationplayer не повторялся
-	# внутри плеера сделать свитч, при вызове сметода делать update стейта
-	# свитч внутри плеера ведет себя по стейту
-	$AnimationPlayer.play("kris_turn", -1, 1.0, true)
-	$AnimationPlayer.play("susie_turn")
-	state = State.SUSIE_TURN
-
-func switch_to_susie_from_ralsei():
-	$AnimationPlayer.play("ralsei_turn", -1, 1.0, true)
-	$AnimationPlayer.play("susie_turn")
-	state = State.SUSIE_TURN
-
-func switch_to_kris():
-	$AnimationPlayer.play("susie_turn", -1, 1.0, true)
-	$AnimationPlayer.play("kris_turn")
-	state = State.KRIS_TURN
-
-func switch_to_ralsei():
-	$AnimationPlayer.play("susie_turn", -1, 1.0, true)
-	$AnimationPlayer.play("ralsei_turn")
-	state = State.RALSEI_TURN
-
 func close_menu():
+	$DebugButtons/DescriptionLabel.visible = false
 	$AnimationPlayer.play("ralsei_turn", -1, 1.0, true)
 	state = State.CLOSED
 
-# на ентер
-func _on_made_turn():
-	match state:
-		State.CLOSED:
-			pass
-		State.KRIS_TURN:
-			# передавать аргументом решение
-			emit_signal("decided")
-			switch_to_susie_from_kris()
-		State.SUSIE_TURN:
-			emit_signal("decided")
-			switch_to_ralsei()
-		State.RALSEI_TURN:
-			emit_signal("decided")
-			close_menu()
-
-# на x
-func _on_canceled_turn():
-	match state:
-		State.CLOSED:
-			pass
-		State.KRIS_TURN:
-			pass
-		State.SUSIE_TURN:
-			switch_to_kris()
-			emit_signal("canceled")
-		State.RALSEI_TURN:
-			switch_to_susie_from_ralsei()
-			# важно помнить, что это отмена хода не Ральзея, а Сьюзи
-			emit_signal("canceled")
-
 func _ready():
-	DecisionReader.connect("start_decisions_reading", self, "_on_started_decisions_reading")
-	DecisionReader.connect("end_decisions_reading", self, "_on_ended_decisions_reading")
-#	while len(DecisionStack.DECISIONS) < 3:
-#		pass
-#	print('that s all folks')
-	# вызывать ридера
-#	var team = ['kris', 'susie', 'ralsei']
-#	$AnimationPlayer.play("hide_all", -1, 1.0, true)
-#	# а как откатывать? -_- стейт-машина!!!
-#	for member in team:
-#		print(member)
-#		yield(self, "decided")
-#	call_deferred("emit_signal", "attack_began")
+	_init_signals()
 
 func _on_decided():
 	# choice может собираться из глобальных переменных скрипта,
@@ -106,29 +41,35 @@ func _on_decided():
 	# choice обогатить, пихнуть в стек
 	DecisionStack.add_decision(choice)
 
-func _on_canceled():
-	DecisionStack.pop_decision()
-
 func hide():
 	$AnimationPlayer.play("hide_all")
 	$DebugButtons.visible = false
 
 # должно вызываться 1 раз при открытии всего меню, а не отдельной панельки
 func unhide():
-	GlobalDialogueSettings.get_next()
-	display_battle_info()
-	
+	$DebugButtons/KillJevilButton.grab_focus()
 	$AnimationPlayer.play("hide_all", -1, 1.0, true)
 	$DebugButtons.visible = true
+	var description = GlobalDialogueSettings.get_current_description()
+	show_letters(description)
 
-func display_battle_info():
-#	var dialogue = Dialogic.start("battle_info")
-#	add_child(dialogue)
-	$DebugButtons/KillJevilButton.grab_focus()
+# __________________DESCRIPTION STRING___________________________
 
-# _________________________DEBUG____________________________
+func show_letters(text):
+	$DebugButtons/DescriptionLabel.visible_characters = 0
+	$DebugButtons/DescriptionLabel.text = text
+	$LetterTimer.start()
+	for i in range(len(text)):
+		yield($LetterTimer, "timeout")
+		$DebugButtons/DescriptionLabel.visible_characters += 1
+	$LetterTimer.stop()
+	$DebugButtons/DescriptionLabel.visible = true
+
+# _________________________DEBUG_________________________________
 
 func _on_KillJevilButton_button_down():
+	# по приколу оставить и скамить людей (на самом деле, кнопка повышает атаку джевила в 10000000 раз)
+	# цель: ваншотнуть и позлить
 	kill_ally('JEVIL')
 
 func _on_KillSpamtonButton_button_down():
@@ -143,16 +84,23 @@ func kill_ally(ally_name):
 # ========================= ITEM ========================= 
 
 func _on_ItemButton_button_down():
+	# Шаг 1. Составить панель с выбором айтемов и дождаться выбора доступной хилки	
 	$ChoicePanel.init(Inventorium.get_visible_items())
 	$ChoicePanel.get_node("ItemList").connect("item_activated", self, "use_item")
 
 func use_item(index):
+	# current блеать
 	CUR_DECISION = Decision.instance()
 	CUR_DECISION.TYPE = 'ITEM'
 	CUR_DECISION.DECIDER = TeamStats.heroes[len(DecisionStack.DECISIONS)].to_lower()
+
+	# Шаг 2. Зарезервировать выбранную хилку
 	CUR_DECISION.ITEM = Inventorium.reserve_item(index)
+
+	# Шаг 3. Вернуться в общее меню
 	return_to_common_menu("use_item")
 
+	# Шаг 4. Составить панель с выбором получателя хилки и дождаться выбора
 	$ChoicePanel.init(TeamStats.all_heroes)
 	$ChoicePanel.get_node("ItemList").connect("item_activated", self, "use_item_on_character")
 
@@ -165,11 +113,11 @@ func use_item_on_character(index):
 
 func _on_DefendButton_button_down():
 	CUR_DECISION = Decision.instance()
-	
-	# тут заменить на cur_carracter, т.к. не всегда все будут доступны
+
+	# тут заменить на cur_character, т.к. не всегда все будут доступны
 	CUR_DECISION.DECIDER = TeamStats.heroes[len(DecisionStack.DECISIONS)].to_lower()
 	CUR_DECISION.TYPE = 'DEFENSE'
-	DecisionReader.emit_signal("defend_" + CUR_DECISION.DECIDER)
+	DecisionReader.emit_signal("defend", CUR_DECISION.DECIDER)
 	DecisionStack.add_decision(CUR_DECISION)
 
 # ========================= ACTION ========================= 
@@ -177,11 +125,11 @@ func _on_DefendButton_button_down():
 func _on_ActButton_button_down():
 	CUR_DECISION = Decision.instance()
 	CUR_DECISION.TYPE = 'ACT'
-	CUR_DECISION.DECIDER = TeamStats.heroes[len(DecisionStack.DECISIONS)].to_lower()
+	CUR_DECISION.DECIDER = TeamStats.heroes[len(DecisionStack.DECISIONS)]
 
 	$ChoicePanel.get_node("ItemList").connect("item_activated", self, "use_action")
 	$ChoicePanel.init_actions(ActionsInventorium.AVAILABLE_ACTIONS[CUR_DECISION.DECIDER])
-	
+
 
 func use_action(index):
 	CUR_DECISION.ACTION = ActionsInventorium.AVAILABLE_ACTIONS[CUR_DECISION.DECIDER][index]
@@ -192,12 +140,12 @@ func use_action(index):
 		$ChoicePanel.get_node("ItemList").connect("item_activated", self, "use_action_on_character")
 		$ChoicePanel.init(CUR_DECISION.ACTION.used_on)
 	else:
-		DecisionStack.add_decision(CUR_DECISION)	
+		DecisionStack.add_decision(CUR_DECISION)
 
 func use_action_on_character(index):
 	CUR_DECISION.VICTIM = CUR_DECISION.ACTION.used_on[index]
 	return_to_common_menu("use_action_on_character")
-	DecisionStack.add_decision(CUR_DECISION)	
+	DecisionStack.add_decision(CUR_DECISION)
 
 # ========================= SPARE ========================= 
 
@@ -223,11 +171,22 @@ func return_to_common_menu(processing_method):
 # ========================================================== 
 
 func _on_ended_decisions_reading():
-	var info = Dialogic.start('battle_info')
-	add_child(info)
-	yield(info, 'dialogic_signal')
-	emit_signal("attack_began")
+	# должен быть глобальный эммитер, который получает и отправляет сообщения подписчикам - так отвяжем всю-всю логику решений от меню
+	emit_signal("menu_ended")
 
 
 func _on_started_decisions_reading():
 	hide()
+
+
+# X нужно слушать на уровне меню и слать сигнал canceled всем заинтересованным. Каждый слушатель реализует реакцию по-своему (возможна дефолтная реализация)
+func _input(ev):
+	if Input.is_key_pressed(KEY_X):
+		print('_____________EMITED CANCELED_____________')
+		emit_signal("canceled")
+
+func _init_signals():
+	DecisionReader.connect("start_decisions_reading", self, "_on_started_decisions_reading")
+	DecisionReader.connect("end_decisions_reading", self, "_on_ended_decisions_reading")
+
+	connect('canceled', DecisionStack, "pop_decision")

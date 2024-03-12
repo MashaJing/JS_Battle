@@ -27,7 +27,7 @@ func _ready():
 	$PlayerStats.connect(\"TookDamage\", $AnimatedSpriteController, \"_on_Took_Damage\")
 
 	$PlayerStats.connect(\"Down\", GlobalAttackSettings, \"_on_jevil_down\")
-	DecisionReader.connect(\"attack_jevil\", $PlayerStats, \"take_damage\")
+	DecisionReader.connect(\"attack\", $PlayerStats, \"take_damage\")
 	$AnimatedSpriteController/AnimatedSprite.flip_h = flipped
 	print('Jevil ready')
 

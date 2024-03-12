@@ -24,7 +24,7 @@
 			"character": "character-1693017633.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Attention, Attention!\nA joke!\nWhy I was in favour of the kings?"
+			"text": "ATTENTION, ATTENTION!\nA JOKE!\nWHY I WAS IN FAVOUR OF THE KINGS?"
 		},
 		{
 			"character": "character-1693016638.json",
@@ -36,7 +36,7 @@
 			"character": "character-1693017633.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "because I was very...\nCHAOSMATIC, CHAOSMATIC!"
+			"text": "BECAUSE I WAS...\nCHAOSMATIC, CHAOSMATIC!"
 		},
 		{
 			"call_node": {
@@ -74,7 +74,7 @@
 			"character": "character-1693017633.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Maybe, but a little cringe might be fun"
+			"text": "MAYBE\nBUT A LITTLE CRINGE MIGHT BE FUN, FUN!"
 		},
 		{
 			"emit_signal": "",

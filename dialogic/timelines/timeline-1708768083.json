@@ -1,0 +1,128 @@
+{
+	"events": [
+		{
+			"condition": "",
+			"definition": "1708768581-146",
+			"event_id": "dialogic_012",
+			"value": "atk_up"
+		},
+		{
+			"character": "character-1697568555.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "* Awkward! Jevils ATK increases for the next turn!"
+		},
+		{
+			"event_id": "dialogic_013"
+		},
+		{
+			"condition": "==",
+			"definition": "1708768581-146",
+			"event_id": "dialogic_012",
+			"value": "cookie"
+		},
+		{
+			"change_timeline": "timeline-1708741549.json",
+			"event_id": "dialogic_020"
+		},
+		{
+			"event_id": "dialogic_013"
+		},
+		{
+			"condition": "",
+			"definition": "1708768581-146",
+			"event_id": "dialogic_012",
+			"value": "kangaderro"
+		},
+		{
+			"character": "character-1697568555.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "* It is just a useless banner!\nTAKE A RIDE AROUND TOWN IN OUR SPECIAL KUNGADERRO™"
+		},
+		{
+			"event_id": "dialogic_013"
+		},
+		{
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_012",
+			"value": "clown_juice"
+		},
+		{
+			"character": "character-1697568555.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "* Clown juice was added to your inventory, though you didn't ask for it"
+		},
+		{
+			"event_id": "dialogic_013"
+		},
+		{
+			"condition": "",
+			"definition": "1708768581-146",
+			"event_id": "dialogic_012",
+			"value": "soundtrack"
+		},
+		{
+			"character": "character-1697568555.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "* Time to face the music"
+		},
+		{
+			"character": "character-1693017633.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "CHECK THIS OUT!"
+		},
+		{
+			"event_id": "dialogic_013"
+		},
+		{
+			"condition": "",
+			"definition": "1708768581-146",
+			"event_id": "dialogic_012",
+			"value": "atk_up_prompt"
+		},
+		{
+			"change_timeline": "timeline-1708768197.json",
+			"event_id": "dialogic_020"
+		},
+		{
+			"event_id": "dialogic_013"
+		},
+		{
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_012",
+			"value": "slow_mo"
+		},
+		{
+			"character": "character-1697568555.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "* HAPPY HOUR! Next attack will be slowed down on 30%"
+		},
+		{
+			"event_id": "dialogic_013"
+		},
+		{
+			"definition": "1708768581-146",
+			"event_id": "dialogic_014",
+			"operation": "=",
+			"random_upper_limit": 100,
+			"set_random": false,
+			"set_value": ""
+		},
+		{
+			"emit_signal": "",
+			"event_id": "dialogic_040"
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.4.5",
+		"file": "timeline-1708768083.json",
+		"name": "piruett_info"
+	}
+}

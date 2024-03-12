@@ -1,15 +1,15 @@
 {
 	"events": [
 		{
-			"character": "character-1693017633.json",
+			"character": "character-1693016638.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "WHAT IS BOTH MUSIC AND FOOD?"
+			"text": "LITTLE SPONGE WANTS MORE [HOT DEALS]?!!"
 		},
 		{
 			"call_node": {
 				"arguments": [
-					"hands_up"
+					"laugh"
 				],
 				"method_name": "play",
 				"target_node_path": "Main/Spamton/AnimationPlayer"
@@ -17,10 +17,9 @@
 			"event_id": "dialogic_042"
 		},
 		{
-			"character": "character-1693016638.json",
-			"event_id": "dialogic_001",
-			"portrait": "",
-			"text": " [heavy metal]S !!!"
+			"event_id": "dialogic_023",
+			"hide_dialogbox": true,
+			"wait_seconds": 1
 		},
 		{
 			"call_node": {
@@ -33,16 +32,10 @@
 			"event_id": "dialogic_042"
 		},
 		{
-			"character": "character-1693017633.json",
+			"character": "character-1693016638.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "CHEAP TUNA"
-		},
-		{
-			"character": "character-1693014286.json",
-			"event_id": "dialogic_001",
-			"portrait": "",
-			"text": "Kris, sounds like a cool lunch idea"
+			"text": "[HEAVEN], ARE U WATCHING????\n MY UNLUCKY DAYS ARE [146%] OVER!\nFOR THE PAST YEAR YOU RE MY [SECOND] CUSTUMER! MY [FIRST] CUSTUMER WAS ALSO YOU !!!!"
 		},
 		{
 			"emit_signal": "",
@@ -51,7 +44,7 @@
 	],
 	"metadata": {
 		"dialogic-version": "1.4.5",
-		"file": "timeline-1694015148.json",
-		"name": "joke_metals"
+		"file": "timeline-1708755387.json",
+		"name": "deal_offer"
 	}
 }

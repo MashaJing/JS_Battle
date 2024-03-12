@@ -14,7 +14,7 @@
 			"character": "character-1693017633.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Why do you call me traitor, traitor?"
+			"text": "WHY DO YOU CALL ME TRAITOR, TRAITOR??"
 		},
 		{
 			"call_node": {
@@ -40,7 +40,7 @@
 			"character": "character-1693016638.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "WHO  [else] ARE YOU !?\nPRETENDED TO BE MY [[friendship is magic!]]"
+			"text": "WHO  [else] ARE YOU !????\nPRETENDED TO BE MY [[friendship is magic!]]"
 		},
 		{
 			"call_node": {
@@ -72,7 +72,7 @@
 			"character": "character-1693016638.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "BUT WHEN I [bankrupt], YOU JUST GOT   [number unavailable]"
+			"text": "BUT WHEN I [broke], YOU JUST GOT   [number unavailable]"
 		},
 		{
 			"call_node": {
@@ -104,7 +104,7 @@
 			"character": "character-1693017633.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "What?! That is un-so, un-so!"
+			"text": "WHAT?! THAT IS UN-SO, UN-SO!"
 		},
 		{
 			"character": "character-1693016638.json",
@@ -126,7 +126,7 @@
 			"character": "character-1693017633.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "I just"
+			"text": "I JUST!"
 		},
 		{
 			"call_node": {
@@ -260,7 +260,7 @@
 			"character": "character-1693017633.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "No! The God left me too, too!"
+			"text": "NO! TTHE GOD LEFT ME TOO, TOO!"
 		},
 		{
 			"call_node": {

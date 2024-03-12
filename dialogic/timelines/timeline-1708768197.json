@@ -1,0 +1,34 @@
+{
+	"events": [
+		{
+			"character": "character-1697568555.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "* QUICKLY CLICK THIS BANNER![nw=1]"
+		},
+		{
+			"condition": "",
+			"definition": "1708833115-648",
+			"event_id": "dialogic_012",
+			"value": "true"
+		},
+		{
+			"character": "character-1697568555.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "* Spamtons ATK was increased successfully\n* ...\n* It shouldn't surprise you if you've read the banner carefully"
+		},
+		{
+			"event_id": "dialogic_013"
+		},
+		{
+			"emit_signal": "",
+			"event_id": "dialogic_040"
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.4.5",
+		"file": "timeline-1708768197.json",
+		"name": "attack_increase_banner"
+	}
+}

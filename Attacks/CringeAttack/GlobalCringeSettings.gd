@@ -7,6 +7,7 @@ enum Mode {
 	PUNCH,
 }
 var JOKE_IND = -1
+var TIME_BEFORE_JOKE = 10
 
 # Идут по порядку, чтоб звучало органичнее
 var JOKES = [
