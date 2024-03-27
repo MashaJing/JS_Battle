@@ -25,6 +25,9 @@ var PHASE_3 = [
 	"Smells like casino",
 	"Jevil offers to call their team JS. Spamton doesn't support it",
 	"Spamton whispers about some Christmas kid", # ?
+	"Jevil calls a ... for ripping", # ?
+	"Jevil realizes that he doesn't have a doctor license", # ?
+	"Spamton whispers about some Christmas kid", # ?
 ]
 
 var PHASE_4 = [
