@@ -299,6 +299,11 @@ animations = [ {
 "loop": false,
 "name": "spare",
 "speed": 10.0
+}, {
+"frames": [ ExtResource( 47 ) ],
+"loop": true,
+"name": "start_attack",
+"speed": 5.0
 } ]
 
 [node name="Susie" type="Node2D"]
@@ -317,13 +322,11 @@ stream = ExtResource( 58 )
 position = Vector2( -10, -10 )
 MAX_HP = 190
 HP = 190
-ATK = 19
 
 [node name="AnimatedSpriteController" parent="." instance=ExtResource( 60 )]
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="AnimatedSpriteController"]
 position = Vector2( 0, -40 )
 frames = SubResource( 1 )
-animation = "action"
-frame = 10
+animation = "start_attack"
 playing = true

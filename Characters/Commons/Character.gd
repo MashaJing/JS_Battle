@@ -14,13 +14,14 @@ func _ready():
 	ActionsController.connect("action_start", self, "_on_Action_start")
 	ActionsController.connect("action_end", self, "_on_Action_end")
 
+	AttackController.connect("attack_start", self, "_on_Action_start")
+	AttackController.connect("attack_end", self, "_on_Action_end")
+	# чисто для соперников
+	# AttackController.connect("take_damage", self, "_on_Took_Damage")
+
 
 func _on_get_heal(_name, delta):
 	if name == _name:
-		print('==============YAPEEE============')
-		print(' it is ')
-		print(name)
-		print('==============YAPEEE============')
 		$PlayerStats.heal(delta)
 		$AnimatedSpriteController._on_Healed()
 		# воспроизведение звука
@@ -32,13 +33,12 @@ func _on_defend(_name):
 func _on_spare(_name):
 	if name == _name:
 		$AnimatedSpriteController._on_Spare()
-
-# action_start -> up
-func _on_Action_start(_name):
-	print(_name)
-	print(name)
+		
+		
+# up -> action_start
+func _on_Action_start(_name, action_animation='action'):
 	if name == _name:
-		$AnimatedSpriteController._on_Action_start()
+		$AnimatedSpriteController._on_Action_start(action_animation)
 
 # action_end -> up
 func _on_Action_end(_name, action_animation='action'):

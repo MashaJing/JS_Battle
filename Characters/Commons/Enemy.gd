@@ -6,23 +6,24 @@ func _ready():
 	$PlayerStats.connect("Up", $AnimatedSpriteController, "_on_Up")
 	# обработка хила и дамага сделана по-разному намеренно ввиду различий в этих процессах
 	$PlayerStats.connect("TookDamage", $AnimatedSpriteController, "_on_Took_Damage")
+#	$PlayerStats.connect("Healed", $AnimatedSpriteController, "_on_Healed")
 
-	DecisionReader.connect("heal", self, "_on_get_heal")
-	DecisionReader.connect("defend", self, "_on_defend")
-	DecisionReader.connect("spare", self, "_on_spare")
+#	DecisionReader.connect("heal", self, "_on_get_heal")
+#	DecisionReader.connect("defend", self, "_on_defend")
+#	DecisionReader.connect("spare", self, "_on_spare")
 
-	ActionsController.connect("action_start", self, "_on_Action_start")
-	ActionsController.connect("action_end", self, "_on_Action_end")
+#	ActionsController.connect("action_start", self, "_on_Action_start")
+#	ActionsController.connect("action_end", self, "_on_Action_end")
 
+#	AttackController.connect("attack_start", self, "_on_Action_start")
+#	AttackController.connect("attack_end", self, "_on_Action_end")
+	AttackController.connect("attack", $PlayerStats, "take_damage")
+	$PlayerStats.connect("Down", GlobalAttackSettings, "_on_spam_down")
 
 # ----------------- passive -----------------
 
 func _on_get_heal(_name, delta):
 	if name == _name:
-		print('==============YAPEEE============')
-		print(' it is ')
-		print(name)
-		print('==============YAPEEE============')
 		$PlayerStats.heal(delta)
 		$AnimatedSpriteController._on_Healed()
 		# воспроизведение звука

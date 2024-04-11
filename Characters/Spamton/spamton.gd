@@ -10,7 +10,7 @@ func _ready():
 	$PlayerStats.connect("TookDamage", $AnimatedSpriteController, "_on_Took_Damage")
 
 	$PlayerStats.connect("Down", GlobalAttackSettings, "_on_spam_down")
-	DecisionReader.connect("attack", $PlayerStats, "take_damage")
+	AttackController.connect("attack", $PlayerStats, "take_damage")
 
 	ActionsController.connect("offer_deal", self, "_on_offered_deal")
 	ActionsController.connect("pacify", self, "_on_pacify")

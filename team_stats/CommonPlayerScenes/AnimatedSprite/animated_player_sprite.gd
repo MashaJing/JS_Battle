@@ -3,7 +3,8 @@ const State = {
 	UP = 'default',
 	DOWN = 'down',
 	DEFENSE = 'defend',
-	ACTION_START = 'action_start'
+	ACTION_START = 'action_start',
+	ATTACK_START = 'attack_start',
 }
 var state = State.UP
 
@@ -41,12 +42,13 @@ func _on_new_turn():
 		state = State.UP
 	$AnimatedSprite.play(state)
 
-func _on_Action_start():
+# ... -> action_start/attack_start
+func _on_Action_start(action_start_animation=State.ACTION_START):
 	print('started action')
-	state = State.ACTION_START
+	state = action_start_animation
 	$AnimatedSprite.play(state)
 
-# action_start -> up
+# action_start/attack_start -> up
 func _on_Action_end(action_animation='action'): 
 	print('started action ending animation')
 	$AnimatedSprite.play(action_animation)

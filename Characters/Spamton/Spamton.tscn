@@ -1,4 +1,4 @@
-[gd_scene load_steps=113 format=2]
+[gd_scene load_steps=114 format=2]
 
 [ext_resource path="res://Assets/Images/Sprites/Characters/Spamton_2.png" type="Texture" id=1]
 [ext_resource path="res://Characters/Spamton/assets/increase_head/image3x1.png" type="Texture" id=2]
@@ -9,7 +9,7 @@
 [ext_resource path="res://Characters/Spamton/assets/sweep/Spamton_Dead_3.png" type="Texture" id=7]
 [ext_resource path="res://Characters/Spamton/assets/throw_cash/2.png" type="Texture" id=8]
 [ext_resource path="res://Characters/Spamton/assets/throw_cash/1.png" type="Texture" id=9]
-[ext_resource path="res://Characters/Spamton/spamton.gd" type="Script" id=10]
+[ext_resource path="res://Characters/Commons/Enemy.gd" type="Script" id=10]
 [ext_resource path="res://team_stats/CommonPlayerScenes/PlayerStats.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Characters/Spamton/assets/sweep/Spamton_Dead_2.png" type="Texture" id=12]
 [ext_resource path="res://Assets/Images/Sprites/Characters/Spamton.png" type="Texture" id=13]
@@ -28,7 +28,7 @@
 resource_name = "annoyed"
 length = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("AnimatedSpriteController/AnimatedSprite:animation")
+tracks/0/path = NodePath("AnimatedSpriteController/AnimatedSprite:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -36,8 +36,8 @@ tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0.1 ),
 "transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ "annoyed" ]
+"update": 0,
+"values": [ Vector2( -60, -52 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("AnimatedSpriteController/AnimatedSprite:playing")
@@ -48,11 +48,11 @@ tracks/1/enabled = true
 tracks/1/keys = {
 "times": PoolRealArray( 0.1 ),
 "transitions": PoolRealArray( 1 ),
-"update": 1,
+"update": 0,
 "values": [ true ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("AnimatedSpriteController/AnimatedSprite:position")
+tracks/2/path = NodePath("AnimatedSpriteController/AnimatedSprite:animation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -61,14 +61,14 @@ tracks/2/keys = {
 "times": PoolRealArray( 0.1 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( -60, -52 ) ]
+"values": [ "annoyed" ]
 }
 
 [sub_resource type="Animation" id=70]
 resource_name = "annoyed1"
 length = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("AnimatedSpriteController/AnimatedSprite:animation")
+tracks/0/path = NodePath("AnimatedSpriteController/AnimatedSprite:playing")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -76,11 +76,11 @@ tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ "annoyed1" ]
+"update": 0,
+"values": [ true ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("AnimatedSpriteController/AnimatedSprite:playing")
+tracks/1/path = NodePath("AnimatedSpriteController/AnimatedSprite:animation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -88,15 +88,15 @@ tracks/1/enabled = true
 tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
+"update": 0,
+"values": [ "annoyed1" ]
 }
 
 [sub_resource type="Animation" id=71]
 resource_name = "annoyed2"
 length = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("AnimatedSpriteController/AnimatedSprite:animation")
+tracks/0/path = NodePath("AnimatedSpriteController/AnimatedSprite:playing")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -104,11 +104,11 @@ tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0.1 ),
 "transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ "annoyed2" ]
+"update": 0,
+"values": [ true ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("AnimatedSpriteController/AnimatedSprite:playing")
+tracks/1/path = NodePath("AnimatedSpriteController/AnimatedSprite:animation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -116,8 +116,8 @@ tracks/1/enabled = true
 tracks/1/keys = {
 "times": PoolRealArray( 0.1 ),
 "transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
+"update": 0,
+"values": [ "annoyed2" ]
 }
 
 [sub_resource type="Animation" id=72]
@@ -125,7 +125,7 @@ resource_name = "annoyed3"
 length = 2.2
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("AnimatedSpriteController/AnimatedSprite:animation")
+tracks/0/path = NodePath("AnimatedSpriteController/AnimatedSprite:playing")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -133,35 +133,35 @@ tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0.1 ),
 "transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ "annoyed3" ]
+"update": 0,
+"values": [ false ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("AnimatedSpriteController/AnimatedSprite:frame")
-tracks/1/interp = 1
+tracks/1/path = NodePath("AnimatedSpriteController/AnimatedSprite:position")
+tracks/1/interp = 0
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.1, 0.3, 0.5, 0.7, 0.9, 1.2, 1.4, 1.5, 1.7, 1.8, 2 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("AnimatedSpriteController/AnimatedSprite:position")
-tracks/2/interp = 0
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
 "times": PoolRealArray( 1, 1.2, 1.4 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( -62, -45 ), Vector2( -56, -76 ), Vector2( -62, -45 ) ]
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath("AnimatedSpriteController/AnimatedSprite:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.3, 0.5, 0.7, 0.9, 1.2, 1.4, 1.5, 1.7, 1.8, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 ]
+}
 tracks/3/type = "value"
-tracks/3/path = NodePath("AnimatedSpriteController/AnimatedSprite:playing")
+tracks/3/path = NodePath("AnimatedSpriteController/AnimatedSprite:animation")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -169,8 +169,8 @@ tracks/3/enabled = true
 tracks/3/keys = {
 "times": PoolRealArray( 0.1 ),
 "transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
+"update": 0,
+"values": [ "annoyed3" ]
 }
 
 [sub_resource type="Animation" id=37]
@@ -190,16 +190,80 @@ tracks/0/keys = {
 "values": [ Vector2( -10, 10 ), Vector2( 10, -10 ), Vector2( -10, 10 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("AnimatedSpriteController/AnimatedSprite:position")
+tracks/1/path = NodePath("AnimatedSpriteController/AnimatedSprite:scale")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 2.2, 2.2 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("AnimatedSpriteController/AnimatedSprite:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 3 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("AnimatedSpriteController/AnimatedSprite:animation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ "increase_head_inclined" ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("AnimatedSpriteController/AnimatedSprite:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
 "times": PoolRealArray( 0, 0.2, 0.4 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( -10, 10 ), Vector2( 10, -10 ), Vector2( -10, 10 ) ]
+}
+
+[sub_resource type="Animation" id=39]
+resource_name = "black_glasses"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSpriteController/AnimatedSprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 2.2, 2.2 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AnimatedSpriteController/AnimatedSprite:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("AnimatedSpriteController/AnimatedSprite:animation")
@@ -208,74 +272,10 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ "increase_head_inclined" ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("AnimatedSpriteController/AnimatedSprite:frame")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 3 ]
-}
-tracks/4/type = "value"
-tracks/4/path = NodePath("AnimatedSpriteController/AnimatedSprite:scale")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 2.2, 2.2 ) ]
-}
-
-[sub_resource type="Animation" id=39]
-resource_name = "black_glasses"
-length = 0.1
-tracks/0/type = "value"
-tracks/0/path = NodePath("AnimatedSpriteController/AnimatedSprite:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
 "times": PoolRealArray( 0.1 ),
 "transitions": PoolRealArray( 1 ),
-"update": 1,
+"update": 0,
 "values": [ "black_glasses" ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("AnimatedSpriteController/AnimatedSprite:playing")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0.1 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("AnimatedSpriteController/AnimatedSprite:scale")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0.1 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 2.2, 2.2 ) ]
 }
 
 [sub_resource type="Animation" id=74]
@@ -283,35 +283,35 @@ resource_name = "black_glasses_shaking"
 length = 0.1
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("AnimatedSpriteController/AnimatedSprite:animation")
+tracks/0/path = NodePath("AnimatedSpriteController/AnimatedSprite:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0.1 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ "black_glasses" ]
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 4, -40 ), Vector2( 7.406, -40 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("AnimatedSpriteController/AnimatedSprite:position")
+tracks/1/path = NodePath("AnimatedSpriteController/AnimatedSprite:animation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.1 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0.1 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 4, -40 ), Vector2( 7.406, -40 ) ]
+"values": [ "black_glasses" ]
 }
 
 [sub_resource type="Animation" id=58]
 resource_name = "dance"
 length = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("AnimatedSpriteController/AnimatedSprite:animation")
+tracks/0/path = NodePath("AnimatedSpriteController/AnimatedSprite:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -319,8 +319,8 @@ tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0.1 ),
 "transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ "dance" ]
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("AnimatedSpriteController/AnimatedSprite:playing")
@@ -331,11 +331,11 @@ tracks/1/enabled = true
 tracks/1/keys = {
 "times": PoolRealArray( 0.1 ),
 "transitions": PoolRealArray( 1 ),
-"update": 1,
+"update": 0,
 "values": [ true ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("AnimatedSpriteController/AnimatedSprite:scale")
+tracks/2/path = NodePath("AnimatedSpriteController/AnimatedSprite:animation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -344,14 +344,14 @@ tracks/2/keys = {
 "times": PoolRealArray( 0.1 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 1, 1 ) ]
+"values": [ "dance" ]
 }
 
 [sub_resource type="Animation" id=4]
 resource_name = "default"
 length = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("AnimatedSpriteController/AnimatedSprite:animation")
+tracks/0/path = NodePath("AnimatedSpriteController/AnimatedSprite:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -359,11 +359,11 @@ tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0.1 ),
 "transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ "default" ]
+"update": 0,
+"values": [ Vector2( -62, -46 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("AnimatedSpriteController/AnimatedSprite:playing")
+tracks/1/path = NodePath("AnimatedSpriteController/AnimatedSprite:scale")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -371,11 +371,11 @@ tracks/1/enabled = true
 tracks/1/keys = {
 "times": PoolRealArray( 0.1 ),
 "transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
+"update": 0,
+"values": [ Vector2( 2.2, 2.2 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("AnimatedSpriteController/AnimatedSprite:modulate")
+tracks/2/path = NodePath("AnimatedSpriteController/AnimatedSprite:flip_h")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -384,7 +384,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0.1 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 1, 1 ) ]
+"values": [ false ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("AnimatedSpriteController/AnimatedSprite:rotation_degrees")
@@ -399,7 +399,7 @@ tracks/3/keys = {
 "values": [ 0.0 ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("AnimatedSpriteController/AnimatedSprite:flip_h")
+tracks/4/path = NodePath("AnimatedSpriteController/AnimatedSprite:modulate")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -407,11 +407,11 @@ tracks/4/enabled = true
 tracks/4/keys = {
 "times": PoolRealArray( 0.1 ),
 "transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("AnimatedSpriteController/AnimatedSprite:scale")
+tracks/5/path = NodePath("AnimatedSpriteController/AnimatedSprite:playing")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -420,10 +420,10 @@ tracks/5/keys = {
 "times": PoolRealArray( 0.1 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 2.2, 2.2 ) ]
+"values": [ false ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("AnimatedSpriteController/AnimatedSprite:position")
+tracks/6/path = NodePath("AnimatedSpriteController/AnimatedSprite:animation")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
@@ -432,7 +432,7 @@ tracks/6/keys = {
 "times": PoolRealArray( 0.1 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( -62, -46 ) ]
+"values": [ "default" ]
 }
 tracks/7/type = "value"
 tracks/7/path = NodePath("scoop:visible")
@@ -454,7 +454,7 @@ resource_name = "default_mad_attack"
 resource_name = "down"
 length = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("AnimatedSpriteController/AnimatedSprite:animation")
+tracks/0/path = NodePath("AnimatedSpriteController/AnimatedSprite:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -462,11 +462,11 @@ tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0.1 ),
 "transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ "down" ]
+"update": 0,
+"values": [ Vector2( 37, 5 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("AnimatedSpriteController/AnimatedSprite:position")
+tracks/1/path = NodePath("AnimatedSpriteController/AnimatedSprite:animation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -475,59 +475,59 @@ tracks/1/keys = {
 "times": PoolRealArray( 0.1 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 37, 5 ) ]
+"values": [ "down" ]
 }
 
 [sub_resource type="Animation" id=2]
 resource_name = "fall"
 length = 0.7
 tracks/0/type = "value"
-tracks/0/path = NodePath("AnimatedSpriteController/AnimatedSprite:offset")
+tracks/0/path = NodePath("AnimatedSpriteController/AnimatedSprite:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 10, 0 ), Vector2( -5, 0 ), Vector2( 10, 0 ), Vector2( -5, -5 ), Vector2( -5, 0 ) ]
+"values": [ Vector2( -62, -45 ), Vector2( -28, -35 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("AnimatedSpriteController/AnimatedSprite:rotation_degrees")
+tracks/1/path = NodePath("AnimatedSpriteController/AnimatedSprite:animation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0.3 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ 0.0 ]
+"values": [ "hit", "down" ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("AnimatedSpriteController/AnimatedSprite:animation")
+tracks/2/path = NodePath("AnimatedSpriteController/AnimatedSprite:rotation_degrees")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 0.5 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ "hit", "down" ]
+"times": PoolRealArray( 0.3 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("AnimatedSpriteController/AnimatedSprite:position")
+tracks/3/path = NodePath("AnimatedSpriteController/AnimatedSprite:offset")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0, 0.3 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( -62, -45 ), Vector2( -28, -35 ) ]
+"values": [ Vector2( 10, 0 ), Vector2( -5, 0 ), Vector2( 10, 0 ), Vector2( -5, -5 ), Vector2( -5, 0 ) ]
 }
 
 [sub_resource type="Animation" id=8]
@@ -542,7 +542,7 @@ tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0, 0.1 ),
 "transitions": PoolRealArray( 1, 1 ),
-"update": 1,
+"update": 0,
 "values": [ false, true ]
 }
 
@@ -550,7 +550,7 @@ tracks/0/keys = {
 resource_name = "hands_up"
 length = 0.5
 tracks/0/type = "value"
-tracks/0/path = NodePath("AnimatedSpriteController/AnimatedSprite:animation")
+tracks/0/path = NodePath("AnimatedSpriteController/AnimatedSprite:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -558,35 +558,35 @@ tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ "hands_up" ]
+"update": 0,
+"values": [ Vector2( -42, -47 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("AnimatedSpriteController/AnimatedSprite:playing")
+tracks/1/path = NodePath("AnimatedSpriteController/AnimatedSprite:scale")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.3 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ true, false ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("AnimatedSpriteController/AnimatedSprite:scale")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 2.2, 2.2 ) ]
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath("AnimatedSpriteController/AnimatedSprite:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ true, false ]
+}
 tracks/3/type = "value"
-tracks/3/path = NodePath("AnimatedSpriteController/AnimatedSprite:position")
+tracks/3/path = NodePath("AnimatedSpriteController/AnimatedSprite:animation")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -595,75 +595,23 @@ tracks/3/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( -42, -47 ) ]
+"values": [ "hands_up" ]
 }
 
 [sub_resource type="Animation" id=7]
 resource_name = "head_attack"
 length = 7.0
 tracks/0/type = "value"
-tracks/0/path = NodePath("AnimatedSpriteController/AnimatedSprite:animation")
+tracks/0/path = NodePath("AnimatedSpriteController/AnimatedSprite:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5, 6.5 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 1,
-"values": [ "increase_head", "head_attack", "decrease_head" ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("AnimatedSpriteController/AnimatedSprite:playing")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("AnimatedSpriteController/AnimatedSprite:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0, 0.5, 1.5, 2.5, 3.5, 4.5, 5.5, 6.5, 7 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Vector2( 6, -70 ), Vector2( -10, 0 ), Vector2( -10, -60 ), Vector2( -10, 20 ), Vector2( -10, -60 ), Vector2( -10, 20 ), Vector2( -10, -60 ), Vector2( -10, 0 ), Vector2( 6, -70 ) ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("AnimatedSpriteController/AnimatedSprite:scale")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 1, 1 ) ]
-}
-
-[sub_resource type="Animation" id=5]
-resource_name = "hit"
-length = 0.3
-tracks/0/type = "value"
-tracks/0/path = NodePath("AnimatedSpriteController/AnimatedSprite:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ "damage" ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("AnimatedSpriteController/AnimatedSprite:position")
@@ -672,10 +620,10 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.3 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.5, 1.5, 2.5, 3.5, 4.5, 5.5, 6.5, 7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( -20, -40 ), Vector2( 7.406, -40 ) ]
+"values": [ Vector2( 6, -70 ), Vector2( -10, 0 ), Vector2( -10, -60 ), Vector2( -10, 20 ), Vector2( -10, -60 ), Vector2( -10, 20 ), Vector2( -10, -60 ), Vector2( -10, 0 ), Vector2( 6, -70 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("AnimatedSpriteController/AnimatedSprite:playing")
@@ -686,36 +634,36 @@ tracks/2/enabled = true
 tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 1,
+"update": 0,
 "values": [ true ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("AnimatedSpriteController/AnimatedSprite:scale")
+tracks/3/path = NodePath("AnimatedSpriteController/AnimatedSprite:animation")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.5, 6.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 2.2, 2.2 ) ]
+"values": [ "increase_head", "head_attack", "decrease_head" ]
 }
 
-[sub_resource type="Animation" id=9]
-resource_name = "hug"
-length = 4.0
+[sub_resource type="Animation" id=5]
+resource_name = "hit"
+length = 0.3
 tracks/0/type = "value"
-tracks/0/path = NodePath("AnimatedSpriteController/AnimatedSprite:animation")
+tracks/0/path = NodePath("AnimatedSpriteController/AnimatedSprite:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.7 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ "turn_back", "hug" ]
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 2.2, 2.2 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("AnimatedSpriteController/AnimatedSprite:playing")
@@ -726,8 +674,60 @@ tracks/1/enabled = true
 tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
+"update": 0,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("AnimatedSpriteController/AnimatedSprite:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -20, -40 ), Vector2( 7.406, -40 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("AnimatedSpriteController/AnimatedSprite:animation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ "damage" ]
+}
+
+[sub_resource type="Animation" id=9]
+resource_name = "hug"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSpriteController/AnimatedSprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.7, 2.8, 3, 3.2, 3.5, 3.6, 3.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -10, 0 ), Vector2( -6.66667, -26.6667 ), Vector2( -3.333, -45 ), Vector2( -3.333, -69 ), Vector2( 0, -40 ), Vector2( 2.5, -40 ), Vector2( 0, -40 ), Vector2( 2.5, -40 ), Vector2( 0, -40 ), Vector2( 2.5, -40 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AnimatedSpriteController/AnimatedSprite:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 2.2, 2.2 ), Vector2( 1.2, 1.2 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("AnimatedSpriteController/AnimatedSprite:frame")
@@ -738,48 +738,48 @@ tracks/2/enabled = true
 tracks/2/keys = {
 "times": PoolRealArray( 0.7, 1.7, 2.5, 2.8, 3, 3.2, 3.5, 3.6, 3.8 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
+"update": 0,
 "values": [ 0, 1, 2, 3, 4, 3, 4, 3, 4 ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("AnimatedSpriteController/AnimatedSprite:scale")
+tracks/3/path = NodePath("AnimatedSpriteController/AnimatedSprite:playing")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0, 0.7 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ Vector2( 2.2, 2.2 ), Vector2( 1.2, 1.2 ) ]
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("AnimatedSpriteController/AnimatedSprite:position")
+tracks/4/path = NodePath("AnimatedSpriteController/AnimatedSprite:animation")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 0, 0.2, 0.4, 0.7, 2.8, 3, 3.2, 3.5, 3.6, 3.8 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ Vector2( -10, 0 ), Vector2( -6.66667, -26.6667 ), Vector2( -3.333, -45 ), Vector2( -3.333, -69 ), Vector2( 0, -40 ), Vector2( 2.5, -40 ), Vector2( 0, -40 ), Vector2( 2.5, -40 ), Vector2( 0, -40 ), Vector2( 2.5, -40 ) ]
+"times": PoolRealArray( 0, 0.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ "turn_back", "hug" ]
 }
 
 [sub_resource type="Animation" id=57]
 resource_name = "idle"
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("AnimatedSpriteController/AnimatedSprite:animation")
+tracks/0/path = NodePath("AnimatedSpriteController/AnimatedSprite:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ "default" ]
+"times": PoolRealArray( 0.2, 0.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -35, 0 ), Vector2( -10, 0 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("AnimatedSpriteController/AnimatedSprite:playing")
@@ -790,20 +790,20 @@ tracks/1/enabled = true
 tracks/1/keys = {
 "times": PoolRealArray( 0.1 ),
 "transitions": PoolRealArray( 1 ),
-"update": 1,
+"update": 0,
 "values": [ true ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("AnimatedSpriteController/AnimatedSprite:position")
+tracks/2/path = NodePath("AnimatedSpriteController/AnimatedSprite:animation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0.2, 0.7 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( -35, 0 ), Vector2( -10, 0 ) ]
+"values": [ "default" ]
 }
 
 [sub_resource type="Animation" id=38]
@@ -817,7 +817,7 @@ tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 1,
+"update": 0,
 "values": [ "increase_head_inclined" ]
 }
 
@@ -832,14 +832,14 @@ tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 1,
+"update": 0,
 "values": [ "jump" ]
 }
 
 [sub_resource type="Animation" id=44]
 resource_name = "laugh"
 tracks/0/type = "value"
-tracks/0/path = NodePath("AnimatedSpriteController/AnimatedSprite:animation")
+tracks/0/path = NodePath("AnimatedSpriteController/AnimatedSprite:playing")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -847,11 +847,11 @@ tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ "laugh" ]
+"update": 0,
+"values": [ true ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("AnimatedSpriteController/AnimatedSprite:playing")
+tracks/1/path = NodePath("AnimatedSpriteController/AnimatedSprite:animation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -859,8 +859,8 @@ tracks/1/enabled = true
 tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
+"update": 0,
+"values": [ "laugh" ]
 }
 tracks/2/type = "audio"
 tracks/2/path = NodePath("SpeakSound")
@@ -881,83 +881,83 @@ tracks/2/keys = {
 resource_name = "put_on_ring"
 length = 8.0
 tracks/0/type = "value"
-tracks/0/path = NodePath("AnimatedSpriteController/AnimatedSprite:animation")
+tracks/0/path = NodePath("AnimatedSpriteController/AnimatedSprite:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 4.2, 4.8, 6.7, 7.6 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ "put_on_ring", "black_glasses", "annoyed1", "default", "dance" ]
+"times": PoolRealArray( 0, 4.2, 7.6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1.1, 1.1 ), Vector2( 2.2, 2.2 ), Vector2( 1, 1 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("AnimatedSpriteController/AnimatedSprite:playing")
+tracks/1/path = NodePath("AnimatedSpriteController/AnimatedSprite:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 7.6 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ false, true ]
+"times": PoolRealArray( 0, 0.2, 0.4, 1.8, 2.7, 2.9, 3.6, 3.8, 4, 4.2, 6.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -62, -46 ), Vector2( -53, -46 ), Vector2( -55, -46 ), Vector2( -50, -46 ), Vector2( -61, -56 ), Vector2( -50, -56 ), Vector2( -35, -61 ), Vector2( -50, -56 ), Vector2( -44, -58 ), Vector2( -41, -50 ), Vector2( -43, -45 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("AnimatedSpriteController/AnimatedSprite:frame")
+tracks/2/path = NodePath("AnimatedSpriteController/AnimatedSprite:speed_scale")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 0.2, 0.4, 1.8, 2.7, 2.9, 3.4, 3.6, 3.8, 4, 4.2, 4.8, 5.3, 5.4, 5.9, 6, 6.2 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 6, 8, 0, 0, 1, 0, 1, 0, 0 ]
+"times": PoolRealArray( 0, 7.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 1.0, 0.8 ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("AnimatedSpriteController/AnimatedSprite:speed_scale")
+tracks/3/path = NodePath("AnimatedSpriteController/AnimatedSprite:frame")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0, 7.6 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ 1.0, 0.8 ]
+"times": PoolRealArray( 0, 0.2, 0.4, 1.8, 2.7, 2.9, 3.4, 3.6, 3.8, 4, 4.2, 4.8, 5.3, 5.4, 5.9, 6, 6.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 6, 8, 0, 0, 1, 0, 1, 0, 0 ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("AnimatedSpriteController/AnimatedSprite:position")
+tracks/4/path = NodePath("AnimatedSpriteController/AnimatedSprite:playing")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 0, 0.2, 0.4, 1.8, 2.7, 2.9, 3.6, 3.8, 4, 4.2, 6.7 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ Vector2( -62, -46 ), Vector2( -53, -46 ), Vector2( -55, -46 ), Vector2( -50, -46 ), Vector2( -61, -56 ), Vector2( -50, -56 ), Vector2( -35, -61 ), Vector2( -50, -56 ), Vector2( -44, -58 ), Vector2( -41, -50 ), Vector2( -43, -45 ) ]
+"times": PoolRealArray( 0, 7.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ false, true ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("AnimatedSpriteController/AnimatedSprite:scale")
+tracks/5/path = NodePath("AnimatedSpriteController/AnimatedSprite:animation")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
 tracks/5/enabled = true
 tracks/5/keys = {
-"times": PoolRealArray( 0, 4.2, 7.6 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 1,
-"values": [ Vector2( 1.1, 1.1 ), Vector2( 2.2, 2.2 ), Vector2( 1, 1 ) ]
+"times": PoolRealArray( 0, 4.2, 4.8, 6.7, 7.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ "put_on_ring", "black_glasses", "annoyed1", "default", "dance" ]
 }
 
 [sub_resource type="Animation" id=43]
 resource_name = "step_away"
 length = 0.5
 tracks/0/type = "value"
-tracks/0/path = NodePath("AnimatedSpriteController/AnimatedSprite:animation")
+tracks/0/path = NodePath("AnimatedSpriteController/AnimatedSprite:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -965,8 +965,8 @@ tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ "step_away" ]
+"update": 0,
+"values": [ Vector2( 2.2, 2.2 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("AnimatedSpriteController/AnimatedSprite:position")
@@ -981,7 +981,7 @@ tracks/1/keys = {
 "values": [ Vector2( -10, -46 ), Vector2( -30, -46 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("AnimatedSpriteController/AnimatedSprite:scale")
+tracks/2/path = NodePath("AnimatedSpriteController/AnimatedSprite:animation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -990,49 +990,49 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 2.2, 2.2 ) ]
+"values": [ "step_away" ]
 }
 
 [sub_resource type="Animation" id=76]
 resource_name = "sweep"
 tracks/0/type = "value"
-tracks/0/path = NodePath("AnimatedSpriteController/AnimatedSprite:animation")
+tracks/0/path = NodePath("AnimatedSpriteController/AnimatedSprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ "sweep" ]
+"times": PoolRealArray( 0, 0.3, 0.6, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0, 1, 2, 3 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("AnimatedSpriteController/AnimatedSprite:frame")
+tracks/1/path = NodePath("AnimatedSpriteController/AnimatedSprite:playing")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.3, 0.6, 1 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 0, 1, 2, 3 ]
+"times": PoolRealArray( 0.1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("scoop:frame")
+tracks/2/path = NodePath("AnimatedSpriteController/AnimatedSprite:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 0.3, 0.6, 0.8 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 0, 1, 2, 3 ]
+"times": PoolRealArray( 0.1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 5, -5 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("AnimatedSpriteController/AnimatedSprite:playing")
+tracks/3/path = NodePath("AnimatedSpriteController/AnimatedSprite:scale")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -1040,35 +1040,35 @@ tracks/3/enabled = true
 tracks/3/keys = {
 "times": PoolRealArray( 0.1 ),
 "transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
+"update": 0,
+"values": [ Vector2( 0.08, 0.08 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("scoop:visible")
+tracks/4/path = NodePath("AnimatedSpriteController/AnimatedSprite:animation")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 0.1 ),
+"times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
+"update": 0,
+"values": [ "sweep" ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("AnimatedSpriteController/AnimatedSprite:scale")
+tracks/5/path = NodePath("scoop:frame")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
 tracks/5/enabled = true
 tracks/5/keys = {
-"times": PoolRealArray( 0.1 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 0.08, 0.08 ) ]
+"times": PoolRealArray( 0, 0.3, 0.6, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("AnimatedSpriteController/AnimatedSprite:position")
+tracks/6/path = NodePath("scoop:visible")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
@@ -1076,15 +1076,15 @@ tracks/6/enabled = true
 tracks/6/keys = {
 "times": PoolRealArray( 0.1 ),
 "transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 5, -5 ) ]
+"update": 1,
+"values": [ true ]
 }
 
 [sub_resource type="Animation" id=93]
 resource_name = "throw_cash"
 length = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("AnimatedSpriteController/AnimatedSprite:animation")
+tracks/0/path = NodePath("AnimatedSpriteController/AnimatedSprite:playing")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -1092,8 +1092,8 @@ tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ "throw_cash" ]
+"update": 0,
+"values": [ true ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("AnimatedSpriteController/AnimatedSprite:scale")
@@ -1108,7 +1108,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0.45, 0.45 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("AnimatedSpriteController/AnimatedSprite:playing")
+tracks/2/path = NodePath("AnimatedSpriteController/AnimatedSprite:animation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -1116,8 +1116,8 @@ tracks/2/enabled = true
 tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
+"update": 0,
+"values": [ "throw_cash" ]
 }
 
 [sub_resource type="Animation" id=78]
@@ -1163,7 +1163,7 @@ tracks/2/keys = {
 resource_name = "turn_back"
 length = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("AnimatedSpriteController/AnimatedSprite:animation")
+tracks/0/path = NodePath("AnimatedSpriteController/AnimatedSprite:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -1171,8 +1171,8 @@ tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ "turn_back" ]
+"update": 0,
+"values": [ Vector2( 2.2, 2.2 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("AnimatedSpriteController/AnimatedSprite:playing")
@@ -1183,11 +1183,11 @@ tracks/1/enabled = true
 tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 1,
+"update": 0,
 "values": [ true ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("AnimatedSpriteController/AnimatedSprite:scale")
+tracks/2/path = NodePath("AnimatedSpriteController/AnimatedSprite:animation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -1196,7 +1196,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 2.2, 2.2 ) ]
+"values": [ "turn_back" ]
 }
 
 [sub_resource type="SpriteFrames" id=77]
@@ -1348,6 +1348,10 @@ load_path = "res://.import/image1x1.png-06a49d5cbc139e78d434d409fbee25e2.stex"
 [sub_resource type="StreamTexture" id=33]
 load_path = "res://.import/image1x2.png-74cbefe8d8233f17cd6688fc9b8827c4.stex"
 
+[sub_resource type="AtlasTexture" id=99]
+atlas = ExtResource( 13 )
+region = Rect2( 54, 3, 35, 44 )
+
 [sub_resource type="AtlasTexture" id=79]
 atlas = ExtResource( 20 )
 region = Rect2( 0, 15, 85, 120 )
@@ -1491,6 +1495,11 @@ animations = [ {
 "name": "head_attack",
 "speed": 10.0
 }, {
+"frames": [ SubResource( 99 ) ],
+"loop": true,
+"name": "hit",
+"speed": 1.0
+}, {
 "frames": [ SubResource( 79 ), SubResource( 80 ), SubResource( 81 ), SubResource( 82 ), SubResource( 83 ) ],
 "loop": false,
 "name": "hug",
@@ -1598,4 +1607,6 @@ position = Vector2( -62, -46 )
 scale = Vector2( 2.2, 2.2 )
 z_index = 1
 frames = SubResource( 1 )
+animation = "hit"
+playing = true
 offset = Vector2( -5, 0 )

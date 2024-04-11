@@ -10,7 +10,7 @@ func _ready():
 
 # для хилок, имён и всего, отображающегося без особых условий
 func init(options):
-	print('_____________INITED CANCELED_____________')	
+	print('_____________INITED CANCELED_____________')
 	for option in options:
 		$ItemList.add_item(option)
 	show()

@@ -17,7 +17,7 @@ var state = State.CLOSED
 var Decision = preload("res://team_stats/StatsEntities/DecisionMessage/DecisionMessage.tscn")
 var ChoicePanel = preload("res://UI/Controls/ChoicePanel.tscn")
 
-var CUR_DECISION
+var CURRENT_DECISION
 
 
 # unused
@@ -76,10 +76,10 @@ func _on_KillSpamtonButton_button_down():
 	kill_ally('SPAMTON')
 
 func kill_ally(ally_name):
-	CUR_DECISION = Decision.instance()
-	CUR_DECISION.TYPE = 'ATTACK'
-	CUR_DECISION.VICTIM = ally_name
-	DecisionStack.add_decision(CUR_DECISION)
+	CURRENT_DECISION = Decision.instance()
+	CURRENT_DECISION.TYPE = 'ATTACK'
+	CURRENT_DECISION.VICTIM = ally_name
+	DecisionStack.add_decision(CURRENT_DECISION)
 
 # ========================= ITEM ========================= 
 
@@ -90,12 +90,12 @@ func _on_ItemButton_button_down():
 
 func use_item(index):
 	# current блеать
-	CUR_DECISION = Decision.instance()
-	CUR_DECISION.TYPE = 'ITEM'
-	CUR_DECISION.DECIDER = TeamStats.heroes[len(DecisionStack.DECISIONS)].to_lower()
+	CURRENT_DECISION = Decision.instance()
+	CURRENT_DECISION.TYPE = 'ITEM'
+	CURRENT_DECISION.DECIDER = TeamStats.heroes[len(DecisionStack.DECISIONS)]
 
 	# Шаг 2. Зарезервировать выбранную хилку
-	CUR_DECISION.ITEM = Inventorium.reserve_item(index)
+	CURRENT_DECISION.ITEM = Inventorium.reserve_item(index)
 
 	# Шаг 3. Вернуться в общее меню
 	return_to_common_menu("use_item")
@@ -105,61 +105,61 @@ func use_item(index):
 	$ChoicePanel.get_node("ItemList").connect("item_activated", self, "use_item_on_character")
 
 func use_item_on_character(index):
-	CUR_DECISION.VICTIM = TeamStats.all_heroes[index]
-	DecisionStack.add_decision(CUR_DECISION)
+	CURRENT_DECISION.VICTIM = TeamStats.all_heroes[index]
+	DecisionStack.add_decision(CURRENT_DECISION)
 	return_to_common_menu("use_item_on_character")
 
 # ========================= DEFEND ========================= 
 
 func _on_DefendButton_button_down():
-	CUR_DECISION = Decision.instance()
+	CURRENT_DECISION = Decision.instance()
 
 	# тут заменить на cur_character, т.к. не всегда все будут доступны
-	CUR_DECISION.DECIDER = TeamStats.heroes[len(DecisionStack.DECISIONS)].to_lower()
-	CUR_DECISION.TYPE = 'DEFENSE'
-	DecisionReader.emit_signal("defend", CUR_DECISION.DECIDER)
-	DecisionStack.add_decision(CUR_DECISION)
+	CURRENT_DECISION.DECIDER = TeamStats.heroes[len(DecisionStack.DECISIONS)]
+	CURRENT_DECISION.TYPE = 'DEFENSE'
+	DecisionReader.emit_signal("defend", CURRENT_DECISION.DECIDER)
+	DecisionStack.add_decision(CURRENT_DECISION)
 
 # ========================= ACTION ========================= 
 
 func _on_ActButton_button_down():
-	CUR_DECISION = Decision.instance()
-	CUR_DECISION.TYPE = 'ACT'
-	CUR_DECISION.DECIDER = TeamStats.heroes[len(DecisionStack.DECISIONS)]
+	CURRENT_DECISION = Decision.instance()
+	CURRENT_DECISION.TYPE = 'ACT'
+	CURRENT_DECISION.DECIDER = TeamStats.heroes[len(DecisionStack.DECISIONS)]
 
 	$ChoicePanel.get_node("ItemList").connect("item_activated", self, "use_action")
-	$ChoicePanel.init_actions(ActionsInventorium.AVAILABLE_ACTIONS[CUR_DECISION.DECIDER])
+	$ChoicePanel.init_actions(ActionsInventorium.AVAILABLE_ACTIONS[CURRENT_DECISION.DECIDER])
 
 
 func use_action(index):
-	CUR_DECISION.ACTION = ActionsInventorium.AVAILABLE_ACTIONS[CUR_DECISION.DECIDER][index]
-	ActionsController.start_action(CUR_DECISION.DECIDER, CUR_DECISION.ACTION)
+	CURRENT_DECISION.ACTION = ActionsInventorium.AVAILABLE_ACTIONS[CURRENT_DECISION.DECIDER][index]
+	ActionsController.start_action(CURRENT_DECISION.DECIDER, CURRENT_DECISION.ACTION)
 	return_to_common_menu("use_action")
 
-	if CUR_DECISION.ACTION.used_on != null:
+	if CURRENT_DECISION.ACTION.used_on != null:
 		$ChoicePanel.get_node("ItemList").connect("item_activated", self, "use_action_on_character")
-		$ChoicePanel.init(CUR_DECISION.ACTION.used_on)
+		$ChoicePanel.init(CURRENT_DECISION.ACTION.used_on)
 	else:
-		DecisionStack.add_decision(CUR_DECISION)
+		DecisionStack.add_decision(CURRENT_DECISION)
 
 func use_action_on_character(index):
-	CUR_DECISION.VICTIM = CUR_DECISION.ACTION.used_on[index]
+	CURRENT_DECISION.VICTIM = CURRENT_DECISION.ACTION.used_on[index]
 	return_to_common_menu("use_action_on_character")
-	DecisionStack.add_decision(CUR_DECISION)
+	DecisionStack.add_decision(CURRENT_DECISION)
 
 # ========================= SPARE ========================= 
 
 func _on_SpareButton_button_down():
-	CUR_DECISION = Decision.instance()
-	CUR_DECISION.TYPE = 'SPARE'
-	CUR_DECISION.DECIDER = TeamStats.heroes[len(DecisionStack.DECISIONS)].to_lower()
+	CURRENT_DECISION = Decision.instance()
+	CURRENT_DECISION.TYPE = 'SPARE'
+	CURRENT_DECISION.DECIDER = TeamStats.heroes[len(DecisionStack.DECISIONS)]
 
 	$ChoicePanel.init(ConStats.allies)
 	$ChoicePanel.get_node("ItemList").connect("item_activated", self, "use_spare_on_character")
 
 func use_spare_on_character(index):
-	CUR_DECISION.VICTIM = ConStats.allies[index]
-	DecisionStack.add_decision(CUR_DECISION)
+	CURRENT_DECISION.VICTIM = ConStats.allies[index]
+	DecisionStack.add_decision(CURRENT_DECISION)
 	return_to_common_menu("use_spare_on_character")
 
 func return_to_common_menu(processing_method):
@@ -168,9 +168,28 @@ func return_to_common_menu(processing_method):
 		$ChoicePanel.get_node("ItemList").disconnect("item_activated", self, processing_method)
 	$DebugButtons/KillJevilButton.grab_focus()
 
+# ========================= ATTACK ========================= 
+
+func _on_AttackButton_button_down():
+	CURRENT_DECISION = Decision.instance()
+	CURRENT_DECISION.TYPE = 'ATK'
+	CURRENT_DECISION.DECIDER = TeamStats.heroes[len(DecisionStack.DECISIONS)]
+
+	$ChoicePanel.init(ConStats.allies)
+	$ChoicePanel.get_node("ItemList").connect("item_activated", self, "use_attack_on_character")
+
+func use_attack_on_character(index):
+	CURRENT_DECISION.VICTIM = ConStats.allies[index]
+	AttackController.start_attack(CURRENT_DECISION.DECIDER, CURRENT_DECISION.VICTIM)
+	DecisionStack.add_decision(CURRENT_DECISION)
+	return_to_common_menu("use_attack_on_character")
 # ========================================================== 
 
 func _on_ended_decisions_reading():
+	var fighters = AttackController.attacks.keys()
+	if len(fighters) > 0:
+		$AttackPanel.start_attacks(fighters)
+		yield($AttackPanel, "finished")
 	# должен быть глобальный эммитер, который получает и отправляет сообщения подписчикам - так отвяжем всю-всю логику решений от меню
 	emit_signal("menu_ended")
 

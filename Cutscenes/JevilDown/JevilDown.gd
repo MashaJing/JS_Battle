@@ -77,7 +77,7 @@ func _ready():
 
 #	"HOW AM 1 SUPOSED TO [play nice]  WHEN [TOXiC]s LIKE YOU"
 #	"SIT IN THEIR [vault]s"
-#	"AND [git commit] [MASSIVE] GENOCIDE"
+#	"AND [COMMIT; ] [MASSIVE] GENOCIDE"
 #	"YOU [--force] ME TO CHEAT"
 
 

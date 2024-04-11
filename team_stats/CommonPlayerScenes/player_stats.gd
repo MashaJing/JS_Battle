@@ -3,6 +3,7 @@ extends Node2D
 export var MAX_HP = 100
 export var HP = 100
 export var ATK = 100
+export var DEF = 10
 
 signal Down
 signal Up

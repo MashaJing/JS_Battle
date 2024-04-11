@@ -41,12 +41,12 @@ func _on_AttackTimer_timeout():
 	BulletSucker.deactivate()
 	AttackMovePlayer.stop()
 	SpamtonAnimPlayer.play("fall")
-	Jevil.facepalm()
+#	Jevil.facepalm()
 	for bullet in get_tree().get_nodes_in_group("bullets"):
 		bullet.queue_free()
 	SpamtonAnim.play("increase_head", true)
 	yield(SpamtonAnim, "animation_finished")
-	yield($Jevil/AnimationPlayer, "animation_finished")
+#	yield($Jevil/AnimationPlayer, "animation_finished")
 	Spamton.visible = false
 	Jevil.visible = false
 	get_parent().get_node("Spamton").visible = true

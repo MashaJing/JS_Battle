@@ -2,7 +2,6 @@ extends Node
 
 onready var inventorium = $Inventorium
 
-var Spamton_ATK = 100
 var MAX_TP = 100
 var TP = 0
 var tp_delta = 10
@@ -12,8 +11,12 @@ var tp_delta = 10
 
 const all_heroes = ["Kris", "Susie", "Ralsei"]  # все участники битвы с нашей стороны
 var heroes = ["Kris", "Susie", "Ralsei"]  # живые
+var individual_stats = {}
+
+
 var AttackTargets = []
 signal game_over
+
 
 
 class HeroSorter:
@@ -21,6 +24,7 @@ class HeroSorter:
 		if all_heroes.find(a) < all_heroes.find(b):
 			return true
 		return false
+
 
 
 func _process(delta):
@@ -37,7 +41,7 @@ func _on_take_damage():
 		print('teamstats caught signal: target')
 		# атаку прокинуть в зависимости от пули
 		print(get_parent().get_children())
-		get_parent().get_node("Main").get_node(target).get_node("PlayerStats").take_damage(Spamton_ATK)
+		get_parent().get_node("Main").get_node(target).get_node("PlayerStats").take_damage(ConStats.ATK)
 
 
 # TP для всех общий, поэтому он тут
@@ -88,3 +92,7 @@ func choose_target(targets: Node2D = null) -> void:
 	print("_______________________________________")
 	print('target: ', AttackTargets)
 	print("_______________________________________")
+
+
+#func get_stats_by_name(_name):
+#	 return get_parent().get_node("Main").get_node(_name).get_node("PlayerStats")

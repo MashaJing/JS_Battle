@@ -8,11 +8,11 @@ var DEF = 1
 var SUM_HP = 2
 
 var allies = ["Jevil", "Spamton"]
-var enemies_team = {
-#	'JEVIL': get_node("/root/TeamStats")
-}
+var individual_stats = {}
 
 
+func _ready():
+	pass
 
 func _on_take_damage(victim, damage):
-	enemies_team[victim].take_damage(damage)
+	individual_stats[victim].take_damage(damage)

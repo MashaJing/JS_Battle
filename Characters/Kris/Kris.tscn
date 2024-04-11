@@ -148,6 +148,11 @@ animations = [ {
 "loop": false,
 "name": "spare",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 39 ) ],
+"loop": true,
+"name": "start_attack",
+"speed": 5.0
 } ]
 
 [node name="Kris" type="Node2D"]
@@ -161,4 +166,4 @@ HP = 120
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="AnimatedSpriteController"]
 frames = SubResource( 1 )
-animation = "piruett"
+animation = "start_attack"

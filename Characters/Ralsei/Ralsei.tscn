@@ -376,6 +376,11 @@ animations = [ {
 "loop": false,
 "name": "spare",
 "speed": 5.0
+}, {
+"frames": [ SubResource( 94 ) ],
+"loop": true,
+"name": "start_attack",
+"speed": 5.0
 } ]
 
 [node name="Ralsei" type="Node2D"]
@@ -390,6 +395,5 @@ ATK = 12
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="AnimatedSpriteController"]
 frames = SubResource( 1 )
-animation = "spare"
-frame = 12
+animation = "start_attack"
 playing = true

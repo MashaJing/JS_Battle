@@ -23,6 +23,10 @@ signal heal(_name, hp_delta)
 signal defend(_name)
 signal spare(_name)
 
+func _ready():
+	pass
+#	print(TeamStats.heroes_by_name["Kris"].ATK)
+
 
 # читает стек и шлёт сигналы в разные узлы
 func start():
@@ -51,7 +55,7 @@ func start():
 			'SPARE':
 				decision_text = decision_text + ' spared ' + current_decision.VICTIM + '...\n'
 				spare(current_decision)
-
+			
 	# ПЕРЕХОД В МЕНЮ ОБРАТНО
 	emit_signal("end_decisions_reading")
 
@@ -72,10 +76,12 @@ func action(decision):
 
 
 func attack(decision):
+	pass
 	 # из действующего лица можно прокинуть значение АТК 3-им аргументом
+	print('++++++++++++++++++++++++++++++++++++++++++++++')
 	print('attacked victim in reader!')
-	# позже прокинем АТК десайдера, пока кнопка только убивает
-	emit_signal("attack", decision.VICTIM, 100000)
+	print('++++++++++++++++++++++++++++++++++++++++++++++')
+#	emit_signal("attack", decision.DECIDER, decision.VICTIM)
 
 
 func item(decision):

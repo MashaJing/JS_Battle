@@ -105,6 +105,7 @@ GlobalDialogueSettings="*res://GlobalDialogueSettings.gd"
 ActionsController="*res://team_stats/StatsEntities/ActionsController/ActionsController.tscn"
 ActionsInventorium="*res://team_stats/StatsEntities/ActionsInventorium/ActionsInventorium.tscn"
 BattleInfoLogger="*res://BattleInfoLogger.tscn"
+AttackController="*res://team_stats/StatsEntities/AttackController/attack_controller.gd"
 
 [display]
 

@@ -92,7 +92,8 @@
 				"timeline-1692899925.json~RF414ed405.TMP",
 				"timeline-1694278028.json",
 				"timeline-1708767886.json",
-				"timeline-1709369627.json"
+				"timeline-1709369627.json",
+				"timeline-1712600063.json"
 			],
 			"folders": {
 				"action_reactions": {
@@ -120,7 +121,7 @@
 					},
 					"metadata": {
 						"color": null,
-						"folded": false
+						"folded": true
 					}
 				},
 				"endings": {
@@ -134,7 +135,7 @@
 					},
 					"metadata": {
 						"color": null,
-						"folded": false
+						"folded": true
 					}
 				},
 				"jokes": {
@@ -153,7 +154,7 @@
 					},
 					"metadata": {
 						"color": null,
-						"folded": false
+						"folded": true
 					}
 				}
 			},

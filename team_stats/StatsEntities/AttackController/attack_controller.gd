@@ -1,0 +1,55 @@
+extends Node2D
+
+signal attack_start
+signal attack_end
+
+signal attack
+signal damage_enemy(victim, damage)
+
+# соответствия "нападающий-жертва" - нет смысла хранить упорядоченно
+var attacks = {}
+
+
+func _ready():
+	connect("damage_enemy", ConStats, "_on_take_damage")
+
+
+# вызывается при выборе атаки
+func start_attack(actor, victim):
+#	get_tree().
+#	1. отправляет сигналы анимашкам, чтобы обозначить готовность
+	emit_signal("attack_start", actor, 'start_attack')
+#	2. добавляет союзника в список нападающих
+	attacks[actor] = victim
+	
+
+# вызывается при отмене атаки (удалении из стека)
+func cancel_attack(actor):
+#	1. отправляет сигналы анимашкам, чтобы вернуть дефолтный вид
+	emit_signal("Up", actor)
+#	2. убирает союзника из списка нападающих
+	attacks.erase(actor)
+
+
+# вызывается при остановке ползунка
+func confirm_attack(ratio, actor):
+	var victim = attacks[actor]
+	print(TeamStats.individual_stats)
+	var actor_atk = TeamStats.individual_stats[actor].ATK
+	var victim_def = ConStats.individual_stats[victim].DEF
+
+	# 1. отправляет сигнал анимашке, чтобы обозначить завершение атаки
+	emit_signal("attack_end", actor, 'attack')
+	# 2. отправляет сигнал анимашке противника, чтобы обозначить получение атаки
+	emit_signal("attack_end", attacks[actor], 'damage')
+	# 3. считает урон противнику и отправляет ему ~(ratio * наш ATK - его DEF)
+	emit_signal("damage_enemy", attacks[actor], calculate_damage(ratio, actor_atk, victim_def))
+	
+
+# вызывается при выборе атаки
+func clear_attacks():
+	attacks.clear()
+	
+
+func calculate_damage(ratio, victim_def, fighter_atk):
+	return fighter_atk - victim_def - ratio

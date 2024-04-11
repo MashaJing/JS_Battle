@@ -19,6 +19,18 @@ var attack_ended
 
 # уменьшать связанность (между сценами), повышать связность (осмыслнность) наполнения самих сцен
 func _ready():
+	TeamStats.individual_stats = {
+		"Kris": get_node("Kris").get_node("PlayerStats"),
+		"Susie": get_node("Susie").get_node("PlayerStats"),
+		"Ralsei": get_node("Ralsei").get_node("PlayerStats")
+	}
+	
+	ConStats.individual_stats = {
+		"Jevil": get_node("Jevil").get_node("PlayerStats"),
+		"Spamton": get_node("Spamton").get_node("PlayerStats"),
+	}
+
+
 	_init_signals()
 	$CringeTimer.wait_time = GlobalCringeSettings.TIME_BEFORE_JOKE
 	add_attack()
@@ -36,6 +48,7 @@ func _on_menu_ended():
 	$CringeTimer.stop()
 	$Menu.hide()
 	var dialog = BattleInfoLogger.show_dialogue()
+	print(dialog)
 	if dialog != null:
 		add_child(dialog)
 		yield(dialog, 'dialogic_signal')
@@ -59,6 +72,10 @@ func _on_attack_ended():
 
 
 func add_attack():
+	var pre_attack_line = Dialogic.start("pre_attack")
+	add_child(pre_attack_line)
+	yield(pre_attack_line, "dialogic_signal")
+
 	TeamStats.choose_target()
 	state = State.ATTACK
 
