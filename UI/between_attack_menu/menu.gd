@@ -19,16 +19,19 @@ var ChoicePanel = preload("res://UI/Controls/ChoicePanel.tscn")
 
 var CURRENT_DECISION
 
+onready var ATTACK_BUTTON = $Attack
+onready var ACT_BUTTON = $Act
+onready var ITEM_BUTTON = $Item
+onready var SPARE_BUTTON = $Spare
+onready var DEFENSE_BUTTON = $Defense
+
 
 # unused
 func open_menu():
-	$AnimationPlayer.play("kris_turn")
 	state = State.KRIS_TURN
-	$AnimationPlayer.handle_state(State.KRIS_TURN)
 
 func close_menu():
 	$DebugButtons/DescriptionLabel.visible = false
-	$AnimationPlayer.play("ralsei_turn", -1, 1.0, true)
 	state = State.CLOSED
 
 func _ready():
@@ -42,13 +45,11 @@ func _on_decided():
 	DecisionStack.add_decision(choice)
 
 func hide():
-	$AnimationPlayer.play("hide_all")
 	$DebugButtons.visible = false
 
 # должно вызываться 1 раз при открытии всего меню, а не отдельной панельки
 func unhide():
 	$DebugButtons/KillJevilButton.grab_focus()
-	$AnimationPlayer.play("hide_all", -1, 1.0, true)
 	$DebugButtons.visible = true
 	var description = GlobalDialogueSettings.get_current_description()
 	show_letters(description)
@@ -166,7 +167,7 @@ func return_to_common_menu(processing_method):
 	$ChoicePanel.exit()
 	if $ChoicePanel.get_node("ItemList").is_connected("item_activated", self, processing_method):
 		$ChoicePanel.get_node("ItemList").disconnect("item_activated", self, processing_method)
-	$DebugButtons/KillJevilButton.grab_focus()
+	$DebugButtons/AttackButton.grab_focus()
 
 # ========================= ATTACK ========================= 
 

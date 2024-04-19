@@ -1,13 +1,5 @@
 extends Node2D
 
-var TMP_DEC_LIST = [
-	'DEFENSE',
-	'ACTION',
-	'ITEM',
-	'ATTACK',
-	'SPARE'
-]
-
 signal start_decisions_reading
 signal end_decisions_reading
 

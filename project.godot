@@ -87,7 +87,7 @@ _global_script_class_icons={
 [application]
 
 config/name="JS_battle"
-run/main_scene="res://Main.tscn"
+run/main_scene="res://UI/Controls/Control.tscn"
 config/icon="res://icon.png"
 
 [autoload]

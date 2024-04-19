@@ -27,7 +27,7 @@ func start_attack(actor, victim):
 func cancel_attack(actor):
 #	1. отправляет сигналы анимашкам, чтобы вернуть дефолтный вид
 	emit_signal("Up", actor)
-#	2. убирает союзника из списка нападающих
+#	2. убирает союзника из множества нападающих
 	attacks.erase(actor)
 
 
@@ -44,12 +44,10 @@ func confirm_attack(ratio, actor):
 	emit_signal("attack_end", attacks[actor], 'damage')
 	# 3. считает урон противнику и отправляет ему ~(ratio * наш ATK - его DEF)
 	emit_signal("damage_enemy", attacks[actor], calculate_damage(ratio, actor_atk, victim_def))
-	
+	# 4. исключает союзника из множества нападающих
+	attacks.erase(actor)
 
-# вызывается при выборе атаки
-func clear_attacks():
-	attacks.clear()
-	
+
 
 func calculate_damage(ratio, victim_def, fighter_atk):
 	return fighter_atk - victim_def - ratio

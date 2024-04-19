@@ -4,13 +4,13 @@ extends Control
 func show():
 	visible = true
 
-func _ready():
-	get_parent().connect("canceled", self, "_on_canceled")
+#func _ready():
+#	get_parent().connect("canceled", self, "_on_canceled")
 
 
 # для хилок, имён и всего, отображающегося без особых условий
 func init(options):
-	print('_____________INITED CANCELED_____________')
+	print('_____________INITED_____________')
 	for option in options:
 		$ItemList.add_item(option)
 	show()
@@ -22,7 +22,7 @@ func exit():
 	visible = false
 
 func init_actions(actions):
-	print('_____________INITED CANCELED_____________')	
+	print('_____________INITED ACTIONS_____________')	
 	get_parent().connect("canceled", self, "_on_canceled")
 
 	for action in actions:

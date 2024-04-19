@@ -84,14 +84,21 @@ func _on_ally_up(ally):
 
 
 func choose_target(targets: Node2D = null) -> void:
-	print()
 	if targets == null:
 		AttackTargets = [heroes[randi() % len(heroes)]]
 	else:
 		AttackTargets = targets
-	print("_______________________________________")
-	print('target: ', AttackTargets)
-	print("_______________________________________")
+
+func get_next_hero(current_hero):
+	var hero_ind = heroes.find(current_hero) + 1
+	if hero_ind < len(heroes):
+		return heroes[hero_ind]
+
+
+func get_previous_hero(current_hero):
+	var hero_ind = heroes.find(current_hero) - 1
+	if hero_ind >= 0:
+		return heroes[hero_ind]
 
 
 #func get_stats_by_name(_name):
