@@ -1607,6 +1607,4 @@ position = Vector2( -62, -46 )
 scale = Vector2( 2.2, 2.2 )
 z_index = 1
 frames = SubResource( 1 )
-animation = "hit"
-playing = true
 offset = Vector2( -5, 0 )

@@ -77,4 +77,5 @@ func _process(delta):
 		bullet.position += shorten_distance(BulletSucker, bullet, delta, offset)
 
 func _on_mouth_area_entered(area):
-	area.stop()
+#	area.stop()
+	pass

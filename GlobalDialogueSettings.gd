@@ -1,6 +1,6 @@
 extends Node2D
 
-var CUR_LINE_IND = -1
+var LINE_INDEX = 0
 
 var PHASE_0 = [
 	"The air crackles with tension",
@@ -19,15 +19,15 @@ var PHASE_2 = [
 	"Spamton decides to hire just one employee, who will do everything",
 	"He pulls my leg and makes me laugh",
 ]
+
 var PHASE_3 = [
 	"Now’s your chance to [die]",
 	"I may not cry anymore",
 	"Smells like casino",
 	"Jevil offers to call their team JS. Spamton doesn't support it",
 	"Spamton whispers about some Christmas kid", # ?
-	"Jevil calls a ... for ripping", # ?
-	"Jevil realizes that he doesn't have a doctor license", # ?
-	"Spamton whispers about some Christmas kid", # ?
+	"Jevil calls a volunteer from the audience for a dangerous musical performance",
+	"Jevil realizes that he doesn't have a surgeon license to perform it", # ?
 ]
 
 var PHASE_4 = [
@@ -44,12 +44,12 @@ var BATTLE_INFO = [PHASE_0, PHASE_1, PHASE_2, PHASE_3, PHASE_4, PHASE_ULTIMATE]
 
 
 func _on_new_turn():
-	CUR_LINE_IND += 1
+	LINE_INDEX += 1
 
 func get_current_description():
-	if CUR_LINE_IND >= len(BATTLE_INFO[GlobalAttackSettings.CUR_PHASE_IND]):
-		CUR_LINE_IND = 0
-	return BATTLE_INFO[GlobalAttackSettings.CUR_PHASE_IND][CUR_LINE_IND]
+	if LINE_INDEX >= len(BATTLE_INFO[GlobalAttackSettings.PHASE_INDEX]):
+		LINE_INDEX = 0
+	return BATTLE_INFO[GlobalAttackSettings.PHASE_INDEX][LINE_INDEX]
 
 #func set_battle_info():
-#	Dialogic.set_variable('info_line', BATTLE_INFO[GlobalAttackSettings.CUR_PHASE_IND][CUR_LINE_IND])
+#	Dialogic.set_variable('info_line', BATTLE_INFO[GlobalAttackSettings.CUR_PHASE_IND][LINE_INDEX])

@@ -16,7 +16,6 @@ func _on_BulletSpawnTimer_timeout():
 	var bullet = bullet_scene.instance()
 	bullet.ttl = 1
 	add_child(bullet)
-
 	bullet.position = dimond_spawn_location.position
 
 

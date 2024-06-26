@@ -1,49 +1,54 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=15 format=2]
 
-[ext_resource path="res://UI/between_attack_menu/assets/menu.png" type="Texture" id=1]
 [ext_resource path="res://UI/Controls/ButtonsPanel.gd" type="Script" id=2]
 [ext_resource path="res://UI/Controls/ButtonPanelGroup.tres" type="ButtonGroup" id=3]
-[ext_resource path="res://UI/Controls/Attack.gd" type="Script" id=4]
-[ext_resource path="res://UI/Controls/ButtonHandlers/Act.gd" type="Script" id=5]
-[ext_resource path="res://UI/Controls/ButtonHandlers/Item.gd" type="Script" id=6]
-[ext_resource path="res://UI/Controls/ButtonHandlers/Spare.gd" type="Script" id=7]
-[ext_resource path="res://UI/Controls/ButtonHandlers/Defense.gd" type="Script" id=8]
+[ext_resource path="res://UI/between_attack_menu/assets/menu_sprites.png" type="Texture" id=4]
 
-[sub_resource type="AtlasTexture" id=2]
-atlas = ExtResource( 1 )
-region = Rect2( 952, 96.9218, 31, 26.0782 )
+[sub_resource type="AtlasTexture" id=21]
+atlas = ExtResource( 4 )
+region = Rect2( 279.447, 64.0418, 30.4318, 32.1359 )
 
-[sub_resource type="AtlasTexture" id=10]
-atlas = ExtResource( 1 )
-region = Rect2( 985.741, 97.1119, 29.5904, 25.8691 )
+[sub_resource type="StyleBoxTexture" id=20]
+texture = SubResource( 21 )
+region_rect = Rect2( -0.0821724, 0, 30.651, 33.6844 )
 
-[sub_resource type="AtlasTexture" id=3]
-atlas = ExtResource( 1 )
-region = Rect2( 775.104, 317.753, 31.2414, 26.2825 )
+[sub_resource type="StyleBoxTexture" id=17]
+texture = ExtResource( 4 )
+region_rect = Rect2( 277.855, 98.1355, 32.7444, 34.524 )
+margin_right = 0.375187
 
-[sub_resource type="AtlasTexture" id=4]
-atlas = ExtResource( 1 )
-region = Rect2( 809.801, 317.403, 31.1719, 26.5878 )
+[sub_resource type="StyleBoxTexture" id=32]
+texture = ExtResource( 4 )
+region_rect = Rect2( 311.045, 62.9316, 32.0556, 35.1379 )
 
-[sub_resource type="AtlasTexture" id=6]
-atlas = ExtResource( 1 )
-region = Rect2( 1083.92, 61.9767, 31.3583, 32.6337 )
+[sub_resource type="StyleBoxTexture" id=25]
+texture = ExtResource( 4 )
+region_rect = Rect2( 311.327, 98.1124, 32.1428, 33.2263 )
 
-[sub_resource type="StyleBoxTexture" id=7]
-texture = SubResource( 6 )
-region_rect = Rect2( 0, 0, 1, 1 )
+[sub_resource type="StyleBoxTexture" id=26]
+texture = ExtResource( 4 )
+region_rect = Rect2( 345.009, 63.5243, 31.3344, 33.3929 )
 
-[sub_resource type="AtlasTexture" id=8]
-atlas = ExtResource( 1 )
-region = Rect2( 1083.68, 61.4348, 31.3774, 32.727 )
+[sub_resource type="StyleBoxTexture" id=27]
+texture = ExtResource( 4 )
+region_rect = Rect2( 344.997, 98.3427, 31.2503, 34.6683 )
 
-[sub_resource type="StyleBoxTexture" id=9]
-texture = SubResource( 8 )
-region_rect = Rect2( 0, 0, 1, 1 )
+[sub_resource type="StyleBoxTexture" id=28]
+texture = ExtResource( 4 )
+region_rect = Rect2( 377.947, 63.8993, 31.1904, 33.0807 )
 
-[sub_resource type="AtlasTexture" id=5]
-atlas = ExtResource( 1 )
-region = Rect2( 845.221, 317.953, 30.6221, 26.0362 )
+[sub_resource type="StyleBoxTexture" id=29]
+texture = ExtResource( 4 )
+region_rect = Rect2( 378.112, 98.7616, 30.7016, 29.496 )
+margin_bottom = 0.275919
+
+[sub_resource type="StyleBoxTexture" id=30]
+texture = ExtResource( 4 )
+region_rect = Rect2( 410.747, 63.7055, 31.3323, 32.9102 )
+
+[sub_resource type="StyleBoxTexture" id=31]
+texture = ExtResource( 4 )
+region_rect = Rect2( 410.741, 98.4054, 31.4908, 31.2019 )
 
 [node name="ButtonsPanel" type="NinePatchRect"]
 anchor_top = -0.027
@@ -51,7 +56,7 @@ anchor_right = 0.311
 anchor_bottom = 0.06
 margin_top = 16.2
 margin_right = -0.463989
-margin_bottom = 13.0
+margin_bottom = 21.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource( 2 )
@@ -60,67 +65,95 @@ script = ExtResource( 2 )
 margin_left = 23.0
 margin_top = 1.0
 margin_right = 301.0
-margin_bottom = 49.0
+margin_bottom = 56.0
 custom_constants/separation = -6
 
 [node name="Attack" type="Button" parent="Buttons"]
 margin_right = 60.0
-margin_bottom = 48.0
+margin_bottom = 55.0
+focus_neighbour_left = NodePath("../Defense")
+focus_neighbour_right = NodePath("../Act")
+mouse_filter = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+custom_styles/pressed = SubResource( 20 )
+custom_styles/focus = SubResource( 20 )
+custom_styles/normal = SubResource( 17 )
+disabled = true
 group = ExtResource( 3 )
-icon = SubResource( 2 )
 expand_icon = true
-script = ExtResource( 4 )
 
 [node name="Act" type="Button" parent="Buttons"]
 margin_left = 54.0
 margin_right = 114.0
-margin_bottom = 48.0
+margin_bottom = 55.0
+focus_neighbour_left = NodePath("../Attack")
+focus_neighbour_right = NodePath("../Item")
+mouse_filter = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+custom_styles/pressed = SubResource( 32 )
+custom_styles/focus = SubResource( 32 )
+custom_styles/normal = SubResource( 25 )
+disabled = true
 group = ExtResource( 3 )
-icon = SubResource( 10 )
 expand_icon = true
-script = ExtResource( 5 )
 
 [node name="Item" type="Button" parent="Buttons"]
 margin_left = 108.0
 margin_right = 169.0
-margin_bottom = 48.0
+margin_bottom = 55.0
+focus_neighbour_left = NodePath("../Act")
+focus_neighbour_right = NodePath("../Spare")
+mouse_filter = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+custom_styles/pressed = SubResource( 26 )
+custom_styles/focus = SubResource( 26 )
+custom_styles/normal = SubResource( 27 )
+disabled = true
 group = ExtResource( 3 )
-icon = SubResource( 3 )
 expand_icon = true
-script = ExtResource( 6 )
 
 [node name="Spare" type="Button" parent="Buttons"]
 margin_left = 163.0
 margin_right = 223.0
-margin_bottom = 48.0
+margin_bottom = 55.0
+focus_neighbour_left = NodePath("../Item")
+focus_neighbour_right = NodePath("../Defense")
+mouse_filter = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+custom_styles/pressed = SubResource( 28 )
+custom_styles/focus = SubResource( 28 )
+custom_styles/normal = SubResource( 29 )
+disabled = true
 group = ExtResource( 3 )
-icon = SubResource( 4 )
 expand_icon = true
-script = ExtResource( 7 )
 
 [node name="Defense" type="Button" parent="Buttons"]
 margin_left = 217.0
 margin_right = 278.0
-margin_bottom = 48.0
+margin_bottom = 55.0
+focus_neighbour_left = NodePath("../Spare")
+focus_neighbour_right = NodePath("../Attack")
+mouse_filter = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_styles/hover = SubResource( 7 )
-custom_styles/pressed = SubResource( 9 )
+custom_styles/pressed = SubResource( 30 )
+custom_styles/focus = SubResource( 30 )
+custom_styles/normal = SubResource( 31 )
+disabled = true
 group = ExtResource( 3 )
-icon = SubResource( 5 )
 expand_icon = true
-script = ExtResource( 8 )
 
 [connection signal="button_down" from="Buttons/Attack" to="." method="_on_Attack_button_down"]
+[connection signal="focus_entered" from="Buttons/Attack" to="." method="_on_Button_changed"]
 [connection signal="button_down" from="Buttons/Act" to="." method="_on_Act_button_down"]
+[connection signal="focus_entered" from="Buttons/Act" to="." method="_on_Button_changed"]
 [connection signal="button_down" from="Buttons/Item" to="." method="_on_Item_button_down"]
+[connection signal="focus_entered" from="Buttons/Item" to="." method="_on_Button_changed"]
 [connection signal="button_down" from="Buttons/Spare" to="." method="_on_Spare_button_down"]
+[connection signal="focus_entered" from="Buttons/Spare" to="." method="_on_Button_changed"]
 [connection signal="button_down" from="Buttons/Defense" to="." method="_on_Defense_button_down"]
+[connection signal="focus_entered" from="Buttons/Defense" to="." method="_on_Button_changed"]

@@ -13,6 +13,7 @@ func _ready():
 
 	ActionsController.connect("action_start", self, "_on_Action_start")
 	ActionsController.connect("action_end", self, "_on_Action_end")
+	ActionsController.connect("canceled", $AnimatedSpriteController, "_on_Up")
 
 	AttackController.connect("attack_start", self, "_on_Action_start")
 	AttackController.connect("attack_end", self, "_on_Action_end")
@@ -29,12 +30,14 @@ func _on_get_heal(_name, delta):
 func _on_defend(_name):
 	if name == _name:
 		$AnimatedSpriteController._on_Defend()
+	var defense_process = $PlayerStats.defend()
+	yield()
+	defense_process.resume()
 
 func _on_spare(_name):
 	if name == _name:
 		$AnimatedSpriteController._on_Spare()
-		
-		
+
 # up -> action_start
 func _on_Action_start(_name, action_animation='action'):
 	if name == _name:

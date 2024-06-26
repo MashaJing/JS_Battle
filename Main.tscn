@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=2]
 
-[ext_resource path="res://UI/between_attack_menu/menu.tscn" type="PackedScene" id=1]
+[ext_resource path="res://UI/Controls/Control.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Characters/Kris/Kris.tscn" type="PackedScene" id=2]
 [ext_resource path="res://main_script.gd" type="Script" id=3]
 [ext_resource path="res://Characters/Susie/Susie.tscn" type="PackedScene" id=4]
@@ -37,9 +37,6 @@ texture = ExtResource( 9 )
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 510, 300 )
 
-[node name="Menu" parent="." instance=ExtResource( 1 )]
-position = Vector2( 0, 30 )
-
 [node name="AttackTimer" type="Timer" parent="."]
 wait_time = 6.0
 
@@ -63,7 +60,7 @@ position = Vector2( 1014, 490 )
 script = SubResource( 1 )
 
 [node name="Jevil" parent="." instance=ExtResource( 7 )]
-position = Vector2( 830, 200 )
+position = Vector2( 827, 200 )
 
 [node name="Ralsei" parent="." instance=ExtResource( 10 )]
 position = Vector2( 200, 300 )
@@ -76,6 +73,10 @@ scale = Vector2( 2, 2 )
 [node name="CringeTimer" type="Timer" parent="."]
 wait_time = 3.0
 one_shot = true
+
+[node name="Menu" parent="." instance=ExtResource( 1 )]
+margin_top = 590.0
+margin_bottom = 590.0
 
 [connection signal="timeout" from="AttackTimer" to="." method="_on_AttackTimer_timeout"]
 [connection signal="timeout" from="CringeTimer" to="." method="_on_CringeTimer_timeout"]

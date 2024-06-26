@@ -1,36 +1,40 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://UI/Controls/CharacterPanel.gd" type="Script" id=1]
-[ext_resource path="res://UI/between_attack_menu/assets/menu.png" type="Texture" id=2]
+[ext_resource path="res://Assets/sounds/voice_spamton.mp3" type="AudioStream" id=2]
 [ext_resource path="res://UI/Controls/AttackArea/AttackArea.tscn" type="PackedScene" id=3]
 [ext_resource path="res://UI/themes/MenuTheme.tres" type="Theme" id=4]
 [ext_resource path="res://UI/Controls/ButtonsPanel.tscn" type="PackedScene" id=5]
 [ext_resource path="res://UI/Controls/MenuControl.gd" type="Script" id=6]
 [ext_resource path="res://UI/Controls/ChoicePanel.tscn" type="PackedScene" id=7]
+[ext_resource path="res://UI/between_attack_menu/AttackPanel.gd" type="Script" id=8]
+[ext_resource path="res://UI/Controls/CharacterArea/CharacterArea.tscn" type="PackedScene" id=9]
+[ext_resource path="res://UI/between_attack_menu/assets/menu_sprites.png" type="Texture" id=10]
+[ext_resource path="res://Assets/sounds/spamton_laugh_noise.ogg" type="AudioStream" id=11]
 
-[sub_resource type="AtlasTexture" id=6]
-atlas = ExtResource( 2 )
-region = Rect2( 737.275, 61.9864, 103.029, 35.5873 )
+[sub_resource type="AtlasTexture" id=22]
+atlas = ExtResource( 10 )
+region = Rect2( 106.438, 63.8266, 62.008, 36.1239 )
 
-[sub_resource type="AtlasTexture" id=7]
-atlas = ExtResource( 2 )
-region = Rect2( 841.632, 62.8448, 106.792, 35.2006 )
+[sub_resource type="AtlasTexture" id=24]
+atlas = ExtResource( 10 )
+region = Rect2( 63.7709, 64.0658, 45.8289, 36.0236 )
 
-[sub_resource type="AtlasTexture" id=9]
-atlas = ExtResource( 2 )
-region = Rect2( 738.582, 100.203, 102.036, 33.3387 )
+[sub_resource type="AtlasTexture" id=16]
+atlas = ExtResource( 10 )
+region = Rect2( 111.525, 100.485, 59.5569, 36.5282 )
 
-[sub_resource type="AtlasTexture" id=10]
-atlas = ExtResource( 2 )
-region = Rect2( 844.017, 99.2015, 104.898, 34.7571 )
+[sub_resource type="AtlasTexture" id=18]
+atlas = ExtResource( 10 )
+region = Rect2( 63.5751, 101.221, 46.095, 35.6317 )
 
-[sub_resource type="AtlasTexture" id=11]
-atlas = ExtResource( 2 )
-region = Rect2( 737.08, 136.374, 107.374, 35.6156 )
+[sub_resource type="AtlasTexture" id=19]
+atlas = ExtResource( 10 )
+region = Rect2( 110.254, 137.24, 60.6575, 37.6715 )
 
-[sub_resource type="AtlasTexture" id=12]
-atlas = ExtResource( 2 )
-region = Rect2( 843.203, 135.751, 105.199, 36.0364 )
+[sub_resource type="AtlasTexture" id=25]
+atlas = ExtResource( 10 )
+region = Rect2( 63.7168, 136.985, 49.9357, 37.1816 )
 
 [sub_resource type="Animation" id=13]
 resource_name = "Kris_close"
@@ -83,13 +87,9 @@ tracks/0/keys = {
 [node name="Control" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+mouse_filter = 2
 theme = ExtResource( 4 )
 script = ExtResource( 6 )
-
-[node name="MarginContainer" type="MarginContainer" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_right = 10.0
 
 [node name="VBoxContainer" type="Control" parent="."]
 anchor_top = 1.0
@@ -104,56 +104,40 @@ margin_bottom = 140.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Kris" type="GridContainer" parent="VBoxContainer/HBoxContainer"]
-margin_top = 14.0
+[node name="Kris" type="Panel" parent="VBoxContainer/HBoxContainer"]
+margin_top = 65.0
 margin_right = 341.0
-margin_bottom = 152.0
+margin_bottom = 205.0
 rect_scale = Vector2( 1, 0.971632 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource( 4 )
 script = ExtResource( 1 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer/Kris"]
 margin_right = 341.0
-margin_bottom = 67.0
+margin_bottom = 68.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_constants/separation = 3
-alignment = 1
 
-[node name="IconAndStats" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/Kris/VBoxContainer"]
+[node name="CharacterArea" parent="VBoxContainer/HBoxContainer/Kris/VBoxContainer" instance=ExtResource( 9 )]
+margin_left = 0.0
 margin_right = 341.0
-margin_bottom = 67.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
+margin_bottom = 68.0
+rect_scale = Vector2( 1, 1 )
+NameTexture = SubResource( 22 )
+PortraitTexture = SubResource( 24 )
 
-[node name="Icon" type="TextureRect" parent="VBoxContainer/HBoxContainer/Kris/VBoxContainer/IconAndStats"]
-margin_right = 168.0
-margin_bottom = 67.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-texture = SubResource( 6 )
-expand = true
-
-[node name="HP" type="TextureRect" parent="VBoxContainer/HBoxContainer/Kris/VBoxContainer/IconAndStats"]
-margin_left = 172.0
-margin_right = 341.0
-margin_bottom = 67.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-texture = SubResource( 7 )
-expand = true
-
-[node name="ButtonsPanel" parent="VBoxContainer/HBoxContainer/Kris" instance=ExtResource( 5 )]
+[node name="Buttons" parent="VBoxContainer/HBoxContainer/Kris" instance=ExtResource( 5 )]
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 71.0
+margin_top = 72.0
 margin_right = 341.0
-margin_bottom = 138.0
+margin_bottom = 140.0
 character_color = Color( 0, 0.682353, 0.890196, 1 )
 
-[node name="Susie" type="GridContainer" parent="VBoxContainer/HBoxContainer"]
+[node name="Susie" type="Panel" parent="VBoxContainer/HBoxContainer"]
 margin_left = 340.0
 margin_top = 67.0
 margin_right = 681.0
@@ -169,28 +153,13 @@ margin_bottom = 67.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="IconAndStats" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/Susie/VBoxContainer"]
+[node name="CharacterArea" parent="VBoxContainer/HBoxContainer/Susie/VBoxContainer" instance=ExtResource( 9 )]
+margin_left = 0.0
 margin_right = 341.0
 margin_bottom = 67.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="Icon" type="TextureRect" parent="VBoxContainer/HBoxContainer/Susie/VBoxContainer/IconAndStats"]
-margin_right = 168.0
-margin_bottom = 67.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-texture = SubResource( 9 )
-expand = true
-
-[node name="HP" type="TextureRect" parent="VBoxContainer/HBoxContainer/Susie/VBoxContainer/IconAndStats"]
-margin_left = 172.0
-margin_right = 341.0
-margin_bottom = 67.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-texture = SubResource( 10 )
-expand = true
+rect_scale = Vector2( 1, 1 )
+NameTexture = SubResource( 16 )
+PortraitTexture = SubResource( 18 )
 
 [node name="Buttons" parent="VBoxContainer/HBoxContainer/Susie" instance=ExtResource( 5 )]
 anchor_top = 0.0
@@ -200,7 +169,7 @@ margin_top = 71.0
 margin_right = 341.0
 margin_bottom = 138.0
 
-[node name="Ralsei" type="GridContainer" parent="VBoxContainer/HBoxContainer"]
+[node name="Ralsei" type="Panel" parent="VBoxContainer/HBoxContainer"]
 margin_left = 682.0
 margin_top = 67.0
 margin_right = 1024.0
@@ -216,28 +185,13 @@ margin_bottom = 67.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="IconAndStats" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/Ralsei/VBoxContainer"]
+[node name="CharacterArea" parent="VBoxContainer/HBoxContainer/Ralsei/VBoxContainer" instance=ExtResource( 9 )]
+margin_left = 0.0
 margin_right = 342.0
 margin_bottom = 67.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="Icon" type="TextureRect" parent="VBoxContainer/HBoxContainer/Ralsei/VBoxContainer/IconAndStats"]
-margin_right = 169.0
-margin_bottom = 67.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-texture = SubResource( 11 )
-expand = true
-
-[node name="HP" type="TextureRect" parent="VBoxContainer/HBoxContainer/Ralsei/VBoxContainer/IconAndStats"]
-margin_left = 173.0
-margin_right = 342.0
-margin_bottom = 67.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-texture = SubResource( 12 )
-expand = true
+rect_scale = Vector2( 1, 1 )
+NameTexture = SubResource( 19 )
+PortraitTexture = SubResource( 25 )
 
 [node name="Buttons" parent="VBoxContainer/HBoxContainer/Ralsei" instance=ExtResource( 5 )]
 anchor_top = 0.0
@@ -253,39 +207,50 @@ anims/Kris_close = SubResource( 13 )
 anims/Ralsei_close = SubResource( 15 )
 anims/Susie_close = SubResource( 14 )
 
-[node name="CommentField" type="ColorRect" parent="VBoxContainer"]
-margin_top = 142.0
-margin_right = 1024.0
-margin_bottom = 280.0
+[node name="HBoxContainer2" type="Control" parent="VBoxContainer"]
+anchor_top = 0.507
+anchor_right = 1.0
+anchor_bottom = 0.996
+margin_top = 0.109985
+margin_right = 6.0
+margin_bottom = 0.0799866
+
+[node name="CommentField" type="ColorRect" parent="VBoxContainer/HBoxContainer2"]
+margin_left = -2.0
+margin_top = 7.0
+margin_right = 1028.0
+margin_bottom = 144.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = ExtResource( 4 )
 color = Color( 0, 0, 0, 1 )
 
-[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/CommentField"]
-margin_left = 80.0
-margin_top = 18.0
-margin_right = 950.0
-margin_bottom = 128.0
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/HBoxContainer2/CommentField"]
+margin_left = 49.0
+margin_top = 6.0
+margin_right = 919.0
+margin_bottom = 116.0
+text = "jdklsjas"
 scroll_active = false
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/CommentField"]
+[node name="AttackPanel" type="Control" parent="VBoxContainer/HBoxContainer2/CommentField"]
 visible = false
 margin_top = -72.0
 margin_right = 500.0
 margin_bottom = 138.0
+script = ExtResource( 8 )
 
-[node name="KrisAttackBar" parent="VBoxContainer/CommentField/VBoxContainer" instance=ExtResource( 3 )]
+[node name="Kris" parent="VBoxContainer/HBoxContainer2/CommentField/AttackPanel" instance=ExtResource( 3 )]
 visible = false
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 500.0
-margin_bottom = 210.0
+margin_bottom = 67.0
 rect_scale = Vector2( 1, 1 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="SusieAttackBar" parent="VBoxContainer/CommentField/VBoxContainer" instance=ExtResource( 3 )]
+[node name="Susie" parent="VBoxContainer/HBoxContainer2/CommentField/AttackPanel" instance=ExtResource( 3 )]
 visible = false
 anchor_right = 0.0
 anchor_bottom = 0.0
@@ -296,7 +261,7 @@ rect_scale = Vector2( 1, 1 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="RalseiAttackBar" parent="VBoxContainer/CommentField/VBoxContainer" instance=ExtResource( 3 )]
+[node name="Ralsei" parent="VBoxContainer/HBoxContainer2/CommentField/AttackPanel" instance=ExtResource( 3 )]
 visible = false
 anchor_right = 0.0
 anchor_bottom = 0.0
@@ -309,3 +274,13 @@ size_flags_vertical = 3
 
 [node name="ChoicePanel" parent="." instance=ExtResource( 7 )]
 visible = false
+margin_left = 2.0
+margin_top = 10.0
+margin_right = 2.0
+margin_bottom = 10.0
+
+[node name="ChangedSoundPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 2 )
+
+[node name="PressedStreamPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 11 )

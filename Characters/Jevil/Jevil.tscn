@@ -764,7 +764,7 @@ anims/teleport = SubResource( 2 )
 anims/throw_away = SubResource( 31 )
 
 [node name="Laughter" type="AudioStreamPlayer" parent="."]
-stream = SubResource( 23 )
+stream = ExtResource( 9 )
 
 [node name="SpeakSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 2 )
@@ -780,5 +780,4 @@ ATK = 10
 [node name="AnimatedSprite" type="AnimatedSprite" parent="AnimatedSpriteController"]
 position = Vector2( -5, 0 )
 frames = SubResource( 1 )
-animation = "hit"
 playing = true

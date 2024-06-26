@@ -93,7 +93,7 @@ func get_next_hero(current_hero):
 	var hero_ind = heroes.find(current_hero) + 1
 	if hero_ind < len(heroes):
 		return heroes[hero_ind]
-
+	return null
 
 func get_previous_hero(current_hero):
 	var hero_ind = heroes.find(current_hero) - 1

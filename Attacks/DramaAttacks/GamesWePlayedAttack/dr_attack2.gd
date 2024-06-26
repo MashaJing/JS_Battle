@@ -9,13 +9,13 @@ onready var WordSpawn = $WordSpawn
 onready var WordSpawnTimer = $WordSpawnTimer
 onready var AnimPlayer = $WordSpawn/AnimationPlayer
 onready var GlobalSpamton = get_parent().get_parent().get_node("Spamton")
-onready var Spamton = $WordSpawn/Controller/AnimatedSprite
+onready var Spamton = $WordSpawn/Spamton/AnimatedSpriteController/AnimatedSprite
 
 onready var WordScene = preload("res://Attacks/DramaAttacks/GamesWePlayedAttack/Word/Word.tscn")
 
 var words = [
-	"$POKER$", "SHES$", "$Monopoly$", "$TRUTH_or_DARE", "@MINECRAP@", "$CRACKASSON",
-	"ALIAS", "CHECKERS$", "H1DE-&-SEEK", "D&D"
+	"$POKER$", "$Monopoly$", "$TRUTH_or_DARE", "@MINECRAP@", "$CRACKASSON",
+	"CHECKERS$", "H1DE-&-SEEK", "DUNGEONS_&_D3VILS", "_____________"
 ]
 
 
@@ -29,12 +29,12 @@ func _ready():
 	Spamton.play("head_attack")
 	AnimPlayer.play("spawn_wave")
 	var word = ''
-	for i in range(10):
+	for i in range(9):
 		var wordBullet = WordScene.instance()
 		wordBullet.word = words[i]
 		add_child(wordBullet)
 		wordBullet.position = WordSpawn.global_position
-		yield(WordSpawnTimer, "timeout")
+		yield(wordBullet, "spawned_replica")
 	AnimPlayer.stop()
 	Spamton.visible = false
 	GlobalSpamton.visible = true

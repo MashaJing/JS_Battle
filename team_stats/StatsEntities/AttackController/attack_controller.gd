@@ -16,6 +16,9 @@ func _ready():
 
 # вызывается при выборе атаки
 func start_attack(actor, victim):
+	print("start_attack")
+	print(actor)
+	print(victim)
 #	get_tree().
 #	1. отправляет сигналы анимашкам, чтобы обозначить готовность
 	emit_signal("attack_start", actor, 'start_attack')
@@ -34,7 +37,6 @@ func cancel_attack(actor):
 # вызывается при остановке ползунка
 func confirm_attack(ratio, actor):
 	var victim = attacks[actor]
-	print(TeamStats.individual_stats)
 	var actor_atk = TeamStats.individual_stats[actor].ATK
 	var victim_def = ConStats.individual_stats[victim].DEF
 

@@ -44,5 +44,4 @@ func spawn_knife():
 	var knife = DevilsKnife.instance()
 	knife_path.add_child(knife)
 	# todo: удаляет сердце, а не дамажит
-	print(knife.get_children())
 	var DevilsKnife = knife.get_node("DevilsKnife")

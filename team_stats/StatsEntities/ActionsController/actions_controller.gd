@@ -7,6 +7,7 @@ signal action_start
 signal action_end
 signal offer_deal
 signal pacify
+signal canceled
 
 var cur_decision
 

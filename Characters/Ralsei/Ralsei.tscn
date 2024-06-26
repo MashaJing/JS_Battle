@@ -387,8 +387,8 @@ animations = [ {
 script = ExtResource( 2 )
 
 [node name="PlayerStats" parent="." instance=ExtResource( 3 )]
-MAX_HP = 140
-HP = 140
+MAX_HP = 3
+HP = 3
 ATK = 12
 
 [node name="AnimatedSpriteController" parent="." instance=ExtResource( 4 )]

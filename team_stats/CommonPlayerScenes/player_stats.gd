@@ -8,6 +8,7 @@ export var DEF = 10
 signal Down
 signal Up
 signal TookDamage
+signal Healed
 
 
 func _ready():
@@ -21,9 +22,9 @@ func take_damage(damage):
 	if HP >= 0 and new_HP <= 0:
 		print('emited down!!!')
 		emit_signal("Down", get_parent().name)
+	HP = new_HP
 	emit_signal("TookDamage")
 # - больше не принимаем сигнал take_damage - Крис исключён из списка целей атак??
-	HP = new_HP
 
 
 func heal(delta):
@@ -37,6 +38,7 @@ func heal(delta):
 	if HP < 0 and new_HP > 0:
 		print('emited up!!!')
 		emit_signal("Up", get_parent().name)
+	emit_signal("Healed")
 	HP = new_HP
 
 
@@ -45,3 +47,10 @@ func _init_signals():
 	connect("Up", TeamStats, "_on_ally_up")
 
 	DecisionReader.connect("heal", self, "heal")
+
+
+func defend():
+	DEF += 10
+	yield()
+	DEF -= 10
+	

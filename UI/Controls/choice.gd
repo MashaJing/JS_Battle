@@ -1,45 +1,49 @@
 extends Control
 
+signal play_pressed
+signal play_changed
+
 
 func show():
 	visible = true
 
-#func _ready():
-#	get_parent().connect("canceled", self, "_on_canceled")
+func _ready():
+	visible = true
 
 
 # для хилок, имён и всего, отображающегося без особых условий
 func init(options):
-	print('_____________INITED_____________')
-	for option in options:
-		$ItemList.add_item(option)
+	if len(options) > 0:
+		for option in options:
+			$ItemList.add_item(option)
+		$ItemList.grab_focus()
+		$ItemList.select(0)
 	show()
-	$ItemList.grab_focus()
-	$ItemList.select(0)
+
+
+# для действий
+func init_actions(actions):
+	for action in actions:
+		$ItemList.add_item(action.name, action.icon,
+							bool(TeamStats.TP >= action.tp_required))
+	if $ItemList.get_item_count() > 0:
+		$ItemList.grab_focus()
+		$ItemList.select(0)
+	show()
+
 
 func exit():
 	$ItemList.clear()
 	visible = false
 
-func init_actions(actions):
-	print('_____________INITED ACTIONS_____________')	
-	get_parent().connect("canceled", self, "_on_canceled")
-
-	for action in actions:
-		$ItemList.add_item(action.name, action.icon,
-							bool(TeamStats.TP >= action.tp_required))
-	show()
-	$ItemList.grab_focus()
-	$ItemList.select(0)
-
-# вместо этого - глобальный эммитер
-#func _input(ev):
-#	if Input.is_key_pressed(KEY_X):
-#		exit()
-#		get_parent().unhide()
 
 func _on_canceled():
-		print('_____________CAUGHT CANCELED_____________')
-		exit()
-		get_parent().unhide()
+	exit()
 
+
+func _on_ItemList_item_activated(index):
+	emit_signal("play_pressed")
+
+
+func _on_ItemList_item_selected(index):
+	emit_signal("play_changed")

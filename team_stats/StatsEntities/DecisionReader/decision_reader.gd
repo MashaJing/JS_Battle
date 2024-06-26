@@ -17,7 +17,6 @@ signal spare(_name)
 
 func _ready():
 	pass
-#	print(TeamStats.heroes_by_name["Kris"].ATK)
 
 
 # читает стек и шлёт сигналы в разные узлы
@@ -59,8 +58,8 @@ func spare(decision):
 
 
 func defense(decision):
-	emit_signal("defend", decision.DECIDER)
-
+	# минует стек, т.к. действие мгновенное
+	pass
 
 func action(decision):
 #	обращение в глобальный обработчик действий
