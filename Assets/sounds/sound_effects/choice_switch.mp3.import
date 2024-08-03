@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/choice_switch.mp3-ec1670214d5577a2357cbba3a56c00e9.mp3str"
+
+[deps]
+
+source_file="res://Assets/sounds/sound_effects/choice_switch.mp3"
+dest_files=[ "res://.import/choice_switch.mp3-ec1670214d5577a2357cbba3a56c00e9.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0.1

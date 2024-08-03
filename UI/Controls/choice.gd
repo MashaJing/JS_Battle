@@ -8,7 +8,7 @@ func show():
 	visible = true
 
 func _ready():
-	visible = true
+	visible = false
 
 
 # для хилок, имён и всего, отображающегося без особых условий
@@ -37,7 +37,7 @@ func exit():
 	visible = false
 
 
-func _on_canceled():
+func _on_exit_choice():
 	exit()
 
 

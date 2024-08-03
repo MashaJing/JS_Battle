@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/toby_bark.mp3-b4455e42f94cbf914b42bbc0f3d5753a.mp3str"
+
+[deps]
+
+source_file="res://Assets/sounds/sound_effects/toby_bark.mp3"
+dest_files=[ "res://.import/toby_bark.mp3-b4455e42f94cbf914b42bbc0f3d5753a.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

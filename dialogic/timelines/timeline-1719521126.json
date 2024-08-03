@@ -1,0 +1,39 @@
+{
+	"events": [
+		{
+			"call_node": {
+				"arguments": [
+					"heroes_appear"
+				],
+				"method_name": "play",
+				"target_node_path": "Main/AnimationPlayer"
+			},
+			"event_id": "dialogic_042"
+		},
+		{
+			"call_node": {
+				"arguments": [
+					"spamton_appear_1"
+				],
+				"method_name": "play",
+				"target_node_path": "Main/AnimationPlayer"
+			},
+			"event_id": "dialogic_042"
+		},
+		{
+			"call_node": {
+				"arguments": [
+					"shocked"
+				],
+				"method_name": "play",
+				"target_node_path": "Main/Susie/AnimationPlayer"
+			},
+			"event_id": "dialogic_042"
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.4.5",
+		"file": "timeline-1719521126.json",
+		"name": "appearance_first"
+	}
+}

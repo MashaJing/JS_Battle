@@ -9,14 +9,17 @@ func _ready():
 
 	DecisionReader.connect("heal", self, "_on_get_heal")
 	DecisionReader.connect("defend", self, "_on_defend")
-	DecisionReader.connect("spare", self, "_on_spare")
+#	DecisionReader.connect("spare", self, "_on_spare")
+	SpareController.connect("play_spare", self, "_on_spare")
+	SpareController.connect("action_start", self, "_on_Action_start")
 
 	ActionsController.connect("action_start", self, "_on_Action_start")
 	ActionsController.connect("action_end", self, "_on_Action_end")
-	ActionsController.connect("canceled", $AnimatedSpriteController, "_on_Up")
+	ActionsController.connect("canceled", self, "_on_Up")
 
 	AttackController.connect("attack_start", self, "_on_Action_start")
 	AttackController.connect("attack_end", self, "_on_Action_end")
+	AttackController.connect("canceled", self, "_on_Up")
 	# чисто для соперников
 	# AttackController.connect("take_damage", self, "_on_Took_Damage")
 
@@ -47,3 +50,8 @@ func _on_Action_start(_name, action_animation='action'):
 func _on_Action_end(_name, action_animation='action'):
 	if name == _name:
 		$AnimatedSpriteController._on_Action_end(action_animation)
+
+# ... -> up
+func _on_Up(_name):
+	if name == _name:
+		$AnimatedSpriteController._on_Up(_name)

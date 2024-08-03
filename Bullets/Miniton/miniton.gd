@@ -2,7 +2,8 @@ extends Node2D
 
 const State = {
 	DEFAULT = "default",
-	DAMAGE = "damage"
+	DAMAGE = "damage",
+	EXPLOSION = "explosion"
 }
 var Explosion = preload("res://Bullets/bullet_tools/Explosion/Explosion.tscn")
 var cur_state = State.DEFAULT
@@ -26,10 +27,10 @@ func _on_Miniton_area_entered(area):
 		cur_state = State.DAMAGE
 		$AnimationPlayer.play(cur_state)
 	if area.is_in_group("knife"):
-		var explosion = Explosion.instance()
-		add_child(explosion)
-		yield(explosion, "exploded")
-		get_parent().queue_free()
+		cur_state = State.EXPLOSION
+		$AnimationPlayer.play(cur_state)
+		$ExplosionSound.play()
+		yield($AnimationPlayer, "animation_finished")
 
 
 #func _on_HeartDetectionArea_area_entered(area):

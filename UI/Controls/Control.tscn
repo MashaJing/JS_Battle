@@ -1,7 +1,7 @@
 [gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://UI/Controls/CharacterPanel.gd" type="Script" id=1]
-[ext_resource path="res://Assets/sounds/voice_spamton.mp3" type="AudioStream" id=2]
+[ext_resource path="res://Assets/sounds/sound_effects/choice_switch.mp3" type="AudioStream" id=2]
 [ext_resource path="res://UI/Controls/AttackArea/AttackArea.tscn" type="PackedScene" id=3]
 [ext_resource path="res://UI/themes/MenuTheme.tres" type="Theme" id=4]
 [ext_resource path="res://UI/Controls/ButtonsPanel.tscn" type="PackedScene" id=5]
@@ -10,7 +10,7 @@
 [ext_resource path="res://UI/between_attack_menu/AttackPanel.gd" type="Script" id=8]
 [ext_resource path="res://UI/Controls/CharacterArea/CharacterArea.tscn" type="PackedScene" id=9]
 [ext_resource path="res://UI/between_attack_menu/assets/menu_sprites.png" type="Texture" id=10]
-[ext_resource path="res://Assets/sounds/spamton_laugh_noise.ogg" type="AudioStream" id=11]
+[ext_resource path="res://Assets/sounds/sound_effects/ducky_sound.mp3" type="AudioStream" id=11]
 
 [sub_resource type="AtlasTexture" id=22]
 atlas = ExtResource( 10 )
@@ -280,7 +280,10 @@ margin_right = 2.0
 margin_bottom = 10.0
 
 [node name="ChangedSoundPlayer" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource( 2 )
+stream = ExtResource( 11 )
 
 [node name="PressedStreamPlayer" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource( 11 )
+stream = ExtResource( 2 )
+
+[node name="LetterTimer" type="Timer" parent="."]
+wait_time = 0.02

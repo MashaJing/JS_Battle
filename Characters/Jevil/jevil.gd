@@ -18,3 +18,6 @@ func close_moth():
 	$AnimationPlayer.play("close_moth")
 	yield($AnimationPlayer, "animation_finished")
 	queue_free()
+
+func _on_down(_name):
+	GlobalPlotSettings.play_spam_down()

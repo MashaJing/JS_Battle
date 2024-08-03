@@ -1,4 +1,4 @@
-[gd_scene load_steps=114 format=2]
+[gd_scene load_steps=109 format=2]
 
 [ext_resource path="res://Assets/Images/Sprites/Characters/Spamton_2.png" type="Texture" id=1]
 [ext_resource path="res://Characters/Spamton/assets/increase_head/image3x1.png" type="Texture" id=2]
@@ -498,12 +498,12 @@ tracks/1/path = NodePath("AnimatedSpriteController/AnimatedSprite:animation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
-tracks/1/enabled = true
+tracks/1/enabled = false
 tracks/1/keys = {
 "times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ "hit", "down" ]
+"values": [ "damage", "down" ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("AnimatedSpriteController/AnimatedSprite:rotation_degrees")
@@ -528,6 +528,18 @@ tracks/3/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( 10, 0 ), Vector2( -5, 0 ), Vector2( 10, 0 ), Vector2( -5, -5 ), Vector2( -5, 0 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("AnimatedSpriteController/AnimatedSprite:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
 }
 
 [sub_resource type="Animation" id=8]
@@ -877,80 +889,44 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 )
 }
 
-[sub_resource type="Animation" id=92]
+[sub_resource type="Animation" id=100]
 resource_name = "put_on_ring"
-length = 8.0
+length = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("AnimatedSpriteController/AnimatedSprite:scale")
+tracks/0/path = NodePath("AnimatedSpriteController/AnimatedSprite:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 4.2, 7.6 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PoolRealArray( 0.1 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 1.1, 1.1 ), Vector2( 2.2, 2.2 ), Vector2( 1, 1 ) ]
+"values": [ Vector2( -60, -52 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("AnimatedSpriteController/AnimatedSprite:position")
+tracks/1/path = NodePath("AnimatedSpriteController/AnimatedSprite:playing")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.2, 0.4, 1.8, 2.7, 2.9, 3.6, 3.8, 4, 4.2, 6.7 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0.1 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( -62, -46 ), Vector2( -53, -46 ), Vector2( -55, -46 ), Vector2( -50, -46 ), Vector2( -61, -56 ), Vector2( -50, -56 ), Vector2( -35, -61 ), Vector2( -50, -56 ), Vector2( -44, -58 ), Vector2( -41, -50 ), Vector2( -43, -45 ) ]
+"values": [ true ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("AnimatedSpriteController/AnimatedSprite:speed_scale")
+tracks/2/path = NodePath("AnimatedSpriteController/AnimatedSprite:animation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 7.6 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0.1 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 1.0, 0.8 ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("AnimatedSpriteController/AnimatedSprite:frame")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0, 0.2, 0.4, 1.8, 2.7, 2.9, 3.4, 3.6, 3.8, 4, 4.2, 4.8, 5.3, 5.4, 5.9, 6, 6.2 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 0,
-"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 6, 8, 0, 0, 1, 0, 1, 0, 0 ]
-}
-tracks/4/type = "value"
-tracks/4/path = NodePath("AnimatedSpriteController/AnimatedSprite:playing")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/keys = {
-"times": PoolRealArray( 0, 7.6 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ false, true ]
-}
-tracks/5/type = "value"
-tracks/5/path = NodePath("AnimatedSpriteController/AnimatedSprite:animation")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/keys = {
-"times": PoolRealArray( 0, 4.2, 4.8, 6.7, 7.6 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
-"update": 0,
-"values": [ "put_on_ring", "black_glasses", "annoyed1", "default", "dance" ]
+"values": [ "put_on_ring" ]
 }
 
 [sub_resource type="Animation" id=43]
@@ -1400,26 +1376,6 @@ region = Rect2( 64, 0, 64, 91 )
 atlas = ExtResource( 21 )
 region = Rect2( 128, 0, 64, 91 )
 
-[sub_resource type="AtlasTexture" id=87]
-atlas = ExtResource( 21 )
-region = Rect2( 192, 0, 64, 91 )
-
-[sub_resource type="AtlasTexture" id=88]
-atlas = ExtResource( 21 )
-region = Rect2( 0, 91, 64, 91 )
-
-[sub_resource type="AtlasTexture" id=89]
-atlas = ExtResource( 21 )
-region = Rect2( 64, 91, 64, 91 )
-
-[sub_resource type="AtlasTexture" id=90]
-atlas = ExtResource( 21 )
-region = Rect2( 128, 91, 64, 91 )
-
-[sub_resource type="AtlasTexture" id=91]
-atlas = ExtResource( 21 )
-region = Rect2( 192, 91, 64, 91 )
-
 [sub_resource type="AtlasTexture" id=51]
 atlas = ExtResource( 13 )
 region = Rect2( 198, 8, 24, 37 )
@@ -1525,7 +1481,7 @@ animations = [ {
 "name": "laugh",
 "speed": 10.0
 }, {
-"frames": [ SubResource( 84 ), SubResource( 85 ), SubResource( 86 ), SubResource( 87 ), SubResource( 88 ), SubResource( 89 ), SubResource( 90 ), SubResource( 91 ), SubResource( 88 ) ],
+"frames": [ SubResource( 84 ), SubResource( 85 ), SubResource( 86 ), SubResource( 86 ), SubResource( 86 ), SubResource( 86 ), SubResource( 86 ), SubResource( 86 ) ],
 "loop": false,
 "name": "put_on_ring",
 "speed": 5.0
@@ -1577,7 +1533,7 @@ anims/idle = SubResource( 57 )
 anims/increase_head_inclined = SubResource( 38 )
 anims/jump = SubResource( 94 )
 anims/laugh = SubResource( 44 )
-anims/put_on_ring = SubResource( 92 )
+anims/put_on_ring = SubResource( 100 )
 anims/step_away = SubResource( 43 )
 anims/sweep = SubResource( 76 )
 anims/throw_cash = SubResource( 93 )
@@ -1596,15 +1552,15 @@ animation = "sweep"
 frame = 3
 
 [node name="PlayerStats" parent="." instance=ExtResource( 11 )]
-MAX_HP = 600
-HP = 600
 ATK = 8
 
 [node name="AnimatedSpriteController" parent="." instance=ExtResource( 22 )]
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="AnimatedSpriteController"]
-position = Vector2( -62, -46 )
+position = Vector2( -60, -52 )
 scale = Vector2( 2.2, 2.2 )
 z_index = 1
 frames = SubResource( 1 )
-offset = Vector2( -5, 0 )
+animation = "annoyed"
+playing = true
+offset = Vector2( 10, 0 )

@@ -12,8 +12,10 @@ func stop():
 	speed = 0
 
 func _ready():
+	$TTL.wait_time = ttl
 	$AnimationPlayer.play("appear")
 	yield($AnimationPlayer, "animation_finished")
 	speed = 250
-	yield(get_tree().create_timer(ttl), "timeout")
+
+func _on_TTL_timeout():
 	queue_free()

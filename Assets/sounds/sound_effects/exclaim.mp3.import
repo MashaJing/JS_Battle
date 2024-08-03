@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/exclaim.mp3-7e60b0141ce28776cb76ba65819cec0b.mp3str"
+
+[deps]
+
+source_file="res://Assets/sounds/sound_effects/exclaim.mp3"
+dest_files=[ "res://.import/exclaim.mp3-7e60b0141ce28776cb76ba65819cec0b.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

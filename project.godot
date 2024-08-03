@@ -106,6 +106,8 @@ ActionsController="*res://team_stats/StatsEntities/ActionsController/ActionsCont
 ActionsInventorium="*res://team_stats/StatsEntities/ActionsInventorium/ActionsInventorium.tscn"
 BattleInfoLogger="*res://BattleInfoLogger.tscn"
 AttackController="*res://team_stats/StatsEntities/AttackController/attack_controller.gd"
+GlobalPlotSettings="*res://GlobalPlotSettings.gd"
+SpareController="*res://team_stats/StatsEntities/SpareController/SpareController.tscn"
 
 [display]
 

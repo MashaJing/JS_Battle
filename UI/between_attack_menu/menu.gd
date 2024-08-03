@@ -96,7 +96,7 @@ func use_item(index):
 	CURRENT_DECISION.DECIDER = TeamStats.heroes[len(DecisionStack.DECISIONS)]
 
 	# Шаг 2. Зарезервировать выбранную хилку
-	CURRENT_DECISION.ITEM = Inventorium.reserve_item(index)
+	CURRENT_DECISION.ITEM = Inventorium.get(index)
 
 	# Шаг 3. Вернуться в общее меню
 	return_to_common_menu("use_item")

@@ -15,5 +15,7 @@ func stop():
 	speed = 0
 
 func _ready():
-	yield(get_tree().create_timer(ttl), "timeout")
+	$TTL.wait_time = ttl
+
+func _on_TTL_timeout():
 	queue_free()

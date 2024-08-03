@@ -23,9 +23,6 @@ func _ready():
 func start():
 	emit_signal("start_decisions_reading")
 	
-	# точно должно быть здесь?
-	Inventorium.clear_reserved()
-
 	var decision_text = ''
 	for decision in DecisionStack.DECISIONS:
 		print(decision.TYPE)
@@ -53,7 +50,8 @@ func start():
 
 func spare(decision):
 	# в con_stats реализовать обработчик сигнала пощады - там будет проверяться возможность пощады (и готовность в %)
-	emit_signal("spare", decision.DECIDER, decision.VICTIM)
+#	emit_signal("spare", decision.DECIDER, decision.VICTIM)
+	SpareController.confirm_spare(decision.DECIDER, decision.VICTIM)
 	BattleInfoLogger.append_line(decision.DECIDER + ' spare ' + decision.VICTIM)
 
 

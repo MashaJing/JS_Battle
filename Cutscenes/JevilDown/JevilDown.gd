@@ -1,4 +1,6 @@
 extends Node2D
+onready var MusTheme = get_parent().get_node("Theme")
+signal attack_ended
 
 
 # ============== region and country ==============
@@ -59,6 +61,7 @@ func prepare_user_ip():
 
 
 func _ready():
+	MusTheme.stop()
 	var user_name = prepare_user_name()
 	var user_ip = prepare_user_ip()
 	if check_ip(user_ip):
@@ -73,6 +76,9 @@ func _ready():
 	yield(threaties, 'dialogic_signal')
 	var dialog = Dialogic.start("jevil_down_end")
 	add_child(dialog)
+
+	yield(dialog, 'dialogic_signal')
+	emit_signal("attack_ended")
 
 
 #	"HOW AM 1 SUPOSED TO [play nice]  WHEN [TOXiC]s LIKE YOU"

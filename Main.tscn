@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://UI/Controls/Control.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Characters/Kris/Kris.tscn" type="PackedScene" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://Assets/Images/Sprites/Interior/ringring.png" type="Texture" id=9]
 [ext_resource path="res://Characters/Ralsei/Ralsei.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Characters/Lancer/Lancer.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Assets/sounds/sound_effects/ducky_sound.mp3" type="AudioStream" id=12]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Node
@@ -19,6 +20,155 @@ script/source = "extends Node
 func _ready():
 	pass
 "
+
+[sub_resource type="Animation" id=3]
+resource_name = "heroes_appear"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Ralsei:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 137, 362 ), Vector2( 240, 230 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Susie:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 170, 362 ), Vector2( 283, 260 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Kris:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 230, 325 ), Vector2( 370, 230 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "heroes_begin_battle"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("Kris:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 370, 230 ), Vector2( 200, 149 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Susie:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 283, 260 ), Vector2( 158, 260 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Ralsei:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 240, 230 ), Vector2( 200, 300 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "spamton_appear_1"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Spamton:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 840, -40 ), Vector2( 840, 330 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Spamton:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.1, 0.5 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "spamton_appear_2"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Spamton:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 840, -40 ), Vector2( 840, 330 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Spamton:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.1, 0.5 ), Vector2( 1, 1 ) ]
+}
+tracks/2/type = "audio"
+tracks/2/path = NodePath("sound_effects")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 12 )
+} ],
+"times": PoolRealArray( 0.2 )
+}
 
 [node name="Main" type="Node2D"]
 script = ExtResource( 3 )
@@ -35,7 +185,9 @@ scale = Vector2( 0.239258, 0.216731 )
 texture = ExtResource( 9 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 510, 300 )
+visible = false
+position = Vector2( 1160, 410 )
+scale = Vector2( 0.5, 1 )
 
 [node name="AttackTimer" type="Timer" parent="."]
 wait_time = 6.0
@@ -47,13 +199,13 @@ bus = "Soundtrack"
 script = ExtResource( 5 )
 
 [node name="Kris" parent="." instance=ExtResource( 2 )]
-position = Vector2( 200, 149 )
+position = Vector2( 230, 325 )
 
 [node name="Susie" parent="." instance=ExtResource( 4 )]
-position = Vector2( 158, 260 )
+position = Vector2( 170, 362 )
 
 [node name="Spamton" parent="." instance=ExtResource( 6 )]
-position = Vector2( 840, 330 )
+position = Vector2( 840, -40 )
 
 [node name="Seam" type="Node2D" parent="."]
 position = Vector2( 1014, 490 )
@@ -63,7 +215,7 @@ script = SubResource( 1 )
 position = Vector2( 827, 200 )
 
 [node name="Ralsei" parent="." instance=ExtResource( 10 )]
-position = Vector2( 200, 300 )
+position = Vector2( 137, 362 )
 scale = Vector2( 2, 2 )
 
 [node name="Lancer" parent="." instance=ExtResource( 11 )]
@@ -77,6 +229,18 @@ one_shot = true
 [node name="Menu" parent="." instance=ExtResource( 1 )]
 margin_top = 590.0
 margin_bottom = 590.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/heroes_appear = SubResource( 3 )
+anims/heroes_begin_battle = SubResource( 2 )
+anims/spamton_appear_1 = SubResource( 4 )
+anims/spamton_appear_2 = SubResource( 5 )
+
+[node name="AngelSpawn" type="Node2D" parent="."]
+position = Vector2( 520, -10 )
+
+[node name="sound_effects" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 12 )
 
 [connection signal="timeout" from="AttackTimer" to="." method="_on_AttackTimer_timeout"]
 [connection signal="timeout" from="CringeTimer" to="." method="_on_CringeTimer_timeout"]

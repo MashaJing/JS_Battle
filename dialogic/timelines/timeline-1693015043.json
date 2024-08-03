@@ -27,12 +27,6 @@
 			"text": "  ?!?!"
 		},
 		{
-			"character": "character-1693017633.json",
-			"event_id": "dialogic_001",
-			"portrait": "",
-			"text": "THE GOD WENT SILENT AFTER"
-		},
-		{
 			"call_node": {
 				"arguments": [
 					"default"
@@ -292,9 +286,9 @@
 		{
 			"call_node": {
 				"arguments": [
-					"BestAttack"
+
 				],
-				"method_name": "begin_attack",
+				"method_name": "begin_best_attack",
 				"target_node_path": "Main/MonologueAttack"
 			},
 			"event_id": "dialogic_042"

@@ -18,8 +18,8 @@ func add_decision(new_decision):
 
 func pop_decision():
 	if len(DECISIONS) > 0:
-		return DECISIONS.pop_front()
 		emit_signal("decision_canceled")
+		return DECISIONS.pop_front()
 	else:
 		print("[INFO] trying to get decision from empty stack")
 

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/main_menu_switch.mp3-096f3dae16ff3974a69f9b7e5accbb07.mp3str"
+
+[deps]
+
+source_file="res://Assets/sounds/sound_effects/main_menu_switch.mp3"
+dest_files=[ "res://.import/main_menu_switch.mp3-096f3dae16ff3974a69f9b7e5accbb07.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

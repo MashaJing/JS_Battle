@@ -30,7 +30,7 @@
 			"character": "character-1693016638.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "WATCH YOUR STEP,          [CHILD ABUSER]!"
+			"text": "WATCH YOUR STEP YOU,          [CHILD ABUSER]!"
 		},
 		{
 			"call_node": {
@@ -109,7 +109,7 @@
 			"character": "character-1693016638.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "[ SHOT] UP\nU TRA!TOR"
+			"text": "[ SHOT] UP\nU TRA!TOR[nw=0.5]"
 		},
 		{
 			"call_node": {

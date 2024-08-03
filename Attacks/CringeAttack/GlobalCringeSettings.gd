@@ -68,3 +68,6 @@ func next_joke():
 	JOKE_IND += 1
 	if JOKE_IND < len(JOKES):
 		return JOKES[JOKE_IND]
+
+func reset():
+	JOKE_IND = 0

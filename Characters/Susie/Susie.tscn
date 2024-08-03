@@ -320,8 +320,8 @@ stream = ExtResource( 58 )
 
 [node name="PlayerStats" parent="." instance=ExtResource( 59 )]
 position = Vector2( -10, -10 )
-MAX_HP = 190
-HP = 190
+MAX_HP = 1
+HP = 1
 
 [node name="AnimatedSpriteController" parent="." instance=ExtResource( 60 )]
 

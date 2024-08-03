@@ -51,7 +51,7 @@ func start_action(actor, action):
 # вызывается при отмене действия (удалении из стека?)
 func cancel_action(actor, action):
 #	1. отправляет сигналы анимашкам, чтобы вернуть дефолтный вид
-	emit_signal("Up", actor)
+	emit_signal("canceled", actor)
 #	2. добавляет TP
 	emit_signal("tp_increased", action.TP_REQUIRED)
 

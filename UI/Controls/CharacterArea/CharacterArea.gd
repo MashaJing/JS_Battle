@@ -14,6 +14,8 @@ func _ready():
 
 
 func _update_hp():
+	print("LEEETS UPDATE HP IN MENU")
+	print(character_stats.HP)
 	$HpBar/Progress.value = character_stats.HP
 	$HpBar/Digit.text = str(character_stats.HP)
 	print("_____THEME_____")
@@ -39,5 +41,4 @@ func set_character_stats(stats):
 	$HpBar/Progress.value = character_stats.HP
 	$HpBar/Digit.text = str(character_stats.HP)
 	$HpBar/Digit_max.text = str(character_stats.MAX_HP)
-	character_stats.connect("TookDamage", self, "_update_hp")
-	character_stats.connect("Healed", self, "_update_hp")
+	character_stats.connect("UpdateHp", self, "_update_hp")

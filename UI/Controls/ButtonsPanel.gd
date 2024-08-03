@@ -7,6 +7,7 @@ signal play_changed
 export var character_color = Color(150, 0, 150, 1)
 var Decision = preload("res://team_stats/StatsEntities/DecisionMessage/DecisionMessage.tscn")
 onready var character_panel = get_parent()
+onready var last_pressed_button = $Buttons/Attack
 
 
 func _ready():
@@ -23,7 +24,7 @@ func open():
 	for button in $Buttons.get_children():
 		button.disabled = false
 		button.visible = true
-	$Buttons/Attack.grab_focus()
+	grab_last_focus()
 
 
 func close():
@@ -32,45 +33,52 @@ func close():
 		button.visible = false
 	$Buttons.release_focus()
 
+func grab_last_focus():
+	last_pressed_button.grab_focus()
 
 func _on_Attack_button_down():
 	emit_signal("play_pressed")
-	$Buttons/Attack.release_focus()
+#	$Buttons/Attack.release_focus()
 	var decision = Decision.instance()
 	decision.TYPE = 'ATK'
 	emit_signal('decided', decision)
+	last_pressed_button = $Buttons/Attack
 
 
 func _on_Act_button_down():
 	emit_signal("play_pressed")
-	$Buttons/Act.release_focus()
+#	$Buttons/Act.release_focus()
 	var decision = Decision.instance()
 	decision.TYPE = 'ACT'
 	emit_signal('decided', decision)
+	last_pressed_button = $Buttons/Act
 
 
 func _on_Item_button_down():
 	emit_signal("play_pressed")
-	$Buttons/Item.release_focus()
+#	$Buttons/Item.release_focus()
 	var decision = Decision.instance()
 	decision.TYPE = 'ITEM'
 	emit_signal('decided', decision)
+	last_pressed_button = $Buttons/Item
 
 
 func _on_Spare_button_down():
 	emit_signal("play_pressed")
-	$Buttons/Spare.release_focus()
+#	$Buttons/Spare.release_focus()
 	var decision = Decision.instance()
 	decision.TYPE = 'SPARE'
 	emit_signal('decided', decision)
+	last_pressed_button = $Buttons/Spare
 
 
 func _on_Defense_button_down():
 	emit_signal("play_pressed")
-	$Buttons/Defense.release_focus()
+#	$Buttons/Defense.release_focus()
 	var decision = Decision.instance()
 	decision.TYPE = 'DEFENSE'
 	emit_signal('decided', decision)
+	last_pressed_button = $Buttons/Defense
 
 
 func _on_Button_changed():

@@ -4,7 +4,7 @@ signal attack_ended
 
 func _ready():
 	print('running')
-	Dialogic.set_variable('spamvil_made_up', GlobalAttackSettings.MADE_UP)
+	Dialogic.set_variable('spamvil_made_up', GlobalPlotSettings.MADE_UP)
 	
 	var dialogue = Dialogic.start("spamton_down")
 	add_child(dialogue)

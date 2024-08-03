@@ -18,17 +18,12 @@ var AttackTargets = []
 signal game_over
 
 
-
 class HeroSorter:
 	static func sort(a, b):
 		if all_heroes.find(a) < all_heroes.find(b):
 			return true
 		return false
 
-
-
-func _process(delta):
-	pass
 
 # обработка сигнала take damage:
 	# TargetEnemy получает дамаг в размере из статы
@@ -38,9 +33,9 @@ func _process(delta):
 
 func _on_take_damage():
 	for target in AttackTargets:
-		print('teamstats caught signal: target')
-		# атаку прокинуть в зависимости от пули
-		print(get_parent().get_children())
+		print('teamstats caught signal: take_damage')
+		print(target)
+		# TODO: атаку прокинуть в зависимости от пули
 		get_parent().get_node("Main").get_node(target).get_node("PlayerStats").take_damage(ConStats.ATK)
 
 
@@ -83,9 +78,11 @@ func _on_ally_up(ally):
 	DecisionStack.MAX_SIZE = len(TeamStats.heroes)
 
 
-func choose_target(targets: Node2D = null) -> void:
+func choose_target(targets = null) -> void:
 	if targets == null:
 		AttackTargets = [heroes[randi() % len(heroes)]]
+		print('AttackTargets')
+		print(AttackTargets)
 	else:
 		AttackTargets = targets
 
@@ -101,5 +98,13 @@ func get_previous_hero(current_hero):
 		return heroes[hero_ind]
 
 
+func reset():
+	heroes = all_heroes.duplicate() # deep?
+	for hero in heroes:
+		var hero_stats = get_parent().get_node("Main").get_node(hero).get_node("PlayerStats")
+		hero_stats.HP = hero_stats.MAX_HP
+	TP = 0
+	Inventorium.reset()
+		
 #func get_stats_by_name(_name):
 #	 return get_parent().get_node("Main").get_node(_name).get_node("PlayerStats")

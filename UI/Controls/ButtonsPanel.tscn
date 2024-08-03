@@ -80,6 +80,7 @@ custom_styles/pressed = SubResource( 20 )
 custom_styles/focus = SubResource( 20 )
 custom_styles/normal = SubResource( 17 )
 disabled = true
+toggle_mode = true
 group = ExtResource( 3 )
 expand_icon = true
 
@@ -96,6 +97,7 @@ custom_styles/pressed = SubResource( 32 )
 custom_styles/focus = SubResource( 32 )
 custom_styles/normal = SubResource( 25 )
 disabled = true
+toggle_mode = true
 group = ExtResource( 3 )
 expand_icon = true
 
@@ -112,6 +114,7 @@ custom_styles/pressed = SubResource( 26 )
 custom_styles/focus = SubResource( 26 )
 custom_styles/normal = SubResource( 27 )
 disabled = true
+toggle_mode = true
 group = ExtResource( 3 )
 expand_icon = true
 
@@ -128,6 +131,7 @@ custom_styles/pressed = SubResource( 28 )
 custom_styles/focus = SubResource( 28 )
 custom_styles/normal = SubResource( 29 )
 disabled = true
+toggle_mode = true
 group = ExtResource( 3 )
 expand_icon = true
 
@@ -144,6 +148,7 @@ custom_styles/pressed = SubResource( 30 )
 custom_styles/focus = SubResource( 30 )
 custom_styles/normal = SubResource( 31 )
 disabled = true
+toggle_mode = true
 group = ExtResource( 3 )
 expand_icon = true
 

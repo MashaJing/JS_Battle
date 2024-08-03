@@ -712,7 +712,7 @@ animations = [ {
 "name": "clean_leg",
 "speed": 2.0
 }, {
-"frames": [ ExtResource( 19 ) ],
+"frames": [ SubResource( 20 ) ],
 "loop": true,
 "name": "damage",
 "speed": 5.0
@@ -725,11 +725,6 @@ animations = [ {
 "frames": [ ExtResource( 18 ) ],
 "loop": true,
 "name": "down",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 20 ) ],
-"loop": true,
-"name": "hit",
 "speed": 5.0
 } ]
 
@@ -771,13 +766,14 @@ stream = ExtResource( 2 )
 
 [node name="PlayerStats" parent="." instance=ExtResource( 1 )]
 visible = false
-MAX_HP = 3500
-HP = 3500
+MAX_HP = 1000000
+HP = 1000000
 ATK = 10
 
 [node name="AnimatedSpriteController" parent="." instance=ExtResource( 3 )]
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="AnimatedSpriteController"]
+visible = false
 position = Vector2( -5, 0 )
 frames = SubResource( 1 )
 playing = true

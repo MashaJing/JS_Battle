@@ -15,7 +15,10 @@ func _ready():
 	pass
 
 func _on_take_damage(victim, damage):
+	print("____AAA HURTS CONSTATS CUGHT SIGNAL____")
+	print(victim)
 	individual_stats[victim].take_damage(damage)
+	SUM_HP = individual_stats[victim].HP
 
 # нужно в GlobalAttackSettings как условие перехода в след фазу
 func compare_hp(threshold):
@@ -23,4 +26,6 @@ func compare_hp(threshold):
 	print('compared to')
 	print(SUM_HP)
 	return SUM_HP <= threshold
-	
+
+func _on_take_spare(victim):
+	individual_stats[victim].spare()

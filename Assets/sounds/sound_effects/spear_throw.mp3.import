@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/spear_throw.mp3-c69a9011b10b2a7704c47033ae075fe3.mp3str"
+
+[deps]
+
+source_file="res://Assets/sounds/sound_effects/spear_throw.mp3"
+dest_files=[ "res://.import/spear_throw.mp3-c69a9011b10b2a7704c47033ae075fe3.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

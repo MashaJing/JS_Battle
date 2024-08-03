@@ -2,6 +2,7 @@ extends Node2D
 
 signal attack_start
 signal attack_end
+signal canceled
 
 signal attack
 signal damage_enemy(victim, damage)
@@ -29,7 +30,7 @@ func start_attack(actor, victim):
 # вызывается при отмене атаки (удалении из стека)
 func cancel_attack(actor):
 #	1. отправляет сигналы анимашкам, чтобы вернуть дефолтный вид
-	emit_signal("Up", actor)
+	emit_signal("canceled", actor)
 #	2. убирает союзника из множества нападающих
 	attacks.erase(actor)
 
@@ -50,6 +51,5 @@ func confirm_attack(ratio, actor):
 	attacks.erase(actor)
 
 
-
 func calculate_damage(ratio, victim_def, fighter_atk):
-	return fighter_atk - victim_def - ratio
+	return abs(fighter_atk - victim_def - ratio)

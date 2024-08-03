@@ -4,12 +4,6 @@
 	],
 	"variables": [
 		{
-			"id": "1694094006-648",
-			"name": "spamvil_made_up",
-			"type": 0,
-			"value": "false"
-		},
-		{
 			"id": "1697568665-648",
 			"name": "info_line",
 			"type": 0,
@@ -18,12 +12,6 @@
 		{
 			"id": "1693156428-507",
 			"name": "user_ip",
-			"type": 0,
-			"value": ""
-		},
-		{
-			"id": "1693156448-928",
-			"name": "user_password_len",
 			"type": 0,
 			"value": ""
 		},
@@ -42,12 +30,6 @@
 		{
 			"id": "1693484500-648",
 			"name": "user_country",
-			"type": 0,
-			"value": ""
-		},
-		{
-			"id": "1693484504-787",
-			"name": "user_region",
 			"type": 0,
 			"value": ""
 		},
@@ -76,6 +58,24 @@
 			"value": "cookie_banner"
 		},
 		{
+			"id": "1694094006-648",
+			"name": "spamvil_made_up",
+			"type": 0,
+			"value": "false"
+		},
+		{
+			"id": "1693484504-787",
+			"name": "user_region",
+			"type": 0,
+			"value": ""
+		},
+		{
+			"id": "1693156448-928",
+			"name": "user_password_len",
+			"type": 0,
+			"value": ""
+		},
+		{
 			"id": "1708833115-648",
 			"name": "atk_banner_clicked",
 			"type": 0,
@@ -86,6 +86,12 @@
 			"name": "description",
 			"type": 0,
 			"value": ""
+		},
+		{
+			"id": "1719525402-648",
+			"name": "first_launch",
+			"type": 0,
+			"value": "false"
 		}
 	]
 }

@@ -49,3 +49,7 @@ texture = ExtResource( 2 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/appear = SubResource( 2 )
+
+[node name="TTL" type="Timer" parent="."]
+
+[connection signal="timeout" from="TTL" to="." method="_on_TTL_timeout"]

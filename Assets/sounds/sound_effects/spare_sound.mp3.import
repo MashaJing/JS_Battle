@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/spare_sound.mp3-6617339aeb55620d4c8f12228d3047e6.mp3str"
+
+[deps]
+
+source_file="res://Assets/sounds/sound_effects/spare_sound.mp3"
+dest_files=[ "res://.import/spare_sound.mp3-6617339aeb55620d4c8f12228d3047e6.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

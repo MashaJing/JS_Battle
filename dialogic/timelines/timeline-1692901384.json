@@ -11,6 +11,86 @@
 			"event_id": "dialogic_042"
 		},
 		{
+			"call_node": {
+				"arguments": [
+					"heroes_appear"
+				],
+				"method_name": "play",
+				"target_node_path": "Main/AnimationPlayer"
+			},
+			"event_id": "dialogic_042"
+		},
+		{
+			"condition": "",
+			"definition": "1719525402-648",
+			"event_id": "dialogic_012",
+			"value": "false"
+		},
+		{
+			"call_node": {
+				"arguments": [
+					"teleport"
+				],
+				"method_name": "play",
+				"target_node_path": "Main/Jevil/AnimationPlayer"
+			},
+			"event_id": "dialogic_042"
+		},
+		{
+			"event_id": "dialogic_023",
+			"hide_dialogbox": true,
+			"wait_seconds": 1
+		},
+		{
+			"call_node": {
+				"arguments": [
+					"spamton_appear_1"
+				],
+				"method_name": "play",
+				"target_node_path": "Main/AnimationPlayer"
+			},
+			"event_id": "dialogic_042"
+		},
+		{
+			"event_id": "dialogic_013"
+		},
+		{
+			"event_id": "dialogic_023",
+			"hide_dialogbox": true,
+			"wait_seconds": 1.5
+		},
+		{
+			"condition": "",
+			"definition": "1719525402-648",
+			"event_id": "dialogic_012",
+			"value": "true"
+		},
+		{
+			"call_node": {
+				"arguments": [
+					"spamton_appear_2"
+				],
+				"method_name": "play",
+				"target_node_path": "Main/AnimationPlayer"
+			},
+			"event_id": "dialogic_042"
+		},
+		{
+			"event_id": "dialogic_023",
+			"hide_dialogbox": true,
+			"wait_seconds": 1
+		},
+		{
+			"call_node": {
+				"arguments": [
+					"shocked"
+				],
+				"method_name": "play",
+				"target_node_path": "Main/Susie/AnimationPlayer"
+			},
+			"event_id": "dialogic_042"
+		},
+		{
 			"animation": "slide_in_left.gd",
 			"animation_length": 0,
 			"change_mirror_portrait": false,
@@ -31,6 +111,16 @@
 			"z_index": 0
 		},
 		{
+			"call_node": {
+				"arguments": [
+					"hands_up"
+				],
+				"method_name": "play",
+				"target_node_path": "Main/Spamton/AnimationPlayer"
+			},
+			"event_id": "dialogic_042"
+		},
+		{
 			"audio_bus": "Soundtrack",
 			"background-music": "play",
 			"event_id": "dialogic_031",
@@ -44,6 +134,16 @@
 			"event_id": "dialogic_001",
 			"portrait": "Default",
 			"text": "* H3Y KRIS  [and his friends]!      IT’S a-ME!\n* YOU  [START ATTENDING GYM at]  TO  EXERC1SE WITH YOUR  [old pal] SPAMTON !!"
+		},
+		{
+			"call_node": {
+				"arguments": [
+					"default"
+				],
+				"method_name": "play",
+				"target_node_path": "Main/Susie/AnimationPlayer"
+			},
+			"event_id": "dialogic_042"
 		},
 		{
 			"animation": "slide_out_left.gd",
@@ -84,16 +184,6 @@
 			},
 			"type": 0,
 			"z_index": 0
-		},
-		{
-			"call_node": {
-				"arguments": [
-					"hands_up"
-				],
-				"method_name": "play",
-				"target_node_path": "Main/Spamton/AnimationPlayer"
-			},
-			"event_id": "dialogic_042"
 		},
 		{
 			"character": "character-1692901208.json",
@@ -188,6 +278,16 @@
 			"event_id": "dialogic_042"
 		},
 		{
+			"call_node": {
+				"arguments": [
+					"shocked"
+				],
+				"method_name": "play",
+				"target_node_path": "Main/Susie/AnimationPlayer"
+			},
+			"event_id": "dialogic_042"
+		},
+		{
 			"audio_bus": "Soundtrack",
 			"background-music": "play",
 			"event_id": "dialogic_031",
@@ -239,6 +339,16 @@
 			"fade_length": 0.01,
 			"file": "res://Assets/music/Dialtone Circus (Extended).mp3",
 			"volume": -4.5
+		},
+		{
+			"call_node": {
+				"arguments": [
+					"default"
+				],
+				"method_name": "play",
+				"target_node_path": "Main/Susie/AnimationPlayer"
+			},
+			"event_id": "dialogic_042"
 		},
 		{
 			"character": "character-1692900298.json",
@@ -868,7 +978,7 @@
 			"character": "character-1692898558.json",
 			"event_id": "dialogic_001",
 			"portrait": "Mysterious",
-			"text": "* ...\n* [ forget] THOSE GAMES\n* Light>ners, [event accepted]"
+			"text": "* HAVE [NOOO] IDEA WHAT YOU'RE TALKING ABOUT\n* Light>ners, [event accepted]"
 		},
 		{
 			"animation": "slide_out_left.gd",
@@ -930,7 +1040,7 @@
 			"character": "character-1692903513.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "* Awesome Hero Dudes Club on the left"
+			"text": "* Awesome Doughty Hero Dudes on the left"
 		},
 		{
 			"call_node": {
@@ -988,6 +1098,19 @@
 			},
 			"type": 1,
 			"z_index": 0
+		},
+		{
+			"event_id": "dialogic_013"
+		},
+		{
+			"call_node": {
+				"arguments": [
+					"heroes_begin_battle"
+				],
+				"method_name": "play",
+				"target_node_path": "Main/AnimationPlayer"
+			},
+			"event_id": "dialogic_042"
 		},
 		{
 			"emit_signal": "",

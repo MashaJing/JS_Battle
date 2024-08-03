@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/heart_break.mp3-8e3d4c96be6f80c7860608458b2a3157.mp3str"
+
+[deps]
+
+source_file="res://Assets/sounds/sound_effects/heart_break.mp3"
+dest_files=[ "res://.import/heart_break.mp3-8e3d4c96be6f80c7860608458b2a3157.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

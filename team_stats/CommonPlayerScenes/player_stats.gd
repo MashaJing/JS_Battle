@@ -5,10 +5,14 @@ export var HP = 100
 export var ATK = 100
 export var DEF = 10
 
+export var SPARE = 0
+var SPARE_DELTA = 10  # точно тут?
+
 signal Down
 signal Up
+signal UpdateHp
 signal TookDamage
-signal Healed
+signal Speared
 
 
 func _ready():
@@ -24,11 +28,12 @@ func take_damage(damage):
 		emit_signal("Down", get_parent().name)
 	HP = new_HP
 	emit_signal("TookDamage")
-# - больше не принимаем сигнал take_damage - Крис исключён из списка целей атак??
+	emit_signal("UpdateHp")
+# - больше не принимаем сигнал take_damage - исключён из списка целей атак??
 
 
 func heal(delta):
-#	play standard heal sound
+	$HealSound.play()
 	var new_HP = HP + delta
 	print('NEW hp ', new_HP)
 
@@ -36,10 +41,10 @@ func heal(delta):
 		new_HP = MAX_HP
 
 	if HP < 0 and new_HP > 0:
-		print('emited up!!!')
 		emit_signal("Up", get_parent().name)
-	emit_signal("Healed")
 	HP = new_HP
+		
+	emit_signal("UpdateHp")
 
 
 func _init_signals():
@@ -53,4 +58,13 @@ func defend():
 	DEF += 10
 	yield()
 	DEF -= 10
+	
+
+func spare():
+	var new_spare = SPARE + SPARE_DELTA
+	if new_spare > 100:
+		new_spare = 100
+	SPARE = new_spare
+	if SPARE == 100:
+		emit_signal("Speared", get_parent().name)
 	

@@ -53,3 +53,6 @@ func get_current_description():
 
 #func set_battle_info():
 #	Dialogic.set_variable('info_line', BATTLE_INFO[GlobalAttackSettings.CUR_PHASE_IND][LINE_INDEX])
+
+func reset():
+	LINE_INDEX = 0

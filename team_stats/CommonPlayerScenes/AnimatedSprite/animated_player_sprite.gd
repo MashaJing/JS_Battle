@@ -32,7 +32,7 @@ func _on_Defend():
 	state = State.DEFENSE
 	$AnimatedSprite.play(state)
 
-func _on_Spare(_victim):
+func _on_Spare():
 	$AnimatedSprite.play("spare")
 	yield($AnimatedSprite, "animation_finished")
 	$AnimatedSprite.play(state)
@@ -59,10 +59,12 @@ func _on_Action_end(action_animation='action'):
 # up -> down
 func _on_Down(_ally):
 	state = State.DOWN
+	$AnimatedSprite.play(state)
 
 # down -> up
 func _on_Up(_ally):
 	state = State.UP
+	$AnimatedSprite.play(state)
 
 func _init_signals():
 	pass

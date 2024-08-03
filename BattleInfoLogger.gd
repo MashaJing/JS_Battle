@@ -18,9 +18,3 @@ func get_lines():
 
 func clear():
 	BATTLE_INFO.clear()
-
-
-func show_dialogue():
-	Dialogic.set_variable("info_line", get_lines())
-	if len(BATTLE_INFO) > 0:
-		return Dialogic.start("battle_info")
