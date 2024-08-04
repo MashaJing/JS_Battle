@@ -1,49 +1,32 @@
-extends Control
+# для хилок, имён и всего, отображающегося без особых условий
+extends PopupMenu
 
 signal play_pressed
 signal play_changed
 
 
-func show():
-	visible = true
-
 func _ready():
-	visible = false
+	pass
+#	set_hide_on_window_lose_focus(true)
 
 
-# для хилок, имён и всего, отображающегося без особых условий
 func init(options):
+	clear()
 	if len(options) > 0:
 		for option in options:
-			$ItemList.add_item(option)
-		$ItemList.grab_focus()
-		$ItemList.select(0)
-	show()
-
-
-# для действий
-func init_actions(actions):
-	for action in actions:
-		$ItemList.add_item(action.name, action.icon,
-							bool(TeamStats.TP >= action.tp_required))
-	if $ItemList.get_item_count() > 0:
-		$ItemList.grab_focus()
-		$ItemList.select(0)
-	show()
-
+			add_item(option)
 
 func exit():
-	$ItemList.clear()
 	visible = false
 
+func open():
+	popup()
+	if len(items) > 0:
+		set_current_index(0)
 
-func _on_exit_choice():
-	exit()
-
-
-func _on_ItemList_item_activated(index):
-	emit_signal("play_pressed")
-
-
-func _on_ItemList_item_selected(index):
+func _on_ChoicePanel_id_focused(id):
 	emit_signal("play_changed")
+
+
+func _on_ChoicePanel_id_pressed(id):
+	emit_signal("play_pressed")

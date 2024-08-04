@@ -35,20 +35,6 @@ func get_item(index):
 	print('item ' + CONTENTS[index].name + ' taken')
 	return CONTENTS.pop_at(index)
 
-#func release_item(index):
-#	var actual_index = get_item_index_with_reserved(index)
-#	# возможно, тут тоже потребуется get_item_index_with_reserved
-#	print('item ' + CONTENTS[actual_index].name + ' released')
-#	CONTENTS[actual_index].reserved = false
-#	return CONTENTS[actual_index]
-
-#func clear_reserved():
-#	var new_items = []
-#	for item in CONTENTS:
-#		if not item.reserved:
-#			new_items.append(item)
-#	CONTENTS = new_items
-
 func get_visible_items():
 	var all_items = []
 	for item in CONTENTS:
@@ -56,25 +42,28 @@ func get_visible_items():
 	print(all_items)
 	return all_items
 
-#func get_item_index_with_reserved(index):
-#	var i = 0
-#	while index >= i:
-#		if CONTENTS[i].reserved:
-#			# мы корректируем индекс, учитывая невидимые пользователю зарезервированные предметы
-#			index+=1
-#		i+=1
-#	return index
-
 func add_item(item):
+	if item == null:
+		print("nothing to cancel")
+		return
 	if len(CONTENTS) + 1 <= MAX_CONTENTS_LEN:
 		CONTENTS.append(item)
 	else:
 		emit_signal("full")
+	CONTENTS.sort_custom(ItemSorter, "sort")
 
 func init_contents():
 	CONTENTS = [
-	 HealItem.new("TOP_CAKE", 12000),
 	 HealItem.new("BITTEN_BURRITO", 12000000),
+	 HealItem.new("TOP_CAKE", 12000),
 	 HealItem.new("USELESS_DEBUG_BURRITO", 0),
 	 HealItem.new("USELESS_DEBUG_BURRITO", 0),
 	]
+
+
+class ItemSorter:
+	static func sort(a, b):
+		if a.name < b.name:
+			return true
+		return false
+

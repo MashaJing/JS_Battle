@@ -11,5 +11,5 @@ dest_files=[ "res://.import/default_text_sound.mp3-3df264c35dbfaa0ac411646999d2f
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0
