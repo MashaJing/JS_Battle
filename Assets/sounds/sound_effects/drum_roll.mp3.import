@@ -11,5 +11,5 @@ dest_files=[ "res://.import/drum_roll.mp3-d22fddcb94c0e5cc352b244e8ee5ad6c.mp3st
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

@@ -21,10 +21,11 @@ func _ready():
 
 
 func open():
+	print('Buttons opened!')
 	for button in $Buttons.get_children():
 		button.disabled = false
 		button.visible = true
-	grab_last_focus()
+	$Buttons/Attack.grab_focus()
 
 
 func close():

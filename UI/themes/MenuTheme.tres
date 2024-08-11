@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=12 format=2]
+[gd_resource type="Theme" load_steps=14 format=2]
 
 [ext_resource path="res://Assets/fonts/menu/VT323-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://player/HeartArea/1.png" type="Texture" id=2]
@@ -30,6 +30,12 @@ bg_color = Color( 0, 0, 0, 1 )
 size = 20
 font_data = ExtResource( 1 )
 
+[sub_resource type="StyleBoxFlat" id=10]
+bg_color = Color( 0.172549, 0.172549, 0.172549, 1 )
+
+[sub_resource type="StyleBoxFlat" id=11]
+bg_color = Color( 0.494118, 0.494118, 0.494118, 1 )
+
 [sub_resource type="DynamicFont" id=1]
 size = 34
 extra_spacing_bottom = 1
@@ -54,4 +60,6 @@ PopupMenu/icons/checked = ExtResource( 2 )
 PopupMenu/icons/radio_checked = null
 PopupMenu/styles/panel = SubResource( 9 )
 ProgressBar/fonts/font = SubResource( 2 )
+ProgressBar/styles/bg = SubResource( 10 )
+ProgressBar/styles/fg = SubResource( 11 )
 RichTextLabel/colors/selection_color = Color( 0.945098, 1, 0, 1 )

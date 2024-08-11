@@ -420,7 +420,7 @@
 			"character": "character-1692898558.json",
 			"event_id": "dialogic_001",
 			"portrait": "Mad",
-			"text": "* Y0U,     [piece of snail pie] !\n* WHAT ARE U DOING [in my area]?!"
+			"text": "* Y0U,   [NEUROTIC] CHAOTIC !\n* WHAT ARE U DOING [in my area]?!"
 		},
 		{
 			"animation": "slide_out_left.gd",
@@ -604,7 +604,7 @@
 			"character": "character-1692898558.json",
 			"event_id": "dialogic_001",
 			"portrait": "Mad",
-			"text": "* DO NOT CALL ME [handmade wooden doll] !"
+			"text": "* DO NOT CALL ME [handmade wooden doll] Y0U,     [piece of snail pie] "
 		},
 		{
 			"animation": "slide_out_left.gd",
@@ -850,7 +850,7 @@
 			"character": "character-1692900298.json",
 			"event_id": "dialogic_001",
 			"portrait": "Cake",
-			"text": "* A HAND-MADE CAKE IS MUCH BETTER, BETTER!"
+			"text": "* A COTTON CANDY SHAPED UNICORN FLAVOURED CAKE IS MUCH BETTER, BETTER!"
 		},
 		{
 			"animation": "slide_out_left.gd",
@@ -876,7 +876,7 @@
 			"character": "character-1692898558.json",
 			"event_id": "dialogic_001",
 			"portrait": "Pathetic",
-			"text": "* THaT \t[cake] W1TH [body parts] AGAIN!?\n* D0N'T CONFUSE THe Chaos, Chaos W1TH [marasmus marasmus]"
+			"text": "* D0N'T CONFUSE THe [Chaos Chaos] W1TH [marasmus] [marasmus]"
 		},
 		{
 			"animation": "slide_out_left.gd",
@@ -1111,6 +1111,11 @@
 				"target_node_path": "Main/AnimationPlayer"
 			},
 			"event_id": "dialogic_042"
+		},
+		{
+			"event_id": "dialogic_023",
+			"hide_dialogbox": true,
+			"wait_seconds": 0.3
 		},
 		{
 			"emit_signal": "",

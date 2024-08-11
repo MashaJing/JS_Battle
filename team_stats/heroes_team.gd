@@ -3,7 +3,7 @@ extends Node
 onready var inventorium = $Inventorium
 
 var MAX_TP = 100
-var TP = 0
+var TP = 100
 var tp_delta = 10
 
 # как-то прокинуть хп каждого? Или прям тут? Мб сделать 2 глобальных узла для каждой из сторон?

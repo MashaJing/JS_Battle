@@ -773,7 +773,6 @@ ATK = 10
 [node name="AnimatedSpriteController" parent="." instance=ExtResource( 3 )]
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="AnimatedSpriteController"]
-visible = false
-position = Vector2( -5, 0 )
+modulate = Color( 1, 1, 1, 0.00128198 )
 frames = SubResource( 1 )
 playing = true

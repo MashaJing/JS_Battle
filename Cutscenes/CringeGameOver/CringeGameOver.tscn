@@ -2,7 +2,8 @@
 
 [ext_resource path="res://Cutscenes/CringeGameOver/cringe_game_over.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Images/Cutscenes/game_over_2.png" type="Texture" id=2]
-[ext_resource path="res://Assets/sounds/Cucozh.mp3" type="AudioStream" id=3]
+[ext_resource path="res://Assets/music/Cucozh.mp3" type="AudioStream" id=3]
+
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 2 )

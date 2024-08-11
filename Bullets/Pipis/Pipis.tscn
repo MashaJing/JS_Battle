@@ -42,8 +42,6 @@ autostart = true
 one_shot = true
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-modulate = Color( 1, 0, 0, 1 )
-self_modulate = Color( 1, 0, 0, 1 )
 scale = Vector2( 1.72826, 1.5 )
 frames = SubResource( 1 )
 animation = "damaged1"

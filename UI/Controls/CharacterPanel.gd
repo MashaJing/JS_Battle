@@ -25,6 +25,7 @@ func close():
 
 
 func open():
+	print(name + ' Buttons will be opened!')
 	$Buttons.open()
 	if get_parent().get_node("AnimationPlayer").is_playing():
 		yield(get_parent().get_node("AnimationPlayer"), "animation_finished")

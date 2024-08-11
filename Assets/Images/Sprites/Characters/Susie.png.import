@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/KnifeForm1.png-4edd840d9c700116b5323265a62cb24e.stex"
+path="res://.import/Susie.png-731ed5bfe66dea308986a0d74704757b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Attacks/Phase3/SharedForm/KnifeForm1.png"
-dest_files=[ "res://.import/KnifeForm1.png-4edd840d9c700116b5323265a62cb24e.stex" ]
+source_file="res://Assets/Images/Sprites/Characters/Susie.png"
+dest_files=[ "res://.import/Susie.png-731ed5bfe66dea308986a0d74704757b.stex" ]
 
 [params]
 

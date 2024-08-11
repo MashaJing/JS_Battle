@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://Border/Animation/e0014.png" type="Texture" id=1]
 [ext_resource path="res://Border/Animation/e0019.png" type="Texture" id=2]
@@ -35,8 +35,31 @@ animations = [ {
 "speed": 24.0
 } ]
 
+[sub_resource type="Animation" id=2]
+resource_name = "darken_screen"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/path = NodePath("ScreenDarkener:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 0.470588 ) ]
+}
+
 [node name="BorderField" type="StaticBody2D"]
 script = ExtResource( 26 )
+
+[node name="ScreenDarkener" type="ColorRect" parent="."]
+margin_left = -995.0
+margin_top = -755.0
+margin_right = 1010.0
+margin_bottom = 790.0
+color = Color( 0, 0, 0, 0.470588 )
 
 [node name="FieldCollision" type="CollisionPolygon2D" parent="."]
 position = Vector2( -50, -55 )
@@ -45,7 +68,11 @@ build_mode = 1
 polygon = PoolVector2Array( -101.333, -99.4706, -101.333, 219.059, 205.901, 219.059, 205.901, -99.4706 )
 
 [node name="BoxSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 0, 140 )
+position = Vector2( -5, 135 )
+scale = Vector2( 0.989583, 0.989583 )
 frames = SubResource( 1 )
 animation = "Appear"
 frame = 24
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/darken_screen = SubResource( 2 )

@@ -42,8 +42,3 @@ func start_spin():
 
 func finish_attack():
 	emit_signal("attack_ended")
-#	var next_scene = GlobalAttackSettings.get_next_attack()
-#	if next_scene != null:
-#		get_tree().change_scene(next_scene)
-#	else:
-#		print("научись обрабатывать исключения уже!")

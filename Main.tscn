@@ -8,7 +8,7 @@
 [ext_resource path="res://Characters/Spamton/Spamton.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Characters/Jevil/Jevil.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Assets/music/the_deals_revolving.mp3" type="AudioStream" id=8]
-[ext_resource path="res://Assets/Images/Sprites/Interior/ringring.png" type="Texture" id=9]
+[ext_resource path="res://Location/Ring.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Characters/Ralsei/Ralsei.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Characters/Lancer/Lancer.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Assets/sounds/sound_effects/ducky_sound.mp3" type="AudioStream" id=12]
@@ -59,6 +59,57 @@ tracks/2/keys = {
 "update": 0,
 "values": [ Vector2( 230, 325 ), Vector2( 370, 230 ) ]
 }
+tracks/3/type = "method"
+tracks/3/path = NodePath("Susie")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [ "Susie", "walk" ],
+"method": "_on_Action_start"
+}, {
+"args": [ "Susie" ],
+"method": "_on_Up"
+} ]
+}
+tracks/4/type = "method"
+tracks/4/path = NodePath("Kris")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [ "Kris", "walk" ],
+"method": "_on_Action_start"
+}, {
+"args": [ "Kris" ],
+"method": "_on_Up"
+} ]
+}
+tracks/5/type = "method"
+tracks/5/path = NodePath("Ralsei")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [ "Ralsei", "walk" ],
+"method": "_on_Action_start"
+}, {
+"args": [ "Ralsei" ],
+"method": "_on_Up"
+} ]
+}
 
 [sub_resource type="Animation" id=2]
 resource_name = "heroes_begin_battle"
@@ -73,7 +124,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.3 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 370, 230 ), Vector2( 200, 149 ) ]
+"values": [ Vector2( 370, 230 ), Vector2( 220, 149 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Susie:position")
@@ -85,7 +136,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 0.3 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 283, 260 ), Vector2( 158, 260 ) ]
+"values": [ Vector2( 283, 260 ), Vector2( 190, 260 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("Ralsei:position")
@@ -173,16 +224,15 @@ tracks/2/keys = {
 [node name="Main" type="Node2D"]
 script = ExtResource( 3 )
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="Background" type="ColorRect" parent="."]
 margin_top = -50.0
 margin_right = 1070.0
 margin_bottom = 632.0
 color = Color( 0, 0, 0, 1 )
 
-[node name="Ring" type="Sprite" parent="ColorRect"]
-position = Vector2( 513, 300 )
-scale = Vector2( 0.239258, 0.216731 )
-texture = ExtResource( 9 )
+[node name="Ring" parent="Background" instance=ExtResource( 9 )]
+position = Vector2( -31, -69 )
+scale = Vector2( 1.09374, 1.08247 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 visible = false
@@ -199,10 +249,10 @@ bus = "Soundtrack"
 script = ExtResource( 5 )
 
 [node name="Kris" parent="." instance=ExtResource( 2 )]
-position = Vector2( 230, 325 )
+position = Vector2( 328, 258.5 )
 
 [node name="Susie" parent="." instance=ExtResource( 4 )]
-position = Vector2( 170, 362 )
+position = Vector2( 249.1, 290.6 )
 
 [node name="Spamton" parent="." instance=ExtResource( 6 )]
 position = Vector2( 840, -40 )
@@ -215,7 +265,7 @@ script = SubResource( 1 )
 position = Vector2( 827, 200 )
 
 [node name="Ralsei" parent="." instance=ExtResource( 10 )]
-position = Vector2( 137, 362 )
+position = Vector2( 209.1, 269.6 )
 scale = Vector2( 2, 2 )
 
 [node name="Lancer" parent="." instance=ExtResource( 11 )]
@@ -227,8 +277,13 @@ wait_time = 3.0
 one_shot = true
 
 [node name="Menu" parent="." instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 63.0
 margin_top = 590.0
+margin_right = 63.0
 margin_bottom = 590.0
+rect_scale = Vector2( 0.880001, 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/heroes_appear = SubResource( 3 )

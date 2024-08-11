@@ -11,12 +11,6 @@
 			"event_id": "dialogic_042"
 		},
 		{
-			"character": "character-1693017633.json",
-			"event_id": "dialogic_001",
-			"portrait": "",
-			"text": "WHY DO YOU CALL ME TRAITOR, TRAITOR??"
-		},
-		{
 			"call_node": {
 				"arguments": [
 					"Surprised"
@@ -25,6 +19,12 @@
 				"target_node_path": "Main/Jevil/AnimationPlayer"
 			},
 			"event_id": "dialogic_042"
+		},
+		{
+			"character": "character-1693017633.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "YOU'RE BEING TOO RUDE, RUDE!"
 		},
 		{
 			"call_node": {
@@ -40,7 +40,71 @@
 			"character": "character-1693016638.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "WHO  [else] ARE YOU !????\nPRETENDED TO BE MY [[friendship is magic!]]"
+			"text": "1 AM NOT"
+		},
+		{
+			"call_node": {
+				"arguments": [
+					"HandKnivesAttack"
+				],
+				"method_name": "begin_attack",
+				"target_node_path": "Main/MonologueAttack"
+			},
+			"event_id": "dialogic_042"
+		},
+		{
+			"character": "character-1693017633.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "OUCH!"
+		},
+		{
+			"call_node": {
+				"arguments": [
+					"Surprised"
+				],
+				"method_name": "play",
+				"target_node_path": "Main/Jevil/AnimationPlayer"
+			},
+			"event_id": "dialogic_042"
+		},
+		{
+			"call_node": {
+				"arguments": [
+					"default"
+				],
+				"method_name": "play",
+				"target_node_path": "Main/Spamton/AnimationPlayer"
+			},
+			"event_id": "dialogic_042"
+		},
+		{
+			"character": "character-1693016638.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "NOW I AM"
+		},
+		{
+			"character": "character-1693017633.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "THAT'S NOT PLAYED LIKE THIS! HAVE YOU FORGOTTEN THE RULES?"
+		},
+		{
+			"call_node": {
+				"arguments": [
+					"annoyed2"
+				],
+				"method_name": "play",
+				"target_node_path": "Main/Spamton/AnimationPlayer"
+			},
+			"event_id": "dialogic_042"
+		},
+		{
+			"character": "character-1693016638.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "THAT STUPID [free gaming] 0F  YOURS?\nNOT INTERESTED"
 		},
 		{
 			"call_node": {
@@ -53,12 +117,6 @@
 			"event_id": "dialogic_042"
 		},
 		{
-			"character": "character-1693016638.json",
-			"event_id": "dialogic_001",
-			"portrait": "",
-			"text": "PULLED ME INTO YOUR STUPID [online gaming]"
-		},
-		{
 			"call_node": {
 				"arguments": [
 					"GamesWePlayedAttack"
@@ -69,10 +127,58 @@
 			"event_id": "dialogic_042"
 		},
 		{
+			"call_node": {
+				"arguments": [
+					"annoyed2"
+				],
+				"method_name": "play",
+				"target_node_path": "Main/Spamton/AnimationPlayer"
+			},
+			"event_id": "dialogic_042"
+		},
+		{
+			"character": "character-1693017633.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": " WHAT'S WRONG WITH YOU?!"
+		},
+		{
+			"call_node": {
+				"arguments": [
+					"HandKnivesAttack"
+				],
+				"method_name": "begin_attack",
+				"target_node_path": "Main/MonologueAttack"
+			},
+			"event_id": "dialogic_042"
+		},
+		{
+			"call_node": {
+				"arguments": [
+					"Surprised"
+				],
+				"method_name": "play",
+				"target_node_path": "Main/Jevil/AnimationPlayer"
+			},
+			"event_id": "dialogic_042"
+		},
+		{
+			"character": "character-1693017633.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "  WHAT HAVE I DONE?"
+		},
+		{
 			"character": "character-1693016638.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "BUT WHEN I [broke], YOU JUST GOT   [number unavailable]"
+			"text": "loading.[pause=1].[pause=1].[pause=1]"
+		},
+		{
+			"character": "character-1693016638.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "PRETENDED MY  [[friendship is magic!]][nw=0.1]\nGOT   [number unavailable], WHEN I [broke][nw=0.1]\nUNFAIR UNFAIR "
 		},
 		{
 			"call_node": {
@@ -88,7 +194,17 @@
 			"character": "character-1693016638.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "BECAUSE [NUMBER ONE] CLOWN DID\"NT [all I need] ME [ correct]?"
+			"text": "BECAUSE [NUMBER ONE] CLOWN DID\"NT [all I need] ME [ correct]?[nw=0.1]"
+		},
+		{
+			"call_node": {
+				"arguments": [
+
+				],
+				"method_name": "speed_up_music",
+				"target_node_path": "Main/MonologueAttack"
+			},
+			"event_id": "dialogic_042"
 		},
 		{
 			"call_node": {
@@ -104,13 +220,7 @@
 			"character": "character-1693017633.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "WHAT?! THAT IS UN-SO, UN-SO!"
-		},
-		{
-			"character": "character-1693016638.json",
-			"event_id": "dialogic_001",
-			"portrait": "",
-			"text": "THEN  [ why did you leave]?!"
+			"text": "THAT IS UN-SO!"
 		},
 		{
 			"call_node": {
@@ -123,10 +233,16 @@
 			"event_id": "dialogic_042"
 		},
 		{
+			"character": "character-1693016638.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "  [ why did you leave][nw=0.1]"
+		},
+		{
 			"character": "character-1693017633.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "I JUST!"
+			"text": "I JUST![nw=1]"
 		},
 		{
 			"call_node": {
@@ -145,42 +261,10 @@
 			"text": "..."
 		},
 		{
-			"call_node": {
-				"arguments": [
-					"HandKnivesAttack"
-				],
-				"method_name": "begin_attack",
-				"target_node_path": "Main/MonologueAttack"
-			},
-			"event_id": "dialogic_042"
-		},
-		{
 			"character": "character-1693016638.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "[ why did you leave]"
-		},
-		{
-			"call_node": {
-				"arguments": [
-
-				],
-				"method_name": "speed_up_music",
-				"target_node_path": "Main/MonologueAttack"
-			},
-			"event_id": "dialogic_042"
-		},
-		{
-			"character": "character-1693017633.json",
-			"event_id": "dialogic_001",
-			"portrait": "",
-			"text": "..."
-		},
-		{
-			"character": "character-1693016638.json",
-			"event_id": "dialogic_001",
-			"portrait": "",
-			"text": "BECAUSE I WASNT [BIG SHOT] EN0UGH 4 YOU?"
+			"text": ".................[pause=1]  [ why ]...................[nw=0.1]"
 		},
 		{
 			"call_node": {
@@ -206,7 +290,7 @@
 			"character": "character-1693016638.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "because [they] chose you"
+			"text": "BECAUSE [HE] chose you[nw=1]\nUNFAIR UNFAIR UNFAIR UNFAIR UNFAIR UNFAIR UNFAIR UNFAIR UNFAIR UNFAIR UNFAIR UNFAIR UNFAIR UNFAIR UNFAIR UNFAIR UNFAIR UNFAIR UNFAIR UNFAIR UNFAIR UNFAIR UNFAIR UNFAIR"
 		},
 		{
 			"call_node": {
@@ -222,7 +306,7 @@
 			"character": "character-1693016638.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "U AND YOUR [God] PLAYED Y0UR [INDIE-HORROR GAME] ON ME"
+			"text": "PLAYED Y0UR [INDIE-HORROR GAME] ON ME[nw=0.1]"
 		},
 		{
 			"call_node": {
@@ -238,7 +322,7 @@
 			"character": "character-1693016638.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "MADE ME [WE GOT CRAZY]"
+			"text": "MADE ME [WE GOT CRAZY][nw=0.1]"
 		},
 		{
 			"call_node": {
@@ -254,13 +338,13 @@
 			"character": "character-1693016638.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "AND THEN THR3W ME TO [recycle bin]\nLIKE A [motivational quote paper]!"
+			"text": "AND L3FT ME IN  [recycle bin][nw=0.1]\nLIKE A [motivational quote paper]! ! !"
 		},
 		{
 			"character": "character-1693017633.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "NO! TTHE GOD LEFT ME TOO, TOO!"
+			"text": "WAIT, WAIT! TTHE GOD LEFT ME TOO, TOO!"
 		},
 		{
 			"call_node": {

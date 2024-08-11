@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/My_Castle_Town_lofi.mp3-dfeb675447f4ce5fcf1ee10dc31802ff.mp3str"
+
+[deps]
+
+source_file="res://Assets/music/My_Castle_Town_lofi.mp3"
+dest_files=[ "res://.import/My_Castle_Town_lofi.mp3-dfeb675447f4ce5fcf1ee10dc31802ff.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

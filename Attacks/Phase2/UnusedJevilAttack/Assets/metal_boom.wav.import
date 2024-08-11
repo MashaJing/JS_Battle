@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/cans_crash.wav-ab1e442c908ecc897d3aaa466684cefa.sample"
+path="res://.import/metal_boom.wav-8b555db76f25d9d4aa583c5159fa2bc2.sample"
 
 [deps]
 
-source_file="res://Attacks/Phase3/UnusedJevilAttack/Assets/cans_crash.wav"
-dest_files=[ "res://.import/cans_crash.wav-ab1e442c908ecc897d3aaa466684cefa.sample" ]
+source_file="res://Attacks/Phase2/UnusedJevilAttack/Assets/metal_boom.wav"
+dest_files=[ "res://.import/metal_boom.wav-8b555db76f25d9d4aa583c5159fa2bc2.sample" ]
 
 [params]
 

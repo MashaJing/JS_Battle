@@ -16,11 +16,11 @@ animations = [ {
 
 [node name="NodeAttack" type="Node2D"]
 script = ExtResource( 4 )
-APPEAR_TIME = 1.0
+APPEAR_TIME = 3.0
 JEVIL_BULLET = ExtResource( 5 )
 
 [node name="AttackTimer" type="Timer" parent="."]
-wait_time = 7.0
+wait_time = 5.0
 one_shot = true
 autostart = true
 

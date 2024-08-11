@@ -2,13 +2,15 @@ extends Node
 onready var attack_timer = $AttackTimer
 
 signal finished_talking
+signal reset_music
 signal new_turn
 var Angel = preload("res://Characters/SpamtonAngel/SpamtonAngel.tscn")
 
 const State = {
 	MENU = 'menu',
 	ATTACK = 'attack',
-	DIALOGUE = 'dialogue',  # needed?
+	DIALOGUE = 'dialogue', # needed?
+	CUTSCENE = 'cutscene',
 	CRINGE_ATTACK = 'cringe_attack',
 	GAME_OVER = 'game_over',
 }
@@ -29,19 +31,22 @@ func _ready():
 	_init_signals()
 	_init_variables()
 	GlobalAttackSettings.init()
+	prepare_attack()
 	add_attack()
 
 # ___________ menu management ___________
 func open_menu():
 	set_global_state(State.MENU)
 	$Menu.start()
-
+	# ну не каждый же ход?
+	emit_signal("reset_music")
+	
 
 func _on_menu_ended():
 	print("_on_menu_ended()")
 	set_global_state(State.DIALOGUE)
 #
-#	# Отображаем плашку с результатами нашего хода: "Крис применил трефдвич!"
+#	# Воспроизводим отображаем диалоги с результатами нашего хода: "Крис применил трефдвич!"
 #	var dialog = BattleInfoLogger.show_dialogue()
 #	if dialog != null:
 #		add_child(dialog)
@@ -55,13 +60,25 @@ func _on_menu_ended():
 
 # сигнал поступает от атаки
 func _on_attack_ended():
-	if state in [State.ATTACK, State.CRINGE_ATTACK]:
+	if state in [State.ATTACK, State.CRINGE_ATTACK, State.CUTSCENE]:
 		# не должен слаться тут
 		emit_signal("new_turn")
 		remove_attack()
-		open_menu()
-		if GlobalPlotSettings.CRINGE_ATTACKS_ON:
-			$CringeTimer.start()
+		var next_attack = prepare_attack()
+
+		if next_attack == null:
+			print('all attacks ended!!!')
+			_on_game_over()
+			return
+
+		if "Cutscenes" in next_attack.path:
+			set_global_state(State.CUTSCENE)
+			add_attack()
+		else:
+			set_global_state(State.ATTACK)
+			open_menu()
+			if GlobalPlotSettings.CRINGE_ATTACKS_ON:
+				$CringeTimer.start()
 	else:
 		print('ATTENTION: INVALID STATE!')
 		print(state)
@@ -70,22 +87,34 @@ func _on_attack_ended():
 
 
 func add_attack():
-	set_global_state(State.ATTACK)
+	# Выбрать целей атаки
+	TeamStats.choose_target(cur_attack.get("targets"))
 
 	if GlobalPlotSettings.MADE_UP:
+		set_global_state(State.DIALOGUE)
 		# озвучиваем реплику противников непосредственно перед атакой
 		var pre_attack_line = Dialogic.start("pre_attack")
 		add_child(pre_attack_line)
 		yield(pre_attack_line, "dialogic_signal")
 
-
-	# TODO: иначе как-то организовать ретраи
-	var cur_attack_path = GlobalAttackSettings.get_next_attack()
-	cur_attack = load(cur_attack_path).instance()
-	cur_attack.connect("attack_ended", self, "_on_attack_ended")
-	TeamStats.choose_target(cur_attack.get("targets"))
+	set_global_state(State.ATTACK)
 	add_child(cur_attack)
 
+
+func prepare_attack():
+	var Attack = GlobalAttackSettings.get_next_attack()
+
+	if Attack != null:
+		print('current Attack.path is')
+		print(Attack.path)
+		# TODO: если не успеваем подгрузить, как-то организовать ретраи?
+		cur_attack = load(Attack.path).instance()
+
+		if Attack.mode != null:
+			cur_attack.mode = Attack.mode
+		cur_attack.connect("attack_ended", self, "_on_attack_ended")
+	
+	return Attack
 
 func remove_attack():
 	if cur_attack != null:
@@ -131,7 +160,7 @@ func _init_signals():
 	$Menu.connect("menu_ended", self, "_on_menu_ended")
 	TeamStats.connect("game_over", self, "_on_game_over")
 
-	connect("new_turn", GlobalDialogueSettings, "_on_new_turn")
+	connect("new_turn", GlobalDescriptionSettings, "_on_new_turn")
 	connect("new_turn", $Kris.get_node("AnimatedSpriteController"), "_on_new_turn")
 	connect("new_turn", $Susie.get_node("AnimatedSpriteController"), "_on_new_turn")
 	connect("new_turn", $Ralsei.get_node("AnimatedSpriteController"), "_on_new_turn")
@@ -154,7 +183,7 @@ func _init_variables():
 
 func reset_previous_game_params():
 	GlobalAttackSettings.reset()
-	GlobalDialogueSettings.reset()
+	GlobalDescriptionSettings.reset()
 	TeamStats.reset()
 	GlobalCringeSettings.reset()
 

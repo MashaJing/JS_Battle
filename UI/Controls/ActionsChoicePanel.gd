@@ -16,14 +16,13 @@ func init(actions):
 	var id = 0
 	for action in actions:
 		add_icon_item(action.icon, action.name, id)
-		set_item_disabled(id, bool(TeamStats.TP >= action.tp_required))
+		set_item_disabled(id, bool(TeamStats.TP < action.tp_required))
 		id += 1
-	if get_item_count() > 0:
-		grab_focus()
 
 func open():
-	set_current_index(0)
 	popup()
+	if get_item_count() > 0:
+		set_current_index(0)
 
 func exit():
 	visible = false

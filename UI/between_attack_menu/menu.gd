@@ -51,7 +51,7 @@ func hide():
 func unhide():
 	$DebugButtons/KillJevilButton.grab_focus()
 	$DebugButtons.visible = true
-	var description = GlobalDialogueSettings.get_current_description()
+	var description = GlobalDescriptionSettings.get_current_description()
 	show_letters(description)
 
 # __________________DESCRIPTION STRING___________________________

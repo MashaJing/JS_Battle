@@ -17,6 +17,7 @@ func attack():
 	print(name + '_ATTACKED')
 	$AnimationPlayer.stop()
 	$AnimationPlayer.play("glow")
+	$HitSound.play()
 
 
 func end(attack_ratio):

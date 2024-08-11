@@ -42,7 +42,7 @@ func _on_spare(_name):
 		$AnimatedSpriteController._on_Spare()
 
 # up -> action_start
-func _on_Action_start(_name, action_animation='action'):
+func _on_Action_start(_name, action_animation='action_start'):
 	if name == _name:
 		$AnimatedSpriteController._on_Action_start(action_animation)
 

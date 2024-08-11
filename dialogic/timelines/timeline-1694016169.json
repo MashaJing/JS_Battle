@@ -24,7 +24,7 @@
 			"character": "character-1693017633.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "SPAM\nPLEASE, DON'T BE MEAN TO ME"
+			"text": "HEY, SPAM\nPLEASE, DON'T BE MEAN TO ME"
 		},
 		{
 			"character": "character-1693016638.json",
@@ -52,7 +52,7 @@
 			"character": "character-1693017633.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "PUPPETTEAR MY HEART IN TWO, TWO!!!"
+			"text": "PUPPET-TEAR MY HEART IN TWO, TWO!!!"
 		},
 		{
 			"call_node": {

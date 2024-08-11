@@ -63,7 +63,7 @@ func show_letters(text, timeout=null):
 # ================= SCENARIOS =================
 
 func start_attack():
-	OpenedPopupMenus.pop_front()
+#	OpenedPopupMenus.pop_front()
 	State = MENU_STATE.CHOICE_PANEL
 	$VictimChoicePanel.open()
 	OpenedPopupMenus.push_front($VictimChoicePanel)
@@ -141,8 +141,9 @@ func set_decision_victim(index):
 # ================== MENU_EVENTS =====================
 
 func start():
+	Engine.set_time_scale(1.0)
 	State = MENU_STATE.CHARACTER
-	show_turn_description(GlobalDialogueSettings.get_current_description())
+	show_turn_description(GlobalDescriptionSettings.get_current_description())
 	# открываем панельку первого живого героя
 	CURRENT_DECIDER = TeamStats.heroes[0]
 	open_hero_tab(CURRENT_DECIDER)
@@ -215,13 +216,15 @@ func cancel_attack():
 	AttackController.cancel_attack(CURRENT_DECIDER)
 
 func cancel_action():
-	ActionsController.cancel_action(CURRENT_DECIDER, CURRENT_DECISION.ACTION)
+	if CURRENT_DECISION.ACTION != null:
+		ActionsController.cancel_action(CURRENT_DECIDER, CURRENT_DECISION.ACTION)
 
 func cancel_defense():
 	ActionsController.emit_signal("canceled", CURRENT_DECIDER)
 	
 func cancel_item():
-	Inventorium.add_item(CURRENT_DECISION.ITEM)
+	if CURRENT_DECISION.ITEM != null:
+		Inventorium.add_item(CURRENT_DECISION.ITEM)
 
 func cancel_spare():
 	SpareController.cancel_spare(CURRENT_DECIDER)
@@ -237,6 +240,7 @@ func _on_ended_decisions_reading():
 	if len(fighters) > 0:
 		$VBoxContainer/HBoxContainer2/CommentField/AttackPanel.start_attacks(fighters)
 		yield($VBoxContainer/HBoxContainer2/CommentField/AttackPanel, "finished")
+	ActionsController.PIRUETT_INDEX += 1
 	# выход из меню
 	emit_signal("menu_ended")
 
@@ -244,7 +248,7 @@ func _on_ended_decisions_reading():
 func init_characters():
 	var node_path
 	for hero in TeamStats.all_heroes:
-		node_path = "VBoxContainer/HBoxContainer/" + hero + "/VBoxContainer/CharacterArea"
+		node_path = "VBoxContainer/HBoxContainer/" + hero + "/Panel/VBoxContainer/CharacterArea"
 		get_node(node_path).set_character_stats(TeamStats.individual_stats[hero])
 
 

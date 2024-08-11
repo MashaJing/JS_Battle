@@ -1557,10 +1557,10 @@ ATK = 8
 [node name="AnimatedSpriteController" parent="." instance=ExtResource( 22 )]
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="AnimatedSpriteController"]
-position = Vector2( -60, -52 )
+position = Vector2( -30, -46 )
 scale = Vector2( 2.2, 2.2 )
 z_index = 1
 frames = SubResource( 1 )
-animation = "annoyed"
+animation = "step_away"
 playing = true
 offset = Vector2( 10, 0 )

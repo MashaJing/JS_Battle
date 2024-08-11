@@ -14,7 +14,7 @@ region_rect = Rect2( -0.0821724, 0, 30.651, 33.6844 )
 
 [sub_resource type="StyleBoxTexture" id=17]
 texture = ExtResource( 4 )
-region_rect = Rect2( 277.855, 98.1355, 32.7444, 34.524 )
+region_rect = Rect2( 277.855, 98.8831, 32.7444, 29.3145 )
 margin_right = 0.375187
 
 [sub_resource type="StyleBoxTexture" id=32]
@@ -23,7 +23,7 @@ region_rect = Rect2( 311.045, 62.9316, 32.0556, 35.1379 )
 
 [sub_resource type="StyleBoxTexture" id=25]
 texture = ExtResource( 4 )
-region_rect = Rect2( 311.327, 98.1124, 32.1428, 33.2263 )
+region_rect = Rect2( 311.327, 98.8786, 32.1428, 29.1266 )
 
 [sub_resource type="StyleBoxTexture" id=26]
 texture = ExtResource( 4 )
@@ -31,7 +31,7 @@ region_rect = Rect2( 345.009, 63.5243, 31.3344, 33.3929 )
 
 [sub_resource type="StyleBoxTexture" id=27]
 texture = ExtResource( 4 )
-region_rect = Rect2( 344.997, 98.3427, 31.2503, 34.6683 )
+region_rect = Rect2( 344.997, 98.8831, 31.2503, 29.1221 )
 
 [sub_resource type="StyleBoxTexture" id=28]
 texture = ExtResource( 4 )
@@ -40,7 +40,6 @@ region_rect = Rect2( 377.947, 63.8993, 31.1904, 33.0807 )
 [sub_resource type="StyleBoxTexture" id=29]
 texture = ExtResource( 4 )
 region_rect = Rect2( 378.112, 98.7616, 30.7016, 29.496 )
-margin_bottom = 0.275919
 
 [sub_resource type="StyleBoxTexture" id=30]
 texture = ExtResource( 4 )
@@ -48,7 +47,7 @@ region_rect = Rect2( 410.747, 63.7055, 31.3323, 32.9102 )
 
 [sub_resource type="StyleBoxTexture" id=31]
 texture = ExtResource( 4 )
-region_rect = Rect2( 410.741, 98.4054, 31.4908, 31.2019 )
+region_rect = Rect2( 410.741, 98.7787, 31.4908, 28.8416 )
 
 [node name="ButtonsPanel" type="NinePatchRect"]
 anchor_top = -0.027

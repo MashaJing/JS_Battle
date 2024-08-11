@@ -27,6 +27,12 @@
 			"text": "  ?!?!"
 		},
 		{
+			"character": "character-1693017633.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "HE STOPPED RESPONDING AFTER..."
+		},
+		{
 			"call_node": {
 				"arguments": [
 					"default"
@@ -46,7 +52,7 @@
 			"character": "character-1693016638.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "[100% FREE]"
+			"text": "[100% FREE] of me"
 		},
 		{
 			"call_node": {
@@ -62,7 +68,7 @@
 			"character": "character-1693016638.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "of me?"
+			"text": "I KNEW THAT I KNEW THAT I KNEW THAT"
 		},
 		{
 			"call_node": {
@@ -78,7 +84,7 @@
 			"character": "character-1693017633.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "NO, NO! YOU SEE\nTHE KINGS LOCKED THEIR ENTIRE KINGDOM AROUND MY SPACE OF FREEDOM, SO[nw=0.01]"
+			"text": "NO, NO! YOU SEE\nTHE KINGS LOCKED THEIR ENTIRE KINGDOM AROUND MY SPACE OF FREEDOM, SO I[nw=0.01]"
 		},
 		{
 			"call_node": {
@@ -110,7 +116,7 @@
 			"character": "character-1693017633.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "...\nI WAS\nTHROWN TO JAIL\nBY MY FRIEND\nHE DIDN'T UNDERSTAND MY GAME FOR SOME REASON"
+			"text": "...\nI WAS\nTHROWN TO JAIL\nBY MY OWN FRIEND\nHE DIDN'T UNDERSTAND MY GAME FOR SOME REASON"
 		},
 		{
 			"character": "character-1693018075.json",
@@ -174,6 +180,12 @@
 			"text": "[Hocci mama], Jev! Could you just tell me?!"
 		},
 		{
+			"character": "character-1693017633.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "I COULDN'T\nCOULDN'T DO ANYTHING"
+		},
+		{
 			"call_node": {
 				"arguments": [
 					"Surprised"
@@ -182,12 +194,6 @@
 				"target_node_path": "Main/Jevil/AnimationPlayer"
 			},
 			"event_id": "dialogic_042"
-		},
-		{
-			"character": "character-1693017633.json",
-			"event_id": "dialogic_001",
-			"portrait": "",
-			"text": "I AM SORRY, SORRY! I COULDN'T\nCOULDN'T DO ANYTHING"
 		},
 		{
 			"call_node": {

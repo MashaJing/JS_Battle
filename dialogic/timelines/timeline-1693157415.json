@@ -21,10 +21,46 @@
 			"event_id": "dialogic_042"
 		},
 		{
+			"call_node": {
+				"arguments": [
+
+				],
+				"method_name": "play",
+				"target_node_path": "Main/CringeAttack/DrumRoll"
+			},
+			"event_id": "dialogic_042"
+		},
+		{
 			"character": "character-1693017633.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "THOUGH I DON'T USE SIGN LANGUAGE...\nI KNOW LOTS OF JESTURES, JESTURES!"
+			"text": "THOUGH I DON'T USE SIGN LANGUAGE..."
+		},
+		{
+			"call_node": {
+				"arguments": [
+
+				],
+				"method_name": "stop",
+				"target_node_path": "Main/CringeAttack/DrumRoll"
+			},
+			"event_id": "dialogic_042"
+		},
+		{
+			"call_node": {
+				"arguments": [
+
+				],
+				"method_name": "play",
+				"target_node_path": "Main/CringeAttack/Tsss"
+			},
+			"event_id": "dialogic_042"
+		},
+		{
+			"character": "character-1693017633.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "I KNOW LOTS OF JESTERS, JESTERS!"
 		},
 		{
 			"call_node": {
@@ -78,6 +114,16 @@
 				],
 				"method_name": "play",
 				"target_node_path": "Main/Spamton/AnimationPlayer"
+			},
+			"event_id": "dialogic_042"
+		},
+		{
+			"call_node": {
+				"arguments": [
+					"default"
+				],
+				"method_name": "play",
+				"target_node_path": "Main/Jevil/AnimationPlayer"
 			},
 			"event_id": "dialogic_042"
 		}
