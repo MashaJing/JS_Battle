@@ -3,6 +3,6 @@ signal attack_ended
 
 
 func _ready():
-	yield(get_tree().create_timer(5), "timeout")
+	await get_tree().create_timer(5).timeout
 	emit_signal("attack_ended")
 	queue_free()

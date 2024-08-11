@@ -19,11 +19,11 @@ var ChoicePanel = preload("res://UI/Controls/ChoicePanel.tscn")
 
 var CURRENT_DECISION
 
-onready var ATTACK_BUTTON = $Attack
-onready var ACT_BUTTON = $Act
-onready var ITEM_BUTTON = $Item
-onready var SPARE_BUTTON = $Spare
-onready var DEFENSE_BUTTON = $Defense
+@onready var ATTACK_BUTTON = $Attack
+@onready var ACT_BUTTON = $Act
+@onready var ITEM_BUTTON = $Item
+@onready var SPARE_BUTTON = $Spare
+@onready var DEFENSE_BUTTON = $Defense
 
 
 # unused
@@ -61,7 +61,7 @@ func show_letters(text):
 	$DebugButtons/DescriptionLabel.text = text
 	$LetterTimer.start()
 	for i in range(len(text)):
-		yield($LetterTimer, "timeout")
+		await $LetterTimer.timeout
 		$DebugButtons/DescriptionLabel.visible_characters += 1
 	$LetterTimer.stop()
 	$DebugButtons/DescriptionLabel.visible = true
@@ -77,7 +77,7 @@ func _on_KillSpamtonButton_button_down():
 	kill_ally('SPAMTON')
 
 func kill_ally(ally_name):
-	CURRENT_DECISION = Decision.instance()
+	CURRENT_DECISION = Decision.instantiate()
 	CURRENT_DECISION.TYPE = 'ATTACK'
 	CURRENT_DECISION.VICTIM = ally_name
 	DecisionStack.add_decision(CURRENT_DECISION)
@@ -87,11 +87,11 @@ func kill_ally(ally_name):
 func _on_ItemButton_button_down():
 	# Шаг 1. Составить панель с выбором айтемов и дождаться выбора доступной хилки	
 	$ChoicePanel.init(Inventorium.get_visible_items())
-	$ChoicePanel.get_node("ItemList").connect("item_activated", self, "use_item")
+	$ChoicePanel.get_node("ItemList").connect("item_activated", Callable(self, "use_item"))
 
 func use_item(index):
 	# current блеать
-	CURRENT_DECISION = Decision.instance()
+	CURRENT_DECISION = Decision.instantiate()
 	CURRENT_DECISION.TYPE = 'ITEM'
 	CURRENT_DECISION.DECIDER = TeamStats.heroes[len(DecisionStack.DECISIONS)]
 
@@ -103,7 +103,7 @@ func use_item(index):
 
 	# Шаг 4. Составить панель с выбором получателя хилки и дождаться выбора
 	$ChoicePanel.init(TeamStats.all_heroes)
-	$ChoicePanel.get_node("ItemList").connect("item_activated", self, "use_item_on_character")
+	$ChoicePanel.get_node("ItemList").connect("item_activated", Callable(self, "use_item_on_character"))
 
 func use_item_on_character(index):
 	CURRENT_DECISION.VICTIM = TeamStats.all_heroes[index]
@@ -113,7 +113,7 @@ func use_item_on_character(index):
 # ========================= DEFEND ========================= 
 
 func _on_DefendButton_button_down():
-	CURRENT_DECISION = Decision.instance()
+	CURRENT_DECISION = Decision.instantiate()
 
 	# тут заменить на cur_character, т.к. не всегда все будут доступны
 	CURRENT_DECISION.DECIDER = TeamStats.heroes[len(DecisionStack.DECISIONS)]
@@ -124,11 +124,11 @@ func _on_DefendButton_button_down():
 # ========================= ACTION ========================= 
 
 func _on_ActButton_button_down():
-	CURRENT_DECISION = Decision.instance()
+	CURRENT_DECISION = Decision.instantiate()
 	CURRENT_DECISION.TYPE = 'ACT'
 	CURRENT_DECISION.DECIDER = TeamStats.heroes[len(DecisionStack.DECISIONS)]
 
-	$ChoicePanel.get_node("ItemList").connect("item_activated", self, "use_action")
+	$ChoicePanel.get_node("ItemList").connect("item_activated", Callable(self, "use_action"))
 	$ChoicePanel.init_actions(ActionsInventorium.AVAILABLE_ACTIONS[CURRENT_DECISION.DECIDER])
 
 
@@ -138,7 +138,7 @@ func use_action(index):
 	return_to_common_menu("use_action")
 
 	if CURRENT_DECISION.ACTION.used_on != null:
-		$ChoicePanel.get_node("ItemList").connect("item_activated", self, "use_action_on_character")
+		$ChoicePanel.get_node("ItemList").connect("item_activated", Callable(self, "use_action_on_character"))
 		$ChoicePanel.init(CURRENT_DECISION.ACTION.used_on)
 	else:
 		DecisionStack.add_decision(CURRENT_DECISION)
@@ -151,12 +151,12 @@ func use_action_on_character(index):
 # ========================= SPARE ========================= 
 
 func _on_SpareButton_button_down():
-	CURRENT_DECISION = Decision.instance()
+	CURRENT_DECISION = Decision.instantiate()
 	CURRENT_DECISION.TYPE = 'SPARE'
 	CURRENT_DECISION.DECIDER = TeamStats.heroes[len(DecisionStack.DECISIONS)]
 
 	$ChoicePanel.init(ConStats.allies)
-	$ChoicePanel.get_node("ItemList").connect("item_activated", self, "use_spare_on_character")
+	$ChoicePanel.get_node("ItemList").connect("item_activated", Callable(self, "use_spare_on_character"))
 
 func use_spare_on_character(index):
 	CURRENT_DECISION.VICTIM = ConStats.allies[index]
@@ -165,19 +165,19 @@ func use_spare_on_character(index):
 
 func return_to_common_menu(processing_method):
 	$ChoicePanel.exit()
-	if $ChoicePanel.get_node("ItemList").is_connected("item_activated", self, processing_method):
-		$ChoicePanel.get_node("ItemList").disconnect("item_activated", self, processing_method)
+	if $ChoicePanel.get_node("ItemList").is_connected("item_activated", Callable(self, processing_method)):
+		$ChoicePanel.get_node("ItemList").disconnect("item_activated", Callable(self, processing_method))
 	$DebugButtons/AttackButton.grab_focus()
 
 # ========================= ATTACK ========================= 
 
 func _on_AttackButton_button_down():
-	CURRENT_DECISION = Decision.instance()
+	CURRENT_DECISION = Decision.instantiate()
 	CURRENT_DECISION.TYPE = 'ATK'
 	CURRENT_DECISION.DECIDER = TeamStats.heroes[len(DecisionStack.DECISIONS)]
 
 	$ChoicePanel.init(ConStats.allies)
-	$ChoicePanel.get_node("ItemList").connect("item_activated", self, "use_attack_on_character")
+	$ChoicePanel.get_node("ItemList").connect("item_activated", Callable(self, "use_attack_on_character"))
 
 func use_attack_on_character(index):
 	CURRENT_DECISION.VICTIM = ConStats.allies[index]
@@ -190,7 +190,7 @@ func _on_ended_decisions_reading():
 	var fighters = AttackController.attacks.keys()
 	if len(fighters) > 0:
 		$AttackPanel.start_attacks(fighters)
-		yield($AttackPanel, "finished")
+		await $AttackPanel.finished
 	# должен быть глобальный эммитер, который получает и отправляет сообщения подписчикам - так отвяжем всю-всю логику решений от меню
 	emit_signal("menu_ended")
 
@@ -204,7 +204,7 @@ func _input(ev):
 		emit_signal("canceled")
 
 func _init_signals():
-	DecisionReader.connect("start_decisions_reading", self, "_on_started_decisions_reading")
-	DecisionReader.connect("end_decisions_reading", self, "_on_ended_decisions_reading")
+	DecisionReader.connect("start_decisions_reading", Callable(self, "_on_started_decisions_reading"))
+	DecisionReader.connect("end_decisions_reading", Callable(self, "_on_ended_decisions_reading"))
 
-	connect('canceled', DecisionStack, "pop_decision")
+	connect('canceled', Callable(DecisionStack, "pop_decision"))

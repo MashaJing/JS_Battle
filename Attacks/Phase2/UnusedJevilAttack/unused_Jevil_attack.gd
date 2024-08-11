@@ -8,7 +8,7 @@ func _ready():
 	var dialog = Dialogic.start("unused_attack")
 	add_child(dialog)
 	
-	yield(dialog, "dialogic_signal")
+	await dialog.timeline_ended
 	emit_signal("attack_ended")
 	
 	# идея для патттерна атаки: harvester

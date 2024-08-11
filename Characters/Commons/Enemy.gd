@@ -2,24 +2,24 @@ extends Node2D
 
 
 func _ready():
-	$PlayerStats.connect("Down", $AnimatedSpriteController, "_on_Down")
-	$PlayerStats.connect("Down", self, "_on_Down")
-	$PlayerStats.connect("Up", $AnimatedSpriteController, "_on_Up")
+	$PlayerStats.connect("Down", Callable($AnimatedSpriteController, "_on_Down"))
+	$PlayerStats.connect("Down", Callable(self, "_on_Down"))
+	$PlayerStats.connect("Up", Callable($AnimatedSpriteController, "_on_Up"))
 	# обработка хила и дамага сделана по-разному намеренно ввиду различий в этих процессах
-	$PlayerStats.connect("TookDamage", $AnimatedSpriteController, "_on_Took_Damage")
+	$PlayerStats.connect("TookDamage", Callable($AnimatedSpriteController, "_on_Took_Damage"))
 
-	SpareController.connect("play_spare", self, "_on_spare")
-	DecisionReader.connect("heal", self, "_on_get_heal")
+	SpareController.connect("play_spare", Callable(self, "_on_spare"))
+	DecisionReader.connect("healed", Callable(self, "_on_get_heal"))
 	
-#	DecisionReader.connect("defend", self, "_on_defend")
-#	DecisionReader.connect("spare", self, "_on_spare")
+#	DecisionReader.connect("defended", self, "_on_defend")
+#	DecisionReader.connect("spared", self, "_on_spare")
 
 #	ActionsController.connect("action_start", self, "_on_Action_start")
 #	ActionsController.connect("action_end", self, "_on_Action_end")
 
 #	AttackController.connect("attack_start", self, "_on_Action_start")
 #	AttackController.connect("attack_end", self, "_on_Action_end")
-	AttackController.connect("attack", $PlayerStats, "take_damage")
+	AttackController.connect("attacked", Callable($PlayerStats, "take_damage"))
 
 # ----------------- passive -----------------
 

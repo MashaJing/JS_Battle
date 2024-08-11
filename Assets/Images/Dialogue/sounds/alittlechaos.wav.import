@@ -1,13 +1,14 @@
 [remap]
 
 importer="wav"
-type="AudioStreamSample"
-path="res://.import/alittlechaos.wav-26007e192f97f12957919e8e2dd256e6.sample"
+type="AudioStreamWAV"
+uid="uid://dbuofn55dfpsu"
+path="res://.godot/imported/alittlechaos.wav-26007e192f97f12957919e8e2dd256e6.sample"
 
 [deps]
 
 source_file="res://Assets/Images/Dialogue/sounds/alittlechaos.wav"
-dest_files=[ "res://.import/alittlechaos.wav-26007e192f97f12957919e8e2dd256e6.sample" ]
+dest_files=["res://.godot/imported/alittlechaos.wav-26007e192f97f12957919e8e2dd256e6.sample"]
 
 [params]
 

@@ -1,18 +1,20 @@
 extends Node2D
-onready var MusTheme = get_parent().get_node("Theme")
+@onready var MusTheme = get_parent().get_node("Theme")
 signal attack_ended
 
 
 # ============== region and country ==============
 func prepare_user_region(user_ip):
-	$HTTPRequest.connect("request_completed", self, "_on_request_completed")
+	$HTTPRequest.connect("request_completed", Callable(self, "_on_request_completed"))
 	$HTTPRequest.request("http://demo.ip-api.com/json/" + user_ip)
 	print('------------------------prepared!------------------------')
 
 
 
 func _on_request_completed(result, response_code, headers, body):
-	var json = (JSON.parse(body.get_string_from_utf8())).result
+	var test_json_conv = JSON.new()
+	test_json_conv.parse(body.get_string_from_utf8())).result
+	var json = (test_json_conv.get_data()
 	# TODO: обработать случаи, когда апишка не отдаёт эти поля
 	Dialogic.set_variable('user_country', json['country'])
 	Dialogic.set_variable('user_region', json['regionName'])
@@ -73,11 +75,11 @@ func _ready():
 	add_child(threaties)
 	
 	# Для дебага
-	yield(threaties, 'dialogic_signal')
+	await threaties.timeline_ended
 	var dialog = Dialogic.start("jevil_down_end")
 	add_child(dialog)
 
-	yield(dialog, 'dialogic_signal')
+	await dialog.timeline_ended
 	emit_signal("attack_ended")
 
 

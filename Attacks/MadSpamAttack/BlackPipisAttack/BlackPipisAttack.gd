@@ -3,7 +3,7 @@ const Pipis = preload("res://Bullets/Pipis/Pipis.tscn")
 
 
 func _on_SpawnPipisTimer_timeout():
-	var Bullet = Pipis.instance()
+	var Bullet = Pipis.instantiate()
 	Bullet.damaged = true
 	Bullet.N = 13
 	Bullet.ttl = 5

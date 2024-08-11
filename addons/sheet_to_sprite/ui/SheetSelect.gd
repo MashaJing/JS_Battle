@@ -1,13 +1,13 @@
-tool
+@tool
 extends TextureRect
 
-export(int) var cell_width := 16 setget set_cell_width, get_cell_width
-export(int) var cell_height := 16 setget set_cell_height, get_cell_height
-export(int) var offset_x := 0 setget set_offset_x
-export(int) var offset_y := 0 setget set_offset_y
-export(Color) var grid_color := Color.white setget set_color
-export(bool) var show_grid := true setget set_show_grid
-export(bool) var draw_debug := false
+@export var cell_width := 16: get = get_cell_width, set = set_cell_width
+@export var cell_height := 16: get = get_cell_height, set = set_cell_height
+@export var offset_x := 0: set = set_offset_x
+@export var offset_y := 0: set = set_offset_y
+@export var grid_color := Color.WHITE: set = set_color
+@export var show_grid := true: set = set_show_grid
+@export var draw_debug := false
 
 var cell_size := Vector2(16, 16)
 var selected_region := Rect2()
@@ -20,10 +20,10 @@ func _gui_input(event: InputEvent) -> void:
     return
   event = event as InputEventMouseButton
   
-  var left_down = event.pressed and event.button_index == BUTTON_LEFT
-  var right_down = event.pressed and event.button_index == BUTTON_RIGHT
-  var left_up = not event.pressed and event.button_index == BUTTON_LEFT
-  var right_up = not event.pressed and event.button_index == BUTTON_RIGHT
+  var left_down = event.pressed and event.button_index == MOUSE_BUTTON_LEFT
+  var right_down = event.pressed and event.button_index == MOUSE_BUTTON_RIGHT
+  var left_up = not event.pressed and event.button_index == MOUSE_BUTTON_LEFT
+  var right_up = not event.pressed and event.button_index == MOUSE_BUTTON_RIGHT
 
   if right_down:
     set_selection_start(get_local_mouse_position())
@@ -49,7 +49,7 @@ func snap_selection() -> Rect2:
   if selected_region.position.is_equal_approx(Vector2.ZERO) and selected_region.size.is_equal_approx(Vector2.ZERO):
     return Rect2()
   var offset = Vector2(offset_x, offset_y)
-  var area = selected_region.abs().clip(Rect2(Vector2.ZERO, rect_size))
+  var area = selected_region.abs().clip(Rect2(Vector2.ZERO, size))
   area.position -= offset
   var start = (area.position / cell_size).floor()
   var end = (area.end / cell_size).ceil()
@@ -59,7 +59,7 @@ func snap_selection() -> Rect2:
 func has_selection() -> bool:
   return not snap_selection().has_no_area()
 
-func get_selection_as_texture() -> Texture:
+func get_selection_as_texture() -> Texture2D:
   if not has_selection():
     return null
   var atlas = AtlasTexture.new()
@@ -72,7 +72,7 @@ func get_selection_as_texture() -> Texture:
   
 var drag_data_store
 
-func get_drag_data(position: Vector2):
+func _get_drag_data(position: Vector2):
   if snap_selection().has_point(position):
     var texture = get_selection_as_texture()
     var control = TextureRect.new()
@@ -97,15 +97,15 @@ func _on_mouse_move(event: InputEventMouseMotion) -> void:
 
 func _draw() -> void:
   if show_grid:
-    for x in range(0, (rect_size.x - offset_x) / cell_size.x + 1):
-      draw_line(Vector2(x * cell_size.x + offset_x, 0), Vector2(x* cell_size.x + offset_x, rect_size.y), grid_color, 1)
-    for y in range(0, (rect_size.y - offset_y) / cell_size.y + 1):
-      draw_line(Vector2(0, y* cell_size.y + offset_y), Vector2(rect_size.x, y* cell_size.y + offset_y),grid_color,1)
+    for x in range(0, (size.x - offset_x) / cell_size.x + 1):
+      draw_line(Vector2(x * cell_size.x + offset_x, 0), Vector2(x* cell_size.x + offset_x, size.y), grid_color, 1)
+    for y in range(0, (size.y - offset_y) / cell_size.y + 1):
+      draw_line(Vector2(0, y* cell_size.y + offset_y), Vector2(size.x, y* cell_size.y + offset_y),grid_color,1)
     # draw selection
     _draw_selection_region()
     
   if draw_debug:
-    draw_rect(selected_region, Color.green, false, 5)
+    draw_rect(selected_region, Color.GREEN, false, 5)
 
 func reset_setting():
   offset_x = 0
@@ -116,9 +116,9 @@ func reset_setting():
 func _draw_selection_region() -> void:
   var rect = snap_selection()
   if not rect.has_no_area():
-    var color = Color.orange
+    var color = Color.ORANGE
     draw_rect(rect, ColorN('orange', 0.4))
-    draw_rect(rect, ColorN('white', 1), false, 1.1, true)
+    draw_rect(rect, ColorN('white', 1), false, 1.1)# true) TODOConverter3To4 Antialiasing argument is missing
 
 func set_cell_width(width: int) -> void:
   clear_selection()

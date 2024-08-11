@@ -2,14 +2,18 @@
 
 importer="mp3"
 type="AudioStreamMP3"
-path="res://.import/Reptile Crawling from the Forest.mp3-d1b57bf4c1175b71e5dcc6e6e6041c30.mp3str"
+uid="uid://r5aifm87750f"
+path="res://.godot/imported/Reptile Crawling from the Forest.mp3-d1b57bf4c1175b71e5dcc6e6e6041c30.mp3str"
 
 [deps]
 
 source_file="res://Assets/music/Reptile Crawling from the Forest.mp3"
-dest_files=[ "res://.import/Reptile Crawling from the Forest.mp3-d1b57bf4c1175b71e5dcc6e6e6041c30.mp3str" ]
+dest_files=["res://.godot/imported/Reptile Crawling from the Forest.mp3-d1b57bf4c1175b71e5dcc6e6e6041c30.mp3str"]
 
 [params]
 
 loop=true
 loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

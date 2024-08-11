@@ -8,7 +8,7 @@
 
 [sub_resource type="Curve2D" id=1]
 _data = {
-"points": PoolVector2Array( -4.76053, 0.0135925, 4.76053, -0.0135925, 483.167, 162.584, -2.25594, -27.8416, 2.25594, 27.8416, 511.347, 192.966, 15.2276, 0.172929, -15.2276, -0.172929, 481.07, 223.347, 0, 24.0372, 0, -24.0372, 452.17, 192.966, 0, 0, 0, 0, 480, 160 )
+"points": PackedVector2Array( -4.76053, 0.0135925, 4.76053, -0.0135925, 483.167, 162.584, -2.25594, -27.8416, 2.25594, 27.8416, 511.347, 192.966, 15.2276, 0.172929, -15.2276, -0.172929, 481.07, 223.347, 0, 24.0372, 0, -24.0372, 452.17, 192.966, 0, 0, 0, 0, 480, 160 )
 }
 
 [sub_resource type="Animation" id=2]
@@ -20,8 +20,8 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0.9 ),
-"transitions": PoolRealArray( 1 ),
+"times": PackedFloat32Array( 0.9 ),
+"transitions": PackedFloat32Array( 1 ),
 "values": [ {
 "args": [  ],
 "method": "start_movement"
@@ -34,8 +34,8 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0.5 ),
-"transitions": PoolRealArray( 1 ),
+"times": PackedFloat32Array( 0.5 ),
+"transitions": PackedFloat32Array( 1 ),
 "values": [ {
 "args": [  ],
 "method": "open_moth"

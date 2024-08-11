@@ -1,7 +1,7 @@
 extends Area2D
 
 var speed = 300
-export var heart_position = Vector2.ZERO
+@export var heart_position = Vector2.ZERO
 var direction
 
 

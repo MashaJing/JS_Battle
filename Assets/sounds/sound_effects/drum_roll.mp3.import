@@ -2,14 +2,18 @@
 
 importer="mp3"
 type="AudioStreamMP3"
-path="res://.import/drum_roll.mp3-d22fddcb94c0e5cc352b244e8ee5ad6c.mp3str"
+uid="uid://d5duvyesyc0j"
+path="res://.godot/imported/drum_roll.mp3-d22fddcb94c0e5cc352b244e8ee5ad6c.mp3str"
 
 [deps]
 
 source_file="res://Assets/sounds/sound_effects/drum_roll.mp3"
-dest_files=[ "res://.import/drum_roll.mp3-d22fddcb94c0e5cc352b244e8ee5ad6c.mp3str" ]
+dest_files=["res://.godot/imported/drum_roll.mp3-d22fddcb94c0e5cc352b244e8ee5ad6c.mp3str"]
 
 [params]
 
 loop=false
 loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -30,7 +30,7 @@ func _on_Miniton_area_entered(area):
 		cur_state = State.EXPLOSION
 		$AnimationPlayer.play(cur_state)
 		$ExplosionSound.play()
-		yield($AnimationPlayer, "animation_finished")
+		await $AnimationPlayer.animation_finished
 
 
 #func _on_HeartDetectionArea_area_entered(area):

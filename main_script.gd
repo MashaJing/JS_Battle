@@ -1,5 +1,5 @@
-extends Node
-onready var attack_timer = $AttackTimer
+extends Node2D
+@onready var attack_timer = $AttackTimer
 
 signal finished_talking
 signal reset_music
@@ -95,7 +95,7 @@ func add_attack():
 		# озвучиваем реплику противников непосредственно перед атакой
 		var pre_attack_line = Dialogic.start("pre_attack")
 		add_child(pre_attack_line)
-		yield(pre_attack_line, "dialogic_signal")
+		await pre_attack_line.timeline_ended
 
 	set_global_state(State.ATTACK)
 	add_child(cur_attack)
@@ -108,11 +108,11 @@ func prepare_attack():
 		print('current Attack.path is')
 		print(Attack.path)
 		# TODO: если не успеваем подгрузить, как-то организовать ретраи?
-		cur_attack = load(Attack.path).instance()
+		cur_attack = load(Attack.path).instantiate()
 
 		if Attack.mode != null:
 			cur_attack.mode = Attack.mode
-		cur_attack.connect("attack_ended", self, "_on_attack_ended")
+		cur_attack.connect("attack_ended", Callable(self, "_on_attack_ended"))
 	
 	return Attack
 
@@ -125,7 +125,7 @@ func remove_attack():
 func add_cringe_attack():
 	set_global_state(State.CRINGE_ATTACK)
 
-	cur_attack = load(GlobalPlotSettings.CRINGE_ATTACK_PATH).instance()
+	cur_attack = load(GlobalPlotSettings.CRINGE_ATTACK_PATH).instantiate()
 	add_child(cur_attack)
 	return cur_attack
 
@@ -140,7 +140,7 @@ func _on_CringeTimer_timeout():
 	if state == State.MENU:
 		$Menu.stop()
 		cur_attack = add_cringe_attack()
-		yield(cur_attack, "cringe_attack_ended")
+		await cur_attack.cringe_attack_ended
 		remove_cringe_attack()
 		open_menu()
 
@@ -153,17 +153,17 @@ func _on_game_over():
 	# остановить всё
 	# послать сигнал game_over?
 
-	get_tree().change_scene(game_over_path)
+	get_tree().change_scene_to_file(game_over_path)
 
 
 func _init_signals():
-	$Menu.connect("menu_ended", self, "_on_menu_ended")
-	TeamStats.connect("game_over", self, "_on_game_over")
+	$Menu.connect("menu_ended", Callable(self, "_on_menu_ended"))
+	TeamStats.connect("game_over", Callable(self, "_on_game_over"))
 
-	connect("new_turn", GlobalDescriptionSettings, "_on_new_turn")
-	connect("new_turn", $Kris.get_node("AnimatedSpriteController"), "_on_new_turn")
-	connect("new_turn", $Susie.get_node("AnimatedSpriteController"), "_on_new_turn")
-	connect("new_turn", $Ralsei.get_node("AnimatedSpriteController"), "_on_new_turn")
+	connect("new_turn", Callable(GlobalDescriptionSettings, "_on_new_turn"))
+	connect("new_turn", Callable($Kris.get_node("AnimatedSpriteController"), "_on_new_turn"))
+	connect("new_turn", Callable($Susie.get_node("AnimatedSpriteController"), "_on_new_turn"))
+	connect("new_turn", Callable($Ralsei.get_node("AnimatedSpriteController"), "_on_new_turn"))
 
 
 func _init_variables():
@@ -210,7 +210,7 @@ func spawn_angel_and_heal(hero_node):
 	var position_1 = $AngelSpawn.position
 	var position_2 = hero_position
 
-	var angel = Angel.instance()
+	var angel = Angel.instantiate()
 	angel.position = position_1
 	add_child(angel)
 	
@@ -239,7 +239,7 @@ func spawn_angel_and_heal(hero_node):
 	angel_animation_player.play("angel_flies")
 
 	# Хиляем, дождавшись воспроизведения мультика с ангелом
-	yield(angel, "tree_exiting")
+	await angel.tree_exiting
 
 	var new_hp = int(hero_node.get_node("PlayerStats").MAX_HP/2)
 	hero_node.get_node("PlayerStats").heal(new_hp)

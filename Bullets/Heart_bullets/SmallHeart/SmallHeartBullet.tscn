@@ -1,13 +1,13 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Bullets/Heart_bullets/bullet-heart.png" type="Texture" id=2]
+[ext_resource path="res://Bullets/Heart_bullets/bullet-heart.png" type="Texture2D" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 9.05539
 
 [node name="Area2D" type="Area2D"]
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

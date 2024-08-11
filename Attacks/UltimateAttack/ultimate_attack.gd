@@ -12,27 +12,27 @@ func load_sprite_array():
 
 
 func change_to_sprite(frame_ind):
-	var time_before = OS.get_ticks_msec()
+	var time_before = Time.get_ticks_msec()
 	var BadFrame = get_node_or_null("BadAnimation")
 	if BadFrame != null:
 		remove_child(BadFrame)
 	
 	if frame_ind >= len(sprite_polygon_array):
-		$AnimatedSprite.stop()
+		$AnimatedSprite2D.stop()
 	else:
-		var new_frame = sprite_polygon_array[frame_ind].instance()
+		var new_frame = sprite_polygon_array[frame_ind].instantiate()
 		if new_frame:
 			add_child(new_frame)
 		print(get_children())
-		var time_after = OS.get_ticks_msec()
+		var time_after = Time.get_ticks_msec()
 		print(time_after - time_before)
 
 func _ready():
 	load_sprite_array()
-	$AnimatedSprite.play("default")
+	$AnimatedSprite2D.play("default")
 
 func _process(delta):
 	pass
 
 func _on_AnimatedSprite_frame_changed():
-	change_to_sprite($AnimatedSprite.frame)
+	change_to_sprite($AnimatedSprite2D.frame)

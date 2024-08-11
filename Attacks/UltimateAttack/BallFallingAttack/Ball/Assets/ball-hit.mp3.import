@@ -2,14 +2,18 @@
 
 importer="mp3"
 type="AudioStreamMP3"
-path="res://.import/ball-hit.mp3-1198698dd937e0e3332a9a3f0335b9eb.mp3str"
+uid="uid://cwfkuotx66wmu"
+path="res://.godot/imported/ball-hit.mp3-1198698dd937e0e3332a9a3f0335b9eb.mp3str"
 
 [deps]
 
 source_file="res://Attacks/UltimateAttack/BallFallingAttack/Ball/Assets/ball-hit.mp3"
-dest_files=[ "res://.import/ball-hit.mp3-1198698dd937e0e3332a9a3f0335b9eb.mp3str" ]
+dest_files=["res://.godot/imported/ball-hit.mp3-1198698dd937e0e3332a9a3f0335b9eb.mp3str"]
 
 [params]
 
 loop=false
 loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

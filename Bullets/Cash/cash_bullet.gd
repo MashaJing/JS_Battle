@@ -6,7 +6,7 @@ var amplitude_x = 5
 var amplitude_y = 5
 var G = 200
 
-onready var sprites = [
+@onready var sprites = [
 	preload("res://Bullets/Cash/Assets/money1.png"),
 	preload("res://Bullets/Cash/Assets/money2.png"),
 	preload("res://Bullets/Cash/Assets/money3.png")
@@ -17,7 +17,7 @@ var omega = sqrt(G / l)
 
 
 func _ready():
-	$Sprite.texture = sprites[randi() % len(sprites)]
+	$Sprite2D.texture = sprites[randi() % len(sprites)]
 	amplitude_x = randi() % 7
 
 

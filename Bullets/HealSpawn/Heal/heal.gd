@@ -5,15 +5,15 @@ var HealSource = {
 	'JEVIL': ["plus", "flower", "heart_donut", "choco", "choco2", "voice2", "note"],
 	'SPAMTON': ["plus", "car2", "letter", "spam_tea", "voice", "phone"]
 }
-export var direction = Vector2.LEFT
-export var speed = 60
-export var healer = 'JEVIL'
-export var rotation_speed = 0.01
+@export var direction = Vector2.LEFT
+@export var speed = 60
+@export var healer = 'JEVIL'
+@export var rotation_speed = 0.01
 
 
 func _ready():
-	direction += Vector2(rand_range(-0.5, 0.5), rand_range(-0.5, 0.5)).normalized()
-	$Sprite.texture = load(PATH % HealSource[healer][randi() % len(HealSource[healer])])
+	direction += Vector2(randf_range(-0.5, 0.5), randf_range(-0.5, 0.5)).normalized()
+	$Sprite2D.texture = load(PATH % HealSource[healer][randi() % len(HealSource[healer])])
 
 
 func _process(delta):

@@ -1,16 +1,16 @@
 extends Line2D
 
-export var upper_position = Vector2.ZERO
-export var heart_position = Vector2.ZERO
-export var lower_position = Vector2.ZERO
-onready var graphic_path = $GraphicBullet
-onready var graphic_line = $GraphicLine
-onready var graphic_arrow = $GraphicBullet/PathFollow2D/GraphicArrow
-onready var graphic_path_follow = $GraphicBullet/PathFollow2D
+@export var upper_position = Vector2.ZERO
+@export var heart_position = Vector2.ZERO
+@export var lower_position = Vector2.ZERO
+@onready var graphic_path = $GraphicBullet
+@onready var graphic_line = $GraphicLine
+@onready var graphic_arrow = $GraphicBullet/PathFollow2D/GraphicArrow
+@onready var graphic_path_follow = $GraphicBullet/PathFollow2D
 
 var speed = 440
 var attack = false
-var pts = PoolVector2Array()
+var pts = PackedVector2Array()
 var path_curve = Curve2D.new()
 
 
@@ -32,6 +32,6 @@ func _process(delta):
 		# + Vector2(...) - придаёт хаотичную искривлённость линии
 		pts = graphic_line.add_point(graphic_path_follow.position + Vector2(randi() % 10 - 5, randi() % 5 - 5))
 		# дошли до конца пути - стираем
-		if 0.9 <= graphic_path_follow.unit_offset:
+		if 0.9 <= graphic_path_follow.progress_ratio:
 			clear_points()
 			queue_free()

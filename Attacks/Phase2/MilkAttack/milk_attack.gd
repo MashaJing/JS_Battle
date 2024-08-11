@@ -2,8 +2,8 @@ extends Node2D
 
 signal attack_ended
 
-onready var Drip = preload("res://Bullets/MilkDrip/MilkDrip.tscn")
-onready var Level = preload("res://Attacks/Phase2/MilkAttack/MilkLevel/MilkLevel.tscn")
+@onready var Drip = preload("res://Bullets/MilkDrip/MilkDrip.tscn")
+@onready var Level = preload("res://Attacks/Phase2/MilkAttack/MilkLevel/MilkLevel.tscn")
 
 
 var DRIP_AMOUNT = 30
@@ -11,18 +11,18 @@ var MILK_HEGHT = 17.0
 
 
 func _ready():
-	$KinematicHeart/Heart.connect("health_changed", self, "_on_Heart_hit")
+	$KinematicHeart/Heart.connect("health_changed", Callable(self, "_on_Heart_hit"))
 	$AnimationPlayer.play("milk_falls")
-	yield($AnimationPlayer, "animation_finished")
+	await $AnimationPlayer.animation_finished
 	$AnimationPlayer.play("bottle_goes")
 	while $MilkLevel.scale.y < MILK_HEGHT:
-		var bullet = Drip.instance()
+		var bullet = Drip.instantiate()
 		bullet.global_position = $Bottle/DripSpawn.global_position
 		
 		bullet.target_object = $MilkLevel.global_position
 		add_child(bullet)
 		bullet.add_to_group("bullets")
-		yield(get_tree().create_timer(0.2), "timeout")
+		await get_tree().create_timer(0.2).timeout
 	emit_signal("attack_ended")
 
 

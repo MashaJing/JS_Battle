@@ -2,14 +2,18 @@
 
 importer="mp3"
 type="AudioStreamMP3"
-path="res://.import/Cucozh.mp3-0f9d3286bf115c2240670957d82075a2.mp3str"
+uid="uid://dowtk8ae8m6tm"
+path="res://.godot/imported/Cucozh.mp3-0f9d3286bf115c2240670957d82075a2.mp3str"
 
 [deps]
 
 source_file="res://Assets/music/Cucozh.mp3"
-dest_files=[ "res://.import/Cucozh.mp3-0f9d3286bf115c2240670957d82075a2.mp3str" ]
+dest_files=["res://.godot/imported/Cucozh.mp3-0f9d3286bf115c2240670957d82075a2.mp3str"]
 
 [params]
 
 loop=true
 loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

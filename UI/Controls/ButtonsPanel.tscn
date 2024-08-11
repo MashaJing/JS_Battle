@@ -2,7 +2,7 @@
 
 [ext_resource path="res://UI/Controls/ButtonsPanel.gd" type="Script" id=2]
 [ext_resource path="res://UI/Controls/ButtonPanelGroup.tres" type="ButtonGroup" id=3]
-[ext_resource path="res://UI/between_attack_menu/assets/menu_sprites.png" type="Texture" id=4]
+[ext_resource path="res://UI/between_attack_menu/assets/menu_sprites.png" type="Texture2D" id=4]
 
 [sub_resource type="AtlasTexture" id=21]
 atlas = ExtResource( 4 )
@@ -15,7 +15,7 @@ region_rect = Rect2( -0.0821724, 0, 30.651, 33.6844 )
 [sub_resource type="StyleBoxTexture" id=17]
 texture = ExtResource( 4 )
 region_rect = Rect2( 277.855, 98.8831, 32.7444, 29.3145 )
-margin_right = 0.375187
+offset_right = 0.375187
 
 [sub_resource type="StyleBoxTexture" id=32]
 texture = ExtResource( 4 )
@@ -53,99 +53,99 @@ region_rect = Rect2( 410.741, 98.7787, 31.4908, 28.8416 )
 anchor_top = -0.027
 anchor_right = 0.311
 anchor_bottom = 0.06
-margin_top = 16.2
-margin_right = -0.463989
-margin_bottom = 21.0
+offset_top = 16.2
+offset_right = -0.463989
+offset_bottom = 21.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource( 2 )
 
 [node name="Buttons" type="HBoxContainer" parent="."]
-margin_left = 23.0
-margin_top = 1.0
-margin_right = 301.0
-margin_bottom = 56.0
-custom_constants/separation = -6
+offset_left = 23.0
+offset_top = 1.0
+offset_right = 301.0
+offset_bottom = 56.0
+theme_override_constants/separation = -6
 
 [node name="Attack" type="Button" parent="Buttons"]
-margin_right = 60.0
-margin_bottom = 55.0
-focus_neighbour_left = NodePath("../Defense")
-focus_neighbour_right = NodePath("../Act")
+offset_right = 60.0
+offset_bottom = 55.0
+focus_neighbor_left = NodePath("../Defense")
+focus_neighbor_right = NodePath("../Act")
 mouse_filter = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_styles/pressed = SubResource( 20 )
-custom_styles/focus = SubResource( 20 )
-custom_styles/normal = SubResource( 17 )
+theme_override_styles/pressed = SubResource( 20 )
+theme_override_styles/focus = SubResource( 20 )
+theme_override_styles/normal = SubResource( 17 )
 disabled = true
 toggle_mode = true
 group = ExtResource( 3 )
 expand_icon = true
 
 [node name="Act" type="Button" parent="Buttons"]
-margin_left = 54.0
-margin_right = 114.0
-margin_bottom = 55.0
-focus_neighbour_left = NodePath("../Attack")
-focus_neighbour_right = NodePath("../Item")
+offset_left = 54.0
+offset_right = 114.0
+offset_bottom = 55.0
+focus_neighbor_left = NodePath("../Attack")
+focus_neighbor_right = NodePath("../Item")
 mouse_filter = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_styles/pressed = SubResource( 32 )
-custom_styles/focus = SubResource( 32 )
-custom_styles/normal = SubResource( 25 )
+theme_override_styles/pressed = SubResource( 32 )
+theme_override_styles/focus = SubResource( 32 )
+theme_override_styles/normal = SubResource( 25 )
 disabled = true
 toggle_mode = true
 group = ExtResource( 3 )
 expand_icon = true
 
 [node name="Item" type="Button" parent="Buttons"]
-margin_left = 108.0
-margin_right = 169.0
-margin_bottom = 55.0
-focus_neighbour_left = NodePath("../Act")
-focus_neighbour_right = NodePath("../Spare")
+offset_left = 108.0
+offset_right = 169.0
+offset_bottom = 55.0
+focus_neighbor_left = NodePath("../Act")
+focus_neighbor_right = NodePath("../Spare")
 mouse_filter = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_styles/pressed = SubResource( 26 )
-custom_styles/focus = SubResource( 26 )
-custom_styles/normal = SubResource( 27 )
+theme_override_styles/pressed = SubResource( 26 )
+theme_override_styles/focus = SubResource( 26 )
+theme_override_styles/normal = SubResource( 27 )
 disabled = true
 toggle_mode = true
 group = ExtResource( 3 )
 expand_icon = true
 
 [node name="Spare" type="Button" parent="Buttons"]
-margin_left = 163.0
-margin_right = 223.0
-margin_bottom = 55.0
-focus_neighbour_left = NodePath("../Item")
-focus_neighbour_right = NodePath("../Defense")
+offset_left = 163.0
+offset_right = 223.0
+offset_bottom = 55.0
+focus_neighbor_left = NodePath("../Item")
+focus_neighbor_right = NodePath("../Defense")
 mouse_filter = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_styles/pressed = SubResource( 28 )
-custom_styles/focus = SubResource( 28 )
-custom_styles/normal = SubResource( 29 )
+theme_override_styles/pressed = SubResource( 28 )
+theme_override_styles/focus = SubResource( 28 )
+theme_override_styles/normal = SubResource( 29 )
 disabled = true
 toggle_mode = true
 group = ExtResource( 3 )
 expand_icon = true
 
 [node name="Defense" type="Button" parent="Buttons"]
-margin_left = 217.0
-margin_right = 278.0
-margin_bottom = 55.0
-focus_neighbour_left = NodePath("../Spare")
-focus_neighbour_right = NodePath("../Attack")
+offset_left = 217.0
+offset_right = 278.0
+offset_bottom = 55.0
+focus_neighbor_left = NodePath("../Spare")
+focus_neighbor_right = NodePath("../Attack")
 mouse_filter = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_styles/pressed = SubResource( 30 )
-custom_styles/focus = SubResource( 30 )
-custom_styles/normal = SubResource( 31 )
+theme_override_styles/pressed = SubResource( 30 )
+theme_override_styles/focus = SubResource( 30 )
+theme_override_styles/normal = SubResource( 31 )
 disabled = true
 toggle_mode = true
 group = ExtResource( 3 )

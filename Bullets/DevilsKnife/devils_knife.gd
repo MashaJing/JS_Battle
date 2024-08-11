@@ -4,9 +4,9 @@ var time = 0
 var speed = 0
 var flipped = false
 var rotation_speed = .01
-export var direction = Vector2.LEFT
-onready var sprite = $Sprite
-onready var texture = $Sprite.texture
+@export var direction = Vector2.LEFT
+@onready var sprite = $Sprite2D
+@onready var texture = $Sprite2D.texture
 
 var collision_segments = 4
 var EPS = 5

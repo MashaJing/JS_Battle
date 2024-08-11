@@ -2,17 +2,17 @@ extends Node2D
 
 signal attack_ended
 
-onready var bullet_spawn_timer = $BulletSpawnTimer
-onready var Spamton = $Spamton
-onready var SpamtonAnim = $Spamton/AnimatedSpriteController/AnimatedSprite
-onready var SpamtonAnimPlayer = $Spamton/AnimationPlayer
-onready var Jevil = $Jevil
-onready var BulletSucker = $Spamton/BulletSucker
-onready var mouth = $Spamton/mouth
-onready var AttackMovePlayer = $Spamton/AttackMovePlayer
+@onready var bullet_spawn_timer = $BulletSpawnTimer
+@onready var Spamton = $Spamton
+@onready var SpamtonAnim = $Spamton/AnimatedSpriteController/AnimatedSprite2D
+@onready var SpamtonAnimPlayer = $Spamton/AnimationPlayer
+@onready var Jevil = $Jevil
+@onready var BulletSucker = $Spamton/BulletSucker
+@onready var mouth = $Spamton/mouth
+@onready var AttackMovePlayer = $Spamton/AttackMovePlayer
 
-export (PackedScene) var dimond_scene
-export (PackedScene) var dollar_scene
+@export (PackedScene) var dimond_scene
+@export (PackedScene) var dollar_scene
 
 var all_bullets = []
 var offset = Vector2(0, 0)
@@ -21,8 +21,8 @@ var time = 0
 
 # неиграбельно, слишком сильное ускорение
 func spawn_bullet(spawn_location, bullet_scene, direction, speed):
-	spawn_location.unit_offset = randf()
-	var bullet = bullet_scene.instance()
+	spawn_location.progress_ratio = randf()
+	var bullet = bullet_scene.instantiate()
 	bullet.direction = direction
 	bullet.ttl = 4
 	bullet.speed = speed
@@ -45,7 +45,7 @@ func _on_AttackTimer_timeout():
 	for bullet in get_tree().get_nodes_in_group("bullets"):
 		bullet.queue_free()
 	SpamtonAnim.play("increase_head", true)
-	yield(SpamtonAnim, "animation_finished")
+	await SpamtonAnim.animation_finished
 #	yield($Jevil/AnimationPlayer, "animation_finished")
 	Spamton.visible = false
 	Jevil.visible = false
@@ -56,10 +56,10 @@ func _on_AttackTimer_timeout():
 func _ready():
 	get_parent().get_node("Spamton").visible = false
 	get_parent().get_node("Jevil").visible = false
-	yield(get_tree().create_timer(1), "timeout")
+	await get_tree().create_timer(1).timeout
 	SpamtonAnim.play("increase_head")
 	# нормально дождаться окончания анимации
-	yield(get_tree().create_timer(1), "timeout")
+	await get_tree().create_timer(1).timeout
 	SpamtonAnim.play("head_attack")
 	AttackMovePlayer.play("up_and_down")
 	BulletSucker.activate()

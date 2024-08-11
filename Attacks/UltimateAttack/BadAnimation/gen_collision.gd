@@ -8,7 +8,7 @@ signal attack_ended
 
 func _ready():
 	$AnimationPlayer.play("play_movie")
-	yield($AnimationPlayer, "animation_finished")
+	await $AnimationPlayer.animation_finished
 	emit_signal("attack_ended")
 	print('emmited')
 
@@ -29,25 +29,25 @@ func set_collision_by_sprite():
 #	$BadArea.add_child(sprite)
 #	sprite.owner = $BadArea
 
-	var time_start = OS.get_ticks_msec()
+	var time_start = Time.get_ticks_msec()
 	# удаляем полигоны из предыдущего кадра, распознавая по группе col_polys
 	for child in children:
 		if child.is_in_group('col_polys'):
 			$BadArea.remove_child(child)
 
-	var time_now = OS.get_ticks_msec()
+	var time_now = Time.get_ticks_msec()
 	var time_elapsed = time_now - time_start
 	print('deleting old polys')
 	print(time_elapsed)
 	
-	time_start = OS.get_ticks_msec()
+	time_start = Time.get_ticks_msec()
 	
 	# формируем битмапу на основе текстуры кадра
 	var bitmap = BitMap.new()
 	var data = texture.get_data()
 	bitmap.create_from_image_alpha(data)
 
-	time_now = OS.get_ticks_msec()
+	time_now = Time.get_ticks_msec()
 	time_elapsed = time_now - time_start
 	print('formed bitmap')
 	print(time_elapsed)
@@ -61,7 +61,7 @@ func set_collision_by_sprite():
 	var segment_size = Vector2(curr_size[0]/collision_segments, curr_size[1])
 	var polys
 
-	var cycle_time_start = OS.get_ticks_msec()
+	var cycle_time_start = Time.get_ticks_msec()
 	# Итерируемся по всем сегментам
 	for i in range(collision_segments):
 		# Создаём полигоны сегмента по битмапе
@@ -71,7 +71,7 @@ func set_collision_by_sprite():
 			Rect2(Vector2(curr_size[0] * i /collision_segments, 0),
 			segment_size), EPS)
 
-		time_start = OS.get_ticks_msec()
+		time_start = Time.get_ticks_msec()
 		# Добавляем полигоны сегмента в сцену, присваивая им группу col_polys
 		for poly in polys:
 			var collision_polygon = CollisionPolygon2D.new()
@@ -89,7 +89,7 @@ func set_collision_by_sprite():
 	ResourceSaver.save("res://Attacks/UltimateAttack/Assets/CollisionFrames/jevils_gift/cframe{frame}.tscn".format({'frame': $Screen.frame}), scene)
 #	$BadArea.remove_child(sprite)
 
-	time_now = OS.get_ticks_msec()
+	time_now = Time.get_ticks_msec()
 	print('bitmap to polygons')
 	print(time_now - cycle_time_start - time_elapsed * collision_segments)
 

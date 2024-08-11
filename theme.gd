@@ -5,9 +5,9 @@ var default_theme
 
 
 func _ready():
-	get_parent().connect("reset_music", self, "_on_reset_music")
-	ActionsController.connect("slow_down_music", self, "_on_slow_down")
-	ActionsController.connect("soundtrack_required", self, "set_soundtrack")
+	get_parent().connect("reset_music", Callable(self, "_on_reset_music"))
+	ActionsController.connect("slow_down_music", Callable(self, "_on_slow_down"))
+	ActionsController.connect("soundtrack_required", Callable(self, "set_soundtrack"))
 
 func set_soundtrack(theme):
 	var new_audio = open_audio(theme)
@@ -21,7 +21,7 @@ func set_soundtrack(theme):
 
 func open_audio(theme):
 	var audio_file = music_folder % theme
-	if File.new().file_exists(audio_file):
+	if FileAccess.file_exists(audio_file):
 		var sfx = load(audio_file)
 		sfx.set_loop(true)
 		return sfx
@@ -32,9 +32,9 @@ func _on_slow_down():
 
 func _on_reset_music():
 	if GlobalAttackSettings.PHASE_INDEX >= 3:
-		 default_theme = "the_deals_revolving.mp3"
+		default_theme = "the_deals_revolving.mp3"
 	else:
-		 default_theme = "battle.ogg"
+		default_theme = "battle.ogg"
 	
 	set_soundtrack(default_theme)
 	self.pitch_scale = 1.0

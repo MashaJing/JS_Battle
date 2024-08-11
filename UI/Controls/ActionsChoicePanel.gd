@@ -22,7 +22,7 @@ func init(actions):
 func open():
 	popup()
 	if get_item_count() > 0:
-		set_current_index(0)
+		set_focused_item(0)
 
 func exit():
 	visible = false

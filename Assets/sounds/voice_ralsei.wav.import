@@ -1,13 +1,14 @@
 [remap]
 
 importer="wav"
-type="AudioStreamSample"
-path="res://.import/voice_ralsei.wav-de08f21723ff170293dd662a1a39cb06.sample"
+type="AudioStreamWAV"
+uid="uid://cqkv3lre4i3bi"
+path="res://.godot/imported/voice_ralsei.wav-de08f21723ff170293dd662a1a39cb06.sample"
 
 [deps]
 
 source_file="res://Assets/sounds/voice_ralsei.wav"
-dest_files=[ "res://.import/voice_ralsei.wav-de08f21723ff170293dd662a1a39cb06.sample" ]
+dest_files=["res://.godot/imported/voice_ralsei.wav-de08f21723ff170293dd662a1a39cb06.sample"]
 
 [params]
 

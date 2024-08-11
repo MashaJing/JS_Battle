@@ -2,14 +2,14 @@
 
 [ext_resource path="res://player/KinematicHeart.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Attacks/UltimateAttack/BadAnimation/BadAnimation.tscn" type="PackedScene" id=2]
-[ext_resource path="res://player/HeartArea/1.png" type="Texture" id=3]
+[ext_resource path="res://player/HeartArea/1.png" type="Texture2D" id=3]
 
 [sub_resource type="Curve" id=1]
 _data = [ Vector2( 0.0506329, 0.918182 ), 0.0, 0.0, 0, 0, Vector2( 0.977848, 0.618182 ), 0.0, 0.0, 0, 0 ]
 
 [sub_resource type="Gradient" id=2]
 interpolation_mode = 2
-colors = PoolColorArray( 1, 1, 1, 0.6, 1, 1, 1, 0 )
+colors = PackedColorArray( 1, 1, 1, 0.6, 1, 1, 1, 0 )
 
 [node name="UltimateAttack" type="Node2D"]
 
@@ -19,11 +19,11 @@ colors = PoolColorArray( 1, 1, 1, 0.6, 1, 1, 1, 0 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Screen"]
 build_mode = 1
-polygon = PoolVector2Array( 1020, 10, 1020, 590, 10, 590, 10, 10 )
+polygon = PackedVector2Array( 1020, 10, 1020, 590, 10, 590, 10, 10 )
 
 [node name="ColorRect" type="ColorRect" parent="Screen"]
-margin_right = 1030.0
-margin_bottom = 600.0
+offset_right = 1030.0
+offset_bottom = 600.0
 color = Color( 0, 0, 0, 1 )
 
 [node name="KinematicHeart" parent="." instance=ExtResource( 1 )]

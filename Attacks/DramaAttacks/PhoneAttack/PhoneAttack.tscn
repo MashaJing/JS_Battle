@@ -18,7 +18,7 @@ position = Vector2( 520, 300 )
 [node name="Wire" type="Line2D" parent="."]
 visible = false
 position = Vector2( 520, 310 )
-points = PoolVector2Array( -520, -310 )
+points = PackedVector2Array( -520, -310 )
 width = 4.0
 width_curve = SubResource( 1 )
 default_color = Color( 0.258824, 0.258824, 0.258824, 1 )

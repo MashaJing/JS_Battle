@@ -1,13 +1,14 @@
 [remap]
 
 importer="wav"
-type="AudioStreamSample"
-path="res://.import/jevil_attack_1.wav-4d953836c1be395982e85ff4e7c3420b.sample"
+type="AudioStreamWAV"
+uid="uid://bk3lvbuhx0q0m"
+path="res://.godot/imported/jevil_attack_1.wav-4d953836c1be395982e85ff4e7c3420b.sample"
 
 [deps]
 
 source_file="res://Assets/Images/Dialogue/sounds/jevil_attack_1.wav"
-dest_files=[ "res://.import/jevil_attack_1.wav-4d953836c1be395982e85ff4e7c3420b.sample" ]
+dest_files=["res://.godot/imported/jevil_attack_1.wav-4d953836c1be395982e85ff4e7c3420b.sample"]
 
 [params]
 

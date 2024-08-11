@@ -1,8 +1,8 @@
 extends Area2D
 
-export var direction = Vector2.DOWN
-export var speed = 50
-export var ttl = 100.0
+@export var direction = Vector2.DOWN
+@export var speed = 50
+@export var ttl = 100.0
 
 
 func _process(delta):
@@ -14,7 +14,7 @@ func stop():
 func _ready():
 	$TTL.wait_time = ttl
 	$AnimationPlayer.play("appear")
-	yield($AnimationPlayer, "animation_finished")
+	await $AnimationPlayer.animation_finished
 	speed = 250
 
 func _on_TTL_timeout():

@@ -7,5 +7,5 @@ signal attack_ended
 
 func _ready():
 	# нужен какой-то переиспользуемый механизм для добваления атак
-	var Attack = BlackPipisAttack.instance()
+	var Attack = BlackPipisAttack.instantiate()
 	add_child(Attack)

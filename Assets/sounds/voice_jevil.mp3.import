@@ -2,14 +2,18 @@
 
 importer="mp3"
 type="AudioStreamMP3"
-path="res://.import/voice_jevil.mp3-794570dc5e2300c6281504c278f4ba13.mp3str"
+uid="uid://dpxksn2qi71g5"
+path="res://.godot/imported/voice_jevil.mp3-794570dc5e2300c6281504c278f4ba13.mp3str"
 
 [deps]
 
 source_file="res://Assets/sounds/voice_jevil.mp3"
-dest_files=[ "res://.import/voice_jevil.mp3-794570dc5e2300c6281504c278f4ba13.mp3str" ]
+dest_files=["res://.godot/imported/voice_jevil.mp3-794570dc5e2300c6281504c278f4ba13.mp3str"]
 
 [params]
 
 loop=false
 loop_offset=0.025
+bpm=0
+beat_count=0
+bar_beats=4

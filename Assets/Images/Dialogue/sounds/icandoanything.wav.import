@@ -1,13 +1,14 @@
 [remap]
 
 importer="wav"
-type="AudioStreamSample"
-path="res://.import/icandoanything.wav-853860485d094845337ea8e386234ad6.sample"
+type="AudioStreamWAV"
+uid="uid://bkdl5bjr3lv77"
+path="res://.godot/imported/icandoanything.wav-853860485d094845337ea8e386234ad6.sample"
 
 [deps]
 
 source_file="res://Assets/Images/Dialogue/sounds/icandoanything.wav"
-dest_files=[ "res://.import/icandoanything.wav-853860485d094845337ea8e386234ad6.sample" ]
+dest_files=["res://.godot/imported/icandoanything.wav-853860485d094845337ea8e386234ad6.sample"]
 
 [params]
 

@@ -1,0 +1,77 @@
+{
+"@path": "res://addons/dialogic/Resources/character.gd",
+"@subpath": NodePath(""),
+"_translation_id": "",
+"color": Color(1, 1, 1, 1),
+"custom_info": {
+"sound_mood_default": "",
+"sound_moods": {
+"default": {
+"mode": 2,
+"name": "default",
+"pitch_base": 1.0,
+"pitch_variance": 0.0,
+"skip_characters": 0.0,
+"sound_path": "res://Assets/sounds/voice_spamton.mp3",
+"volume_base": 0.0,
+"volume_variance": 0.0
+}
+},
+"style": "white_box"
+},
+"default_portrait": "Spamton_Happy",
+"description": "",
+"display_name": "Spamton",
+"mirror": false,
+"nicknames": ["Spamton"],
+"offset": Vector2(0, 0),
+"portraits": {
+"Spamton_Happy": {
+"export_overrides": {
+"image": "\"res://Assets/Images/Dialogue/Spamton/Spamton_Happy.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 0.85,
+"scene": "",
+"sound_mood": "default"
+},
+"Spamton_Mad": {
+"export_overrides": {
+"image": "\"res://Assets/Images/Dialogue/Spamton/Spamton_Mad.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Spamton_Mysterious": {
+"export_overrides": {
+"image": "\"res://Assets/Images/Dialogue/Spamton/Spamton_Mysterious.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Spamton_Pathetic": {
+"export_overrides": {
+"image": "\"res://Assets/Images/Dialogue/Spamton/Spamton_Pathetic.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Spamton_Tax": {
+"export_overrides": {
+"image": "\"res://Assets/Images/Dialogue/Spamton/Spamton_Tax.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+}
+},
+"scale": 1.0
+}

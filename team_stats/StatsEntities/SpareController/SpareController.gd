@@ -2,7 +2,7 @@ extends Node2D
 
 signal action_start
 signal canceled
-signal spare
+signal spared
 signal play_spare
 
 
@@ -22,9 +22,9 @@ func cancel_spare(actor):
 
 
 func confirm_spare(decider, decision_victim):
-	emit_signal("spare", decision_victim)
+	emit_signal("spared", decision_victim)
 	emit_signal("play_spare", decider)
 
 
 func _init_signals():
-	connect("spare", ConStats, "_on_take_spare")
+	connect("spared", Callable(ConStats, "_on_take_spare"))

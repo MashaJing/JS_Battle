@@ -11,7 +11,7 @@ func start_attacks(fighters):
 	active_bars = fighters.duplicate()
 	visible = true
 	for bar in active_bars:
-		get_node(bar).connect("bar_finished", self, "_on_bar_finished")
+		get_node(bar).connect("bar_finished", Callable(self, "_on_bar_finished"))
 		get_node(bar).initial_position = randi() % 3
 		get_node(bar).start()
 	

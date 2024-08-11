@@ -1,11 +1,11 @@
 extends Node
 
-export var flipped = false
+@export var flipped = false
 #signal down
 
 
 func _ready():
-	$AnimatedSprite.flip_h = flipped
+	$AnimatedSprite2D.flip_h = flipped
 	print('Jevil ready')
 
 func facepalm():
@@ -16,7 +16,7 @@ func open_moth():
 
 func close_moth():
 	$AnimationPlayer.play("close_moth")
-	yield($AnimationPlayer, "animation_finished")
+	await $AnimationPlayer.animation_finished
 	queue_free()
 
 func _on_down(_name):

@@ -8,7 +8,7 @@
 
 [sub_resource type="Curve2D" id=1]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 550, 20, 92.9607, -69.0018, -92.9607, 69.0018, 290, 70, 0, 0, 0, 0, 170, 240 )
+"points": PackedVector2Array( 0, 0, 0, 0, 550, 20, 92.9607, -69.0018, -92.9607, 69.0018, 290, 70, 0, 0, 0, 0, 170, 240 )
 }
 
 [node name="Attack3" type="Node2D"]

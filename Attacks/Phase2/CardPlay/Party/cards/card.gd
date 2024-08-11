@@ -11,10 +11,10 @@ var d = 0
 
 
 func _ready():
-	$Sprite.modulate = Color(1, 1, 1, 0)
-	$Sprite.texture = load(texture_path % texture)
+	$Sprite2D.modulate = Color(1, 1, 1, 0)
+	$Sprite2D.texture = load(texture_path % texture)
 	$AnimationPlayer.play("appear")
-	yield($AnimationPlayer, "animation_finished")
+	await $AnimationPlayer.animation_finished
 	turn_on = 1
 
 func _process(delta):

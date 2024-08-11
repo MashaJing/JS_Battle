@@ -1,13 +1,14 @@
 [remap]
 
 importer="wav"
-type="AudioStreamSample"
-path="res://.import/metal_boom.wav-8b555db76f25d9d4aa583c5159fa2bc2.sample"
+type="AudioStreamWAV"
+uid="uid://bh01vrtk40hq0"
+path="res://.godot/imported/metal_boom.wav-8b555db76f25d9d4aa583c5159fa2bc2.sample"
 
 [deps]
 
 source_file="res://Attacks/Phase2/UnusedJevilAttack/Assets/metal_boom.wav"
-dest_files=[ "res://.import/metal_boom.wav-8b555db76f25d9d4aa583c5159fa2bc2.sample" ]
+dest_files=["res://.godot/imported/metal_boom.wav-8b555db76f25d9d4aa583c5159fa2bc2.sample"]
 
 [params]
 

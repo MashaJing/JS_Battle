@@ -1,4 +1,4 @@
 extends Node2D
 
-export var spawning = false
+@export var spawning = false
 

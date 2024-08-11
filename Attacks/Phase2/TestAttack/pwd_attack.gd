@@ -1,9 +1,9 @@
 extends Node2D
 var sign_regex = RegEx.new()
-onready var TestTimer = $Timer
-onready var PasswordField = $PasswordField
-onready var TImeBar = $ProgressBar
-onready var Shocker = preload("res://Bullets/Shocker/Shocker.tscn")
+@onready var TestTimer = $Timer
+@onready var PasswordField = $PasswordField
+@onready var TImeBar = $ProgressBar
+@onready var Shocker = preload("res://Bullets/Shocker/Shocker.tscn")
 
 signal attack_ended
 
@@ -18,9 +18,9 @@ func _ready():
 		Password.TestPhase.CHECK:
 			dialog_name = "spamton_password_check"
 
-	var dialog = Dialogic.start(dialog_name)
-	add_child(dialog)
-	yield(dialog, "dialogic_signal")
+	#var dialog = Dialogic.start(dialog_name)
+	#add_child(dialog)
+	#await Dialogic.timeline_ended
 	emit_signal("attack_ended")
 
 
@@ -41,7 +41,7 @@ func _on_Timer_timeout():
 
 func _input(event):
 	if event is InputEventKey and event.is_pressed():
-		var key_text = OS.get_scancode_string(event.unicode)
+		var key_text = OS.get_keycode_string(event.unicode)
 		if key_text == "BackSpace":
 			var new_text = PasswordField.text
 			new_text.erase(PasswordField.text.length()-1,1)
@@ -75,7 +75,7 @@ func _process(delta):
 
 
 func shock_heart():
-	var shocker = Shocker.instance()
+	var shocker = Shocker.instantiate()
 	$KinematicHeart.add_child(shocker)
-	yield(get_tree().create_timer(1.0), "timeout")
+	await get_tree().create_timer(1.0).timeout
 	shocker.free()

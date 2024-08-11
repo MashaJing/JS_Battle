@@ -1,7 +1,7 @@
 extends Node2D
 var jevil_speed = 0
 var spawn_on = false
-onready var bullet_batch = preload('res://Bullets/WhiteDimond/WhiteDimond.tscn')
+@onready var bullet_batch = preload('res://Bullets/WhiteDimond/WhiteDimond.tscn')
 var bullets = []
 signal ended_path
 
@@ -18,7 +18,7 @@ func start_bullet_movement():
 	$BulletMoveTimer.start()
 	for bullet in bullets:
 		bullet.speed = 300
-		yield($BulletMoveTimer, "timeout")
+		await $BulletMoveTimer.timeout
 	
 
 func stop_movement():
@@ -30,16 +30,16 @@ func stop_movement():
 
 
 func _process(delta):
-	$Path2D/PathFollow2D.unit_offset += jevil_speed * delta
+	$Path2D/PathFollow2D.progress_ratio += jevil_speed * delta
 	if spawn_on:
 		spawn_bullet()
-	if $Path2D/PathFollow2D.unit_offset > 0.9:
+	if $Path2D/PathFollow2D.progress_ratio > 0.9:
 		emit_signal('ended_path')
 
 
 func spawn_bullet():
 	$AudioStreamPlayer2D.play()
-	var batch = bullet_batch.instance()
+	var batch = bullet_batch.instantiate()
 	batch.heart_position = $BorderField.global_position
 	batch.speed = 0
 	batch.global_position = $Path2D/PathFollow2D/Jevil.global_position

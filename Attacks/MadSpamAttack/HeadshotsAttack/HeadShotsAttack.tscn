@@ -5,7 +5,7 @@
 
 [sub_resource type="Curve2D" id=1]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 230, 170, 0, 0, 0, 0, 510, 170, 0, 0, 0, 0, 560, 170 )
+"points": PackedVector2Array( 0, 0, 0, 0, 230, 170, 0, 0, 0, 0, 510, 170, 0, 0, 0, 0, 560, 170 )
 }
 
 [node name="HeadShotsAttack" type="Node2D"]

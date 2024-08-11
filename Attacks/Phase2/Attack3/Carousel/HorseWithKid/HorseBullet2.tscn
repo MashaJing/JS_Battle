@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Attacks/Phase2/Attack3/Carousel/Horse_bullet/assets/horse.png" type="Texture" id=1]
+[ext_resource path="res://Attacks/Phase2/Attack3/Carousel/Horse_bullet/assets/horse.png" type="Texture2D" id=1]
 [ext_resource path="res://Attacks/Phase2/Attack3/Carousel/HorseWithKid/horse_with_kid.gd" type="Script" id=2]
 [ext_resource path="res://Attacks/Phase2/Attack3/Carousel/Kid/Kid.tscn" type="PackedScene" id=3]
 
@@ -15,8 +15,8 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5, 1.5, 2, 2.5, 3.5, 4 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"times": PackedFloat32Array( 0, 0.5, 1.5, 2, 2.5, 3.5, 4 ),
+"transitions": PackedFloat32Array( 1, 1, 1, 1, 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( -0.041, 1 ), Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( -0.041, 1 ), Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( -0.041, 1 ) ]
 }
@@ -27,8 +27,8 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 1, 2, 3, 4 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"times": PackedFloat32Array( 0, 1, 2, 3, 4 ),
+"transitions": PackedFloat32Array( 1, 1, 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( 150, -100 ), Vector2( 0, 0 ), Vector2( -150, -80 ), Vector2( 0, 10 ), Vector2( 150, -100 ) ]
 }
@@ -39,8 +39,8 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 0.5, 1.5, 2, 2.5, 3.5, 4 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"times": PackedFloat32Array( 0, 0.5, 1.5, 2, 2.5, 3.5, 4 ),
+"transitions": PackedFloat32Array( 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ false, false, false, true, true, true, false ]
 }
@@ -51,8 +51,8 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0, 0.5, 1.5, 2, 2.5, 3.5, 4 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"times": PackedFloat32Array( 0, 0.5, 1.5, 2, 2.5, 3.5, 4 ),
+"transitions": PackedFloat32Array( 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 0, 0, 0, -1, -1, -1, 0 ]
 }
@@ -63,8 +63,8 @@ tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 0, 2, 4 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PackedFloat32Array( 0, 2, 4 ),
+"transitions": PackedFloat32Array( 1, 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ), Color( 0.137255, 0.137255, 0.137255, 1 ), Color( 1, 1, 1, 1 ) ]
 }
@@ -75,8 +75,8 @@ tracks/5/loop_wrap = true
 tracks/5/imported = false
 tracks/5/enabled = true
 tracks/5/keys = {
-"times": PoolRealArray( 0, 2, 4 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PackedFloat32Array( 0, 2, 4 ),
+"transitions": PackedFloat32Array( 1, 1, 1 ),
 "update": 1,
 "values": [ false, true, false ]
 }
@@ -87,8 +87,8 @@ tracks/6/loop_wrap = true
 tracks/6/imported = false
 tracks/6/enabled = true
 tracks/6/keys = {
-"times": PoolRealArray( 0, 2, 4 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PackedFloat32Array( 0, 2, 4 ),
+"transitions": PackedFloat32Array( 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( 10.4303, 9.77836 ), Vector2( 10.43, 509.778 ), Vector2( 10.4303, 9.77836 ) ]
 }
@@ -102,7 +102,7 @@ script = ExtResource( 2 )
 position = Vector2( 10.4303, 9.77836 )
 scale = Vector2( 0.5, 0.5 )
 
-[node name="Horse" type="Sprite" parent="."]
+[node name="Horse" type="Sprite2D" parent="."]
 position = Vector2( -1.90735e-06, 3.25945 )
 scale = Vector2( 1.9094, 1.9094 )
 texture = ExtResource( 1 )
@@ -114,7 +114,7 @@ anims/go_round = SubResource( 1 )
 position = Vector2( -3.8147e-06, 3.25945 )
 scale = Vector2( 2.18556, 2.18556 )
 z_index = -1
-polygon = PoolVector2Array( 11.3343, 8.94815, 11.3343, 5.96543, 14.317, 2.98272, 14.317, 9.53674e-07, 6.5189, -3.25945, 3.25945, -3.25945, 0, -6.5189, -6.56197, -11.9309, -12.5274, -11.9309, -15.5101, -5.96543, -15.5101, 9.53674e-07, -9.77836, 3.25945, -12.5274, 5.96543, -9.54469, 8.94815, -3.57925, 11.9309, 5.3689, 11.9309, 11.3343, 8.94815 )
+polygon = PackedVector2Array( 11.3343, 8.94815, 11.3343, 5.96543, 14.317, 2.98272, 14.317, 9.53674e-07, 6.5189, -3.25945, 3.25945, -3.25945, 0, -6.5189, -6.56197, -11.9309, -12.5274, -11.9309, -15.5101, -5.96543, -15.5101, 9.53674e-07, -9.77836, 3.25945, -12.5274, 5.96543, -9.54469, 8.94815, -3.57925, 11.9309, 5.3689, 11.9309, 11.3343, 8.94815 )
 
 [node name="KidActionTimer" type="Timer" parent="."]
 autostart = true

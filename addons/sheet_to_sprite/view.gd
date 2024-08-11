@@ -1,10 +1,10 @@
-tool
+@tool
 extends Control
 
-onready var sheet_select: TextureRect = $'%SheetSelect'
-onready var margin_container: MarginContainer = $'%margin_container'
-onready var scroll_container: ScrollContainer = $'%ScrollContainer'
-onready var wrapper: Control = $'%Wrapper'
+@onready var sheet_select: TextureRect = $'%SheetSelect'
+@onready var margin_container: MarginContainer = $'%margin_container'
+@onready var scroll_container: ScrollContainer = $'%ScrollContainer'
+@onready var wrapper: Control = $'%Wrapper'
 
 var plugin: EditorPlugin
 
@@ -17,15 +17,15 @@ func _ready() -> void:
 
   reset_margin_container()
   # center image, no idea why doesn't work in editor
-  yield(get_tree(), 'idle_frame')
-  scroll_container.scroll_horizontal = (margin_container.rect_size.x - scroll_container.rect_size.x) / 2
-  scroll_container.scroll_vertical = (margin_container.rect_size.y - scroll_container.rect_size.y) / 2
+  await get_tree().idle_frame
+  scroll_container.scroll_horizontal = (margin_container.size.x - scroll_container.size.x) / 2
+  scroll_container.scroll_vertical = (margin_container.size.y - scroll_container.size.y) / 2
   
   if plugin:
 	plugin.get_canvas_item_editor().get_parent().set_drag_forwarding(self)
   
   # setup delete function
-  $ConfirmationDialog.connect('confirmed', self, '_delete_item', [])
+  $ConfirmationDialog.connect('confirmed', Callable(self, '_delete_item').bind())
 
 func _notification(what: int) -> void:
   if what == NOTIFICATION_DRAG_END:
@@ -47,12 +47,12 @@ func _on_ScrollContainer_resized() -> void:
   reset_margin_container()
   
 func reset_margin_container() -> void:
-  var scale = sheet_select.rect_scale
-  var diff = sheet_select.rect_size * (scale - Vector2.ONE)
-  margin_container.add_constant_override('margin_left', scroll_container.rect_size.x)
-  margin_container.add_constant_override('margin_right', scroll_container.rect_size.x + diff.x)
-  margin_container.add_constant_override('margin_top', scroll_container.rect_size.y)
-  margin_container.add_constant_override('margin_bottom', scroll_container.rect_size.y + diff.y)
+  var scale = sheet_select.scale
+  var diff = sheet_select.size * (scale - Vector2.ONE)
+  margin_container.add_theme_constant_override('offset_left', scroll_container.size.x)
+  margin_container.add_theme_constant_override('offset_right', scroll_container.size.x + diff.x)
+  margin_container.add_theme_constant_override('offset_top', scroll_container.size.y)
+  margin_container.add_theme_constant_override('offset_bottom', scroll_container.size.y + diff.y)
 
 var panning := false
 
@@ -63,29 +63,29 @@ func _on_margin_container_gui_input(event: InputEvent) -> void:
   
   if event is InputEventMouseButton:
 	event = event as InputEventMouseButton # hint type inference
-	var mwup = event.pressed and event.button_index == BUTTON_WHEEL_UP
-	var mwdown = event.pressed and event.button_index == BUTTON_WHEEL_DOWN
+	var mwup = event.pressed and event.button_index == MOUSE_BUTTON_WHEEL_UP
+	var mwdown = event.pressed and event.button_index == MOUSE_BUTTON_WHEEL_DOWN
 	if mwup:
-	  var old = sheet_select.rect_scale
-	  sheet_select.rect_scale = old*1.1
+	  var old = sheet_select.scale
+	  sheet_select.scale = old*1.1
 	  reset_margin_container()
 	  recalc_pos(0.1)
 	elif mwdown:
-	  var old = sheet_select.rect_scale
-	  sheet_select.rect_scale = old*0.9
+	  var old = sheet_select.scale
+	  sheet_select.scale = old*0.9
 	  reset_margin_container()
 	  recalc_pos(-0.1)
   
   if event is InputEventMouseButton:
-	var middle_down = event.pressed and event.button_index == BUTTON_MIDDLE
-	var middle_up = not event.pressed and event.button_index == BUTTON_MIDDLE
+	var middle_down = event.pressed and event.button_index == MOUSE_BUTTON_MIDDLE
+	var middle_up = not event.pressed and event.button_index == MOUSE_BUTTON_MIDDLE
 	if middle_down: 
 	  panning = true
 	elif middle_up:
 	  panning = false
   elif event is InputEventKey:
-	var space_down = event.pressed and event.scancode == KEY_SPACE
-	var space_up = not event.pressed and event.scancode == KEY_SPACE
+	var space_down = event.pressed and event.keycode == KEY_SPACE
+	var space_up = not event.pressed and event.keycode == KEY_SPACE
 	if space_down: 
 	  panning = true
 	elif space_up:
@@ -98,8 +98,8 @@ func _on_margin_container_gui_input(event: InputEvent) -> void:
 	pass
 
 func recalc_pos(scale_change: float):
-  var center = Vector2(scroll_container.scroll_horizontal + scroll_container.rect_size.x/2, scroll_container.scroll_vertical + scroll_container.rect_size.y/2)
-  var distance = center - scroll_container.rect_size
+  var center = Vector2(scroll_container.scroll_horizontal + scroll_container.size.x/2, scroll_container.scroll_vertical + scroll_container.size.y/2)
+  var distance = center - scroll_container.size
   var offset = distance * scale_change
   scroll_container.scroll_horizontal += offset.x
   scroll_container.scroll_vertical += offset.y
@@ -118,7 +118,7 @@ func _on_input_offsety_value_changed(value: float) -> void:
   sheet_select.offset_y = value
   pass # Replace with function body.
 
-onready var item_list: ItemList = $'%ItemList'
+@onready var item_list: ItemList = $'%ItemList'
 # {'file_path': {'cell_width': 16, ...}}
 var setting_dict = {} 
 var last_selected = -1
@@ -145,7 +145,7 @@ func _on_ItemList_item_selected(index: int) -> void:
 	update_setting(setting)
   if file_path:
 	sheet_select.texture = load(file_path)
-	wrapper.rect_min_size = sheet_select.texture.get_size()
+	wrapper.custom_minimum_size = sheet_select.texture.get_size()
   pass # Replace with function body.
 
 func update_setting(setting: Dictionary):
@@ -163,7 +163,7 @@ func update_setting(setting: Dictionary):
 
 func can_drop_data_fw(position: Vector2, data, from) -> bool:
   print(data)
-  var condition = data is Dictionary and data.type == 'obj_property' and data.value is Texture
+  var condition = data is Dictionary and data.type == 'obj_property' and data.value is Texture2D
   if condition:
 	var value = data.value
 	var root = plugin.get_editor_interface().get_edited_scene_root()
@@ -171,11 +171,11 @@ func can_drop_data_fw(position: Vector2, data, from) -> bool:
 	var pos
 	var scale = Vector2.ONE
 	if selected.size() > 0:
-	  pos = selected[0].get_viewport().canvas_transform.affine_inverse().xform(selected[0].get_viewport().get_mouse_position())
+	  pos = selected[0].get_viewport().canvas_transform.affine_inverse() * (selected[0].get_viewport().get_mouse_position())
 	  if selected[0] is CanvasItem:
 		scale = (selected[0] as CanvasItem).get_global_transform().get_scale()
 	else:
-	  pos = root.get_viewport().canvas_transform.affine_inverse().xform(root.get_viewport().get_mouse_position())
+	  pos = root.get_viewport().canvas_transform.affine_inverse() * (root.get_viewport().get_mouse_position())
 	if not preview_node.get_parent():
 	  _create_preview(value)
 	preview_node.set_global_position(pos)
@@ -183,9 +183,9 @@ func can_drop_data_fw(position: Vector2, data, from) -> bool:
 	return true
   return false
   
-onready var preview_node := Node2D.new()
-func _create_preview(value: Texture):
-  var sprite = Sprite.new()
+@onready var preview_node := Node2D.new()
+func _create_preview(value: Texture2D):
+  var sprite = Sprite2D.new()
   sprite.texture = value
   sprite.modulate = ColorN('white', 0.7)
   preview_node.add_child(sprite)
@@ -203,7 +203,7 @@ func _remove_preview():
 
 func drop_data_fw(position: Vector2, data, from) -> void:
   _remove_preview()
-  var condition = data is Dictionary and data.type == 'obj_property' and data.value is Texture
+  var condition = data is Dictionary and data.type == 'obj_property' and data.value is Texture2D
   if condition:
 	var value = data.value
 	var root = plugin.get_editor_interface().get_edited_scene_root()
@@ -212,7 +212,7 @@ func drop_data_fw(position: Vector2, data, from) -> void:
 	var history = plugin.get_undo_redo()
 	history.create_action('drop sprite')
 	
-	var sprite = Sprite.new()
+	var sprite = Sprite2D.new()
 	history.add_do_reference(sprite)
 	if value is AtlasTexture:
 	  history.add_do_property(sprite, 'region_enabled', true)
@@ -223,12 +223,12 @@ func drop_data_fw(position: Vector2, data, from) -> void:
 
 	# in first selected or scene root
 	if selected.size() > 0:
-	  var pos = selected[0].get_viewport().canvas_transform.affine_inverse().xform(selected[0].get_viewport().get_mouse_position())
+	  var pos = selected[0].get_viewport().canvas_transform.affine_inverse() * (selected[0].get_viewport().get_mouse_position())
 	  history.add_do_method(selected[0], 'add_child', sprite, true)
 	  history.add_undo_method(selected[0], 'remove_child', sprite)
 	  history.add_do_property(sprite, 'global_position', pos)
 	else:
-	  var pos = root.get_viewport().canvas_transform.affine_inverse().xform(root.get_viewport().get_mouse_position())
+	  var pos = root.get_viewport().canvas_transform.affine_inverse() * (root.get_viewport().get_mouse_position())
 	  history.add_do_method(root, 'add_child', sprite, true)
 	  history.add_undo_method(root, 'remove_child', sprite)
 	  history.add_do_property(sprite, 'global_position', pos)

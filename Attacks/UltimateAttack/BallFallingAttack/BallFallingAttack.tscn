@@ -6,7 +6,7 @@
 [ext_resource path="res://Attacks/UltimateAttack/BallFallingAttack/Ball/Ball.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Attacks/UltimateAttack/BallFallingAttack/Ball/Assets/ball-hit.mp3" type="AudioStream" id=5]
 [ext_resource path="res://Attacks/UltimateAttack/BallFallingAttack/Ball/Assets/chaotic.wav" type="AudioStream" id=6]
-[ext_resource path="res://Attacks/UltimateAttack/BallFallingAttack/Ball/Assets/shard.png" type="Texture" id=7]
+[ext_resource path="res://Attacks/UltimateAttack/BallFallingAttack/Ball/Assets/shard.png" type="Texture2D" id=7]
 [ext_resource path="res://Bullets/bullet_tools/Warning/Warning.tscn" type="PackedScene" id=8]
 
 [sub_resource type="Animation" id=1]
@@ -19,8 +19,8 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 2.2, 2.4, 3, 3.4, 3.9 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"times": PackedFloat32Array( 2.2, 2.4, 3, 3.4, 3.9 ),
+"transitions": PackedFloat32Array( 1, 1, 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( -100, 300 ), Vector2( 32.5, 210 ), Vector2( 480, 430 ), Vector2( 950, 210 ), Vector2( 1200, 250 ) ]
 }
@@ -31,8 +31,8 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 2.8 ),
-"transitions": PoolRealArray( 1 ),
+"times": PackedFloat32Array( 2.8 ),
+"transitions": PackedFloat32Array( 1 ),
 "update": 1,
 "values": [ true ]
 }
@@ -43,20 +43,20 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 4.2 ),
-"transitions": PoolRealArray( 1 ),
+"times": PackedFloat32Array( 4.2 ),
+"transitions": PackedFloat32Array( 1 ),
 "update": 1,
 "values": [ true ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Sprite:visible")
+tracks/3/path = NodePath("Sprite2D:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0.6, 2.9, 3.1 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PackedFloat32Array( 0.6, 2.9, 3.1 ),
+"transitions": PackedFloat32Array( 1, 1, 1 ),
 "update": 1,
 "values": [ false, true, false ]
 }
@@ -67,20 +67,20 @@ tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 0.6, 2.9, 3.1 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PackedFloat32Array( 0.6, 2.9, 3.1 ),
+"transitions": PackedFloat32Array( 1, 1, 1 ),
 "update": 1,
 "values": [ false, true, false ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Sprite:position")
+tracks/5/path = NodePath("Sprite2D:position")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
 tracks/5/enabled = true
 tracks/5/keys = {
-"times": PoolRealArray( 2.9, 3.1 ),
-"transitions": PoolRealArray( 1, 0.297302 ),
+"times": PackedFloat32Array( 2.9, 3.1 ),
+"transitions": PackedFloat32Array( 1, 0.297302 ),
 "update": 0,
 "values": [ Vector2( 560, 510 ), Vector2( 640, 470 ) ]
 }
@@ -91,8 +91,8 @@ tracks/6/loop_wrap = true
 tracks/6/imported = false
 tracks/6/enabled = true
 tracks/6/keys = {
-"times": PoolRealArray( 2.9, 3.1 ),
-"transitions": PoolRealArray( 1, 0.31864 ),
+"times": PackedFloat32Array( 2.9, 3.1 ),
+"transitions": PackedFloat32Array( 1, 0.31864 ),
 "update": 0,
 "values": [ Vector2( 500, 520 ), Vector2( 420, 470 ) ]
 }
@@ -103,15 +103,15 @@ tracks/7/loop_wrap = true
 tracks/7/imported = false
 tracks/7/enabled = true
 tracks/7/keys = {
-"times": PoolRealArray( 1, 1.4 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PackedFloat32Array( 1, 1.4 ),
+"transitions": PackedFloat32Array( 1, 1 ),
 "update": 1,
 "values": [ true, false ]
 }
 
 [sub_resource type="Curve2D" id=2]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 70, -30, 0, 0, 0, 0, 920, -40 )
+"points": PackedVector2Array( 0, 0, 0, 0, 70, -30, 0, 0, 0, 0, 920, -40 )
 }
 
 [node name="BallFallingAttack" type="Node2D"]
@@ -142,14 +142,14 @@ volume_db = 4.282
 [node name="Shards" type="Node2D" parent="."]
 position = Vector2( 530, 530 )
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="."]
 visible = false
 position = Vector2( 640, 470 )
 rotation = -0.886627
 scale = Vector2( 0.278756, 0.20854 )
 texture = ExtResource( 7 )
 
-[node name="Sprite2" type="Sprite" parent="."]
+[node name="Sprite2" type="Sprite2D" parent="."]
 visible = false
 position = Vector2( 420, 470 )
 rotation = 0.574213

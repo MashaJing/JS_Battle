@@ -1,7 +1,7 @@
 extends Node2D
 
 var Letter = preload("res://Attacks/CringeAttack/word_straight/Letters/Letter.tscn")
-export var word = ''
+@export var word = ''
 
 var target
 var speed = 100
@@ -19,16 +19,16 @@ func move_from_path():
 		bullet.cur_mode = 'move_straight'
 		bullet.direction = (target.global_position - bullet.global_position).normalized()
 		bullet.acceleration = 400
-		yield(get_tree().create_timer(0.1), "timeout")
+		await get_tree().create_timer(0.1).timeout
 
 
 func spawn_follow_path(path):
 	var letterBullet
 	var offset_delta = 1.0/len(word)
-	path.unit_offset = 1.0
+	path.progress_ratio = 1.0
 	for l in word:
-		path.unit_offset -= offset_delta
-		letterBullet = Letter.instance()
+		path.progress_ratio -= offset_delta
+		letterBullet = Letter.instantiate()
 		letterBullet.letter = l
 		# переименовать в stay_still
 		letterBullet.cur_mode = 'spiral'
@@ -40,13 +40,13 @@ func spawn_follow_path(path):
 func spawn_on_point():
 	var letterBullet
 	for l in word:
-		letterBullet = Letter.instance()
+		letterBullet = Letter.instantiate()
 		letterBullet.letter = l
 		letterBullet.target = target
 		letterBullet.speed = speed
 		letterBullet.acceleration = acceleration
 		add_child(letterBullet)
-		yield(get_tree().create_timer(0.1), "timeout")
+		await get_tree().create_timer(0.1).timeout
 
 
 func blow_up():

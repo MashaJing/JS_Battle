@@ -1,13 +1,14 @@
 [remap]
 
 importer="wav"
-type="AudioStreamSample"
-path="res://.import/cans_crash.wav-0355f56f0eb0eeb5fe05507b57c35ffc.sample"
+type="AudioStreamWAV"
+uid="uid://u516avfdiefx"
+path="res://.godot/imported/cans_crash.wav-0355f56f0eb0eeb5fe05507b57c35ffc.sample"
 
 [deps]
 
 source_file="res://Attacks/Phase2/UnusedJevilAttack/Assets/cans_crash.wav"
-dest_files=[ "res://.import/cans_crash.wav-0355f56f0eb0eeb5fe05507b57c35ffc.sample" ]
+dest_files=["res://.godot/imported/cans_crash.wav-0355f56f0eb0eeb5fe05507b57c35ffc.sample"]
 
 [params]
 

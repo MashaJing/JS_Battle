@@ -5,15 +5,15 @@ signal end_decisions_reading
 
 #signal attack_jevil
 #signal attack_spamton
-signal attack
+signal attacked
 
 # описать реакции на действия source/receiver: start_attack / receive_attack
 # все реакции на действия реализованы внутри получателей
 # heal(kris) - глобальный эммитер по 1 аргументу поймёт, кому переслать
 # логгер слушает глобальный эммитер, логгер не сильно умный
-signal heal(_name, hp_delta)
-signal defend(_name)
-signal spare(_name)
+signal healed(_name, hp_delta)
+signal defended(_name)
+#signal spare(_name)
 
 func _ready():
 	pass
@@ -50,7 +50,7 @@ func start():
 
 func spare(decision):
 	# в con_stats реализовать обработчик сигнала пощады - там будет проверяться возможность пощады (и готовность в %)
-#	emit_signal("spare", decision.DECIDER, decision.VICTIM)
+#	emit_signal("spared", decision.DECIDER, decision.VICTIM)
 	SpareController.confirm_spare(decision.DECIDER, decision.VICTIM)
 	BattleInfoLogger.append_line(decision.DECIDER + ' spare ' + decision.VICTIM)
 
@@ -70,7 +70,7 @@ func attack(decision):
 	print('++++++++++++++++++++++++++++++++++++++++++++++')
 	print('attacked victim in reader!')
 	print('++++++++++++++++++++++++++++++++++++++++++++++')
-#	emit_signal("attack", decision.DECIDER, decision.VICTIM)
+#	emit_signal("attacked", decision.DECIDER, decision.VICTIM)
 
 
 func item(decision):

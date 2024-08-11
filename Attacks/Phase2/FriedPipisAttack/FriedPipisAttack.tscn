@@ -3,7 +3,7 @@
 [ext_resource path="res://Attacks/Phase2/FriedPipisAttack/fried_pipis_attack.gd" type="Script" id=1]
 [ext_resource path="res://Border/Border.tscn" type="PackedScene" id=2]
 [ext_resource path="res://player/KinematicHeart.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Attacks/Phase2/FriedPipisAttack/Assets/panForPipis.png" type="Texture" id=4]
+[ext_resource path="res://Attacks/Phase2/FriedPipisAttack/Assets/panForPipis.png" type="Texture2D" id=4]
 [ext_resource path="res://Attacks/Phase2/FriedPipisAttack/pipis_spawn.gd" type="Script" id=5]
 [ext_resource path="res://Attacks/Phase2/FriedPipisAttack/Assets/frying_pipis.mp3" type="AudioStream" id=6]
 
@@ -12,50 +12,50 @@ resource_name = "move_pan"
 length = 3.0
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:position")
+tracks/0/path = NodePath("Sprite2D:position")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 1, 1.2, 1.4, 1.6, 1.9, 2.2, 2.5, 2.7, 2.9 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"times": PackedFloat32Array( 1, 1.2, 1.4, 1.6, 1.9, 2.2, 2.5, 2.7, 2.9 ),
+"transitions": PackedFloat32Array( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( 600, 121 ), Vector2( 650, 100 ), Vector2( 650, 121 ), Vector2( 550, 121 ), Vector2( 650, 121 ), Vector2( 550, 121 ), Vector2( 599, 121 ), Vector2( 599, 90 ), Vector2( 599, 121 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Sprite:rotation_degrees")
+tracks/1/path = NodePath("Sprite2D:rotation_degrees")
 tracks/1/interp = 2
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 1, 1.2, 1.4, 2.5, 2.7, 2.9 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"times": PackedFloat32Array( 1, 1.2, 1.4, 2.5, 2.7, 2.9 ),
+"transitions": PackedFloat32Array( 1, 1, 1, 1, 1, 1 ),
 "update": 0,
 "values": [ 0.0, 15.0, 0.0, 0.0, 15.0, 0.0 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Sprite/PipisSpawn:spawning")
+tracks/2/path = NodePath("Sprite2D/PipisSpawn:spawning")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 1.2, 1.3, 2.5, 2.6 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"times": PackedFloat32Array( 0, 1.2, 1.3, 2.5, 2.6 ),
+"transitions": PackedFloat32Array( 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ false, true, false, true, false ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Sprite/FryingSound:volume_db")
+tracks/3/path = NodePath("Sprite2D/FryingSound:volume_db")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0, 1.1, 1.3, 1.5, 2.3, 2.5, 2.7 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"times": PackedFloat32Array( 0, 1.1, 1.3, 1.5, 2.3, 2.5, 2.7 ),
+"transitions": PackedFloat32Array( 1, 1, 1, 1, 1, 1, 1 ),
 "update": 0,
 "values": [ 0.0, 0.0, 24.0, 0.0, 0.0, 24.0, 0.0 ]
 }
@@ -69,18 +69,18 @@ position = Vector2( 524, 292 )
 [node name="KinematicHeart" parent="." instance=ExtResource( 3 )]
 position = Vector2( 524, 292 )
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2( 625.063, 109.188 )
 rotation = 0.147262
 scale = Vector2( 0.1875, 0.1875 )
 z_index = 1
 texture = ExtResource( 4 )
 
-[node name="PipisSpawn" type="Node2D" parent="Sprite"]
+[node name="PipisSpawn" type="Node2D" parent="Sprite2D"]
 position = Vector2( -382.345, 23.1725 )
 script = ExtResource( 5 )
 
-[node name="FryingSound" type="AudioStreamPlayer2D" parent="Sprite"]
+[node name="FryingSound" type="AudioStreamPlayer2D" parent="Sprite2D"]
 position = Vector2( -502.846, -7.29605 )
 rotation = -0.147262
 scale = Vector2( 5.33333, 5.33333 )

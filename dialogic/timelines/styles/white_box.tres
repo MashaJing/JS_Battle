@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="DialogicStyle" load_steps=5 format=3 uid="uid://dahacppg0y6h8"]
+
+[ext_resource type="PackedScene" uid="uid://by6waso0mjpjp" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_SpeakerPortraitTextbox/textbox_with_speaker_portrait.tscn" id="1_7yag4"]
+[ext_resource type="Script" path="res://addons/dialogic/Resources/dialogic_style.gd" id="1_pq4pn"]
+[ext_resource type="Script" path="res://addons/dialogic/Resources/dialogic_style_layer.gd" id="2_hruvv"]
+
+[sub_resource type="Resource" id="Resource_r2rww"]
+script = ExtResource("2_hruvv")
+scene = ExtResource("1_7yag4")
+overrides = {
+"name_label_color_mode": "2",
+"name_label_custom_color": "Color(0, 0, 0, 1)"
+}
+
+[resource]
+script = ExtResource("1_pq4pn")
+name = "white_box"
+base_overrides = {
+"global_font": "\"res://Assets/fonts/menu/VT323-Regular.ttf\"",
+"global_font_size": "29.0"
+}
+layers = Array[ExtResource("2_hruvv")]([SubResource("Resource_r2rww")])
+metadata/_latest_layer = 0

@@ -1,8 +1,8 @@
 extends Node2D
 
 
-onready var BulletCard = preload("res://Attacks/Phase2/CardPlay/Party/cards/card.tscn")
-onready var CardSpawn = $CardSpawn/CardSpawnLocation
+@onready var BulletCard = preload("res://Attacks/Phase2/CardPlay/Party/cards/card.tscn")
+@onready var CardSpawn = $CardSpawn/CardSpawnLocation
 
 signal attack_ended
 
@@ -26,12 +26,12 @@ func _ready():
 	while cur_party != null:
 		for card in cur_party['cards']:
 			make_turn(card)
-			yield($TurnTimer, "timeout")
-		var cur_attack = load(cur_party["attack_path"]).instance()
+			await $TurnTimer.timeout
+		var cur_attack = load(cur_party["attack_path"]).instantiate()
 		toggle_main(false)
 		
 		add_child(cur_attack)
-		yield(cur_attack, "card_attack_ended")
+		await cur_attack.card_attack_ended
 		remove_child(cur_attack)
 		toggle_main(true)
 		
@@ -39,14 +39,14 @@ func _ready():
 
 	var Dialog = Dialogic.start("card_play")
 	add_child(Dialog)
-	yield(Dialog, "dialogic_signal")
+	await Dialogic.timeline_ended
 	emit_signal("attack_ended")
 
 
 func make_turn(card_name):
 	# выбрать рандомную точку, откуда полетит карта
-	CardSpawn.unit_offset = randf()
-	var bullet_card = BulletCard.instance()
+	CardSpawn.progress_ratio = randf()
+	var bullet_card = BulletCard.instantiate()
 
 	# задаем в анимации только конечную 
 	# позицию, начальную определили в главной сцене

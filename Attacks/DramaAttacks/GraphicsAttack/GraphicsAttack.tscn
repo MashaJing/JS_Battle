@@ -1,18 +1,18 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Attacks/DramaAttacks/GraphicsAttack/drama_attack5.gd" type="Script" id=1]
-[ext_resource path="res://Attacks/DramaAttacks/GraphicsAttack/graphic.png" type="Texture" id=2]
+[ext_resource path="res://Attacks/DramaAttacks/GraphicsAttack/graphic.png" type="Texture2D" id=2]
 [ext_resource path="res://player/KinematicHeart.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Border/Border.tscn" type="PackedScene" id=4]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 280, 100, 0, 0, 0, 0, 462, 102 )
+"points": PackedVector2Array( 0, 0, 0, 0, 280, 100, 0, 0, 0, 0, 462, 102 )
 }
 
 [sub_resource type="Curve2D" id=3]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 300, 85, 0, 0, 0, 0, 459, 85 )
+"points": PackedVector2Array( 0, 0, 0, 0, 300, 85, 0, 0, 0, 0, 459, 85 )
 }
 
 [node name="DramaAttack5" type="Node2D"]
@@ -46,11 +46,11 @@ scale = Vector2( 0.64, 0.64 )
 
 [node name="TextureRect" type="TextureRect" parent="BorderField"]
 visible = false
-margin_left = -138.0
-margin_top = -137.0
-margin_right = 115.375
-margin_bottom = 115.375
-rect_scale = Vector2( 1.09618, 1.08692 )
+offset_left = -138.0
+offset_top = -137.0
+offset_right = 115.375
+offset_bottom = 115.375
+scale = Vector2( 1.09618, 1.08692 )
 texture = ExtResource( 2 )
 
 [connection signal="timeout" from="GraphicAttackTimer" to="." method="_on_GraphicAttackTimer_timeout"]

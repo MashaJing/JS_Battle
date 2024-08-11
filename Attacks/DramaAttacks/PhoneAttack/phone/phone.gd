@@ -6,17 +6,17 @@ var amplitude_x = 150
 var amplitude_y = 90
 var l = sqrt(amplitude_x * amplitude_x + amplitude_y * amplitude_y)
 var spread_waves_freq = 0
-var pendulum_angle = deg2rad(45)
+var pendulum_angle = deg_to_rad(45)
 
 var omega = sqrt(G / l)
-export (PackedScene) var Bullet
+@export (PackedScene) var Bullet
 
 # нужен для крепления к проводу
 var pos_ex = self.position
 
 
 func _ready():
-	$AnimatedSprite.play("default")
+	$AnimatedSprite2D.play("default")
 
 func _process(delta):
 	pos_ex = self.position

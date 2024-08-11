@@ -1,13 +1,14 @@
 [remap]
 
 importer="wav"
-type="AudioStreamSample"
-path="res://.import/EEE.wav-675e386caeea5f2d1522a385ea4b68c1.sample"
+type="AudioStreamWAV"
+uid="uid://dph17iu03obs0"
+path="res://.godot/imported/EEE.wav-675e386caeea5f2d1522a385ea4b68c1.sample"
 
 [deps]
 
 source_file="res://Assets/sounds/EEE.wav"
-dest_files=[ "res://.import/EEE.wav-675e386caeea5f2d1522a385ea4b68c1.sample" ]
+dest_files=["res://.godot/imported/EEE.wav-675e386caeea5f2d1522a385ea4b68c1.sample"]
 
 [params]
 

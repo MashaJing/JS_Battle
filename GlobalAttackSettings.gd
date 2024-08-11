@@ -80,8 +80,8 @@ var END = [
 
 var phases = [
 	Phase.new("res://Cutscenes", PRELUDE),
-	Phase.new("res://Attacks/DullAttacks", PHASE_0),
-	Phase.new("res://Attacks/DramaAttacks", PHASE_1),
+	#Phase.new("res://Attacks/DullAttacks", PHASE_0),
+	#Phase.new("res://Attacks/DramaAttacks", PHASE_1),
 	Phase.new("res://Attacks/Phase2", PHASE_2),
 	Phase.new("res://Attacks/Phase2", PHASE_3),
 	Phase.new("res://Attacks/Phase2", PHASE_4),

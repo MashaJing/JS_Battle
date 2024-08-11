@@ -7,8 +7,8 @@ var direction = Vector2.ZERO
 var angle = 0.0
 var time = 0
 var speed = 300
-onready var start_position = position
-onready var previous_position = start_position
+@onready var start_position = position
+@onready var previous_position = start_position
 
 
 

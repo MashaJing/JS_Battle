@@ -5,8 +5,8 @@ signal tp_decreased
 
 signal action_start
 signal action_end
-signal offer_deal
-signal pacify
+signal offered_deal
+signal pacified
 signal canceled
 signal slow_down_music
 signal soundtrack_required(soundtrack)
@@ -36,7 +36,7 @@ var PIRUETT_OUTCOME = [
 #	"atk_up_prompt",
 
 	 # Счастливые часов не наблюдают: следующая атака замедленна на 30%!
-#	"slow_mo",
+	"slow_mo",
 
 ]
 
@@ -169,5 +169,5 @@ func piruett():
 
 
 func _init_signals():
-	connect("tp_increased", TeamStats, "_on_tp_increased")
-	connect("tp_decreased", TeamStats, "_on_tp_decreased")
+	connect("tp_increased", Callable(TeamStats, "_on_tp_increased"))
+	connect("tp_decreased", Callable(TeamStats, "_on_tp_decreased"))

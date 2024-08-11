@@ -1,9 +1,9 @@
 extends Node2D
 
-onready var mail_attack = preload("res://Attacks/DramaAttacks/BestAttack/MailAttack/MailAttack.tscn").instance()
-onready var devil_knife_attack = preload("res://Attacks/DramaAttacks/BestAttack/DevilsBoomerang/DevilsBoomerang.tscn").instance()
-onready var pipis_attack = preload("res://Attacks/DramaAttacks/BestAttack/PipisAttack/PipisAttack.tscn").instance()
-onready var dimond_spiral_attack = preload("res://Attacks/DramaAttacks/BestAttack/DimondSpiralSpit/DimondSpiralSplit.tscn").instance()
+@onready var mail_attack = preload("res://Attacks/DramaAttacks/BestAttack/MailAttack/MailAttack.tscn").instantiate()
+@onready var devil_knife_attack = preload("res://Attacks/DramaAttacks/BestAttack/DevilsBoomerang/DevilsBoomerang.tscn").instantiate()
+@onready var pipis_attack = preload("res://Attacks/DramaAttacks/BestAttack/PipisAttack/PipisAttack.tscn").instantiate()
+@onready var dimond_spiral_attack = preload("res://Attacks/DramaAttacks/BestAttack/DimondSpiralSpit/DimondSpiralSplit.tscn").instantiate()
 var current_attack = 0
 signal sub_attack_ended
 
@@ -11,7 +11,7 @@ signal sub_attack_ended
 func _ready():
 #	get_parent().get_node("Jevil").visible = false
 	$AttackPlayer.play("best_attack")
-	yield($AttackPlayer, "animation_finished")
+	await $AttackPlayer.animation_finished
 #	get_parent().get_node("Jevil").visible = true
 	emit_signal("sub_attack_ended")
 	

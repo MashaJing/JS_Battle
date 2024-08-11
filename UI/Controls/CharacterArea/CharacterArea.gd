@@ -1,9 +1,9 @@
 extends Control
 
 var character_stats
-export (Texture) var NameTexture
-export (Color) var HpColor
-export (Texture) var PortraitTexture
+@export var NameTexture: Texture2D
+@export var HpColor: Color
+@export var PortraitTexture: Texture2D
 
 var DEFAULT_THEME_PATH = preload("res://UI/themes/MenuTheme.tres")
 var LOW_HP_THEME = preload("res://UI/themes/LowHpTheme.tres")
@@ -35,8 +35,8 @@ func _update_hp():
 func _init_textures():
 	DefaultTheme = Theme.new()
 	LowHpTheme = Theme.new()
-	DefaultTheme.copy_theme(DEFAULT_THEME_PATH)
-	LowHpTheme.copy_theme(LOW_HP_THEME)
+	#DefaultTheme.copy_theme(DEFAULT_THEME_PATH)
+	#LowHpTheme.copy_theme(LOW_HP_THEME)
 	$Name.texture = NameTexture
 	$Portrait.texture = PortraitTexture
 	var stylebox = StyleBoxFlat.new()
@@ -56,4 +56,4 @@ func set_character_stats(stats):
 	$HpBarArea/Progress.value = character_stats.HP
 	$HpBarArea/Digit.text = str(character_stats.HP)
 	$HpBarArea/Digit_max.text = str(character_stats.MAX_HP)
-	character_stats.connect("UpdateHp", self, "_update_hp")
+	character_stats.connect("UpdateHp", Callable(self, "_update_hp"))

@@ -4,8 +4,8 @@ extends Area2D
 var speed_up = 0
 var time = 0
 
-var ROTATION_DIRECTION = Vector2.ZERO setget set_target, get_target
-onready var AnimPlayer = get_node("AnimationPlayer")
+var ROTATION_DIRECTION = Vector2.ZERO: get = get_target, set = set_target
+@onready var AnimPlayer = get_node("AnimationPlayer")
 
 
 func set_target(target):
@@ -22,7 +22,7 @@ func create_anim():
 	rotate_to_target.length = 2.2
 	
 	rotate_to_target.track_insert_key(track_rot, 0.0, 0)
-	rotate_to_target.track_insert_key(track_rot, 2.2, rad2deg(ROTATION_DIRECTION.angle() - 1))
+	rotate_to_target.track_insert_key(track_rot, 2.2, rad_to_deg(ROTATION_DIRECTION.angle() - 1))
 	AnimPlayer.add_animation("rotate_to_target", rotate_to_target)
 	
 	AnimPlayer.play("rotate_to_target")

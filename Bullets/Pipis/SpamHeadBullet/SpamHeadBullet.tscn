@@ -1,8 +1,8 @@
 [gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://Bullets/Pipis/SpamHeadBullet/spam_head_bullet.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Images/Sprites/Characters/Spamton.png" type="Texture" id=2]
-[ext_resource path="res://Assets/Images/Sprites/Characters/spam_ultimate_attack.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Images/Sprites/Characters/Spamton.png" type="Texture2D" id=2]
+[ext_resource path="res://Assets/Images/Sprites/Characters/spam_ultimate_attack.png" type="Texture2D" id=3]
 
 [sub_resource type="AtlasTexture" id=2]
 atlas = ExtResource( 3 )
@@ -136,7 +136,7 @@ animations = [ {
 [node name="SpamHeadBullet" type="Area2D" groups=["bullets"]]
 script = ExtResource( 1 )
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2( 0, -1.19209e-07 )
 scale = Vector2( 1.6, 1.6 )
 frames = SubResource( 1 )
@@ -145,4 +145,4 @@ animation = "damaged4"
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 position = Vector2( 0.475, 0.546054 )
 scale = Vector2( 1.05, 1.38158 )
-polygon = PoolVector2Array( -12, -7, -8.07143, 10.4619, 1.45238, 11.1857, 13, -7 )
+polygon = PackedVector2Array( -12, -7, -8.07143, 10.4619, 1.45238, 11.1857, 13, -7 )

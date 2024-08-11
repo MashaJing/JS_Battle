@@ -1,9 +1,9 @@
 [gd_scene load_steps=90 format=2]
 
-[ext_resource path="res://Assets/Images/Sprites/Characters/Ralsei.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Images/Sprites/Characters/Ralsei.png" type="Texture2D" id=1]
 [ext_resource path="res://Characters/Commons/Character.gd" type="Script" id=2]
 [ext_resource path="res://team_stats/CommonPlayerScenes/PlayerStats.tscn" type="PackedScene" id=3]
-[ext_resource path="res://team_stats/CommonPlayerScenes/AnimatedSprite/AnimatedPlayerSprite.tscn" type="PackedScene" id=4]
+[ext_resource path="res://team_stats/CommonPlayerScenes/AnimatedSprite2D/AnimatedPlayerSprite.tscn" type="PackedScene" id=4]
 
 [sub_resource type="AtlasTexture" id=63]
 atlas = ExtResource( 1 )
@@ -414,7 +414,7 @@ ATK = 12
 
 [node name="AnimatedSpriteController" parent="." instance=ExtResource( 4 )]
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="AnimatedSpriteController"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="AnimatedSpriteController"]
 frames = SubResource( 1 )
 frame = 1
 playing = true

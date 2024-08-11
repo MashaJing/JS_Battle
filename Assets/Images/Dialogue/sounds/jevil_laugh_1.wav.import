@@ -1,13 +1,14 @@
 [remap]
 
 importer="wav"
-type="AudioStreamSample"
-path="res://.import/jevil_laugh_1.wav-11a7245786613c3a9c7c7abd0568f691.sample"
+type="AudioStreamWAV"
+uid="uid://dxp3pvyqxllon"
+path="res://.godot/imported/jevil_laugh_1.wav-11a7245786613c3a9c7c7abd0568f691.sample"
 
 [deps]
 
 source_file="res://Assets/Images/Dialogue/sounds/jevil_laugh_1.wav"
-dest_files=[ "res://.import/jevil_laugh_1.wav-11a7245786613c3a9c7c7abd0568f691.sample" ]
+dest_files=["res://.godot/imported/jevil_laugh_1.wav-11a7245786613c3a9c7c7abd0568f691.sample"]
 
 [params]
 

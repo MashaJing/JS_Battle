@@ -2,14 +2,18 @@
 
 importer="mp3"
 type="AudioStreamMP3"
-path="res://.import/voice_lancer.mp3-8ec1a5e233289e4a0170b385803318d8.mp3str"
+uid="uid://dgg3aai6f4uw3"
+path="res://.godot/imported/voice_lancer.mp3-8ec1a5e233289e4a0170b385803318d8.mp3str"
 
 [deps]
 
 source_file="res://Assets/sounds/voice_lancer.mp3"
-dest_files=[ "res://.import/voice_lancer.mp3-8ec1a5e233289e4a0170b385803318d8.mp3str" ]
+dest_files=["res://.godot/imported/voice_lancer.mp3-8ec1a5e233289e4a0170b385803318d8.mp3str"]
 
 [params]
 
 loop=false
 loop_offset=0.01
+bpm=0
+beat_count=0
+bar_beats=4

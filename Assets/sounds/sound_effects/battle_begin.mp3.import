@@ -2,14 +2,18 @@
 
 importer="mp3"
 type="AudioStreamMP3"
-path="res://.import/battle_begin.mp3-5439368135c21f9a7ce5d245b4769335.mp3str"
+uid="uid://cnu5lklgyxrgn"
+path="res://.godot/imported/battle_begin.mp3-5439368135c21f9a7ce5d245b4769335.mp3str"
 
 [deps]
 
 source_file="res://Assets/sounds/sound_effects/battle_begin.mp3"
-dest_files=[ "res://.import/battle_begin.mp3-5439368135c21f9a7ce5d245b4769335.mp3str" ]
+dest_files=["res://.godot/imported/battle_begin.mp3-5439368135c21f9a7ce5d245b4769335.mp3str"]
 
 [params]
 
 loop=true
 loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
