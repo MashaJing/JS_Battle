@@ -7,7 +7,7 @@ const State = {
 }
 var Explosion = preload("res://Bullets/bullet_tools/Explosion/Explosion.tscn")
 var cur_state = State.DEFAULT
-var speed = 100
+var speed = 0.4
 
 
 func _ready():

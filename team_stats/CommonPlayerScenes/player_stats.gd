@@ -51,7 +51,7 @@ func _init_signals():
 	connect("Down", Callable(TeamStats, "_on_ally_down"))
 	connect("Up", Callable(TeamStats, "_on_ally_up"))
 
-	DecisionReader.connect("healed", Callable(self, "heal"))
+	DecisionReader.connect("healed", heal)
 
 
 func defend():

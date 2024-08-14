@@ -6,12 +6,12 @@
 "custom_info": {
 "sound_mood_default": "",
 "sound_moods": {
-"Mood 1": {
-"mode": 2,
-"name": "Mood 1",
+"default": {
+"mode": 1,
+"name": "default",
 "pitch_base": 1.0,
 "pitch_variance": 0.0,
-"skip_characters": 0.0,
+"skip_characters": 5.0,
 "sound_path": "res://Assets/sounds/voice_jevil.mp3",
 "volume_base": 0.0,
 "volume_variance": 0.0
@@ -32,8 +32,9 @@
 },
 "mirror": false,
 "offset": Vector2(0, 0),
-"scale": 1,
-"scene": ""
+"scale": 1.0,
+"scene": "",
+"sound_mood": "default"
 },
 "Jevil_Happy": {
 "export_overrides": {
@@ -42,7 +43,8 @@
 "mirror": false,
 "offset": Vector2(0, 0),
 "scale": 1,
-"scene": ""
+"scene": "",
+"sound_mood": "default"
 },
 "Jevil_cake": {
 "export_overrides": {
@@ -51,7 +53,8 @@
 "mirror": false,
 "offset": Vector2(0, 0),
 "scale": 1.0,
-"scene": ""
+"scene": "",
+"sound_mood": "default"
 }
 },
 "scale": 1.0

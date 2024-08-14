@@ -1,24 +1,31 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=3 uid="uid://bxurjqspyx4wx"]
 
-[ext_resource path="res://Cutscenes/JevilDown/JevilDown.gd" type="Script" id=1]
-[ext_resource path="res://Characters/Spamton/Spamton.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Border/Border.tscn" type="PackedScene" id=4]
+[ext_resource type="Script" path="res://Cutscenes/JevilDown/JevilDown.gd" id="1"]
+[ext_resource type="PackedScene" uid="uid://b1i2yv6wfd400" path="res://Characters/Spamton/Spamton.tscn" id="2"]
+[ext_resource type="PackedScene" path="res://Border/Border.tscn" id="4"]
 
-[sub_resource type="Animation" id=1]
+[sub_resource type="Animation" id="1"]
 resource_name = "he_is_serious"
 length = 2.5
 
-[node name="JevilDown" type="Node2D"]
-script = ExtResource( 1 )
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ldaxj"]
+_data = {
+"he_is_serious": SubResource("1")
+}
 
-[node name="Spamton" parent="." instance=ExtResource( 2 )]
+[node name="JevilDown" type="Node2D"]
+script = ExtResource("1")
+
+[node name="Spamton" parent="." instance=ExtResource("2")]
 visible = false
-position = Vector2( 790, 280 )
+position = Vector2(790, 280)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/he_is_serious = SubResource( 1 )
+libraries = {
+"": SubResource("AnimationLibrary_ldaxj")
+}
 
-[node name="BorderField" parent="." instance=ExtResource( 4 )]
-position = Vector2( 510, 780 )
+[node name="BorderField" parent="." instance=ExtResource("4")]
+position = Vector2(510, 780)
 
 [node name="HTTPRequest" type="HTTPRequest" parent="."]

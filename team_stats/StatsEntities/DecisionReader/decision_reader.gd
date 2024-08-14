@@ -3,8 +3,6 @@ extends Node2D
 signal start_decisions_reading
 signal end_decisions_reading
 
-#signal attack_jevil
-#signal attack_spamton
 signal attacked
 
 # описать реакции на действия source/receiver: start_attack / receive_attack
@@ -52,7 +50,7 @@ func spare(decision):
 	# в con_stats реализовать обработчик сигнала пощады - там будет проверяться возможность пощады (и готовность в %)
 #	emit_signal("spared", decision.DECIDER, decision.VICTIM)
 	SpareController.confirm_spare(decision.DECIDER, decision.VICTIM)
-	BattleInfoLogger.append_line(decision.DECIDER + ' spare ' + decision.VICTIM)
+	BattleInfoLogger.append_line(decision.DECIDER + ' spared ' + decision.VICTIM)
 
 
 func defense(decision):
@@ -75,4 +73,4 @@ func attack(decision):
 
 func item(decision):
 	BattleInfoLogger.append_line(decision.VICTIM + ' used ' + decision.ITEM.name)
-	emit_signal("heal", decision.VICTIM, decision.ITEM.hp_delta)
+	emit_signal("healed", decision.VICTIM, decision.ITEM.hp_delta)

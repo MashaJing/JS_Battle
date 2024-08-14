@@ -6,7 +6,7 @@ signal attack_ended
 @onready var Spamton = $Spamton
 @onready var SpamtonAnimPlayer = $Spamton/AnimationPlayer
 @onready var knife_path = $KnifePath
-@onready	var paths_to_follow = [[$Down, false], [$Up, true]]
+@onready var paths_to_follow = [[$Down, false], [$Up, true]]
 @onready var miniton_path_scene = preload("res://Bullets/Miniton/PathFollow.tscn")
 @onready var DevilsKnife = preload("res://Attacks/DullAttacks/DullJevil/KnifePath.tscn")
 
@@ -23,11 +23,8 @@ func _ready():
 	await get_tree().create_timer(2).timeout
 	var dialogue = Dialogic.start("dull_jevil")
 	add_child(dialogue)
-	await dialogue.timeline_ended
-	Spamton.visible = false
-	get_parent().get_node("Spamton").visible = true
-	emit_signal("attack_ended")
-
+	Dialogic.timeline_ended.connect(_on_attack_ended)
+	
 func spawn_bullet(path, flipped):
 	var bullet = miniton_path_scene.instantiate()
 	bullet.flipped = flipped
@@ -45,3 +42,8 @@ func spawn_knife():
 	knife_path.add_child(knife)
 	# todo: удаляет сердце, а не дамажит
 	var DevilsKnife = knife.get_node("DevilsKnife")
+
+func _on_attack_ended():
+	Spamton.visible = false
+	get_parent().get_node("Spamton").visible = true
+	emit_signal("attack_ended")

@@ -1,16 +1,16 @@
 [gd_scene load_steps=19 format=3 uid="uid://csqbf1cs7011m"]
 
 [ext_resource type="PackedScene" path="res://UI/Controls/Control.tscn" id="1"]
-[ext_resource type="PackedScene" path="res://Characters/Kris/Kris.tscn" id="2"]
+[ext_resource type="PackedScene" uid="uid://mjrag2aqsfj3" path="res://Characters/Kris/Kris.tscn" id="2"]
 [ext_resource type="Script" path="res://main_script.gd" id="3"]
-[ext_resource type="PackedScene" path="res://Characters/Susie/Susie.tscn" id="4"]
+[ext_resource type="PackedScene" uid="uid://b8k163j70jrfq" path="res://Characters/Susie/Susie.tscn" id="4"]
 [ext_resource type="Script" path="res://theme.gd" id="5"]
-[ext_resource type="PackedScene" path="res://Characters/Spamton/Spamton.tscn" id="6"]
-[ext_resource type="PackedScene" path="res://Characters/Jevil/Jevil.tscn" id="7"]
+[ext_resource type="PackedScene" uid="uid://b1i2yv6wfd400" path="res://Characters/Spamton/Spamton.tscn" id="6"]
+[ext_resource type="PackedScene" uid="uid://bbsk76uxr27h5" path="res://Characters/Jevil/Jevil.tscn" id="7"]
 [ext_resource type="AudioStream" uid="uid://dtf3hmt4ie8c5" path="res://Assets/music/the_deals_revolving.mp3" id="8"]
 [ext_resource type="PackedScene" path="res://Location/Ring.tscn" id="9"]
-[ext_resource type="PackedScene" path="res://Characters/Ralsei/Ralsei.tscn" id="10"]
-[ext_resource type="PackedScene" path="res://Characters/Lancer/Lancer.tscn" id="11"]
+[ext_resource type="PackedScene" uid="uid://cui6l6pi3v05k" path="res://Characters/Ralsei/Ralsei.tscn" id="10"]
+[ext_resource type="PackedScene" uid="uid://m0jv3saegfk2" path="res://Characters/Lancer/Lancer.tscn" id="11"]
 [ext_resource type="AudioStream" uid="uid://cwmoqyutryl2s" path="res://Assets/sounds/sound_effects/ducky_sound.mp3" id="12"]
 
 [sub_resource type="GDScript" id="1"]
@@ -244,7 +244,7 @@ position = Vector2(-31, -69)
 scale = Vector2(1.09374, 1.08247)
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(530, 294)
+position = Vector2(528, 277)
 scale = Vector2(0.5, 1)
 
 [node name="AttackTimer" type="Timer" parent="."]

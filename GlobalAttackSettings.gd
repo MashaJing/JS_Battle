@@ -33,60 +33,62 @@ class Phase:
 
 
 var PRELUDE = [
-	Attack.new("/PreBattle/PreBattleDialogue.tscn")
+	Attack.new("/PreBattle/PreBattleDialogue.tscn"),
+	Attack.new("/JevilDown/JevilDown.tscn"),
+	Attack.new("/GameOver/GameOver.tscn")
 ]
 
 var PHASE_0 = [
 	Attack.new("/Dimonds_Minitons/Attack1.tscn"),
-#	Attack.new("/DullSpamton/DullSpamton.tscn"),
+	Attack.new("/DullSpamton/DullSpamton.tscn"),
 	Attack.new("/DullJevil/DullJevil.tscn"),
 ]
 
-var PHASE_1 = [
-	Attack.new("/MonologueAttack.tscn"),
-]
-
-var PHASE_2 = [
-	Attack.new("/Attack3/Attack3.tscn"),
-	Attack.new("/TestAttack/PwdAttack.tscn"),
-	Attack.new("/NoseAttack/NoseAttack.tscn", 0),
-]
-var PHASE_3 = [
-#	__________ PHASE 2 ____________ (отделить папками и тут как-то)	
-	Attack.new("/CardPlay/Party/Party.tscn"),
-	Attack.new("/CarouselKids/CarouselKids.tscn"),
-	Attack.new("/SharedForm/SharedForm.tscn"),
-	 Attack.new("/NoseAttack/NoseAttack.tscn", 1), # переводить в этой фазе в другой режим
-#	__________ PHASE 3 ____________ 
-	Attack.new("/TestAttack/PwdAttack.tscn"),
-#	Attack.new("res://Attacks/MadSpamAttack/MadSpamAttack.tscn"),
-	Attack.new("/Attack2/Attack2.tscn"),
-]
-
-var PHASE_4 = [
-#	Attack.new("/MilkAttack/MilkAttack.tscn"),
-	Attack.new("/SharedForm/SharedForm.tscn"),
-	Attack.new("/UnusedJevilAttack/UnusedJevilAttack.tscn"),
-]
-
-var PHASE_ULTIMATE = [
-#	Attack.new("/BadAnimation/BadAnimation.tscn"),
-	Attack.new("/BallFallingAttack/BallFallingAttack.tscn")
-]
-
-var END = [
-	Attack.new("/HappyEnd/HappyEnd.tscn")
-]
+#var PHASE_1 = [
+	#Attack.new("/MonologueAttack.tscn"),
+#]
+#
+#var PHASE_2 = [
+	#Attack.new("/Attack3/Attack3.tscn"),
+	#Attack.new("/TestAttack/PwdAttack.tscn"),
+	#Attack.new("/NoseAttack/NoseAttack.tscn", 0),
+#]
+#var PHASE_3 = [
+##	__________ PHASE 2 ____________ (отделить папками и тут как-то)	
+	#Attack.new("/CardPlay/Party/Party.tscn"),
+	#Attack.new("/CarouselKids/CarouselKids.tscn"),
+	#Attack.new("/SharedForm/SharedForm.tscn"),
+	 #Attack.new("/NoseAttack/NoseAttack.tscn", 1), # переводить в этой фазе в другой режим
+##	__________ PHASE 3 ____________ 
+	#Attack.new("/TestAttack/PwdAttack.tscn"),
+##	Attack.new("res://Attacks/MadSpamAttack/MadSpamAttack.tscn"),
+	#Attack.new("/Attack2/Attack2.tscn"),
+#]
+#
+#var PHASE_4 = [
+##	Attack.new("/MilkAttack/MilkAttack.tscn"),
+	#Attack.new("/SharedForm/SharedForm.tscn"),
+	#Attack.new("/UnusedJevilAttack/UnusedJevilAttack.tscn"),
+#]
+#
+#var PHASE_ULTIMATE = [
+##	Attack.new("/BadAnimation/BadAnimation.tscn"),
+	#Attack.new("/BallFallingAttack/BallFallingAttack.tscn")
+#]
+#
+#var END = [
+	#Attack.new("/HappyEnd/HappyEnd.tscn")
+#]
 
 var phases = [
-	Phase.new("res://Cutscenes", PRELUDE),
-	#Phase.new("res://Attacks/DullAttacks", PHASE_0),
+	#Phase.new("res://Cutscenes", PRELUDE),
+	Phase.new("res://Attacks/DullAttacks", PHASE_0),
 	#Phase.new("res://Attacks/DramaAttacks", PHASE_1),
-	Phase.new("res://Attacks/Phase2", PHASE_2),
-	Phase.new("res://Attacks/Phase2", PHASE_3),
-	Phase.new("res://Attacks/Phase2", PHASE_4),
-	Phase.new("res://Attacks/UltimateAttack", PHASE_ULTIMATE),
-	Phase.new("res://Cutscenes", END),
+	#Phase.new("res://Attacks/Phase2", PHASE_2),
+	#Phase.new("res://Attacks/Phase2", PHASE_3),
+	#Phase.new("res://Attacks/Phase2", PHASE_4),
+	#Phase.new("res://Attacks/UltimateAttack", PHASE_ULTIMATE),
+	#Phase.new("res://Cutscenes", END),
 ]
 
 var ATTACK_INDEX = -1

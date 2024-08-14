@@ -11,8 +11,8 @@ signal attack_ended
 @onready var mouth = $Spamton/mouth
 @onready var AttackMovePlayer = $Spamton/AttackMovePlayer
 
-@export (PackedScene) var dimond_scene
-@export (PackedScene) var dollar_scene
+@export var dimond_scene: PackedScene
+@export var dollar_scene: PackedScene
 
 var all_bullets = []
 var offset = Vector2(0, 0)

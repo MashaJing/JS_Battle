@@ -42,8 +42,9 @@
 },
 "mirror": false,
 "offset": Vector2(0, 0),
-"scale": 1,
-"scene": ""
+"scale": 1.0,
+"scene": "",
+"sound_mood": "default"
 },
 "Spamton_Mysterious": {
 "export_overrides": {
@@ -52,7 +53,8 @@
 "mirror": false,
 "offset": Vector2(0, 0),
 "scale": 1,
-"scene": ""
+"scene": "",
+"sound_mood": "default"
 },
 "Spamton_Pathetic": {
 "export_overrides": {
@@ -60,8 +62,9 @@
 },
 "mirror": false,
 "offset": Vector2(0, 0),
-"scale": 1,
-"scene": ""
+"scale": 1.0,
+"scene": "",
+"sound_mood": "default"
 },
 "Spamton_Tax": {
 "export_overrides": {
@@ -70,7 +73,8 @@
 "mirror": false,
 "offset": Vector2(0, 0),
 "scale": 1,
-"scene": ""
+"scene": "",
+"sound_mood": "default"
 }
 },
 "scale": 1.0

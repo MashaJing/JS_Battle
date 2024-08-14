@@ -87,7 +87,7 @@ func start_spare():
 	OpenedPopupMenus.push_front($VictimChoicePanel)
 
 func start_defense():
-	DecisionReader.emit_signal("defend", CURRENT_DECIDER)
+	DecisionReader.emit_signal("defended", CURRENT_DECIDER)
 	DecisionStack.add_decision(CURRENT_DECISION)
 	return_to_common_menu()
 

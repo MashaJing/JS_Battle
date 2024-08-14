@@ -5,19 +5,23 @@ signal attack_ended
 
 # ============== region and country ==============
 func prepare_user_region(user_ip):
-	$HTTPRequest.connect("request_completed", Callable(self, "_on_request_completed"))
+	$HTTPRequest.connect("request_completed", _on_request_completed)
 	$HTTPRequest.request("http://demo.ip-api.com/json/" + user_ip)
 	print('------------------------prepared!------------------------')
 
 
 
 func _on_request_completed(result, response_code, headers, body):
+	print(body)
+	print(typeof(body))
 	var test_json_conv = JSON.new()
-	test_json_conv.parse(body.get_string_from_utf8())).result
-	var json = (test_json_conv.get_data()
+	var s = test_json_conv.parse(body.get_string_from_utf8())
+	print(s)
+	
+	var json = test_json_conv.get_data()
 	# TODO: обработать случаи, когда апишка не отдаёт эти поля
-	Dialogic.set_variable('user_country', json['country'])
-	Dialogic.set_variable('user_region', json['regionName'])
+	Dialogic.VAR.user_country = json['country']
+	Dialogic.VAR.user_region = json['regionName']
 	
 	
 # =================== name ========================
@@ -35,9 +39,8 @@ func prepare_user_name():
 # ==================== ip ==========================
 func parse_ip(ip_addr):
 	var ip_arr = ip_addr[0].split("\n")
-
 	# в конце совпадает с другими источниками ✔
-	ip_arr.invert()
+	ip_arr.reverse()
 	for property in ip_arr:
 		if "Address" in property:
 			property = property.substr(property.find("Address: ") + 10)
@@ -50,8 +53,9 @@ func check_ip(ip):
 
 func prepare_user_ip():
 	var ip_addr = []
-	var exit_code = OS.execute("nslookup", ["myip.opendns.com.", "resolver1.opendns.com"], true, ip_addr)
-	print(ip_addr)
+	var command_output = []
+	var exit_code = OS.execute("nslookup", ["myip.opendns.com.", "resolver1.opendns.com"], ip_addr)
+	print(command_output)
 	if exit_code == 0:
 		ip_addr[0].find("IPv4")
 		var resulting_ip = parse_ip(ip_addr)
@@ -69,18 +73,21 @@ func _ready():
 	if check_ip(user_ip):
 		prepare_user_region(user_ip)
 
-	var threaties = Dialogic.start("jevil_down")
-	Dialogic.set_variable('user_name', user_name)
-	Dialogic.set_variable('user_ip', user_ip if check_ip(user_ip) else "0")
+	var threaties = Dialogic.start("YOUR_LOCATION")
+	Dialogic.VAR.user_name = user_name
+	Dialogic.VAR.user_ip = user_ip if check_ip(user_ip) else "0"
 	add_child(threaties)
 	
 	# Для дебага
-	await threaties.timeline_ended
-	var dialog = Dialogic.start("jevil_down_end")
-	add_child(dialog)
+	Dialogic.timeline_ended.connect(_on_dialogic_event)
+	#var dialog = Dialogic.start("YOUR_LOCATION")
+	#add_child(dialog)
 
-	await dialog.timeline_ended
-	emit_signal("attack_ended")
+	#await dialog.timeline_ended
+func _on_dialogic_event():
+	print('dialogic event caught')
+	TeamStats.emit_signal("game_over")
+	#emit_signal("attack_ended")
 
 
 #	"HOW AM 1 SUPOSED TO [play nice]  WHEN [TOXiC]s LIKE YOU"

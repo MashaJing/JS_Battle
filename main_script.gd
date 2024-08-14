@@ -4,6 +4,7 @@ extends Node2D
 signal finished_talking
 signal reset_music
 signal new_turn
+signal soundtrack_required
 var Angel = preload("res://Characters/SpamtonAngel/SpamtonAngel.tscn")
 
 const State = {
@@ -112,8 +113,9 @@ func prepare_attack():
 
 		if Attack.mode != null:
 			cur_attack.mode = Attack.mode
-		cur_attack.connect("attack_ended", Callable(self, "_on_attack_ended"))
-	
+		cur_attack.connect("attack_ended", _on_attack_ended)
+		#cur_attack.connect("soundtrack_required", _on_set_soundtrack)
+		
 	return Attack
 
 func remove_attack():
@@ -158,7 +160,8 @@ func _on_game_over():
 
 func _init_signals():
 	$Menu.connect("menu_ended", Callable(self, "_on_menu_ended"))
-	TeamStats.connect("game_over", Callable(self, "_on_game_over"))
+	TeamStats.connect("game_over", _on_game_over)
+	Dialogic.signal_event.connect(_on_dialogic_signal)
 
 	connect("new_turn", Callable(GlobalDescriptionSettings, "_on_new_turn"))
 	connect("new_turn", Callable($Kris.get_node("AnimatedSpriteController"), "_on_new_turn"))
@@ -243,3 +246,13 @@ func spawn_angel_and_heal(hero_node):
 
 	var new_hp = int(hero_node.get_node("PlayerStats").MAX_HP/2)
 	hero_node.get_node("PlayerStats").heal(new_hp)
+
+func _on_dialogic_signal(params):
+	print(params)
+	if params['character'] == "":
+		print(params['animation'])
+		print($AnimationPlayer.get_animation(params['animation']))
+		$AnimationPlayer.play(params['animation'])
+
+func _on_set_soundtrack(soundtrack):
+	$Theme.set_soundtrack(soundtrack)

@@ -1,7 +1,7 @@
 extends Node
 
-@export (PackedScene) var bullet_scene
-@export (PackedScene) var bullet_scene_2
+@export var bullet_scene: PackedScene
+@export var bullet_scene_2: PackedScene
 
 signal attack_ended
 

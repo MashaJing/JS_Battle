@@ -18,7 +18,7 @@ func _ready():
 func _process(delta):
 #	unit_offset += delta * speed
 #	$KnifeOrigin.rotate(middle_rotation_speed)
-	set_offset(get_offset() + delta * speed)
+	set_progress_ratio(get_progress_ratio() + delta * speed + 0.01)
 	if 1.0 - progress_ratio < 0.1:
 		emit_signal("child_exiting_tree")
 		queue_free()

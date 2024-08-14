@@ -2,14 +2,15 @@ extends Node2D
 
 
 func _ready():
+	Dialogic.signal_event.connect(_on_dialogic_signal)
 	$PlayerStats.connect("Down", Callable($AnimatedSpriteController, "_on_Down"))
-	$PlayerStats.connect("Down", Callable(self, "_on_Down"))
+	$PlayerStats.connect("Down", _on_Down)
 	$PlayerStats.connect("Up", Callable($AnimatedSpriteController, "_on_Up"))
 	# обработка хила и дамага сделана по-разному намеренно ввиду различий в этих процессах
 	$PlayerStats.connect("TookDamage", Callable($AnimatedSpriteController, "_on_Took_Damage"))
 
-	SpareController.connect("play_spare", Callable(self, "_on_spare"))
-	DecisionReader.connect("healed", Callable(self, "_on_get_heal"))
+	SpareController.connect("play_spare", _on_spare)
+	DecisionReader.connect("healed", _on_get_heal)
 	
 #	DecisionReader.connect("defended", self, "_on_defend")
 #	DecisionReader.connect("spared", self, "_on_spare")
@@ -41,3 +42,12 @@ func _on_Down(_name):
 func _on_play_custom_animation(_name, _animation_name):
 	if name == _name:
 		$AnimationPlayer.play(_animation_name)
+
+
+func _on_dialogic_signal(params):
+	if name == params['character']:
+		var player = get_node_or_null("AnimationPlayer")
+		if player != null:
+			player.play(params['animation'])
+		else:
+			print('Animation player for dialogic not found')

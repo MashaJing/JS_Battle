@@ -37,4 +37,4 @@ func get_game_over(state):
 
 func reset():
 	FIRST_LAUNCH = false
-	Dialogic.set_variable("first_launch", FIRST_LAUNCH)
+	Dialogic.VAR.first_launch = FIRST_LAUNCH

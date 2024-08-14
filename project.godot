@@ -45,9 +45,15 @@ directories/dch_directory={
 "Susie": "res://dialogic/characters/Susie.dch"
 }
 directories/dtl_directory={
+"YOUR_LOCATION": "res://dialogic/timelines/jokes/YOUR_LOCATION.dtl",
 "appearance_first": "res://dialogic/timelines/appearance_first.dtl",
-"pre_battle": "res://dialogic/timelines/pre_battle.dtl",
-"pre_pre_battle": "res://dialogic/timelines/pre_pre_battle.dtl"
+"appearance_second": "res://dialogic/timelines/appearance_second.dtl",
+"chaosmatic": "res://dialogic/timelines/jokes/chaosmatic.dtl",
+"clownstrophobia": "res://dialogic/timelines/jokes/clownstrophobia.dtl",
+"dull_jevil": "res://dialogic/timelines/dull_jevil.dtl",
+"enemies_argue": "res://dialogic/timelines/enemies_argue.dtl",
+"intro": "res://dialogic/timelines/intro.dtl",
+"jestures": "res://dialogic/timelines/jokes/jestures.dtl"
 }
 text/letter_speed=0.01
 text/initial_text_reveal_skippable=true
@@ -66,7 +72,13 @@ choices/reveal_by_input=false
 save/autosave_delay=60.0
 save/encryption_on_exports_only=true
 text/autopauses={}
-variables={}
+variables={
+"first_launch": false,
+"user_country": "",
+"user_ip": "",
+"user_name": "",
+"user_region": ""
+}
 layout/style_list=["res://dialogic/timelines/styles/white_box.tres"]
 layout/default_style="res://dialogic/timelines/styles/white_box.tres"
 glossary/default_case_sensitive=true
@@ -173,6 +185,7 @@ common/enable_pause_aware_picking=true
 
 [rendering]
 
+environment/defaults/default_clear_color=Color(0.0214346, 0.0214346, 0.0214346, 1)
 environment/defaults/default_environment="res://default_env.tres"
 quality/driver/driver_name="GLES2"
 vram_compression/import_etc=true

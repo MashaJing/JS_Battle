@@ -12,6 +12,6 @@ func _ready():
 #	MinitonPlayer.play("default")
 
 func _process(delta):
-	set_offset(get_offset() + delta * Miniton.speed)
+	set_progress_ratio(get_progress_ratio() + delta * Miniton.speed)
 	if 1.0 - progress_ratio < 0.01:
 		queue_free()

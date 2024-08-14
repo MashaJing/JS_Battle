@@ -1,65 +1,77 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=3 uid="uid://c43uut2p2rmhv"]
 
-[ext_resource path="res://Assets/Images/Cutscenes/162504.png" type="Texture2D" id=1]
-[ext_resource path="res://Cutscenes/GameOver/game_over.gd" type="Script" id=2]
-[ext_resource path="res://Assets/music/flashback_excerpt.ogg" type="AudioStream" id=3]
+[ext_resource type="Texture2D" uid="uid://cyxhmbknpooyq" path="res://Assets/Images/Cutscenes/162504.png" id="1"]
+[ext_resource type="Script" path="res://Cutscenes/GameOver/game_over.gd" id="2"]
+[ext_resource type="AudioStream" uid="uid://bm3ik441ogckk" path="res://Assets/music/flashback_excerpt.ogg" id="3"]
 
-[sub_resource type="AtlasTexture" id=3]
-atlas = ExtResource( 1 )
-region = Rect2( 1.88576, 2.91177, 325.844, 88.2998 )
+[sub_resource type="AtlasTexture" id="3"]
+atlas = ExtResource("1")
+region = Rect2(1.88576, 2.91177, 325.844, 88.2998)
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id="2"]
 resource_name = "game_over"
 tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/path = NodePath("Sprite2D:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
 tracks/0/keys = {
-"times": PackedFloat32Array( 0, 0.9 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0, 0.9),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_q6rsw"]
+_data = {
+"game_over": SubResource("2")
 }
 
 [node name="GameOver" type="Control"]
-script = ExtResource( 2 )
+layout_mode = 3
+anchors_preset = 0
+offset_left = 35.0
+offset_right = 35.0
+scale = Vector2(1.04, 1.04)
+script = ExtResource("2")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-offset_right = 1040.0
+layout_mode = 0
+offset_left = 1.0
+offset_right = 1041.0
 offset_bottom = 620.0
-color = Color( 0, 0, 0, 1 )
+color = Color(0, 0, 0, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2( 520, 160 )
-scale = Vector2( 2.88736, 2.88736 )
-texture = SubResource( 3 )
-region_rect = Rect2( 4.41885, -2.98994, 316.811, 96.2709 )
+position = Vector2(521, 160)
+scale = Vector2(2.88736, 2.88736)
+texture = SubResource("3")
+region_rect = Rect2(4.41885, -2.98994, 316.811, 96.2709)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/game_over = SubResource( 2 )
+libraries = {
+"": SubResource("AnimationLibrary_q6rsw")
+}
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource( 3 )
+stream = ExtResource("3")
 
 [node name="Menu" type="VBoxContainer" parent="."]
+layout_mode = 0
 offset_left = 320.0
 offset_top = 380.0
 offset_right = 880.0
 offset_bottom = 500.0
-scale = Vector2( 0.727694, 0.955572 )
+scale = Vector2(0.727694, 0.955572)
 
 [node name="Start" type="Button" parent="Menu"]
-offset_right = 560.0
-offset_bottom = 20.0
+layout_mode = 2
 focus_neighbor_top = NodePath("../Flee")
 text = "Start"
 
 [node name="Flee" type="Button" parent="Menu"]
-offset_top = 24.0
-offset_right = 560.0
-offset_bottom = 44.0
+layout_mode = 2
 focus_neighbor_bottom = NodePath("../Start")
 text = "Flee"
 
