@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Bullets/Pipis/pipis.gd" type="Script" id=1]
-[ext_resource path="res://Bullets/Pipis/pipis.png" type="Texture" id=2]
+[ext_resource path="res://Bullets/Pipis/pipis.png" type="Texture2D" id=2]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -41,9 +41,7 @@ autostart = true
 [node name="LiveTimer" type="Timer" parent="."]
 one_shot = true
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-modulate = Color( 1, 0, 0, 1 )
-self_modulate = Color( 1, 0, 0, 1 )
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2( 1.72826, 1.5 )
 frames = SubResource( 1 )
 animation = "damaged1"

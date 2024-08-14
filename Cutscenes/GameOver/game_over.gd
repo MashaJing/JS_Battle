@@ -8,7 +8,7 @@ func _ready():
 
 func _on_Start_button_down():
 	GlobalPlotSettings.reset()
-	var err = get_tree().change_scene(GlobalPlotSettings.GAME_SCENE_PATH)
+	var err = get_tree().change_scene_to_file(GlobalPlotSettings.GAME_SCENE_PATH)
 	if err != OK:
 		print("Ouch! Game could not be loaded, contact the developer plz")
 

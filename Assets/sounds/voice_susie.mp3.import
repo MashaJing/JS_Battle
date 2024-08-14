@@ -2,14 +2,18 @@
 
 importer="mp3"
 type="AudioStreamMP3"
-path="res://.import/voice_susie.mp3-12fac8af6abc1cef606f2445ce727855.mp3str"
+uid="uid://dumwcpsjaxayb"
+path="res://.godot/imported/voice_susie.mp3-12fac8af6abc1cef606f2445ce727855.mp3str"
 
 [deps]
 
 source_file="res://Assets/sounds/voice_susie.mp3"
-dest_files=[ "res://.import/voice_susie.mp3-12fac8af6abc1cef606f2445ce727855.mp3str" ]
+dest_files=["res://.godot/imported/voice_susie.mp3-12fac8af6abc1cef606f2445ce727855.mp3str"]
 
 [params]
 
 loop=false
 loop_offset=0.065
+bpm=0
+beat_count=0
+bar_beats=4

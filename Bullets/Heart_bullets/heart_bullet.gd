@@ -7,7 +7,7 @@ var radius = 100
 
 func _ready():
 	trail = Line2D.new()
-	trail.default_color = Color.forestgreen
+	trail.default_color = Color.FOREST_GREEN
 	trail.width = 2
 	trail.z_index = 0
 	trail.add_point(position)

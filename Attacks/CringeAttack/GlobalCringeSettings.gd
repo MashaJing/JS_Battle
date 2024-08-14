@@ -12,6 +12,11 @@ var TIME_BEFORE_JOKE = 10
 # Идут по порядку, чтоб звучало органичнее
 var JOKES = [
 	{
+		"text": "joke_jesters",
+		"main_word": "JESTURES",
+		"mode": Mode.CHASE,
+	},
+	{
 		"text": "joke_chaosmatic",
 		"main_word": "CHAOSMATIC",
 		"mode": Mode.EXPLODE,
@@ -20,11 +25,6 @@ var JOKES = [
 		"text": "joke_egg",
 		"main_word": "REGGOGNIZE",
 		"mode": Mode.SPIRAL,
-	},
-	{
-		"text": "joke_jesters",
-		"main_word": "JESTURES",
-		"mode": Mode.CHASE,
 	},
 	{
 		"text": "joke_baddison",

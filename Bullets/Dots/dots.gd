@@ -6,7 +6,7 @@ var direction = Vector2.LEFT
 
 func _ready():
 	for i in range (5):
-		yield($DotTimer, "timeout")
+		await $DotTimer.timeout
 		$RichTextLabel.text += ' .'
 
 

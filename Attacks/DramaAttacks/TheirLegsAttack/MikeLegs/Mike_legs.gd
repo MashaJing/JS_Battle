@@ -7,10 +7,10 @@ func _ready():
 	visible = false
 
 func stomp():
-	$AnimatedSprite.play("default")
+	$AnimatedSprite2D.play("default")
 	visible = true
 	speed = 560
-	yield(get_tree().create_timer(0.5), "timeout")
+	await get_tree().create_timer(0.5).timeout
 	speed = 0
 
 func _process(delta):

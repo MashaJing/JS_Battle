@@ -1,57 +1,57 @@
 [gd_scene load_steps=57 format=2]
 
-[ext_resource path="res://Attacks/UltimateAttack/Assets/SpriteFrames/0005.png" type="Texture" id=1]
-[ext_resource path="res://Attacks/UltimateAttack/Assets/SpriteFrames/0022.png" type="Texture" id=2]
-[ext_resource path="res://Attacks/UltimateAttack/Assets/SpriteFrames/0004.png" type="Texture" id=3]
-[ext_resource path="res://Attacks/UltimateAttack/Assets/SpriteFrames/0009.png" type="Texture" id=4]
-[ext_resource path="res://Attacks/UltimateAttack/Assets/SpriteFrames/0027.png" type="Texture" id=5]
-[ext_resource path="res://Attacks/UltimateAttack/Assets/SpriteFrames/0029.png" type="Texture" id=6]
-[ext_resource path="res://Attacks/UltimateAttack/Assets/SpriteFrames/0035.png" type="Texture" id=7]
-[ext_resource path="res://Attacks/UltimateAttack/Assets/SpriteFrames/0007.png" type="Texture" id=8]
-[ext_resource path="res://Attacks/UltimateAttack/Assets/SpriteFrames/0011.png" type="Texture" id=9]
-[ext_resource path="res://Attacks/UltimateAttack/Assets/SpriteFrames/0006.png" type="Texture" id=10]
-[ext_resource path="res://Attacks/UltimateAttack/Assets/SpriteFrames/0010.png" type="Texture" id=11]
-[ext_resource path="res://Attacks/UltimateAttack/Assets/SpriteFrames/0012.png" type="Texture" id=12]
-[ext_resource path="res://Attacks/UltimateAttack/Assets/SpriteFrames/0008.png" type="Texture" id=13]
-[ext_resource path="res://Attacks/UltimateAttack/Assets/SpriteFrames/0013.png" type="Texture" id=14]
-[ext_resource path="res://Attacks/UltimateAttack/Assets/SpriteFrames/0002.png" type="Texture" id=15]
-[ext_resource path="res://Attacks/UltimateAttack/Assets/SpriteFrames/0015.png" type="Texture" id=16]
-[ext_resource path="res://Attacks/UltimateAttack/Assets/SpriteFrames/0021.png" type="Texture" id=17]
-[ext_resource path="res://Attacks/UltimateAttack/Assets/SpriteFrames/0034.png" type="Texture" id=18]
-[ext_resource path="res://Attacks/UltimateAttack/Assets/SpriteFrames/0003.png" type="Texture" id=19]
-[ext_resource path="res://Attacks/UltimateAttack/Assets/SpriteFrames/0014.png" type="Texture" id=20]
+[ext_resource path="res://Attacks/UltimateAttack/Assets/SpriteFrames/0005.png" type="Texture2D" id=1]
+[ext_resource path="res://Attacks/UltimateAttack/Assets/SpriteFrames/0022.png" type="Texture2D" id=2]
+[ext_resource path="res://Attacks/UltimateAttack/Assets/SpriteFrames/0004.png" type="Texture2D" id=3]
+[ext_resource path="res://Attacks/UltimateAttack/Assets/SpriteFrames/0009.png" type="Texture2D" id=4]
+[ext_resource path="res://Attacks/UltimateAttack/Assets/SpriteFrames/0027.png" type="Texture2D" id=5]
+[ext_resource path="res://Attacks/UltimateAttack/Assets/SpriteFrames/0029.png" type="Texture2D" id=6]
+[ext_resource path="res://Attacks/UltimateAttack/Assets/SpriteFrames/0035.png" type="Texture2D" id=7]
+[ext_resource path="res://Attacks/UltimateAttack/Assets/SpriteFrames/0007.png" type="Texture2D" id=8]
+[ext_resource path="res://Attacks/UltimateAttack/Assets/SpriteFrames/0011.png" type="Texture2D" id=9]
+[ext_resource path="res://Attacks/UltimateAttack/Assets/SpriteFrames/0006.png" type="Texture2D" id=10]
+[ext_resource path="res://Attacks/UltimateAttack/Assets/SpriteFrames/0010.png" type="Texture2D" id=11]
+[ext_resource path="res://Attacks/UltimateAttack/Assets/SpriteFrames/0012.png" type="Texture2D" id=12]
+[ext_resource path="res://Attacks/UltimateAttack/Assets/SpriteFrames/0008.png" type="Texture2D" id=13]
+[ext_resource path="res://Attacks/UltimateAttack/Assets/SpriteFrames/0013.png" type="Texture2D" id=14]
+[ext_resource path="res://Attacks/UltimateAttack/Assets/SpriteFrames/0002.png" type="Texture2D" id=15]
+[ext_resource path="res://Attacks/UltimateAttack/Assets/SpriteFrames/0015.png" type="Texture2D" id=16]
+[ext_resource path="res://Attacks/UltimateAttack/Assets/SpriteFrames/0021.png" type="Texture2D" id=17]
+[ext_resource path="res://Attacks/UltimateAttack/Assets/SpriteFrames/0034.png" type="Texture2D" id=18]
+[ext_resource path="res://Attacks/UltimateAttack/Assets/SpriteFrames/0003.png" type="Texture2D" id=19]
+[ext_resource path="res://Attacks/UltimateAttack/Assets/SpriteFrames/0014.png" type="Texture2D" id=20]
 [ext_resource path="res://Attacks/UltimateAttack/BadAnimation/gen_collision.gd" type="Script" id=21]
-[ext_resource path="res://Attacks/UltimateAttack/Assets/SpriteFrames/0041.png" type="Texture" id=22]
-[ext_resource path="res://Attacks/UltimateAttack/Assets/SpriteFrames/0017.png" type="Texture" id=23]
-[ext_resource path="res://Attacks/UltimateAttack/Assets/SpriteFrames/0019.png" type="Texture" id=24]
-[ext_resource path="res://Attacks/UltimateAttack/Assets/SpriteFrames/0026.png" type="Texture" id=25]
-[ext_resource path="res://Attacks/UltimateAttack/Assets/SpriteFrames/0032.png" type="Texture" id=26]
-[ext_resource path="res://Attacks/UltimateAttack/Assets/SpriteFrames/0042.png" type="Texture" id=27]
-[ext_resource path="res://Attacks/UltimateAttack/Assets/SpriteFrames/0043.png" type="Texture" id=28]
-[ext_resource path="res://Attacks/UltimateAttack/Assets/SpriteFrames/0031.png" type="Texture" id=29]
-[ext_resource path="res://Attacks/UltimateAttack/Assets/SpriteFrames/0024.png" type="Texture" id=30]
-[ext_resource path="res://Attacks/UltimateAttack/Assets/SpriteFrames/0028.png" type="Texture" id=31]
-[ext_resource path="res://Attacks/UltimateAttack/Assets/SpriteFrames/0036.png" type="Texture" id=32]
-[ext_resource path="res://Attacks/UltimateAttack/Assets/SpriteFrames/0037.png" type="Texture" id=33]
-[ext_resource path="res://Attacks/UltimateAttack/Assets/SpriteFrames/0038.png" type="Texture" id=34]
-[ext_resource path="res://Attacks/UltimateAttack/Assets/SpriteFrames/0023.png" type="Texture" id=35]
-[ext_resource path="res://Attacks/UltimateAttack/Assets/SpriteFrames/0030.png" type="Texture" id=36]
-[ext_resource path="res://Attacks/UltimateAttack/Assets/SpriteFrames/0039.png" type="Texture" id=37]
-[ext_resource path="res://Attacks/UltimateAttack/Assets/SpriteFrames/0040.png" type="Texture" id=38]
-[ext_resource path="res://Attacks/UltimateAttack/Assets/SpriteFrames/0016.png" type="Texture" id=39]
-[ext_resource path="res://Attacks/UltimateAttack/Assets/SpriteFrames/0020.png" type="Texture" id=40]
-[ext_resource path="res://Attacks/UltimateAttack/Assets/SpriteFrames/0033.png" type="Texture" id=41]
-[ext_resource path="res://Attacks/UltimateAttack/Assets/SpriteFrames/0044.png" type="Texture" id=42]
-[ext_resource path="res://Attacks/UltimateAttack/Assets/SpriteFrames/0018.png" type="Texture" id=43]
-[ext_resource path="res://Attacks/UltimateAttack/Assets/SpriteFrames/0025.png" type="Texture" id=44]
-[ext_resource path="res://Attacks/UltimateAttack/Assets/SpriteFrames/0049.png" type="Texture" id=45]
-[ext_resource path="res://Attacks/UltimateAttack/Assets/SpriteFrames/0050.png" type="Texture" id=46]
-[ext_resource path="res://Attacks/UltimateAttack/Assets/SpriteFrames/0045.png" type="Texture" id=47]
-[ext_resource path="res://Attacks/UltimateAttack/Assets/SpriteFrames/0046.png" type="Texture" id=48]
-[ext_resource path="res://Attacks/UltimateAttack/Assets/SpriteFrames/0047.png" type="Texture" id=49]
-[ext_resource path="res://Attacks/UltimateAttack/Assets/SpriteFrames/0048.png" type="Texture" id=50]
+[ext_resource path="res://Attacks/UltimateAttack/Assets/SpriteFrames/0041.png" type="Texture2D" id=22]
+[ext_resource path="res://Attacks/UltimateAttack/Assets/SpriteFrames/0017.png" type="Texture2D" id=23]
+[ext_resource path="res://Attacks/UltimateAttack/Assets/SpriteFrames/0019.png" type="Texture2D" id=24]
+[ext_resource path="res://Attacks/UltimateAttack/Assets/SpriteFrames/0026.png" type="Texture2D" id=25]
+[ext_resource path="res://Attacks/UltimateAttack/Assets/SpriteFrames/0032.png" type="Texture2D" id=26]
+[ext_resource path="res://Attacks/UltimateAttack/Assets/SpriteFrames/0042.png" type="Texture2D" id=27]
+[ext_resource path="res://Attacks/UltimateAttack/Assets/SpriteFrames/0043.png" type="Texture2D" id=28]
+[ext_resource path="res://Attacks/UltimateAttack/Assets/SpriteFrames/0031.png" type="Texture2D" id=29]
+[ext_resource path="res://Attacks/UltimateAttack/Assets/SpriteFrames/0024.png" type="Texture2D" id=30]
+[ext_resource path="res://Attacks/UltimateAttack/Assets/SpriteFrames/0028.png" type="Texture2D" id=31]
+[ext_resource path="res://Attacks/UltimateAttack/Assets/SpriteFrames/0036.png" type="Texture2D" id=32]
+[ext_resource path="res://Attacks/UltimateAttack/Assets/SpriteFrames/0037.png" type="Texture2D" id=33]
+[ext_resource path="res://Attacks/UltimateAttack/Assets/SpriteFrames/0038.png" type="Texture2D" id=34]
+[ext_resource path="res://Attacks/UltimateAttack/Assets/SpriteFrames/0023.png" type="Texture2D" id=35]
+[ext_resource path="res://Attacks/UltimateAttack/Assets/SpriteFrames/0030.png" type="Texture2D" id=36]
+[ext_resource path="res://Attacks/UltimateAttack/Assets/SpriteFrames/0039.png" type="Texture2D" id=37]
+[ext_resource path="res://Attacks/UltimateAttack/Assets/SpriteFrames/0040.png" type="Texture2D" id=38]
+[ext_resource path="res://Attacks/UltimateAttack/Assets/SpriteFrames/0016.png" type="Texture2D" id=39]
+[ext_resource path="res://Attacks/UltimateAttack/Assets/SpriteFrames/0020.png" type="Texture2D" id=40]
+[ext_resource path="res://Attacks/UltimateAttack/Assets/SpriteFrames/0033.png" type="Texture2D" id=41]
+[ext_resource path="res://Attacks/UltimateAttack/Assets/SpriteFrames/0044.png" type="Texture2D" id=42]
+[ext_resource path="res://Attacks/UltimateAttack/Assets/SpriteFrames/0018.png" type="Texture2D" id=43]
+[ext_resource path="res://Attacks/UltimateAttack/Assets/SpriteFrames/0025.png" type="Texture2D" id=44]
+[ext_resource path="res://Attacks/UltimateAttack/Assets/SpriteFrames/0049.png" type="Texture2D" id=45]
+[ext_resource path="res://Attacks/UltimateAttack/Assets/SpriteFrames/0050.png" type="Texture2D" id=46]
+[ext_resource path="res://Attacks/UltimateAttack/Assets/SpriteFrames/0045.png" type="Texture2D" id=47]
+[ext_resource path="res://Attacks/UltimateAttack/Assets/SpriteFrames/0046.png" type="Texture2D" id=48]
+[ext_resource path="res://Attacks/UltimateAttack/Assets/SpriteFrames/0047.png" type="Texture2D" id=49]
+[ext_resource path="res://Attacks/UltimateAttack/Assets/SpriteFrames/0048.png" type="Texture2D" id=50]
 [ext_resource path="res://player/KinematicHeart.tscn" type="PackedScene" id=51]
-[ext_resource path="res://Assets/BA/jev_heal.png" type="Texture" id=52]
+[ext_resource path="res://Assets/BA/jev_heal.png" type="Texture2D" id=52]
 [ext_resource path="res://Bullets/HealSpawn/HealSpawn.tscn" type="PackedScene" id=701]
 [ext_resource path="res://Bullets/HealSpawn/Heal/Heal.tscn" type="PackedScene" id=702]
 
@@ -78,8 +78,8 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0.1 ),
-"transitions": PoolRealArray( 1 ),
+"times": PackedFloat32Array( 0.1 ),
+"transitions": PackedFloat32Array( 1 ),
 "update": 1,
 "values": [ false ]
 }
@@ -90,8 +90,8 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0.1 ),
-"transitions": PoolRealArray( 1 ),
+"times": PackedFloat32Array( 0.1 ),
+"transitions": PackedFloat32Array( 1 ),
 "update": 1,
 "values": [ "test" ]
 }
@@ -102,8 +102,8 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0.6, 2.1 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PackedFloat32Array( 0.6, 2.1 ),
+"transitions": PackedFloat32Array( 1, 1 ),
 "values": [ {
 "args": [  ],
 "method": "start_spawn"
@@ -119,8 +119,8 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 4, 5.7 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PackedFloat32Array( 4, 5.7 ),
+"transitions": PackedFloat32Array( 1, 1 ),
 "values": [ {
 "args": [  ],
 "method": "start_spawn"
@@ -136,8 +136,8 @@ tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 0.1, 3.5 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PackedFloat32Array( 0.1, 3.5 ),
+"transitions": PackedFloat32Array( 1, 1 ),
 "update": 1,
 "values": [ 0, 1 ]
 }
@@ -146,13 +146,13 @@ tracks/4/keys = {
 script = ExtResource( 21 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
-margin_right = 1030.0
-margin_bottom = 600.0
+offset_right = 1030.0
+offset_bottom = 600.0
 color = Color( 0, 0, 0, 1 )
 
 [node name="BadArea" type="Area2D" parent="."]
 
-[node name="Screen" type="AnimatedSprite" parent="."]
+[node name="Screen" type="AnimatedSprite2D" parent="."]
 position = Vector2( 515, 300 )
 scale = Vector2( 0.536458, 0.555556 )
 frames = SubResource( 1 )

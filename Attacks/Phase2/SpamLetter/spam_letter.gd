@@ -7,11 +7,11 @@ signal card_attack_ended
 
 func _ready():
 	$AnimationPlayer.play("letter_resend")
-	yield($AnimationPlayer, "animation_finished")
+	await $AnimationPlayer.animation_finished
 	emit_signal("card_attack_ended")
 
 func spawn_bullets():
-	var batch = bullet_batch.instance()
+	var batch = bullet_batch.instantiate()
 	batch.BULLET = bullet
 	batch.heart_position = $Heart.global_position
 	batch.SHOOT_ANGLE = 30

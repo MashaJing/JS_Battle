@@ -9,5 +9,5 @@ func _process(delta):
 	rotate(.1)
 
 func _ready():
-	yield(get_tree().create_timer(2), "timeout")
+	await get_tree().create_timer(2).timeout
 	queue_free()

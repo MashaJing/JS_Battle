@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Attacks/DramaAttacks/TheirLegsAttack/Legs/MikeLegs1.png" type="Texture" id=1]
-[ext_resource path="res://Attacks/DramaAttacks/TheirLegsAttack/Legs/MikesLegs2.png" type="Texture" id=2]
+[ext_resource path="res://Attacks/DramaAttacks/TheirLegsAttack/Legs/MikeLegs1.png" type="Texture2D" id=1]
+[ext_resource path="res://Attacks/DramaAttacks/TheirLegsAttack/Legs/MikesLegs2.png" type="Texture2D" id=2]
 [ext_resource path="res://Attacks/DramaAttacks/TheirLegsAttack/MikeLegs/Mike_legs.gd" type="Script" id=3]
 
 [sub_resource type="SpriteFrames" id=1]
@@ -21,9 +21,9 @@ animations = [ {
 script = ExtResource( 3 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PoolVector2Array( 20, 100, 100, 100, 60, 50, 60, -120, -40, -120, -40, 50, -80, 90, -80, 100, 10, 100 )
+polygon = PackedVector2Array( 20, 100, 100, 100, 60, 50, 60, -120, -40, -120, -40, 50, -80, 90, -80, 100, 10, 100 )
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2( 0.123535, 0.123535 )
 frames = SubResource( 1 )
 animation = "fall"

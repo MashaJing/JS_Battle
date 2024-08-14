@@ -17,6 +17,7 @@ func attack():
 	print(name + '_ATTACKED')
 	$AnimationPlayer.stop()
 	$AnimationPlayer.play("glow")
+	$HitSound.play()
 
 
 func end(attack_ratio):
@@ -29,7 +30,7 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 	print(name + '_FINISHED_ATTACK')
 	if anim_name == "glow":  # если анимация закончилась атакой
 		# signal *проигрыш звука*
-		ratio = abs($AttackPeakRect.rect_position.x - $AttackCursor.rect_position.x)
+		ratio = abs($AttackPeakRect.position.x - $AttackCursor.position.x)
 	else:  # если анимация просто прошла
 		ratio = MIN_RATIO
 		

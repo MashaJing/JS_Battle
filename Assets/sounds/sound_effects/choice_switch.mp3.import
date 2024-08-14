@@ -2,14 +2,18 @@
 
 importer="mp3"
 type="AudioStreamMP3"
-path="res://.import/choice_switch.mp3-ec1670214d5577a2357cbba3a56c00e9.mp3str"
+uid="uid://4pwsagbditmx"
+path="res://.godot/imported/choice_switch.mp3-ec1670214d5577a2357cbba3a56c00e9.mp3str"
 
 [deps]
 
 source_file="res://Assets/sounds/sound_effects/choice_switch.mp3"
-dest_files=[ "res://.import/choice_switch.mp3-ec1670214d5577a2357cbba3a56c00e9.mp3str" ]
+dest_files=["res://.godot/imported/choice_switch.mp3-ec1670214d5577a2357cbba3a56c00e9.mp3str"]
 
 [params]
 
 loop=false
 loop_offset=0.1
+bpm=0
+beat_count=0
+bar_beats=4

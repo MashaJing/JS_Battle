@@ -6,9 +6,9 @@ extents = Vector2( 80, 5 )
 [node name="MilkLevel" type="Area2D"]
 
 [node name="ColorRect" type="ColorRect" parent="."]
-margin_left = -80.0
-margin_top = -10.0
-margin_right = 80.0
+offset_left = -80.0
+offset_top = -10.0
+offset_right = 80.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, -5 )

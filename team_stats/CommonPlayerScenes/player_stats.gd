@@ -1,11 +1,11 @@
 extends Node2D
 
-export var MAX_HP = 100
-export var HP = 100
-export var ATK = 100
-export var DEF = 10
+@export var MAX_HP = 100
+@export var HP = 100
+@export var ATK = 100
+@export var DEF = 10
 
-export var SPARE = 0
+@export var SPARE = 0
 var SPARE_DELTA = 10  # точно тут?
 
 signal Down
@@ -48,15 +48,15 @@ func heal(delta):
 
 
 func _init_signals():
-	connect("Down", TeamStats, "_on_ally_down")
-	connect("Up", TeamStats, "_on_ally_up")
+	connect("Down", Callable(TeamStats, "_on_ally_down"))
+	connect("Up", Callable(TeamStats, "_on_ally_up"))
 
-	DecisionReader.connect("heal", self, "heal")
+	DecisionReader.connect("healed", heal)
 
 
 func defend():
 	DEF += 10
-	yield()
+	# here used to be yield(). RIP
 	DEF -= 10
 	
 

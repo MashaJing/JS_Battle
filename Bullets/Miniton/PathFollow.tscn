@@ -1,10 +1,10 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=3 format=3 uid="uid://dffqk7r3smbwv"]
 
-[ext_resource path="res://Bullets/Miniton/miniton_path_follow.gd" type="Script" id=1]
-[ext_resource path="res://Bullets/Miniton/Miniton.tscn" type="PackedScene" id=2]
+[ext_resource type="Script" path="res://Bullets/Miniton/miniton_path_follow.gd" id="1"]
+[ext_resource type="PackedScene" uid="uid://dk8oetjcb6qmp" path="res://Bullets/Miniton/Miniton.tscn" id="2"]
 
 [node name="PathFollow2D" type="PathFollow2D"]
-script = ExtResource( 1 )
+script = ExtResource("1")
 flipped = true
 
-[node name="Miniton" parent="." instance=ExtResource( 2 )]
+[node name="Miniton" parent="." instance=ExtResource("2")]

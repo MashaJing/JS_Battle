@@ -1,12 +1,10 @@
 extends Node2D
 
 signal attack_ended
-onready var MusTheme = get_parent().get_node("Theme")
 
 
 func _ready():
-	var dialog = Dialogic.start("pre-battle")
+	var dialog = Dialogic.start("appearance_first")
 	add_child(dialog)
-	yield(dialog, "dialogic_signal")
-	MusTheme.set_soundtrack('battle.ogg')
+	await Dialogic.timeline_ended
 	emit_signal("attack_ended")

@@ -1,7 +1,7 @@
 extends Node2D
 
-export var wait_time = 1
-onready var KidAnimation = $Kid/AnimationPlayer
+@export var wait_time = 1
+@onready var KidAnimation = $Kid/AnimationPlayer
 
 
 func _ready():

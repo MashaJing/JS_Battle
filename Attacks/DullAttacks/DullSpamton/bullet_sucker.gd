@@ -1,6 +1,6 @@
 extends Node2D
-export var suck_speed = 1
-export var suck_activated = 0
+@export var suck_speed = 1
+@export var suck_activated = 0
 var time = 0
 
 func activate():

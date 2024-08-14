@@ -13,7 +13,7 @@ func _ready():
 		animation = "damaged" + str(randi() % 5 + 1)
 	else:
 		animation = "default"
-	$AnimatedSprite.play(animation)
+	$AnimatedSprite2D.play(animation)
 
 
 func _process(delta):

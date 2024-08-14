@@ -1,6 +1,6 @@
-extends KinematicBody2D
+extends CharacterBody2D
 
-export var speed : float = 200.0
+@export var speed : float = 200.0
 
 
 func _ready():
@@ -25,7 +25,8 @@ func _physics_process(_delta):
 		
 	if direction.length() > 1:
 		direction = direction.normalized()
-	move_and_slide(direction * speed)
+	set_velocity(direction * speed)
+	move_and_slide()
 
 
 func disable():

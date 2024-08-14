@@ -1,7 +1,7 @@
 extends Node2D
 
 var DECISIONS = []
-onready var MAX_SIZE = len(TeamStats.all_heroes)
+@onready var MAX_SIZE = len(TeamStats.all_heroes)
 
 signal decision_canceled
 

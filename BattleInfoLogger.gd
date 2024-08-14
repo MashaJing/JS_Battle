@@ -3,7 +3,8 @@ extends Node2D
 var BATTLE_INFO = []
 
 
-# BattleInfoLogger - глобальный модуль, который получает изменения состояний и выписывает это в диалоджик
+# BattleInfoLogger - глобальный модуль, который получает изменения состояний
+# и возвращает строку для отображения в меню
 func append_line(replica):
 	if len(BATTLE_INFO) < 3:
 		BATTLE_INFO += ['* ' + replica + '\n']

@@ -6,7 +6,7 @@ func _ready():
 	$AnimationPlayer.play("attack")
 
 func spawn_knife_on_point():
-	var knife = Knife.instance()
+	var knife = Knife.instantiate()
 	knife.position = get_random_position()
 	add_child(knife)
 

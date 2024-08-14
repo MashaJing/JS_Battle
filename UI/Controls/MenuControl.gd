@@ -12,7 +12,7 @@ enum MENU_STATE {
 signal menu_ended
 signal confirmed 
 
-onready var DescriptionLabel = $VBoxContainer/HBoxContainer2/CommentField/RichTextLabel
+@onready var DescriptionLabel = $VBoxContainer/HBoxContainer2/CommentField/RichTextLabel
 # в массив складываются все menu, в которых мы побывали (текущее открытое не складывается)
 var OpenedPopupMenus = []
 
@@ -52,18 +52,18 @@ func show_letters(text, timeout=null):
 	DescriptionLabel.text = text
 	$LetterTimer.start()
 	for i in range(len(text)):
-		yield($LetterTimer, "timeout")
+		await $LetterTimer.timeout
 		DescriptionLabel.visible_characters += 1
 	$LetterTimer.stop()
 	DescriptionLabel.visible = true
 	if timeout != null:
-		yield(get_tree().create_timer(timeout), "timeout")
+		await get_tree().create_timer(timeout).timeout
 		DescriptionLabel.visible = false
 
 # ================= SCENARIOS =================
 
 func start_attack():
-	OpenedPopupMenus.pop_front()
+#	OpenedPopupMenus.pop_front()
 	State = MENU_STATE.CHOICE_PANEL
 	$VictimChoicePanel.open()
 	OpenedPopupMenus.push_front($VictimChoicePanel)
@@ -87,7 +87,7 @@ func start_spare():
 	OpenedPopupMenus.push_front($VictimChoicePanel)
 
 func start_defense():
-	DecisionReader.emit_signal("defend", CURRENT_DECIDER)
+	DecisionReader.emit_signal("defended", CURRENT_DECIDER)
 	DecisionStack.add_decision(CURRENT_DECISION)
 	return_to_common_menu()
 
@@ -141,8 +141,9 @@ func set_decision_victim(index):
 # ================== MENU_EVENTS =====================
 
 func start():
+	Engine.set_time_scale(1.0)
 	State = MENU_STATE.CHARACTER
-	show_turn_description(GlobalDialogueSettings.get_current_description())
+	show_turn_description(GlobalDescriptionSettings.get_current_description())
 	# открываем панельку первого живого героя
 	CURRENT_DECIDER = TeamStats.heroes[0]
 	open_hero_tab(CURRENT_DECIDER)
@@ -215,13 +216,15 @@ func cancel_attack():
 	AttackController.cancel_attack(CURRENT_DECIDER)
 
 func cancel_action():
-	ActionsController.cancel_action(CURRENT_DECIDER, CURRENT_DECISION.ACTION)
+	if CURRENT_DECISION.ACTION != null:
+		ActionsController.cancel_action(CURRENT_DECIDER, CURRENT_DECISION.ACTION)
 
 func cancel_defense():
 	ActionsController.emit_signal("canceled", CURRENT_DECIDER)
 	
 func cancel_item():
-	Inventorium.add_item(CURRENT_DECISION.ITEM)
+	if CURRENT_DECISION.ITEM != null:
+		Inventorium.add_item(CURRENT_DECISION.ITEM)
 
 func cancel_spare():
 	SpareController.cancel_spare(CURRENT_DECIDER)
@@ -230,13 +233,14 @@ func _on_ended_decisions_reading():
 	# Отображаем плашку с результатами нашего хода: "Крис применил трефдвич!"
 	var text = BattleInfoLogger.get_lines()
 	if len(text) > 0:
-		yield(show_letters(text, 1.0), "completed")
+		await show_letters(text, 1.0)
 		BattleInfoLogger.clear()
 	
 	var fighters = AttackController.attacks.keys()
 	if len(fighters) > 0:
 		$VBoxContainer/HBoxContainer2/CommentField/AttackPanel.start_attacks(fighters)
-		yield($VBoxContainer/HBoxContainer2/CommentField/AttackPanel, "finished")
+		await $VBoxContainer/HBoxContainer2/CommentField/AttackPanel.finished
+	ActionsController.PIRUETT_INDEX += 1
 	# выход из меню
 	emit_signal("menu_ended")
 
@@ -244,7 +248,7 @@ func _on_ended_decisions_reading():
 func init_characters():
 	var node_path
 	for hero in TeamStats.all_heroes:
-		node_path = "VBoxContainer/HBoxContainer/" + hero + "/VBoxContainer/CharacterArea"
+		node_path = "VBoxContainer/HBoxContainer/" + hero + "/Panel/VBoxContainer/CharacterArea"
 		get_node(node_path).set_character_stats(TeamStats.individual_stats[hero])
 
 
@@ -260,20 +264,20 @@ func _init_signals():
 	var node_path
 	for hero in TeamStats.all_heroes:
 		node_path = "VBoxContainer/HBoxContainer/" + hero
-		get_node(node_path).connect("decided", self, "_on_decided")
-		get_node(node_path + "/Buttons").connect("play_changed", $ChangedSoundPlayer, "play")
-		get_node(node_path + "/Buttons").connect("play_pressed", $PressedStreamPlayer, "play")
+		get_node(node_path).connect("decided", Callable(self, "_on_decided"))
+		get_node(node_path + "/Buttons").connect("play_changed", Callable($ChangedSoundPlayer, "play"))
+		get_node(node_path + "/Buttons").connect("play_pressed", Callable($PressedStreamPlayer, "play"))
 
-	DecisionReader.connect("end_decisions_reading", self, "_on_ended_decisions_reading")
+	DecisionReader.connect("end_decisions_reading", Callable(self, "_on_ended_decisions_reading"))
 	
 	for panel in [$ItemChoicePanel, $ActionsChoicePanel, $VictimChoicePanel, $HeroChoicePanel]:
-		panel.connect("play_changed", $ChangedSoundPlayer, "play")
-		panel.connect("play_pressed", $PressedStreamPlayer, "play")
+		panel.connect("play_changed", Callable($ChangedSoundPlayer, "play"))
+		panel.connect("play_pressed", Callable($PressedStreamPlayer, "play"))
 
 	$VictimChoicePanel.init(ConStats.allies)
 	$HeroChoicePanel.init(TeamStats.all_heroes)
 	
-	$ActionsChoicePanel.connect("id_pressed", self, "set_decision_action")
-	$VictimChoicePanel.connect("id_pressed", self, "set_decision_victim")
-	$ItemChoicePanel.connect("id_pressed", self, "set_decision_item")
-	$HeroChoicePanel.connect("id_pressed", self, "set_decision_victim")
+	$ActionsChoicePanel.connect("id_pressed", Callable(self, "set_decision_action"))
+	$VictimChoicePanel.connect("id_pressed", Callable(self, "set_decision_victim"))
+	$ItemChoicePanel.connect("id_pressed", Callable(self, "set_decision_item"))
+	$HeroChoicePanel.connect("id_pressed", Callable(self, "set_decision_victim"))

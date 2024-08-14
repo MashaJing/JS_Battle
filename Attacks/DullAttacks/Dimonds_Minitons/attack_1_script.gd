@@ -1,7 +1,7 @@
 extends Node
 
-export (PackedScene) var bullet_scene
-export (PackedScene) var bullet_scene_2
+@export var bullet_scene: PackedScene
+@export var bullet_scene_2: PackedScene
 
 signal attack_ended
 
@@ -12,8 +12,8 @@ func _ready():
 
 func _on_BulletSpawnTimer_timeout():
 	var dimond_spawn_location = $DimondPath/DimondSpawnLocation
-	dimond_spawn_location.unit_offset = randf()
-	var bullet = bullet_scene.instance()
+	dimond_spawn_location.progress_ratio = randf()
+	var bullet = bullet_scene.instantiate()
 	bullet.ttl = 1
 	add_child(bullet)
 	bullet.position = dimond_spawn_location.position
@@ -24,5 +24,5 @@ func _on_AttackTimer_timeout():
 
 
 func _on_MinitonTimer_timeout():
-	var bullet = bullet_scene_2.instance()
+	var bullet = bullet_scene_2.instantiate()
 	$MinitonPath.add_child(bullet)

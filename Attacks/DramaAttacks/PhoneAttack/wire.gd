@@ -1,8 +1,8 @@
 extends Line2D
 
-var pts=PoolVector2Array()
-onready var phone =	get_parent().get_node("WireBase/Phone")
-onready var wireBase =	get_parent().get_node("WireBase")
+var pts=PackedVector2Array()
+@onready var phone =	get_parent().get_node("WireBase/Phone")
+@onready var wireBase =	get_parent().get_node("WireBase")
 
 
 func _ready():

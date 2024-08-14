@@ -4,7 +4,7 @@ var speed_y = 0
 
 
 func _ready():
-	$AnimatedSprite.play("default")
+	$AnimatedSprite2D.play("default")
 	var time_before_fall = randi() % 3 + 1
 	$Timer.wait_time = time_before_fall
 	$Timer.start()
@@ -16,6 +16,6 @@ func _process(delta):
 
 
 func _on_Timer_timeout():
-	$AnimatedSprite.play("fly")
+	$AnimatedSprite2D.play("fly")
 	speed_x = 0
 	speed_y = 250

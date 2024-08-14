@@ -8,12 +8,12 @@
 
 [sub_resource type="Curve2D" id=1]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 395, 130, 0, 0, 0, 0, 495, 130, 0, 0, 0, 0, 590, 130 )
+"points": PackedVector2Array( 0, 0, 0, 0, 395, 130, 0, 0, 0, 0, 495, 130, 0, 0, 0, 0, 590, 130 )
 }
 
 [sub_resource type="Curve2D" id=2]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 650, 295, 0, 0, 0, 0, 595, 275, 0, 0, 0, 0, 400, 275, 0, 0, 0, 0, 340, 290 )
+"points": PackedVector2Array( 0, 0, 0, 0, 650, 295, 0, 0, 0, 0, 595, 275, 0, 0, 0, 0, 400, 275, 0, 0, 0, 0, 340, 290 )
 }
 
 [node name="Attack1" type="Node2D"]

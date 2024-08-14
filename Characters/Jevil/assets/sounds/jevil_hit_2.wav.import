@@ -1,13 +1,14 @@
 [remap]
 
 importer="wav"
-type="AudioStreamSample"
-path="res://.import/jevil_hit_2.wav-14a952be2b2b37b2f4b41518f6a93dcb.sample"
+type="AudioStreamWAV"
+uid="uid://cxms0er3wi2uk"
+path="res://.godot/imported/jevil_hit_2.wav-14a952be2b2b37b2f4b41518f6a93dcb.sample"
 
 [deps]
 
 source_file="res://Characters/Jevil/assets/sounds/jevil_hit_2.wav"
-dest_files=[ "res://.import/jevil_hit_2.wav-14a952be2b2b37b2f4b41518f6a93dcb.sample" ]
+dest_files=["res://.godot/imported/jevil_hit_2.wav-14a952be2b2b37b2f4b41518f6a93dcb.sample"]
 
 [params]
 

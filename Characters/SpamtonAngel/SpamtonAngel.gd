@@ -3,13 +3,13 @@ var target_position
 
 
 func _ready():
-	$AnimatedSprite.play("fly_to_target")
+	$AnimatedSprite2D.play("fly_to_target")
 	$HealSound.play()
 
 
 func pet_head():
-	$AnimatedSprite.play("heal")
-	yield($AnimatedSprite, "animation_finished")
+	$AnimatedSprite2D.play("heal")
+	await $AnimatedSprite2D.animation_finished
 	queue_free()
 
 func _process(delta):

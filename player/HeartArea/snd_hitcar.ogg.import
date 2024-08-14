@@ -1,15 +1,19 @@
 [remap]
 
-importer="ogg_vorbis"
-type="AudioStreamOGGVorbis"
-path="res://.import/snd_hitcar.ogg-77462ebe3a6a22f8dc8b8e2651c3a5b2.oggstr"
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://b1i76x2ryg6qp"
+path="res://.godot/imported/snd_hitcar.ogg-77462ebe3a6a22f8dc8b8e2651c3a5b2.oggvorbisstr"
 
 [deps]
 
 source_file="res://player/HeartArea/snd_hitcar.ogg"
-dest_files=[ "res://.import/snd_hitcar.ogg-77462ebe3a6a22f8dc8b8e2651c3a5b2.oggstr" ]
+dest_files=["res://.godot/imported/snd_hitcar.ogg-77462ebe3a6a22f8dc8b8e2651c3a5b2.oggvorbisstr"]
 
 [params]
 
 loop=false
 loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

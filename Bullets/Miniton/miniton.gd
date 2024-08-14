@@ -7,7 +7,7 @@ const State = {
 }
 var Explosion = preload("res://Bullets/bullet_tools/Explosion/Explosion.tscn")
 var cur_state = State.DEFAULT
-var speed = 100
+var speed = 0.4
 
 
 func _ready():
@@ -30,7 +30,7 @@ func _on_Miniton_area_entered(area):
 		cur_state = State.EXPLOSION
 		$AnimationPlayer.play(cur_state)
 		$ExplosionSound.play()
-		yield($AnimationPlayer, "animation_finished")
+		await $AnimationPlayer.animation_finished
 
 
 #func _on_HeartDetectionArea_area_entered(area):

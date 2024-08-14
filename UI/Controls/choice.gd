@@ -21,8 +21,8 @@ func exit():
 
 func open():
 	popup()
-	if len(items) > 0:
-		set_current_index(0)
+	if item_count > 0:
+		set_focused_item(0)
 
 func _on_ChoicePanel_id_focused(id):
 	emit_signal("play_changed")

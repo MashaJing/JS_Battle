@@ -1,8 +1,9 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Cutscenes/CringeGameOver/cringe_game_over.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Images/Cutscenes/game_over_2.png" type="Texture" id=2]
-[ext_resource path="res://Assets/sounds/Cucozh.mp3" type="AudioStream" id=3]
+[ext_resource path="res://Assets/Images/Cutscenes/game_over_2.png" type="Texture2D" id=2]
+[ext_resource path="res://Assets/music/Cucozh.mp3" type="AudioStream" id=3]
+
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 2 )
@@ -22,8 +23,8 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.7 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PackedFloat32Array( 0, 0.7 ),
+"transitions": PackedFloat32Array( 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
@@ -34,8 +35,8 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 1.2, 2 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PackedFloat32Array( 1.2, 2 ),
+"transitions": PackedFloat32Array( 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
@@ -46,8 +47,8 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0.3 ),
-"transitions": PoolRealArray( 1 ),
+"times": PackedFloat32Array( 0.3 ),
+"transitions": PackedFloat32Array( 1 ),
 "update": 1,
 "values": [ true ]
 }
@@ -56,16 +57,16 @@ tracks/2/keys = {
 script = ExtResource( 1 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
-margin_right = 1040.0
-margin_bottom = 610.0
+offset_right = 1040.0
+offset_bottom = 610.0
 color = Color( 0, 0, 0, 1 )
 
-[node name="GameOver" type="Sprite" parent="."]
+[node name="GameOver" type="Sprite2D" parent="."]
 position = Vector2( 526, 190 )
 scale = Vector2( 4.42991, 3.20988 )
 texture = SubResource( 1 )
 
-[node name="YouDied" type="Sprite" parent="."]
+[node name="YouDied" type="Sprite2D" parent="."]
 position = Vector2( 511.343, 455 )
 scale = Vector2( 5.47896, 5.83333 )
 texture = SubResource( 2 )

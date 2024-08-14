@@ -2,17 +2,17 @@ extends Node2D
 
 signal cringe_attack_ended
 
-onready var WordScene = preload("res://Attacks/CringeAttack/word_straight/Word.tscn")
+@onready var WordScene = preload("res://Attacks/CringeAttack/word_straight/Word.tscn")
 var Border = preload("res://Border/Border.tscn")
 var Heart = preload("res://player/KinematicHeart.tscn")
 var wordBullet
 const Mode = GlobalCringeSettings.Mode
-export(Mode) var ATTACK_MODE
+@export var ATTACK_MODE: Mode
 
 
 func add_border_and_heart():
-	var scene_border = Border.instance()
-	var scene_heart = Heart.instance()
+	var scene_border = Border.instantiate()
+	var scene_heart = Heart.instantiate()
 
 	scene_border.global_position = $JokeTarget.global_position
 	scene_heart.global_position = $JokeTarget.global_position
@@ -25,7 +25,7 @@ func _ready():
 	ATTACK_MODE = cur_joke['mode']
 	var joke = Dialogic.start(cur_joke['text'])
 	add_child(joke)
-	yield(joke, "dialogic_signal")
+	await joke.timeline_ended
 	add_border_and_heart()
 	
 	match cur_joke['mode']:
@@ -37,7 +37,7 @@ func _ready():
 			spiral_scenario(cur_joke)
 		Mode.PUNCH:
 			punch_scenario(cur_joke)
-	yield(get_tree().create_timer(5.5), "timeout")
+	await get_tree().create_timer(5.5).timeout
 	emit_signal("cringe_attack_ended")
 
 func explode_scenario(cur_joke):
@@ -47,12 +47,12 @@ func explode_scenario(cur_joke):
 
 func chase_scenario(cur_joke):
 	generate_text_bullet(cur_joke['main_word'], $KinematicHeart, 10, 140)
-	yield(get_tree().create_timer(4.0), "timeout")
+	await get_tree().create_timer(4.0).timeout
 	get_node('Word').move_straight()
 
 func punch_scenario(cur_joke):
 	punch(cur_joke['main_word'], $PunchPath/PathFollow2D, -600)
-	yield(get_tree().create_timer(2.0), "timeout")
+	await get_tree().create_timer(2.0).timeout
 	punch(cur_joke['main_word'], $PunchPath2/PathFollow2D, 600, Vector2.UP)
 
 func spiral_scenario(cur_joke):
@@ -60,7 +60,7 @@ func spiral_scenario(cur_joke):
 	word_bullet.move_from_path()
 
 func generate_text_on_path(path, text):
-	var wordBullet = WordScene.instance()
+	var wordBullet = WordScene.instantiate()
 	wordBullet.word = text
 	wordBullet.spawn_follow_path(path)
 	wordBullet.target = $JokeTarget
@@ -68,7 +68,7 @@ func generate_text_on_path(path, text):
 	return wordBullet
 
 func generate_text_bullet(text, target_object=$JokeTarget, acceleration=250, speed=0):
-	var wordBullet = WordScene.instance()
+	var wordBullet = WordScene.instantiate()
 	wordBullet.word = text
 	wordBullet.speed = speed
 	wordBullet.acceleration = acceleration
@@ -78,8 +78,8 @@ func generate_text_bullet(text, target_object=$JokeTarget, acceleration=250, spe
 	wordBullet.spawn_on_point()
 
 func blow_up():
-	yield($JokeTarget/ExplosionArea, 'full_house')
-	yield(get_tree().create_timer(1.0), 'timeout')
+	await $JokeTarget/ExplosionArea.full_house
+	await get_tree().create_timer(1.0).timeout
 	get_node('Word').blow_up()
 	
 

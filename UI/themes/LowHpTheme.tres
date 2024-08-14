@@ -1,56 +1,63 @@
-[gd_resource type="Theme" load_steps=13 format=2]
+[gd_resource type="Theme" load_steps=13 format=3 uid="uid://cacy3hb3ujntd"]
 
-[ext_resource path="res://Assets/fonts/menu/VT323-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource type="FontFile" uid="uid://l03j4uwviwt5" path="res://Assets/fonts/menu/VT323-Regular.ttf" id="1"]
 
-[sub_resource type="Gradient" id=3]
-offsets = PoolRealArray( 0 )
-colors = PoolColorArray( 0, 0, 0, 1 )
+[sub_resource type="Gradient" id="3"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 0, 0, 1)
 
-[sub_resource type="GradientTexture" id=4]
-gradient = SubResource( 3 )
+[sub_resource type="GradientTexture2D" id="4"]
+gradient = SubResource("3")
 
-[sub_resource type="StyleBoxTexture" id=5]
-texture = SubResource( 4 )
-region_rect = Rect2( 0, 0, 2048, 1 )
+[sub_resource type="StyleBoxTexture" id="5"]
+texture = SubResource("4")
+region_rect = Rect2(0, 0, 2048, 1)
 
-[sub_resource type="DynamicFont" id=2]
-size = 20
-font_data = ExtResource( 1 )
+[sub_resource type="FontFile" id="2"]
+fallbacks = Array[Font]([ExtResource("1")])
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
 
-[sub_resource type="Gradient" id=6]
-offsets = PoolRealArray( 1 )
-colors = PoolColorArray( 0.414063, 0.142161, 0.142161, 1 )
+[sub_resource type="Gradient" id="6"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(0.414063, 0.142161, 0.142161, 1)
 
-[sub_resource type="GradientTexture" id=7]
-gradient = SubResource( 6 )
+[sub_resource type="GradientTexture2D" id="7"]
+gradient = SubResource("6")
 
-[sub_resource type="StyleBoxTexture" id=8]
-texture = SubResource( 7 )
-region_rect = Rect2( 0, 0, 2048, 1 )
+[sub_resource type="StyleBoxTexture" id="8"]
+texture = SubResource("7")
+region_rect = Rect2(0, 0, 2048, 1)
 
-[sub_resource type="Gradient" id=9]
-offsets = PoolRealArray( 0 )
-colors = PoolColorArray( 0.195313, 0, 0, 1 )
+[sub_resource type="Gradient" id="9"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0.195313, 0, 0, 1)
 
-[sub_resource type="GradientTexture" id=10]
-gradient = SubResource( 9 )
+[sub_resource type="GradientTexture2D" id="10"]
+gradient = SubResource("9")
 
-[sub_resource type="StyleBoxTexture" id=11]
-texture = SubResource( 10 )
-region_rect = Rect2( 0, 0, 2048, 1 )
+[sub_resource type="StyleBoxTexture" id="11"]
+texture = SubResource("10")
+region_rect = Rect2(0, 0, 2048, 1)
 
-[sub_resource type="DynamicFont" id=1]
-size = 34
-outline_color = Color( 0.568627, 0, 0, 1 )
-extra_spacing_bottom = 1
-extra_spacing_char = 4
-font_data = ExtResource( 1 )
+[sub_resource type="FontFile" id="1"]
+fallbacks = Array[Font]([ExtResource("1")])
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
 
 [resource]
-default_font = SubResource( 1 )
+default_font = SubResource("1")
 HBoxContainer/constants/separation = 4
-Panel/styles/panel = SubResource( 5 )
-ProgressBar/fonts/font = SubResource( 2 )
-ProgressBar/styles/bg = SubResource( 8 )
-ProgressBar/styles/fg = SubResource( 11 )
-RichTextLabel/fonts/normal_font = SubResource( 1 )
+Panel/styles/panel = SubResource("5")
+ProgressBar/fonts/font = SubResource("2")
+ProgressBar/styles/bg = SubResource("8")
+ProgressBar/styles/fg = SubResource("11")
+RichTextLabel/fonts/normal_font = SubResource("1")

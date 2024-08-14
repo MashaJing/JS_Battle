@@ -9,7 +9,7 @@ signal decided(decision)
 
 
 func _ready():
-	connect("play", get_parent().get_node("AnimationPlayer"), "play")
+	connect("play", Callable(get_parent().get_node("AnimationPlayer"), "play"))
 
 
 func _on_decided(decision):
@@ -25,8 +25,9 @@ func close():
 
 
 func open():
+	print(name + ' Buttons will be opened!')
 	$Buttons.open()
 	if get_parent().get_node("AnimationPlayer").is_playing():
-		yield(get_parent().get_node("AnimationPlayer"), "animation_finished")
+		await get_parent().get_node("AnimationPlayer").animation_finished
 	emit_signal("play", name + "_close", -1, -1.5)
 	# TODO: активировать

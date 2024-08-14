@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Attacks/DramaAttacks/BestAttack/MailAttack/MailBullet/mail_bullet.gd" type="Script" id=1]
-[ext_resource path="res://Attacks/DramaAttacks/BestAttack/MailAttack/MailBullet/leter1.png" type="Texture" id=2]
+[ext_resource path="res://Attacks/DramaAttacks/BestAttack/MailAttack/MailBullet/leter1.png" type="Texture2D" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8, 4 )
@@ -10,7 +10,7 @@ extents = Vector2( 8, 4 )
 z_as_relative = false
 script = ExtResource( 1 )
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2( 1.19565, 1.1087 )
 z_index = 2
 texture = ExtResource( 2 )

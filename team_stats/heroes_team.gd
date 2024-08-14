@@ -1,9 +1,9 @@
 extends Node
 
-onready var inventorium = $Inventorium
+@onready var inventorium = $Inventorium
 
 var MAX_TP = 100
-var TP = 0
+var TP = 100
 var tp_delta = 10
 
 # как-то прокинуть хп каждого? Или прям тут? Мб сделать 2 глобальных узла для каждой из сторон?
@@ -74,7 +74,7 @@ func _on_ally_up(ally):
 # 	либо делать через енам или кастомный класс, из которого вытаскивается индекс
 #	либо выделываться с этим: var hero_ind = all_heroes.find(ally)
 	heroes.append(ally)
-	heroes.sort_custom(HeroSorter, "sort")
+	heroes.sort_custom(Callable(HeroSorter, "sort"))
 	DecisionStack.MAX_SIZE = len(TeamStats.heroes)
 
 

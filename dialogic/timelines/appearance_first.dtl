@@ -1,0 +1,59 @@
+join Spamton 0
+join Susie 1
+join Ralsei 2
+join Jevil 3
+join Lancer 0
+if {first_launch} == false:
+	[signal arg_type="dict" arg="{"animation":"teleport","character":"Jevil"}"]
+	[signal arg_type="dict" arg="{"animation":"heroes_appear","character":""}"]
+	[wait time="2.0"]
+	[signal arg_type="dict" arg="{"animation":"spamton_appear_1","character":""}"]
+	[wait time="1.0"]
+	[signal arg_type="dict" arg="{"animation":"heroes_begin_battle","character":""}"]
+else:
+	[signal arg_type="dict" arg="{"animation":"heroes_appear","character":""}"]
+	[wait time="2.0"]
+	[signal arg_type="dict" arg="{"animation":"spamton_appear_1","character":""}"]
+	[wait time="0.5"]
+	[music path="res://Assets/music/dialtone.ogg" fade="0.0" volume="0.0"]
+	Spamton (Spamton_Happy): * H3Y KRIS  [and his friends]!      IT’S a-ME!
+	[signal arg_type="dict" arg="{"animation":"hands_up","character":"Spamton"}"]
+	Spamton (Spamton_Happy): * YOU  [START ATTENDING GYM at]  TO  EXERC1SE WITH YOUR  [old pal] SPAMTON !!
+	Susie (annoyed): * Buddy, you’re kinda… ex-NEO now
+	Ralsei (eyes_closed_neutral): * Actually, I’ve evened the odds
+	[music fade="1.0" volume="0.0"]
+	[signal arg_type="dict" arg="{"animation":"teleport","character":"Jevil"}"]
+	[wait time="2.5"]
+	[music path="res://Assets/music/Dialtone Circus (Extended).mp3" fade="0.0" volume="0.0"]
+	[signal arg_type="dict" arg="{"animation":"annoyed","character":"Spamton"}"]
+	Jevil (Jevil_Happy): * HERE COMES JEVIL'S ENCORE, BOYSNGIRLS!
+	Spamton (Spamton_Pathetic): * Y0U,     [piece of snail pie] !
+	Spamton (Spamton_Pathetic): * WHAT ARE U DOING [in my area]?!
+	Jevil (Jevil_Happy): * NO, WHAT ARE YOU DOING IN THIS WORLD?
+	Jevil (Jevil_Happy): * YOU ARE PROHIBITED FROM COMING WITHIN 300 METERS OF SCHOOLS, SCHOOLS
+	Spamton (Spamton_Mad): * KR KRIS! WHAT DOES   TH1S    [what a twist] MEAN?
+	Jevil (Jevil_Happy): * IT MEANS THAT TODAY WE PERFORM IN TANDEM, PINOCCHIO
+	Spamton (Spamton_Mad): * DO NOT CALL ME [handmade wooden doll] !
+	Ralsei (thinking): * Actually, you two are the strongest rivals we've faced, so…
+	Susie (grin): * So we want to kick your ass again!
+	Ralsei (eyes_closed): * Fighting you two at once would be a valuable practice
+	Ralsei (thinking): * As a prize, you’ll get whatever you want
+	Spamton (Spamton_Tax): * [hee hee] 0Ne KR0mr AND [1_000_000] HEL1COPTER5, PLE@SE
+	[signal arg_type="dict" arg="{"animation":"default","character":"Spamton"}"]
+	Jevil (Jevil_cake): * A HAND-MADE CAKE IS MUCH BETTER, BETTER!
+	[signal arg_type="dict" arg="{"animation":"annoyed","character":"Spamton"}"]
+	Spamton (Spamton_Pathetic): * THaT     [cake] W1TH [body parts] AGAIN!?
+	Spamton (Spamton_Pathetic): * D0N'T CONFUSE THe Chaos, Chaos W1TH [marasmus marasmus]
+	Jevil (Jevil_Happy): * YOUR WISH IS PREDICTABLE, PREDICTABLE! WANNA LOSE ALL YOUR GOLD AS ALWAYS?
+	[signal arg_type="dict" arg="{"animation":"black_glasses","character":"Spamton"}"]
+	Spamton (Spamton_Mysterious): * HAVE [NOOO] IDEA WHAT YOU'RE TALKING ABOUT
+	Spamton (Spamton_Mysterious): * Light>ners, [event accepted]
+	[signal arg_type="dict" arg="{"animation":"go_out","character":"Lancer"}"]
+	Lancer: * Awesome Doughty Hero Dudes on the left
+	[signal arg_type="dict" arg="{"animation":"turn","character":"Lancer"}"]
+	Lancer: * Basement Department on the right
+	[signal arg_type="dict" arg="{"animation":"go_out","character":"Lancer","reversed":"true"}"]
+	Lancer: * Let's get this party started!
+	[music fade="1.0" volume="0.0"]
+	[signal arg_type="dict" arg="{"animation":"heroes_begin_battle","character":""}"]
+[music path="res://Assets/music/battle.ogg" fade="1.0" volume="0.0"]

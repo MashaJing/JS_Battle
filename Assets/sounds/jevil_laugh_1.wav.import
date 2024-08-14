@@ -1,13 +1,14 @@
 [remap]
 
 importer="wav"
-type="AudioStreamSample"
-path="res://.import/jevil_laugh_1.wav-15d130374d00258d03c03770a8cebcb9.sample"
+type="AudioStreamWAV"
+uid="uid://cpak8rh48lmo4"
+path="res://.godot/imported/jevil_laugh_1.wav-15d130374d00258d03c03770a8cebcb9.sample"
 
 [deps]
 
 source_file="res://Assets/sounds/jevil_laugh_1.wav"
-dest_files=[ "res://.import/jevil_laugh_1.wav-15d130374d00258d03c03770a8cebcb9.sample" ]
+dest_files=["res://.godot/imported/jevil_laugh_1.wav-15d130374d00258d03c03770a8cebcb9.sample"]
 
 [params]
 

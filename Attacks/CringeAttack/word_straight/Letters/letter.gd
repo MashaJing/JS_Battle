@@ -1,10 +1,10 @@
 extends Area2D
 
-onready var anim = $AnimationPlayer
+@onready var anim = $AnimationPlayer
 
 var font_path = "res://fonts/menu/VT323-Regular.ttf"
 
-var letter = '' setget set_letter, get_letter
+var letter = '': get = get_letter, set = set_letter
 var speed = 100
 var acceleration = 250
 var time = 0

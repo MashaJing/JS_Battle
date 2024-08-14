@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Attacks/UltimateAttack/BallFallingAttack/Ball/Assets/shard.png" type="Texture" id=1]
+[ext_resource path="res://Attacks/UltimateAttack/BallFallingAttack/Ball/Assets/shard.png" type="Texture2D" id=1]
 [ext_resource path="res://Bullets/Rock/rock.gd" type="Script" id=2]
 
 [node name="Rock" type="Area2D" groups=["bullets"]]
@@ -8,7 +8,7 @@ scale = Vector2( 0.144818, 0.144818 )
 script = ExtResource( 2 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PoolVector2Array( -100, 10, -30, 100, 120, 40, -30, -130 )
+polygon = PackedVector2Array( -100, 10, -30, 100, 120, 40, -30, -130 )
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource( 1 )

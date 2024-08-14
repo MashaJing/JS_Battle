@@ -1,0 +1,74 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Assets/fonts/menu/VT323-Regular.ttf" type="FontFile" id=1]
+[ext_resource path="res://Border/Border.tscn" type="PackedScene" id=2]
+[ext_resource path="res://player/KinematicHeart.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Attacks/Phase2/TestAttack/pwd_attack.gd" type="Script" id=5]
+
+
+[sub_resource type="FontFile" id=1]
+size = 32
+extra_spacing_char = 1
+font_data = ExtResource( 1 )
+
+[sub_resource type="Gradient" id=2]
+offsets = PackedFloat32Array( 1 )
+colors = PackedColorArray( 0.0515747, 0.660156, 0, 1 )
+
+[sub_resource type="GradientTexture2D" id=3]
+gradient = SubResource( 2 )
+
+[sub_resource type="StyleBoxTexture" id=4]
+texture = SubResource( 3 )
+region_rect = Rect2( 0, 0, 2048, 1 )
+offset_top = 8.11772
+
+[node name="PwdAttack" type="Node2D"]
+script = ExtResource( 5 )
+
+[node name="BorderField" parent="." instance=ExtResource( 2 )]
+position = Vector2( 500, 280 )
+
+[node name="KinematicHeart" parent="." instance=ExtResource( 4 )]
+position = Vector2( 487, 300 )
+
+[node name="PasswordField" type="RichTextLabel" parent="."]
+offset_left = 380.0
+offset_top = 160.0
+offset_right = 1130.0
+offset_bottom = 430.0
+tooltip_text = "eh what are you looking at"
+focus_mode = 2
+theme_override_fonts/normal_font = SubResource( 1 )
+bbcode_enabled = true
+visible_characters = 100
+scroll_active = false
+selection_enabled = true
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 8.0
+one_shot = true
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+visible = false
+offset_left = 380.0
+offset_top = 350.0
+offset_right = 620.0
+offset_bottom = 380.0
+theme_override_styles/fg = SubResource( 4 )
+max_value = 8.0
+percent_visible = false
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ProgressBar"]
+offset_left = 20.0
+offset_top = 10.0
+offset_right = 220.0
+offset_bottom = 40.0
+bbcode_enabled = true
+text = "[shake]START TYP1NG TO HAVE [fun]!"
+text = "START TYP1NG TO HAVE [fun]!"
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

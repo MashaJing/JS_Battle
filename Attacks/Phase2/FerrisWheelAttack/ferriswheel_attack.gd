@@ -1,11 +1,11 @@
 extends Node2D
 
-onready var Border = $BorderField
-onready var BorderFollow = $FerrisWheel/BorderFollow
-onready var WheelCenter = $FerrisWheel/WheelCenter
+@onready var Border = $BorderField
+@onready var BorderFollow = $FerrisWheel/BorderFollow
+@onready var WheelCenter = $FerrisWheel/WheelCenter
 
 # сделать рандомный знак
-onready var Bullet = preload("res://Bullets/Club/Bullet.tscn")
+@onready var Bullet = preload("res://Bullets/Club/Bullet.tscn")
 signal card_attack_ended
 
 var N_CLUBS = 10
@@ -18,8 +18,8 @@ var SPEED = 0
 
 func _ready():
 	for i in range(N_CLUBS):
-		BorderFollow.unit_offset = float(i)/N_CLUBS
-		var bullet = Bullet.instance()
+		BorderFollow.progress_ratio = float(i)/N_CLUBS
+		var bullet = Bullet.instantiate()
 		bullet.scale *= 2.0
 		bullet.position = BorderFollow.global_position
 		add_child(bullet)
@@ -31,7 +31,7 @@ func _process(delta):
 		Border.global_position += gravity * delta * Vector2.DOWN
 	else:
 		SPEED += WHEEL_ACC * delta
-		BorderFollow.unit_offset += delta * SPEED
+		BorderFollow.progress_ratio += delta * SPEED
 		Border.position = BorderFollow.global_position
 
 
@@ -46,7 +46,7 @@ func _on_ClubTimer_timeout():
 func _on_HoldingTimer_timeout():
 	SPEED = 0
 	WHEEL_ACC = 0
-	yield(get_tree().create_timer(0.5), "timeout")
+	await get_tree().create_timer(0.5).timeout
 	falling = true
-	yield(get_tree().create_timer(1.0), "timeout")
+	await get_tree().create_timer(1.0).timeout
 	emit_signal("card_attack_ended")

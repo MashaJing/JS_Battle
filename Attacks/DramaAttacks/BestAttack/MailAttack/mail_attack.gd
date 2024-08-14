@@ -1,7 +1,7 @@
 extends Node2D
 
-onready var MailBullet = preload("res://Attacks/DramaAttacks/BestAttack/MailAttack/MailBullet/MailBullet.tscn")
-onready var MailWindow = preload("res://Attacks/DramaAttacks/BestAttack/MailAttack/MailWindow/MailWindow.tscn")
+@onready var MailBullet = preload("res://Attacks/DramaAttacks/BestAttack/MailAttack/MailBullet/MailBullet.tscn")
+@onready var MailWindow = preload("res://Attacks/DramaAttacks/BestAttack/MailAttack/MailWindow/MailWindow.tscn")
 var windows = []
 
 signal attack_ended
@@ -9,7 +9,7 @@ signal attack_ended
 
 func _ready():
 	$SpamtonAnimationPlayer.play("appear")
-	yield($SpamtonAnimationPlayer, "animation_finished")
+	await $SpamtonAnimationPlayer.animation_finished
 	$SpamtonAnimationPlayer.play("window_attack_begin")
 
 func _on_MailTimer_timeout():
@@ -38,7 +38,7 @@ func open_windows():
 	spawn_window($WindowSpawn2.global_position)
 
 func spawn_window(spawn_position):
-	var Window = MailWindow.instance()
+	var Window = MailWindow.instantiate()
 	Window.global_position = spawn_position
 	add_child(Window)
 	windows.append(Window)	

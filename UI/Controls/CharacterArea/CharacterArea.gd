@@ -1,12 +1,15 @@
 extends Control
 
 var character_stats
-export (Texture) var NameTexture
-export (Texture) var HpTexture
-export (Texture) var PortraitTexture
+@export var NameTexture: Texture2D
+@export var HpColor: Color
+@export var PortraitTexture: Texture2D
 
-var DefaultTheme = preload("res://UI/themes/MenuTheme.tres")
-var LowHpTheme = preload("res://UI/themes/LowHpTheme.tres")
+var DEFAULT_THEME_PATH = preload("res://UI/themes/MenuTheme.tres")
+var LOW_HP_THEME = preload("res://UI/themes/LowHpTheme.tres")
+
+var DefaultTheme
+var LowHpTheme
 
 
 func _ready():
@@ -16,29 +19,41 @@ func _ready():
 func _update_hp():
 	print("LEEETS UPDATE HP IN MENU")
 	print(character_stats.HP)
-	$HpBar/Progress.value = character_stats.HP
-	$HpBar/Digit.text = str(character_stats.HP)
+	$HpBarArea/Progress.value = character_stats.HP
+	$HpBarArea/Digit.text = str(character_stats.HP)
 	print("_____THEME_____")
-	print($HpBar.theme)
+	print($HpBarArea/Progress.theme)
 	
 	if character_stats.HP <= 0:
-		$HpBar.theme = LowHpTheme
+		$HpBarArea/Progress.theme = LowHpTheme
 		print("SWITCHED THEME TO")
-		print($HpBar.theme)
+		print($HpBarArea/Progress.theme)
 	else:
-		$HpBar.theme = DefaultTheme
+		$HpBarArea/Progress.theme = DefaultTheme
 
 
 func _init_textures():
+	DefaultTheme = Theme.new()
+	LowHpTheme = Theme.new()
+	#DefaultTheme.copy_theme(DEFAULT_THEME_PATH)
+	#LowHpTheme.copy_theme(LOW_HP_THEME)
 	$Name.texture = NameTexture
-	$HpBar.texture = HpTexture
 	$Portrait.texture = PortraitTexture
+	var stylebox = StyleBoxFlat.new()
+	stylebox.bg_color = HpColor
+	print('--------colors----------')
+	print(DefaultTheme.get_stylebox('fg', 'ProgressBar'))
+	print(DefaultTheme.get_stylebox('bg', 'ProgressBar'))
+
+	DefaultTheme.set_stylebox('fg', 'ProgressBar', stylebox)
+	$HpBarArea/Progress.theme = DefaultTheme
+#	print($HpBarArea/Progress.theme)
 
 
 func set_character_stats(stats):
 	self.character_stats = stats
-	$HpBar/Progress.max_value = character_stats.MAX_HP
-	$HpBar/Progress.value = character_stats.HP
-	$HpBar/Digit.text = str(character_stats.HP)
-	$HpBar/Digit_max.text = str(character_stats.MAX_HP)
-	character_stats.connect("UpdateHp", self, "_update_hp")
+	$HpBarArea/Progress.max_value = character_stats.MAX_HP
+	$HpBarArea/Progress.value = character_stats.HP
+	$HpBarArea/Digit.text = str(character_stats.HP)
+	$HpBarArea/Digit_max.text = str(character_stats.MAX_HP)
+	character_stats.connect("UpdateHp", Callable(self, "_update_hp"))

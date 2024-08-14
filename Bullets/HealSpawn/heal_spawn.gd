@@ -1,7 +1,7 @@
 extends Node2D
-export (PackedScene) var Bullet
-export var bullet_scale = 1.0
-export var healer = 'JEVIL'
+@export (PackedScene) var Bullet
+@export var bullet_scale = 1.0
+@export var healer = 'JEVIL'
 
 
 func start_spawn():
@@ -13,7 +13,7 @@ func stop_spawn():
 
 
 func _on_SpawnTimer_timeout():
-	var bullet = Bullet.instance()
+	var bullet = Bullet.instantiate()
 	if healer != null:
 		bullet.healer = healer
 	bullet.scale *= bullet_scale

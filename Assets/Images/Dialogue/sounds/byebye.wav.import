@@ -1,13 +1,14 @@
 [remap]
 
 importer="wav"
-type="AudioStreamSample"
-path="res://.import/byebye.wav-75390bf11aa36967d1173c6904256d78.sample"
+type="AudioStreamWAV"
+uid="uid://d17be1r0qumv3"
+path="res://.godot/imported/byebye.wav-75390bf11aa36967d1173c6904256d78.sample"
 
 [deps]
 
 source_file="res://Assets/Images/Dialogue/sounds/byebye.wav"
-dest_files=[ "res://.import/byebye.wav-75390bf11aa36967d1173c6904256d78.sample" ]
+dest_files=["res://.godot/imported/byebye.wav-75390bf11aa36967d1173c6904256d78.sample"]
 
 [params]
 

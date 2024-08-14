@@ -9,7 +9,7 @@ func _ready():
 	var dialogue = Dialogic.start("spamton_down")
 	add_child(dialogue)
 	
-	yield(dialogue, 'dialogic_signal')
+	await dialogue.timeline_ended
 	# все дальнейшие атаки - только Джева
 	print('ended running')
 	

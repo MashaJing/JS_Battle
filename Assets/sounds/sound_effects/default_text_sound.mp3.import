@@ -2,14 +2,18 @@
 
 importer="mp3"
 type="AudioStreamMP3"
-path="res://.import/default_text_sound.mp3-3df264c35dbfaa0ac411646999d2f266.mp3str"
+uid="uid://ccoflr14da7pk"
+path="res://.godot/imported/default_text_sound.mp3-3df264c35dbfaa0ac411646999d2f266.mp3str"
 
 [deps]
 
 source_file="res://Assets/sounds/sound_effects/default_text_sound.mp3"
-dest_files=[ "res://.import/default_text_sound.mp3-3df264c35dbfaa0ac411646999d2f266.mp3str" ]
+dest_files=["res://.godot/imported/default_text_sound.mp3-3df264c35dbfaa0ac411646999d2f266.mp3str"]
 
 [params]
 
 loop=false
 loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

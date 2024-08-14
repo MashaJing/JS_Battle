@@ -1,9 +1,9 @@
 extends Area2D
 
-export var direction = Vector2.UP
+@export var direction = Vector2.UP
 var target_object
-export var speed = 0
-export var ttl = 1.0
+@export var speed = 0
+@export var ttl = 1.0
 
 func _process(delta):
 	position += direction * speed * delta

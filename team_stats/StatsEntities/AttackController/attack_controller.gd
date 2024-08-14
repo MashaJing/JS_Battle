@@ -4,7 +4,7 @@ signal attack_start
 signal attack_end
 signal canceled
 
-signal attack
+signal attacked
 signal damage_enemy(victim, damage)
 
 # соответствия "нападающий-жертва" - нет смысла хранить упорядоченно
@@ -12,7 +12,7 @@ var attacks = {}
 
 
 func _ready():
-	connect("damage_enemy", ConStats, "_on_take_damage")
+	connect("damage_enemy", Callable(ConStats, "_on_take_damage"))
 
 
 # вызывается при выборе атаки

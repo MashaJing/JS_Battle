@@ -1,11 +1,11 @@
-tool
+@tool
 class_name SheetToSpritePlugin
 extends EditorPlugin
 
 var plugin_view: Control
 
 func _enter_tree() -> void:
-  plugin_view = preload('res://addons/sheet_to_sprite/view.tscn').instance()
+  plugin_view = preload('res://addons/sheet_to_sprite/view.tscn').instantiate()
   plugin_view.plugin = self
   add_control_to_bottom_panel(plugin_view, 'SpriteSheet')
   pass
@@ -18,7 +18,7 @@ func _exit_tree() -> void:
 func recursive_find_node(node: Node, match_class: String) -> Node:
   var queue = []
   queue.append_array(node.get_children())
-  while not queue.empty():
+  while not queue.is_empty():
     var item = queue.pop_front()
     if item.get_class() == match_class:
       return item
@@ -27,7 +27,7 @@ func recursive_find_node(node: Node, match_class: String) -> Node:
   return null
 
 func get_canvas_item_editor() -> Control:
-  var viewport = get_editor_interface().get_editor_viewport()
+  var viewport = get_editor_interface().get_editor_main_screen()
   var canvas_editor = recursive_find_node(viewport, 'CanvasItemEditorViewport')
   if canvas_editor:
     return canvas_editor

@@ -50,7 +50,7 @@ func add_item(item):
 		CONTENTS.append(item)
 	else:
 		emit_signal("full")
-	CONTENTS.sort_custom(ItemSorter, "sort")
+	CONTENTS.sort_custom(Callable(ItemSorter, "sort"))
 
 func init_contents():
 	CONTENTS = [

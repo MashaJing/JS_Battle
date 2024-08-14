@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://player/KinematicHeart.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Attacks/Phase2/NoseAttack/assets/blackEyes1.png" type="Texture" id=2]
+[ext_resource path="res://Attacks/Phase2/NoseAttack/assets/blackEyes1.png" type="Texture2D" id=2]
 [ext_resource path="res://Border/Border.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Attacks/Phase2/NoseAttack/nose_attack.gd" type="Script" id=4]
 [ext_resource path="res://Bullets/DimondsBatch/DimondsBatch.tscn" type="PackedScene" id=5]
@@ -16,11 +16,11 @@ animations = [ {
 
 [node name="NodeAttack" type="Node2D"]
 script = ExtResource( 4 )
-APPEAR_TIME = 1.0
+APPEAR_TIME = 3.0
 JEVIL_BULLET = ExtResource( 5 )
 
 [node name="AttackTimer" type="Timer" parent="."]
-wait_time = 7.0
+wait_time = 5.0
 one_shot = true
 autostart = true
 
@@ -65,7 +65,7 @@ position = Vector2( 497, 400 )
 
 [node name="Nose" type="Area2D" parent="." groups=["bullets"]]
 
-[node name="Nose" type="AnimatedSprite" parent="Nose"]
+[node name="Nose" type="AnimatedSprite2D" parent="Nose"]
 position = Vector2( 498.85, 185.769 )
 scale = Vector2( 0.463725, 0.463725 )
 frames = SubResource( 1 )
@@ -74,7 +74,7 @@ animation = "Attack"
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Nose"]
 position = Vector2( 455, 198 )
 scale = Vector2( 0.689264, 0.689264 )
-polygon = PoolVector2Array( 66, 225, 0, 0, 132, 0 )
+polygon = PackedVector2Array( 66, 225, 0, 0, 132, 0 )
 
 [node name="eyeL" type="Node2D" parent="."]
 position = Vector2( 420, 160 )
